@@ -1,0 +1,273 @@
+{
+  "id": "staff-leadership-v2",
+  "src": "assets/life/staff-leadership-v2.png",
+  "width": 1145,
+  "height": 1374,
+  "cols": 6,
+  "rows": 4,
+  "facing": "right",
+  "frames": [
+    {
+      "x": 57,
+      "y": 22,
+      "w": 105,
+      "h": 331,
+      "anchorX": 114,
+      "baseline": 348
+    },
+    {
+      "x": 240,
+      "y": 26,
+      "w": 161,
+      "h": 327,
+      "anchorX": 314,
+      "baseline": 348
+    },
+    {
+      "x": 435,
+      "y": 27,
+      "w": 100,
+      "h": 324,
+      "anchorX": 496,
+      "baseline": 346
+    },
+    {
+      "x": 622,
+      "y": 28,
+      "w": 160,
+      "h": 324,
+      "anchorX": 698,
+      "baseline": 347
+    },
+    {
+      "x": 826,
+      "y": 29,
+      "w": 96,
+      "h": 323,
+      "anchorX": 890,
+      "baseline": 347
+    },
+    {
+      "x": 1000,
+      "y": 29,
+      "w": 142,
+      "h": 324,
+      "anchorX": 1053,
+      "baseline": 348
+    },
+    {
+      "x": 58,
+      "y": 364,
+      "w": 104,
+      "h": 325,
+      "anchorX": 109,
+      "baseline": 684
+    },
+    {
+      "x": 242,
+      "y": 366,
+      "w": 161,
+      "h": 323,
+      "anchorX": 309,
+      "baseline": 684
+    },
+    {
+      "x": 438,
+      "y": 369,
+      "w": 102,
+      "h": 319,
+      "anchorX": 498,
+      "baseline": 683
+    },
+    {
+      "x": 624,
+      "y": 367,
+      "w": 161,
+      "h": 323,
+      "anchorX": 696,
+      "baseline": 685
+    },
+    {
+      "x": 824,
+      "y": 368,
+      "w": 99,
+      "h": 322,
+      "anchorX": 885,
+      "baseline": 685
+    },
+    {
+      "x": 1003,
+      "y": 367,
+      "w": 134,
+      "h": 325,
+      "anchorX": 1052,
+      "baseline": 687
+    },
+    {
+      "x": 57,
+      "y": 698,
+      "w": 105,
+      "h": 321,
+      "anchorX": 110,
+      "baseline": 1014
+    },
+    {
+      "x": 241,
+      "y": 700,
+      "w": 167,
+      "h": 318,
+      "anchorX": 314,
+      "baseline": 1013
+    },
+    {
+      "x": 438,
+      "y": 699,
+      "w": 98,
+      "h": 320,
+      "anchorX": 496,
+      "baseline": 1014
+    },
+    {
+      "x": 618,
+      "y": 699,
+      "w": 173,
+      "h": 320,
+      "anchorX": 698,
+      "baseline": 1014
+    },
+    {
+      "x": 828,
+      "y": 701,
+      "w": 94,
+      "h": 318,
+      "anchorX": 885,
+      "baseline": 1014
+    },
+    {
+      "x": 1000,
+      "y": 700,
+      "w": 139,
+      "h": 320,
+      "anchorX": 1052,
+      "baseline": 1015
+    },
+    {
+      "x": 63,
+      "y": 1028,
+      "w": 98,
+      "h": 319,
+      "anchorX": 110,
+      "baseline": 1342
+    },
+    {
+      "x": 241,
+      "y": 1030,
+      "w": 163,
+      "h": 317,
+      "anchorX": 309,
+      "baseline": 1342
+    },
+    {
+      "x": 439,
+      "y": 1031,
+      "w": 100,
+      "h": 315,
+      "anchorX": 496,
+      "baseline": 1341
+    },
+    {
+      "x": 623,
+      "y": 1030,
+      "w": 165,
+      "h": 317,
+      "anchorX": 694,
+      "baseline": 1342
+    },
+    {
+      "x": 827,
+      "y": 1032,
+      "w": 95,
+      "h": 315,
+      "anchorX": 884,
+      "baseline": 1342
+    },
+    {
+      "x": 1007,
+      "y": 1031,
+      "w": 128,
+      "h": 317,
+      "anchorX": 1052,
+      "baseline": 1343
+    }
+  ],
+  "identities": [
+    {
+      "id": "staff-principal",
+      "idle": 0,
+      "walk": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "talk": 5,
+      "standingHeight": 327,
+      "estimatedHeadHeight": 51,
+      "estimatedHeadToBodyRatio": 0.156,
+      "headMeasurement": "Visual estimate hairtop to chin on idle pose; excludes hanging hair and neck. Approximately +/-3px, not automated anatomy detection."
+    },
+    {
+      "id": "staff-vice",
+      "idle": 6,
+      "walk": [
+        7,
+        8,
+        9,
+        10
+      ],
+      "talk": 11,
+      "standingHeight": 321,
+      "estimatedHeadHeight": 50,
+      "estimatedHeadToBodyRatio": 0.1558,
+      "headMeasurement": "Visual estimate hairtop to chin on idle pose; excludes hanging hair and neck. Approximately +/-3px, not automated anatomy detection."
+    },
+    {
+      "id": "staff-office",
+      "idle": 12,
+      "walk": [
+        13,
+        14,
+        15,
+        16
+      ],
+      "talk": 17,
+      "standingHeight": 317,
+      "estimatedHeadHeight": 48,
+      "estimatedHeadToBodyRatio": 0.1514,
+      "headMeasurement": "Visual estimate hairtop to chin on idle pose; excludes hanging hair and neck. Approximately +/-3px, not automated anatomy detection."
+    },
+    {
+      "id": "staff-mentor",
+      "idle": 18,
+      "walk": [
+        19,
+        20,
+        21,
+        22
+      ],
+      "talk": 23,
+      "standingHeight": 315,
+      "estimatedHeadHeight": 49,
+      "estimatedHeadToBodyRatio": 0.1556,
+      "headMeasurement": "Visual estimate hairtop to chin on idle pose; excludes hanging hair and neck. Approximately +/-3px, not automated anatomy detection."
+    }
+  ],
+  "cycle": [
+    "left-contact",
+    "passing-a",
+    "right-contact",
+    "passing-b"
+  ],
+  "alphaThresholdForBounds": 16,
+  "notes": "Original selected image copied unchanged; real RGBA alpha. Explicit measured bounds override nominal grid because generated gutters vary. Bounds include 2px padding; anchorX uses head center in upper 18 percent, baseline is feet minus 3px. Use one invariant scale from identity.standingHeight, never per-frame height. No image pixel editing performed."
+}

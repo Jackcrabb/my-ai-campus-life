@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <base href="/public/campus/">
+  <title>Campus engine manual test</title>
+  <style>html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#e9ebdf}canvas{display:block;width:100%;height:100%;outline:none}nav{position:fixed;top:12px;right:12px;display:flex;gap:8px}button,select{font:14px system-ui;padding:8px;border:1px solid #9eb1a9;border-radius:8px;background:#fffffff0}output{position:fixed;top:12px;left:12px;font:14px system-ui;background:#fffffff0;border-radius:10px;padding:10px 14px;pointer-events:none}</style>
+  <script defer src="characters.js"></script>
+  <script defer src="campus-art.js"></script>
+  <script defer src="engine.js"></script>
+</head>
+<body>
+  <canvas id="test-campus" aria-label="Engine test canvas"></canvas>
+  <output id="interaction">Arrow keys / WASD · E to interact · click a person or the ground</output>
+  <nav><select id="test-room" aria-label="Test room"><option value="corridor">Corridor</option><option value="chinese">Chinese</option><option value="english">English</option><option value="maths">Maths</option><option value="chemistry">Science</option></select><button id="test-neutral">End conversation</button></nav>
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      window.previewAvatar = {gender:'boy',uniform:0,hair:0,skin:0};
+      window.previewInteractions = [];
+      window.previewEngine = new CampusEngine({
+        canvas:document.getElementById('test-campus'),
+        getAvatar:()=>window.previewAvatar,
+        onInteract:id=>{window.previewInteractions.push(id);document.getElementById('interaction').textContent=id;window.previewEngine.setTalking(id,true);},
+      });
+      const room=document.getElementById('test-room');
+      room.value=new URLSearchParams(location.search).get('room')||'corridor';
+      previewEngine.setLocation(room.value);
+      room.addEventListener('change',()=>previewEngine.setLocation(room.value));
+      document.getElementById('test-neutral').addEventListener('click',()=>previewEngine.setTalking(previewEngine.talkingId,false));
+    });
+  </script>
+</body>
+</html>

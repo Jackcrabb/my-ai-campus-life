@@ -1,0 +1,108 @@
+.campus-teacher {
+  --ct-ink:#173e48; --ct-teal:#197d80; --ct-line:rgba(83,131,137,.24);
+  color:var(--ct-ink); font:16px/1.55 -apple-system,BlinkMacSystemFont,"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
+  width:100%; min-width:0; text-align:left;
+}
+.campus-teacher *, .campus-teacher *::before, .campus-teacher *::after {box-sizing:border-box}
+.campus-teacher h2,.campus-teacher h3,.campus-teacher h4,.campus-teacher p {margin:0}
+.campus-teacher h2 {font-size:clamp(25px,3vw,36px);font-weight:750;letter-spacing:.03em;line-height:1.3}
+.campus-teacher h3 {font-size:21px;line-height:1.4;font-weight:700}
+.campus-teacher h4 {font-size:17px;line-height:1.5;font-weight:700}
+.campus-teacher button,.campus-teacher .ct-primary {font:inherit;font-weight:650;color:var(--ct-ink);border:1px solid var(--ct-line);border-radius:11px;background:rgba(249,253,250,.87);min-height:42px;padding:8px 15px;cursor:pointer;transition:background .16s,box-shadow .16s,transform .16s;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:6px}
+.campus-teacher button:hover {background:#edf6f1;box-shadow:0 3px 8px #234f4c0b}
+.campus-teacher button:active {transform:translateY(1px)}
+.campus-teacher button:disabled {opacity:.5;cursor:wait;transform:none}
+.campus-teacher button:focus-visible,.campus-teacher a:focus-visible,.campus-teacher input:focus-visible,.campus-teacher select:focus-visible,.campus-teacher textarea:focus-visible,.campus-teacher summary:focus-visible {outline:3px solid #8abeb6;outline-offset:3px}
+.campus-teacher .ct-primary {background:var(--ct-teal);color:#fff;border-color:#368f90;box-shadow:inset 0 1px 0 #ffffff25}
+.campus-teacher .ct-primary:hover {background:#126c70}
+.campus-teacher .ct-quiet {background:transparent;box-shadow:none}
+.campus-teacher .ct-danger {color:#914f46;border-color:#d6aea0;background:#fff8f2}
+.campus-teacher .ct-close {font-size:25px;line-height:1;width:42px;padding:0}
+.campus-teacher input,.campus-teacher select,.campus-teacher textarea {font:inherit;color:var(--ct-ink);min-height:43px;min-width:0;width:100%;border:1px solid #abc2c4;border-radius:10px;padding:9px 12px;background:rgba(255,255,255,.88);box-shadow:inset 0 1px 3px #23484e06}
+.campus-teacher textarea {resize:vertical;line-height:1.55}
+.campus-teacher input[type=radio] {width:18px;min-height:18px;height:18px;accent-color:var(--ct-teal);box-shadow:none;margin:0}
+.campus-teacher label {font-size:14px;font-weight:650;display:grid;gap:7px;min-width:0}
+.ct-header {display:flex;justify-content:space-between;align-items:center;gap:20px;margin-bottom:22px}
+.ct-eyebrow {font-size:12px;font-weight:700;letter-spacing:.08em;color:#597e83;display:block;margin-bottom:5px}
+.ct-actions {display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.ct-tabs {display:flex;gap:6px;border-bottom:1px solid var(--ct-line);margin-bottom:23px;padding:0 0 10px;flex-wrap:wrap}
+.campus-teacher .ct-tabs button {border-color:transparent;background:transparent;min-width:120px}
+.campus-teacher .ct-tabs button[aria-current=page] {background:var(--ct-teal);color:white;border-color:var(--ct-teal)}
+.ct-body {min-height:220px;min-width:0}
+.ct-section-heading {display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:18px}
+.ct-section-heading p,.ct-note {font-size:13px;line-height:1.7;color:#637f82}
+.ct-section-heading p {margin-top:5px}
+.ct-count {font-size:19px;padding:3px 13px;border-radius:12px;background:#e4eeea;color:#376d6b;font-weight:700}
+.ct-class-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.ct-class {border:1px solid var(--ct-line);border-radius:16px;padding:17px;background:rgba(255,255,255,.57);box-shadow:0 4px 13px #23484e05}
+.ct-class-title {display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:15px}
+.ct-class-title strong {font-size:26px;line-height:1.2}
+.ct-class-title span,.ct-field-label {font-size:12px;color:#6d8586}
+.ct-code {display:flex;gap:8px;align-items:center;justify-content:space-between;margin:5px 0 15px}
+.ct-code code {font:700 19px ui-monospace,SFMono-Regular,monospace;letter-spacing:.06em;overflow-wrap:anywhere;user-select:all}
+.campus-teacher .ct-code button {min-height:34px;font-size:12px;padding:5px 8px}
+.campus-teacher .ct-class .ct-actions button {flex:1;min-height:38px;font-size:12px;padding:5px 9px}
+.ct-create {margin-top:24px;padding-top:18px;border-top:1px solid var(--ct-line)}
+.ct-create summary {font-weight:650;cursor:pointer;padding:5px 0}
+.ct-create-grid {display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:16px}
+.ct-create-grid form {display:grid;gap:13px;border:1px solid var(--ct-line);padding:18px;border-radius:15px;background:#ffffff70;align-content:start}
+.ct-create-grid p {font-size:13px;color:#688080}
+.ct-filters {display:flex;gap:12px;align-items:flex-end;flex-wrap:wrap;margin-bottom:17px}
+.ct-filters label {flex:1 1 130px}
+.ct-filters label:nth-child(2) {flex-basis:180px}
+.ct-filters>button {flex:0 0 auto}
+.ct-table-wrap {border:1px solid #b9cece;border-radius:13px;overflow:auto;margin-top:18px;background:#ffffff70}
+.campus-teacher table {width:100%;border-collapse:collapse;font-size:15px}
+.campus-teacher th {background:#dfeae7;color:#214d56;font-weight:700;text-align:left}
+.campus-teacher th,.campus-teacher td {padding:15px 17px;border-bottom:1px solid #d6e1df;white-space:nowrap}
+.campus-teacher th+th,.campus-teacher td+td {border-left:1px solid #d6e1df}
+.campus-teacher tbody tr:last-child td {border-bottom:0}
+.campus-teacher tbody tr:nth-child(even) {background:#f4f8f34d}
+.campus-teacher td:last-child {font-variant-numeric:tabular-nums;font-weight:650}
+.ct-empty {text-align:center;border:1px dashed #bdcfca;border-radius:17px;padding:42px 25px;margin:18px 0;background:#ffffff40;color:#577677}
+.ct-empty h4 {margin-bottom:7px;color:#315a60}
+.ct-empty p {font-size:14px;max-width:480px;margin:0 auto}
+.ct-message {padding:12px 15px;border-radius:11px;background:#e8f4eb;border:1px solid #bad2c2;color:#386650;margin:0 0 17px!important;font-size:14px}
+.ct-message.ct-error {background:#fff2eb;border-color:#e2bcb0;color:#873f34}
+.ct-loading {font-size:13px;color:#657f7e;margin:-8px 0 12px!important}
+.ct-access {max-width:430px;margin:30px auto 14px;padding:28px;text-align:center;border:1px solid var(--ct-line);border-radius:20px;background:#ffffffe0}
+.ct-access p {font-size:14px;margin:12px 0 20px;color:#5e7d7e}
+.ct-access form {display:grid;gap:15px;text-align:left}
+.ct-access>.ct-quiet {display:block;margin:12px auto 0;font-size:13px}
+.ct-question-list {display:grid;gap:12px;margin-top:18px}
+.ct-question {display:flex;justify-content:space-between;gap:20px;padding:18px;border:1px solid var(--ct-line);border-radius:15px;background:#ffffff80}
+.ct-question>div:first-child {min-width:0}
+.ct-question h4 {margin:5px 0 6px}
+.ct-question p {font-size:14px;white-space:pre-line;color:#47676c}
+.ct-question small {display:block;margin-top:10px;font-size:11px;color:#71888b;overflow-wrap:anywhere}
+.ct-question .ct-actions {align-content:center;flex-shrink:0}
+.ct-badge {display:inline-block;font-size:11px;letter-spacing:.02em;color:#386c6f;background:#e7f0e9;padding:3px 8px;border-radius:7px}
+.ct-editor {display:grid;gap:17px}
+.ct-editor-meta {display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
+.ct-editor-meta label:nth-child(2) {min-width:150px}
+.ct-language-tabs {display:flex;gap:7px;flex-wrap:wrap;border-bottom:1px solid var(--ct-line);padding-bottom:12px}
+.campus-teacher .ct-language-tabs [aria-pressed=true] {background:#e2eee8;border-color:#70a8a5;color:#165f65}
+.ct-option-editors {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.ct-option-editors fieldset {border:1px solid #c0d2cb;padding:13px;border-radius:13px;display:grid;gap:12px;min-width:0;background:#ffffff60}
+.ct-option-editors legend {padding:0 4px;max-width:100%}
+.campus-teacher .ct-correct {display:flex;flex-direction:row;align-items:center;font-size:12px;gap:7px}
+.ct-editor-footer {display:flex;justify-content:space-between;align-items:center;gap:15px;border-top:1px solid var(--ct-line);padding-top:17px}
+.ct-editor-footer span {font:11px ui-monospace,monospace;color:#718588;overflow-wrap:anywhere;min-width:0}
+.ct-confirm {border:1px solid #b6cec6;border-radius:18px;padding:25px;max-width:650px;background:#ffffffe3;display:grid;gap:18px;margin:22px auto}
+.ct-confirm p {font-size:15px;color:#57767b}
+.ct-print-sheet {display:none}
+@media(max-width:700px) {
+  .ct-header {gap:12px;margin-bottom:16px}.ct-eyebrow {font-size:10px}.campus-teacher h2 {font-size:25px}
+  .campus-teacher .ct-tabs button {min-width:0;flex:1;padding:9px 7px;font-size:13px}.ct-tabs {gap:3px}
+  .ct-create-grid,.ct-option-editors {grid-template-columns:1fr}.ct-class-grid {grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+  .ct-editor-meta {grid-template-columns:repeat(2,minmax(0,1fr))}.ct-editor-meta label:nth-child(2) {min-width:0}
+  .ct-question {display:block}.ct-question .ct-actions {margin-top:13px}.ct-filters {gap:10px}
+  .ct-filters label,.ct-filters label:nth-child(2) {flex-basis:130px}.ct-filters>button {flex:1}
+  .campus-teacher th,.campus-teacher td {padding:12px}.ct-access {padding:22px 17px;margin:14px auto}.ct-confirm {padding:18px}
+}
+@media(prefers-reduced-motion:reduce) {.campus-teacher button {transition:none}}
+@media print {
+  body>*:not(.ct-print-sheet) {display:none!important}
+  body>.ct-print-sheet {display:block!important;position:static!important;color:#111;background:#fff;font:12pt/1.6 sans-serif;margin:15mm}
+  .ct-print-sheet h1 {font-size:20pt}.ct-print-sheet h2 {font-size:13pt}.ct-print-sheet article {break-inside:avoid;margin:20px 0}.ct-print-sheet li {padding:4px 0}
+}

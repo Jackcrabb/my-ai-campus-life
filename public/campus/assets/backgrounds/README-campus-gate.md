@@ -1,0 +1,14 @@
+# Campus gate title-screen artwork
+
+Original production background generated with the built-in image_gen tool on 2026-10-08 using the approved crafted-pixel reference `design/art-options/version-1-crafted-pixel.png`.
+
+- Asset: `campus-gate.png`
+- Output: 1672 × 941 RGB PNG, approximately 16:9.
+- Generation: `exec-7ad90440-e764-41cc-9e45-919b78bb0c2f`
+- Source output: `/Users/jackho/.codex/generated_images/01a11b37-f27e-75e3-9f01-083b22e1092d/exec-7ad90440-e764-41cc-9e45-919b78bb0c2f.png`
+- Saved without image edits.
+- Inspected: centered cream-stone and teal gate, balanced school wings, subtropical trees at the sides, Hong Kong hills/buildings, warm afternoon light; clear central paved approach and blank entrance lintel for menu/title overlay. No people, UI, text, or logos.
+
+## Exact production prompt
+
+Use case: stylized-concept. Asset type: ORIGINAL production title-screen background for a Hong Kong secondary-school detective game. ONE full-bleed landscape16:9 image, prefer1672x941. Input reference is the APPROVED detailed crafted pixel-anime style ONLY. Match its finely controlled pixel clusters, crisp outlined architectural features, warm stone, teal-painted details, believable afternoon lighting; not coarse block-art, not vector, not3D, not photorealism. Scene: the welcoming front entrance of an original fictional Hong Kong secondary school, viewed straight on at pedestrian eye level with a carefully balanced almost-symmetrical composition. Centered entrance gateway made from warm cream stone piers and teal wrought-iron elements with restrained warm wooden doors, elegant modest school wings on both sides with orderly teal-framed classroom windows. A glimpse through the gate reveals a peaceful courtyard and pale school facade. Subtropical trees gently frame the outer LEFT and RIGHT edges, with Hong Kong neighbourhood buildings and green hills softly visible in the distance. Golden late-afternoon sunlight, warm muted cream/teal/sage palette, rich fine pixel detail in masonry, shutters, foliage and paving. CRITICAL UI-COMPOSITION: the CENTER UPPER-MIDDLE (roughly x25–75%, y14–40%) must be visually CALM and evenly toned for a large game wordmark overlay; a broad plain cream arch/lintel and a gentle light sky area are welcome, but do not draw any writing or sign lettering. The CENTER BOTTOM (x32–68%, y48–95%) must be a clear unobstructed paved approach/path with quiet warm tones for THREE vertically stacked menu buttons to be overlaid later; no foreground plants, benches, poles, props, shadows shaped like people, or busy high-contrast patterns in this central button zone. Keep detailed foliage/urban texture concentrated toward margins. Pleasant inviting school atmosphere, refined pixel painting with readable pixel edges and consistent perspective. No people, no student, no person silhouette, no UI, no buttons, no text, no lettering, no school name, no logo, no crest, no watermark. This is environment artwork only.

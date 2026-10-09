@@ -1,0 +1,261 @@
+{
+  "id": "staff-academic-a",
+  "src": "assets/life/staff-academic-a.png",
+  "width": 1086,
+  "height": 1448,
+  "cols": 6,
+  "rows": 4,
+  "facing": "right",
+  "frames": [
+    {
+      "x": 66,
+      "y": 16,
+      "w": 87,
+      "h": 328,
+      "anchorX": 108,
+      "baseline": 339
+    },
+    {
+      "x": 215,
+      "y": 16,
+      "w": 154,
+      "h": 324,
+      "anchorX": 292,
+      "baseline": 335
+    },
+    {
+      "x": 402,
+      "y": 16,
+      "w": 120,
+      "h": 324,
+      "anchorX": 470,
+      "baseline": 335
+    },
+    {
+      "x": 559,
+      "y": 16,
+      "w": 159,
+      "h": 324,
+      "anchorX": 650,
+      "baseline": 335
+    },
+    {
+      "x": 749,
+      "y": 16,
+      "w": 129,
+      "h": 324,
+      "anchorX": 814,
+      "baseline": 335
+    },
+    {
+      "x": 925,
+      "y": 16,
+      "w": 135,
+      "h": 328,
+      "anchorX": 966,
+      "baseline": 339
+    },
+    {
+      "x": 51,
+      "y": 356,
+      "w": 102,
+      "h": 340,
+      "anchorX": 103,
+      "baseline": 691
+    },
+    {
+      "x": 212,
+      "y": 357,
+      "w": 158,
+      "h": 335,
+      "anchorX": 282,
+      "baseline": 687
+    },
+    {
+      "x": 397,
+      "y": 357,
+      "w": 126,
+      "h": 336,
+      "anchorX": 460,
+      "baseline": 688
+    },
+    {
+      "x": 561,
+      "y": 358,
+      "w": 161,
+      "h": 335,
+      "anchorX": 644,
+      "baseline": 688
+    },
+    {
+      "x": 743,
+      "y": 357,
+      "w": 129,
+      "h": 336,
+      "anchorX": 808,
+      "baseline": 688
+    },
+    {
+      "x": 918,
+      "y": 357,
+      "w": 156,
+      "h": 339,
+      "anchorX": 970,
+      "baseline": 691
+    },
+    {
+      "x": 56,
+      "y": 708,
+      "w": 106,
+      "h": 346,
+      "anchorX": 108,
+      "baseline": 1049
+    },
+    {
+      "x": 202,
+      "y": 710,
+      "w": 165,
+      "h": 341,
+      "anchorX": 292,
+      "baseline": 1046
+    },
+    {
+      "x": 390,
+      "y": 709,
+      "w": 122,
+      "h": 342,
+      "anchorX": 460,
+      "baseline": 1046
+    },
+    {
+      "x": 550,
+      "y": 710,
+      "w": 172,
+      "h": 341,
+      "anchorX": 647,
+      "baseline": 1046
+    },
+    {
+      "x": 745,
+      "y": 711,
+      "w": 127,
+      "h": 341,
+      "anchorX": 816,
+      "baseline": 1047
+    },
+    {
+      "x": 916,
+      "y": 710,
+      "w": 157,
+      "h": 344,
+      "anchorX": 972,
+      "baseline": 1049
+    },
+    {
+      "x": 54,
+      "y": 1071,
+      "w": 108,
+      "h": 351,
+      "anchorX": 105,
+      "baseline": 1417
+    },
+    {
+      "x": 211,
+      "y": 1073,
+      "w": 163,
+      "h": 344,
+      "anchorX": 284,
+      "baseline": 1412
+    },
+    {
+      "x": 402,
+      "y": 1072,
+      "w": 115,
+      "h": 347,
+      "anchorX": 458,
+      "baseline": 1414
+    },
+    {
+      "x": 553,
+      "y": 1074,
+      "w": 168,
+      "h": 345,
+      "anchorX": 632,
+      "baseline": 1414
+    },
+    {
+      "x": 746,
+      "y": 1074,
+      "w": 128,
+      "h": 346,
+      "anchorX": 800,
+      "baseline": 1415
+    },
+    {
+      "x": 910,
+      "y": 1071,
+      "w": 147,
+      "h": 351,
+      "anchorX": 961,
+      "baseline": 1417
+    }
+  ],
+  "identities": [
+    {
+      "id": "staff-chinese",
+      "idle": 0,
+      "walk": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "talk": 5,
+      "standingHeight": 324
+    },
+    {
+      "id": "staff-english",
+      "idle": 6,
+      "walk": [
+        7,
+        8,
+        9,
+        10
+      ],
+      "talk": 11,
+      "standingHeight": 336
+    },
+    {
+      "id": "staff-maths",
+      "idle": 12,
+      "walk": [
+        13,
+        14,
+        15,
+        16
+      ],
+      "talk": 17,
+      "standingHeight": 342
+    },
+    {
+      "id": "staff-chemistry",
+      "idle": 18,
+      "walk": [
+        19,
+        20,
+        21,
+        22
+      ],
+      "talk": 23,
+      "standingHeight": 347
+    }
+  ],
+  "cycle": [
+    "left-contact",
+    "passing-a",
+    "right-contact",
+    "passing-b"
+  ],
+  "alphaThresholdForBounds": 16,
+  "notes": "Original image copied unchanged; real RGBA alpha. Explicit measured bounds override nominal grid because generated gutters vary. Bounds include 2px padding; anchorX uses head center in the upper 18 percent, baseline is feet minus 3px. Use one invariant scale from each identity standingHeight, never each frame height. No image pixel editing performed."
+}

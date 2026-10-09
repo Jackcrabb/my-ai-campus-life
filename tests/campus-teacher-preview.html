@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="zh-Hant"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<base href="/public/campus/"><title>Teacher workspace isolated test</title>
+<link rel="stylesheet" href="teacher-ui.css">
+<style>html,body{margin:0;min-height:100%;background:#b5c4b6;font-family:system-ui}body{background-image:url(assets/backgrounds/campus-pair-04.png);background-size:auto 200vh;background-position:center top;background-attachment:fixed;padding:28px;box-sizing:border-box}.fixture-toolbar{display:flex;justify-content:space-between;gap:10px;max-width:1120px;margin:0 auto 16px;color:#fff;text-shadow:0 1px 3px #173f48}.fixture-toolbar select{padding:5px;border-radius:6px}main{box-sizing:border-box;width:100%;max-width:1120px;margin:auto;padding:30px;background:#ffffffe8;border:1px solid white;border-radius:23px;box-shadow:0 14px 46px #173f4826;backdrop-filter:blur(9px)}@media(max-width:600px){body{padding:12px}main{padding:17px;border-radius:18px}.fixture-toolbar{font-size:11px}}</style>
+<script>
+  // Isolated fake transport for UI testing; this file is not part of the public app.
+  const fixtureState={unlocked:true,classes:[{id:'test-class',grade:2,section:'A',label:'2A',schoolYear:'2026-27',classCode:'TEST-CLASS',assignmentId:'test-activity'}],questions:[]};
+  window.fixtureCalls=[];
+  window.fetch=async(url,options={})=>{
+    const body=options.body?JSON.parse(options.body):null;fixtureCalls.push({url,method:options.method,body});let data={};
+    if(url.endsWith('/session'))data={allowed:true,signedIn:true,unlocked:fixtureState.unlocked,signInUrl:'/test-signin'};
+    if(url.endsWith('/unlock')){fixtureState.unlocked=true;data={unlocked:true};}
+    if(url.endsWith('/lock'))fixtureState.unlocked=false;
+    if(url.endsWith('/classes')){if(body?.seedDefault)fixtureState.classes=Array.from({length:24},(_,i)=>({id:'class-'+i,label:(Math.floor(i/4)+1)+String.fromCharCode(65+i%4),grade:Math.floor(i/4)+1,schoolYear:body.schoolYear,classCode:'TEST-'+String(i+1).padStart(2,'0'),assignmentId:'test-activity'}));data={classes:fixtureState.classes};}
+    if(url.includes('/assignments'))data={activeAssignmentId:'test-activity',assignments:[{id:'test-activity',title:'Test activity'}]};
+    if(url.includes('/results?'))data={rows:[],subjects:['maths']};
+    if(url.includes('/questions?'))data={questions:fixtureState.questions};
+    if(url.endsWith('/questions')&&options.method==='POST'){fixtureState.questions.push({...body,revision:1});data={question:fixtureState.questions.at(-1)};}
+    return {ok:true,status:200,json:async()=>data};
+  };
+</script>
+<script defer src="xlsx-export.js"></script><script defer src="teacher-ui.js"></script>
+</head><body>
+<div class="fixture-toolbar"><span>Development fixture · empty fictional class · no server writes</span><label>Language <select id="test-locale"><option value="zh">繁體</option><option value="cn">简体</option><option value="en">English</option></select></label></div>
+<main id="teacher-test"></main>
+<script>addEventListener('DOMContentLoaded',()=>{window.teacherTest=CampusTeacher.open({container:document.getElementById('teacher-test'),lang:'zh',subjectId:'maths'});document.getElementById('test-locale').addEventListener('change',e=>teacherTest.setLanguage(e.target.value));});</script>
+</body></html>

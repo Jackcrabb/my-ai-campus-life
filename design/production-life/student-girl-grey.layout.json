@@ -1,0 +1,124 @@
+{
+  "id": "player-girl-2",
+  "src": "assets/life/student-girl-grey.png",
+  "width": 1536,
+  "height": 1024,
+  "cols": 5,
+  "rows": 2,
+  "facing": "right",
+  "frames": [
+    {
+      "x": 101,
+      "y": 38,
+      "w": 159,
+      "h": 467,
+      "anchorX": 182,
+      "baseline": 502
+    },
+    {
+      "x": 387,
+      "y": 38,
+      "w": 199,
+      "h": 467,
+      "anchorX": 471,
+      "baseline": 502
+    },
+    {
+      "x": 686,
+      "y": 38,
+      "w": 163,
+      "h": 469,
+      "anchorX": 770,
+      "baseline": 504
+    },
+    {
+      "x": 951,
+      "y": 38,
+      "w": 230,
+      "h": 470,
+      "anchorX": 1056,
+      "baseline": 505
+    },
+    {
+      "x": 1270,
+      "y": 39,
+      "w": 188,
+      "h": 467,
+      "anchorX": 1352,
+      "baseline": 503
+    },
+    {
+      "x": 79,
+      "y": 518,
+      "w": 191,
+      "h": 471,
+      "anchorX": 186,
+      "baseline": 986
+    },
+    {
+      "x": 366,
+      "y": 518,
+      "w": 239,
+      "h": 472,
+      "anchorX": 483,
+      "baseline": 987
+    },
+    {
+      "x": 654,
+      "y": 519,
+      "w": 205,
+      "h": 472,
+      "anchorX": 771,
+      "baseline": 988
+    },
+    {
+      "x": 945,
+      "y": 518,
+      "w": 240,
+      "h": 474,
+      "anchorX": 1064,
+      "baseline": 989
+    },
+    {
+      "x": 1239,
+      "y": 518,
+      "w": 227,
+      "h": 474,
+      "anchorX": 1360,
+      "baseline": 989
+    }
+  ],
+  "identities": [
+    {
+      "hair": "bob",
+      "idle": 0,
+      "walk": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "standingHeight": 463
+    },
+    {
+      "hair": "long-ponytail",
+      "idle": 5,
+      "walk": [
+        6,
+        7,
+        8,
+        9
+      ],
+      "standingHeight": 467
+    }
+  ],
+  "cycle": [
+    "left-contact",
+    "passing-a",
+    "right-contact",
+    "passing-b"
+  ],
+  "skinTone": "approved-light-medium",
+  "alphaThresholdForBounds": 16,
+  "notes": "Original PNG unchanged. Bounds include2px margin. Horizontal registration follows face median at one fixed offset calibrated to idle head-centre; arms/backpack do not distort anchors. Invariant scale from standingHeight, never frame.h. Additional skin tones need separate validated variants/masks."
+}
