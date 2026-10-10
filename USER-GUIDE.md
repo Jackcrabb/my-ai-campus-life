@@ -2,16 +2,26 @@
 
 [Project overview](README.md) · [Teaching design](DESIGN-AND-TEACHING-GUIDE.md)
 
+This guide describes the current repository workflow. Consult the corresponding release record for the deployed revision and verification scope.
+
 ## Students: start and explore
 
-1. Choose **New Game**, then your year (S1–S6), class section (A–D), student number, name and appearance. In class mode, use the details your teacher asks you to use.
+1. Choose **New Game → Student** to start character setup, with no report/download confirmation, then select your year (S1–S6), class section (A–D), student number, name and appearance. In class mode, use the details your teacher asks you to use.
 2. Choose free exploration or join your class. Read or skip the introduction; it can be replayed later.
-3. Move with **WASD or the arrow keys**. Press **E** to talk to a nearby person, or **Space/Enter** to use a nearby room entrance. Clicking a person, door or staircase also approaches and interacts. Use **Map** for direct navigation.
+3. Move with **WASD or the arrow keys**. Press **E** to talk to a nearby person, or **Space/Enter** to use a nearby room entrance. Clicking a person, door or staircase also approaches and interacts. Use **Map** to read the floor plan, ordered from 4F (fifth level) at the top to G (first level) at the bottom. Cases and Subjects show progress only; visit the corresponding person or room to answer.
 4. Read the evidence before choosing an answer. Review the feedback, make a repair and explain a next action in your journal.
 
-**Continue** resumes a started game. The start-menu **Settings** button is currently disabled; the in-game toolbar provides settings after starting. At the top right, **A** changes language and the adjacent **music-note button** opens sound controls. Escape or a panel's close button returns to the game.
+**Continue** returns directly to your saved campus. Opening the Student / Teacher chooser, or choosing Teacher, does not reset that save. Choosing a new Student starts a replacement student setup. Student learning-report download controls have been removed; teacher Excel exports and worksheet PDF access are separate and remain available. The start-menu **Settings** button is currently disabled; the in-game toolbar provides settings after starting. At the top right, **A** changes language and the adjacent **music-note button** opens sound controls. Escape or a panel's close button returns to the game.
 
-Sound is optional. Set voice and music volumes separately, use **Test voice**, mute all sound or replay dialogue. Traditional Chinese uses Cantonese, Simplified Chinese uses Mandarin, and English uses English. If the required voice is unavailable on your device, read the displayed text; a different Chinese language will not be substituted.
+Sound is optional. Set voice and music volumes separately, use **Test voice**, mute all sound or replay dialogue. The corrected browser speech selection requires Cantonese for Traditional Chinese, Mandarin for Simplified Chinese, or English for English, together with the NPC’s known gender. English numbers are expanded into English words for the spoken sentence only; displayed text is unchanged. Speech rate and pitch are both `1`, the natural Web Speech defaults.
+
+If the device has no known matching voice, automatic dialogue stops with an unavailable message instead of using the wrong gender. This Mac’s native inventory had no known male Cantonese or Mandarin voice during the read-only audit, so those male-character lines may be silent. Generic **Test voice** is not tied to an NPC gender: hearing its preview does not prove every character has a matching voice. Actual pronunciation and fluency still need device listening checks; use the displayed text if speech is unavailable or incorrect.
+
+The chosen replacement is **free MP3 files made manually with TTSFree, using TTSMaker as a manual fallback**. These recordings are **not yet integrated into the game**. No Google Cloud project, API key or self-hosted model is required for this plan. The [free voice guide](docs/FREE-VOICE-TOOLS.md) records the production settings and limitations, including the three-voice Cantonese catalog; twenty unique Cantonese character voices are not promised.
+
+The current free-voice audition baseline is **TTSFree Default (raw rate `0`, pitch `0`)** for natural, fluent speech. It supersedes the earlier `100/100` and `70/100` adjustments. These values are provider controls, not Web Speech multipliers. Three Default auditions have been downloaded: Cantonese HiuMaan, Mainland Mandarin Xiaoyi and British English Sonia, each about 9–10 seconds. The Taiwan Mandarin YunJhe attempt failed twice with zero-byte output and is not a usable sample. The three files still require listening approval; they do not constitute a completed character voice library. See the [audition files and production record](design/voice-auditions-free/README.md). None is integrated into the game.
+
+NPC names appear in dialogue only. Student NPC uniforms follow your chosen outfit series while retaining their own appearance. NPCs walk at about 88% of the protagonist’s top speed, with matching distance-driven foot movement and pauses.
 
 ## Join a class and continue on another device
 
@@ -26,32 +36,37 @@ Class mode stores your name, class, number, answers and necessary progress, incl
 
 ## Teachers: open the workspace and create classes
 
-1. Enter the game and click a **classroom printer**, or use **Settings → Teacher workspace → Open**.
+1. From the title screen, choose **New Game → Teacher**. This opens the teacher workspace directly, without a student avatar or campus session. The in-game **Settings → Teacher workspace → Open** entry is also available.
 2. Sign in with your **authorized teacher ChatGPT account** if prompted, then unlock with the configured teacher PIN. The project's requested shared PIN is **1234**. The PIN alone does not grant access: your identity must also be on the server's teacher allowlist.
-3. In **Classes**, expand **Create classes**. Enter the school year, grade and section to create one class, or deliberately choose **Create 24 classes** for S1–S6 × A–D.
-4. Copy each class's join code and share it with that class. Ask students to retain their own recovery codes.
+3. Choose your teaching subject. The hub offers 13 learning subjects plus **AI Ethics and Inclusion**. Use **Change subject** when needed; grade, class and activity filters remain available across tools. Core AI questions can be reviewed but not edited.
+4. In **Classes**, expand **Create classes**. Enter the school year, grade and section to create one class, or deliberately choose **Create 24 classes** for S1–S6 × A–D.
+5. Copy each class's join code and share it with that class. Ask students to retain their own recovery codes.
 
 Only your own classes are visible. Unlocks expire after 30 minutes and incorrect PIN attempts are rate-limited. Use **Lock** when leaving the workspace on a shared computer. If access is denied, check that you used the authorized identity; repeatedly entering the PIN will not fix an allowlist problem.
 
 ## Edit questions and publish a new activity
 
-1. Open **Questions**, choose a grade and subject, then select **New question** or **Edit**.
+1. From your selected subject, open **Questions**, choose a grade, then select **New question** or **Edit**. Use **Change subject** to move to another subject.
 2. Set the task level and stars. Complete the title, question, options, feedback and takeaway in **all three language tabs**. Mark the correct answer and review it against the intended learning objective.
 3. Save as **Draft** while reviewing, or **Published** when ready. Saving an edit creates a revision; it does not rewrite existing student work.
 4. Go to **Classes → New activity**, enter an activity name and confirm. The activity uses the latest published questions for that grade. Students should load the new activity before answering it.
 
 Publishing a question and starting a class activity are separate steps. Existing activities retain their original question versions and score denominators. **Archive** removes a subject question from future activities while preserving earlier records. The four AI scenarios and final transfer task are read-only core content.
 
-For example, an S2 mathematics teacher can replace an AI answer-checking question, explain why the distractors are incorrect in each language, publish the revision, then start a named follow-up activity. Compare that activity with the earlier one without changing the older results. The starter bank is a teaching starting point; review subject accuracy and grade suitability before use.
+**Audio does not update automatically when you create or edit a question.** A matching recording may be missing or outdated. The latest written question, options and feedback are authoritative; do not use an older recording to override them. Updated MP3s require separate manual generation, listening review and integration for the corresponding revision. That recording workflow is still pending integration; the present game continues to use the browser speech described above.
+
+For example, an S2 mathematics teacher can revise a ratios or probability question, explain why the distractors are incorrect in each language, publish the revision, then start a named follow-up activity. Compare that activity with the earlier one without changing the older results. All 234 starter questions have been replaced with authored, curriculum-referenced questions and checked for structure, mathematics, language mirrors and version consistency, with cross-agent content review. See [curriculum alignment](docs/CURRICULUM-ALIGNMENT.md). Teachers should still review suitability for their own classes; this is not complete curriculum coverage.
 
 ## Review results, download Excel and print worksheets
 
 1. Open **Results** and select the **class**, **subject** and **activity**. Historical activities remain selectable.
 2. Read scores alongside student explanations and reflections. Subject scores use **first responses** on a 0–100 scale; an unfinished subject displays a dash and remains blank in the export.
-3. Choose **Download Excel**. The workbook contains a separate worksheet for each subject, with the four fixed headers **班別 / 學號 / 學生姓名 / 學科得分**. The visible subject filter does not limit the workbook to that single subject.
-4. To make a paper activity, open **Questions**, select the grade and subject, then choose **Print worksheet**. This opens the browser's print flow; choose a printer or PDF destination there.
+3. Choose **Download subject Excel** for the selected subject, or **Download all subjects** for all 14 result categories in separate worksheets. Both use the four fixed headers **班別 / 學號 / 學生姓名 / 學科得分**.
+4. Teacher-authored question worksheets can still use the workspace’s print action. For uploaded PDFs, open **Worksheets** under one of the 13 learning subjects. The subject is fixed to your selection; set the title and grade, then upload a Traditional Chinese version, an English version, or both. Each file may be at most **5 MiB**; only authorized PDF content should be uploaded.
 
-The classroom printer is the in-game entrance to these teacher tools; walking to it does not automatically print or export. Downloads and printing require an explicit action. Keep exports within your school's normal handling of student records.
+Students first connect to their class, then use **Print in the top-right HUD** from the relevant floor. There are no physical printer objects in corridors or rooms. Choose a subject on that floor and a language version the teacher has actually supplied. The server restricts access by teacher ownership, student class grade and floor; students cannot select a different grade. Moving to another floor changes the subjects available through Print.
+
+Selecting a PDF loads a preview and does not print. After it loads, **Print PDF** requests the PDF reader/browser’s print flow; the user still confirms printer settings. **Open PDF** and **Download PDF** remain available if the embedded viewer cannot print. No physical print job or native print dialogue has been verified by the automated checks. See the [worksheet guide](docs/WORKSHEETS.md) for upload validation and device limitations. Keep teacher exports within your school’s normal handling of student records.
 
 Progress stars differ from assessment scores. A later correct retry earns its one-time stars but does not change the first-response subject score. The default campus offers 103 stars and an exit at 100; a shorter lesson can finish the core AI discussion and reflection without completing the formal game ending.
 

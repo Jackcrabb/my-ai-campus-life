@@ -1,0 +1,686 @@
+[
+  {
+    "subjectId": "rooftop",
+    "grade": 1,
+    "level": 1,
+    "title": [
+      "探究：觀察與推論",
+      "Enquiry: observation and inference"
+    ],
+    "question": [
+      "學生記錄天台植物：「三片葉變黃，所以一定缺肥。」哪部分是直接觀察？",
+      "A student writes: ‘Three rooftop-plant leaves turned yellow, so the plant must lack fertiliser.’ Which part is a direct observation?"
+    ],
+    "options": [
+      [
+        "有三片葉變黃。",
+        "Three leaves turned yellow.",
+        "顏色和數目可直接記錄；缺肥是仍需證據的原因推論。",
+        "Colour and count can be recorded directly; nutrient deficiency is a causal inference needing evidence."
+      ],
+      [
+        "缺肥必定是唯一原因。",
+        "Lack of fertiliser must be the only cause.",
+        "水分、光照、病害等也可能造成黃葉。",
+        "Water, light, disease and other factors can also cause yellowing."
+      ],
+      [
+        "施肥後植物必定立即康復。",
+        "The plant will certainly recover immediately after fertilising.",
+        "這是未經測試的預測，不是已觀察結果。",
+        "This is an untested prediction, not an observed result."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "先記錄可觀察的現象，再提出可檢驗的解釋。",
+      "Record observable features before proposing testable explanations."
+    ]
+  },
+  {
+    "subjectId": "rooftop",
+    "grade": 1,
+    "level": 2,
+    "title": [
+      "探究：水量收支",
+      "Enquiry: a water balance"
+    ],
+    "question": [
+      "天台水箱早上有 40 L，收集雨水 18 L，澆花用去 25 L；假設沒有其他流入或流出。剩下多少？",
+      "A rooftop tank starts with 40 L, collects 18 L of rainwater and uses 25 L for watering. With no other flows, how much remains?"
+    ],
+    "options": [
+      [
+        "33 L",
+        "33 L",
+        "期末水量=40+18−25=33 L。",
+        "Final storage=40+18−25=33 L."
+      ],
+      [
+        "83 L",
+        "83 L",
+        "用去的水應扣除，不能當成流入相加。",
+        "Water used is an outflow and must be subtracted."
+      ],
+      [
+        "7 L",
+        "7 L",
+        "25−18 把流出減流入，而且漏計原有 40 L；應是 40+18−25。",
+        "25−18 reverses the inflow/outflow balance and omits the initial 40 L; use 40+18−25."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "系統收支要包含初始存量、輸入與輸出。",
+      "A system balance includes initial storage, inputs and outputs."
+    ]
+  },
+  {
+    "subjectId": "rooftop",
+    "grade": 1,
+    "level": 3,
+    "title": [
+      "探究：公平比較生長",
+      "Enquiry: fairly comparing growth"
+    ],
+    "question": [
+      "學生把一盆豆苗放陽光下並每天澆水，另一盆放陰暗處且不澆水，想知道光照影響。哪個設計較好？",
+      "One seedling is placed in sunlight and watered daily; another is kept dark without water. To investigate light, which design is better?"
+    ],
+    "options": [
+      [
+        "使用多盆相近豆苗，水量和土壤相同，只改變光照。",
+        "Use several comparable seedlings with equal water and soil, varying only light.",
+        "控制水分並增加重複，可更合理比較光照的影響。",
+        "Controlling water and including replicates gives a fairer comparison of light."
+      ],
+      [
+        "每組只留一盆，並給陽光組更多肥料。",
+        "Keep one plant per group and add more fertiliser to the sunny group.",
+        "這增加肥料的混雜影響，也沒有重複。",
+        "This adds fertiliser as a confound and provides no replication."
+      ],
+      [
+        "直接比較兩盆最後高度，不記錄起始高度。",
+        "Compare final height only and ignore starting height.",
+        "起點不同可影響最後高度，且原設計水量仍不同。",
+        "Different starting heights can affect final heights, and the water confound remains."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "生長比較需要相近起點、控制條件與重複觀察。",
+      "Growth comparisons need comparable baselines, controlled conditions and repeated observations."
+    ]
+  },
+  {
+    "subjectId": "rooftop",
+    "grade": 2,
+    "level": 1,
+    "title": [
+      "探究：食物網的間接影響",
+      "Enquiry: indirect effects in a food web"
+    ],
+    "question": [
+      "簡化天台食物鏈為植物 → 毛蟲 → 小鳥，箭嘴表示食物能量流向。若毛蟲大量減少，小鳥最直接面對甚麼？",
+      "A simplified rooftop food chain is plants → caterpillars → birds, with arrows showing food-energy flow. If caterpillars decline sharply, what do birds most directly face?"
+    ],
+    "options": [
+      [
+        "這條食物鏈中的食物供應減少。",
+        "Less food supply through this chain.",
+        "毛蟲是此鏈中小鳥的食物，減少會影響能量來源。",
+        "Caterpillars are the birds' food in this chain, so fewer means less energy supply."
+      ],
+      [
+        "植物立刻變成小鳥。",
+        "Plants immediately turn into birds.",
+        "箭嘴表示能量傳遞，不是生物變成另一種生物。",
+        "Arrows represent energy transfer, not organisms transforming into one another."
+      ],
+      [
+        "小鳥必定完全不受影響，因為可以飛。",
+        "Birds must be completely unaffected because they can fly.",
+        "移動能力不代表食物供應不影響生存；其他食物仍須調查。",
+        "Mobility does not remove food dependence; alternative foods would need investigation."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "食物網連結不同生物；簡化模型亦可能省略替代食物。",
+      "Food webs connect organisms; simplified models may omit alternative foods."
+    ]
+  },
+  {
+    "subjectId": "rooftop",
+    "grade": 2,
+    "level": 2,
+    "title": [
+      "探究：面積與雨水收集",
+      "Enquiry: area and rainwater collection"
+    ],
+    "question": [
+      "降雨 10 mm 落在 20 m² 屋頂。假設每 1 mm 落在 1 m² 等於 1 L，收集效率為 80%。可收多少水？",
+      "10 mm of rain falls on a 20 m² roof. Each 1 mm over 1 m² equals 1 L; collection efficiency is 80%. How much water is collected?"
+    ],
+    "options": [
+      [
+        "160 L",
+        "160 L",
+        "理論雨量 10×20=200 L，再乘 0.8 得 160 L。",
+        "Theoretical rain volume is 10×20=200 L; multiplying by 0.8 gives 160 L."
+      ],
+      [
+        "200 L",
+        "200 L",
+        "這是未考慮收集損失的理論總量。",
+        "This is the theoretical total before collection losses."
+      ],
+      [
+        "16 L",
+        "16 L",
+        "10×20×0.8=160，結果少了一個十倍。",
+        "10×20×0.8=160, so this is ten times too small."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "估算資源量要連結深度、面積及系統效率。",
+      "Resource estimates connect depth, area and system efficiency."
+    ]
+  },
+  {
+    "subjectId": "rooftop",
+    "grade": 2,
+    "level": 3,
+    "title": [
+      "探究：用比例比較發芽",
+      "Enquiry: comparing germination rates"
+    ],
+    "question": [
+      "甲種子發芽 18/20，乙種子發芽 32/40。哪個比較正確？",
+      "Seed type A germinates in 18 of 20 cases; B in 32 of 40. Which comparison is correct?"
+    ],
+    "options": [
+      [
+        "甲發芽率 90%，乙 80%；乙發芽總數多，但比例較低。",
+        "A's rate is 90% and B's 80%; B has more germinated seeds but a lower rate.",
+        "樣本數不同，要同時區分總數和比例。",
+        "Different sample sizes require distinguishing counts from rates."
+      ],
+      [
+        "乙較好，因為 32 永遠大於 18。",
+        "B has a higher rate because 32 exceeds 18.",
+        "單看分子忽略了乙用了雙倍種子。",
+        "Looking only at the numerator ignores B's doubled starting count."
+      ],
+      [
+        "兩者差 14 個百分點。",
+        "The rates differ by 14 percentage points.",
+        "14 是發芽數差；比例差為 90%−80%=10 個百分點。",
+        "14 is the count difference; the rate difference is ten percentage points."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "比較效果須使用合適比例，同時保留樣本數及不確定性。",
+      "Compare outcomes with suitable rates while retaining sample size and uncertainty."
+    ]
+  },
+  {
+    "subjectId": "rooftop",
+    "grade": 3,
+    "level": 1,
+    "title": [
+      "探究：物種豐富度與均勻度",
+      "Enquiry: richness and evenness"
+    ],
+    "question": [
+      "兩個花槽各有三種植物。甲的數量為 10、10、10；乙為 28、1、1。哪項正確？",
+      "Two planters each contain three plant species. Counts are 10,10,10 in A and 28,1,1 in B. Which statement is correct?"
+    ],
+    "options": [
+      [
+        "物種豐富度相同，甲的均勻度較高。",
+        "Species richness is equal; A has greater evenness.",
+        "豐富度數種類，均勻度描述個體分佈是否接近。",
+        "Richness counts species; evenness describes how similarly individuals are distributed."
+      ],
+      [
+        "乙有二十八種植物。",
+        "B contains twenty-eight species.",
+        "28 是其中一種的個體數，不是種類數。",
+        "28 is the number of individuals of one species, not species richness."
+      ],
+      [
+        "總數相同，所以所有多樣性特徵都相同。",
+        "Equal totals mean every aspect of diversity is identical.",
+        "相同總數和種類數仍可有不同均勻度。",
+        "Equal totals and richness can still have different evenness."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "描述生物多樣性時，區分種類數、個體總數與分佈。",
+      "Distinguish species count, total individuals and their distribution when describing biodiversity."
+    ]
+  },
+  {
+    "subjectId": "rooftop",
+    "grade": 3,
+    "level": 2,
+    "title": [
+      "探究：堆肥的物質循環",
+      "Enquiry: material cycling in compost"
+    ],
+    "question": [
+      "落葉堆肥後質量減少，學生說物質消失了。哪個解釋較合理？",
+      "A leaf compost pile loses mass. A student says matter has disappeared. Which explanation is more reasonable?"
+    ],
+    "options": [
+      [
+        "分解過程中部分物質以二氧化碳、水等離開量度系統。",
+        "During decomposition, some material leaves the measured system as carbon dioxide, water and other products.",
+        "開放系統的堆肥質量可減少，並不違反物質守恆。",
+        "Mass in an open compost system can decrease without violating conservation of matter."
+      ],
+      [
+        "微生物把所有原子變成沒有質量的能量。",
+        "Microorganisms convert all atoms into massless energy.",
+        "一般生物化學分解不會把全部物質消滅。",
+        "Ordinary biochemical decomposition does not annihilate all matter."
+      ],
+      [
+        "天平一定壞了，因為任何開放系統質量都不會改變。",
+        "The balance must be broken because open-system mass cannot change.",
+        "開放系統可以與環境交換物質。",
+        "An open system can exchange matter with its surroundings."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "解釋環境系統的質量變化時，先界定系統邊界和物質流。",
+      "Define system boundaries and material flows before explaining environmental mass changes."
+    ]
+  },
+  {
+    "subjectId": "rooftop",
+    "grade": 3,
+    "level": 3,
+    "title": [
+      "探究：樣方取樣的偏差",
+      "Enquiry: bias in quadrat sampling"
+    ],
+    "question": [
+      "學生只在開花最多的角落放五個樣方，估計整個天台花朵密度。應如何改良？",
+      "Students place five quadrats only in the most flowery corner to estimate flower density over the whole roof. How should they improve?"
+    ],
+    "options": [
+      [
+        "用預先決定的隨機或系統取樣位置覆蓋整個研究範圍，保留零花樣方。",
+        "Use predetermined random or systematic positions across the study area and retain zero-flower quadrats.",
+        "按結果選位置會高估密度；零值也是研究範圍的資料。",
+        "Selecting sites by the outcome inflates density; zeroes are also valid area data."
+      ],
+      [
+        "只增加該角落的樣方數到五十。",
+        "Increase the same corner's quadrats to fifty.",
+        "樣本多仍可能有位置偏差，不能代替範圍覆蓋。",
+        "A larger sample can remain spatially biased and does not replace coverage."
+      ],
+      [
+        "刪除沒有花的樣方，令平均值更穩定。",
+        "Delete empty quadrats to stabilise the mean.",
+        "刪去真實零值會系統性提高估計密度。",
+        "Removing genuine zeroes systematically inflates estimated density."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "取樣位置要先於結果決定，並保留研究範圍內的真實零值。",
+      "Choose sampling positions independently of results and retain genuine zeroes."
+    ]
+  },
+  {
+    "subjectId": "rooftop",
+    "grade": 4,
+    "level": 1,
+    "title": [
+      "延伸：太陽能轉換效率",
+      "Extension: solar conversion efficiency"
+    ],
+    "question": [
+      "一小時內太陽能板接收 2.0 kWh 輻射能，輸出 0.40 kWh 電能。轉換效率是多少？",
+      "In one hour, a solar panel receives 2.0 kWh of radiant energy and supplies 0.40 kWh of electrical energy. What is its conversion efficiency?"
+    ],
+    "options": [
+      [
+        "20%",
+        "20%",
+        "效率=有用輸出÷輸入=0.40÷2.0=20%。",
+        "Efficiency=useful output/input=0.40/2.0=20%."
+      ],
+      [
+        "80%",
+        "80%",
+        "80% 是沒有轉成這部分電能的比例，不是所求輸出效率。",
+        "80% is the fraction not converted into the stated electrical output."
+      ],
+      [
+        "500%",
+        "500%",
+        "這把輸入除以輸出，倒轉了效率定義。",
+        "This divides input by output, reversing the definition."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "效率要明確界定輸入、有用輸出及相同量綱。",
+      "Define input and useful output in matching quantities when calculating efficiency."
+    ]
+  },
+  {
+    "subjectId": "rooftop",
+    "grade": 4,
+    "level": 2,
+    "title": [
+      "延伸：量度不確定度",
+      "Extension: measurement uncertainty"
+    ],
+    "question": [
+      "兩感應器顯示 28.4°C 和 28.7°C，兩者標示誤差均可達 ±0.5°C。最合理的初步結論？",
+      "Two sensors read 28.4°C and 28.7°C, each with stated error up to ±0.5°C. What is the most reasonable initial conclusion?"
+    ],
+    "options": [
+      [
+        "0.3°C 差異小於量度誤差尺度，需校準和重複纔可判斷實際差別。",
+        "The 0.3°C difference is small relative to measurement error; calibrate and repeat before inferring a real difference.",
+        "可能值範圍重疊，單次讀數不支持精確的實際差異。",
+        "The possible ranges overlap, so single readings do not establish a precise real difference."
+      ],
+      [
+        "第二處肯定比第一處恰好熱 0.3°C。",
+        "The second location is certainly exactly 0.3°C warmer.",
+        "這忽略了感應器誤差及重複量度需要。",
+        "This ignores instrument error and the need for repeated measurement."
+      ],
+      [
+        "誤差存在，所有溫度資料都完全無用。",
+        "Any measurement error makes all temperature data useless.",
+        "量度可在適當精確度和不確定性說明下使用。",
+        "Measurements remain useful when reported with appropriate precision and uncertainty."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "差異大小應與儀器不確定度比較，不把顯示的小數當成保證。",
+      "Compare differences with instrument uncertainty; displayed decimals are not guarantees."
+    ]
+  },
+  {
+    "subjectId": "rooftop",
+    "grade": 4,
+    "level": 3,
+    "title": [
+      "延伸：控制與重複",
+      "Extension: controls and replication"
+    ],
+    "question": [
+      "比較兩種屋頂塗層的降溫效果，甲塗層只有一塊向北板，乙塗層只有一塊向南板。最佳下一步是甚麼？",
+      "To compare cooling coatings, A is tested on one north-facing panel and B on one south-facing panel. What is the best next step?"
+    ],
+    "options": [
+      [
+        "把多塊相同板隨機分配兩塗層，控制朝向並同步量度。",
+        "Randomly assign multiple identical panels to each coating, control orientation and measure simultaneously.",
+        "朝向與單一樣本會影響比較；隨機分配、控制及重複改善設計。",
+        "Orientation and single samples weaken comparison; randomisation, control and replication improve it."
+      ],
+      [
+        "每分鐘量同一兩塊板，便完全消除朝向差異。",
+        "Measure the same two panels every minute to eliminate orientation differences.",
+        "重複時間讀數不能消除塗層與朝向綁定的混雜。",
+        "Repeated time readings do not remove the confounding of coating with orientation."
+      ],
+      [
+        "只比較最高溫的一次，因為它最明顯。",
+        "Compare only the hottest observation because it is most striking.",
+        "挑選極端結果會增加偏差，也未修正設計。",
+        "Selecting an extreme result adds bias without repairing the design."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "重複讀數不等於獨立實驗重複；設計要分離處理與環境因素。",
+      "Repeated readings are not the same as independent replication; separate treatment from environmental factors."
+    ]
+  },
+  {
+    "subjectId": "rooftop",
+    "grade": 5,
+    "level": 1,
+    "title": [
+      "延伸：生命週期的排放範圍",
+      "Extension: life-cycle emission boundaries"
+    ],
+    "question": [
+      "兩款花盆使用時都不耗電。要比較生命週期碳排放，還需考慮甚麼？",
+      "Neither of two planter designs uses electricity during use. What else is needed to compare life-cycle carbon emissions?"
+    ],
+    "options": [
+      [
+        "材料生產、運輸、使用年期、重用及棄置，並採相同功能單位。",
+        "Material production, transport, service life, reuse and disposal, using the same functional unit.",
+        "只看使用時耗電會漏掉其他階段；相同功能纔有可比性。",
+        "Use-phase electricity alone misses other stages; a common function enables comparison."
+      ],
+      [
+        "只比較每個花盆的製造排放，不管容量和可用年期。",
+        "Compare manufacturing emissions per planter, ignoring capacity and service life.",
+        "不同容量或壽命不能只按一個花盆直接比較，需相同功能單位及邊界。",
+        "Different capacities or lifetimes require a common functional unit and boundary, not only a per-planter figure."
+      ],
+      [
+        "只比較送到學校後的排放，忽略生產和運輸。",
+        "Compare emissions only after arrival at school, omitting production and transport.",
+        "這縮窄系統邊界，不能回答全生命週期的問題。",
+        "This narrower boundary cannot answer the full life-cycle question."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "環境比較要交代系統邊界和功能單位，避免把單一階段代表全程。",
+      "State system boundaries and functional units rather than treating one stage as the entire life cycle."
+    ]
+  },
+  {
+    "subjectId": "rooftop",
+    "grade": 5,
+    "level": 2,
+    "title": [
+      "延伸：能源回收期",
+      "Extension: energy payback time"
+    ],
+    "question": [
+      "裝置製造需 1,200 kWh 能量，每年淨節省 300 kWh；假設節省穩定且沒有其他投入。能源回收期是多少？",
+      "A device requires 1,200 kWh to manufacture and saves a net 300 kWh annually. Assuming constant savings and no other inputs, what is its energy payback time?"
+    ],
+    "options": [
+      [
+        "4 年。",
+        "4 years.",
+        "1,200 kWh ÷ 300 kWh/年 = 4 年；這不是金錢回本期。",
+        "1,200 kWh divided by 300 kWh/year gives 4 years; this is not financial payback."
+      ],
+      [
+        "0.25 年。",
+        "0.25 years.",
+        "這把年節省除以投入，倒轉了所需時間的計算。",
+        "This reverses the investment-to-annual-saving ratio."
+      ],
+      [
+        "900 年。",
+        "900 years.",
+        "1,200−300 是首年尚未回收的能量，不是年數。",
+        "1,200−300 is unrecovered energy after year one, not a time in years."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "回收期計算需保持單位一致，並辨明能源、碳或金錢的不同指標。",
+      "Keep units consistent and distinguish energy, carbon and financial payback measures."
+    ]
+  },
+  {
+    "subjectId": "rooftop",
+    "grade": 5,
+    "level": 3,
+    "title": [
+      "延伸：非隨機資料缺失",
+      "Extension: non-random missing observations"
+    ],
+    "question": [
+      "濕度感應器只在大雨時斷線。分析者刪去缺失日後聲稱「天台全年都乾燥」。主要問題是甚麼？",
+      "A humidity sensor disconnects only during heavy rain. An analyst removes missing days and claims the roof is dry throughout the year. What is the main problem?"
+    ],
+    "options": [
+      [
+        "缺失與潮濕情況有關，保留資料可能低估全年濕度。",
+        "Missingness is related to wet conditions, so retained data may underestimate year-round humidity.",
+        "資料缺失並非隨機，刪除後不能代表原來全年時段。",
+        "The missingness is not random; deletion does not preserve full-year representation."
+      ],
+      [
+        "只要保留數據超過十筆，缺失模式便不重要。",
+        "Once more than ten records remain, the missingness pattern no longer matters.",
+        "固定筆數不能消除系統性漏掉濕潤時段的偏差。",
+        "A fixed record count cannot remove bias from systematically missing wet periods."
+      ],
+      [
+        "應把所有缺失日都填成 0% 濕度。",
+        "Set all missing days to 0% humidity.",
+        "這既無證據，也會把斷線錯當成極乾燥量度。",
+        "This is unsupported and mistakes disconnection for an extremely dry measurement."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "資料缺失的原因可能影響結論方向，需調查而非機械刪除。",
+      "The cause of missing data can affect the direction of a conclusion and needs investigation."
+    ]
+  },
+  {
+    "subjectId": "rooftop",
+    "grade": 6,
+    "level": 1,
+    "title": [
+      "延伸：環境權衡的系統邊界",
+      "Extension: system boundaries in environmental trade-offs"
+    ],
+    "question": [
+      "更換天台種植系統節水 30%，卻增加抽水用電。哪項評估最恰當？",
+      "A replacement rooftop growing system saves 30% of water but increases pumping electricity. Which assessment is most appropriate?"
+    ],
+    "options": [
+      [
+        "同時比較節水、能源來源、產量、材料和使用年期，不能只憑單一百分比判定整體更好。",
+        "Compare water savings, energy source, output, materials and service life rather than judging overall benefit from one percentage.",
+        "改善一項指標可能把負擔轉移到另一項，需要一致邊界的綜合比較。",
+        "Improving one indicator can shift burdens elsewhere, requiring a comparison within consistent boundaries."
+      ],
+      [
+        "節水 30% 必然等於總環境負荷降低 30%。",
+        "A 30% water saving must mean a 30% reduction in total environmental burden.",
+        "水量不是所有環境影響的同一尺度。",
+        "Water volume is not a common measure of every environmental impact."
+      ],
+      [
+        "用電增加便證明所有節水都沒有價值。",
+        "Any electricity increase proves all water savings have no value.",
+        "這忽略水資源情況、能源來源及其他實際效益。",
+        "This ignores water scarcity, energy source and other practical benefits."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "環境決策要辨認負擔轉移，並明確選用的評估準則。",
+      "Environmental decisions should identify burden shifting and make evaluation criteria explicit."
+    ]
+  },
+  {
+    "subjectId": "rooftop",
+    "grade": 6,
+    "level": 2,
+    "title": [
+      "延伸：權重改變與敏感度",
+      "Extension: changing weights and sensitivity"
+    ],
+    "question": [
+      "兩方案按 0–10 評分：A 節水 9、生態 4；B 節水 6、生態 8。兩項同權重時，哪個平均較高？若把節水權重改成 80%，結果怎樣？",
+      "Scores out of 10: A has water-saving 9 and ecology 4; B has 6 and 8. Which has the higher equal-weight mean, and what happens with an 80% water-saving weight?"
+    ],
+    "options": [
+      [
+        "同權重 B 較高；80% 節水時 A 較高。",
+        "B ranks higher with equal weights; A ranks higher with 80% on water saving.",
+        "同權重 A=6.5、B=7；新權重 A=8、B=6.4，排名會改變。",
+        "Equal weights give A=6.5, B=7; changed weights give A=8, B=6.4, reversing the ranking."
+      ],
+      [
+        "A 在兩種權重都較高。",
+        "A ranks higher under both weightings.",
+        "同權重 B 的平均為 7，高於 A 的 6.5。",
+        "With equal weights B averages 7, above A's 6.5."
+      ],
+      [
+        "改權重不會改排名，因為原始分數固定。",
+        "Weights cannot change rankings when raw scores stay fixed.",
+        "加權結果同時取決於分數和準則權重。",
+        "Weighted results depend on both scores and criterion weights."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "多準則評估需公開權重並做敏感度分析，不能把排名當成唯一客觀真相。",
+      "Multi-criteria evaluations should disclose weights and test sensitivity rather than treating a ranking as uniquely objective."
+    ]
+  },
+  {
+    "subjectId": "rooftop",
+    "grade": 6,
+    "level": 3,
+    "title": [
+      "延伸：前後比較與反事實",
+      "Extension: before–after comparison and a counterfactual"
+    ],
+    "question": [
+      "裝綠化屋頂後，甲樓夏季用電跌 12%；同年未改裝的相似乙樓跌 10%，兩樓天氣及使用情況相近。哪項初步解讀最謹慎？",
+      "After installing a green roof, A's summer electricity use falls 12%; a similar unchanged building B falls 10% in the same year under comparable weather and use. Which initial interpretation is most cautious?"
+    ],
+    "options": [
+      [
+        "共同因素可能解釋大部分跌幅；額外約 2 個百分點可作初步線索，仍需檢查比較假設。",
+        "Common factors may explain much of the decline; an extra two percentage points is a preliminary signal, subject to comparison assumptions.",
+        "比較組有助估計沒有改裝時可能的變化，但仍不能保證兩樓完全可比。",
+        "A comparison group informs the possible no-intervention change, but complete comparability is not guaranteed."
+      ],
+      [
+        "12% 必定全部由綠化屋頂造成。",
+        "The roof must have caused the entire 12% reduction.",
+        "乙樓沒有改裝也下降，顯示可能有共同時間因素。",
+        "B also declines without the intervention, suggesting shared time-related factors."
+      ],
+      [
+        "12−10=2，所以已精確證明每座樓永遠節電 2%。",
+        "12−10=2 proves every building will always save exactly 2%.",
+        "這只是有假設的初步差異，不能泛化到所有建築或永久效果。",
+        "This is an assumption-dependent initial difference, not a universal or permanent effect."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "評估介入效果要考慮沒有介入時的合理比較，並交代假設及外推限制。",
+      "Evaluate interventions against a plausible no-intervention comparison and state assumptions and generalisation limits."
+    ]
+  }
+]

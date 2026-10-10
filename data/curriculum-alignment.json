@@ -1,0 +1,4176 @@
+{
+  "version": "hk-curriculum-2026-10-v2",
+  "verifiedOn": "2026-10-10",
+  "outcomes": [
+    {
+      "subjectId": "chinese",
+      "grade": 1,
+      "placement": "editorial sequence within key-stage references; teacher review required",
+      "sources": [
+        "https://www.edb.gov.hk/tc/curriculum-development/kla/chi-edu/curriculum-documents.html",
+        "https://www.edb.gov.hk/attachment/tc/curriculum-development/kla/chi-edu/curriculum-documents/Junior_Sec_Chi_Lang_Curr_Guide_2023.pdf",
+        "https://www.edb.gov.hk/attachment/tc/curriculum-development/kla/chi-edu/CHI_LANG_CAGuide_2021.pdf"
+      ],
+      "items": [
+        {
+          "questionId": "s1-chinese-01",
+          "level": "foundation",
+          "focus": {
+            "zh": "從動作推知心情",
+            "cn": "从动作推知心情",
+            "en": "Inferring emotion from actions"
+          },
+          "learningOutcome": {
+            "zh": "推論須有具體字句支持，也要保留未能確定的部分。",
+            "cn": "推论须有具体字句支持，也要保留未能确定的部分。",
+            "en": "Ground an inference in textual details and retain uncertainty."
+          }
+        },
+        {
+          "questionId": "s1-chinese-02",
+          "level": "application",
+          "focus": {
+            "zh": "指代與段落銜接",
+            "cn": "指代与段落衔接",
+            "en": "Reference and cohesion"
+          },
+          "learningOutcome": {
+            "zh": "辨認指代時，兼看語意、數量和上下文。",
+            "cn": "辨认指代时，兼看语意、数量和上下文。",
+            "en": "Resolve reference using meaning, number and context."
+          }
+        },
+        {
+          "questionId": "s1-chinese-03",
+          "level": "challenge",
+          "focus": {
+            "zh": "抓住事件主線",
+            "cn": "抓住事件主线",
+            "en": "Selecting a narrative summary"
+          },
+          "learningOutcome": {
+            "zh": "摘要保留主線與轉變，不逐項抄細節。",
+            "cn": "摘要保留主线与转变，不逐项抄细节。",
+            "en": "A summary preserves the main sequence and change rather than listing details."
+          }
+        }
+      ]
+    },
+    {
+      "subjectId": "chinese",
+      "grade": 2,
+      "placement": "editorial sequence within key-stage references; teacher review required",
+      "sources": [
+        "https://www.edb.gov.hk/tc/curriculum-development/kla/chi-edu/curriculum-documents.html",
+        "https://www.edb.gov.hk/attachment/tc/curriculum-development/kla/chi-edu/curriculum-documents/Junior_Sec_Chi_Lang_Curr_Guide_2023.pdf",
+        "https://www.edb.gov.hk/attachment/tc/curriculum-development/kla/chi-edu/CHI_LANG_CAGuide_2021.pdf"
+      ],
+      "items": [
+        {
+          "questionId": "s2-chinese-01",
+          "level": "foundation",
+          "focus": {
+            "zh": "比喻的表達作用",
+            "cn": "比喻的表达作用",
+            "en": "Explaining a metaphor"
+          },
+          "learningOutcome": {
+            "zh": "說明修辭作用，要把形象與具體語境連起來。",
+            "cn": "说明修辞作用，要把形象与具体语境连起来。",
+            "en": "Explain how a figurative image works in its specific context."
+          }
+        },
+        {
+          "questionId": "s2-chinese-02",
+          "level": "application",
+          "focus": {
+            "zh": "實用文的對象",
+            "cn": "实用文的对象",
+            "en": "Writing for an audience"
+          },
+          "learningOutcome": {
+            "zh": "實用文須配合對象、目的及可核實的理由。",
+            "cn": "实用文须配合对象、目的及可核实的理由。",
+            "en": "Practical writing should fit its audience, purpose and substantiated reasons."
+          }
+        },
+        {
+          "questionId": "s2-chinese-03",
+          "level": "challenge",
+          "focus": {
+            "zh": "文言詞義與語境",
+            "cn": "文言词义与语境",
+            "en": "Interpreting a classical-style word"
+          },
+          "learningOutcome": {
+            "zh": "文言一詞多義，應以句法和前文判斷。",
+            "cn": "文言一词多义，应以句法和前文判断。",
+            "en": "Use syntax and preceding context to distinguish meanings of a classical word."
+          }
+        }
+      ]
+    },
+    {
+      "subjectId": "chinese",
+      "grade": 3,
+      "placement": "editorial sequence within key-stage references; teacher review required",
+      "sources": [
+        "https://www.edb.gov.hk/tc/curriculum-development/kla/chi-edu/curriculum-documents.html",
+        "https://www.edb.gov.hk/attachment/tc/curriculum-development/kla/chi-edu/curriculum-documents/Junior_Sec_Chi_Lang_Curr_Guide_2023.pdf",
+        "https://www.edb.gov.hk/attachment/tc/curriculum-development/kla/chi-edu/CHI_LANG_CAGuide_2021.pdf"
+      ],
+      "items": [
+        {
+          "questionId": "s3-chinese-01",
+          "level": "foundation",
+          "focus": {
+            "zh": "論點與論據",
+            "cn": "论点与论据",
+            "en": "Matching evidence to a claim"
+          },
+          "learningOutcome": {
+            "zh": "支持論點的證據應直接量度相關結果，並交代可比條件。",
+            "cn": "支持论点的证据应直接量度相关结果，并交代可比条件。",
+            "en": "Evidence should directly measure the relevant outcome and state comparable conditions."
+          }
+        },
+        {
+          "questionId": "s3-chinese-02",
+          "level": "application",
+          "focus": {
+            "zh": "回應反方理由",
+            "cn": "回应反方理由",
+            "en": "Responding to an objection"
+          },
+          "learningOutcome": {
+            "zh": "回應異議應處理其核心理由，不把對方簡化成標籤。",
+            "cn": "回应异议应处理其核心理由，不把对方简化成标签。",
+            "en": "Answer the substance of an objection instead of labelling its speaker."
+          }
+        },
+        {
+          "questionId": "s3-chinese-03",
+          "level": "challenge",
+          "focus": {
+            "zh": "因果推論的限度",
+            "cn": "因果推论的限度",
+            "en": "Limits of causal language"
+          },
+          "learningOutcome": {
+            "zh": "語氣強度應配合證據，時間先後不足以證明單一因果。",
+            "cn": "语气强度应配合证据，时间先后不足以证明单一因果。",
+            "en": "Match claim strength to evidence; sequence alone does not prove sole causation."
+          }
+        }
+      ]
+    },
+    {
+      "subjectId": "chinese",
+      "grade": 4,
+      "placement": "editorial sequence within key-stage references; teacher review required",
+      "sources": [
+        "https://www.edb.gov.hk/tc/curriculum-development/kla/chi-edu/curriculum-documents.html",
+        "https://www.edb.gov.hk/attachment/tc/curriculum-development/kla/chi-edu/curriculum-documents/Junior_Sec_Chi_Lang_Curr_Guide_2023.pdf",
+        "https://www.edb.gov.hk/attachment/tc/curriculum-development/kla/chi-edu/CHI_LANG_CAGuide_2021.pdf"
+      ],
+      "items": [
+        {
+          "questionId": "s4-chinese-01",
+          "level": "foundation",
+          "focus": {
+            "zh": "意象與情感轉折",
+            "cn": "意象与情感转折",
+            "en": "Imagery and emotional change"
+          },
+          "learningOutcome": {
+            "zh": "分析意象時留意其在篇章中的變化，而非只列修辭名稱。",
+            "cn": "分析意象时留意其在篇章中的变化，而非只列修辞名称。",
+            "en": "Analyse how an image changes across a passage, not only its rhetorical label."
+          }
+        },
+        {
+          "questionId": "s4-chinese-02",
+          "level": "application",
+          "focus": {
+            "zh": "虛詞與論述關係",
+            "cn": "虚词与论述关系",
+            "en": "Connectives in classical-style prose"
+          },
+          "learningOutcome": {
+            "zh": "虛詞的功能要放回論述和事件順序中理解。",
+            "cn": "虚词的功能要放回论述和事件顺序中理解。",
+            "en": "Interpret a connective through the argument and sequence of events."
+          }
+        },
+        {
+          "questionId": "s4-chinese-03",
+          "level": "challenge",
+          "focus": {
+            "zh": "整合資料提出建議",
+            "cn": "整合资料提出建议",
+            "en": "Integrating information into a proposal"
+          },
+          "learningOutcome": {
+            "zh": "綜合寫作要轉化資料為有條件、可實行的論述。",
+            "cn": "综合写作要转化资料为有条件、可实行的论述。",
+            "en": "Integrated writing turns evidence into a qualified, feasible argument."
+          }
+        }
+      ]
+    },
+    {
+      "subjectId": "chinese",
+      "grade": 5,
+      "placement": "editorial sequence within key-stage references; teacher review required",
+      "sources": [
+        "https://www.edb.gov.hk/tc/curriculum-development/kla/chi-edu/curriculum-documents.html",
+        "https://www.edb.gov.hk/attachment/tc/curriculum-development/kla/chi-edu/curriculum-documents/Junior_Sec_Chi_Lang_Curr_Guide_2023.pdf",
+        "https://www.edb.gov.hk/attachment/tc/curriculum-development/kla/chi-edu/CHI_LANG_CAGuide_2021.pdf"
+      ],
+      "items": [
+        {
+          "questionId": "s5-chinese-01",
+          "level": "foundation",
+          "focus": {
+            "zh": "反語與敘述態度",
+            "cn": "反语与叙述态度",
+            "en": "Irony and stance"
+          },
+          "learningOutcome": {
+            "zh": "判斷反語須結合字面意思與上下文的矛盾。",
+            "cn": "判断反语须结合字面意思与上下文的矛盾。",
+            "en": "Identify irony through the tension between literal wording and context."
+          }
+        },
+        {
+          "questionId": "s5-chinese-02",
+          "level": "application",
+          "focus": {
+            "zh": "限制語與論證精確度",
+            "cn": "限制语与论证精确度",
+            "en": "Qualifying a claim precisely"
+          },
+          "learningOutcome": {
+            "zh": "寫作中的限制語應交代樣本及結論的適用範圍。",
+            "cn": "写作中的限制语应交代样本及结论的适用范围。",
+            "en": "Qualifiers should identify the sample and the scope of a conclusion."
+          }
+        },
+        {
+          "questionId": "s5-chinese-03",
+          "level": "challenge",
+          "focus": {
+            "zh": "表面矛盾與資料口徑",
+            "cn": "表面矛盾与资料口径",
+            "en": "Reconciling apparent disagreement"
+          },
+          "learningOutcome": {
+            "zh": "綜合相異資料前，先核對定義、範圍及分母。",
+            "cn": "综合相异资料前，先核对定义、范围及分母。",
+            "en": "Before synthesising conflicting sources, compare definitions, scope and denominators."
+          }
+        }
+      ]
+    },
+    {
+      "subjectId": "chinese",
+      "grade": 6,
+      "placement": "editorial sequence within key-stage references; teacher review required",
+      "sources": [
+        "https://www.edb.gov.hk/tc/curriculum-development/kla/chi-edu/curriculum-documents.html",
+        "https://www.edb.gov.hk/attachment/tc/curriculum-development/kla/chi-edu/curriculum-documents/Junior_Sec_Chi_Lang_Curr_Guide_2023.pdf",
+        "https://www.edb.gov.hk/attachment/tc/curriculum-development/kla/chi-edu/CHI_LANG_CAGuide_2021.pdf"
+      ],
+      "items": [
+        {
+          "questionId": "s6-chinese-01",
+          "level": "foundation",
+          "focus": {
+            "zh": "辨識稻草人論證",
+            "cn": "辨识稻草人论证",
+            "en": "Recognising a distorted rebuttal"
+          },
+          "learningOutcome": {
+            "zh": "有效反駁須準確重述對方論點及限制條件。",
+            "cn": "有效反驳须准确重述对方论点及限制条件。",
+            "en": "A valid rebuttal represents the opposing claim and its limits accurately."
+          }
+        },
+        {
+          "questionId": "s6-chinese-02",
+          "level": "application",
+          "focus": {
+            "zh": "敘述視角的可靠程度",
+            "cn": "叙述视角的可靠程度",
+            "en": "Evaluating narrative reliability"
+          },
+          "learningOutcome": {
+            "zh": "分析敘述可靠性，要區分事件、知覺與推測。",
+            "cn": "分析叙述可靠性，要区分事件、知觉与推测。",
+            "en": "Distinguish events, perceptions and inferences when assessing narrative reliability."
+          }
+        },
+        {
+          "questionId": "s6-chinese-03",
+          "level": "challenge",
+          "focus": {
+            "zh": "結論的綜合與保留",
+            "cn": "结论的综合与保留",
+            "en": "A qualified synthesis"
+          },
+          "learningOutcome": {
+            "zh": "成熟結論可同時保留效益與限制，並提出可檢查的條件。",
+            "cn": "成熟结论可同时保留效益与限制，并提出可检查的条件。",
+            "en": "A mature conclusion can retain benefits and limitations while specifying testable conditions."
+          }
+        }
+      ]
+    },
+    {
+      "subjectId": "english",
+      "grade": 1,
+      "placement": "editorial sequence within key-stage references; teacher review required",
+      "sources": [
+        "https://www.edb.gov.hk/en/curriculum-development/kla/eng-edu/curriculum-documents.html",
+        "https://www.edb.gov.hk/attachment/en/curriculum-development/kla/eng-edu/Curriculum%20Document/ELE%20JS%20Supplement%202018.pdf",
+        "https://www.edb.gov.hk/attachment/en/curriculum-development/kla/eng-edu/Enhancing%20Vocab%20Secondary/e-version/Appendix3.html"
+      ],
+      "items": [
+        {
+          "questionId": "s1-english-01",
+          "level": "foundation",
+          "focus": {
+            "zh": "通告中的條件",
+            "cn": "通告中的条件",
+            "en": "Conditions in a notice"
+          },
+          "learningOutcome": {
+            "zh": "閱讀通告時同時找出許可、限制和所需條件。",
+            "cn": "阅读通告时同时找出许可、限制和所需条件。",
+            "en": "Read permissions, restrictions and required conditions together."
+          }
+        },
+        {
+          "questionId": "s1-english-02",
+          "level": "application",
+          "focus": {
+            "zh": "清楚的問路請求",
+            "cn": "清楚的问路请求",
+            "en": "A clear request for directions"
+          },
+          "learningOutcome": {
+            "zh": "請求要符合對象和目的；禮貌詞並不能代替清楚句意。",
+            "cn": "请求要符合对象和目的；礼貌词并不能代替清楚句意。",
+            "en": "Match a request to its audience and purpose; politeness also needs clarity."
+          }
+        },
+        {
+          "questionId": "s1-english-03",
+          "level": "challenge",
+          "focus": {
+            "zh": "從行動推斷感受",
+            "cn": "从行动推断感受",
+            "en": "Inferring feelings from actions"
+          },
+          "learningOutcome": {
+            "zh": "推論必須連結文本細節，並保留未能確定的部分。",
+            "cn": "推论必须连结文本细节，并保留未能确定的部分。",
+            "en": "Link an inference to textual details and leave uncertain outcomes open."
+          }
+        }
+      ]
+    },
+    {
+      "subjectId": "english",
+      "grade": 2,
+      "placement": "editorial sequence within key-stage references; teacher review required",
+      "sources": [
+        "https://www.edb.gov.hk/en/curriculum-development/kla/eng-edu/curriculum-documents.html",
+        "https://www.edb.gov.hk/attachment/en/curriculum-development/kla/eng-edu/Curriculum%20Document/ELE%20JS%20Supplement%202018.pdf",
+        "https://www.edb.gov.hk/attachment/en/curriculum-development/kla/eng-edu/Enhancing%20Vocab%20Secondary/e-version/Appendix3.html"
+      ],
+      "items": [
+        {
+          "questionId": "s2-english-01",
+          "level": "foundation",
+          "focus": {
+            "zh": "先後發生的事件",
+            "cn": "先后发生的事件",
+            "en": "Ordering past events"
+          },
+          "learningOutcome": {
+            "zh": "選擇時態前，先確定事件的參照時間和先後。",
+            "cn": "选择时态前，先确定事件的参照时间和先后。",
+            "en": "Identify the reference time and event order before choosing a tense."
+          }
+        },
+        {
+          "questionId": "s2-english-02",
+          "level": "application",
+          "focus": {
+            "zh": "連接相反觀點",
+            "cn": "连接相反观点",
+            "en": "Linking contrasting ideas"
+          },
+          "learningOutcome": {
+            "zh": "連接詞應表達材料真正支持的關係，而非額外製造因果。",
+            "cn": "连接词应表达材料真正支持的关系，而非额外制造因果。",
+            "en": "Use a connective that matches the supported relationship, without inventing causation."
+          }
+        },
+        {
+          "questionId": "s2-english-03",
+          "level": "challenge",
+          "focus": {
+            "zh": "代詞與論點連貫",
+            "cn": "代词与论点连贯",
+            "en": "Reference and coherence"
+          },
+          "learningOutcome": {
+            "zh": "利用上下文與單複數線索辨認指涉，避免只按單字常見意思理解。",
+            "cn": "利用上下文与单复数线索辨认指涉，避免只按单字常见意思理解。",
+            "en": "Use context and number agreement to resolve reference, rather than one familiar word meaning."
+          }
+        }
+      ]
+    },
+    {
+      "subjectId": "english",
+      "grade": 3,
+      "placement": "editorial sequence within key-stage references; teacher review required",
+      "sources": [
+        "https://www.edb.gov.hk/en/curriculum-development/kla/eng-edu/curriculum-documents.html",
+        "https://www.edb.gov.hk/attachment/en/curriculum-development/kla/eng-edu/Curriculum%20Document/ELE%20JS%20Supplement%202018.pdf",
+        "https://www.edb.gov.hk/attachment/en/curriculum-development/kla/eng-edu/Enhancing%20Vocab%20Secondary/e-version/Appendix3.html"
+      ],
+      "items": [
+        {
+          "questionId": "s3-english-01",
+          "level": "foundation",
+          "focus": {
+            "zh": "報告中的被動語態",
+            "cn": "报告中的被动语态",
+            "en": "Passive voice in a report"
+          },
+          "learningOutcome": {
+            "zh": "語態要配合誰做動作、誰接受動作，以及報告焦點。",
+            "cn": "语态要配合谁做动作、谁接受动作，以及报告焦点。",
+            "en": "Choose voice by the action roles and the report's focus."
+          }
+        },
+        {
+          "questionId": "s3-english-02",
+          "level": "application",
+          "focus": {
+            "zh": "撮要保留限制條件",
+            "cn": "撮要保留限制条件",
+            "en": "Summarising with conditions"
+          },
+          "learningOutcome": {
+            "zh": "撮要要壓縮字數，不能把樣本數、參與數和結論混為一談。",
+            "cn": "撮要要压缩字数，不能把样本数、参与数和结论混为一谈。",
+            "en": "A summary reduces length without merging sample size, participation and conclusions."
+          }
+        },
+        {
+          "questionId": "s3-english-03",
+          "level": "challenge",
+          "focus": {
+            "zh": "按讀者需要修訂",
+            "cn": "按读者需要修订",
+            "en": "Revising for an audience"
+          },
+          "learningOutcome": {
+            "zh": "簡明英語應減少閱讀負擔，同時保留原有條件。",
+            "cn": "简明英语应减少阅读负担，同时保留原有条件。",
+            "en": "Plain English reduces reading effort while preserving conditions."
+          }
+        }
+      ]
+    },
+    {
+      "subjectId": "english",
+      "grade": 4,
+      "placement": "editorial sequence within key-stage references; teacher review required",
+      "sources": [
+        "https://www.edb.gov.hk/en/curriculum-development/kla/eng-edu/curriculum-documents.html",
+        "https://www.edb.gov.hk/attachment/en/curriculum-development/kla/eng-edu/Curriculum%20Document/ELE%20JS%20Supplement%202018.pdf",
+        "https://www.edb.gov.hk/attachment/en/curriculum-development/kla/eng-edu/Enhancing%20Vocab%20Secondary/e-version/Appendix3.html"
+      ],
+      "items": [
+        {
+          "questionId": "s4-english-01",
+          "level": "foundation",
+          "focus": {
+            "zh": "假設與現實",
+            "cn": "假设与现实",
+            "en": "Hypothetical situations"
+          },
+          "learningOutcome": {
+            "zh": "條件句的形式反映時間與現實程度，不只是固定詞語配對。",
+            "cn": "条件句的形式反映时间与现实程度，不只是固定词语配对。",
+            "en": "Conditional forms reflect time and reality, not just memorised word pairs."
+          }
+        },
+        {
+          "questionId": "s4-english-02",
+          "level": "application",
+          "focus": {
+            "zh": "比較兩項建議",
+            "cn": "比较两项建议",
+            "en": "Comparing proposals"
+          },
+          "learningOutcome": {
+            "zh": "比較段落應使用相同準則，避免把數據改寫成未有證據的民意。",
+            "cn": "比较段落应使用相同准则，避免把数据改写成未有证据的民意。",
+            "en": "Compare options using common criteria without inventing public opinion."
+          }
+        },
+        {
+          "questionId": "s4-english-03",
+          "level": "challenge",
+          "focus": {
+            "zh": "辨認語氣與含意",
+            "cn": "辨认语气与含意",
+            "en": "Tone and implied criticism"
+          },
+          "learningOutcome": {
+            "zh": "語氣可由字面意思與情境的反差表達；推論仍須限制範圍。",
+            "cn": "语气可由字面意思与情境的反差表达；推论仍须限制范围。",
+            "en": "Tone can arise from a contrast between literal words and context; keep the inference proportionate."
+          }
+        }
+      ]
+    },
+    {
+      "subjectId": "english",
+      "grade": 5,
+      "placement": "editorial sequence within key-stage references; teacher review required",
+      "sources": [
+        "https://www.edb.gov.hk/en/curriculum-development/kla/eng-edu/curriculum-documents.html",
+        "https://www.edb.gov.hk/attachment/en/curriculum-development/kla/eng-edu/Curriculum%20Document/ELE%20JS%20Supplement%202018.pdf",
+        "https://www.edb.gov.hk/attachment/en/curriculum-development/kla/eng-edu/Enhancing%20Vocab%20Secondary/e-version/Appendix3.html"
+      ],
+      "items": [
+        {
+          "questionId": "s5-english-01",
+          "level": "foundation",
+          "focus": {
+            "zh": "限定證據能支持的說法",
+            "cn": "限定证据能支持的说法",
+            "en": "Calibrating a claim"
+          },
+          "learningOutcome": {
+            "zh": "用詞強度、母體範圍和研究量度必須一致。",
+            "cn": "用词强度、母体范围和研究量度必须一致。",
+            "en": "Match the strength and population scope of a claim to what was measured."
+          }
+        },
+        {
+          "questionId": "s5-english-02",
+          "level": "application",
+          "focus": {
+            "zh": "有效回應反對意見",
+            "cn": "有效回应反对意见",
+            "en": "Responding to a counterargument"
+          },
+          "learningOutcome": {
+            "zh": "有力的反駁要回應對方最相關的理由，並提供可行證據或調整。",
+            "cn": "有力的反驳要回应对方最相关的理由，并提供可行证据或调整。",
+            "en": "A strong response addresses the relevant objection with evidence or a feasible adjustment."
+          }
+        },
+        {
+          "questionId": "s5-english-03",
+          "level": "challenge",
+          "focus": {
+            "zh": "綜合看似矛盾的資料",
+            "cn": "综合看似矛盾的资料",
+            "en": "Synthesising apparently conflicting evidence"
+          },
+          "learningOutcome": {
+            "zh": "綜合資料前先比較定義、時間與範圍，不能只比較數字方向。",
+            "cn": "综合资料前先比较定义、时间与范围，不能只比较数字方向。",
+            "en": "Compare definitions, periods and scope before synthesising numerical findings."
+          }
+        }
+      ]
+    },
+    {
+      "subjectId": "english",
+      "grade": 6,
+      "placement": "editorial sequence within key-stage references; teacher review required",
+      "sources": [
+        "https://www.edb.gov.hk/en/curriculum-development/kla/eng-edu/curriculum-documents.html",
+        "https://www.edb.gov.hk/attachment/en/curriculum-development/kla/eng-edu/Curriculum%20Document/ELE%20JS%20Supplement%202018.pdf",
+        "https://www.edb.gov.hk/attachment/en/curriculum-development/kla/eng-edu/Enhancing%20Vocab%20Secondary/e-version/Appendix3.html"
+      ],
+      "items": [
+        {
+          "questionId": "s6-english-01",
+          "level": "foundation",
+          "focus": {
+            "zh": "修正懸垂修飾語",
+            "cn": "修正悬垂修饰语",
+            "en": "Repairing a dangling modifier"
+          },
+          "learningOutcome": {
+            "zh": "句首分詞結構應能與主句主語建立合理的動作關係。",
+            "cn": "句首分词结构应能与主句主语建立合理的动作关系。",
+            "en": "An introductory participial phrase should logically attach to the main-clause subject."
+          }
+        },
+        {
+          "questionId": "s6-english-02",
+          "level": "application",
+          "focus": {
+            "zh": "區分概述與批判綜合",
+            "cn": "区分概述与批判综合",
+            "en": "Critical synthesis across sources"
+          },
+          "learningOutcome": {
+            "zh": "批判綜合要把不同證據轉成有條件、可解釋的立場。",
+            "cn": "批判综合要把不同证据转成有条件、可解释的立场。",
+            "en": "Critical synthesis turns different evidence into a qualified, explainable position."
+          }
+        },
+        {
+          "questionId": "s6-english-03",
+          "level": "challenge",
+          "focus": {
+            "zh": "評估因果主張的論據",
+            "cn": "评估因果主张的论据",
+            "en": "Evaluating a causal argument"
+          },
+          "learningOutcome": {
+            "zh": "評論因果論證時，要找基線、選擇偏差及可能的替代解釋。",
+            "cn": "评论因果论证时，要找基线、选择偏差及可能的替代解释。",
+            "en": "Evaluate causal arguments through baseline differences, selection and alternative explanations."
+          }
+        }
+      ]
+    },
+    {
+      "subjectId": "maths",
+      "grade": 1,
+      "placement": "editorial sequence within key-stage references; teacher review required",
+      "sources": [
+        "https://www.edb.gov.hk/en/curriculum-development/kla/ma/curr/index2.html",
+        "https://www.edb.gov.hk/attachment/en/curriculum-development/kla/ma/curr/EN_KS3_e.pdf",
+        "https://www.edb.gov.hk/attachment/en/curriculum-development/kla/ma/curr/EN_CP_e.pdf"
+      ],
+      "items": [
+        {
+          "questionId": "s1-maths-01",
+          "level": "foundation",
+          "focus": {
+            "zh": "分配與比",
+            "cn": "分配与比",
+            "en": "Sharing in a ratio"
+          },
+          "learningOutcome": {
+            "zh": "按比分配，先求總份數，再求每份大小。",
+            "cn": "按比分配，先求总份数，再求每份大小。",
+            "en": "Find the total number of ratio parts before calculating each share."
+          }
+        },
+        {
+          "questionId": "s1-maths-02",
+          "level": "application",
+          "focus": {
+            "zh": "周界的代數模型",
+            "cn": "周界的代数模型",
+            "en": "An algebraic perimeter"
+          },
+          "learningOutcome": {
+            "zh": "用圖形關係建立方程，並把答案代回原條件。",
+            "cn": "用图形关系建立方程，并把答案代回原条件。",
+            "en": "Build an equation from the geometry and check the solution in the original conditions."
+          }
+        },
+        {
+          "questionId": "s1-maths-03",
+          "level": "challenge",
+          "focus": {
+            "zh": "平均數與極端值",
+            "cn": "平均数与极端值",
+            "en": "Mean and an extreme value"
+          },
+          "learningOutcome": {
+            "zh": "選統計量時要看分佈；極端值不等於錯誤資料。",
+            "cn": "选统计量时要看分布；极端值不等于错误资料。",
+            "en": "Choose summaries with the distribution in mind; an extreme value is not automatically an error."
+          }
+        }
+      ]
+    },
+    {
+      "subjectId": "maths",
+      "grade": 2,
+      "placement": "editorial sequence within key-stage references; teacher review required",
+      "sources": [
+        "https://www.edb.gov.hk/en/curriculum-development/kla/ma/curr/index2.html",
+        "https://www.edb.gov.hk/attachment/en/curriculum-development/kla/ma/curr/EN_KS3_e.pdf",
+        "https://www.edb.gov.hk/attachment/en/curriculum-development/kla/ma/curr/EN_CP_e.pdf"
+      ],
+      "items": [
+        {
+          "questionId": "s2-maths-01",
+          "level": "foundation",
+          "focus": {
+            "zh": "百分率的基準",
+            "cn": "百分率的基准",
+            "en": "Changing percentage bases"
+          },
+          "learningOutcome": {
+            "zh": "連續百分率變化應相乘，不應直接互相抵消。",
+            "cn": "连续百分率变化应相乘，不应直接互相抵消。",
+            "en": "Multiply successive percentage factors rather than cancelling their rates."
+          }
+        },
+        {
+          "questionId": "s2-maths-02",
+          "level": "application",
+          "focus": {
+            "zh": "票價的聯立方程",
+            "cn": "票价的联立方程",
+            "en": "Simultaneous ticket equations"
+          },
+          "learningOutcome": {
+            "zh": "聯立方程要同時符合兩項條件。",
+            "cn": "联立方程要同时符合两项条件。",
+            "en": "A simultaneous solution must satisfy both conditions."
+          }
+        },
+        {
+          "questionId": "s2-maths-03",
+          "level": "challenge",
+          "focus": {
+            "zh": "坡道是否達標",
+            "cn": "坡道是否达标",
+            "en": "Testing a ramp model"
+          },
+          "learningOutcome": {
+            "zh": "先辨清模型中的量，再用勾股定理驗證。",
+            "cn": "先辨清模型中的量，再用勾股定理验证。",
+            "en": "Identify the quantities in the model before applying Pythagoras."
+          }
+        }
+      ]
+    },
+    {
+      "subjectId": "maths",
+      "grade": 3,
+      "placement": "editorial sequence within key-stage references; teacher review required",
+      "sources": [
+        "https://www.edb.gov.hk/en/curriculum-development/kla/ma/curr/index2.html",
+        "https://www.edb.gov.hk/attachment/en/curriculum-development/kla/ma/curr/EN_KS3_e.pdf",
+        "https://www.edb.gov.hk/attachment/en/curriculum-development/kla/ma/curr/EN_CP_e.pdf"
+      ],
+      "items": [
+        {
+          "questionId": "s3-maths-01",
+          "level": "foundation",
+          "focus": {
+            "zh": "相似圖形的面積",
+            "cn": "相似图形的面积",
+            "en": "Area under enlargement"
+          },
+          "learningOutcome": {
+            "zh": "相似圖形長度比為k，面積比為k²。",
+            "cn": "相似图形长度比为k，面积比为k²。",
+            "en": "Similar figures with length ratio k have area ratio k²."
+          }
+        },
+        {
+          "questionId": "s3-maths-02",
+          "level": "application",
+          "focus": {
+            "zh": "不放回抽樣",
+            "cn": "不放回抽样",
+            "en": "Sampling without replacement"
+          },
+          "learningOutcome": {
+            "zh": "不放回抽樣會改變下一次抽取的條件。",
+            "cn": "不放回抽样会改变下一次抽取的条件。",
+            "en": "Sampling without replacement changes the conditions of the next draw."
+          }
+        },
+        {
+          "questionId": "s3-maths-03",
+          "level": "challenge",
+          "focus": {
+            "zh": "量度誤差的界限",
+            "cn": "量度误差的界限",
+            "en": "Bounds of measurement"
+          },
+          "learningOutcome": {
+            "zh": "運算前先寫量度值的上下界，避免把估計當精確值。",
+            "cn": "运算前先写量度值的上下界，避免把估计当精确值。",
+            "en": "Establish measurement bounds before calculation instead of treating rounded values as exact."
+          }
+        }
+      ]
+    },
+    {
+      "subjectId": "maths",
+      "grade": 4,
+      "placement": "editorial sequence within key-stage references; teacher review required",
+      "sources": [
+        "https://www.edb.gov.hk/en/curriculum-development/kla/ma/curr/index2.html",
+        "https://www.edb.gov.hk/attachment/en/curriculum-development/kla/ma/curr/EN_KS3_e.pdf",
+        "https://www.edb.gov.hk/attachment/en/curriculum-development/kla/ma/curr/EN_CP_e.pdf"
+      ],
+      "items": [
+        {
+          "questionId": "s4-maths-01",
+          "level": "foundation",
+          "focus": {
+            "zh": "二次方程與情境",
+            "cn": "二次方程与情境",
+            "en": "Interpreting quadratic roots"
+          },
+          "learningOutcome": {
+            "zh": "求根後須檢查定義域和情境限制。",
+            "cn": "求根后须检查定义域和情境限制。",
+            "en": "After solving, check the domain and contextual restrictions."
+          }
+        },
+        {
+          "questionId": "s4-maths-02",
+          "level": "application",
+          "focus": {
+            "zh": "直線交點的意義",
+            "cn": "直线交点的意义",
+            "en": "Interpreting a line intersection"
+          },
+          "learningOutcome": {
+            "zh": "交點表示同價；比較便宜與否需要解不等式。",
+            "cn": "交点表示同价；比较便宜与否需要解不等式。",
+            "en": "The intersection means equal cost; cheaper-than comparisons require an inequality."
+          }
+        },
+        {
+          "questionId": "s4-maths-03",
+          "level": "challenge",
+          "focus": {
+            "zh": "指數模型的限制",
+            "cn": "指数模型的限制",
+            "en": "Limits of an exponential model"
+          },
+          "learningOutcome": {
+            "zh": "計算正確不等於模型在所有時間都有效。",
+            "cn": "计算正确不等于模型在所有时间都有效。",
+            "en": "Correct calculation does not guarantee a model remains valid over time."
+          }
+        }
+      ]
+    },
+    {
+      "subjectId": "maths",
+      "grade": 5,
+      "placement": "editorial sequence within key-stage references; teacher review required",
+      "sources": [
+        "https://www.edb.gov.hk/en/curriculum-development/kla/ma/curr/index2.html",
+        "https://www.edb.gov.hk/attachment/en/curriculum-development/kla/ma/curr/EN_KS3_e.pdf",
+        "https://www.edb.gov.hk/attachment/en/curriculum-development/kla/ma/curr/EN_CP_e.pdf"
+      ],
+      "items": [
+        {
+          "questionId": "s5-maths-01",
+          "level": "foundation",
+          "focus": {
+            "zh": "相切與半徑",
+            "cn": "相切与半径",
+            "en": "Tangents and radii"
+          },
+          "learningOutcome": {
+            "zh": "先利用圓的幾何性質，再選合適計算關係。",
+            "cn": "先利用圆的几何性质，再选合适计算关系。",
+            "en": "Use the circle property to establish the geometry before calculating."
+          }
+        },
+        {
+          "questionId": "s5-maths-02",
+          "level": "application",
+          "focus": {
+            "zh": "條件概率的分母",
+            "cn": "条件概率的分母",
+            "en": "The conditional denominator"
+          },
+          "learningOutcome": {
+            "zh": "條件概率先限制樣本空間；條件不能隨意交換。",
+            "cn": "条件概率先限制样本空间；条件不能随意交换。",
+            "en": "Conditional probability restricts the sample space; reversing the condition changes the question."
+          }
+        },
+        {
+          "questionId": "s5-maths-03",
+          "level": "challenge",
+          "focus": {
+            "zh": "標準差與變換",
+            "cn": "标准差与变换",
+            "en": "Transforming spread"
+          },
+          "learningOutcome": {
+            "zh": "平移改變中心，縮放同時改變中心及分散程度。",
+            "cn": "平移改变中心，缩放同时改变中心及分散程度。",
+            "en": "A shift changes location; scaling also changes spread."
+          }
+        }
+      ]
+    },
+    {
+      "subjectId": "maths",
+      "grade": 6,
+      "placement": "editorial sequence within key-stage references; teacher review required",
+      "sources": [
+        "https://www.edb.gov.hk/en/curriculum-development/kla/ma/curr/index2.html",
+        "https://www.edb.gov.hk/attachment/en/curriculum-development/kla/ma/curr/EN_KS3_e.pdf",
+        "https://www.edb.gov.hk/attachment/en/curriculum-development/kla/ma/curr/EN_CP_e.pdf"
+      ],
+      "items": [
+        {
+          "questionId": "s6-maths-01",
+          "level": "foundation",
+          "focus": {
+            "zh": "對數與倍增時間",
+            "cn": "对数与倍增时间",
+            "en": "Logarithms and growth time"
+          },
+          "learningOutcome": {
+            "zh": "未知數在指數時，先整理比例再使用對數。",
+            "cn": "未知数在指数时，先整理比例再使用对数。",
+            "en": "When the unknown is an exponent, isolate the growth ratio before using logarithms."
+          }
+        },
+        {
+          "questionId": "s6-maths-02",
+          "level": "application",
+          "focus": {
+            "zh": "限制條件與最佳值",
+            "cn": "限制条件与最佳值",
+            "en": "Optimising under constraints"
+          },
+          "learningOutcome": {
+            "zh": "比較可行頂點的目標函數，而非只看單價或產量。",
+            "cn": "比较可行顶点的目标函数，而非只看单价或产量。",
+            "en": "Compare objective values at feasible vertices, not only prices or output counts."
+          }
+        },
+        {
+          "questionId": "s6-maths-03",
+          "level": "challenge",
+          "focus": {
+            "zh": "統計比較的反轉",
+            "cn": "统计比较的反转",
+            "en": "When pooled rates mislead"
+          },
+          "learningOutcome": {
+            "zh": "總平均會受組成影響；比較表現須檢查分組及權重。",
+            "cn": "总平均会受组成影响；比较表现须检查分组及权重。",
+            "en": "Pooled performance depends on composition; inspect groups and weights."
+          }
+        }
+      ]
+    },
+    {
+      "subjectId": "chemistry",
+      "grade": 1,
+      "placement": "editorial sequence within key-stage references; teacher review required",
+      "sources": [
+        "https://www.edb.gov.hk/en/curriculum-development/kla/science-edu/curriculum-documents.html",
+        "https://www.edb.gov.hk/attachment/en/curriculum-development/kla/science-edu/jss/JS_Science_Curriculum_Framework_2025_english.pdf",
+        "https://www.edb.gov.hk/attachment/en/curriculum-development/kla/science-edu/Chem_C_and_A_Guide_updated_Eng_22082018.pdf"
+      ],
+      "items": [
+        {
+          "questionId": "s1-chemistry-01",
+          "level": "foundation",
+          "focus": {
+            "zh": "科學：量度液體體積",
+            "cn": "科学：量度液体体积",
+            "en": "Science: measuring liquid volume"
+          },
+          "learningOutcome": {
+            "zh": "量度須配合儀器刻度、正確視線與一致程序。",
+            "cn": "量度须配合仪器刻度、正确视线与一致程序。",
+            "en": "Use the instrument's scale, correct viewing position and a consistent procedure."
+          }
+        },
+        {
+          "questionId": "s1-chemistry-02",
+          "level": "application",
+          "focus": {
+            "zh": "科學：分離混合物",
+            "cn": "科学：分离混合物",
+            "en": "Science: separating a mixture"
+          },
+          "learningOutcome": {
+            "zh": "分離方法利用物質性質的差異，並要追蹤每種物質去了哪裏。",
+            "cn": "分离方法利用物质性质的差异，并要追踪每种物质去了哪里。",
+            "en": "Separation uses differences in properties; track where each substance goes."
+          }
+        },
+        {
+          "questionId": "s1-chemistry-03",
+          "level": "challenge",
+          "focus": {
+            "zh": "科學：辨認混雜變項",
+            "cn": "科学：辨认混杂变项",
+            "en": "Science: identifying confounding variables"
+          },
+          "learningOutcome": {
+            "zh": "公平測試須控制可能影響結果的其他變項。",
+            "cn": "公平测试须控制可能影响结果的其他变项。",
+            "en": "A fair test controls other variables that may affect the outcome."
+          }
+        }
+      ]
+    },
+    {
+      "subjectId": "chemistry",
+      "grade": 2,
+      "placement": "editorial sequence within key-stage references; teacher review required",
+      "sources": [
+        "https://www.edb.gov.hk/en/curriculum-development/kla/science-edu/curriculum-documents.html",
+        "https://www.edb.gov.hk/attachment/en/curriculum-development/kla/science-edu/jss/JS_Science_Curriculum_Framework_2025_english.pdf",
+        "https://www.edb.gov.hk/attachment/en/curriculum-development/kla/science-edu/Chem_C_and_A_Guide_updated_Eng_22082018.pdf"
+      ],
+      "items": [
+        {
+          "questionId": "s2-chemistry-01",
+          "level": "foundation",
+          "focus": {
+            "zh": "科學：細胞結構與功能",
+            "cn": "科学：细胞结构与功能",
+            "en": "Science: cell structures and functions"
+          },
+          "learningOutcome": {
+            "zh": "根據結構和功能解釋細胞，避免把典型圖像當成所有細胞的樣子。",
+            "cn": "根据结构和功能解释细胞，避免把典型图像当成所有细胞的样子。",
+            "en": "Explain cells through structure and function, without treating a typical diagram as universal."
+          }
+        },
+        {
+          "questionId": "s2-chemistry-02",
+          "level": "application",
+          "focus": {
+            "zh": "科學：串聯電路的電壓",
+            "cn": "科学：串联电路的电压",
+            "en": "Science: voltage in a series circuit"
+          },
+          "learningOutcome": {
+            "zh": "串聯電路電流相同，電壓按電阻大小分配。",
+            "cn": "串联电路电流相同，电压按电阻大小分配。",
+            "en": "Series components carry the same current; voltage divides in proportion to resistance."
+          }
+        },
+        {
+          "questionId": "s2-chemistry-03",
+          "level": "challenge",
+          "focus": {
+            "zh": "科學：從氣體變化推論",
+            "cn": "科学：从气体变化推论",
+            "en": "Science: interpreting gas changes"
+          },
+          "learningOutcome": {
+            "zh": "同時存在的過程可能互相抵銷；量度常顯示淨變化。",
+            "cn": "同时存在的过程可能互相抵销；量度常显示净变化。",
+            "en": "Simultaneous processes can offset each other; measurements often show a net change."
+          }
+        }
+      ]
+    },
+    {
+      "subjectId": "chemistry",
+      "grade": 3,
+      "placement": "editorial sequence within key-stage references; teacher review required",
+      "sources": [
+        "https://www.edb.gov.hk/en/curriculum-development/kla/science-edu/curriculum-documents.html",
+        "https://www.edb.gov.hk/attachment/en/curriculum-development/kla/science-edu/jss/JS_Science_Curriculum_Framework_2025_english.pdf",
+        "https://www.edb.gov.hk/attachment/en/curriculum-development/kla/science-edu/Chem_C_and_A_Guide_updated_Eng_22082018.pdf"
+      ],
+      "items": [
+        {
+          "questionId": "s3-chemistry-01",
+          "level": "foundation",
+          "focus": {
+            "zh": "科學：原子與離子",
+            "cn": "科学：原子与离子",
+            "en": "Science: atoms and ions"
+          },
+          "learningOutcome": {
+            "zh": "分清質子數、質量數和淨電荷，使用各自定義計算。",
+            "cn": "分清质子数、质量数和净电荷，使用各自定义计算。",
+            "en": "Distinguish proton number, mass number and net charge using their definitions."
+          }
+        },
+        {
+          "questionId": "s3-chemistry-02",
+          "level": "application",
+          "focus": {
+            "zh": "科學：中和與能量轉移",
+            "cn": "科学：中和与能量转移",
+            "en": "Science: neutralisation and energy transfer"
+          },
+          "learningOutcome": {
+            "zh": "溫度變化提供能量轉移證據，但不能代替其他化學量度。",
+            "cn": "温度变化提供能量转移证据，但不能代替其他化学量度。",
+            "en": "Temperature change provides evidence of energy transfer, not every other chemical property."
+          }
+        },
+        {
+          "questionId": "s3-chemistry-03",
+          "level": "challenge",
+          "focus": {
+            "zh": "科學：空氣阻力的證據",
+            "cn": "科学：空气阻力的证据",
+            "en": "Science: evidence about air resistance"
+          },
+          "learningOutcome": {
+            "zh": "辨認實驗保持了甚麼、改變了甚麼，再界定結論範圍。",
+            "cn": "辨认实验保持了甚么、改变了甚么，再界定结论范围。",
+            "en": "Identify what was held constant and changed before setting a conclusion's scope."
+          }
+        }
+      ]
+    },
+    {
+      "subjectId": "chemistry",
+      "grade": 4,
+      "placement": "editorial sequence within key-stage references; teacher review required",
+      "sources": [
+        "https://www.edb.gov.hk/en/curriculum-development/kla/science-edu/curriculum-documents.html",
+        "https://www.edb.gov.hk/attachment/en/curriculum-development/kla/science-edu/jss/JS_Science_Curriculum_Framework_2025_english.pdf",
+        "https://www.edb.gov.hk/attachment/en/curriculum-development/kla/science-edu/Chem_C_and_A_Guide_updated_Eng_22082018.pdf"
+      ],
+      "items": [
+        {
+          "questionId": "s4-chemistry-01",
+          "level": "foundation",
+          "focus": {
+            "zh": "化學：離子晶體的導電性",
+            "cn": "化学：离子晶体的导电性",
+            "en": "Chemistry: conduction in ionic substances"
+          },
+          "learningOutcome": {
+            "zh": "解釋導電性時須指出可移動的帶電粒子。",
+            "cn": "解释导电性时须指出可移动的带电粒子。",
+            "en": "Explain conductivity by identifying mobile charge carriers."
+          }
+        },
+        {
+          "questionId": "s4-chemistry-02",
+          "level": "application",
+          "focus": {
+            "zh": "化學：物質的量與氣體體積",
+            "cn": "化学：物质的量与气体体积",
+            "en": "Chemistry: amount and gas volume"
+          },
+          "learningOutcome": {
+            "zh": "依次轉換質量、物質的量比及體積，保留單位。",
+            "cn": "依次转换质量、物质的量比及体积，保留单位。",
+            "en": "Convert mass to amount, apply the mole ratio, then convert to volume with units."
+          }
+        },
+        {
+          "questionId": "s4-chemistry-03",
+          "level": "challenge",
+          "focus": {
+            "zh": "化學：限制反應物",
+            "cn": "化学：限制反应物",
+            "en": "Chemistry: limiting reagent"
+          },
+          "learningOutcome": {
+            "zh": "先比較反應式所需比例，才判斷產量及剩餘物。",
+            "cn": "先比较反应式所需比例，才判断产量及剩余物。",
+            "en": "Compare required stoichiometric ratios before finding yield and leftovers."
+          }
+        }
+      ]
+    },
+    {
+      "subjectId": "chemistry",
+      "grade": 5,
+      "placement": "editorial sequence within key-stage references; teacher review required",
+      "sources": [
+        "https://www.edb.gov.hk/en/curriculum-development/kla/science-edu/curriculum-documents.html",
+        "https://www.edb.gov.hk/attachment/en/curriculum-development/kla/science-edu/jss/JS_Science_Curriculum_Framework_2025_english.pdf",
+        "https://www.edb.gov.hk/attachment/en/curriculum-development/kla/science-edu/Chem_C_and_A_Guide_updated_Eng_22082018.pdf"
+      ],
+      "items": [
+        {
+          "questionId": "s5-chemistry-01",
+          "level": "foundation",
+          "focus": {
+            "zh": "化學：電子轉移與氧化",
+            "cn": "化学：电子转移与氧化",
+            "en": "Chemistry: electron transfer and oxidation"
+          },
+          "learningOutcome": {
+            "zh": "半反應必須守恆原子及電荷；用電子得失判斷氧化還原。",
+            "cn": "半反应必须守恒原子及电荷；用电子得失判断氧化还原。",
+            "en": "Balance atoms and charge in half-equations; use electron transfer to identify redox."
+          }
+        },
+        {
+          "questionId": "s5-chemistry-02",
+          "level": "application",
+          "focus": {
+            "zh": "化學：量熱法與反應焓",
+            "cn": "化学：量热法与反应焓",
+            "en": "Chemistry: calorimetry and enthalpy"
+          },
+          "learningOutcome": {
+            "zh": "分清溶液吸收的熱量與反應焓符號，並換算每摩爾。",
+            "cn": "分清溶液吸收的热量与反应焓符号，并换算每摩尔。",
+            "en": "Distinguish solution heat gain from reaction enthalpy sign and convert to a molar quantity."
+          }
+        },
+        {
+          "questionId": "s5-chemistry-03",
+          "level": "challenge",
+          "focus": {
+            "zh": "化學：速率與總產量",
+            "cn": "化学：速率与总产量",
+            "en": "Chemistry: rate versus total yield"
+          },
+          "learningOutcome": {
+            "zh": "曲線不同部分代表不同量；速率改善不等於總產量提高。",
+            "cn": "曲线不同部分代表不同量；速率改善不等于总产量提高。",
+            "en": "Different graph features represent different quantities; faster reaction does not mean greater total yield."
+          }
+        }
+      ]
+    },
+    {
+      "subjectId": "chemistry",
+      "grade": 6,
+      "placement": "editorial sequence within key-stage references; teacher review required",
+      "sources": [
+        "https://www.edb.gov.hk/en/curriculum-development/kla/science-edu/curriculum-documents.html",
+        "https://www.edb.gov.hk/attachment/en/curriculum-development/kla/science-edu/jss/JS_Science_Curriculum_Framework_2025_english.pdf",
+        "https://www.edb.gov.hk/attachment/en/curriculum-development/kla/science-edu/Chem_C_and_A_Guide_updated_Eng_22082018.pdf"
+      ],
+      "items": [
+        {
+          "questionId": "s6-chemistry-01",
+          "level": "foundation",
+          "focus": {
+            "zh": "化學：有機反應條件",
+            "cn": "化学：有机反应条件",
+            "en": "Chemistry: conditions in organic reactions"
+          },
+          "learningOutcome": {
+            "zh": "有機產物取決於試劑、用量和反應條件，不只取決於起始物。",
+            "cn": "有机产物取决于试剂、用量和反应条件，不只取决于起始物。",
+            "en": "Organic products depend on reagents, amounts and conditions as well as starting material."
+          }
+        },
+        {
+          "questionId": "s6-chemistry-02",
+          "level": "application",
+          "focus": {
+            "zh": "化學：平衡與工業取捨",
+            "cn": "化学：平衡与工业取舍",
+            "en": "Chemistry: equilibrium and industrial compromise"
+          },
+          "learningOutcome": {
+            "zh": "工業條件需要同時考慮熱力學、動力學與資源。",
+            "cn": "工业条件需要同时考虑热力学、动力学与资源。",
+            "en": "Industrial conditions balance thermodynamic, kinetic and resource considerations."
+          }
+        },
+        {
+          "questionId": "s6-chemistry-03",
+          "level": "challenge",
+          "focus": {
+            "zh": "化學：滴定數據與異常值",
+            "cn": "化学：滴定数据与异常值",
+            "en": "Chemistry: titration data and anomalous values"
+          },
+          "learningOutcome": {
+            "zh": "以實驗記錄及相近讀數判斷數據品質，不應只因結果不合預期而刪數據。",
+            "cn": "以实验记录及相近读数判断数据品质，不应只因结果不合预期而删数据。",
+            "en": "Judge data using procedure notes and concordance, not merely whether a result matches expectations."
+          }
+        }
+      ]
+    },
+    {
+      "subjectId": "geography",
+      "grade": 1,
+      "placement": "editorial sequence within key-stage references; teacher review required",
+      "sources": [
+        "https://www.edb.gov.hk/en/curriculum-development/kla/pshe/js_geog.html",
+        "https://www.edb.gov.hk/attachment/en/curriculum-development/renewal/CM/EDBC26002E.pdf",
+        "https://www.edb.gov.hk/attachment/en/curriculum-development/renewal/CM/EDBCM24255E.pdf"
+      ],
+      "items": [
+        {
+          "questionId": "s1-geography-01",
+          "level": "foundation",
+          "focus": {
+            "zh": "地圖比例尺與距離",
+            "cn": "地图比例尺与距离",
+            "en": "Map scale and distance"
+          },
+          "learningOutcome": {
+            "zh": "比例尺計算先用相同單位，再換成適合表達的地面距離。",
+            "cn": "比例尺计算先用相同单位，再换成适合表达的地面距离。",
+            "en": "Use matching units for scale calculations, then convert to a useful ground-distance unit."
+          }
+        },
+        {
+          "questionId": "s1-geography-02",
+          "level": "application",
+          "focus": {
+            "zh": "等高線與坡度",
+            "cn": "等高线与坡度",
+            "en": "Contours and gradient"
+          },
+          "learningOutcome": {
+            "zh": "把高差與水平距離一併解讀，不能只數線條。",
+            "cn": "把高差与水平距离一并解读，不能只数线条。",
+            "en": "Interpret vertical rise together with horizontal distance, not just the number of lines."
+          }
+        },
+        {
+          "questionId": "s1-geography-03",
+          "level": "challenge",
+          "focus": {
+            "zh": "校園實地考察的取樣",
+            "cn": "校园实地考察的取样",
+            "en": "Sampling in a campus field study"
+          },
+          "learningOutcome": {
+            "zh": "實地考察需把研究範圍、取樣位置和一致程序連結。",
+            "cn": "实地考察需把研究范围、取样位置和一致程序连结。",
+            "en": "Connect the study area, sampling locations and consistent procedures in fieldwork."
+          }
+        }
+      ]
+    },
+    {
+      "subjectId": "geography",
+      "grade": 2,
+      "placement": "editorial sequence within key-stage references; teacher review required",
+      "sources": [
+        "https://www.edb.gov.hk/en/curriculum-development/kla/pshe/js_geog.html",
+        "https://www.edb.gov.hk/attachment/en/curriculum-development/renewal/CM/EDBC26002E.pdf",
+        "https://www.edb.gov.hk/attachment/en/curriculum-development/renewal/CM/EDBCM24255E.pdf"
+      ],
+      "items": [
+        {
+          "questionId": "s2-geography-01",
+          "level": "foundation",
+          "focus": {
+            "zh": "河曲的侵蝕與沉積",
+            "cn": "河曲的侵蚀与沉积",
+            "en": "Erosion and deposition in a meander"
+          },
+          "learningOutcome": {
+            "zh": "把水流能量與侵蝕、搬運、沉積過程連結。",
+            "cn": "把水流能量与侵蚀、搬运、沉积过程连结。",
+            "en": "Link flow energy to erosion, transport and deposition."
+          }
+        },
+        {
+          "questionId": "s2-geography-02",
+          "level": "application",
+          "focus": {
+            "zh": "都市地表與地表徑流",
+            "cn": "都市地表与地表径流",
+            "en": "Urban surfaces and runoff"
+          },
+          "learningOutcome": {
+            "zh": "用雨量、土地覆蓋與滲透解釋徑流，分清差額和總量。",
+            "cn": "用雨量、土地覆盖与渗透解释径流，分清差额和总量。",
+            "en": "Explain runoff through rainfall, land cover and infiltration; distinguish difference from total."
+          }
+        },
+        {
+          "questionId": "s2-geography-03",
+          "level": "challenge",
+          "focus": {
+            "zh": "迎風坡與背風坡",
+            "cn": "迎风坡与背风坡",
+            "en": "Windward and leeward slopes"
+          },
+          "learningOutcome": {
+            "zh": "用連貫的物理過程解釋空間差異，而不只背誦兩坡名稱。",
+            "cn": "用连贯的物理过程解释空间差异，而不只背诵两坡名称。",
+            "en": "Explain spatial differences through a connected physical process, not only slope labels."
+          }
+        }
+      ]
+    },
+    {
+      "subjectId": "geography",
+      "grade": 3,
+      "placement": "editorial sequence within key-stage references; teacher review required",
+      "sources": [
+        "https://www.edb.gov.hk/en/curriculum-development/kla/pshe/js_geog.html",
+        "https://www.edb.gov.hk/attachment/en/curriculum-development/renewal/CM/EDBC26002E.pdf",
+        "https://www.edb.gov.hk/attachment/en/curriculum-development/renewal/CM/EDBCM24255E.pdf"
+      ],
+      "items": [
+        {
+          "questionId": "s3-geography-01",
+          "level": "foundation",
+          "focus": {
+            "zh": "板塊邊界與自然災害",
+            "cn": "板块边界与自然灾害",
+            "en": "Plate boundaries and natural hazards"
+          },
+          "learningOutcome": {
+            "zh": "由板塊移動方式推斷地形與災害，避免混淆邊界類型。",
+            "cn": "由板块移动方式推断地形与灾害，避免混淆边界类型。",
+            "en": "Infer landforms and hazards from plate motion without mixing boundary types."
+          }
+        },
+        {
+          "questionId": "s3-geography-02",
+          "level": "application",
+          "focus": {
+            "zh": "人口總量與密度",
+            "cn": "人口总量与密度",
+            "en": "Population totals and density"
+          },
+          "learningOutcome": {
+            "zh": "空間比較需要選擇合適分母，總量和密度回答不同問題。",
+            "cn": "空间比较需要选择合适分母，总量和密度回答不同问题。",
+            "en": "Spatial comparisons need an appropriate denominator; totals and densities answer different questions."
+          }
+        },
+        {
+          "questionId": "s3-geography-03",
+          "level": "challenge",
+          "focus": {
+            "zh": "都市熱島的考察設計",
+            "cn": "都市热岛的考察设计",
+            "en": "Designing an urban heat-island study"
+          },
+          "learningOutcome": {
+            "zh": "比較地理因素時，要控制時間、位置和儀器條件。",
+            "cn": "比较地理因素时，要控制时间、位置和仪器条件。",
+            "en": "Control time, location conditions and instruments when comparing geographical factors."
+          }
+        }
+      ]
+    },
+    {
+      "subjectId": "geography",
+      "grade": 4,
+      "placement": "editorial sequence within key-stage references; teacher review required",
+      "sources": [
+        "https://www.edb.gov.hk/en/curriculum-development/kla/pshe/js_geog.html",
+        "https://www.edb.gov.hk/attachment/en/curriculum-development/renewal/CM/EDBC26002E.pdf",
+        "https://www.edb.gov.hk/attachment/en/curriculum-development/renewal/CM/EDBCM24255E.pdf"
+      ],
+      "items": [
+        {
+          "questionId": "s4-geography-01",
+          "level": "foundation",
+          "focus": {
+            "zh": "沿岸漂移與海岸管理",
+            "cn": "沿岸漂移与海岸管理",
+            "en": "Longshore drift and coastal management"
+          },
+          "learningOutcome": {
+            "zh": "評估海岸工程須考慮沉積物系統與鄰近地區的影響。",
+            "cn": "评估海岸工程须考虑沉积物系统与邻近地区的影响。",
+            "en": "Evaluate coastal engineering within the sediment system and its effects on neighbouring areas."
+          }
+        },
+        {
+          "questionId": "s4-geography-02",
+          "level": "application",
+          "focus": {
+            "zh": "河流流量估算",
+            "cn": "河流流量估算",
+            "en": "Estimating river discharge"
+          },
+          "learningOutcome": {
+            "zh": "將流量連結到截面積和平均流速，並檢查模型假設與單位。",
+            "cn": "将流量连结到截面积和平均流速，并检查模型假设与单位。",
+            "en": "Relate discharge to cross-sectional area and mean velocity; check assumptions and units."
+          }
+        },
+        {
+          "questionId": "s4-geography-03",
+          "level": "challenge",
+          "focus": {
+            "zh": "災害強度與災害風險",
+            "cn": "灾害强度与灾害风险",
+            "en": "Hazard intensity and disaster risk"
+          },
+          "learningOutcome": {
+            "zh": "災害分析需區分自然事件、暴露、脆弱度和應對能力。",
+            "cn": "灾害分析需区分自然事件、暴露、脆弱度和应对能力。",
+            "en": "Distinguish the physical hazard, exposure, vulnerability and capacity in disaster analysis."
+          }
+        }
+      ]
+    },
+    {
+      "subjectId": "geography",
+      "grade": 5,
+      "placement": "editorial sequence within key-stage references; teacher review required",
+      "sources": [
+        "https://www.edb.gov.hk/en/curriculum-development/kla/pshe/js_geog.html",
+        "https://www.edb.gov.hk/attachment/en/curriculum-development/renewal/CM/EDBC26002E.pdf",
+        "https://www.edb.gov.hk/attachment/en/curriculum-development/renewal/CM/EDBCM24255E.pdf"
+      ],
+      "items": [
+        {
+          "questionId": "s5-geography-01",
+          "level": "foundation",
+          "focus": {
+            "zh": "工業區位的多重因素",
+            "cn": "工业区位的多重因素",
+            "en": "Multiple factors in industrial location"
+          },
+          "learningOutcome": {
+            "zh": "工業區位是多因素的權衡，因素的重要性隨產業改變。",
+            "cn": "工业区位是多因素的权衡，因素的重要性随产业改变。",
+            "en": "Industrial location is a multi-factor trade-off whose priorities vary by industry."
+          }
+        },
+        {
+          "questionId": "s5-geography-02",
+          "level": "application",
+          "focus": {
+            "zh": "糧食產量與取得糧食的能力",
+            "cn": "粮食产量与取得粮食的能力",
+            "en": "Food supply and access"
+          },
+          "learningOutcome": {
+            "zh": "糧食安全涉及供應、取得、利用及穩定性，不能只看平均產量。",
+            "cn": "粮食安全涉及供应、取得、利用及稳定性，不能只看平均产量。",
+            "en": "Food security involves availability, access, use and stability, not only average output."
+          }
+        },
+        {
+          "questionId": "s5-geography-03",
+          "level": "challenge",
+          "focus": {
+            "zh": "氣候趨勢與地點變化",
+            "cn": "气候趋势与地点变化",
+            "en": "Climate trends and station changes"
+          },
+          "learningOutcome": {
+            "zh": "長期環境數據的解讀要檢查地點、儀器和空間尺度。",
+            "cn": "长期环境数据的解读要检查地点、仪器和空间尺度。",
+            "en": "Interpret long-term environmental data with attention to site, instruments and spatial scale."
+          }
+        }
+      ]
+    },
+    {
+      "subjectId": "geography",
+      "grade": 6,
+      "placement": "editorial sequence within key-stage references; teacher review required",
+      "sources": [
+        "https://www.edb.gov.hk/en/curriculum-development/kla/pshe/js_geog.html",
+        "https://www.edb.gov.hk/attachment/en/curriculum-development/renewal/CM/EDBC26002E.pdf",
+        "https://www.edb.gov.hk/attachment/en/curriculum-development/renewal/CM/EDBCM24255E.pdf"
+      ],
+      "items": [
+        {
+          "questionId": "s6-geography-01",
+          "level": "foundation",
+          "focus": {
+            "zh": "重現期的風險含義",
+            "cn": "重现期的风险含义",
+            "en": "Interpreting a return period"
+          },
+          "learningOutcome": {
+            "zh": "將重現期解讀為模型中的機率，並留意氣候和土地利用可令假設改變。",
+            "cn": "将重现期解读为模型中的机率，并留意气候和土地利用可令假设改变。",
+            "en": "Read return periods as model probabilities and consider changes in climate and land use."
+          }
+        },
+        {
+          "questionId": "s6-geography-02",
+          "level": "application",
+          "focus": {
+            "zh": "可持續旅遊的多準則決策",
+            "cn": "可持续旅游的多准则决策",
+            "en": "Multi-criteria decisions in sustainable tourism"
+          },
+          "learningOutcome": {
+            "zh": "可持續管理需要比較環境、社會和經濟取捨及其分配。",
+            "cn": "可持续管理需要比较环境、社会和经济取舍及其分配。",
+            "en": "Sustainable management compares environmental, social and economic trade-offs and who experiences them."
+          }
+        },
+        {
+          "questionId": "s6-geography-03",
+          "level": "challenge",
+          "focus": {
+            "zh": "GIS 選址與權重敏感度",
+            "cn": "GIS 选址与权重敏感度",
+            "en": "GIS siting and sensitivity to weights"
+          },
+          "learningOutcome": {
+            "zh": "空間模型是決策工具；應檢視資料遺漏、權重及受影響羣體。",
+            "cn": "空间模型是决策工具；应检视资料遗漏、权重及受影响群体。",
+            "en": "Spatial models support decisions; inspect missing data, weights and affected groups."
+          }
+        }
+      ]
+    },
+    {
+      "subjectId": "computer",
+      "grade": 1,
+      "placement": "editorial sequence within key-stage references; teacher review required",
+      "sources": [
+        "https://www.edb.gov.hk/en/curriculum-development/kla/technology-edu/",
+        "https://www.edb.gov.hk/en/curriculum-development/kla/technology-edu/curriculum-doc/index.html",
+        "https://www.edb.gov.hk/attachment/en/curriculum-development/kla/technology-edu/curriculum-doc/ICT_C&A_Guide_e_final.pdf"
+      ],
+      "items": [
+        {
+          "questionId": "s1-computer-01",
+          "level": "foundation",
+          "focus": {
+            "zh": "輸入、處理與輸出",
+            "cn": "输入、处理与输出",
+            "en": "Input, processing and output"
+          },
+          "learningOutcome": {
+            "zh": "按資料在系統中的作用，分清輸入、處理與輸出。",
+            "cn": "按资料在系统中的作用，分清输入、处理与输出。",
+            "en": "Distinguish input, processing and output by each step's role in the system."
+          }
+        },
+        {
+          "questionId": "s1-computer-02",
+          "level": "application",
+          "focus": {
+            "zh": "試算表的範圍公式",
+            "cn": "试算表的范围公式",
+            "en": "Spreadsheet range formulas"
+          },
+          "learningOutcome": {
+            "zh": "公式要包括正確資料範圍，同時避免把結果格納入自身計算。",
+            "cn": "公式要包括正确资料范围，同时避免把结果格纳入自身计算。",
+            "en": "Include the correct data range and avoid referencing the result cell itself."
+          }
+        },
+        {
+          "questionId": "s1-computer-03",
+          "level": "challenge",
+          "focus": {
+            "zh": "逐步追蹤條件演算法",
+            "cn": "逐步追踪条件演算法",
+            "en": "Tracing a conditional algorithm"
+          },
+          "learningOutcome": {
+            "zh": "追蹤變量每一步的改變，分清計數與加總。",
+            "cn": "追踪变量每一步的改变，分清计数与加总。",
+            "en": "Trace variable updates step by step and distinguish counting from summing."
+          }
+        }
+      ]
+    },
+    {
+      "subjectId": "computer",
+      "grade": 2,
+      "placement": "editorial sequence within key-stage references; teacher review required",
+      "sources": [
+        "https://www.edb.gov.hk/en/curriculum-development/kla/technology-edu/",
+        "https://www.edb.gov.hk/en/curriculum-development/kla/technology-edu/curriculum-doc/index.html",
+        "https://www.edb.gov.hk/attachment/en/curriculum-development/kla/technology-edu/curriculum-doc/ICT_C&A_Guide_e_final.pdf"
+      ],
+      "items": [
+        {
+          "questionId": "s2-computer-01",
+          "level": "foundation",
+          "focus": {
+            "zh": "二進制位值",
+            "cn": "二进制位值",
+            "en": "Binary place values"
+          },
+          "learningOutcome": {
+            "zh": "數值取決於數碼及其進制位值，字串外觀並不等於數量。",
+            "cn": "数值取决于数码及其进制位值，字串外观并不等于数量。",
+            "en": "A value depends on digits and their base-specific positions, not just the string's appearance."
+          }
+        },
+        {
+          "questionId": "s2-computer-02",
+          "level": "application",
+          "focus": {
+            "zh": "布林邏輯與存取條件",
+            "cn": "布林逻辑与存取条件",
+            "en": "Boolean logic and access conditions"
+          },
+          "learningOutcome": {
+            "zh": "先處理否定，再依運算子判斷條件組合。",
+            "cn": "先处理否定，再依运算子判断条件组合。",
+            "en": "Evaluate negation and then combine conditions using the stated operator."
+          }
+        },
+        {
+          "questionId": "s2-computer-03",
+          "level": "challenge",
+          "focus": {
+            "zh": "迴圈的更新次序",
+            "cn": "回圈的更新次序",
+            "en": "Order of updates in a loop"
+          },
+          "learningOutcome": {
+            "zh": "迴圈追蹤表要記錄每輪控制變量與累計變量。",
+            "cn": "回圈追踪表要记录每轮控制变量与累计变量。",
+            "en": "A loop trace records both the loop-control variable and the accumulator on each iteration."
+          }
+        }
+      ]
+    },
+    {
+      "subjectId": "computer",
+      "grade": 3,
+      "placement": "editorial sequence within key-stage references; teacher review required",
+      "sources": [
+        "https://www.edb.gov.hk/en/curriculum-development/kla/technology-edu/",
+        "https://www.edb.gov.hk/en/curriculum-development/kla/technology-edu/curriculum-doc/index.html",
+        "https://www.edb.gov.hk/attachment/en/curriculum-development/kla/technology-edu/curriculum-doc/ICT_C&A_Guide_e_final.pdf"
+      ],
+      "items": [
+        {
+          "questionId": "s3-computer-01",
+          "level": "foundation",
+          "focus": {
+            "zh": "壓縮與資料完整性",
+            "cn": "压缩与资料完整性",
+            "en": "Compression and data integrity"
+          },
+          "learningOutcome": {
+            "zh": "壓縮方法要配合資料用途和可容許的資訊損失。",
+            "cn": "压缩方法要配合资料用途和可容许的资讯损失。",
+            "en": "Choose compression according to the data's purpose and acceptable information loss."
+          }
+        },
+        {
+          "questionId": "s3-computer-02",
+          "level": "application",
+          "focus": {
+            "zh": "最大值演算法的初始值",
+            "cn": "最大值演算法的初始值",
+            "en": "Initialisation in a maximum algorithm"
+          },
+          "learningOutcome": {
+            "zh": "用邊界和特殊資料測試演算法；初始值必須符合資料範圍。",
+            "cn": "用边界和特殊资料测试演算法；初始值必须符合资料范围。",
+            "en": "Test edge cases and ensure initial values fit the data domain."
+          }
+        },
+        {
+          "questionId": "s3-computer-03",
+          "level": "challenge",
+          "focus": {
+            "zh": "遺漏資料與零值",
+            "cn": "遗漏资料与零值",
+            "en": "Missing data versus zero"
+          },
+          "learningOutcome": {
+            "zh": "資料清理需保留零值和未知值的差別，並記錄處理規則。",
+            "cn": "资料清理需保留零值和未知值的差别，并记录处理规则。",
+            "en": "Data cleaning should preserve the distinction between zero and unknown and document its rules."
+          }
+        }
+      ]
+    },
+    {
+      "subjectId": "computer",
+      "grade": 4,
+      "placement": "editorial sequence within key-stage references; teacher review required",
+      "sources": [
+        "https://www.edb.gov.hk/en/curriculum-development/kla/technology-edu/",
+        "https://www.edb.gov.hk/en/curriculum-development/kla/technology-edu/curriculum-doc/index.html",
+        "https://www.edb.gov.hk/attachment/en/curriculum-development/kla/technology-edu/curriculum-doc/ICT_C&A_Guide_e_final.pdf"
+      ],
+      "items": [
+        {
+          "questionId": "s4-computer-01",
+          "level": "foundation",
+          "focus": {
+            "zh": "數碼影像的儲存量",
+            "cn": "数码影像的储存量",
+            "en": "Digital image storage"
+          },
+          "learningOutcome": {
+            "zh": "儲存量由像素數、色深及單位共同決定；壓縮和檔頭另作考慮。",
+            "cn": "储存量由像素数、色深及单位共同决定；压缩和档头另作考虑。",
+            "en": "Storage depends on pixel count, bit depth and units; compression and headers are separate factors."
+          }
+        },
+        {
+          "questionId": "s4-computer-02",
+          "level": "application",
+          "focus": {
+            "zh": "SQL 篩選與排序",
+            "cn": "SQL 筛选与排序",
+            "en": "SQL filtering and ordering"
+          },
+          "learningOutcome": {
+            "zh": "把查詢需求拆成所需欄位、篩選條件及排序規則。",
+            "cn": "把查询需求拆成所需栏位、筛选条件及排序规则。",
+            "en": "Break a query into required columns, filtering conditions and ordering rules."
+          }
+        },
+        {
+          "questionId": "s4-computer-03",
+          "level": "challenge",
+          "focus": {
+            "zh": "HTTPS 與可信度的界線",
+            "cn": "HTTPS 与可信度的界线",
+            "en": "HTTPS and the limits of trust"
+          },
+          "learningOutcome": {
+            "zh": "區分傳輸安全、身份核實和資訊可信度。",
+            "cn": "区分传输安全、身份核实和资讯可信度。",
+            "en": "Distinguish transport security, identity verification and information credibility."
+          }
+        }
+      ]
+    },
+    {
+      "subjectId": "computer",
+      "grade": 5,
+      "placement": "editorial sequence within key-stage references; teacher review required",
+      "sources": [
+        "https://www.edb.gov.hk/en/curriculum-development/kla/technology-edu/",
+        "https://www.edb.gov.hk/en/curriculum-development/kla/technology-edu/curriculum-doc/index.html",
+        "https://www.edb.gov.hk/attachment/en/curriculum-development/kla/technology-edu/curriculum-doc/ICT_C&A_Guide_e_final.pdf"
+      ],
+      "items": [
+        {
+          "questionId": "s5-computer-01",
+          "level": "foundation",
+          "focus": {
+            "zh": "資料庫更新異常",
+            "cn": "资料库更新异常",
+            "en": "Database update anomalies"
+          },
+          "learningOutcome": {
+            "zh": "正規化以合理分表減少重複與異常，同時保留鍵的關聯。",
+            "cn": "正规化以合理分表减少重复与异常，同时保留键的关联。",
+            "en": "Normalisation reduces duplication and anomalies through sensible tables and keys."
+          }
+        },
+        {
+          "questionId": "s5-computer-02",
+          "level": "application",
+          "focus": {
+            "zh": "二分搜尋的前提",
+            "cn": "二分搜寻的前提",
+            "en": "The prerequisite for binary search"
+          },
+          "learningOutcome": {
+            "zh": "選擇演算法時，要檢查其資料前提，不能只比較速度。",
+            "cn": "选择演算法时，要检查其资料前提，不能只比较速度。",
+            "en": "Check an algorithm's data prerequisites, not only its speed."
+          }
+        },
+        {
+          "questionId": "s5-computer-03",
+          "level": "challenge",
+          "focus": {
+            "zh": "分類模型的漏報",
+            "cn": "分类模型的漏报",
+            "en": "Missed positives in a classifier"
+          },
+          "learningOutcome": {
+            "zh": "不同評估指標回答不同問題；漏報風險要查看召回率和實際代價。",
+            "cn": "不同评估指标回答不同问题；漏报风险要查看召回率和实际代价。",
+            "en": "Metrics answer different questions; assess missed-positive risk through recall and consequences."
+          }
+        }
+      ]
+    },
+    {
+      "subjectId": "computer",
+      "grade": 6,
+      "placement": "editorial sequence within key-stage references; teacher review required",
+      "sources": [
+        "https://www.edb.gov.hk/en/curriculum-development/kla/technology-edu/",
+        "https://www.edb.gov.hk/en/curriculum-development/kla/technology-edu/curriculum-doc/index.html",
+        "https://www.edb.gov.hk/attachment/en/curriculum-development/kla/technology-edu/curriculum-doc/ICT_C&A_Guide_e_final.pdf"
+      ],
+      "items": [
+        {
+          "questionId": "s6-computer-01",
+          "level": "foundation",
+          "focus": {
+            "zh": "關聯鍵與參照完整性",
+            "cn": "关联键与参照完整性",
+            "en": "Relational keys and referential integrity"
+          },
+          "learningOutcome": {
+            "zh": "資料完整性應由適當約束保障，而不只靠介面提示。",
+            "cn": "资料完整性应由适当约束保障，而不只靠介面提示。",
+            "en": "Protect data integrity through suitable constraints, not interface hints alone."
+          }
+        },
+        {
+          "questionId": "s6-computer-02",
+          "level": "application",
+          "focus": {
+            "zh": "查詢保留沒有記錄的學生",
+            "cn": "查询保留没有记录的学生",
+            "en": "Keeping students with no matching records"
+          },
+          "learningOutcome": {
+            "zh": "查詢的連接方式與計數欄位會改變零記錄個案是否正確保留。",
+            "cn": "查询的连接方式与计数栏位会改变零记录个案是否正确保留。",
+            "en": "Join type and counted column determine whether zero-record cases are represented correctly."
+          }
+        },
+        {
+          "questionId": "s6-computer-03",
+          "level": "challenge",
+          "focus": {
+            "zh": "伺服器授權與最小權限",
+            "cn": "伺服器授权与最小权限",
+            "en": "Server authorisation and least privilege"
+          },
+          "learningOutcome": {
+            "zh": "身份驗證與操作授權不同；每次敏感操作均須核對適當權限。",
+            "cn": "身份验证与操作授权不同；每次敏感操作均须核对适当权限。",
+            "en": "Authentication and authorisation differ; check appropriate permission for every sensitive action."
+          }
+        }
+      ]
+    },
+    {
+      "subjectId": "history",
+      "grade": 1,
+      "placement": "editorial sequence within key-stage references; teacher review required",
+      "sources": [
+        "https://www.edb.gov.hk/attachment/en/curriculum-development/kla/pshe/Hist_Curr_Guide_S1-3_Eng_final_10072019.pdf",
+        "https://www.hkeaa.edu.hk/DocLibrary/HKDSE/Subject_Information/hist/2026hkdse-e-hist.pdf"
+      ],
+      "items": [
+        {
+          "questionId": "s1-history-01",
+          "level": "foundation",
+          "focus": {
+            "zh": "古代事件的先後",
+            "cn": "古代事件的先后",
+            "en": "Ordering ancient events"
+          },
+          "learningOutcome": {
+            "zh": "排列年代前，先分辨公元前與公元後的計年方向。",
+            "cn": "排列年代前，先分辨公元前与公元后的计年方向。",
+            "en": "Distinguish BCE and CE before placing events on a timeline."
+          }
+        },
+        {
+          "questionId": "s1-history-02",
+          "level": "application",
+          "focus": {
+            "zh": "河流與文明",
+            "cn": "河流与文明",
+            "en": "Rivers and civilisations"
+          },
+          "learningOutcome": {
+            "zh": "歷史因果解釋須指出中間機制，避免把環境視為唯一決定因素。",
+            "cn": "历史因果解释须指出中间机制，避免把环境视为唯一决定因素。",
+            "en": "Explain the mechanism linking an environment to change, without treating geography as the only cause."
+          }
+        },
+        {
+          "questionId": "s1-history-03",
+          "level": "challenge",
+          "focus": {
+            "zh": "陶片能告訴我們甚麼",
+            "cn": "陶片能告诉我们甚么",
+            "en": "What can pottery show?"
+          },
+          "learningOutcome": {
+            "zh": "區分器物所顯示的線索與尚未證實的政治或文化結論。",
+            "cn": "区分器物所显示的线索与尚未证实的政治或文化结论。",
+            "en": "Separate material clues from unproven political or cultural conclusions."
+          }
+        }
+      ]
+    },
+    {
+      "subjectId": "history",
+      "grade": 2,
+      "placement": "editorial sequence within key-stage references; teacher review required",
+      "sources": [
+        "https://www.edb.gov.hk/attachment/en/curriculum-development/kla/pshe/Hist_Curr_Guide_S1-3_Eng_final_10072019.pdf",
+        "https://www.hkeaa.edu.hk/DocLibrary/HKDSE/Subject_Information/hist/2026hkdse-e-hist.pdf"
+      ],
+      "items": [
+        {
+          "questionId": "s2-history-01",
+          "level": "foundation",
+          "focus": {
+            "zh": "印刷的影響",
+            "cn": "印刷的影响",
+            "en": "The effects of printing"
+          },
+          "learningOutcome": {
+            "zh": "分析技術影響時，要分清直接效果與不一定發生的社會結果。",
+            "cn": "分析技术影响时，要分清直接效果与不一定发生的社会结果。",
+            "en": "Distinguish a technology’s direct effects from social outcomes that are not automatic."
+          }
+        },
+        {
+          "questionId": "s2-history-02",
+          "level": "application",
+          "focus": {
+            "zh": "工廠選址的改變",
+            "cn": "工厂选址的改变",
+            "en": "Changing factory locations"
+          },
+          "learningOutcome": {
+            "zh": "用技術所改變的實際條件解釋工業發展，而非假定所有限制都消失。",
+            "cn": "用技术所改变的实际条件解释工业发展，而非假定所有限制都消失。",
+            "en": "Explain industrial change through the specific constraints a technology alters."
+          }
+        },
+        {
+          "questionId": "s2-history-03",
+          "level": "challenge",
+          "focus": {
+            "zh": "十九世紀香港的兩種記錄",
+            "cn": "十九世纪香港的两种记录",
+            "en": "Two records of nineteenth-century Hong Kong"
+          },
+          "learningOutcome": {
+            "zh": "比較不同羣體的材料，可辨識同一發展帶來的不均等經驗。",
+            "cn": "比较不同群体的材料，可辨识同一发展带来的不均等经验。",
+            "en": "Compare perspectives to recognise uneven experiences within the same historical development."
+          }
+        }
+      ]
+    },
+    {
+      "subjectId": "history",
+      "grade": 3,
+      "placement": "editorial sequence within key-stage references; teacher review required",
+      "sources": [
+        "https://www.edb.gov.hk/attachment/en/curriculum-development/kla/pshe/Hist_Curr_Guide_S1-3_Eng_final_10072019.pdf",
+        "https://www.hkeaa.edu.hk/DocLibrary/HKDSE/Subject_Information/hist/2026hkdse-e-hist.pdf"
+      ],
+      "items": [
+        {
+          "questionId": "s3-history-01",
+          "level": "foundation",
+          "focus": {
+            "zh": "導火線與長期原因",
+            "cn": "导火线与长期原因",
+            "en": "Trigger and long-term causes"
+          },
+          "learningOutcome": {
+            "zh": "歷史解釋可同時包含結構性背景、促成因素與導火線。",
+            "cn": "历史解释可同时包含结构性背景、促成因素与导火线。",
+            "en": "Historical explanations can combine structural conditions, contributing factors and triggers."
+          }
+        },
+        {
+          "questionId": "s3-history-02",
+          "level": "application",
+          "focus": {
+            "zh": "國際合作的執行問題",
+            "cn": "国际合作的执行问题",
+            "en": "Enforcing international cooperation"
+          },
+          "learningOutcome": {
+            "zh": "分析國際組織時，分辨正式權限、會員意願與執行能力。",
+            "cn": "分析国际组织时，分辨正式权限、会员意愿与执行能力。",
+            "en": "Distinguish an international organisation’s formal powers, members’ willingness and practical capacity."
+          }
+        },
+        {
+          "questionId": "s3-history-03",
+          "level": "challenge",
+          "focus": {
+            "zh": "戰後就業結構",
+            "cn": "战后就业结构",
+            "en": "Post-war employment structure"
+          },
+          "learningOutcome": {
+            "zh": "描述歷史統計時，區分比例、百分點及絕對人數。",
+            "cn": "描述历史统计时，区分比例、百分点及绝对人数。",
+            "en": "Distinguish shares, percentage points and headcounts when using historical statistics."
+          }
+        }
+      ]
+    },
+    {
+      "subjectId": "history",
+      "grade": 4,
+      "placement": "editorial sequence within key-stage references; teacher review required",
+      "sources": [
+        "https://www.edb.gov.hk/attachment/en/curriculum-development/kla/pshe/Hist_Curr_Guide_S1-3_Eng_final_10072019.pdf",
+        "https://www.hkeaa.edu.hk/DocLibrary/HKDSE/Subject_Information/hist/2026hkdse-e-hist.pdf"
+      ],
+      "items": [
+        {
+          "questionId": "s4-history-01",
+          "level": "foundation",
+          "focus": {
+            "zh": "革命中的延續",
+            "cn": "革命中的延续",
+            "en": "Continuity through revolution"
+          },
+          "learningOutcome": {
+            "zh": "以明確層面及時段比較延續與轉變，避免全有或全無的結論。",
+            "cn": "以明确层面及时段比较延续与转变，避免全有或全无的结论。",
+            "en": "Compare specified dimensions and periods rather than treating change as all-or-nothing."
+          }
+        },
+        {
+          "questionId": "s4-history-02",
+          "level": "application",
+          "focus": {
+            "zh": "宣傳海報的用途",
+            "cn": "宣传海报的用途",
+            "en": "Using a propaganda poster"
+          },
+          "learningOutcome": {
+            "zh": "有立場的史料仍可用；用途須配合它的來源與目的。",
+            "cn": "有立场的史料仍可用；用途须配合它的来源与目的。",
+            "en": "A partisan source can be useful when the research question fits its origin and purpose."
+          }
+        },
+        {
+          "questionId": "s4-history-03",
+          "level": "challenge",
+          "focus": {
+            "zh": "反證與有限主張",
+            "cn": "反证与有限主张",
+            "en": "Counter-evidence and a limited claim"
+          },
+          "learningOutcome": {
+            "zh": "把思想、政策與落實情況分開，按地域及羣體限定主張。",
+            "cn": "把思想、政策与落实情况分开，按地域及群体限定主张。",
+            "en": "Distinguish ideas, policy and implementation, and qualify claims by place and group."
+          }
+        }
+      ]
+    },
+    {
+      "subjectId": "history",
+      "grade": 5,
+      "placement": "editorial sequence within key-stage references; teacher review required",
+      "sources": [
+        "https://www.edb.gov.hk/attachment/en/curriculum-development/kla/pshe/Hist_Curr_Guide_S1-3_Eng_final_10072019.pdf",
+        "https://www.hkeaa.edu.hk/DocLibrary/HKDSE/Subject_Information/hist/2026hkdse-e-hist.pdf"
+      ],
+      "items": [
+        {
+          "questionId": "s5-history-01",
+          "level": "foundation",
+          "focus": {
+            "zh": "冷戰材料的措辭",
+            "cn": "冷战材料的措辞",
+            "en": "Language in Cold War sources"
+          },
+          "learningOutcome": {
+            "zh": "辨認用語立場後，再逐項覈查事實，不把偏向等同全無史料價值。",
+            "cn": "辨认用语立场后，再逐项核查事实，不把偏向等同全无史料价值。",
+            "en": "Identify framing, then test factual claims individually rather than dismissing an entire source."
+          }
+        },
+        {
+          "questionId": "s5-history-02",
+          "level": "application",
+          "focus": {
+            "zh": "口述歷史的追問",
+            "cn": "口述历史的追问",
+            "en": "Following up oral history"
+          },
+          "learningOutcome": {
+            "zh": "口述史追問應釐清接觸範圍、時間與記憶，而非誘導預定答案。",
+            "cn": "口述史追问应厘清接触范围、时间与记忆，而非诱导预定答案。",
+            "en": "Use oral-history follow-ups to clarify scope, timing and memory without steering the answer."
+          }
+        },
+        {
+          "questionId": "s5-history-03",
+          "level": "challenge",
+          "focus": {
+            "zh": "比較不等於因果",
+            "cn": "比较不等于因果",
+            "en": "Comparison is not causation"
+          },
+          "learningOutcome": {
+            "zh": "多因解釋應比較機制、時序及替代因素，而非只找單一相關性。",
+            "cn": "多因解释应比较机制、时序及替代因素，而非只找单一相关性。",
+            "en": "Evaluate mechanisms, timing and alternatives when constructing a multi-causal explanation."
+          }
+        }
+      ]
+    },
+    {
+      "subjectId": "history",
+      "grade": 6,
+      "placement": "editorial sequence within key-stage references; teacher review required",
+      "sources": [
+        "https://www.edb.gov.hk/attachment/en/curriculum-development/kla/pshe/Hist_Curr_Guide_S1-3_Eng_final_10072019.pdf",
+        "https://www.hkeaa.edu.hk/DocLibrary/HKDSE/Subject_Information/hist/2026hkdse-e-hist.pdf"
+      ],
+      "items": [
+        {
+          "questionId": "s6-history-01",
+          "level": "foundation",
+          "focus": {
+            "zh": "三篇報道是否三份證據",
+            "cn": "三篇报道是否三份证据",
+            "en": "Are three reports three independent sources?"
+          },
+          "learningOutcome": {
+            "zh": "證據的數量須連同來源獨立性評估。",
+            "cn": "证据的数量须连同来源独立性评估。",
+            "en": "Assess the number of sources together with their independence."
+          }
+        },
+        {
+          "questionId": "s6-history-02",
+          "level": "application",
+          "focus": {
+            "zh": "總量與分配的歷史解釋",
+            "cn": "总量与分配的历史解释",
+            "en": "Historical totals and distribution"
+          },
+          "learningOutcome": {
+            "zh": "綜合宏觀與個人史料，先檢查它們是否回答相同層面的問題。",
+            "cn": "综合宏观与个人史料，先检查它们是否回答相同层面的问题。",
+            "en": "When synthesising aggregate and personal sources, check whether they address the same level of analysis."
+          }
+        },
+        {
+          "questionId": "s6-history-03",
+          "level": "challenge",
+          "focus": {
+            "zh": "有條件的歷史結論",
+            "cn": "有条件的历史结论",
+            "en": "A qualified historical conclusion"
+          },
+          "learningOutcome": {
+            "zh": "高質素歷史論證以證據限定起點、範圍及變化程度。",
+            "cn": "高质素历史论证以证据限定起点、范围及变化程度。",
+            "en": "A strong historical argument qualifies its timing, scope and degree of change with evidence."
+          }
+        }
+      ]
+    },
+    {
+      "subjectId": "art",
+      "grade": 1,
+      "placement": "editorial sequence within key-stage references; teacher review required",
+      "sources": [
+        "https://www.edb.gov.hk/en/curriculum-development/kla/arts-edu/curriculum-docs/index.html",
+        "https://www.edb.gov.hk/attachment/en/curriculum-development/kla/arts-edu/curriculum-docs/VA_CAGuide_e_2015.pdf"
+      ],
+      "items": [
+        {
+          "questionId": "s1-art-01",
+          "level": "foundation",
+          "focus": {
+            "zh": "線條的方向感",
+            "cn": "线条的方向感",
+            "en": "Directional lines"
+          },
+          "learningOutcome": {
+            "zh": "描述作品時，先指出可觀察的視覺元素及效果。",
+            "cn": "描述作品时，先指出可观察的视觉元素及效果。",
+            "en": "Describe observable visual elements and their effects."
+          }
+        },
+        {
+          "questionId": "s1-art-02",
+          "level": "application",
+          "focus": {
+            "zh": "主體與負空間",
+            "cn": "主体与负空间",
+            "en": "Subject and negative space"
+          },
+          "learningOutcome": {
+            "zh": "同時觀察主體與負空間，有助檢查比例及位置。",
+            "cn": "同时观察主体与负空间，有助检查比例及位置。",
+            "en": "Observing both the subject and negative space helps check proportion and placement."
+          }
+        },
+        {
+          "questionId": "s1-art-03",
+          "level": "challenge",
+          "focus": {
+            "zh": "低彩度中的焦點",
+            "cn": "低彩度中的焦点",
+            "en": "A focal point in muted colours"
+          },
+          "learningOutcome": {
+            "zh": "解釋焦點時，要連結具體對比與觀者的視線。",
+            "cn": "解释焦点时，要连结具体对比与观者的视线。",
+            "en": "Explain a focal point by connecting a specific contrast to the viewer’s attention."
+          }
+        }
+      ]
+    },
+    {
+      "subjectId": "art",
+      "grade": 2,
+      "placement": "editorial sequence within key-stage references; teacher review required",
+      "sources": [
+        "https://www.edb.gov.hk/en/curriculum-development/kla/arts-edu/curriculum-docs/index.html",
+        "https://www.edb.gov.hk/attachment/en/curriculum-development/kla/arts-edu/curriculum-docs/VA_CAGuide_e_2015.pdf"
+      ],
+      "items": [
+        {
+          "questionId": "s2-art-01",
+          "level": "foundation",
+          "focus": {
+            "zh": "互補色的配搭",
+            "cn": "互补色的配搭",
+            "en": "Complementary colour pairing"
+          },
+          "learningOutcome": {
+            "zh": "色彩判斷須說明所用色輪，分辨色相、明度與彩度。",
+            "cn": "色彩判断须说明所用色轮，分辨色相、明度与彩度。",
+            "en": "Specify the colour model and distinguish hue, value and saturation."
+          }
+        },
+        {
+          "questionId": "s2-art-02",
+          "level": "application",
+          "focus": {
+            "zh": "版印的左右反轉",
+            "cn": "版印的左右反转",
+            "en": "Reversal in printing"
+          },
+          "learningOutcome": {
+            "zh": "瞭解媒材的操作特性，再規劃圖像。",
+            "cn": "了解媒材的操作特性，再规划图像。",
+            "en": "Plan an image around the working properties of its medium."
+          }
+        },
+        {
+          "questionId": "s2-art-03",
+          "level": "challenge",
+          "focus": {
+            "zh": "不用加字的空間感",
+            "cn": "不用加字的空间感",
+            "en": "Creating depth without a label"
+          },
+          "learningOutcome": {
+            "zh": "空間感可由重疊、相對大小及位置等線索共同建立。",
+            "cn": "空间感可由重叠、相对大小及位置等线索共同建立。",
+            "en": "Depth can be constructed through overlap, relative size and placement."
+          }
+        }
+      ]
+    },
+    {
+      "subjectId": "art",
+      "grade": 3,
+      "placement": "editorial sequence within key-stage references; teacher review required",
+      "sources": [
+        "https://www.edb.gov.hk/en/curriculum-development/kla/arts-edu/curriculum-docs/index.html",
+        "https://www.edb.gov.hk/attachment/en/curriculum-development/kla/arts-edu/curriculum-docs/VA_CAGuide_e_2015.pdf"
+      ],
+      "items": [
+        {
+          "questionId": "s3-art-01",
+          "level": "foundation",
+          "focus": {
+            "zh": "閱讀次序",
+            "cn": "阅读次序",
+            "en": "Reading hierarchy"
+          },
+          "learningOutcome": {
+            "zh": "視覺層次須配合資訊優先次序及使用情境。",
+            "cn": "视觉层次须配合资讯优先次序及使用情境。",
+            "en": "Match visual hierarchy to information priorities and the viewing context."
+          }
+        },
+        {
+          "questionId": "s3-art-02",
+          "level": "application",
+          "focus": {
+            "zh": "灰階後仍可讀",
+            "cn": "灰阶后仍可读",
+            "en": "Readable in greyscale"
+          },
+          "learningOutcome": {
+            "zh": "重要資訊應以多於一種視覺線索傳達。",
+            "cn": "重要资讯应以多于一种视觉线索传达。",
+            "en": "Communicate essential information through more than one visual cue."
+          }
+        },
+        {
+          "questionId": "s3-art-03",
+          "level": "challenge",
+          "focus": {
+            "zh": "對稱不等於唯一平衡",
+            "cn": "对称不等于唯一平衡",
+            "en": "Balance beyond symmetry"
+          },
+          "learningOutcome": {
+            "zh": "以視覺重量解釋構圖，而非只套用左右相等的規則。",
+            "cn": "以视觉重量解释构图，而非只套用左右相等的规则。",
+            "en": "Analyse balance through visual weight rather than simply requiring equal sides."
+          }
+        }
+      ]
+    },
+    {
+      "subjectId": "art",
+      "grade": 4,
+      "placement": "editorial sequence within key-stage references; teacher review required",
+      "sources": [
+        "https://www.edb.gov.hk/en/curriculum-development/kla/arts-edu/curriculum-docs/index.html",
+        "https://www.edb.gov.hk/attachment/en/curriculum-development/kla/arts-edu/curriculum-docs/VA_CAGuide_e_2015.pdf"
+      ],
+      "items": [
+        {
+          "questionId": "s4-art-01",
+          "level": "foundation",
+          "focus": {
+            "zh": "媒材與表達",
+            "cn": "媒材与表达",
+            "en": "Medium and expression"
+          },
+          "learningOutcome": {
+            "zh": "媒材技巧應有明確表達目的，而非以昂貴程度判斷效果。",
+            "cn": "媒材技巧应有明确表达目的，而非以昂贵程度判断效果。",
+            "en": "Choose techniques for their expressive purpose, not their cost."
+          }
+        },
+        {
+          "questionId": "s4-art-02",
+          "level": "application",
+          "focus": {
+            "zh": "詮釋與作品脈絡",
+            "cn": "诠释与作品脉络",
+            "en": "Interpretation and context"
+          },
+          "learningOutcome": {
+            "zh": "有根據的詮釋連結可見特徵、材料及具體脈絡。",
+            "cn": "有根据的诠释连结可见特征、材料及具体脉络。",
+            "en": "Support interpretation with visible features, materials and specific context."
+          }
+        },
+        {
+          "questionId": "s4-art-03",
+          "level": "challenge",
+          "focus": {
+            "zh": "策展中的對話",
+            "cn": "策展中的对话",
+            "en": "Dialogue between exhibits"
+          },
+          "learningOutcome": {
+            "zh": "策展選擇須說明作品之間如何共同建立意義。",
+            "cn": "策展选择须说明作品之间如何共同建立意义。",
+            "en": "Explain how relationships between works contribute to an exhibition’s meaning."
+          }
+        }
+      ]
+    },
+    {
+      "subjectId": "art",
+      "grade": 5,
+      "placement": "editorial sequence within key-stage references; teacher review required",
+      "sources": [
+        "https://www.edb.gov.hk/en/curriculum-development/kla/arts-edu/curriculum-docs/index.html",
+        "https://www.edb.gov.hk/attachment/en/curriculum-development/kla/arts-edu/curriculum-docs/VA_CAGuide_e_2015.pdf"
+      ],
+      "items": [
+        {
+          "questionId": "s5-art-01",
+          "level": "foundation",
+          "focus": {
+            "zh": "過程記錄的價值",
+            "cn": "过程记录的价值",
+            "en": "The value of process records"
+          },
+          "learningOutcome": {
+            "zh": "作品集應呈現思考與取捨，而不只是最終成品。",
+            "cn": "作品集应呈现思考与取舍，而不只是最终成品。",
+            "en": "A portfolio should reveal reasoning and choices as well as finished work."
+          }
+        },
+        {
+          "questionId": "s5-art-02",
+          "level": "application",
+          "focus": {
+            "zh": "一次只改一個設計因素",
+            "cn": "一次只改一个设计因素",
+            "en": "Testing a design variable"
+          },
+          "learningOutcome": {
+            "zh": "設計測試先訂可觀察目標，再控制影響比較的因素。",
+            "cn": "设计测试先订可观察目标，再控制影响比较的因素。",
+            "en": "Define an observable design outcome and control factors that affect the comparison."
+          }
+        },
+        {
+          "questionId": "s5-art-03",
+          "level": "challenge",
+          "focus": {
+            "zh": "再用圖像的清楚署名",
+            "cn": "再用图像的清楚署名",
+            "en": "Transparent use of an image"
+          },
+          "learningOutcome": {
+            "zh": "清楚區分來源素材、使用依據及自己的創作決定。",
+            "cn": "清楚区分来源素材、使用依据及自己的创作决定。",
+            "en": "Distinguish source material, the basis for using it and your own creative decisions."
+          }
+        }
+      ]
+    },
+    {
+      "subjectId": "art",
+      "grade": 6,
+      "placement": "editorial sequence within key-stage references; teacher review required",
+      "sources": [
+        "https://www.edb.gov.hk/en/curriculum-development/kla/arts-edu/curriculum-docs/index.html",
+        "https://www.edb.gov.hk/attachment/en/curriculum-development/kla/arts-edu/curriculum-docs/VA_CAGuide_e_2015.pdf"
+      ],
+      "items": [
+        {
+          "questionId": "s6-art-01",
+          "level": "foundation",
+          "focus": {
+            "zh": "評論的證據",
+            "cn": "评论的证据",
+            "en": "Evidence in criticism"
+          },
+          "learningOutcome": {
+            "zh": "評價應由具體分析支撐，容許他人提出有根據的不同解讀。",
+            "cn": "评价应由具体分析支撑，容许他人提出有根据的不同解读。",
+            "en": "Support judgement with analysis that allows informed alternative readings."
+          }
+        },
+        {
+          "questionId": "s6-art-02",
+          "level": "application",
+          "focus": {
+            "zh": "修改與創作意圖",
+            "cn": "修改与创作意图",
+            "en": "Revision and artistic intention"
+          },
+          "learningOutcome": {
+            "zh": "將回饋與意圖、形式及觀眾反應互相比較，再決定修訂。",
+            "cn": "将回馈与意图、形式及观众反应互相比较，再决定修订。",
+            "en": "Weigh feedback against intention, form and audience response before revising."
+          }
+        },
+        {
+          "questionId": "s6-art-03",
+          "level": "challenge",
+          "focus": {
+            "zh": "可追溯的創作論述",
+            "cn": "可追溯的创作论述",
+            "en": "A traceable artistic argument"
+          },
+          "learningOutcome": {
+            "zh": "綜合創作與評賞時，建立意圖、證據、試驗和反思之間的關係。",
+            "cn": "综合创作与评赏时，建立意图、证据、试验和反思之间的关系。",
+            "en": "Connect intention, evidence, experimentation and reflection when integrating making and criticism."
+          }
+        }
+      ]
+    },
+    {
+      "subjectId": "music",
+      "grade": 1,
+      "placement": "editorial sequence within key-stage references; teacher review required",
+      "sources": [
+        "https://www.edb.gov.hk/en/curriculum-development/kla/arts-edu/curriculum-docs/index.html",
+        "https://www.edb.gov.hk/attachment/en/curriculum-development/kla/arts-edu/curriculum-docs/mus_c_and_a_e_2024.pdf"
+      ],
+      "items": [
+        {
+          "questionId": "s1-music-01",
+          "level": "foundation",
+          "focus": {
+            "zh": "四拍小節",
+            "cn": "四拍小节",
+            "en": "A four-beat bar"
+          },
+          "learningOutcome": {
+            "zh": "計算小節時值時，把音符都轉成相同拍值再相加。",
+            "cn": "计算小节时值时，把音符都转成相同拍值再相加。",
+            "en": "Convert notes to the same beat unit when checking a bar’s duration."
+          }
+        },
+        {
+          "questionId": "s1-music-02",
+          "level": "application",
+          "focus": {
+            "zh": "休止仍佔時間",
+            "cn": "休止仍占时间",
+            "en": "Rests still take time"
+          },
+          "learningOutcome": {
+            "zh": "穩定拍子在發聲和休止時都持續存在。",
+            "cn": "稳定拍子在发声和休止时都持续存在。",
+            "en": "The underlying pulse continues through notes and rests."
+          }
+        },
+        {
+          "questionId": "s1-music-03",
+          "level": "challenge",
+          "focus": {
+            "zh": "拍子與節奏",
+            "cn": "拍子与节奏",
+            "en": "Pulse and rhythm"
+          },
+          "learningOutcome": {
+            "zh": "分辨速度、拍子和節奏密度，避免把音符多誤當加速。",
+            "cn": "分辨速度、拍子和节奏密度，避免把音符多误当加速。",
+            "en": "Distinguish tempo, pulse and rhythmic density."
+          }
+        }
+      ]
+    },
+    {
+      "subjectId": "music",
+      "grade": 2,
+      "placement": "editorial sequence within key-stage references; teacher review required",
+      "sources": [
+        "https://www.edb.gov.hk/en/curriculum-development/kla/arts-edu/curriculum-docs/index.html",
+        "https://www.edb.gov.hk/attachment/en/curriculum-development/kla/arts-edu/curriculum-docs/mus_c_and_a_e_2024.pdf"
+      ],
+      "items": [
+        {
+          "questionId": "s2-music-01",
+          "level": "foundation",
+          "focus": {
+            "zh": "附點音符",
+            "cn": "附点音符",
+            "en": "Dotted notes"
+          },
+          "learningOutcome": {
+            "zh": "附點按原音符的時值計算，不是固定加某個拍數。",
+            "cn": "附点按原音符的时值计算，不是固定加某个拍数。",
+            "en": "Calculate a dot from the original note’s value."
+          }
+        },
+        {
+          "questionId": "s2-music-02",
+          "level": "application",
+          "focus": {
+            "zh": "旋律與伴奏織體",
+            "cn": "旋律与伴奏织体",
+            "en": "Melody and accompaniment"
+          },
+          "learningOutcome": {
+            "zh": "根據聲部之間的關係描述織體，而非只數樂器。",
+            "cn": "根据声部之间的关系描述织体，而非只数乐器。",
+            "en": "Describe texture through relationships between parts, not simply the number of instruments."
+          }
+        },
+        {
+          "questionId": "s2-music-03",
+          "level": "challenge",
+          "focus": {
+            "zh": "樂段與曲式",
+            "cn": "乐段与曲式",
+            "en": "Sections and form"
+          },
+          "learningOutcome": {
+            "zh": "以材料是否重現或對比來標記曲式。",
+            "cn": "以材料是否重现或对比来标记曲式。",
+            "en": "Label form by identifying returning and contrasting material."
+          }
+        }
+      ]
+    },
+    {
+      "subjectId": "music",
+      "grade": 3,
+      "placement": "editorial sequence within key-stage references; teacher review required",
+      "sources": [
+        "https://www.edb.gov.hk/en/curriculum-development/kla/arts-edu/curriculum-docs/index.html",
+        "https://www.edb.gov.hk/attachment/en/curriculum-development/kla/arts-edu/curriculum-docs/mus_c_and_a_e_2024.pdf"
+      ],
+      "items": [
+        {
+          "questionId": "s3-music-01",
+          "level": "foundation",
+          "focus": {
+            "zh": "旋律移調",
+            "cn": "旋律移调",
+            "en": "Transposing a melody"
+          },
+          "learningOutcome": {
+            "zh": "移調時每個音都移相同音程，不能只換起音。",
+            "cn": "移调时每个音都移相同音程，不能只换起音。",
+            "en": "Transpose every note by the same interval, not just the starting note."
+          }
+        },
+        {
+          "questionId": "s3-music-02",
+          "level": "application",
+          "focus": {
+            "zh": "三和絃的構成",
+            "cn": "三和弦的构成",
+            "en": "Building a triad"
+          },
+          "learningOutcome": {
+            "zh": "用調式中的音級理解和絃功能，與單純連續音階區分。",
+            "cn": "用调式中的音级理解和弦功能，与单纯连续音阶区分。",
+            "en": "Use scale degrees to understand chords and distinguish them from consecutive scale notes."
+          }
+        },
+        {
+          "questionId": "s3-music-03",
+          "level": "challenge",
+          "focus": {
+            "zh": "力度不等於速度",
+            "cn": "力度不等于速度",
+            "en": "Dynamics are not tempo"
+          },
+          "learningOutcome": {
+            "zh": "分別處理力度、速度與音高的記譜訊息。",
+            "cn": "分别处理力度、速度与音高的记谱讯息。",
+            "en": "Read dynamic, tempo and pitch information as distinct musical dimensions."
+          }
+        }
+      ]
+    },
+    {
+      "subjectId": "music",
+      "grade": 4,
+      "placement": "editorial sequence within key-stage references; teacher review required",
+      "sources": [
+        "https://www.edb.gov.hk/en/curriculum-development/kla/arts-edu/curriculum-docs/index.html",
+        "https://www.edb.gov.hk/attachment/en/curriculum-development/kla/arts-edu/curriculum-docs/mus_c_and_a_e_2024.pdf"
+      ],
+      "items": [
+        {
+          "questionId": "s4-music-01",
+          "level": "foundation",
+          "focus": {
+            "zh": "複合拍子的重拍",
+            "cn": "复合拍子的重拍",
+            "en": "Beats in compound metre"
+          },
+          "learningOutcome": {
+            "zh": "複合拍子要區分主要拍子與其三等分細分。",
+            "cn": "复合拍子要区分主要拍子与其三等分细分。",
+            "en": "In compound metre, distinguish main beats from their three-part subdivisions."
+          }
+        },
+        {
+          "questionId": "s4-music-02",
+          "level": "application",
+          "focus": {
+            "zh": "終止式的功能",
+            "cn": "终止式的功能",
+            "en": "The function of a cadence"
+          },
+          "learningOutcome": {
+            "zh": "把和聲功能與調性關係連起來，而非與速度或拍號混淆。",
+            "cn": "把和声功能与调性关系连起来，而非与速度或拍号混淆。",
+            "en": "Connect harmonic function with tonality rather than tempo or metre."
+          }
+        },
+        {
+          "questionId": "s4-music-03",
+          "level": "challenge",
+          "focus": {
+            "zh": "保留動機的發展",
+            "cn": "保留动机的发展",
+            "en": "Developing a motif"
+          },
+          "learningOutcome": {
+            "zh": "動機發展在保留可辨認特徵與引入變化之間取捨。",
+            "cn": "动机发展在保留可辨认特征与引入变化之间取舍。",
+            "en": "Motivic development balances recognisable identity and change."
+          }
+        }
+      ]
+    },
+    {
+      "subjectId": "music",
+      "grade": 5,
+      "placement": "editorial sequence within key-stage references; teacher review required",
+      "sources": [
+        "https://www.edb.gov.hk/en/curriculum-development/kla/arts-edu/curriculum-docs/index.html",
+        "https://www.edb.gov.hk/attachment/en/curriculum-development/kla/arts-edu/curriculum-docs/mus_c_and_a_e_2024.pdf"
+      ],
+      "items": [
+        {
+          "questionId": "s5-music-01",
+          "level": "foundation",
+          "focus": {
+            "zh": "切分音的重音",
+            "cn": "切分音的重音",
+            "en": "Syncopated emphasis"
+          },
+          "learningOutcome": {
+            "zh": "切分改變重音與起音的關係，不一定改變拍號。",
+            "cn": "切分改变重音与起音的关系，不一定改变拍号。",
+            "en": "Syncopation changes the relation of onset to metrical emphasis without necessarily changing metre."
+          }
+        },
+        {
+          "questionId": "s5-music-02",
+          "level": "application",
+          "focus": {
+            "zh": "配器中的遮蓋",
+            "cn": "配器中的遮盖",
+            "en": "Masking in an arrangement"
+          },
+          "learningOutcome": {
+            "zh": "配器考慮音色、音區、力度和織體的互相作用。",
+            "cn": "配器考虑音色、音区、力度和织体的互相作用。",
+            "en": "Consider interactions among timbre, register, dynamics and texture in orchestration."
+          }
+        },
+        {
+          "questionId": "s5-music-03",
+          "level": "challenge",
+          "focus": {
+            "zh": "音高變化與速度變化",
+            "cn": "音高变化与速度变化",
+            "en": "Pitch change and speed change"
+          },
+          "learningOutcome": {
+            "zh": "分析音訊工具時，分清一般變速與保留音高的時間伸縮。",
+            "cn": "分析音讯工具时，分清一般变速与保留音高的时间伸缩。",
+            "en": "Distinguish ordinary speed changes from pitch-preserving time stretching."
+          }
+        }
+      ]
+    },
+    {
+      "subjectId": "music",
+      "grade": 6,
+      "placement": "editorial sequence within key-stage references; teacher review required",
+      "sources": [
+        "https://www.edb.gov.hk/en/curriculum-development/kla/arts-edu/curriculum-docs/index.html",
+        "https://www.edb.gov.hk/attachment/en/curriculum-development/kla/arts-edu/curriculum-docs/mus_c_and_a_e_2024.pdf"
+      ],
+      "items": [
+        {
+          "questionId": "s6-music-01",
+          "level": "foundation",
+          "focus": {
+            "zh": "有證據的演奏比較",
+            "cn": "有证据的演奏比较",
+            "en": "Evidence-based performance comparison"
+          },
+          "learningOutcome": {
+            "zh": "音樂評論應討論可聽證據，不猜測演奏者背景。",
+            "cn": "音乐评论应讨论可听证据，不猜测演奏者背景。",
+            "en": "Discuss audible evidence rather than guessing a performer’s background."
+          }
+        },
+        {
+          "questionId": "s6-music-02",
+          "level": "application",
+          "focus": {
+            "zh": "選擇適合的創作修訂",
+            "cn": "选择适合的创作修订",
+            "en": "Choosing a purposeful composition revision"
+          },
+          "learningOutcome": {
+            "zh": "創作修訂須讓聽者在聲音組織中感受到意圖。",
+            "cn": "创作修订须让听者在声音组织中感受到意图。",
+            "en": "Make an artistic intention audible through the organisation of sound."
+          }
+        },
+        {
+          "questionId": "s6-music-03",
+          "level": "challenge",
+          "focus": {
+            "zh": "公平比較混音版本",
+            "cn": "公平比较混音版本",
+            "en": "Comparing mixes fairly"
+          },
+          "learningOutcome": {
+            "zh": "錄音評估須控制比較條件，再用明確音樂準則判斷。",
+            "cn": "录音评估须控制比较条件，再用明确音乐准则判断。",
+            "en": "Control listening conditions and use explicit musical criteria when evaluating recordings."
+          }
+        }
+      ]
+    },
+    {
+      "subjectId": "library",
+      "grade": 1,
+      "placement": "editorial sequence within key-stage references; teacher review required",
+      "sources": [
+        "https://www.edb.gov.hk/attachment/en/edu-system/primary-secondary/applicable-to-primary-secondary/it-in-edu/Information-Literacy/IL_learningFramework/IL_LearningFramework%282024%29_EN.pdf"
+      ],
+      "items": [
+        {
+          "questionId": "s1-library-01",
+          "level": "foundation",
+          "focus": {
+            "zh": "找到指定版本",
+            "cn": "找到指定版本",
+            "en": "Finding a specified edition"
+          },
+          "learningOutcome": {
+            "zh": "查找指定資源時，使用完整書目資料而非只看書名。",
+            "cn": "查找指定资源时，使用完整书目资料而非只看书名。",
+            "en": "Use complete bibliographic details when locating a specified resource."
+          }
+        },
+        {
+          "questionId": "s1-library-02",
+          "level": "application",
+          "focus": {
+            "zh": "書架排序",
+            "cn": "书架排序",
+            "en": "Shelf order"
+          },
+          "learningOutcome": {
+            "zh": "依圖書館指定的排序規則逐部分比較索書號。",
+            "cn": "依图书馆指定的排序规则逐部分比较索书号。",
+            "en": "Follow the library’s stated filing rules when comparing call numbers."
+          }
+        },
+        {
+          "questionId": "s1-library-03",
+          "level": "challenge",
+          "focus": {
+            "zh": "為問題選資料",
+            "cn": "为问题选资料",
+            "en": "Choosing a source for a question"
+          },
+          "learningOutcome": {
+            "zh": "來源是否合適，取決於問題的時間、地點和用途。",
+            "cn": "来源是否合适，取决于问题的时间、地点和用途。",
+            "en": "A source’s suitability depends on the question’s time, place and purpose."
+          }
+        }
+      ]
+    },
+    {
+      "subjectId": "library",
+      "grade": 2,
+      "placement": "editorial sequence within key-stage references; teacher review required",
+      "sources": [
+        "https://www.edb.gov.hk/attachment/en/edu-system/primary-secondary/applicable-to-primary-secondary/it-in-edu/Information-Literacy/IL_learningFramework/IL_LearningFramework%282024%29_EN.pdf"
+      ],
+      "items": [
+        {
+          "questionId": "s2-library-01",
+          "level": "foundation",
+          "focus": {
+            "zh": "擴闊同義詞搜尋",
+            "cn": "扩阔同义词搜寻",
+            "en": "Searching synonyms"
+          },
+          "learningOutcome": {
+            "zh": "搜尋同義或相關詞時，可用OR擴闊覆蓋；AND用來交集。",
+            "cn": "搜寻同义或相关词时，可用OR扩阔覆盖；AND用来交集。",
+            "en": "Use OR to cover alternatives and AND to intersect concepts."
+          }
+        },
+        {
+          "questionId": "s2-library-02",
+          "level": "application",
+          "focus": {
+            "zh": "縮窄過廣搜尋",
+            "cn": "缩窄过广搜寻",
+            "en": "Narrowing a broad search"
+          },
+          "learningOutcome": {
+            "zh": "把研究題目拆成主題、對象及情境，再組合搜尋詞。",
+            "cn": "把研究题目拆成主题、对象及情境，再组合搜寻词。",
+            "en": "Break a research topic into concept, population and context when choosing search terms."
+          }
+        },
+        {
+          "questionId": "s2-library-03",
+          "level": "challenge",
+          "focus": {
+            "zh": "摘要與原文",
+            "cn": "摘要与原文",
+            "en": "Abstract and full text"
+          },
+          "learningOutcome": {
+            "zh": "引用精確結果前，核對原文中的方法、數值與範圍。",
+            "cn": "引用精确结果前，核对原文中的方法、数值与范围。",
+            "en": "Check methods, values and scope in the original before citing a precise result."
+          }
+        }
+      ]
+    },
+    {
+      "subjectId": "library",
+      "grade": 3,
+      "placement": "editorial sequence within key-stage references; teacher review required",
+      "sources": [
+        "https://www.edb.gov.hk/attachment/en/edu-system/primary-secondary/applicable-to-primary-secondary/it-in-edu/Information-Literacy/IL_learningFramework/IL_LearningFramework%282024%29_EN.pdf"
+      ],
+      "items": [
+        {
+          "questionId": "s3-library-01",
+          "level": "foundation",
+          "focus": {
+            "zh": "改寫仍須引用",
+            "cn": "改写仍须引用",
+            "en": "Paraphrasing still needs a citation"
+          },
+          "learningOutcome": {
+            "zh": "區分直接引文與改寫，兩者都要讓讀者追查來源。",
+            "cn": "区分直接引文与改写，两者都要让读者追查来源。",
+            "en": "Distinguish quotation from paraphrase and make both traceable."
+          }
+        },
+        {
+          "questionId": "s3-library-02",
+          "level": "application",
+          "focus": {
+            "zh": "引用是否真的支持",
+            "cn": "引用是否真的支持",
+            "en": "Does the citation support the claim?"
+          },
+          "learningOutcome": {
+            "zh": "檢查引用是否支持主張的對象、數量及確定程度。",
+            "cn": "检查引用是否支持主张的对象、数量及确定程度。",
+            "en": "Check whether a citation supports a claim’s population, quantity and certainty."
+          }
+        },
+        {
+          "questionId": "s3-library-03",
+          "level": "challenge",
+          "focus": {
+            "zh": "版本更正",
+            "cn": "版本更正",
+            "en": "Corrections and versions"
+          },
+          "learningOutcome": {
+            "zh": "研究記錄應保留版本資訊，並處理已發布的更正。",
+            "cn": "研究记录应保留版本资讯，并处理已发布的更正。",
+            "en": "Track versions and account for published corrections."
+          }
+        }
+      ]
+    },
+    {
+      "subjectId": "library",
+      "grade": 4,
+      "placement": "editorial sequence within key-stage references; teacher review required",
+      "sources": [
+        "https://www.edb.gov.hk/attachment/en/edu-system/primary-secondary/applicable-to-primary-secondary/it-in-edu/Information-Literacy/IL_learningFramework/IL_LearningFramework%282024%29_EN.pdf"
+      ],
+      "items": [
+        {
+          "questionId": "s4-library-01",
+          "level": "foundation",
+          "focus": {
+            "zh": "把概念變成量度",
+            "cn": "把概念变成量度",
+            "en": "Operationalising a concept"
+          },
+          "learningOutcome": {
+            "zh": "把抽象概念轉成與研究問題相關、可重複量度的指標。",
+            "cn": "把抽象概念转成与研究问题相关、可重复量度的指标。",
+            "en": "Translate an abstract concept into relevant, repeatable measures."
+          }
+        },
+        {
+          "questionId": "s4-library-02",
+          "level": "application",
+          "focus": {
+            "zh": "避免引導式問卷",
+            "cn": "避免引导式问卷",
+            "en": "Avoiding a leading survey"
+          },
+          "learningOutcome": {
+            "zh": "問卷措辭應讓不同經驗都能被表達。",
+            "cn": "问卷措辞应让不同经验都能被表达。",
+            "en": "Phrase surveys so different experiences can be expressed."
+          }
+        },
+        {
+          "questionId": "s4-library-03",
+          "level": "challenge",
+          "focus": {
+            "zh": "自選樣本",
+            "cn": "自选样本",
+            "en": "Self-selected samples"
+          },
+          "learningOutcome": {
+            "zh": "評估調查時，先問誰有機會被邀請及誰選擇回覆。",
+            "cn": "评估调查时，先问谁有机会被邀请及谁选择回复。",
+            "en": "Ask who could be recruited and who chose to respond."
+          }
+        }
+      ]
+    },
+    {
+      "subjectId": "library",
+      "grade": 5,
+      "placement": "editorial sequence within key-stage references; teacher review required",
+      "sources": [
+        "https://www.edb.gov.hk/attachment/en/edu-system/primary-secondary/applicable-to-primary-secondary/it-in-edu/Information-Literacy/IL_learningFramework/IL_LearningFramework%282024%29_EN.pdf"
+      ],
+      "items": [
+        {
+          "questionId": "s5-library-01",
+          "level": "foundation",
+          "focus": {
+            "zh": "相對增加與基準",
+            "cn": "相对增加与基准",
+            "en": "Relative growth and the baseline"
+          },
+          "learningOutcome": {
+            "zh": "報道百分率時，保留基準和絕對數，避免放大印象。",
+            "cn": "报道百分率时，保留基准和绝对数，避免放大印象。",
+            "en": "Report baselines and absolute values alongside percentages."
+          }
+        },
+        {
+          "questionId": "s5-library-02",
+          "level": "application",
+          "focus": {
+            "zh": "區分觀察與實驗",
+            "cn": "区分观察与实验",
+            "en": "Observational and experimental evidence"
+          },
+          "learningOutcome": {
+            "zh": "研究設計決定可作出的推論，不把關聯寫成已證實因果。",
+            "cn": "研究设计决定可作出的推论，不把关联写成已证实因果。",
+            "en": "Match the strength of a conclusion to the study design."
+          }
+        },
+        {
+          "questionId": "s5-library-03",
+          "level": "challenge",
+          "focus": {
+            "zh": "有系統地找反方證據",
+            "cn": "有系统地找反方证据",
+            "en": "Searching beyond agreement"
+          },
+          "learningOutcome": {
+            "zh": "搜尋及納入準則應先於結論，避免只收集支持自己的資料。",
+            "cn": "搜寻及纳入准则应先于结论，避免只收集支持自己的资料。",
+            "en": "Set search and inclusion criteria independently of the desired conclusion."
+          }
+        }
+      ]
+    },
+    {
+      "subjectId": "library",
+      "grade": 6,
+      "placement": "editorial sequence within key-stage references; teacher review required",
+      "sources": [
+        "https://www.edb.gov.hk/attachment/en/edu-system/primary-secondary/applicable-to-primary-secondary/it-in-edu/Information-Literacy/IL_learningFramework/IL_LearningFramework%282024%29_EN.pdf"
+      ],
+      "items": [
+        {
+          "questionId": "s6-library-01",
+          "level": "foundation",
+          "focus": {
+            "zh": "引用鏈與原始研究",
+            "cn": "引用链与原始研究",
+            "en": "Citation chains and original studies"
+          },
+          "learningOutcome": {
+            "zh": "追溯到原始資料，避免把多次轉述重複計入證據。",
+            "cn": "追溯到原始资料，避免把多次转述重复计入证据。",
+            "en": "Trace original data to avoid double-counting repeated reports."
+          }
+        },
+        {
+          "questionId": "s6-library-02",
+          "level": "application",
+          "focus": {
+            "zh": "結果不同如何綜合",
+            "cn": "结果不同如何综合",
+            "en": "Synthesising different results"
+          },
+          "learningOutcome": {
+            "zh": "證據綜合要解釋差異可能來自甚麼，而非只統計支持或反對篇數。",
+            "cn": "证据综合要解释差异可能来自甚么，而非只统计支持或反对篇数。",
+            "en": "Synthesis should explain differences rather than merely count favourable and unfavourable studies."
+          }
+        },
+        {
+          "questionId": "s6-library-03",
+          "level": "challenge",
+          "focus": {
+            "zh": "可重做的研究記錄",
+            "cn": "可重做的研究记录",
+            "en": "A reproducible research record"
+          },
+          "learningOutcome": {
+            "zh": "透明研究須保存搜尋與選擇過程，讓限制可被檢查。",
+            "cn": "透明研究须保存搜寻与选择过程，让限制可被检查。",
+            "en": "Document search and selection processes so the research and its limits can be examined."
+          }
+        }
+      ]
+    },
+    {
+      "subjectId": "rooftop",
+      "grade": 1,
+      "placement": "editorial sequence within key-stage references; teacher review required",
+      "sources": [
+        "https://www.edb.gov.hk/en/curriculum-development/kla/science-edu/curriculum-documents.html",
+        "https://www.edb.gov.hk/en/curriculum-development/kla/pshe/js_geog.html",
+        "https://www.edb.gov.hk/en/curriculum-development/major-level-of-edu/secondary/CG_documents.html"
+      ],
+      "items": [
+        {
+          "questionId": "s1-rooftop-01",
+          "level": "foundation",
+          "focus": {
+            "zh": "探究：觀察與推論",
+            "cn": "探究：观察与推论",
+            "en": "Enquiry: observation and inference"
+          },
+          "learningOutcome": {
+            "zh": "先記錄可觀察的現象，再提出可檢驗的解釋。",
+            "cn": "先记录可观察的现象，再提出可检验的解释。",
+            "en": "Record observable features before proposing testable explanations."
+          }
+        },
+        {
+          "questionId": "s1-rooftop-02",
+          "level": "application",
+          "focus": {
+            "zh": "探究：水量收支",
+            "cn": "探究：水量收支",
+            "en": "Enquiry: a water balance"
+          },
+          "learningOutcome": {
+            "zh": "系統收支要包含初始存量、輸入與輸出。",
+            "cn": "系统收支要包含初始存量、输入与输出。",
+            "en": "A system balance includes initial storage, inputs and outputs."
+          }
+        },
+        {
+          "questionId": "s1-rooftop-03",
+          "level": "challenge",
+          "focus": {
+            "zh": "探究：公平比較生長",
+            "cn": "探究：公平比较生长",
+            "en": "Enquiry: fairly comparing growth"
+          },
+          "learningOutcome": {
+            "zh": "生長比較需要相近起點、控制條件與重複觀察。",
+            "cn": "生长比较需要相近起点、控制条件与重复观察。",
+            "en": "Growth comparisons need comparable baselines, controlled conditions and repeated observations."
+          }
+        }
+      ]
+    },
+    {
+      "subjectId": "rooftop",
+      "grade": 2,
+      "placement": "editorial sequence within key-stage references; teacher review required",
+      "sources": [
+        "https://www.edb.gov.hk/en/curriculum-development/kla/science-edu/curriculum-documents.html",
+        "https://www.edb.gov.hk/en/curriculum-development/kla/pshe/js_geog.html",
+        "https://www.edb.gov.hk/en/curriculum-development/major-level-of-edu/secondary/CG_documents.html"
+      ],
+      "items": [
+        {
+          "questionId": "s2-rooftop-01",
+          "level": "foundation",
+          "focus": {
+            "zh": "探究：食物網的間接影響",
+            "cn": "探究：食物网的间接影响",
+            "en": "Enquiry: indirect effects in a food web"
+          },
+          "learningOutcome": {
+            "zh": "食物網連結不同生物；簡化模型亦可能省略替代食物。",
+            "cn": "食物网连结不同生物；简化模型亦可能省略替代食物。",
+            "en": "Food webs connect organisms; simplified models may omit alternative foods."
+          }
+        },
+        {
+          "questionId": "s2-rooftop-02",
+          "level": "application",
+          "focus": {
+            "zh": "探究：面積與雨水收集",
+            "cn": "探究：面积与雨水收集",
+            "en": "Enquiry: area and rainwater collection"
+          },
+          "learningOutcome": {
+            "zh": "估算資源量要連結深度、面積及系統效率。",
+            "cn": "估算资源量要连结深度、面积及系统效率。",
+            "en": "Resource estimates connect depth, area and system efficiency."
+          }
+        },
+        {
+          "questionId": "s2-rooftop-03",
+          "level": "challenge",
+          "focus": {
+            "zh": "探究：用比例比較發芽",
+            "cn": "探究：用比例比较发芽",
+            "en": "Enquiry: comparing germination rates"
+          },
+          "learningOutcome": {
+            "zh": "比較效果須使用合適比例，同時保留樣本數及不確定性。",
+            "cn": "比较效果须使用合适比例，同时保留样本数及不确定性。",
+            "en": "Compare outcomes with suitable rates while retaining sample size and uncertainty."
+          }
+        }
+      ]
+    },
+    {
+      "subjectId": "rooftop",
+      "grade": 3,
+      "placement": "editorial sequence within key-stage references; teacher review required",
+      "sources": [
+        "https://www.edb.gov.hk/en/curriculum-development/kla/science-edu/curriculum-documents.html",
+        "https://www.edb.gov.hk/en/curriculum-development/kla/pshe/js_geog.html",
+        "https://www.edb.gov.hk/en/curriculum-development/major-level-of-edu/secondary/CG_documents.html"
+      ],
+      "items": [
+        {
+          "questionId": "s3-rooftop-01",
+          "level": "foundation",
+          "focus": {
+            "zh": "探究：物種豐富度與均勻度",
+            "cn": "探究：物种丰富度与均匀度",
+            "en": "Enquiry: richness and evenness"
+          },
+          "learningOutcome": {
+            "zh": "描述生物多樣性時，區分種類數、個體總數與分佈。",
+            "cn": "描述生物多样性时，区分种类数、个体总数与分布。",
+            "en": "Distinguish species count, total individuals and their distribution when describing biodiversity."
+          }
+        },
+        {
+          "questionId": "s3-rooftop-02",
+          "level": "application",
+          "focus": {
+            "zh": "探究：堆肥的物質循環",
+            "cn": "探究：堆肥的物质循环",
+            "en": "Enquiry: material cycling in compost"
+          },
+          "learningOutcome": {
+            "zh": "解釋環境系統的質量變化時，先界定系統邊界和物質流。",
+            "cn": "解释环境系统的质量变化时，先界定系统边界和物质流。",
+            "en": "Define system boundaries and material flows before explaining environmental mass changes."
+          }
+        },
+        {
+          "questionId": "s3-rooftop-03",
+          "level": "challenge",
+          "focus": {
+            "zh": "探究：樣方取樣的偏差",
+            "cn": "探究：样方取样的偏差",
+            "en": "Enquiry: bias in quadrat sampling"
+          },
+          "learningOutcome": {
+            "zh": "取樣位置要先於結果決定，並保留研究範圍內的真實零值。",
+            "cn": "取样位置要先于结果决定，并保留研究范围内的真实零值。",
+            "en": "Choose sampling positions independently of results and retain genuine zeroes."
+          }
+        }
+      ]
+    },
+    {
+      "subjectId": "rooftop",
+      "grade": 4,
+      "placement": "editorial sequence within key-stage references; teacher review required",
+      "sources": [
+        "https://www.edb.gov.hk/en/curriculum-development/kla/science-edu/curriculum-documents.html",
+        "https://www.edb.gov.hk/en/curriculum-development/kla/pshe/js_geog.html",
+        "https://www.edb.gov.hk/en/curriculum-development/major-level-of-edu/secondary/CG_documents.html"
+      ],
+      "items": [
+        {
+          "questionId": "s4-rooftop-01",
+          "level": "foundation",
+          "focus": {
+            "zh": "延伸：太陽能轉換效率",
+            "cn": "延伸：太阳能转换效率",
+            "en": "Extension: solar conversion efficiency"
+          },
+          "learningOutcome": {
+            "zh": "效率要明確界定輸入、有用輸出及相同量綱。",
+            "cn": "效率要明确界定输入、有用输出及相同量纲。",
+            "en": "Define input and useful output in matching quantities when calculating efficiency."
+          }
+        },
+        {
+          "questionId": "s4-rooftop-02",
+          "level": "application",
+          "focus": {
+            "zh": "延伸：量度不確定度",
+            "cn": "延伸：量度不确定度",
+            "en": "Extension: measurement uncertainty"
+          },
+          "learningOutcome": {
+            "zh": "差異大小應與儀器不確定度比較，不把顯示的小數當成保證。",
+            "cn": "差异大小应与仪器不确定度比较，不把显示的小数当成保证。",
+            "en": "Compare differences with instrument uncertainty; displayed decimals are not guarantees."
+          }
+        },
+        {
+          "questionId": "s4-rooftop-03",
+          "level": "challenge",
+          "focus": {
+            "zh": "延伸：控制與重複",
+            "cn": "延伸：控制与重复",
+            "en": "Extension: controls and replication"
+          },
+          "learningOutcome": {
+            "zh": "重複讀數不等於獨立實驗重複；設計要分離處理與環境因素。",
+            "cn": "重复读数不等于独立实验重复；设计要分离处理与环境因素。",
+            "en": "Repeated readings are not the same as independent replication; separate treatment from environmental factors."
+          }
+        }
+      ]
+    },
+    {
+      "subjectId": "rooftop",
+      "grade": 5,
+      "placement": "editorial sequence within key-stage references; teacher review required",
+      "sources": [
+        "https://www.edb.gov.hk/en/curriculum-development/kla/science-edu/curriculum-documents.html",
+        "https://www.edb.gov.hk/en/curriculum-development/kla/pshe/js_geog.html",
+        "https://www.edb.gov.hk/en/curriculum-development/major-level-of-edu/secondary/CG_documents.html"
+      ],
+      "items": [
+        {
+          "questionId": "s5-rooftop-01",
+          "level": "foundation",
+          "focus": {
+            "zh": "延伸：生命週期的排放範圍",
+            "cn": "延伸：生命周期的排放范围",
+            "en": "Extension: life-cycle emission boundaries"
+          },
+          "learningOutcome": {
+            "zh": "環境比較要交代系統邊界和功能單位，避免把單一階段代表全程。",
+            "cn": "环境比较要交代系统边界和功能单位，避免把单一阶段代表全程。",
+            "en": "State system boundaries and functional units rather than treating one stage as the entire life cycle."
+          }
+        },
+        {
+          "questionId": "s5-rooftop-02",
+          "level": "application",
+          "focus": {
+            "zh": "延伸：能源回收期",
+            "cn": "延伸：能源回收期",
+            "en": "Extension: energy payback time"
+          },
+          "learningOutcome": {
+            "zh": "回收期計算需保持單位一致，並辨明能源、碳或金錢的不同指標。",
+            "cn": "回收期计算需保持单位一致，并辨明能源、碳或金钱的不同指标。",
+            "en": "Keep units consistent and distinguish energy, carbon and financial payback measures."
+          }
+        },
+        {
+          "questionId": "s5-rooftop-03",
+          "level": "challenge",
+          "focus": {
+            "zh": "延伸：非隨機資料缺失",
+            "cn": "延伸：非随机资料缺失",
+            "en": "Extension: non-random missing observations"
+          },
+          "learningOutcome": {
+            "zh": "資料缺失的原因可能影響結論方向，需調查而非機械刪除。",
+            "cn": "资料缺失的原因可能影响结论方向，需调查而非机械删除。",
+            "en": "The cause of missing data can affect the direction of a conclusion and needs investigation."
+          }
+        }
+      ]
+    },
+    {
+      "subjectId": "rooftop",
+      "grade": 6,
+      "placement": "editorial sequence within key-stage references; teacher review required",
+      "sources": [
+        "https://www.edb.gov.hk/en/curriculum-development/kla/science-edu/curriculum-documents.html",
+        "https://www.edb.gov.hk/en/curriculum-development/kla/pshe/js_geog.html",
+        "https://www.edb.gov.hk/en/curriculum-development/major-level-of-edu/secondary/CG_documents.html"
+      ],
+      "items": [
+        {
+          "questionId": "s6-rooftop-01",
+          "level": "foundation",
+          "focus": {
+            "zh": "延伸：環境權衡的系統邊界",
+            "cn": "延伸：环境权衡的系统边界",
+            "en": "Extension: system boundaries in environmental trade-offs"
+          },
+          "learningOutcome": {
+            "zh": "環境決策要辨認負擔轉移，並明確選用的評估準則。",
+            "cn": "环境决策要辨认负担转移，并明确选用的评估准则。",
+            "en": "Environmental decisions should identify burden shifting and make evaluation criteria explicit."
+          }
+        },
+        {
+          "questionId": "s6-rooftop-02",
+          "level": "application",
+          "focus": {
+            "zh": "延伸：權重改變與敏感度",
+            "cn": "延伸：权重改变与敏感度",
+            "en": "Extension: changing weights and sensitivity"
+          },
+          "learningOutcome": {
+            "zh": "多準則評估需公開權重並做敏感度分析，不能把排名當成唯一客觀真相。",
+            "cn": "多准则评估需公开权重并做敏感度分析，不能把排名当成唯一客观真相。",
+            "en": "Multi-criteria evaluations should disclose weights and test sensitivity rather than treating a ranking as uniquely objective."
+          }
+        },
+        {
+          "questionId": "s6-rooftop-03",
+          "level": "challenge",
+          "focus": {
+            "zh": "延伸：前後比較與反事實",
+            "cn": "延伸：前后比较与反事实",
+            "en": "Extension: before–after comparison and a counterfactual"
+          },
+          "learningOutcome": {
+            "zh": "評估介入效果要考慮沒有介入時的合理比較，並交代假設及外推限制。",
+            "cn": "评估介入效果要考虑没有介入时的合理比较，并交代假设及外推限制。",
+            "en": "Evaluate interventions against a plausible no-intervention comparison and state assumptions and generalisation limits."
+          }
+        }
+      ]
+    },
+    {
+      "subjectId": "playground",
+      "grade": 1,
+      "placement": "editorial sequence within key-stage references; teacher review required",
+      "sources": [
+        "https://www.edb.gov.hk/en/curriculum-development/kla/pe/curriculum-doc/index.html",
+        "https://www.edb.gov.hk/attachment/en/curriculum-development/kla/pe/curriculum-doc/PE%20C%26A%20Guide_e.pdf"
+      ],
+      "items": [
+        {
+          "questionId": "s1-playground-01",
+          "level": "foundation",
+          "focus": {
+            "zh": "傳球後的支援",
+            "cn": "传球后的支援",
+            "en": "Supporting after a pass"
+          },
+          "learningOutcome": {
+            "zh": "球類配合不只看持球動作，也看無球時的位置。",
+            "cn": "球类配合不只看持球动作，也看无球时的位置。",
+            "en": "Team play depends on off-ball positioning as well as actions with the ball."
+          }
+        },
+        {
+          "questionId": "s1-playground-02",
+          "level": "application",
+          "focus": {
+            "zh": "身體平衡",
+            "cn": "身体平衡",
+            "en": "Body balance"
+          },
+          "learningOutcome": {
+            "zh": "以重心及支撐面解釋穩定性，並在教師安排下練習。",
+            "cn": "以重心及支撑面解释稳定性，并在教师安排下练习。",
+            "en": "Explain stability through centre of gravity and base of support in supervised practice."
+          }
+        },
+        {
+          "questionId": "s1-playground-03",
+          "level": "challenge",
+          "focus": {
+            "zh": "清楚的比賽訊號",
+            "cn": "清楚的比赛讯号",
+            "en": "Clear signals in a game"
+          },
+          "learningOutcome": {
+            "zh": "清楚、一致及可感知的規則訊號有助安全參與。",
+            "cn": "清楚、一致及可感知的规则讯号有助安全参与。",
+            "en": "Clear, consistent and perceptible signals support safe participation."
+          }
+        }
+      ]
+    },
+    {
+      "subjectId": "playground",
+      "grade": 2,
+      "placement": "editorial sequence within key-stage references; teacher review required",
+      "sources": [
+        "https://www.edb.gov.hk/en/curriculum-development/kla/pe/curriculum-doc/index.html",
+        "https://www.edb.gov.hk/attachment/en/curriculum-development/kla/pe/curriculum-doc/PE%20C%26A%20Guide_e.pdf"
+      ],
+      "items": [
+        {
+          "questionId": "s2-playground-01",
+          "level": "foundation",
+          "focus": {
+            "zh": "訓練頻率",
+            "cn": "训练频率",
+            "en": "Training frequency"
+          },
+          "learningOutcome": {
+            "zh": "用頻率、強度、時間與類型分開描述活動計劃。",
+            "cn": "用频率、强度、时间与类型分开描述活动计划。",
+            "en": "Describe frequency, intensity, time and type separately."
+          }
+        },
+        {
+          "questionId": "s2-playground-02",
+          "level": "application",
+          "focus": {
+            "zh": "技能回饋的焦點",
+            "cn": "技能回馈的焦点",
+            "en": "Focused skill feedback"
+          },
+          "learningOutcome": {
+            "zh": "有效回饋針對可改變的動作，而非給人固定能力標籤。",
+            "cn": "有效回馈针对可改变的动作，而非给人固定能力标签。",
+            "en": "Useful feedback targets adjustable actions rather than fixed ability labels."
+          }
+        },
+        {
+          "questionId": "s2-playground-03",
+          "level": "challenge",
+          "focus": {
+            "zh": "控制球場空間",
+            "cn": "控制球场空间",
+            "en": "Using playing space"
+          },
+          "learningOutcome": {
+            "zh": "戰術選擇要回應空間、隊友及對手的位置。",
+            "cn": "战术选择要回应空间、队友及对手的位置。",
+            "en": "Base tactical choices on space and the positions of teammates and opponents."
+          }
+        }
+      ]
+    },
+    {
+      "subjectId": "playground",
+      "grade": 3,
+      "placement": "editorial sequence within key-stage references; teacher review required",
+      "sources": [
+        "https://www.edb.gov.hk/en/curriculum-development/kla/pe/curriculum-doc/index.html",
+        "https://www.edb.gov.hk/attachment/en/curriculum-development/kla/pe/curriculum-doc/PE%20C%26A%20Guide_e.pdf"
+      ],
+      "items": [
+        {
+          "questionId": "s3-playground-01",
+          "level": "foundation",
+          "focus": {
+            "zh": "速度的量度",
+            "cn": "速度的量度",
+            "en": "Measuring speed"
+          },
+          "learningOutcome": {
+            "zh": "運動數據應同時核對計算方法及單位。",
+            "cn": "运动数据应同时核对计算方法及单位。",
+            "en": "Check both the calculation and its units when analysing performance data."
+          }
+        },
+        {
+          "questionId": "s3-playground-02",
+          "level": "application",
+          "focus": {
+            "zh": "動作學習的練習安排",
+            "cn": "动作学习的练习安排",
+            "en": "Practice for skill learning"
+          },
+          "learningOutcome": {
+            "zh": "練習結構應配合技能熟練程度及所需遷移。",
+            "cn": "练习结构应配合技能熟练程度及所需迁移。",
+            "en": "Match practice structure to skill stage and transfer needs."
+          }
+        },
+        {
+          "questionId": "s3-playground-03",
+          "level": "challenge",
+          "focus": {
+            "zh": "勝負以外的體育精神",
+            "cn": "胜负以外的体育精神",
+            "en": "Sportsmanship beyond winning"
+          },
+          "learningOutcome": {
+            "zh": "體育精神包括一致遵守共同規則與承擔責任。",
+            "cn": "体育精神包括一致遵守共同规则与承担责任。",
+            "en": "Sportsmanship includes consistent rules and responsibility."
+          }
+        }
+      ]
+    },
+    {
+      "subjectId": "playground",
+      "grade": 4,
+      "placement": "editorial sequence within key-stage references; teacher review required",
+      "sources": [
+        "https://www.edb.gov.hk/en/curriculum-development/kla/pe/curriculum-doc/index.html",
+        "https://www.edb.gov.hk/attachment/en/curriculum-development/kla/pe/curriculum-doc/PE%20C%26A%20Guide_e.pdf"
+      ],
+      "items": [
+        {
+          "questionId": "s4-playground-01",
+          "level": "foundation",
+          "focus": {
+            "zh": "訓練的專項性",
+            "cn": "训练的专项性",
+            "en": "Training specificity"
+          },
+          "learningOutcome": {
+            "zh": "訓練適應與練習所施加的具體要求有關。",
+            "cn": "训练适应与练习所施加的具体要求有关。",
+            "en": "Training adaptations relate to the specific demands practised."
+          }
+        },
+        {
+          "questionId": "s4-playground-02",
+          "level": "application",
+          "focus": {
+            "zh": "衝量與接球",
+            "cn": "冲量与接球",
+            "en": "Impulse and catching"
+          },
+          "learningOutcome": {
+            "zh": "把運動技巧與作用時間、動量改變及平均力連繫。",
+            "cn": "把运动技巧与作用时间、动量改变及平均力连系。",
+            "en": "Connect movement technique with contact time, momentum change and average force."
+          }
+        },
+        {
+          "questionId": "s4-playground-03",
+          "level": "challenge",
+          "focus": {
+            "zh": "技能成功率的比較",
+            "cn": "技能成功率的比较",
+            "en": "Comparing skill success rates"
+          },
+          "learningOutcome": {
+            "zh": "比較運動表現前，確認任務難度和量度條件相稱。",
+            "cn": "比较运动表现前，确认任务难度和量度条件相称。",
+            "en": "Check task difficulty and measurement conditions before comparing performance."
+          }
+        }
+      ]
+    },
+    {
+      "subjectId": "playground",
+      "grade": 5,
+      "placement": "editorial sequence within key-stage references; teacher review required",
+      "sources": [
+        "https://www.edb.gov.hk/en/curriculum-development/kla/pe/curriculum-doc/index.html",
+        "https://www.edb.gov.hk/attachment/en/curriculum-development/kla/pe/curriculum-doc/PE%20C%26A%20Guide_e.pdf"
+      ],
+      "items": [
+        {
+          "questionId": "s5-playground-01",
+          "level": "foundation",
+          "focus": {
+            "zh": "開放與閉鎖技能",
+            "cn": "开放与闭锁技能",
+            "en": "Open and closed skills"
+          },
+          "learningOutcome": {
+            "zh": "技能分類要看環境可預測程度及所需即時調整。",
+            "cn": "技能分类要看环境可预测程度及所需即时调整。",
+            "en": "Classify skills by environmental predictability and adaptation demands."
+          }
+        },
+        {
+          "questionId": "s5-playground-02",
+          "level": "application",
+          "focus": {
+            "zh": "速度測試的可靠性",
+            "cn": "速度测试的可靠性",
+            "en": "Reliability of a speed test"
+          },
+          "learningOutcome": {
+            "zh": "可靠性關乎一致量度，不等於只挑看來最好的結果。",
+            "cn": "可靠性关乎一致量度，不等于只挑看来最好的结果。",
+            "en": "Reliability concerns consistent measurement, not selecting the best-looking result."
+          }
+        },
+        {
+          "questionId": "s5-playground-03",
+          "level": "challenge",
+          "focus": {
+            "zh": "回饋逐步減少",
+            "cn": "回馈逐步减少",
+            "en": "Reducing feedback gradually"
+          },
+          "learningOutcome": {
+            "zh": "按學習階段調整回饋頻率，逐步培養自主監察。",
+            "cn": "按学习阶段调整回馈频率，逐步培养自主监察。",
+            "en": "Adjust feedback frequency to develop self-monitoring as skill grows."
+          }
+        }
+      ]
+    },
+    {
+      "subjectId": "playground",
+      "grade": 6,
+      "placement": "editorial sequence within key-stage references; teacher review required",
+      "sources": [
+        "https://www.edb.gov.hk/en/curriculum-development/kla/pe/curriculum-doc/index.html",
+        "https://www.edb.gov.hk/attachment/en/curriculum-development/kla/pe/curriculum-doc/PE%20C%26A%20Guide_e.pdf"
+      ],
+      "items": [
+        {
+          "questionId": "s6-playground-01",
+          "level": "foundation",
+          "focus": {
+            "zh": "效度與測試目的",
+            "cn": "效度与测试目的",
+            "en": "Validity and test purpose"
+          },
+          "learningOutcome": {
+            "zh": "先界定學習目標，再選能直接觀察該能力的量度。",
+            "cn": "先界定学习目标，再选能直接观察该能力的量度。",
+            "en": "Define the learning objective before selecting a measure that captures it."
+          }
+        },
+        {
+          "questionId": "s6-playground-02",
+          "level": "application",
+          "focus": {
+            "zh": "觀察者評分的一致性",
+            "cn": "观察者评分的一致性",
+            "en": "Consistency between observers"
+          },
+          "learningOutcome": {
+            "zh": "評分工具需要清楚準則及共同校準，而不只是同一張表格。",
+            "cn": "评分工具需要清楚准则及共同校准，而不只是同一张表格。",
+            "en": "A shared rubric needs clear criteria and calibration, not merely an identical form."
+          }
+        },
+        {
+          "questionId": "s6-playground-03",
+          "level": "challenge",
+          "focus": {
+            "zh": "調適後仍評核同一目標",
+            "cn": "调适后仍评核同一目标",
+            "en": "Adapting access without changing the goal"
+          },
+          "learningOutcome": {
+            "zh": "包容調適應區分參與障礙與真正要學習、評核的能力。",
+            "cn": "包容调适应区分参与障碍与真正要学习、评核的能力。",
+            "en": "Distinguish access barriers from the actual learning and assessment target."
+          }
+        }
+      ]
+    },
+    {
+      "subjectId": "hall",
+      "grade": 1,
+      "placement": "editorial sequence within key-stage references; teacher review required",
+      "sources": [
+        "https://applications.edb.gov.hk/circular/upload/EDBC/EDBC24020E.pdf",
+        "https://www.edb.gov.hk/en/curriculum-development/7-learning-goals/secondary/index.html"
+      ],
+      "items": [
+        {
+          "questionId": "s1-hall-01",
+          "level": "foundation",
+          "focus": {
+            "zh": "有限資源與選擇",
+            "cn": "有限资源与选择",
+            "en": "Scarcity and choice"
+          },
+          "learningOutcome": {
+            "zh": "免費不等於沒有成本；時間、空間及人力同樣有限。",
+            "cn": "免费不等于没有成本；时间、空间及人力同样有限。",
+            "en": "Free admission does not remove constraints on time, space and labour."
+          }
+        },
+        {
+          "questionId": "s1-hall-02",
+          "level": "application",
+          "focus": {
+            "zh": "機會成本",
+            "cn": "机会成本",
+            "en": "Opportunity cost"
+          },
+          "learningOutcome": {
+            "zh": "分析選擇時，找出真正可行的下一最佳替代方案。",
+            "cn": "分析选择时，找出真正可行的下一最佳替代方案。",
+            "en": "Identify the feasible next-best alternative when analysing a choice."
+          }
+        },
+        {
+          "questionId": "s1-hall-03",
+          "level": "challenge",
+          "focus": {
+            "zh": "活動預算",
+            "cn": "活动预算",
+            "en": "An activity budget"
+          },
+          "learningOutcome": {
+            "zh": "預算要區分固定開支和隨人數改變的開支。",
+            "cn": "预算要区分固定开支和随人数改变的开支。",
+            "en": "Distinguish fixed costs from costs that vary with participation."
+          }
+        }
+      ]
+    },
+    {
+      "subjectId": "hall",
+      "grade": 2,
+      "placement": "editorial sequence within key-stage references; teacher review required",
+      "sources": [
+        "https://applications.edb.gov.hk/circular/upload/EDBC/EDBC24020E.pdf",
+        "https://www.edb.gov.hk/en/curriculum-development/7-learning-goals/secondary/index.html"
+      ],
+      "items": [
+        {
+          "questionId": "s2-hall-01",
+          "level": "foundation",
+          "focus": {
+            "zh": "按單位比較價格",
+            "cn": "按单位比较价格",
+            "en": "Comparing unit prices"
+          },
+          "learningOutcome": {
+            "zh": "單價有助比較，但購買時仍要考慮實際需要與可用預算。",
+            "cn": "单价有助比较，但购买时仍要考虑实际需要与可用预算。",
+            "en": "Unit prices support comparison, alongside actual need and available budget."
+          }
+        },
+        {
+          "questionId": "s2-hall-02",
+          "level": "application",
+          "focus": {
+            "zh": "需求增加的模型",
+            "cn": "需求增加的模型",
+            "en": "A rise in demand"
+          },
+          "learningOutcome": {
+            "zh": "在「其他條件不變」的模型中，分別分析需求與供應的變動。",
+            "cn": "在「其他条件不变」的模型中，分别分析需求与供应的变动。",
+            "en": "Analyse demand and supply changes separately under an other-things-equal assumption."
+          }
+        },
+        {
+          "questionId": "s2-hall-03",
+          "level": "challenge",
+          "focus": {
+            "zh": "可比較的消費資訊",
+            "cn": "可比较的消费资讯",
+            "en": "Comparable consumer information"
+          },
+          "learningOutcome": {
+            "zh": "消費判斷應檢查主張的量度方式、比較基準及限制。",
+            "cn": "消费判断应检查主张的量度方式、比较基准及限制。",
+            "en": "Assess how consumer claims are measured, compared and qualified."
+          }
+        }
+      ]
+    },
+    {
+      "subjectId": "hall",
+      "grade": 3,
+      "placement": "editorial sequence within key-stage references; teacher review required",
+      "sources": [
+        "https://applications.edb.gov.hk/circular/upload/EDBC/EDBC24020E.pdf",
+        "https://www.edb.gov.hk/en/curriculum-development/7-learning-goals/secondary/index.html"
+      ],
+      "items": [
+        {
+          "questionId": "s3-hall-01",
+          "level": "foundation",
+          "focus": {
+            "zh": "第三者受到的影響",
+            "cn": "第三者受到的影响",
+            "en": "Effects on third parties"
+          },
+          "learningOutcome": {
+            "zh": "公共決策須考慮直接參與者以外的人受到的影響。",
+            "cn": "公共决策须考虑直接参与者以外的人受到的影响。",
+            "en": "Consider effects on people beyond the direct participants in a public decision."
+          }
+        },
+        {
+          "questionId": "s3-hall-02",
+          "level": "application",
+          "focus": {
+            "zh": "共同資源的安排",
+            "cn": "共同资源的安排",
+            "en": "Managing a shared resource"
+          },
+          "learningOutcome": {
+            "zh": "共同資源分配須有清楚程序，並按實際使用情況檢討。",
+            "cn": "共同资源分配须有清楚程序，并按实际使用情况检讨。",
+            "en": "Use clear procedures and review real usage when allocating shared resources."
+          }
+        },
+        {
+          "questionId": "s3-hall-03",
+          "level": "challenge",
+          "focus": {
+            "zh": "多數意見的界限",
+            "cn": "多数意见的界限",
+            "en": "Limits of a majority view"
+          },
+          "learningOutcome": {
+            "zh": "使用調查結果時，同時檢查未被平均數或多數票反映的需要。",
+            "cn": "使用调查结果时，同时检查未被平均数或多数票反映的需要。",
+            "en": "Examine needs that averages or majority preferences may hide."
+          }
+        }
+      ]
+    },
+    {
+      "subjectId": "hall",
+      "grade": 4,
+      "placement": "editorial sequence within key-stage references; teacher review required",
+      "sources": [
+        "https://applications.edb.gov.hk/circular/upload/EDBC/EDBC24020E.pdf",
+        "https://www.edb.gov.hk/en/curriculum-development/7-learning-goals/secondary/index.html"
+      ],
+      "items": [
+        {
+          "questionId": "s4-hall-01",
+          "level": "foundation",
+          "focus": {
+            "zh": "名義收入與購買力",
+            "cn": "名义收入与购买力",
+            "en": "Nominal income and purchasing power"
+          },
+          "learningOutcome": {
+            "zh": "比較生活負擔時，區分金額變化與相對價格後的購買力。",
+            "cn": "比较生活负担时，区分金额变化与相对价格后的购买力。",
+            "en": "Distinguish nominal amounts from purchasing power after price changes."
+          }
+        },
+        {
+          "questionId": "s4-hall-02",
+          "level": "application",
+          "focus": {
+            "zh": "事實判斷與價值判斷",
+            "cn": "事实判断与价值判断",
+            "en": "Factual and value judgements"
+          },
+          "learningOutcome": {
+            "zh": "分辨可查證的實然主張與需說明理由的價值立場。",
+            "cn": "分辨可查证的实然主张与需说明理由的价值立场。",
+            "en": "Distinguish testable descriptive claims from value positions requiring justification."
+          }
+        },
+        {
+          "questionId": "s4-hall-03",
+          "level": "challenge",
+          "focus": {
+            "zh": "諮詢的代表性",
+            "cn": "咨询的代表性",
+            "en": "Representation in consultation"
+          },
+          "learningOutcome": {
+            "zh": "諮詢品質不只看人數，也看是否涵蓋受影響的經驗。",
+            "cn": "咨询品质不只看人数，也看是否涵盖受影响的经验。",
+            "en": "Consultation quality depends on coverage of affected experiences, not only headcount."
+          }
+        }
+      ]
+    },
+    {
+      "subjectId": "hall",
+      "grade": 5,
+      "placement": "editorial sequence within key-stage references; teacher review required",
+      "sources": [
+        "https://applications.edb.gov.hk/circular/upload/EDBC/EDBC24020E.pdf",
+        "https://www.edb.gov.hk/en/curriculum-development/7-learning-goals/secondary/index.html"
+      ],
+      "items": [
+        {
+          "questionId": "s5-hall-01",
+          "level": "foundation",
+          "focus": {
+            "zh": "利益衝突的程序",
+            "cn": "利益冲突的程序",
+            "en": "A conflict-of-interest procedure"
+          },
+          "learningOutcome": {
+            "zh": "問責程序要使關係、準則和決定可被檢查。",
+            "cn": "问责程序要使关系、准则和决定可被检查。",
+            "en": "Accountable procedures make relevant relationships, criteria and decisions examinable."
+          }
+        },
+        {
+          "questionId": "s5-hall-02",
+          "level": "application",
+          "focus": {
+            "zh": "平均改善與羣體差異",
+            "cn": "平均改善与群体差异",
+            "en": "Average improvement and group differences"
+          },
+          "learningOutcome": {
+            "zh": "評估公共方案時，同時看整體效果及負擔如何分配。",
+            "cn": "评估公共方案时，同时看整体效果及负担如何分配。",
+            "en": "Evaluate both overall effects and how benefits and burdens are distributed."
+          }
+        },
+        {
+          "questionId": "s5-hall-03",
+          "level": "challenge",
+          "focus": {
+            "zh": "短期成本與持續成本",
+            "cn": "短期成本与持续成本",
+            "en": "Initial and recurring costs"
+          },
+          "learningOutcome": {
+            "zh": "比較方案要選定共同時段，計入初期及持續開支。",
+            "cn": "比较方案要选定共同时段，计入初期及持续开支。",
+            "en": "Compare plans over the same time horizon, including initial and recurring costs."
+          }
+        }
+      ]
+    },
+    {
+      "subjectId": "hall",
+      "grade": 6,
+      "placement": "editorial sequence within key-stage references; teacher review required",
+      "sources": [
+        "https://applications.edb.gov.hk/circular/upload/EDBC/EDBC24020E.pdf",
+        "https://www.edb.gov.hk/en/curriculum-development/7-learning-goals/secondary/index.html"
+      ],
+      "items": [
+        {
+          "questionId": "s6-hall-01",
+          "level": "foundation",
+          "focus": {
+            "zh": "準則與可行方案",
+            "cn": "准则与可行方案",
+            "en": "Criteria and feasible options"
+          },
+          "learningOutcome": {
+            "zh": "先識別必須符合的限制，再比較可行方案的優劣。",
+            "cn": "先识别必须符合的限制，再比较可行方案的优劣。",
+            "en": "Identify binding constraints before comparing feasible alternatives."
+          }
+        },
+        {
+          "questionId": "s6-hall-02",
+          "level": "application",
+          "focus": {
+            "zh": "未回覆者的聲音",
+            "cn": "未回复者的声音",
+            "en": "Understanding non-response"
+          },
+          "learningOutcome": {
+            "zh": "未回覆並不等於沒有需要；評估接觸方式對參與的影響。",
+            "cn": "未回复并不等于没有需要；评估接触方式对参与的影响。",
+            "en": "Non-response does not mean no need; examine how access methods shape participation."
+          }
+        },
+        {
+          "questionId": "s6-hall-03",
+          "level": "challenge",
+          "focus": {
+            "zh": "有指標的政策檢討",
+            "cn": "有指标的政策检讨",
+            "en": "Reviewing a policy with indicators"
+          },
+          "learningOutcome": {
+            "zh": "公共方案須把目標轉成可檢查指標，並預留根據結果修訂的機會。",
+            "cn": "公共方案须把目标转成可检查指标，并预留根据结果修订的机会。",
+            "en": "Translate public goals into testable indicators and allow revision based on results."
+          }
+        }
+      ]
+    }
+  ]
+}

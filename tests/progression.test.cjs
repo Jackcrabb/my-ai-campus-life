@@ -10,12 +10,17 @@ const root = path.join(__dirname, '..');
 // is injected into the source in memory; production exposes no state API.
 function launch(saved) {
   const elements = new Map();
+  const missingElements = new Set();
+  let audioOnState = () => {};
   const listeners = {};
   let savedText = saved === undefined ? null : JSON.stringify(saved);
   let engineOptions;
   let talkingId = null;
+  const engineLocations = [];
+  const createdTags = [];
   const audioLog = { lines:[], stops:0 };
-  const audioStub = { state:{unlocked:true,settings:{musicVolume:.25,voiceVolume:.8,muted:false},music:{status:"playing"},voice:{status:"ready"}}, speak(line){ audioLog.lines.push({...line}); }, stopVoice(){ audioLog.stops++; }, unlock(){return Promise.resolve(true);}, dispose(){} };
+  const teacherMounts = [];
+  const audioStub = { state:{unlocked:true,settings:{musicVolume:.25,voiceVolume:.8,muted:false},music:{status:"playing"},voice:{status:"ready"}}, speak(line){ audioLog.lines.push({...line}); this.state.voice = {status:"queued",requestedLocale:{zh:"zh-HK",cn:"zh-CN",en:"en-GB"}[line.locale]}; audioOnState(this.state); }, stopVoice(){ audioLog.stops++; this.state.voice = {...this.state.voice,status:"ready",errorCode:null}; audioOnState(this.state); }, unlock(){return Promise.resolve(true);}, dispose(){} };
   function element(id = '') {
     const handlers = {};
     const classes = new Set();
@@ -35,9 +40,9 @@ function launch(saved) {
   }
   const document = {
     hidden: false, documentElement: {}, body: element('body'), activeElement: element('focus'),
-    getElementById(id) { if (!elements.has(id)) elements.set(id, element(id)); return elements.get(id); },
+    getElementById(id) { if (missingElements.has(id)) return null; if (!elements.has(id)) elements.set(id, element(id)); return elements.get(id); },
     querySelector(selector) { if (!elements.has(selector)) elements.set(selector, element(selector)); return elements.get(selector); },
-    createElement() { return element(); },
+    createElement(tag) { createdTags.push(tag); return element(); },
     addEventListener(type, callback) { listeners[type] = callback; },
   };
   class CampusEngine {
@@ -46,10 +51,10 @@ function launch(saved) {
     static drawPlayerPreview() {}
     setAvatar() {} setPaused() {} setLanguage() {} destroy() {} move() {}
     setTalking(id, talking) { talkingId = talking ? id : null; }
-    setLocation(location) { engineOptions.onLocationChange(location); }
+    setLocation(location) { engineLocations.push(location); engineOptions.onLocationChange(location); }
   }
   const context = vm.createContext({
-    window: { innerHeight: 900, addEventListener() {}, CampusAudio:{create(){return audioStub;}} }, document, CampusEngine,
+    window: { innerHeight: 900, addEventListener() {}, CampusAudio:{create({onState}){audioOnState=onState;return audioStub;}}, CampusTeacher:{open(options){teacherMounts.push(options);return {destroy(){}};}} }, document, CampusEngine,
     localStorage: { getItem() { return savedText; }, setItem(key, text) { savedText = text; } },
     setTimeout() { return 1; }, clearTimeout() {}, console,
   });
@@ -66,10 +71,110 @@ function launch(saved) {
     mode: () => ({ dialogueId, modalType, titleOpen, panelOpen }),
   }; })();`);
   vm.runInContext(source, context, { filename: 'app.js', timeout: 2000 });
-  return { app: context.window.testApp, elements, listeners, audioLog, body: document.body, talking: () => talkingId, snapshot: () => JSON.parse(savedText) };
+  return { app: context.window.testApp, registry: context.window.CAMPUS_CHARACTERS, elements, missingElements, listeners, audioLog,
+    emitVoice(voice){ audioStub.state.voice={...voice};audioOnState(audioStub.state); }, stopVoice:()=>audioStub.stopVoice(),
+    engineLocations, createdTags, teacherMounts, body: document.body, talking: () => talkingId, snapshot: () => JSON.parse(savedText) };
 }
 
 (async () => {
+  const teacherEntry = launch({version:2,started:true,prologueSeen:true,location:'library',reflection:'Student work stays here.'});
+  const beforeTeacher = JSON.stringify(teacherEntry.app.state());
+  const beforeTeacherLocations = teacherEntry.engineLocations.length;
+  await teacherEntry.app.action('new-game');
+  assert.equal(teacherEntry.app.mode().modalType,'role-choice');
+  assert.equal(teacherEntry.body.classList.contains('entry-panel-active'),true);
+  await teacherEntry.app.action('teacher-entry');
+  assert.equal(teacherEntry.app.mode().modalType,'teacher');
+  assert.equal(teacherEntry.teacherMounts.length,1);
+  assert.equal(teacherEntry.teacherMounts[0].subjectId,undefined,'teacher chooses a subject after login');
+  assert.equal(JSON.stringify(teacherEntry.app.state()),beforeTeacher,'teacher entry preserves saved student progress');
+  assert.equal(teacherEntry.engineLocations.length,beforeTeacherLocations,'teacher entry does not move into the game');
+  teacherEntry.teacherMounts[0].onExit();
+  assert.equal(teacherEntry.app.mode().titleOpen,true,'leaving teacher workspace returns to title');
+  assert.equal(teacherEntry.body.classList.contains('entry-panel-active'),false);
+  // Continue dismisses a leftover in-game panel without resetting or moving a
+  // started save. Opening a panel from the title must not keep its return flag.
+  for (const panel of ['avatar','cases','subjects','settings']) {
+    const continued = launch({version:2,started:true,prologueSeen:true,location:'music',reflection:'Keep this note.'});
+    continued.app.showModal(panel);
+    assert.equal(continued.app.mode().panelOpen,true);
+    const beforeLocations = continued.engineLocations.length;
+    await continued.app.action('continue');
+    assert.equal(continued.app.mode().titleOpen,false, panel + ': Continue enters the campus');
+    assert.equal(continued.app.mode().panelOpen,false, panel + ': stale panel is closed');
+    assert.equal(continued.app.mode().modalType,'');
+    assert.equal(continued.elements.get('modal').hidden,true);
+    assert.equal(continued.elements.get('.game-frame').dataset.panel,undefined);
+    assert.equal(continued.body.classList.contains('in-game-panel'),false);
+    assert.equal(continued.app.state().location,'music');
+    assert.equal(continued.engineLocations.length,beforeLocations,'Continue must not teleport');
+    assert.equal(continued.app.state().reflection,'Keep this note.');
+    continued.app.closeModal();
+    assert.equal(continued.app.mode().titleOpen,false,'a second close cannot restore an old title-return flag');
+  }
+  const unfinishedIntro = launch({version:2,started:true,prologueSeen:false});
+  unfinishedIntro.app.showModal('settings');
+  await unfinishedIntro.app.action('continue');
+  assert.equal(unfinishedIntro.app.mode().panelOpen,false);
+  assert.equal(unfinishedIntro.app.mode().dialogueId,'prologue','Continue still resumes the unviewed introduction');
+
+  // Progress menus deliberately cannot launch questions or bypass meeting the
+  // NPC. Map travel remains tested independently below.
+  const directoryGame = launch({version:2,started:true,prologueSeen:true,location:'rooftop'});
+  for (const lang of ['zh','cn','en']) {
+    directoryGame.app.state().lang = lang;
+    for (const [menu,marker,count] of [['cases','case',4],['subjects','subject',13]]) {
+      const beforeLocations = directoryGame.engineLocations.length;
+      await directoryGame.app.action(menu);
+      const html = directoryGame.elements.get('modal-content').innerHTML;
+      assert.equal((html.match(new RegExp(`data-${marker}-progress=`, 'g'))||[]).length,count);
+      assert.equal((html.match(/<article\b/g)||[]).length,count,'progress records use non-interactive articles');
+      assert.doesNotMatch(html,/<button\b|data-(?:case|subject|travel|level)=/,'no question or teleport shortcut is rendered');
+      const snapshot = JSON.stringify(directoryGame.app.state());
+      for (const dataset of [{case:'voice'},{subject:'maths'},{caseProgress:'voice'},{subjectProgress:'maths'}]) {
+        // Even stale button markup from an older render has no active shortcut handler.
+        directoryGame.listeners.click({target:{closest:()=>({dataset})}});
+      }
+      assert.equal(directoryGame.app.mode().modalType,menu);
+      assert.equal(directoryGame.app.mode().dialogueId,null);
+      assert.equal(directoryGame.engineLocations.length,beforeLocations);
+      assert.equal(JSON.stringify(directoryGame.app.state()),snapshot);
+      directoryGame.app.closeModal();
+    }
+  }
+
+  // All special dialogues resolve the same names as their world/portrait
+  // identities. This guards against the older fallback surnames reappearing.
+  const named = launch({version:2,started:true,prologueSeen:true});
+  const speakers = ['prologue','staff:office','staff:vice','finale','exit',
+    ...named.app.missions.map(m=>m.id),...named.app.subjects.map(room=>'subject:'+room.id)];
+  for (const lang of ['zh','cn','en']) {
+    named.app.state().lang = lang;
+    for (const id of speakers) {
+      named.app.openDialogue(id);
+      assert.equal(named.app.dialogueModel().name,named.registry.resolve(id).name[lang],`${id}: canonical ${lang} name`);
+      assert.equal(named.registry.resolve(named.app.dialogueModel().portrait).id,named.registry.resolve(id).id,`${id}: portrait identity`);
+      named.app.endDialogue();
+    }
+  }
+
+  // Check the longest authored stems and options in each locale survive HTML
+  // rendering in full. This is a DOM-content check, not phone layout evidence.
+  const bank = JSON.parse(fs.readFileSync(path.join(root,'data/grade-bank.json'),'utf8'));
+  const escapeHtml = text => String(text).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  for (const lang of ['zh','cn','en']) {
+    const longestStem = bank.reduce((a,b)=>a.question[lang].length>b.question[lang].length?a:b);
+    const longestOption = bank.reduce((a,b)=>Math.max(...a.options.map(o=>o.text[lang].length))>Math.max(...b.options.map(o=>o.text[lang].length))?a:b);
+    for (const question of [longestStem,longestOption]) {
+      const longText = launch({version:2,started:true,prologueSeen:true,lang,student:{grade:question.grade}});
+      longText.app.setSubject(question.subjectId,question.id);
+      longText.app.showModal('subject');
+      const html = longText.elements.get('modal-content').innerHTML;
+      assert.ok(html.includes(escapeHtml(question.question[lang])),question.id+': complete question');
+      for (const option of question.options) assert.ok(html.includes(escapeHtml(option.text[lang])),question.id+': complete option');
+      assert.equal((html.match(/name="subject-answer"/g)||[]).length,3);
+    }
+  }
   // Switching UI language during a conversation must stop the old utterance,
   // translate its text and provide a new playback key, rather than replay Cantonese.
   const spoken = launch({version:2,started:true,prologueSeen:true});
@@ -84,6 +189,85 @@ function launch(saved) {
   const english = spoken.audioLog.lines.at(-1);
   assert.equal(english.locale,'en'); assert.notEqual(english.key,mandarin.key);
   assert.match(english.text,/AI/); assert.notEqual(english.text,traditional.text);
+  // A failed line remains understandable without opening Sound settings.
+  // Notifications follow the visible dialogue locale and never start speech.
+  const voiceHint = launch({version:2,started:true,prologueSeen:true,lang:'en'});
+  await voiceHint.app.action('continue');
+  voiceHint.missingElements.add('voice-status'); // Sound settings has never opened.
+  voiceHint.app.openDialogue('subject:hall');
+  const hint=voiceHint.elements.get('dialogue-voice-status');
+  assert.match(voiceHint.elements.get('dialogue').innerHTML,/id="dialogue-voice-status"[^>]*role="status"[^>]*aria-live="polite"[^>]*hidden/);
+  assert.equal(hint.hidden,true,'normal queued speech adds no status text');
+  const initialSpeech=voiceHint.audioLog.lines.length;
+  voiceHint.emitVoice({status:'unavailable',requestedLocale:'en-GB',errorCode:'voice-gender-unavailable',unavailable:true});
+  assert.equal(hint.hidden,false,'failure is visible even when the audio panel does not exist');
+  assert.match(hint.textContent,/language and gender/);
+  assert.equal(voiceHint.audioLog.lines.length,initialSpeech,'aria-live status must not create another speech utterance');
+  voiceHint.emitVoice({status:'unavailable',requestedLocale:'zh-HK',errorCode:'voice-gender-unavailable'});
+  assert.equal(hint.hidden,true,'a stale locale cannot show its failure on English dialogue');assert.equal(hint.textContent,'');
+  voiceHint.emitVoice({status:'error',requestedLocale:'en-GB',errorCode:'speech-timeout'});assert.match(hint.textContent,/Speech could not play/);
+  voiceHint.stopVoice();assert.equal(hint.hidden,true);assert.equal(hint.textContent,'','stopping clears an error even if old voice metadata remains');
+  voiceHint.emitVoice({status:'unavailable',requestedLocale:'en-GB',unavailable:true});assert.match(hint.textContent,/No matching voice/);
+  voiceHint.app.nextDialogue();assert.equal(hint.hidden,true,'next line clears the old failure');
+  voiceHint.emitVoice({status:'error',requestedLocale:'en-GB'});
+  voiceHint.elements.get('language').handlers.change({target:{value:'cn'}});assert.equal(hint.hidden,true,'language change clears prior failure');
+  voiceHint.emitVoice({status:'unavailable',requestedLocale:'zh-CN',errorCode:'voice-gender-unavailable'});assert.match(hint.textContent,/此设备/,'current-language error is localized');
+  voiceHint.app.endDialogue();assert.equal(hint.hidden,true);assert.equal(hint.textContent,'','closing dialogue clears its live region');
+  voiceHint.emitVoice({status:'error',requestedLocale:'zh-CN'});assert.equal(hint.hidden,true,'no message may appear after the conversation closes');
+  voiceHint.app.openDialogue('voice');voiceHint.emitVoice({status:'error',requestedLocale:'zh-CN'});assert.equal(hint.hidden,false);
+  voiceHint.app.showModal('settings');assert.equal(hint.hidden,true,'covered dialogue clears its status');
+  voiceHint.emitVoice({status:'error',requestedLocale:'zh-CN'});assert.equal(hint.hidden,true,'modal-covered dialogue stays silent');
+  // The illustrated map must use actual scene IDs, not the mockup's visual grouping.
+  const mapGame = launch({version:2,started:true,prologueSeen:true});
+  const floors = [
+    ['corridor','playground','hall'],
+    ['corridor1','chinese','english','maths'],
+    ['corridor2','chemistry','geography','computer'],
+    ['corridor3','history','art','music'],
+    ['corridor4','library','rooftop'],
+  ];
+  const clickMap = dataset => mapGame.listeners.click({target:{closest:()=>({dataset})}});
+  for (const lang of ['zh','cn','en']) {
+    mapGame.app.state().lang = lang;
+    mapGame.app.showModal('map');
+    for (const [floor, destinations] of floors.entries()) {
+      clickMap({mapFloor:String(floor)});
+      const html = mapGame.elements.get('modal-content').innerHTML;
+      assert.deepEqual([...html.matchAll(/data-map-floor="(\d)"/g)].map(m=>Number(m[1])),[4,3,2,1,0],'fifth level is physically above the ground level');
+      assert.deepEqual([...html.matchAll(/data-travel="([^"]+)"/g)].map(m=>m[1]).sort(), [...destinations].sort(), `floor ${floor} has exactly its actual locations`);
+      assert.match(html,new RegExp(`data-map-floor="${floor}" aria-pressed="true"`));
+      for (const destination of destinations) {
+        clickMap({travel:destination});
+        assert.equal(mapGame.app.state().location,destination,'floorplan reuses actual engine navigation');
+        assert.equal(mapGame.app.mode().panelOpen,false,'travel closes the in-game map');
+        mapGame.app.showModal('map');
+        assert.match(mapGame.elements.get('modal-content').innerHTML,new RegExp(`data-travel="${destination}"[^>]*aria-current="location"`));
+      }
+    }
+  }
+  const beforeInvalid = mapGame.elements.get('modal-content').innerHTML;
+  clickMap({mapFloor:'99'});
+  assert.equal(mapGame.elements.get('modal-content').innerHTML,beforeInvalid,'invalid floors cannot produce broken map art');
+  let prevented = false;
+  mapGame.listeners.keydown({key:'ArrowUp',target:{closest:()=>({dataset:{mapFloor:'4'}})},preventDefault(){prevented=true;}});
+  assert.ok(prevented);
+  assert.match(mapGame.elements.get('modal-content').innerHTML,/data-map-floor="0" aria-pressed="true"/,'keyboard floor navigation wraps');
+  // Question presentation preserves variable option counts, values and selection.
+  const quizGame = launch({version:2,started:true,prologueSeen:true});
+  const quizRoom = quizGame.app.subjects.find(room=>room.id==='maths');
+  const quizLevel = quizRoom.levels[0];
+  const baseOptions = JSON.parse(JSON.stringify(quizLevel.options));
+  for (const count of [2,3,4,5]) {
+    quizLevel.options = Array.from({length:count},(_,i)=>({...baseOptions[i%baseOptions.length],id:'option-'+i}));
+    quizGame.app.setSubject(quizRoom.id,quizLevel.id);
+    quizGame.app.subjectState(quizRoom.id,quizLevel.id).choice=count-1;
+    quizGame.app.showModal('subject');
+    const html = quizGame.elements.get('modal-content').innerHTML;
+    assert.equal((html.match(/name="subject-answer"/g)||[]).length,count);
+    assert.equal((html.match(/class="quiz-option-letter"/g)||[]).length,count);
+    assert.match(html,new RegExp(`value="${count-1}" checked`),'selected answer remains selected after render');
+    assert.match(html,new RegExp(`aria-hidden="true">${String.fromCharCode(64+count)}</span>`),'letter labels cover every answer');
+  }
   const game = launch();
   const { app } = game;
   assert.equal(app.state().avatar.gender, 'boy', 'new avatars have a safe explicit default');
@@ -121,7 +305,11 @@ function launch(saved) {
   await app.action('continue');
   assert.equal(app.mode().titleOpen, true, 'continue cannot start an empty save');
   await app.action('new-game');
-  assert.equal(app.mode().modalType, 'avatar', 'first new game goes directly to appearance selection');
+  assert.equal(app.mode().modalType, 'role-choice', 'new game first offers student or teacher');
+  assert.match(game.elements.get('modal-content').innerHTML, /data-action="student-entry"/);
+  assert.match(game.elements.get('modal-content').innerHTML, /data-action="teacher-entry"/);
+  await app.action('student-entry');
+  assert.equal(app.mode().modalType, 'avatar', 'student role opens appearance selection');
   assert.equal(game.body.classList.contains('title-active'), false);
   app.closeModal();
 
@@ -156,7 +344,7 @@ function launch(saved) {
 
   await app.action('cases');
   assert.equal(app.mode().modalType, 'cases');
-  assert.equal((game.elements.get('modal-content').innerHTML.match(/data-case=/g) || []).length, 4);
+  assert.equal((game.elements.get('modal-content').innerHTML.match(/data-case-progress=/g) || []).length, 4);
   app.openDialogue('voice');
   assert.equal(app.mode().panelOpen, false, 'case selection replaces its in-game panel with dialogue');
   assert.equal(game.talking(), 'voice');
@@ -310,15 +498,13 @@ function launch(saved) {
     avatar: { gender: 'girl', uniform: 2, hair: 1, skin: 2 }, reflection: 'Keep evidence until confirmed.' });
   assert.doesNotMatch(replacement.elements.get('title-screen').innerHTML, /data-action="continue" disabled/);
   await replacement.app.action('new-game');
-  assert.equal(replacement.app.mode().modalType, 'newgame');
-  assert.equal(replacement.app.progress().stars, 103, 'new-game button does not immediately erase progress');
-  assert.equal(replacement.app.state().reflection, 'Keep evidence until confirmed.');
-  assert.match(replacement.elements.get('modal-content').innerHTML, /data-action="download"/);
-  await replacement.app.action('cancel-new-game');
-  assert.equal(replacement.app.mode().titleOpen, true);
-  assert.equal(replacement.app.progress().stars, 103, 'cancelling replacement keeps the existing game');
-  await replacement.app.action('new-game');
-  await replacement.app.action('confirm-new-game');
+  assert.equal(replacement.app.mode().modalType, 'role-choice');
+  assert.equal(replacement.app.state().reflection, 'Keep evidence until confirmed.', 'role selection does not erase an existing student save');
+  await replacement.app.action('student-entry');
+  assert.doesNotMatch(replacement.elements.get('modal-content').innerHTML, /data-action="(?:download|download-report|confirm-new-game)"/);
+  assert.equal(replacement.createdTags.includes('a'),false,'new game does not create or trigger a report download');
+  assert.equal(replacement.app.mode().panelOpen,true,'new game immediately opens the in-game avatar panel');
+  assert.equal(replacement.app.mode().dialogueId,null,'old conversation is not carried into a new game');
   assert.equal(replacement.app.mode().modalType, 'avatar');
   assert.equal(replacement.app.state().started, false);
   assert.equal(replacement.app.state().prologueSeen, false);
@@ -327,7 +513,7 @@ function launch(saved) {
   assert.equal(replacement.app.state().lang, 'cn');
   assert.equal(replacement.app.state().large, true);
   assert.deepEqual(JSON.parse(JSON.stringify(replacement.app.state().avatar)), { gender: 'girl', uniform: 2, hair: 1, skin: 2 });
-  assert.equal(replacement.snapshot().started, false, 'confirmed replacement is saved');
+  assert.equal(replacement.snapshot().started, false, 'direct new-game replacement is saved');
   await replacement.app.action('start');
   assert.equal(replacement.app.mode().dialogueId, 'prologue');
 

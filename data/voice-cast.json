@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "provider": "google-chirp3-hd",
+  "locales": {
+    "zh": "yue-HK",
+    "cn": "cmn-CN",
+    "en": "en-GB"
+  },
+  "characters": {
+    "staff-chinese": {
+      "voice": "Kore",
+      "rate": 1.0
+    },
+    "staff-english": {
+      "voice": "Aoede",
+      "rate": 1.0
+    },
+    "staff-maths": {
+      "voice": "Charon",
+      "rate": 1.0
+    },
+    "staff-chemistry": {
+      "voice": "Erinome",
+      "rate": 1.0
+    },
+    "staff-geography": {
+      "voice": "Achird",
+      "rate": 1.0
+    },
+    "staff-computer": {
+      "voice": "Autonoe",
+      "rate": 1.0
+    },
+    "staff-history": {
+      "voice": "Algenib",
+      "rate": 1.0
+    },
+    "staff-art": {
+      "voice": "Pulcherrima",
+      "rate": 1.0
+    },
+    "staff-music": {
+      "voice": "Algieba",
+      "rate": 1.0
+    },
+    "staff-library": {
+      "voice": "Gacrux",
+      "rate": 1.0
+    },
+    "staff-rooftop": {
+      "voice": "Fenrir",
+      "rate": 1.0
+    },
+    "staff-playground": {
+      "voice": "Orus",
+      "rate": 1.0
+    },
+    "staff-principal": {
+      "voice": "Alnilam",
+      "rate": 1.0
+    },
+    "staff-vice": {
+      "voice": "Sulafat",
+      "rate": 1.0
+    },
+    "staff-office": {
+      "voice": "Schedar",
+      "rate": 1.0
+    },
+    "staff-mentor": {
+      "voice": "Callirrhoe",
+      "rate": 1.0
+    },
+    "voice": {
+      "voice": "Zephyr",
+      "rate": 1.0
+    },
+    "privacy": {
+      "voice": "Puck",
+      "rate": 1.0
+    },
+    "culture": {
+      "voice": "Leda",
+      "rate": 1.0
+    },
+    "access": {
+      "voice": "Laomedeia",
+      "rate": 1.0
+    }
+  }
+}

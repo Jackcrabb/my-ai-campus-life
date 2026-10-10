@@ -18,6 +18,9 @@
     <link rel="stylesheet" href="ui-glass.css" />
     <link rel="stylesheet" href="teacher-ui.css" />
     <link rel="stylesheet" href="campus-life.css" />
+    <link rel="stylesheet" href="campus-panels.css" />
+    <link rel="stylesheet" href="worksheet-ui.css" />
+    <link rel="stylesheet" href="campus-pixel-ui.css" />
     <script defer src="content.js"></script>
     <script defer src="subjects.js"></script>
     <script defer src="grade-content.js"></script>
@@ -26,6 +29,7 @@
     <script defer src="engine.js"></script>
     <script defer src="campus-cloud.js"></script>
     <script defer src="xlsx-export.js"></script>
+    <script defer src="worksheet-ui.js"></script>
     <script defer src="teacher-ui.js"></script>
     <script defer src="campus-audio.js"></script>
     <script defer src="app.js"></script>
@@ -50,7 +54,7 @@
             <option value="cn">简体中文</option>
             <option value="en">English</option>
           </select></label
-        ><button id="audio-button" class="audio-button" aria-label="音量設定" aria-expanded="false" aria-controls="audio-panel"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5v12.2a3.5 3.5 0 1 1-2-3.16V4l14-3v13.2a3.5 3.5 0 1 1-2-3.16V5z" fill="currentColor"/></svg></button>
+        ><button id="audio-button" class="audio-button" aria-label="音量設定" aria-expanded="false" aria-controls="audio-panel"><img src="assets/icons/pixelarticons/music-sharp.svg" alt=""></button>
       </div>
       <section id="audio-panel" class="audio-panel" hidden role="region" aria-labelledby="audio-title"></section>
     </header>
@@ -82,7 +86,7 @@
               tabindex="0"
               aria-label="2D 校園。WASD 或方向鍵移動，空格或 Enter 互動。點擊地面可移動，點擊人物或房門可走近互動。"
             ></canvas>
-            <div class="scene-tag" id="scene-tag">明澄書院 · 地下走廊</div>
+            <div class="scene-tag" id="scene-tag"><img class="scene-location-icon" src="assets/icons/pixelarticons/map-pin.svg" alt=""><span class="scene-location-copy">明澄書院 · 地下走廊</span></div>
             <button
               id="fullscreen-button"
               class="scene-tool"
@@ -95,11 +99,12 @@
             <div id="scene-toast" class="scene-toast" role="status"></div>
             <nav id="game-hud" class="game-hud" aria-label="遊戲工具">
               <span id="hud-stars" class="hud-stars">★ 0 / 100</span>
-              <button data-action="cases" id="hud-cases">案件</button>
-              <button data-action="subjects" id="hud-subjects">學科</button>
-              <button data-action="map" id="hud-map">地圖</button>
-              <button data-action="journal" id="hud-journal">手帳</button>
-              <button data-action="settings" id="hud-settings">設定</button>
+              <button data-action="cases" id="hud-cases"><img class="hud-icon" src="assets/icons/pixelarticons/file-text-sharp.svg" alt=""><span class="hud-label">案件</span></button>
+              <button data-action="subjects" id="hud-subjects"><img class="hud-icon" src="assets/icons/pixelarticons/book-open-sharp.svg" alt=""><span class="hud-label">學科</span></button>
+              <button data-action="map" id="hud-map"><img class="hud-icon" src="assets/icons/pixelarticons/map-pin.svg" alt=""><span class="hud-label">地圖</span></button>
+              <button data-action="journal" id="hud-journal"><img class="hud-icon" src="assets/icons/pixelarticons/notebook-sharp.svg" alt=""><span class="hud-label">手帳</span></button>
+              <button data-action="printer" id="hud-printer"><img class="hud-icon" src="assets/icons/pixelarticons/printer-minimal-sharp.svg" alt=""><span class="hud-label">打印</span></button>
+              <button data-action="settings" id="hud-settings"><img class="hud-icon" src="assets/icons/pixelarticons/settings-cog.svg" alt=""><span class="hud-label">設定</span></button>
             </nav>
             <section
               id="modal"

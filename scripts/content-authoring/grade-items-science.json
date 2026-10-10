@@ -1,0 +1,686 @@
+[
+  {
+    "subjectId": "chemistry",
+    "grade": 1,
+    "level": 1,
+    "title": [
+      "科學：量度液體體積",
+      "Science: measuring liquid volume"
+    ],
+    "question": [
+      "水在量筒內形成凹液面。要減少視差，應如何讀數？",
+      "Water forms a concave meniscus in a measuring cylinder. How should you read its volume to reduce parallax error?"
+    ],
+    "options": [
+      [
+        "視線與凹液面最低點同高，量筒放在水平桌面。",
+        "Read the bottom of the meniscus at eye level, with the cylinder on a level bench.",
+        "眼睛與刻度同高可減少視差；水應讀凹液面最低點。",
+        "An eye-level reading reduces parallax; read the bottom of water's meniscus."
+      ],
+      [
+        "手持量筒傾斜，從上方讀最高點。",
+        "Tilt the cylinder and read the highest point from above.",
+        "傾斜和斜視都會使讀數偏離正確體積。",
+        "Tilting and viewing from above distort the reading."
+      ],
+      [
+        "只讀最接近的整十刻度，不理會小刻度。",
+        "Use the nearest multiple of ten and ignore smaller divisions.",
+        "忽略可讀的小刻度會降低量度精確度。",
+        "Ignoring readable subdivisions reduces measurement precision."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "量度須配合儀器刻度、正確視線與一致程序。",
+      "Use the instrument's scale, correct viewing position and a consistent procedure."
+    ]
+  },
+  {
+    "subjectId": "chemistry",
+    "grade": 1,
+    "level": 2,
+    "title": [
+      "科學：分離混合物",
+      "Science: separating a mixture"
+    ],
+    "question": [
+      "混合物含沙和食鹽。要分別取得乾沙與食鹽，哪個次序合理？所有加熱均由老師監督。",
+      "A mixture contains sand and salt. Which sequence can recover dry sand and salt separately? All heating is teacher-supervised."
+    ],
+    "options": [
+      [
+        "加水攪拌 → 過濾 → 乾燥沙；把濾液蒸發結晶。",
+        "Add water and stir → filter → dry the sand; evaporate the filtrate to obtain salt.",
+        "鹽溶於水而沙不溶，過濾先分出沙，蒸發再取得鹽。",
+        "Salt dissolves but sand does not; filtration separates sand and evaporation recovers salt."
+      ],
+      [
+        "直接過濾乾混合物，再用磁鐵分鹽。",
+        "Filter the dry mixture, then remove salt with a magnet.",
+        "沒有溶劑時過濾不能按溶解性分離；食鹽也不具磁性。",
+        "Dry filtration does not separate by solubility, and salt is not magnetic."
+      ],
+      [
+        "加水後只取濾紙上的物質，便得到兩者。",
+        "Add water and keep only the filter residue to recover both.",
+        "食鹽會留在濾液中，丟棄濾液便失去食鹽。",
+        "Salt remains dissolved in the filtrate, so discarding it loses the salt."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "分離方法利用物質性質的差異，並要追蹤每種物質去了哪裏。",
+      "Separation uses differences in properties; track where each substance goes."
+    ]
+  },
+  {
+    "subjectId": "chemistry",
+    "grade": 1,
+    "level": 3,
+    "title": [
+      "科學：辨認混雜變項",
+      "Science: identifying confounding variables"
+    ],
+    "question": [
+      "甲把細糖放入 60°C 水，乙把糖粒放入 20°C 水；甲溶解較快。他們想研究溫度的影響。應怎樣改良？",
+      "A uses fine sugar in water at 60°C; B uses large sugar crystals at 20°C. A dissolves faster. They want to study temperature. How should they improve the comparison?"
+    ],
+    "options": [
+      [
+        "使用相同大小及質量的糖、水量和攪拌方法，只改變溫度。",
+        "Keep sugar size and mass, water volume and stirring the same; change only temperature.",
+        "糖粒大小也影響溶解速率，必須控制才能隔離溫度的影響。",
+        "Particle size also affects dissolution rate, so it must be controlled to isolate temperature."
+      ],
+      [
+        "把甲的水量加倍，其他不變。",
+        "Double A's water volume and keep everything else unchanged.",
+        "這增加另一個變項，並未控制糖粒大小。",
+        "This adds another variable without controlling particle size."
+      ],
+      [
+        "只做一次更快的計時便可證明溫度是唯一原因。",
+        "Time one trial more precisely to prove temperature is the only cause.",
+        "計時精確不能消除實驗設計中的混雜因素。",
+        "Precise timing does not remove a confounding variable in the design."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "公平測試須控制可能影響結果的其他變項。",
+      "A fair test controls other variables that may affect the outcome."
+    ]
+  },
+  {
+    "subjectId": "chemistry",
+    "grade": 2,
+    "level": 1,
+    "title": [
+      "科學：細胞結構與功能",
+      "Science: cell structures and functions"
+    ],
+    "question": [
+      "顯微鏡下的洋蔥表皮細胞有明顯外框。哪個配對最準確？",
+      "Onion epidermal cells show a clear outer boundary under a microscope. Which structure–function pairing is most accurate?"
+    ],
+    "options": [
+      [
+        "細胞壁提供支持；細胞膜控制物質進出。",
+        "The cell wall provides support; the cell membrane regulates movement of substances.",
+        "細胞壁與細胞膜是不同結構，功能不能互換。",
+        "The wall and membrane are different structures with different functions."
+      ],
+      [
+        "細胞核提供所有外部支持，細胞壁儲存全部遺傳物質。",
+        "The nucleus provides all external support; the wall stores all genetic material.",
+        "細胞核含主要遺傳物質；細胞壁主要提供支持。",
+        "The nucleus contains the main genetic material; the wall mainly provides support."
+      ],
+      [
+        "所有植物細胞都必須含大量葉綠體。",
+        "Every plant cell must contain many chloroplasts.",
+        "例如洋蔥鱗莖表皮通常沒有葉綠體，不能概括所有植物細胞。",
+        "Onion bulb epidermal cells typically lack chloroplasts; not all plant cells have them."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "根據結構和功能解釋細胞，避免把典型圖像當成所有細胞的樣子。",
+      "Explain cells through structure and function, without treating a typical diagram as universal."
+    ]
+  },
+  {
+    "subjectId": "chemistry",
+    "grade": 2,
+    "level": 2,
+    "title": [
+      "科學：串聯電路的電壓",
+      "Science: voltage in a series circuit"
+    ],
+    "question": [
+      "在理想電路中，2 Ω 和 4 Ω 電阻串聯接上 12 V 電源。已知 V = IR。4 Ω 電阻兩端電壓是多少？",
+      "In an ideal circuit, 2 Ω and 4 Ω resistors are connected in series to a 12 V source. Use V = IR. What is the voltage across the 4 Ω resistor?"
+    ],
+    "options": [
+      [
+        "8 V",
+        "8 V",
+        "總電阻 6 Ω，電流 12÷6=2 A；4 Ω 上的電壓為 2×4=8 V。",
+        "Total resistance is 6 Ω, so current is 2 A; the voltage across 4 Ω is 2×4=8 V."
+      ],
+      [
+        "12 V",
+        "12 V",
+        "12 V 是兩個串聯電阻的總電壓，不是各自的電壓。",
+        "12 V is the total across both series resistors, not across each one."
+      ],
+      [
+        "6 V",
+        "6 V",
+        "電阻不相等，電壓並非平均分配。",
+        "The resistances differ, so the voltage is not shared equally."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "串聯電路電流相同，電壓按電阻大小分配。",
+      "Series components carry the same current; voltage divides in proportion to resistance."
+    ]
+  },
+  {
+    "subjectId": "chemistry",
+    "grade": 2,
+    "level": 3,
+    "title": [
+      "科學：從氣體變化推論",
+      "Science: interpreting gas changes"
+    ],
+    "question": [
+      "兩組相同水草分別放在光亮和黑暗中，其他條件相同。光亮組氧氣增加，黑暗組氧氣減少。哪個解釋最合理？",
+      "Identical aquatic plants are kept in light or darkness under otherwise equal conditions. Oxygen rises in the light group and falls in the dark group. Which explanation best fits?"
+    ],
+    "options": [
+      [
+        "光亮組光合作用產氧多於呼吸耗氧；黑暗組仍呼吸。",
+        "In light, photosynthesis produces more oxygen than respiration uses; in darkness, respiration continues.",
+        "觀察到的是產氧和耗氧兩個過程的淨結果。",
+        "The observation is the net result of oxygen production and use."
+      ],
+      [
+        "植物只在黑暗時呼吸，光亮時完全停止。",
+        "Plants respire only in darkness and stop completely in light.",
+        "植物在光亮時也進行呼吸，不能把氧氣增加理解為沒有呼吸。",
+        "Plants also respire in light; rising oxygen does not mean respiration has stopped."
+      ],
+      [
+        "光亮組的氧氣增加代表水草只呼吸而沒有光合作用。",
+        "The oxygen increase means the illuminated plants respire without photosynthesising.",
+        "呼吸消耗氧氣，不能單獨解釋氧氣淨增加。",
+        "Respiration consumes oxygen and cannot alone explain a net increase."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "同時存在的過程可能互相抵銷；量度常顯示淨變化。",
+      "Simultaneous processes can offset each other; measurements often show a net change."
+    ]
+  },
+  {
+    "subjectId": "chemistry",
+    "grade": 3,
+    "level": 1,
+    "title": [
+      "科學：原子與離子",
+      "Science: atoms and ions"
+    ],
+    "question": [
+      "一粒子有 12 個質子、12 個中子及 10 個電子。其質量數和電荷分別是甚麼？",
+      "A particle has 12 protons, 12 neutrons and 10 electrons. What are its mass number and charge?"
+    ],
+    "options": [
+      [
+        "質量數 24，電荷 2+。",
+        "Mass number 24; charge 2+.",
+        "質量數為質子加中子；正電荷比負電荷多 2。",
+        "Mass number is protons plus neutrons; there are two more positive than negative charges."
+      ],
+      [
+        "質量數 22，電荷 2−。",
+        "Mass number 22; charge 2−.",
+        "電子不計入質量數；電子較少應帶正電。",
+        "Electrons are not counted in the mass number; fewer electrons gives a positive charge."
+      ],
+      [
+        "質量數 12，沒有電荷。",
+        "Mass number 12; no charge.",
+        "12 是質子數；質子和電子數不同，所以不是中性。",
+        "12 is the proton number; unequal proton and electron counts mean it is not neutral."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "分清質子數、質量數和淨電荷，使用各自定義計算。",
+      "Distinguish proton number, mass number and net charge using their definitions."
+    ]
+  },
+  {
+    "subjectId": "chemistry",
+    "grade": 3,
+    "level": 2,
+    "title": [
+      "科學：中和與能量轉移",
+      "Science: neutralisation and energy transfer"
+    ],
+    "question": [
+      "在老師示範中，酸與鹼混合後溫度由 22°C 升至 28°C。忽略外界熱量交換，哪項解釋合理？",
+      "In a teacher demonstration, mixing an acid and an alkali raises the temperature from 22°C to 28°C. Ignoring heat exchange with the surroundings, which interpretation is reasonable?"
+    ],
+    "options": [
+      [
+        "反應釋放能量到溶液，屬放熱反應。",
+        "The reaction transfers energy to the solution and is exothermic.",
+        "溶液升溫顯示反應釋出的能量增加了溶液的熱能。",
+        "The temperature rise indicates energy released by the reaction increases the solution's thermal energy."
+      ],
+      [
+        "反應吸收溶液熱能，所以溶液升溫。",
+        "The reaction absorbs thermal energy from the solution, making it warmer.",
+        "若反應從溶液吸熱而無其他來源，溶液會降溫。",
+        "Absorbing energy from the solution would cool it without another energy source."
+      ],
+      [
+        "所有酸鹼混合後必定變成 pH 7。",
+        "Every acid–alkali mixture must end at pH 7.",
+        "最終 pH 還取決於酸鹼種類及用量；升溫不能證明完全中和。",
+        "Final pH depends on substances and amounts; warming alone does not prove complete neutralisation."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "溫度變化提供能量轉移證據，但不能代替其他化學量度。",
+      "Temperature change provides evidence of energy transfer, not every other chemical property."
+    ]
+  },
+  {
+    "subjectId": "chemistry",
+    "grade": 3,
+    "level": 3,
+    "title": [
+      "科學：空氣阻力的證據",
+      "Science: evidence about air resistance"
+    ],
+    "question": [
+      "同一張紙先攤平、再揉成球，從相同高度分別放手。紙球較快到地面。哪項結論最符合這個設計？",
+      "The same sheet is dropped flat and then crumpled into a ball from the same height. The ball reaches the ground sooner. Which conclusion best matches the design?"
+    ],
+    "options": [
+      [
+        "質量相同而形狀不同，結果支持形狀影響空氣阻力。",
+        "Mass is unchanged while shape differs; the result supports an effect of shape on air resistance.",
+        "同一張紙保持質量，形狀改變迎風面及空氣阻力。",
+        "Using the same sheet keeps mass fixed while shape changes the area presented to the air."
+      ],
+      [
+        "紙球的重力必定是原來的兩倍。",
+        "The ball's gravitational force must be twice as large.",
+        "紙的質量沒有變，不能由落地較快推斷重力加倍。",
+        "The mass has not changed; faster falling does not imply twice the gravitational force."
+      ],
+      [
+        "真空中也一定有相同時間差。",
+        "The same time difference must occur in a vacuum.",
+        "此實驗在空氣中進行，不能把空氣阻力的結果直接套用到真空。",
+        "This air-based result cannot be transferred unchanged to a vacuum."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "辨認實驗保持了甚麼、改變了甚麼，再界定結論範圍。",
+      "Identify what was held constant and changed before setting a conclusion's scope."
+    ]
+  },
+  {
+    "subjectId": "chemistry",
+    "grade": 4,
+    "level": 1,
+    "title": [
+      "化學：離子晶體的導電性",
+      "Chemistry: conduction in ionic substances"
+    ],
+    "question": [
+      "固態氯化鈉不導電，熔融氯化鈉導電。最合理的微觀解釋是甚麼？",
+      "Solid sodium chloride does not conduct electricity, but molten sodium chloride does. Which microscopic explanation is best?"
+    ],
+    "options": [
+      [
+        "熔融時離子可自由移動並傳遞電荷。",
+        "Ions can move through the melt and carry charge.",
+        "固體內離子位置固定；熔融後可移動，毋須假設產生自由電子。",
+        "Ions are fixed in the solid lattice but mobile in the melt; free electrons are not the charge carriers."
+      ],
+      [
+        "固體完全沒有帶電粒子，熔融才產生離子。",
+        "The solid has no charged particles; melting creates ions.",
+        "固體本來已由離子組成，差別是離子的流動性。",
+        "The solid already contains ions; their mobility changes."
+      ],
+      [
+        "熔融令氯化鈉變成金屬，靠自由電子導電。",
+        "Melting turns sodium chloride into a metal conducting by free electrons.",
+        "物態改變不會令離子化合物變成金屬。",
+        "A change of state does not turn an ionic compound into a metal."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "解釋導電性時須指出可移動的帶電粒子。",
+      "Explain conductivity by identifying mobile charge carriers."
+    ]
+  },
+  {
+    "subjectId": "chemistry",
+    "grade": 4,
+    "level": 2,
+    "title": [
+      "化學：物質的量與氣體體積",
+      "Chemistry: amount and gas volume"
+    ],
+    "question": [
+      "CaCO₃ + 2HCl → CaCl₂ + H₂O + CO₂。10.0 g 純 CaCO₃ 與過量酸完全反應。CaCO₃ 摩爾質量 100 g mol⁻¹；該條件下氣體摩爾體積 24.0 dm³ mol⁻¹。CO₂ 體積？",
+      "CaCO₃ + 2HCl → CaCl₂ + H₂O + CO₂. 10.0 g of pure CaCO₃ reacts completely with excess acid. Its molar mass is 100 g mol⁻¹; gas molar volume is 24.0 dm³ mol⁻¹. What volume of CO₂ forms?"
+    ],
+    "options": [
+      [
+        "2.40 dm³",
+        "2.40 dm³",
+        "CaCO₃ 為 0.100 mol；CO₂ 比例 1:1，體積 0.100×24.0=2.40 dm³。",
+        "CaCO₃ is 0.100 mol; the CO₂ ratio is 1:1, giving 0.100×24.0=2.40 dm³."
+      ],
+      [
+        "4.80 dm³",
+        "4.80 dm³",
+        "係數 2 屬 HCl，並非 CO₂；不能把 CO₂ 物質的量加倍。",
+        "The coefficient 2 belongs to HCl, not CO₂; it does not double the CO₂ amount."
+      ],
+      [
+        "240 dm³",
+        "240 dm³",
+        "須先把克數除以摩爾質量，不能直接乘摩爾體積。",
+        "Convert grams to moles before multiplying by molar volume."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "依次轉換質量、物質的量比及體積，保留單位。",
+      "Convert mass to amount, apply the mole ratio, then convert to volume with units."
+    ]
+  },
+  {
+    "subjectId": "chemistry",
+    "grade": 4,
+    "level": 3,
+    "title": [
+      "化學：限制反應物",
+      "Chemistry: limiting reagent"
+    ],
+    "question": [
+      "Mg + 2HCl → MgCl₂ + H₂。0.120 mol Mg 與 0.200 mol HCl 反應至完成。哪項正確？",
+      "Mg + 2HCl → MgCl₂ + H₂. 0.120 mol Mg reacts with 0.200 mol HCl to completion. Which statement is correct?"
+    ],
+    "options": [
+      [
+        "H₂ 為 0.100 mol，餘下 Mg 0.020 mol。",
+        "0.100 mol H₂ forms and 0.020 mol Mg remains.",
+        "HCl 只足以消耗 0.100 mol Mg，所以酸是限制反應物。",
+        "The HCl can consume only 0.100 mol Mg, so acid is limiting."
+      ],
+      [
+        "H₂ 為 0.120 mol，兩種反應物都剛好用完。",
+        "0.120 mol H₂ forms and both reactants are used up.",
+        "消耗 0.120 mol Mg 需要 0.240 mol HCl，比現有的多。",
+        "Consuming 0.120 mol Mg requires 0.240 mol HCl, more than is available."
+      ],
+      [
+        "H₂ 為 0.200 mol，餘下 Mg 0.100 mol。",
+        "0.200 mol H₂ forms and 0.100 mol Mg remains.",
+        "HCl:H₂ 是 2:1，不能直接以 HCl 的物質的量作氫氣產量。",
+        "The HCl:H₂ ratio is 2:1, so the HCl amount is not the H₂ yield."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "先比較反應式所需比例，才判斷產量及剩餘物。",
+      "Compare required stoichiometric ratios before finding yield and leftovers."
+    ]
+  },
+  {
+    "subjectId": "chemistry",
+    "grade": 5,
+    "level": 1,
+    "title": [
+      "化學：電子轉移與氧化",
+      "Chemistry: electron transfer and oxidation"
+    ],
+    "question": [
+      "反應中 Fe²⁺ 變成 Fe³⁺。哪項半反應及解釋正確？",
+      "Fe²⁺ changes to Fe³⁺ in a reaction. Which half-equation and explanation are correct?"
+    ],
+    "options": [
+      [
+        "Fe²⁺ → Fe³⁺ + e⁻；失電子，被氧化。",
+        "Fe²⁺ → Fe³⁺ + e⁻; it loses an electron and is oxidised.",
+        "電荷由 +2 增至 +3 對應失去一個負電荷。",
+        "Changing from +2 to +3 corresponds to losing one negative charge."
+      ],
+      [
+        "Fe²⁺ + e⁻ → Fe³⁺；得電子，被還原。",
+        "Fe²⁺ + e⁻ → Fe³⁺; it gains an electron and is reduced.",
+        "左邊總電荷 +1，右邊 +3，電荷不守恆。",
+        "The charge is +1 on the left and +3 on the right, so it is unbalanced."
+      ],
+      [
+        "Fe²⁺ → Fe³⁺ + 3e⁻；失去三個電子。",
+        "Fe²⁺ → Fe³⁺ + 3e⁻; it loses three electrons.",
+        "氧化數只增加 1，並非失去三個電子。",
+        "The oxidation number rises by one, not three."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "半反應必須守恆原子及電荷；用電子得失判斷氧化還原。",
+      "Balance atoms and charge in half-equations; use electron transfer to identify redox."
+    ]
+  },
+  {
+    "subjectId": "chemistry",
+    "grade": 5,
+    "level": 2,
+    "title": [
+      "化學：量熱法與反應焓",
+      "Chemistry: calorimetry and enthalpy"
+    ],
+    "question": [
+      "0.0500 mol 反應物反應，使 100 g 溶液升溫 7.0°C。比熱容量 4.2 J g⁻¹ °C⁻¹；忽略熱損失。每摩爾反應焓約為多少？",
+      "Reaction of 0.0500 mol warms 100 g of solution by 7.0°C. Specific heat capacity is 4.2 J g⁻¹ °C⁻¹; ignore heat loss. What is the approximate molar enthalpy change?"
+    ],
+    "options": [
+      [
+        "−58.8 kJ mol⁻¹",
+        "−58.8 kJ mol⁻¹",
+        "q=100×4.2×7=2940 J；反應放熱，ΔH=−2.940÷0.0500=−58.8 kJ mol⁻¹。",
+        "q=2940 J; the reaction releases heat, so ΔH=−2.940/0.0500=−58.8 kJ mol⁻¹."
+      ],
+      [
+        "+58.8 kJ mol⁻¹",
+        "+58.8 kJ mol⁻¹",
+        "數值大小正確，但升溫表示反應向溶液放熱，反應焓應為負。",
+        "The magnitude is right, but warming means the reaction releases heat, giving a negative enthalpy change."
+      ],
+      [
+        "−2.94 kJ mol⁻¹",
+        "−2.94 kJ mol⁻¹",
+        "2.94 kJ 是本次 0.0500 mol 的熱量，還須換算每摩爾。",
+        "2.94 kJ is the heat for 0.0500 mol; it must be converted to a per-mole value."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "分清溶液吸收的熱量與反應焓符號，並換算每摩爾。",
+      "Distinguish solution heat gain from reaction enthalpy sign and convert to a molar quantity."
+    ]
+  },
+  {
+    "subjectId": "chemistry",
+    "grade": 5,
+    "level": 3,
+    "title": [
+      "化學：速率與總產量",
+      "Chemistry: rate versus total yield"
+    ],
+    "question": [
+      "兩次反應的反應物用量、溫度相同。加催化劑後氣體體積曲線起初更陡，但最後平臺相同。最合理解釋是甚麼？",
+      "Two reactions use the same amounts and temperature. With a catalyst, the gas-volume curve is initially steeper but reaches the same final plateau. Which explanation fits best?"
+    ],
+    "options": [
+      [
+        "催化劑增加反應速率，但沒有改變此反應的最終氣體產量。",
+        "The catalyst increases the rate but does not change this reaction's final gas yield.",
+        "斜率表示速率，平臺表示總氣量，兩者要分開解讀。",
+        "Slope represents rate; the plateau represents total gas volume."
+      ],
+      [
+        "催化劑增加反應物的物質的量，因此平臺相同。",
+        "The catalyst increases the amount of reactant, causing the same plateau.",
+        "用量相同且平臺相同，沒有反應物增多的證據。",
+        "The stated amounts and identical plateau do not support extra reactant."
+      ],
+      [
+        "曲線較陡證明平衡產量必定增加一倍。",
+        "The steeper curve proves the equilibrium yield has doubled.",
+        "起始斜率不能代替終點產量；相同平臺更直接否定加倍。",
+        "Initial slope is not final yield; the equal plateau contradicts a doubling."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "曲線不同部分代表不同量；速率改善不等於總產量提高。",
+      "Different graph features represent different quantities; faster reaction does not mean greater total yield."
+    ]
+  },
+  {
+    "subjectId": "chemistry",
+    "grade": 6,
+    "level": 1,
+    "title": [
+      "化學：有機反應條件",
+      "Chemistry: conditions in organic reactions"
+    ],
+    "question": [
+      "在課堂理論分析中，乙醇與過量酸化重鉻酸鉀在迴流條件下充分反應，主要有機產物是甚麼？",
+      "In a theoretical classroom analysis, ethanol reacts thoroughly with excess acidified potassium dichromate under reflux. What is the main organic product?"
+    ],
+    "options": [
+      [
+        "乙酸。",
+        "Ethanoic acid.",
+        "過量氧化劑和迴流使第一級醇進一步氧化至羧酸。",
+        "Excess oxidant and reflux allow a primary alcohol to oxidise further to a carboxylic acid."
+      ],
+      [
+        "乙烯。",
+        "Ethene.",
+        "乙烯涉及脫水；題目提供的是氧化條件。",
+        "Ethene formation involves dehydration; the stated conditions are oxidising."
+      ],
+      [
+        "只會得到乙醛，不能繼續氧化。",
+        "Only ethanal, which cannot be oxidised further.",
+        "乙醛可進一步氧化；蒸餾收集與過量氧化劑迴流的條件不同。",
+        "Ethanal can oxidise further; distilling it off differs from refluxing with excess oxidant."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "有機產物取決於試劑、用量和反應條件，不只取決於起始物。",
+      "Organic products depend on reagents, amounts and conditions as well as starting material."
+    ]
+  },
+  {
+    "subjectId": "chemistry",
+    "grade": 6,
+    "level": 2,
+    "title": [
+      "化學：平衡與工業取捨",
+      "Chemistry: equilibrium and industrial compromise"
+    ],
+    "question": [
+      "N₂(g)+3H₂(g) ⇌ 2NH₃(g)，正反應放熱。降低溫度有利平衡產率，但工業不採極低溫，主要原因是甚麼？",
+      "N₂(g)+3H₂(g) ⇌ 2NH₃(g) is exothermic forward. Lower temperature favours equilibrium yield. Why is an extremely low temperature not used industrially?"
+    ],
+    "options": [
+      [
+        "低溫使反應過慢，需在產率、速率及成本之間折衷。",
+        "A very low temperature makes the reaction too slow, requiring a compromise among yield, rate and cost.",
+        "平衡位置與達到平衡的速率是不同考慮。",
+        "Equilibrium position and the rate of reaching it are different considerations."
+      ],
+      [
+        "降低溫度會使放熱反應的平衡完全向左。",
+        "Lowering temperature shifts this exothermic equilibrium entirely to the left.",
+        "降溫有利放熱方向，不能用錯誤的平衡方向解釋工業選擇。",
+        "Lowering temperature favours the exothermic direction; this explanation reverses it."
+      ],
+      [
+        "催化劑能使任意低溫下的平衡產率必定達到 100%。",
+        "A catalyst guarantees 100% equilibrium yield at any low temperature.",
+        "催化劑改變速率，不改變同溫下的平衡常數。",
+        "A catalyst changes rates, not the equilibrium constant at a given temperature."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "工業條件需要同時考慮熱力學、動力學與資源。",
+      "Industrial conditions balance thermodynamic, kinetic and resource considerations."
+    ]
+  },
+  {
+    "subjectId": "chemistry",
+    "grade": 6,
+    "level": 3,
+    "title": [
+      "化學：滴定數據與異常值",
+      "Chemistry: titration data and anomalous values"
+    ],
+    "question": [
+      "25.00 cm³ NaOH 以 0.1000 mol dm⁻³ HCl 滴定，三次體積為 24.80、24.85、26.10 cm³；第三次註明越過終點。按前兩次相近讀數計，NaOH 濃度約多少？",
+      "25.00 cm³ NaOH is titrated with 0.1000 mol dm⁻³ HCl. Titres are 24.80, 24.85 and 26.10 cm³; the third is recorded as overshooting. Using the first two concordant readings, what is the NaOH concentration?"
+    ],
+    "options": [
+      [
+        "0.0993 mol dm⁻³",
+        "0.0993 mol dm⁻³",
+        "平均 24.825 cm³；HCl:NaOH 為 1:1，濃度=0.1000×24.825÷25.00≈0.0993。",
+        "The mean is 24.825 cm³; the 1:1 ratio gives 0.1000×24.825/25.00≈0.0993."
+      ],
+      [
+        "0.1010 mol dm⁻³",
+        "0.1010 mol dm⁻³",
+        "這接近把已記錄越過終點的讀數也平均；忽略了明確實驗證據。",
+        "This approximately averages in the known overshoot, ignoring the recorded experimental evidence."
+      ],
+      [
+        "0.0497 mol dm⁻³",
+        "0.0497 mol dm⁻³",
+        "HCl 與 NaOH 的反應比是 1:1，沒有除以二的理由。",
+        "HCl and NaOH react 1:1; there is no factor of two."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "以實驗記錄及相近讀數判斷數據品質，不應只因結果不合預期而刪數據。",
+      "Judge data using procedure notes and concordance, not merely whether a result matches expectations."
+    ]
+  }
+]

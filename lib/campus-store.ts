@@ -1,4 +1,5 @@
 import gradeBank from "../data/grade-bank.json";
+import previousHashes from "../data/starter-bank-previous-hashes.json";
 import { CAMPUS_CASES } from "./campus-cases";
 import { CampusError, type CampusContext, type CampusQuestion, type Tri } from "./campus-types";
 import { STUDENT_COOKIE, cookie, hash, iso, now, textField, token } from "./campus-security";
@@ -52,8 +53,10 @@ export async function seedQuestions(ctx: CampusContext, ownerId: string) {
     const existing = await ctx.db.prepare("SELECT COUNT(*) AS n FROM campus_questions WHERE owner_id=? AND source_id IS NOT NULL").bind(ownerId).first<{
         n: number;
     }>();
-    if ((existing?.n ?? 0) >= BANK.length)
+    if ((existing?.n ?? 0) >= BANK.length) {
+        await refreshStarterBank(ctx, ownerId);
         return;
+    }
     const statements: D1PreparedStatement[] = [];
     // Bounded multi-row statements reduce first-run database calls while staying
     // below 100 bound values per prepared statement.
@@ -66,6 +69,26 @@ export async function seedQuestions(ctx: CampusContext, ownerId: string) {
         statements.push(ctx.db.prepare("INSERT OR IGNORE INTO campus_question_revisions (id,question_id,revision,content,answer,created_at) VALUES " + slice.map(() => "(?,?,1,?,?,?)").join(",")).bind(...values));
     }
     await batch(ctx, statements);
+    await refreshStarterBank(ctx, ownerId);
+}
+// Refresh only untouched legacy starter questions. Existing assignments point at
+// immutable revisions, while teacher edits, drafts and archives remain intact.
+export async function refreshStarterBank(ctx: CampusContext, ownerId: string) {
+    const version = "hk-curriculum-2026-10-v2", updateId = ownerId + ":" + version;
+    if (await ctx.db.prepare("SELECT id FROM campus_bank_updates WHERE id=?").bind(updateId).first()) return;
+    const rows = await ctx.db.prepare("SELECT q.id,q.source_id,q.current_revision AS revision,r.content,r.answer FROM campus_questions q JOIN campus_question_revisions r ON r.question_id=q.id AND r.revision=1 WHERE q.owner_id=? AND q.current_revision=1 AND q.status='published' AND q.category='subject'").bind(ownerId).all<QuestionRow>();
+    const statements: D1PreparedStatement[] = [];
+    for (const row of rows.results) {
+        const sourceId = row.source_id as keyof typeof previousHashes, replacement = BANK.find(q => q.id === sourceId);
+        if (!replacement || !previousHashes[sourceId] || await hash(row.content + "\n" + row.answer) !== previousHashes[sourceId]) continue;
+        const data = splitQuestion(replacement);
+        if (data.content === row.content && data.answer === row.answer) continue;
+        // A concurrent teacher edit can claim r2 first. Never overwrite its data.
+        statements.push(ctx.db.prepare("INSERT OR IGNORE INTO campus_question_revisions (id,question_id,revision,content,answer,created_at) SELECT ?,id,2,?,?,? FROM campus_questions WHERE id=? AND owner_id=? AND current_revision=1 AND status='published'").bind(row.id + ":2", data.content, data.answer, iso(ctx), row.id, ownerId));
+        statements.push(ctx.db.prepare("UPDATE campus_questions SET current_revision=2 WHERE id=? AND owner_id=? AND current_revision=1 AND status='published' AND EXISTS (SELECT 1 FROM campus_question_revisions r WHERE r.question_id=campus_questions.id AND r.revision=2)").bind(row.id, ownerId));
+    }
+    await batch(ctx, statements);
+    await ctx.db.prepare("INSERT OR IGNORE INTO campus_bank_updates (id,owner_id,version,created_at) VALUES (?,?,?,?)").bind(updateId, ownerId, version, iso(ctx)).run();
 }
 export async function ownedClass(ctx: CampusContext, ownerId: string, id: string) {
     const row = await ctx.db.prepare("SELECT * FROM campus_classrooms WHERE id=? AND owner_id=?").bind(id, ownerId).first<ClassRow>();

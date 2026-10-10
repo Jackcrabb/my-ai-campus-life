@@ -10,6 +10,7 @@ import ts from "typescript";
 const root = path.resolve(import.meta.dirname, ".."), temp = fs.mkdtempSync(path.join(os.tmpdir(), "campus-backend-test-"));
 fs.mkdirSync(path.join(temp, "lib"));
 fs.mkdirSync(path.join(temp, "data"));
+fs.copyFileSync(path.join(root, "data/starter-bank-previous-hashes.json"), path.join(temp, "data/starter-bank-previous-hashes.json"));
 const fixtureMode = process.argv.includes("--fixture");
 if (fixtureMode) {
     const tri = value => ({ zh: value, cn: value, en: value });
@@ -32,10 +33,11 @@ const require = createRequire(path.join(temp, "runner.cjs"));
 const { handleCampus } = require(path.join(temp, "lib/campus-api.js"));
 const { BANK } = require(path.join(temp, "lib/campus-store.js"));
 const { allowedTeacher } = require(path.join(temp, "lib/campus-security.js"));
-const worker = new Miniflare({ modules: true, script: "export default { fetch() { return new Response('test'); } };", compatibilityDate: "2026-05-01", d1Databases: { DB: "campus-integration" } });
+const worker = new Miniflare({ modules: true, script: "export default { fetch() { return new Response('test'); } };", compatibilityDate: "2026-05-01", d1Databases: { DB: "campus-integration" }, r2Buckets: ["BUCKET"] });
 let checks = 0;
 try {
     const db = await worker.getD1Database("DB");
+    const bucket = await worker.getR2Bucket("BUCKET");
     const migrations = fs.readdirSync(path.join(root, "drizzle")).filter(x => x.endsWith(".sql")).sort();
     assert.ok(migrations.length, "Generate D1 migrations before running backend tests.");
     for (const file of migrations) {
@@ -44,7 +46,7 @@ try {
             await db.prepare(statement).run();
     }
     const env = { TEACHER_EMAILS: "teacher@example.invalid,other@example.invalid", TEACHER_PIN: "1234" };
-    const base = { db, env, teacher: null, now: 1802070000000, localDevelopment: false };
+    const base = { db, bucket, env, teacher: null, now: 1802070000000, localDevelopment: false };
     const teacher = { ...base, teacher: { userId: "teacher-one", email: "teacher@example.invalid" } };
     const other = { ...base, teacher: { userId: "teacher-two", email: "other@example.invalid" } };
     const call = async (route, { method = "GET", body, cookie = "", context = base, origin, expected = 200 } = {}) => {
@@ -83,6 +85,39 @@ try {
     assert.ok(recovery.length >= 20);
     checks += 3;
     const studentB = await call("student/join", { method: "POST", body: { classCode: room.classCode, studentNumber: "02", name: "林朗" } });
+    // Real R2/D1 worksheet round trip; no production data or real student files.
+    const pdf = "%PDF-1.4\n1 0 obj<</Type/Catalog>>endobj\n%%EOF";
+    const upload = async (context, auth, { invalid = false, origin = "https://campus.test" } = {}) => {
+        const form = new FormData(); form.set("title", "Ratio practice"); form.set("grade", "2"); form.set("subjectId", "maths");
+        form.set("zh", new File([invalid ? "not PDF" : pdf], "繁中.pdf", { type: "application/pdf" }));
+        form.set("en", new File([pdf], "English.pdf", { type: "application/pdf" }));
+        return handleCampus(new Request("https://campus.test/api/campus/teacher/worksheets", { method: "POST", headers: { cookie: auth, origin }, body: form }), context);
+    };
+    assert.equal((await upload(base, "")).status, 403);
+    assert.equal((await upload(teacher, teacherCookie, { origin: "https://evil.invalid" })).status, 403);
+    assert.equal((await upload(teacher, teacherCookie, { invalid: true })).status, 400);
+    const uploadedResponse = await upload(teacher, teacherCookie); assert.equal(uploadedResponse.status, 201);
+    const worksheet = (await uploadedResponse.json()).worksheet; assert.equal(worksheet.files.length, 2);
+    assert.ok(!JSON.stringify(worksheet).includes('worksheets/' + worksheet.id + '/zh.pdf'), 'R2 keys stay private');
+    const floor1 = (await call("student/worksheets?floor=1", { cookie: aCookie })).data;
+    assert.equal(floor1.worksheets[0].id, worksheet.id);
+    assert.equal((await call("student/worksheets?floor=0", { cookie: aCookie })).data.worksheets.length, 0);
+    await call("student/worksheets?floor=6", { cookie: aCookie, expected: 400 });
+    await call("student/worksheets?floor=1", { expected: 401 });
+    const readPdf = (context, auth, id = worksheet.id) => handleCampus(new Request(`https://campus.test/api/campus/worksheets/${id}/zh`, {headers:{cookie:auth}}), context);
+    const pdfResponse = await readPdf(base, aCookie); assert.equal(pdfResponse.status,200); assert.equal(await pdfResponse.text(),pdf);
+    assert.match(pdfResponse.headers.get('content-type'), /application\/pdf/);
+    assert.equal((await readPdf(base, '')).status,404);
+    assert.equal((await readPdf(other, otherUnlock.cookie)).status,404);
+    const wrongGradeClass = classes.find(c => c.grade === 3 && c.section === 'A');
+    const wrongGrade = await call('student/join',{method:'POST',body:{classCode:wrongGradeClass.classCode,studentNumber:'90',name:'Test grade boundary'}});
+    assert.equal((await readPdf(base,wrongGrade.cookie)).status,404);
+    await call('teacher/worksheets/'+worksheet.id,{method:'DELETE',context:other,cookie:otherUnlock.cookie,expected:404});
+    await call('teacher/worksheets/'+worksheet.id,{method:'DELETE',context:teacher,cookie:teacherCookie});
+    assert.equal((await readPdf(base,aCookie)).status,404);
+    assert.equal((await bucket.list()).objects.length,0);
+    checks += 15;
+
     await call("student/join", { method: "POST", body: { classCode: room.classCode, studentNumber: "01", name: "Overwrite" }, expected: 409 });
     await call("student/resume", { method: "POST", body: { classCode: room.classCode, studentNumber: "01", recoveryCode: "WRONG" }, expected: 400 });
     const resume = await call("student/resume", { method: "POST", body: { classCode: room.classCode, studentNumber: "01", recoveryCode: recovery } });

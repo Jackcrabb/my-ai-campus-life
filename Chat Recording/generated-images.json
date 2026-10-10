@@ -1,15 +1,16 @@
 {
   "schemaVersion": 1,
-  "source": "Recorded generated-image outputs from the project root conversation and its three verified child tasks. No raw tool payloads are included.",
-  "cutoffUTC": "2026-10-09T13:11:43.875Z",
+  "source": "Recorded image-generation outputs and the deterministic public QR artifact from the project root conversation and its three verified child tasks. No raw tool payloads are included.",
+  "cutoffUTC": "2026-10-10T06:04:09.989Z",
   "timestampMeaning": "Time the completed generated image was recorded in the scoped conversation. Batched results may share a timestamp; internal generation completion times are not separately established.",
-  "count": 72,
+  "count": 98,
   "images": [
     {
       "number": 1,
       "recordedAtUTC": "2026-10-08T11:33:33.917Z",
       "recordedAtHongKong": "2026-10-08 19:33:33 HKT",
       "generationId": "exec-02d4fc6b-dd50-4eeb-9bcc-ab789f309af9",
+      "method": "built-in-imagegen",
       "sourceChannel": "root",
       "relativePath": "../public/campus/portraits.png",
       "projectMatches": [
@@ -27,6 +28,7 @@
       "recordedAtUTC": "2026-10-08T11:55:13.719Z",
       "recordedAtHongKong": "2026-10-08 19:55:13 HKT",
       "generationId": "exec-3594107d-d555-4d61-929c-fe53a4252251",
+      "method": "built-in-imagegen",
       "sourceChannel": "root",
       "relativePath": "../public/campus/title-campus.png",
       "projectMatches": [
@@ -44,6 +46,7 @@
       "recordedAtUTC": "2026-10-08T12:16:01.939Z",
       "recordedAtHongKong": "2026-10-08 20:16:01 HKT",
       "generationId": "exec-82f0e8b0-625f-4717-91eb-8ca15f6acd12",
+      "method": "built-in-imagegen",
       "sourceChannel": "root",
       "relativePath": "generated-images/003-exec-82f0e8b0-625f-4717-91eb-8ca15f6acd12.png",
       "projectMatches": [],
@@ -59,6 +62,7 @@
       "recordedAtUTC": "2026-10-08T12:16:11.880Z",
       "recordedAtHongKong": "2026-10-08 20:16:11 HKT",
       "generationId": "exec-ff39f261-56e7-428f-b659-50e924130b9b",
+      "method": "built-in-imagegen",
       "sourceChannel": "root",
       "relativePath": "generated-images/004-exec-ff39f261-56e7-428f-b659-50e924130b9b.png",
       "projectMatches": [],
@@ -74,6 +78,7 @@
       "recordedAtUTC": "2026-10-08T12:18:26.105Z",
       "recordedAtHongKong": "2026-10-08 20:18:26 HKT",
       "generationId": "exec-7b48e905-50a4-403f-bd24-de17cdcce65d",
+      "method": "built-in-imagegen",
       "sourceChannel": "root",
       "relativePath": "../design/art-options/version-1-crafted-pixel.png",
       "projectMatches": [
@@ -91,6 +96,7 @@
       "recordedAtUTC": "2026-10-08T12:18:37.336Z",
       "recordedAtHongKong": "2026-10-08 20:18:37 HKT",
       "generationId": "exec-24b03049-7d70-45a8-80c4-6aa6da5e5775",
+      "method": "built-in-imagegen",
       "sourceChannel": "root",
       "relativePath": "../design/art-options/version-2-hd-pixel.png",
       "projectMatches": [
@@ -108,6 +114,7 @@
       "recordedAtUTC": "2026-10-08T12:18:43.334Z",
       "recordedAtHongKong": "2026-10-08 20:18:43 HKT",
       "generationId": "exec-b3c700da-29ec-4240-8045-a94489abff95",
+      "method": "built-in-imagegen",
       "sourceChannel": "root",
       "relativePath": "../design/art-options/version-3-hand-drawn.png",
       "projectMatches": [
@@ -125,6 +132,7 @@
       "recordedAtUTC": "2026-10-08T12:27:17.382Z",
       "recordedAtHongKong": "2026-10-08 20:27:17 HKT",
       "generationId": "exec-ca284faf-c728-41d9-97f2-5e60de4991a5",
+      "method": "built-in-imagegen",
       "sourceChannel": "illustration",
       "relativePath": "../public/campus/assets/characters/students-queens-college.png",
       "projectMatches": [
@@ -142,6 +150,7 @@
       "recordedAtUTC": "2026-10-08T12:27:17.382Z",
       "recordedAtHongKong": "2026-10-08 20:27:17 HKT",
       "generationId": "exec-e5a183d3-9b1b-4314-933d-81180719e33d",
+      "method": "built-in-imagegen",
       "sourceChannel": "illustration",
       "relativePath": "../public/campus/assets/characters/students-pooi-to.png",
       "projectMatches": [
@@ -159,6 +168,7 @@
       "recordedAtUTC": "2026-10-08T12:29:22.285Z",
       "recordedAtHongKong": "2026-10-08 20:29:22 HKT",
       "generationId": "exec-134ddf53-1677-42a1-b0cf-709cff325784",
+      "method": "built-in-imagegen",
       "sourceChannel": "learning-content",
       "relativePath": "../public/campus/assets/backgrounds/campus-pair-01.png",
       "projectMatches": [
@@ -176,6 +186,7 @@
       "recordedAtUTC": "2026-10-08T12:30:05.517Z",
       "recordedAtHongKong": "2026-10-08 20:30:05 HKT",
       "generationId": "exec-69def568-ed8e-446e-a562-bfa762036065",
+      "method": "built-in-imagegen",
       "sourceChannel": "illustration",
       "relativePath": "generated-images/011-exec-69def568-ed8e-446e-a562-bfa762036065.png",
       "projectMatches": [],
@@ -191,6 +202,7 @@
       "recordedAtUTC": "2026-10-08T12:30:28.806Z",
       "recordedAtHongKong": "2026-10-08 20:30:28 HKT",
       "generationId": "exec-d5366927-85ef-4a79-aabd-086f2004b6b7",
+      "method": "built-in-imagegen",
       "sourceChannel": "learning-content",
       "relativePath": "../public/campus/assets/backgrounds/campus-pair-02.png",
       "projectMatches": [
@@ -208,6 +220,7 @@
       "recordedAtUTC": "2026-10-08T12:30:39.571Z",
       "recordedAtHongKong": "2026-10-08 20:30:39 HKT",
       "generationId": "exec-6efc7a4f-01fa-442b-94c0-a665f53b9c3a",
+      "method": "built-in-imagegen",
       "sourceChannel": "learning-content",
       "relativePath": "../public/campus/assets/backgrounds/campus-pair-03.png",
       "projectMatches": [
@@ -225,6 +238,7 @@
       "recordedAtUTC": "2026-10-08T12:30:40.070Z",
       "recordedAtHongKong": "2026-10-08 20:30:40 HKT",
       "generationId": "exec-cb056dc3-8df6-441a-b847-537822087a36",
+      "method": "built-in-imagegen",
       "sourceChannel": "illustration",
       "relativePath": "../public/campus/assets/characters/students-hkcwcc.png",
       "projectMatches": [
@@ -242,6 +256,7 @@
       "recordedAtUTC": "2026-10-08T12:30:40.070Z",
       "recordedAtHongKong": "2026-10-08 20:30:40 HKT",
       "generationId": "exec-bacce2c6-ec85-47ad-8d66-df575519c166",
+      "method": "built-in-imagegen",
       "sourceChannel": "illustration",
       "relativePath": "../public/campus/assets/characters/students-st-joan.png",
       "projectMatches": [
@@ -259,6 +274,7 @@
       "recordedAtUTC": "2026-10-08T12:30:40.070Z",
       "recordedAtHongKong": "2026-10-08 20:30:40 HKT",
       "generationId": "exec-367a70f9-9246-4dae-8255-1478bd2d8899",
+      "method": "built-in-imagegen",
       "sourceChannel": "illustration",
       "relativePath": "generated-images/016-exec-367a70f9-9246-4dae-8255-1478bd2d8899.png",
       "projectMatches": [],
@@ -274,6 +290,7 @@
       "recordedAtUTC": "2026-10-08T12:31:06.548Z",
       "recordedAtHongKong": "2026-10-08 20:31:06 HKT",
       "generationId": "exec-4443763a-6b49-46a4-8b03-86b644cabc1c",
+      "method": "built-in-imagegen",
       "sourceChannel": "learning-content",
       "relativePath": "../public/campus/assets/backgrounds/campus-pair-04.png",
       "projectMatches": [
@@ -291,6 +308,7 @@
       "recordedAtUTC": "2026-10-08T12:31:33.877Z",
       "recordedAtHongKong": "2026-10-08 20:31:33 HKT",
       "generationId": "exec-3b686abf-8c0c-4824-b7f0-de7e2cbd2f07",
+      "method": "built-in-imagegen",
       "sourceChannel": "learning-content",
       "relativePath": "../public/campus/assets/backgrounds/campus-pair-05.png",
       "projectMatches": [
@@ -308,6 +326,7 @@
       "recordedAtUTC": "2026-10-08T12:31:42.277Z",
       "recordedAtHongKong": "2026-10-08 20:31:42 HKT",
       "generationId": "exec-d9f1e453-b20a-4cac-ad07-4f31be343ee9",
+      "method": "built-in-imagegen",
       "sourceChannel": "learning-content",
       "relativePath": "../public/campus/assets/backgrounds/campus-pair-06.png",
       "projectMatches": [
@@ -325,6 +344,7 @@
       "recordedAtUTC": "2026-10-08T12:31:54.863Z",
       "recordedAtHongKong": "2026-10-08 20:31:54 HKT",
       "generationId": "exec-fdd3c47f-3bfd-44f5-8aa7-83746e0a6a74",
+      "method": "built-in-imagegen",
       "sourceChannel": "learning-content",
       "relativePath": "../public/campus/assets/backgrounds/campus-pair-07.png",
       "projectMatches": [
@@ -342,6 +362,7 @@
       "recordedAtUTC": "2026-10-08T12:34:08.451Z",
       "recordedAtHongKong": "2026-10-08 20:34:08 HKT",
       "generationId": "exec-3ebfe1f3-061a-4777-ac3c-b18f5b62fa15",
+      "method": "built-in-imagegen",
       "sourceChannel": "illustration",
       "relativePath": "../public/campus/assets/characters/npcs-school-community.png",
       "projectMatches": [
@@ -359,6 +380,7 @@
       "recordedAtUTC": "2026-10-08T12:35:48.045Z",
       "recordedAtHongKong": "2026-10-08 20:35:48 HKT",
       "generationId": "exec-a0b65b8c-1d0c-4ec4-9778-5e88dbf620b6",
+      "method": "built-in-imagegen",
       "sourceChannel": "learning-content",
       "relativePath": "../public/campus/assets/backgrounds/campus-pair-08.png",
       "projectMatches": [
@@ -376,6 +398,7 @@
       "recordedAtUTC": "2026-10-08T12:36:16.613Z",
       "recordedAtHongKong": "2026-10-08 20:36:16 HKT",
       "generationId": "exec-4c370e97-1497-46ff-b0e5-1f1802eca371",
+      "method": "built-in-imagegen",
       "sourceChannel": "learning-content",
       "relativePath": "../public/campus/assets/backgrounds/campus-pair-09.png",
       "projectMatches": [
@@ -393,6 +416,7 @@
       "recordedAtUTC": "2026-10-08T12:37:15.099Z",
       "recordedAtHongKong": "2026-10-08 20:37:15 HKT",
       "generationId": "exec-d84a744d-5f57-4d1b-b557-674b8f1060ca",
+      "method": "built-in-imagegen",
       "sourceChannel": "root",
       "relativePath": "../public/campus/assets/portraits/students.png",
       "projectMatches": [
@@ -410,6 +434,7 @@
       "recordedAtUTC": "2026-10-08T12:38:19.079Z",
       "recordedAtHongKong": "2026-10-08 20:38:19 HKT",
       "generationId": "exec-3c845bb4-0266-4896-bae2-c95c14f11001",
+      "method": "built-in-imagegen",
       "sourceChannel": "root",
       "relativePath": "../public/campus/assets/portraits/staff-a.png",
       "projectMatches": [
@@ -427,6 +452,7 @@
       "recordedAtUTC": "2026-10-08T12:38:33.714Z",
       "recordedAtHongKong": "2026-10-08 20:38:33 HKT",
       "generationId": "exec-39085af1-8c2c-4c86-8d2a-1d8465496866",
+      "method": "built-in-imagegen",
       "sourceChannel": "root",
       "relativePath": "../public/campus/assets/portraits/staff-b.png",
       "projectMatches": [
@@ -444,6 +470,7 @@
       "recordedAtUTC": "2026-10-08T12:54:21.838Z",
       "recordedAtHongKong": "2026-10-08 20:54:21 HKT",
       "generationId": "exec-ed40abed-8382-4eef-96d1-716442df5969",
+      "method": "built-in-imagegen",
       "sourceChannel": "illustration",
       "relativePath": "../public/campus/assets/backgrounds/detective-preparation.png",
       "projectMatches": [
@@ -461,6 +488,7 @@
       "recordedAtUTC": "2026-10-08T13:03:03.792Z",
       "recordedAtHongKong": "2026-10-08 21:03:03 HKT",
       "generationId": "exec-7ad90440-e764-41cc-9e45-919b78bb0c2f",
+      "method": "built-in-imagegen",
       "sourceChannel": "illustration",
       "relativePath": "../public/campus/assets/backgrounds/campus-gate.png",
       "projectMatches": [
@@ -478,6 +506,7 @@
       "recordedAtUTC": "2026-10-08T15:01:42.337Z",
       "recordedAtHongKong": "2026-10-08 23:01:42 HKT",
       "generationId": "exec-18766b8f-b02f-4e58-a2f3-39f6b5cb280c",
+      "method": "built-in-imagegen",
       "sourceChannel": "illustration",
       "relativePath": "../public/campus/assets/characters/students-boy-queens-college.png",
       "projectMatches": [
@@ -495,6 +524,7 @@
       "recordedAtUTC": "2026-10-08T15:01:42.337Z",
       "recordedAtHongKong": "2026-10-08 23:01:42 HKT",
       "generationId": "exec-795e1f29-3851-4509-a19d-3516b21e94a8",
+      "method": "built-in-imagegen",
       "sourceChannel": "illustration",
       "relativePath": "../public/campus/assets/characters/students-boy-hkcwcc.png",
       "projectMatches": [
@@ -512,6 +542,7 @@
       "recordedAtUTC": "2026-10-08T15:05:47.379Z",
       "recordedAtHongKong": "2026-10-08 23:05:47 HKT",
       "generationId": "exec-a160cb44-4f78-47ab-bccd-ea3b97775845",
+      "method": "built-in-imagegen",
       "sourceChannel": "learning-content",
       "relativePath": "../public/campus/assets/characters/students-girl-hkcwcc.png",
       "projectMatches": [
@@ -529,6 +560,7 @@
       "recordedAtUTC": "2026-10-08T15:07:33.749Z",
       "recordedAtHongKong": "2026-10-08 23:07:33 HKT",
       "generationId": "exec-515e87a9-0c40-4083-aff5-b2418b0e7a55",
+      "method": "built-in-imagegen",
       "sourceChannel": "learning-content",
       "relativePath": "../public/campus/assets/characters/students-girl-st-joan.png",
       "projectMatches": [
@@ -546,6 +578,7 @@
       "recordedAtUTC": "2026-10-08T15:29:22.674Z",
       "recordedAtHongKong": "2026-10-08 23:29:22 HKT",
       "generationId": "exec-818bf487-32d4-4a3d-b93d-0dee37719fe5",
+      "method": "built-in-imagegen",
       "sourceChannel": "learning-content",
       "relativePath": "../design/character-review/BOYS-REVIEW-v1.png",
       "projectMatches": [
@@ -563,6 +596,7 @@
       "recordedAtUTC": "2026-10-08T15:29:51.902Z",
       "recordedAtHongKong": "2026-10-08 23:29:51 HKT",
       "generationId": "exec-e1383a77-d5a9-4ec3-b017-78e66e34231e",
+      "method": "built-in-imagegen",
       "sourceChannel": "root",
       "relativePath": "../design/character-review/GIRLS-REVIEW-v1.png",
       "projectMatches": [
@@ -580,6 +614,7 @@
       "recordedAtUTC": "2026-10-08T15:51:39.776Z",
       "recordedAtHongKong": "2026-10-08 23:51:39 HKT",
       "generationId": "exec-3161c00d-0135-4439-a7ef-bdf7b6fe817d",
+      "method": "built-in-imagegen",
       "sourceChannel": "pedagogy",
       "relativePath": "../design/campus-life-review-v1/03-teacher-workspace.png",
       "projectMatches": [
@@ -597,6 +632,7 @@
       "recordedAtUTC": "2026-10-08T15:53:17.781Z",
       "recordedAtHongKong": "2026-10-08 23:53:17 HKT",
       "generationId": "exec-373a309a-5b6e-4912-9f48-ed56fe67bc7b",
+      "method": "built-in-imagegen",
       "sourceChannel": "root",
       "relativePath": "generated-images/036-exec-373a309a-5b6e-4912-9f48-ed56fe67bc7b.png",
       "projectMatches": [],
@@ -612,6 +648,7 @@
       "recordedAtUTC": "2026-10-08T15:54:36.789Z",
       "recordedAtHongKong": "2026-10-08 23:54:36 HKT",
       "generationId": "exec-ae29a5a2-051e-4bfd-82ab-090e0857efdd",
+      "method": "built-in-imagegen",
       "sourceChannel": "illustration",
       "relativePath": "../design/campus-life-review-v1/04-npc-roster.png",
       "projectMatches": [
@@ -630,6 +667,7 @@
       "recordedAtUTC": "2026-10-08T15:55:08.182Z",
       "recordedAtHongKong": "2026-10-08 23:55:08 HKT",
       "generationId": "exec-19504641-1374-40d0-92b7-d56ceda4344f",
+      "method": "built-in-imagegen",
       "sourceChannel": "learning-content",
       "relativePath": "../design/campus-life-review-v1/02-student-onboarding.png",
       "projectMatches": [
@@ -647,6 +685,7 @@
       "recordedAtUTC": "2026-10-08T15:57:43.061Z",
       "recordedAtHongKong": "2026-10-08 23:57:43 HKT",
       "generationId": "exec-4ba28f4f-38b0-4220-a147-7e121681325a",
+      "method": "built-in-imagegen",
       "sourceChannel": "root",
       "relativePath": "../design/campus-life-review-v1/01-character-interaction.png",
       "projectMatches": [
@@ -664,6 +703,7 @@
       "recordedAtUTC": "2026-10-08T16:05:16.128Z",
       "recordedAtHongKong": "2026-10-09 00:05:16 HKT",
       "generationId": "exec-f61f1006-761b-4fc2-9c96-0829ec3dd99b",
+      "method": "built-in-imagegen",
       "sourceChannel": "illustration",
       "relativePath": "../design/campus-life-review-v1/05-walk-proportion.png",
       "projectMatches": [
@@ -681,6 +721,7 @@
       "recordedAtUTC": "2026-10-08T16:12:03.950Z",
       "recordedAtHongKong": "2026-10-09 00:12:03 HKT",
       "generationId": "exec-d1f98781-2bf2-40e8-9849-1c722a01e000",
+      "method": "built-in-imagegen",
       "sourceChannel": "root",
       "relativePath": "../design/campus-life-review-v1/05-walk-proportion-v2.png",
       "projectMatches": [
@@ -698,6 +739,7 @@
       "recordedAtUTC": "2026-10-09T09:30:47.359Z",
       "recordedAtHongKong": "2026-10-09 17:30:47 HKT",
       "generationId": "exec-76448602-6f03-4af4-acb2-4e5a5c4da7c1",
+      "method": "built-in-imagegen",
       "sourceChannel": "root",
       "relativePath": "../design/campus-life-review-v1/05-walk-proportion-v3.png",
       "projectMatches": [
@@ -715,6 +757,7 @@
       "recordedAtUTC": "2026-10-09T09:54:51.526Z",
       "recordedAtHongKong": "2026-10-09 17:54:51 HKT",
       "generationId": "exec-2b3d04f7-96bd-4b00-bbf9-91a9ac31ed8f",
+      "method": "built-in-imagegen",
       "sourceChannel": "illustration",
       "relativePath": "generated-images/043-exec-2b3d04f7-96bd-4b00-bbf9-91a9ac31ed8f.png",
       "projectMatches": [],
@@ -730,6 +773,7 @@
       "recordedAtUTC": "2026-10-09T09:57:38.356Z",
       "recordedAtHongKong": "2026-10-09 17:57:38 HKT",
       "generationId": "exec-4ec6492c-91d8-4a5d-8966-71979c0a5562",
+      "method": "built-in-imagegen",
       "sourceChannel": "illustration",
       "relativePath": "../public/campus/assets/life/student-boy-white.png",
       "projectMatches": [
@@ -747,6 +791,7 @@
       "recordedAtUTC": "2026-10-09T10:31:48.612Z",
       "recordedAtHongKong": "2026-10-09 18:31:48 HKT",
       "generationId": "exec-bb339516-c4f8-47ea-835f-3258c6ae78ba",
+      "method": "built-in-imagegen",
       "sourceChannel": "illustration",
       "relativePath": "generated-images/045-exec-bb339516-c4f8-47ea-835f-3258c6ae78ba.png",
       "projectMatches": [],
@@ -762,6 +807,7 @@
       "recordedAtUTC": "2026-10-09T10:34:06.269Z",
       "recordedAtHongKong": "2026-10-09 18:34:06 HKT",
       "generationId": "exec-15b8ec04-0424-4e85-a11c-20b246c5ae9d",
+      "method": "built-in-imagegen",
       "sourceChannel": "illustration",
       "relativePath": "../public/campus/assets/life/student-girl-white.png",
       "projectMatches": [
@@ -779,6 +825,7 @@
       "recordedAtUTC": "2026-10-09T10:49:39.934Z",
       "recordedAtHongKong": "2026-10-09 18:49:39 HKT",
       "generationId": "exec-824981f7-2122-434b-ae3a-b2fd66b9bb43",
+      "method": "built-in-imagegen",
       "sourceChannel": "illustration",
       "relativePath": "../public/campus/assets/life/student-boy-grey.png",
       "projectMatches": [
@@ -796,6 +843,7 @@
       "recordedAtUTC": "2026-10-09T10:59:27.099Z",
       "recordedAtHongKong": "2026-10-09 18:59:27 HKT",
       "generationId": "exec-baa569a9-dcb0-4e89-8a15-02a2025567ac",
+      "method": "built-in-imagegen",
       "sourceChannel": "illustration",
       "relativePath": "../public/campus/assets/life/student-boy-striped.png",
       "projectMatches": [
@@ -813,6 +861,7 @@
       "recordedAtUTC": "2026-10-09T11:06:22.551Z",
       "recordedAtHongKong": "2026-10-09 19:06:22 HKT",
       "generationId": "exec-6660378d-b58e-4791-95f5-a20306302770",
+      "method": "built-in-imagegen",
       "sourceChannel": "pedagogy",
       "relativePath": "../public/campus/assets/life/staff-academic-a.png",
       "projectMatches": [
@@ -830,6 +879,7 @@
       "recordedAtUTC": "2026-10-09T11:29:15.341Z",
       "recordedAtHongKong": "2026-10-09 19:29:15 HKT",
       "generationId": "exec-890cf701-9f48-47f4-a8b4-cfbf6e3e4f95",
+      "method": "built-in-imagegen",
       "sourceChannel": "illustration",
       "relativePath": "../public/campus/assets/life/student-boy-blazer.png",
       "projectMatches": [
@@ -847,6 +897,7 @@
       "recordedAtUTC": "2026-10-09T11:29:37.461Z",
       "recordedAtHongKong": "2026-10-09 19:29:37 HKT",
       "generationId": "exec-9cc1b5e1-f31e-43d5-b329-5662edd96414",
+      "method": "built-in-imagegen",
       "sourceChannel": "pedagogy",
       "relativePath": "generated-images/051-exec-9cc1b5e1-f31e-43d5-b329-5662edd96414.png",
       "projectMatches": [],
@@ -862,6 +913,7 @@
       "recordedAtUTC": "2026-10-09T11:31:25.126Z",
       "recordedAtHongKong": "2026-10-09 19:31:25 HKT",
       "generationId": "exec-c715fd1d-3e47-4095-8993-2b3d4d893adf",
+      "method": "built-in-imagegen",
       "sourceChannel": "pedagogy",
       "relativePath": "generated-images/052-exec-c715fd1d-3e47-4095-8993-2b3d4d893adf.png",
       "projectMatches": [],
@@ -877,6 +929,7 @@
       "recordedAtUTC": "2026-10-09T11:33:08.510Z",
       "recordedAtHongKong": "2026-10-09 19:33:08 HKT",
       "generationId": "exec-27d96577-f5a0-4f51-83a4-4602352d7675",
+      "method": "built-in-imagegen",
       "sourceChannel": "pedagogy",
       "relativePath": "../public/campus/assets/life/staff-academic-b.png",
       "projectMatches": [
@@ -894,6 +947,7 @@
       "recordedAtUTC": "2026-10-09T11:36:43.973Z",
       "recordedAtHongKong": "2026-10-09 19:36:43 HKT",
       "generationId": "exec-36006755-3444-4506-9a75-7873e0d72cb4",
+      "method": "built-in-imagegen",
       "sourceChannel": "pedagogy",
       "relativePath": "../public/campus/assets/life/staff-community.png",
       "projectMatches": [
@@ -911,6 +965,7 @@
       "recordedAtUTC": "2026-10-09T11:38:12.747Z",
       "recordedAtHongKong": "2026-10-09 19:38:12 HKT",
       "generationId": "exec-abaa20a3-c815-4483-bb71-1d6f7b570a28",
+      "method": "built-in-imagegen",
       "sourceChannel": "illustration",
       "relativePath": "../public/campus/assets/life/student-girl-striped.png",
       "projectMatches": [
@@ -928,6 +983,7 @@
       "recordedAtUTC": "2026-10-09T11:38:59.358Z",
       "recordedAtHongKong": "2026-10-09 19:38:59 HKT",
       "generationId": "exec-4a80ad45-f9e2-4f19-9765-9e25e19861a9",
+      "method": "built-in-imagegen",
       "sourceChannel": "pedagogy",
       "relativePath": "../public/campus/assets/life/staff-leadership.png",
       "projectMatches": [
@@ -945,6 +1001,7 @@
       "recordedAtUTC": "2026-10-09T11:41:07.463Z",
       "recordedAtHongKong": "2026-10-09 19:41:07 HKT",
       "generationId": "exec-05e7c4d2-a060-4090-9e8d-c25825d5d201",
+      "method": "built-in-imagegen",
       "sourceChannel": "illustration",
       "relativePath": "../public/campus/assets/life/student-girl-grey.png",
       "projectMatches": [
@@ -962,6 +1019,7 @@
       "recordedAtUTC": "2026-10-09T11:43:40.953Z",
       "recordedAtHongKong": "2026-10-09 19:43:40 HKT",
       "generationId": "exec-78e3ca7d-e9f3-4c50-a9b0-c56fbd78e997",
+      "method": "built-in-imagegen",
       "sourceChannel": "illustration",
       "relativePath": "../public/campus/assets/life/student-girl-gingham.png",
       "projectMatches": [
@@ -979,6 +1037,7 @@
       "recordedAtUTC": "2026-10-09T11:49:12.320Z",
       "recordedAtHongKong": "2026-10-09 19:49:12 HKT",
       "generationId": "exec-2ddf8184-46a6-4420-8cc1-86aa3733dbd3",
+      "method": "built-in-imagegen",
       "sourceChannel": "illustration",
       "relativePath": "generated-images/059-exec-2ddf8184-46a6-4420-8cc1-86aa3733dbd3.png",
       "projectMatches": [],
@@ -994,6 +1053,7 @@
       "recordedAtUTC": "2026-10-09T11:50:54.712Z",
       "recordedAtHongKong": "2026-10-09 19:50:54 HKT",
       "generationId": "exec-a198e684-c480-4b9d-8396-d1cff422585c",
+      "method": "built-in-imagegen",
       "sourceChannel": "pedagogy",
       "relativePath": "../public/campus/assets/life/staff-academic-a-v2.png",
       "projectMatches": [
@@ -1011,6 +1071,7 @@
       "recordedAtUTC": "2026-10-09T11:50:56.178Z",
       "recordedAtHongKong": "2026-10-09 19:50:56 HKT",
       "generationId": "exec-bbf415fc-2d18-457b-b0bd-40f6dc9751de",
+      "method": "built-in-imagegen",
       "sourceChannel": "illustration",
       "relativePath": "generated-images/061-exec-bbf415fc-2d18-457b-b0bd-40f6dc9751de.png",
       "projectMatches": [],
@@ -1026,6 +1087,7 @@
       "recordedAtUTC": "2026-10-09T11:52:08.436Z",
       "recordedAtHongKong": "2026-10-09 19:52:08 HKT",
       "generationId": "exec-9358cb5c-6589-40ce-b565-af0422302b3d",
+      "method": "built-in-imagegen",
       "sourceChannel": "illustration",
       "relativePath": "generated-images/062-exec-9358cb5c-6589-40ce-b565-af0422302b3d.png",
       "projectMatches": [],
@@ -1041,6 +1103,7 @@
       "recordedAtUTC": "2026-10-09T11:55:04.964Z",
       "recordedAtHongKong": "2026-10-09 19:55:04 HKT",
       "generationId": "exec-47ec66aa-a9eb-4654-99a5-38b719fc362b",
+      "method": "built-in-imagegen",
       "sourceChannel": "pedagogy",
       "relativePath": "generated-images/063-exec-47ec66aa-a9eb-4654-99a5-38b719fc362b.png",
       "projectMatches": [],
@@ -1056,6 +1119,7 @@
       "recordedAtUTC": "2026-10-09T11:55:20.950Z",
       "recordedAtHongKong": "2026-10-09 19:55:20 HKT",
       "generationId": "exec-6da89a8f-ba9d-4fb6-b7f1-82e31ca9cc58",
+      "method": "built-in-imagegen",
       "sourceChannel": "illustration",
       "relativePath": "generated-images/064-exec-6da89a8f-ba9d-4fb6-b7f1-82e31ca9cc58.png",
       "projectMatches": [],
@@ -1071,6 +1135,7 @@
       "recordedAtUTC": "2026-10-09T11:57:04.739Z",
       "recordedAtHongKong": "2026-10-09 19:57:04 HKT",
       "generationId": "exec-910ded4e-3cce-4533-a944-5bf272ce8282",
+      "method": "built-in-imagegen",
       "sourceChannel": "pedagogy",
       "relativePath": "generated-images/065-exec-910ded4e-3cce-4533-a944-5bf272ce8282.png",
       "projectMatches": [],
@@ -1086,6 +1151,7 @@
       "recordedAtUTC": "2026-10-09T11:58:52.887Z",
       "recordedAtHongKong": "2026-10-09 19:58:52 HKT",
       "generationId": "exec-08589dca-772b-40f2-870e-e761db146ebd",
+      "method": "built-in-imagegen",
       "sourceChannel": "illustration",
       "relativePath": "../public/campus/assets/life/cases-students.png",
       "projectMatches": [
@@ -1103,6 +1169,7 @@
       "recordedAtUTC": "2026-10-09T11:58:53.218Z",
       "recordedAtHongKong": "2026-10-09 19:58:53 HKT",
       "generationId": "exec-c630d848-f3c0-4d36-9200-b8f41c118bab",
+      "method": "built-in-imagegen",
       "sourceChannel": "pedagogy",
       "relativePath": "../public/campus/assets/life/staff-academic-b-v2.png",
       "projectMatches": [
@@ -1120,6 +1187,7 @@
       "recordedAtUTC": "2026-10-09T12:00:59.554Z",
       "recordedAtHongKong": "2026-10-09 20:00:59 HKT",
       "generationId": "exec-d8bf3dfd-1c0a-4afa-bcee-b361585dd3d6",
+      "method": "built-in-imagegen",
       "sourceChannel": "pedagogy",
       "relativePath": "../public/campus/assets/life/staff-community-v2.png",
       "projectMatches": [
@@ -1137,6 +1205,7 @@
       "recordedAtUTC": "2026-10-09T12:13:04.562Z",
       "recordedAtHongKong": "2026-10-09 20:13:04 HKT",
       "generationId": "exec-98f052b2-4d30-47e2-b06b-f35b47108fc4",
+      "method": "built-in-imagegen",
       "sourceChannel": "pedagogy",
       "relativePath": "../public/campus/assets/life/staff-leadership-v2.png",
       "projectMatches": [
@@ -1154,6 +1223,7 @@
       "recordedAtUTC": "2026-10-09T12:18:11.167Z",
       "recordedAtHongKong": "2026-10-09 20:18:11 HKT",
       "generationId": "exec-7af32354-f65d-446e-874b-26f8d32e8cdb",
+      "method": "built-in-imagegen",
       "sourceChannel": "illustration",
       "relativePath": "../design/campus-life-review-v1/06-pixel-dialogue-audio-proposal.png",
       "projectMatches": [
@@ -1171,6 +1241,7 @@
       "recordedAtUTC": "2026-10-09T12:26:08.481Z",
       "recordedAtHongKong": "2026-10-09 20:26:08 HKT",
       "generationId": "exec-883053ef-28a7-4c9e-ba7e-e64d4c85cff1",
+      "method": "built-in-imagegen",
       "sourceChannel": "illustration",
       "relativePath": "generated-images/071-exec-883053ef-28a7-4c9e-ba7e-e64d4c85cff1.png",
       "projectMatches": [],
@@ -1186,6 +1257,7 @@
       "recordedAtUTC": "2026-10-09T12:28:27.736Z",
       "recordedAtHongKong": "2026-10-09 20:28:27 HKT",
       "generationId": "exec-3ca4af38-a546-4336-867f-a49332da74fa",
+      "method": "built-in-imagegen",
       "sourceChannel": "illustration",
       "relativePath": "../public/campus/assets/life/cases-students-v2.png",
       "projectMatches": [
@@ -1196,6 +1268,466 @@
       "bytes": 1256272,
       "width": 1254,
       "height": 1254,
+      "disposition": "linked-existing-project-asset"
+    },
+    {
+      "number": 73,
+      "recordedAtUTC": "2026-10-09T16:14:28.196Z",
+      "recordedAtHongKong": "2026-10-10 00:14:28 HKT",
+      "generationId": "deterministic-public-game-qr",
+      "method": "deterministic-opencv-qr",
+      "sourceChannel": "illustration",
+      "relativePath": "../docs/assets/public-game-qr.png",
+      "projectMatches": [
+        "docs/assets/public-game-qr.png"
+      ],
+      "title": "public game qr",
+      "sha256": "42024ea959089f9751cd5dafcc14b7886d5aa152bb6e23dc1bf6b6a1777e744a",
+      "bytes": 17836,
+      "width": 1960,
+      "height": 1960,
+      "disposition": "linked-existing-project-asset"
+    },
+    {
+      "number": 74,
+      "recordedAtUTC": "2026-10-09T16:24:37.463Z",
+      "recordedAtHongKong": "2026-10-10 00:24:37 HKT",
+      "generationId": "exec-85e74464-c020-4f24-9492-b9a7fceaca23",
+      "method": "built-in-imagegen",
+      "sourceChannel": "illustration",
+      "relativePath": "../design/campus-life-review-v1/07-map-quiz-uniform-proposal.png",
+      "projectMatches": [
+        "design/campus-life-review-v1/07-map-quiz-uniform-proposal.png"
+      ],
+      "title": "07 map quiz uniform proposal",
+      "sha256": "49068db0b28c84dec19b6434699816990f22fe2d626bb2cb642b37cd3d996534",
+      "bytes": 2325155,
+      "width": 1672,
+      "height": 941,
+      "disposition": "linked-existing-project-asset"
+    },
+    {
+      "number": 75,
+      "recordedAtUTC": "2026-10-09T16:40:29.269Z",
+      "recordedAtHongKong": "2026-10-10 00:40:29 HKT",
+      "generationId": "exec-13d3abb1-d5b4-445d-b0d6-e81a936f0e3a",
+      "method": "built-in-imagegen",
+      "sourceChannel": "learning_content",
+      "relativePath": "../public/campus/assets/ui/floorplans-v1.png",
+      "projectMatches": [
+        "public/campus/assets/ui/floorplans-v1.png"
+      ],
+      "title": "floorplans v1",
+      "sha256": "761c96af1dac93db6f36e8bac02ab5cd59ceccefe38c03f9f136441f3e2cb4b7",
+      "bytes": 2775274,
+      "width": 1024,
+      "height": 1536,
+      "disposition": "linked-existing-project-asset"
+    },
+    {
+      "number": 76,
+      "recordedAtUTC": "2026-10-09T16:59:31.038Z",
+      "recordedAtHongKong": "2026-10-10 00:59:31 HKT",
+      "generationId": "exec-07783393-75ff-4d3f-968d-a28482ab3d72",
+      "method": "built-in-imagegen",
+      "sourceChannel": "illustration",
+      "relativePath": "generated-images/076-exec-07783393-75ff-4d3f-968d-a28482ab3d72.png",
+      "projectMatches": [],
+      "title": "Generated image 076 (archived draft)",
+      "sha256": "b60786ed75a29c793aab10f3cdbd38c024288f2624273d8b91d1495d717de24e",
+      "bytes": 2085901,
+      "width": 1536,
+      "height": 1024,
+      "disposition": "copied-generated-image-without-current-asset-match"
+    },
+    {
+      "number": 77,
+      "recordedAtUTC": "2026-10-09T17:00:50.749Z",
+      "recordedAtHongKong": "2026-10-10 01:00:50 HKT",
+      "generationId": "exec-61ea8718-2e26-4871-bc42-d8631629c733",
+      "method": "built-in-imagegen",
+      "sourceChannel": "illustration",
+      "relativePath": "../public/campus/assets/life/cases-uniform-0.png",
+      "projectMatches": [
+        "public/campus/assets/life/cases-uniform-0.png"
+      ],
+      "title": "cases uniform 0",
+      "sha256": "ef6b74164a301032b0ef758a0bd2237ae2c0397e8ae9a69aea678749b0cd7adc",
+      "bytes": 1992338,
+      "width": 1536,
+      "height": 1024,
+      "disposition": "linked-existing-project-asset"
+    },
+    {
+      "number": 78,
+      "recordedAtUTC": "2026-10-09T17:03:18.347Z",
+      "recordedAtHongKong": "2026-10-10 01:03:18 HKT",
+      "generationId": "exec-65856090-c214-4cce-8cd2-8245ae413317",
+      "method": "built-in-imagegen",
+      "sourceChannel": "illustration",
+      "relativePath": "../public/campus/assets/life/cases-uniform-1.png",
+      "projectMatches": [
+        "public/campus/assets/life/cases-uniform-1.png"
+      ],
+      "title": "cases uniform 1",
+      "sha256": "d05a184fe77f85bb4047c5a51bc831bd388b264c9b0947685796c3ba4d11a41f",
+      "bytes": 1999428,
+      "width": 1536,
+      "height": 1024,
+      "disposition": "linked-existing-project-asset"
+    },
+    {
+      "number": 79,
+      "recordedAtUTC": "2026-10-09T17:03:18.347Z",
+      "recordedAtHongKong": "2026-10-10 01:03:18 HKT",
+      "generationId": "exec-4fdde584-4cba-4093-8fbd-07fa9507c5cf",
+      "method": "built-in-imagegen",
+      "sourceChannel": "illustration",
+      "relativePath": "../public/campus/assets/life/cases-uniform-2.png",
+      "projectMatches": [
+        "public/campus/assets/life/cases-uniform-2.png"
+      ],
+      "title": "cases uniform 2",
+      "sha256": "c5cbdc2f4aa23c94894c42485fa4b8965952d26f87d9be0883ce9490bb056a11",
+      "bytes": 1989464,
+      "width": 1536,
+      "height": 1024,
+      "disposition": "linked-existing-project-asset"
+    },
+    {
+      "number": 80,
+      "recordedAtUTC": "2026-10-09T17:03:18.347Z",
+      "recordedAtHongKong": "2026-10-10 01:03:18 HKT",
+      "generationId": "exec-b6852c0e-963a-40b6-8421-a4de48dac2bc",
+      "method": "built-in-imagegen",
+      "sourceChannel": "illustration",
+      "relativePath": "../public/campus/assets/life/cases-uniform-3.png",
+      "projectMatches": [
+        "public/campus/assets/life/cases-uniform-3.png"
+      ],
+      "title": "cases uniform 3",
+      "sha256": "3eaed96eaa4c0e225618050b24f2667e837285f5cb2358220e7231dd7b3d3826",
+      "bytes": 2057171,
+      "width": 1536,
+      "height": 1024,
+      "disposition": "linked-existing-project-asset"
+    },
+    {
+      "number": 81,
+      "recordedAtUTC": "2026-10-09T17:13:13.573Z",
+      "recordedAtHongKong": "2026-10-10 01:13:13 HKT",
+      "generationId": "exec-ab23e2dd-abcb-4e3f-9658-2dcb8e2cd82a",
+      "method": "built-in-imagegen",
+      "sourceChannel": "pedagogy",
+      "relativePath": "generated-images/081-exec-ab23e2dd-abcb-4e3f-9658-2dcb8e2cd82a.png",
+      "projectMatches": [],
+      "title": "Generated image 081 (archived draft)",
+      "sha256": "7baa6564390d33913d5bccf344f0c28c0f31c8fa2c2d6f236d2dfba0f794c890",
+      "bytes": 2132260,
+      "width": 1448,
+      "height": 1086,
+      "disposition": "copied-generated-image-without-current-asset-match"
+    },
+    {
+      "number": 82,
+      "recordedAtUTC": "2026-10-09T17:16:22.528Z",
+      "recordedAtHongKong": "2026-10-10 01:16:22 HKT",
+      "generationId": "exec-f2e2ea5e-dcb6-451c-ac29-51041c416a52",
+      "method": "built-in-imagegen",
+      "sourceChannel": "pedagogy",
+      "relativePath": "../public/campus/assets/life/staff-portraits-v3-a.png",
+      "projectMatches": [
+        "public/campus/assets/life/staff-portraits-v3-a.png"
+      ],
+      "title": "staff portraits v3 a",
+      "sha256": "883d289ed9390ef992ea8eeaa3b80aafb1e65bcd985ba3a3988bdca8fcc4ca6b",
+      "bytes": 1566146,
+      "width": 1448,
+      "height": 1086,
+      "disposition": "linked-existing-project-asset"
+    },
+    {
+      "number": 83,
+      "recordedAtUTC": "2026-10-09T17:19:19.714Z",
+      "recordedAtHongKong": "2026-10-10 01:19:19 HKT",
+      "generationId": "exec-b0c5fea0-96a8-49a1-89ca-e56ad923b1d2",
+      "method": "built-in-imagegen",
+      "sourceChannel": "pedagogy",
+      "relativePath": "../public/campus/assets/life/staff-portraits-v3-b.png",
+      "projectMatches": [
+        "public/campus/assets/life/staff-portraits-v3-b.png"
+      ],
+      "title": "staff portraits v3 b",
+      "sha256": "d60a1cd6fe0f0081725cee70ea2ef2514134c3d6f3cf9c24063bc40cf9a728ca",
+      "bytes": 1672579,
+      "width": 1448,
+      "height": 1086,
+      "disposition": "linked-existing-project-asset"
+    },
+    {
+      "number": 84,
+      "recordedAtUTC": "2026-10-09T17:35:02.255Z",
+      "recordedAtHongKong": "2026-10-10 01:35:02 HKT",
+      "generationId": "exec-f0c6ffa7-1090-4621-b883-cba86b312e01",
+      "method": "built-in-imagegen",
+      "sourceChannel": "illustration",
+      "relativePath": "../public/campus/assets/life/cases-portraits-uniforms.png",
+      "projectMatches": [
+        "public/campus/assets/life/cases-portraits-uniforms.png"
+      ],
+      "title": "cases portraits uniforms",
+      "sha256": "3ebbed88f8e740e673a5818bd98dfe2e5f99029ff1e248ad265a8dd2645085c7",
+      "bytes": 2028437,
+      "width": 1254,
+      "height": 1254,
+      "disposition": "linked-existing-project-asset"
+    },
+    {
+      "number": 85,
+      "recordedAtUTC": "2026-10-09T17:43:52.060Z",
+      "recordedAtHongKong": "2026-10-10 01:43:52 HKT",
+      "generationId": "exec-7ab5e13b-d0e2-4cf5-af23-c7701534037b",
+      "method": "built-in-imagegen",
+      "sourceChannel": "illustration",
+      "relativePath": "../design/campus-life-review-v1/08-npc-identity-variation-proposal.png",
+      "projectMatches": [
+        "design/campus-life-review-v1/08-npc-identity-variation-proposal.png"
+      ],
+      "title": "08 npc identity variation proposal",
+      "sha256": "f568c6944cebcff4d68c9639361286e03ba805ba1157b5825641f9c3a65834a4",
+      "bytes": 1969045,
+      "width": 1536,
+      "height": 1024,
+      "disposition": "linked-existing-project-asset"
+    },
+    {
+      "number": 86,
+      "recordedAtUTC": "2026-10-09T17:45:58.374Z",
+      "recordedAtHongKong": "2026-10-10 01:45:58 HKT",
+      "generationId": "exec-249c2db6-66ce-4504-b3d4-dd390652558f",
+      "method": "built-in-imagegen",
+      "sourceChannel": "root",
+      "relativePath": "../design/campus-life-review-v1/09-worksheet-station-proposal.png",
+      "projectMatches": [
+        "design/campus-life-review-v1/09-worksheet-station-proposal.png"
+      ],
+      "title": "09 worksheet station proposal",
+      "sha256": "3d0c07d77d363827c9e51a29de554e0c0e7d91e2320f564a3e8a3aafba510364",
+      "bytes": 2046038,
+      "width": 1536,
+      "height": 1024,
+      "disposition": "linked-existing-project-asset"
+    },
+    {
+      "number": 87,
+      "recordedAtUTC": "2026-10-09T17:50:36.212Z",
+      "recordedAtHongKong": "2026-10-10 01:50:36 HKT",
+      "generationId": "exec-c41d2921-f9d5-492a-929a-61ddd32d1240",
+      "method": "built-in-imagegen",
+      "sourceChannel": "illustration",
+      "relativePath": "../public/campus/assets/life/cases-uniform-0-v2.png",
+      "projectMatches": [
+        "public/campus/assets/life/cases-uniform-0-v2.png"
+      ],
+      "title": "cases uniform 0 v2",
+      "sha256": "d9f780465903079f5900ce2c86082c81f422ab96206bf9e1e82b69bb937cbb58",
+      "bytes": 2070641,
+      "width": 1536,
+      "height": 1024,
+      "disposition": "linked-existing-project-asset"
+    },
+    {
+      "number": 88,
+      "recordedAtUTC": "2026-10-09T17:53:01.293Z",
+      "recordedAtHongKong": "2026-10-10 01:53:01 HKT",
+      "generationId": "exec-b518e59e-12bd-47a9-b8b6-bc68457b4585",
+      "method": "built-in-imagegen",
+      "sourceChannel": "illustration",
+      "relativePath": "../public/campus/assets/life/cases-uniform-3-v2.png",
+      "projectMatches": [
+        "public/campus/assets/life/cases-uniform-3-v2.png"
+      ],
+      "title": "cases uniform 3 v2",
+      "sha256": "da0d9d08f23a0b662a738979d296705501a85584d7de61939b8f4ba7fa9e8eff",
+      "bytes": 2167542,
+      "width": 1536,
+      "height": 1024,
+      "disposition": "linked-existing-project-asset"
+    },
+    {
+      "number": 89,
+      "recordedAtUTC": "2026-10-09T17:55:20.171Z",
+      "recordedAtHongKong": "2026-10-10 01:55:20 HKT",
+      "generationId": "exec-c86c684a-61a7-4027-80a4-58c7848da15a",
+      "method": "built-in-imagegen",
+      "sourceChannel": "illustration",
+      "relativePath": "../public/campus/assets/life/cases-portraits-uniforms-v2.png",
+      "projectMatches": [
+        "public/campus/assets/life/cases-portraits-uniforms-v2.png"
+      ],
+      "title": "cases portraits uniforms v2",
+      "sha256": "9dfbf2b8c783a654374ada3fd6e76086fc3d0eaf92b032a86cc23babe8e20a22",
+      "bytes": 2129998,
+      "width": 1254,
+      "height": 1254,
+      "disposition": "linked-existing-project-asset"
+    },
+    {
+      "number": 90,
+      "recordedAtUTC": "2026-10-09T17:55:36.551Z",
+      "recordedAtHongKong": "2026-10-10 01:55:36 HKT",
+      "generationId": "exec-337d346b-8331-4cfc-a50a-fbd01ef0cd85",
+      "method": "built-in-imagegen",
+      "sourceChannel": "illustration",
+      "relativePath": "../public/campus/assets/life/cases-uniform-2-v2.png",
+      "projectMatches": [
+        "public/campus/assets/life/cases-uniform-2-v2.png"
+      ],
+      "title": "cases uniform 2 v2",
+      "sha256": "faa57c30c2744c5bd633f79229b287c547f1a7137f1bf8e0056d92b39301b0f6",
+      "bytes": 2092506,
+      "width": 1536,
+      "height": 1024,
+      "disposition": "linked-existing-project-asset"
+    },
+    {
+      "number": 91,
+      "recordedAtUTC": "2026-10-09T17:55:36.551Z",
+      "recordedAtHongKong": "2026-10-10 01:55:36 HKT",
+      "generationId": "exec-3c250108-3229-4ba0-a61e-5ad26f9a44fc",
+      "method": "built-in-imagegen",
+      "sourceChannel": "illustration",
+      "relativePath": "../public/campus/assets/life/cases-uniform-1-v2.png",
+      "projectMatches": [
+        "public/campus/assets/life/cases-uniform-1-v2.png"
+      ],
+      "title": "cases uniform 1 v2",
+      "sha256": "1712dfb4287b19793328655fbbf8fdd7b5ff2a20be46e37fdcefce129a57216d",
+      "bytes": 2098464,
+      "width": 1536,
+      "height": 1024,
+      "disposition": "linked-existing-project-asset"
+    },
+    {
+      "number": 92,
+      "recordedAtUTC": "2026-10-09T18:20:11.424Z",
+      "recordedAtHongKong": "2026-10-10 02:20:11 HKT",
+      "generationId": "exec-6fcceb16-a721-4553-be4c-0c36a47bf953",
+      "method": "built-in-imagegen",
+      "sourceChannel": "illustration",
+      "relativePath": "generated-images/092-exec-6fcceb16-a721-4553-be4c-0c36a47bf953.png",
+      "projectMatches": [],
+      "title": "Generated image 092 (archived draft)",
+      "sha256": "9cc41079734cb15ed886edfbbc0d4df2fc48a11c719e173e77cbf2cfd2d556da",
+      "bytes": 2435756,
+      "width": 1672,
+      "height": 941,
+      "disposition": "copied-generated-image-without-current-asset-match"
+    },
+    {
+      "number": 93,
+      "recordedAtUTC": "2026-10-09T18:22:35.511Z",
+      "recordedAtHongKong": "2026-10-10 02:22:35 HKT",
+      "generationId": "exec-38f3ee27-9d82-4f12-83b1-bb4a11905bc2",
+      "method": "built-in-imagegen",
+      "sourceChannel": "illustration",
+      "relativePath": "../design/campus-life-review-v1/10a-door-hud-cream-enamel.png",
+      "projectMatches": [
+        "design/campus-life-review-v1/10a-door-hud-cream-enamel.png"
+      ],
+      "title": "10a door hud cream enamel",
+      "sha256": "e86774e78a17ce42141ae70187df6b0023a64161f328a17de5dc827a99247c98",
+      "bytes": 2363454,
+      "width": 1672,
+      "height": 941,
+      "disposition": "linked-existing-project-asset"
+    },
+    {
+      "number": 94,
+      "recordedAtUTC": "2026-10-09T18:28:58.155Z",
+      "recordedAtHongKong": "2026-10-10 02:28:58 HKT",
+      "generationId": "exec-70adfbda-4d67-49c6-910f-14459bc91531",
+      "method": "built-in-imagegen",
+      "sourceChannel": "illustration",
+      "relativePath": "../design/campus-life-review-v1/10b-door-hud-walnut.png",
+      "projectMatches": [
+        "design/campus-life-review-v1/10b-door-hud-walnut.png"
+      ],
+      "title": "10b door hud walnut",
+      "sha256": "bda10914f05c635a47dc787a02f85de4d5ee975a535eb17379830c43a395d59d",
+      "bytes": 2290695,
+      "width": 1672,
+      "height": 941,
+      "disposition": "linked-existing-project-asset"
+    },
+    {
+      "number": 95,
+      "recordedAtUTC": "2026-10-09T18:28:58.155Z",
+      "recordedAtHongKong": "2026-10-10 02:28:58 HKT",
+      "generationId": "exec-61e0fed7-403e-443e-8040-5f8733cf89e4",
+      "method": "built-in-imagegen",
+      "sourceChannel": "illustration",
+      "relativePath": "../design/campus-life-review-v1/10c-door-hud-teal-enamel.png",
+      "projectMatches": [
+        "design/campus-life-review-v1/10c-door-hud-teal-enamel.png"
+      ],
+      "title": "10c door hud teal enamel",
+      "sha256": "5e85a249808dc593bf589e6d10c2c1e47548dd687f38696ad73932123256ab58",
+      "bytes": 2285739,
+      "width": 1672,
+      "height": 941,
+      "disposition": "linked-existing-project-asset"
+    },
+    {
+      "number": 96,
+      "recordedAtUTC": "2026-10-09T18:30:26.109Z",
+      "recordedAtHongKong": "2026-10-10 02:30:26 HKT",
+      "generationId": "exec-080e16cd-5bb3-45db-b372-04cd09e69bf5",
+      "method": "built-in-imagegen",
+      "sourceChannel": "illustration",
+      "relativePath": "generated-images/096-exec-080e16cd-5bb3-45db-b372-04cd09e69bf5.png",
+      "projectMatches": [],
+      "title": "Generated image 096 (archived draft)",
+      "sha256": "d18892fc800409bc668aed467dadbbd4a3bb71ab306efcd30b6fe9419ff82553",
+      "bytes": 2098958,
+      "width": 1672,
+      "height": 941,
+      "disposition": "copied-generated-image-without-current-asset-match"
+    },
+    {
+      "number": 97,
+      "recordedAtUTC": "2026-10-09T18:30:26.109Z",
+      "recordedAtHongKong": "2026-10-10 02:30:26 HKT",
+      "generationId": "exec-1f44c71c-b181-4c24-84bd-6ad1cba4c29c",
+      "method": "built-in-imagegen",
+      "sourceChannel": "illustration",
+      "relativePath": "../design/campus-life-review-v1/12-role-entry-teacher-workspace.png",
+      "projectMatches": [
+        "design/campus-life-review-v1/12-role-entry-teacher-workspace.png"
+      ],
+      "title": "12 role entry teacher workspace",
+      "sha256": "72e926b32c6a02f65891c582b978613aee860a249ce2d6ef7138f6e509c3461e",
+      "bytes": 2138504,
+      "width": 1672,
+      "height": 941,
+      "disposition": "linked-existing-project-asset"
+    },
+    {
+      "number": 98,
+      "recordedAtUTC": "2026-10-09T18:31:37.630Z",
+      "recordedAtHongKong": "2026-10-10 02:31:37 HKT",
+      "generationId": "exec-5fc79292-b8ff-46b5-aa08-16b4b9b925c1",
+      "method": "built-in-imagegen",
+      "sourceChannel": "illustration",
+      "relativePath": "../design/campus-life-review-v1/11-consistent-pixel-panels.png",
+      "projectMatches": [
+        "design/campus-life-review-v1/11-consistent-pixel-panels.png"
+      ],
+      "title": "11 consistent pixel panels",
+      "sha256": "30f3c84d221ad12afc00272efc095cd547dc3dda3ec24d330ff1c6cfbebd1bbc",
+      "bytes": 2058506,
+      "width": 1672,
+      "height": 941,
       "disposition": "linked-existing-project-asset"
     }
   ]

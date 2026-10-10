@@ -34,6 +34,7 @@ export type TeacherIdentity = {
 } | null;
 export type CampusContext = {
     db: D1Database;
+    bucket?: R2Bucket;
     env: CampusEnv;
     teacher: TeacherIdentity;
     now?: number;

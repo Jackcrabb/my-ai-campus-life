@@ -5,22 +5,22 @@ const path = require('node:path');
 const vm = require('node:vm');
 const root = path.join(__dirname,'..','public','campus');
 function launch(options = {}) {
-  const calls = [], state = { unlocked:false,classes:[] };
-  const container = { innerHTML:'', handlers:{}, addEventListener(name,fn){this.handlers[name]=fn;}, removeEventListener(name){delete this.handlers[name];},querySelectorAll(){return[];},querySelector(){return null;},contains(){return true;} };
-  const context = vm.createContext({window:{},console,TextEncoder,Uint8Array,DataView,Blob,URL,URLSearchParams,AbortController,
+  const calls = [], worksheetMounts = [], state = { unlocked:false,allowed:true,classes:[],rejectPin:false,questions:[] };
+  const container = { innerHTML:'', handlers:{}, addEventListener(name,fn){this.handlers[name]=fn;}, removeEventListener(name){delete this.handlers[name];},querySelectorAll(){return[];},querySelector(selector){return selector==='[data-worksheet-manager]'&&this.innerHTML.includes('data-worksheet-manager')?{innerHTML:''}:null;},contains(){return true;} };
+  const context = vm.createContext({window:{CampusWorksheets:{open(options){const handle={...options,destroyed:false,destroy(){this.destroyed=true;}};worksheetMounts.push(handle);return handle;}}},console,TextEncoder,Uint8Array,DataView,Blob,URL,URLSearchParams,AbortController,
     FormData:class {constructor(form){this.data=form.data;}get(key){return this.data[key];}},
     crypto:require('node:crypto').webcrypto,navigator:{clipboard:{writeText:async()=>{}}},
     fetch:async(url,options)=>{
       const body=options.body?JSON.parse(options.body):null;calls.push({url,method:options.method,body,credentials:options.credentials});
       let data={};
-      if(url.endsWith('/teacher/session'))data={signedIn:true,allowed:true,unlocked:state.unlocked};
-      if(url.endsWith('/teacher/unlock')){state.unlocked=true;data={unlocked:true};}
+      if(url.endsWith('/teacher/session'))data={signedIn:true,allowed:state.allowed,unlocked:state.unlocked};
+      if(url.endsWith('/teacher/unlock')){if(state.rejectPin)return{ok:false,status:401,json:async()=>({error:{code:'INVALID_PIN',message:'Invalid PIN'}})};state.unlocked=true;data={unlocked:true};}
       if(url.endsWith('/teacher/lock'))state.unlocked=false;
       if(url.endsWith('/teacher/classes')){
         if(options.method==='POST')state.classes=Array.from({length:body.seedDefault?24:1},(_,i)=>({id:'class-'+i,label:'S'+(i+1),schoolYear:body.schoolYear,classCode:'TEST'+i,assignmentId:'activity'}));
         data={classes:state.classes};
       }
-      if(url.includes('/questions?'))data={questions:[]};
+      if(url.includes('/questions?'))data={questions:state.questions};
       if(url.includes('/assignments'))data={activeAssignmentId:'activity',assignments:[{id:'activity',title:'Test activity'}]};
       if(url.includes('/results?'))data={rows:[],subjects:['chinese'],headers:['班別','學號','學生姓名','學科得分']};
       return {ok:true,status:200,json:async()=>data};
@@ -31,20 +31,45 @@ function launch(options = {}) {
   const workspace=context.window.CampusTeacher.open({container,lang:'zh',...options});
   const settle=async()=>{for(let i=0;i<10;i++)await new Promise(resolve=>setImmediate(resolve));};
   const submit=(kind,data)=>workspace.submit({preventDefault(){},target:{closest(){return{dataset:{form:kind},data,elements:{pin:{value:'test-only'}}};}}});
-  return {workspace,context,container,calls,settle,submit};
+  const click=(action,extra={})=>workspace.click({target:{closest:()=>({dataset:{ct:action,...extra}})}});
+  const change=(name,value)=>workspace.change({target:{closest:()=>({name,value})}});
+  return {workspace,context,container,calls,settle,submit,state,click,change,worksheetMounts};
 }
 (async()=>{
-  const printer=launch({subjectId:'maths'});await printer.settle();
-  assert.equal(printer.workspace.state.tab,'results','classroom printer opens the Results workspace');
-  assert.equal(printer.workspace.state.subjectId,'maths','classroom printer retains its room subject');
+  const printer=launch({subjectId:'maths',initialTab:'results'});await printer.settle();
+  assert.equal(printer.workspace.state.tab,'results','explicit results shortcut opens the Results workspace');
+  assert.equal(printer.workspace.state.subjectId,'maths','explicit shortcut retains its subject');
   printer.workspace.destroy();
-  const game=launch();await game.settle();
+  const chosen=[]; let exits=0;
+  const game=launch({onSubject:id=>chosen.push(id),onExit:()=>exits++});await game.settle();
   assert.match(game.container.innerHTML,/解鎖教師工作台/);
   assert.equal(game.calls.length,1,'opening performs only a session check before unlocking');
   assert.ok(!game.calls.some(call=>call.method==='POST'),'opening never creates classes automatically');
-  await game.submit('unlock',{pin:'test-only'});await game.settle();
+  assert.equal(game.context.window.CampusEngine,undefined,'teacher tools run without an engine or student game');
+  await game.click('subject',{subject:'maths'});await game.click('tab',{tab:'questions'});
+  assert.equal(game.calls.length,1,'locked tools cannot request private question data');
+  game.state.rejectPin=true;await game.submit('unlock',{pin:'wrong-fixture'});await game.settle();
+  assert.equal(game.workspace.state.session.unlocked,false);assert.match(game.container.innerHTML,/PIN 不正確/);
+  assert.ok(!game.calls.some(call=>call.url.endsWith('/teacher/classes')),'failed unlock cannot load private classes');
+  game.state.rejectPin=false;await game.submit('unlock',{pin:'test-only'});await game.settle();
   assert.ok(game.workspace.state.session.unlocked);
-  assert.match(game.container.innerHTML,/尚未建立班級/);
+  assert.equal(game.workspace.state.subjectId,'','login does not silently choose the first subject');
+  assert.match(game.container.innerHTML,/選擇任教科目/);
+  assert.equal((game.container.innerHTML.match(/data-ct="subject"/g)||[]).length,14,'13rooms and the shared AI activities are available');
+  await game.click('subject',{subject:'maths'});
+  assert.equal(game.workspace.state.tab,'hub');assert.deepEqual(chosen,['maths']);
+  assert.match(game.container.innerHTML,/上傳工作紙/);
+  await game.click('tab',{tab:'questions'});
+  assert.ok(game.calls.some(call=>call.url.includes('grade=2&subjectId=maths')));
+  await game.change('grade','5');
+  await game.click('tab',{tab:'subjects'});await game.click('subject',{subject:'english'});
+  assert.equal(game.workspace.state.grade,5,'changing subject preserves the grade filter');
+  await game.click('tab',{tab:'worksheets'});
+  const mounted=game.worksheetMounts.at(-1);assert.equal(mounted.subjectId,'english');assert.equal(mounted.grade,5);assert.equal(mounted.fixedSubject,true);
+  mounted.onScopeChange({grade:4,subjectId:'english'});
+  await game.click('tab',{tab:'questions'});assert.equal(mounted.destroyed,true);
+  assert.ok(game.calls.some(call=>call.url.includes('grade=4&subjectId=english')),'worksheet grade follows back to question tools');
+  await game.click('tab',{tab:'classes'});assert.match(game.container.innerHTML,/尚未建立班級/);
   assert.ok(game.calls.every(call=>call.credentials==='same-origin'));
   await game.submit('seed',{schoolYear:'2026-27'});
   assert.equal(game.workspace.state.classes.length,24,'the explicit seed action creates24classes');
@@ -85,6 +110,20 @@ function launch(options = {}) {
   assert.ok(xml.includes('&lt;name&gt;'),'XML metacharacters are escaped');
   assert.ok(!xml.includes('<f>'),'a formula-looking student name stays text');
   assert.throws(()=>game.context.window.CampusXlsx.buildWorkbook([]));
-  game.workspace.destroy();assert.equal(Object.keys(game.container.handlers).length,0,'destroy removes delegated listeners');
-  console.log('Teacher workspace: session authorization, explicit class creation, locale labels, scoped results, empty state, XLSX text safety and lifecycle passed.');
+  const classId=game.workspace.state.classId, assignmentId=game.workspace.state.assignmentId;
+  await game.click('tab',{tab:'subjects'});await game.click('subject',{subject:'ai-ethics'});
+  assert.equal(game.workspace.state.classId,classId);assert.equal(game.workspace.state.assignmentId,assignmentId);
+  assert.ok(!game.container.innerHTML.includes('data-tab="worksheets"'),'core AI bank has no unsupported worksheet upload');
+  game.state.questions=[{...question,id:'case-voice',grade:0,category:'case',subjectId:'ai-ethics'}];
+  await game.click('tab',{tab:'questions'});
+  assert.ok(game.calls.some(call=>call.url==='/api/campus/teacher/questions?subjectId=ai-ethics'),'shared grade0 case query does not impose a student grade');
+  assert.ok(!game.container.innerHTML.includes('data-ct="new-question"'));assert.ok(!game.container.innerHTML.includes('data-ct="edit"'));
+  const exports=[];game.context.window.CampusXlsx.download=(sheets,name)=>exports.push({sheets,name});
+  await game.workspace.exportResults();assert.equal(exports.at(-1).sheets.length,1,'normal export follows the selected subject');
+  await game.workspace.exportResults(true);assert.equal(exports.at(-1).sheets.length,14,'explicit all-subject export preserves all tools and includes AI');
+  await game.click('close');assert.equal(exits,1,'standalone exit callback fires once');
+  assert.equal(Object.keys(game.container.handlers).length,0,'destroy removes delegated listeners');
+  const denied=launch();await denied.settle();denied.state.allowed=false;await denied.workspace.refresh();
+  const before=denied.calls.length;await denied.submit('unlock',{pin:'test-only'});assert.equal(denied.calls.length,before,'identity authorization remains required before PIN submission');denied.workspace.destroy();
+  console.log('PASS teacher workspace: standalone login, denied/invalid PIN handling,14subject chooser, persistent scope, worksheet mount, read-only AI cases, explicit class creation, versioned editing, scoped/all XLSX, locales and exit lifecycle.');
 })();

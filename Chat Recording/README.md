@@ -11,7 +11,7 @@ This folder preserves the accessible development conversation for **My AI Campus
 
 ## Scope and method
 
-The archive covers **2026-10-08 19:11:07 HKT through 2026-10-09 21:11:43 HKT**, including **103 actual user/assistant text messages** and **72 generated-image events**. The main conversation's actual stored messages were recovered from its beginning, not reconstructed from a summary. The most recent included message pauses publication while the speech-language and background-music issues are investigated.
+The archive covers **2026-10-08 19:11:07 HKT through 2026-10-10 14:04:09 HKT**, including **158 actual user/assistant text messages** and **98 generated-image events**. The main conversation's actual stored messages were recovered from its beginning, not reconstructed from a summary. The latest included messages report Cantonese pronunciation of numbers in English mode and a female voice assigned to the male principal. The assistant reports normalizing character-gender values, cancelling old speech on language changes and converting English numbers to words. These are historical statements from the actual conversation, not an independent audible-quality verification. Earlier messages remove the cream-coloured menu band, select the cream-enamel door-plaque design and request unified pixel panels with a Student/Teacher entry split. This snapshot includes proposals 08/09 and their approval, the later decision to remove physical corridor printers in favour of the HUD Print service, read-only progress views, removal of student learning-report downloads, slightly slower NPCs, and the historical voice adjustments superseded by Default. An archived assistant message clarifies that each actual case still awards five stars, regardless of decorative star examples in the panel preview. Later implementation reports or final release claims are outside this cutoff.
 
 The English text is a human-readable translation of the actual conversation. Consecutive messages from the same speaker share a `User:` or `ChatGPT:` section, with a timestamp for every original message. No missing assistant reply has been invented to force alternation. Responses selected through an interface prompt are recorded as the user's actual answer; the tool's question payload is not exported.
 
@@ -19,7 +19,7 @@ Generated-image completion records were read only from this conversation and its
 
 ## Images and references
 
-All 72 generated-image source files represented in the manifest were available at export time. Fifty-six are identical to existing project assets and are linked using repository-relative paths. Sixteen otherwise-untracked generated drafts were copied here, adding about 31.9MB without duplicating the existing assets. SHA-256 comparisons verified every copied image.
+All 98 image source files represented in the manifest were available at export time: 97 image-generation outputs and one deterministic QR code. 78 are identical to existing project assets and linked using repository-relative paths. 20 otherwise-untracked generated drafts are copied here, adding about 38.7 MiB without duplicating existing assets. SHA-256 comparisons verified every linked and copied image. The QR code was generated with OpenCV and encodes the public game URL; it is not AI-generated artwork.
 
 Some images are earlier or rejected designs. Inclusion records the design process and does not indicate that an image is used in the current game. Images are placed in expandable blocks to keep the long transcript readable. Their original Chinese lettering is preserved.
 
@@ -37,8 +37,8 @@ Historical progress reports and claims are translated faithfully as things said 
 
 ## Validation
 
-- 103 translated messages mapped one-to-one to actual recorded messages.
-- 72 generated images with working relative links and verified source hashes.
+- 158 translated messages mapped one-to-one to actual recorded messages.
+- 98 image artifacts with working relative links and verified source hashes.
 - All archived source image files present; no invented image placeholders.
 - No raw session logs, hidden prompts, tool payloads or absolute local paths included.
 - No live credentials, recovery codes or personal email addresses included.

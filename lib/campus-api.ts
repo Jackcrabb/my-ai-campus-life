@@ -1,3 +1,4 @@
+import { handleWorksheets } from "./campus-worksheets";
 import { CASE_RULES } from "./campus-cases";
 import { CampusError, type CampusContext } from "./campus-types";
 import { allowedTeacher, checkOrigin, cookie, equalSecret, hash, iso, limit, now, readBody, requireTeacher, setCookie, STUDENT_COOKIE, TEACHER_COOKIE, textField, token } from "./campus-security";
@@ -102,6 +103,7 @@ function sanitiseProgress(raw: Record<string, unknown>) {
 }
 export async function handleCampus(request: Request, ctx: CampusContext): Promise<Response> {
     try {
+        if (/^\/api\/campus\/(?:teacher\/worksheets|student\/worksheets|worksheets)(?:\/|$)/.test(new URL(request.url).pathname)) return await handleWorksheets(request, ctx);
         checkOrigin(request);
         const url = new URL(request.url), path = url.pathname.replace(/^\/api\/campus\/?/, "").split("/").filter(Boolean), route = path.join("/"), method = request.method;
         const body = ["POST", "PUT", "PATCH", "DELETE"].includes(method) ? await readBody(request) : {};

@@ -1,0 +1,686 @@
+[
+  {
+    "subjectId": "chinese",
+    "grade": 1,
+    "level": 1,
+    "title": [
+      "從動作推知心情",
+      "Inferring emotion from actions"
+    ],
+    "question": [
+      "小段：『輪到她上臺時，她把講稿捏成一團，走了兩步又回頭望老師。』哪個推論最有文字支持？",
+      "Read: 『輪到她上台時，她把講稿捏成一團，走了兩步又回頭望老師。』 Which inference is best supported?"
+    ],
+    "options": [
+      [
+        "她緊張，可能在尋求鼓勵",
+        "She is nervous and may be seeking reassurance",
+        "捏稿、回望都是動作線索，推論保留了可能性。",
+        "The crumpled notes and backward glance support a cautious inference."
+      ],
+      [
+        "她已決定放棄演講",
+        "She has decided to abandon the speech",
+        "文中沒有交代她離場或放棄。",
+        "The passage does not say she leaves or withdraws."
+      ],
+      [
+        "她因老師遲到而生氣",
+        "She is angry because the teacher is late",
+        "文中沒有遲到這個原因。",
+        "No lateness is mentioned."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "推論須有具體字句支持，也要保留未能確定的部分。",
+      "Ground an inference in textual details and retain uncertainty."
+    ]
+  },
+  {
+    "subjectId": "chinese",
+    "grade": 1,
+    "level": 2,
+    "title": [
+      "指代與段落銜接",
+      "Reference and cohesion"
+    ],
+    "question": [
+      "『學校增加了午間閱讀時段，也把圖書角移到走廊。這兩項改動讓借閱更方便。』『這兩項改動』指甚麼？",
+      "In『學校增加了午間閱讀時段，也把圖書角移到走廊。這兩項改動讓借閱更方便。』 what does『這兩項改動』refer to?"
+    ],
+    "options": [
+      [
+        "增加閱讀時段及遷移圖書角",
+        "Adding reading time and moving the book corner",
+        "指代須對應前句的兩個行動。",
+        "The reference links to the two actions in the preceding sentence."
+      ],
+      [
+        "閱讀和借閱的學生",
+        "The students who read and borrow",
+        "『改動』指措施，不是人物。",
+        "The expression refers to changes, not people."
+      ],
+      [
+        "走廊及午間",
+        "The corridor and lunchtime",
+        "兩者是地方與時間，未包含改變的動作。",
+        "These name a place and time, not the actions taken."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "辨認指代時，兼看語意、數量和上下文。",
+      "Resolve reference using meaning, number and context."
+    ]
+  },
+  {
+    "subjectId": "chinese",
+    "grade": 1,
+    "level": 3,
+    "title": [
+      "抓住事件主線",
+      "Selecting a narrative summary"
+    ],
+    "question": [
+      "『雨愈下愈大，球賽取消了。隊員起初抱怨，後來搬開課室桌椅，邀請低年級同學一起玩室內接力。散場時，大家相約再辦。』哪個摘要最完整而不加推測？",
+      "Read: 『雨愈下愈大，球賽取消了。隊員起初抱怨，後來搬開課室桌椅，邀請低年級同學一起玩室內接力。散場時，大家相約再辦。』Choose a concise summary without invention."
+    ],
+    "options": [
+      [
+        "球賽因雨取消，隊員改辦受歡迎的室內活動",
+        "Rain cancelled the match; the team organised a well-received indoor activity",
+        "包含起因、轉變和結果，沒有新增原因。",
+        "This retains the cause, change and outcome without inventing motives."
+      ],
+      [
+        "隊員搬桌椅後散場",
+        "The team moved desks and then left",
+        "只取零碎動作，漏掉事件轉變。",
+        "This omits the central change in the event."
+      ],
+      [
+        "老師命令隊員舉辦活動，所以大家不滿",
+        "A teacher ordered the activity, making everyone unhappy",
+        "原文沒有老師命令，結尾亦不是不滿。",
+        "The order is invented and the ending is misrepresented."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "摘要保留主線與轉變，不逐項抄細節。",
+      "A summary preserves the main sequence and change rather than listing details."
+    ]
+  },
+  {
+    "subjectId": "chinese",
+    "grade": 2,
+    "level": 1,
+    "title": [
+      "比喻的表達作用",
+      "Explaining a metaphor"
+    ],
+    "question": [
+      "『每逢爭執，班長總像橋樑，把兩邊的話接起來。』『橋樑』在此主要突出甚麼？",
+      "In『每逢爭執，班長總像橋樑，把兩邊的話接起來。』 what does the bridge metaphor emphasise?"
+    ],
+    "options": [
+      [
+        "班長促進雙方溝通",
+        "The monitor connects opposing views",
+        "橋樑連接兩端，對應調解中的溝通作用。",
+        "A bridge connects two sides, matching the mediator's role."
+      ],
+      [
+        "班長身材高大",
+        "The monitor is physically tall",
+        "上下文談爭執，沒有描述身高。",
+        "The context concerns conflict, not height."
+      ],
+      [
+        "班長永遠沒有自己的意見",
+        "The monitor never has personal opinions",
+        "協助溝通不等於沒有立場。",
+        "Facilitating communication does not imply having no views."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "說明修辭作用，要把形象與具體語境連起來。",
+      "Explain how a figurative image works in its specific context."
+    ]
+  },
+  {
+    "subjectId": "chinese",
+    "grade": 2,
+    "level": 2,
+    "title": [
+      "實用文的對象",
+      "Writing for an audience"
+    ],
+    "question": [
+      "學生會寫信向校長申請延長圖書館午間開放。哪個開頭最能清楚交代目的及理由？",
+      "The student council requests longer lunchtime library access. Which opening best states the purpose and reason?"
+    ],
+    "options": [
+      [
+        "本會建議午間延長開放十五分鐘，讓較遲午膳的同學也能借閱。",
+        "We propose an extra fifteen minutes so students with later lunch can borrow books.",
+        "對象、建議和受益原因清楚，語氣得體。",
+        "The proposal and its reason are clear and appropriately expressed."
+      ],
+      [
+        "圖書館是我們學校的一座建築物。",
+        "The library is a building at our school.",
+        "陳述常識，未交代申請目的。",
+        "This states a general fact without the request."
+      ],
+      [
+        "如果不延長開放，就代表學校不重視閱讀。",
+        "Refusing longer access means the school does not value reading.",
+        "把單一決定等同整體價值判斷，語氣武斷。",
+        "This makes an unsupported judgment from one possible decision."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "實用文須配合對象、目的及可核實的理由。",
+      "Practical writing should fit its audience, purpose and substantiated reasons."
+    ]
+  },
+  {
+    "subjectId": "chinese",
+    "grade": 2,
+    "level": 3,
+    "title": [
+      "文言詞義與語境",
+      "Interpreting a classical-style word"
+    ],
+    "question": [
+      "自擬短句：『少年問路，翁指橋曰：「由此往，近矣。」少年從之。』末句『從』最合語境的意思是甚麼？",
+      "In this original classical-style passage, 『少年問路，翁指橋曰：「由此往，近矣。」少年從之。』 what does『從』mean?"
+    ],
+    "options": [
+      [
+        "依照老人的指示行事",
+        "Follow the elder's directions",
+        "『之』承接前面的建議，表示依從。",
+        "The pronoun links to the advice, supporting the sense of following it."
+      ],
+      [
+        "從某個地方出發的介詞",
+        "A preposition meaning from a place",
+        "此處『從』後沒有出發地，而是指代建議的『之』。",
+        "No departure place follows; the pronoun refers back to the advice."
+      ],
+      [
+        "隨從的名詞",
+        "A noun meaning attendant",
+        "句中需要少年所做的動作，不是身分名詞。",
+        "The sentence requires the boy's action, not a role noun."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "文言一詞多義，應以句法和前文判斷。",
+      "Use syntax and preceding context to distinguish meanings of a classical word."
+    ]
+  },
+  {
+    "subjectId": "chinese",
+    "grade": 3,
+    "level": 1,
+    "title": [
+      "論點與論據",
+      "Matching evidence to a claim"
+    ],
+    "question": [
+      "哪項證據最直接支持「分流上車能減少校巴隊伍等候時間」？",
+      "Which evidence most directly supports the claim that separate boarding queues reduce school-bus waiting time?"
+    ],
+    "options": [
+      [
+        "在相近人數下，試行分流後平均等候由 12 分鐘降至 7 分鐘。",
+        "With similar passenger numbers, mean waiting time fell from 12 to 7 minutes after the trial.",
+        "這項資料直接量度主張涉及的等候時間，且交代人數條件。",
+        "This directly measures the claimed waiting-time outcome and states a comparable passenger count."
+      ],
+      [
+        "校巴車身改用新的藍色油漆。",
+        "The buses were repainted blue.",
+        "車身顏色沒有直接量度排隊時間或分流效果。",
+        "Vehicle colour does not directly measure waiting time or queue separation."
+      ],
+      [
+        "司機的制服在去年更換。",
+        "Drivers received new uniforms last year.",
+        "制服更換與這項分流安排的效果沒有直接證據關係。",
+        "A uniform change supplies no direct evidence about this boarding arrangement."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "支持論點的證據應直接量度相關結果，並交代可比條件。",
+      "Evidence should directly measure the relevant outcome and state comparable conditions."
+    ]
+  },
+  {
+    "subjectId": "chinese",
+    "grade": 3,
+    "level": 2,
+    "title": [
+      "回應反方理由",
+      "Responding to an objection"
+    ],
+    "question": [
+      "有人反對增設花圃，理由是沒有人手長期打理。哪個回應最直接處理這項疑慮？",
+      "Someone opposes a new garden because there is insufficient staff for ongoing maintenance. Which response directly addresses the objection?"
+    ],
+    "options": [
+      [
+        "先試設一小區，由受訓園藝組輪值，記錄所需工時後再檢討。",
+        "Trial a small plot with a trained gardening-club rota, recording maintenance hours before review.",
+        "這承認持續人手的限制，提出可檢驗的安排。",
+        "This acknowledges the staffing constraint and proposes a testable arrangement."
+      ],
+      [
+        "花比水泥地漂亮，所以不用討論人手。",
+        "Flowers look nicer than concrete, so staffing need not be discussed.",
+        "美觀沒有回應持續維護的資源問題。",
+        "Appearance does not address ongoing maintenance resources."
+      ],
+      [
+        "反對的人一定討厭大自然。",
+        "Opponents must dislike nature.",
+        "這攻擊提出疑慮的人，沒有回應其理由。",
+        "This attacks people rather than responding to their reason."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "回應異議應處理其核心理由，不把對方簡化成標籤。",
+      "Answer the substance of an objection instead of labelling its speaker."
+    ]
+  },
+  {
+    "subjectId": "chinese",
+    "grade": 3,
+    "level": 3,
+    "title": [
+      "因果推論的限度",
+      "Limits of causal language"
+    ],
+    "question": [
+      "報告說減廢宣傳後午膳剩食下降；同月供應商亦調小份量。哪個標題最忠於資料？",
+      "A report says lunch waste fell after a campaign; the supplier also reduced portions that month. Which headline is most faithful?"
+    ],
+    "options": [
+      [
+        "午膳剩食減少；宣傳與份量調整的影響仍待分辨。",
+        "Lunch waste falls; effects of the campaign and portion changes remain to be separated.",
+        "兩項改變同時出現，不能單獨確定宣傳的因果效果。",
+        "Two changes coincide, so the campaign effect cannot be isolated."
+      ],
+      [
+        "宣傳已證明是剩食下降的唯一原因。",
+        "The campaign is proven to be the sole cause of lower waste.",
+        "這忽略同時調整份量的另一解釋。",
+        "This ignores the simultaneous portion change as an alternative explanation."
+      ],
+      [
+        "所有學生已改變飲食習慣。",
+        "Every student has changed eating habits.",
+        "總剩食資料不能證明每位學生的行為變化。",
+        "Aggregate waste does not establish each individual student’s behaviour change."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "語氣強度應配合證據，時間先後不足以證明單一因果。",
+      "Match claim strength to evidence; sequence alone does not prove sole causation."
+    ]
+  },
+  {
+    "subjectId": "chinese",
+    "grade": 4,
+    "level": 1,
+    "title": [
+      "意象與情感轉折",
+      "Imagery and emotional change"
+    ],
+    "question": [
+      "『初到舊校舍，我只嫌牆上裂痕難看。離校那天，夕陽落進裂痕，像替歲月縫上金線。』裂痕意象的變化主要表達甚麼？",
+      "Read: 『初到舊校舍，我只嫌牆上裂痕難看。離校那天，夕陽落進裂痕，像替歲月縫上金線。』 What does the changed image express?"
+    ],
+    "options": [
+      [
+        "敘述者由嫌棄轉為珍惜共同生活的痕跡",
+        "The narrator comes to value traces of shared experience",
+        "同一景物被重新理解，呼應前後態度轉變。",
+        "The same feature is reinterpreted, marking an emotional change."
+      ],
+      [
+        "校舍已完成修補工程",
+        "The building has been repaired",
+        "『像』標示比喻，不能當作工程紀錄。",
+        "The simile is not evidence of physical repair."
+      ],
+      [
+        "敘述者始終認為校舍毫無價值",
+        "The narrator consistently sees no value in the building",
+        "這忽略『金線』帶來的珍惜意味。",
+        "This ignores the positive value suggested by golden stitching."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "分析意象時留意其在篇章中的變化，而非只列修辭名稱。",
+      "Analyse how an image changes across a passage, not only its rhetorical label."
+    ]
+  },
+  {
+    "subjectId": "chinese",
+    "grade": 4,
+    "level": 2,
+    "title": [
+      "虛詞與論述關係",
+      "Connectives in classical-style prose"
+    ],
+    "question": [
+      "自擬短文：『眾以路遠而止，舟子曰：「遠非不可至，惟須備糧。」乃整舟而行。』『乃』在末句主要承接甚麼？",
+      "In this original passage, 『眾以路遠而止，舟子曰：「遠非不可至，惟須備糧。」乃整舟而行。』 what relationship does『乃』express?"
+    ],
+    "options": [
+      [
+        "接受建議後，於是準備船隻出發",
+        "After accepting the advice, they therefore prepare and depart",
+        "末句是前述商議後的後續行動。",
+        "The final action follows from the preceding advice."
+      ],
+      [
+        "出發很久之後纔有人提出建議",
+        "The advice is offered long after departure",
+        "這倒置了篇章的先後次序。",
+        "This reverses the order of events."
+      ],
+      [
+        "儘管沒有船，仍能出發",
+        "They depart despite having no boat",
+        "『乃』此處不表示這項讓步，文中亦沒有缺船。",
+        "Neither that concession nor a missing boat appears in the passage."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "虛詞的功能要放回論述和事件順序中理解。",
+      "Interpret a connective through the argument and sequence of events."
+    ]
+  },
+  {
+    "subjectId": "chinese",
+    "grade": 4,
+    "level": 3,
+    "title": [
+      "整合資料提出建議",
+      "Integrating information into a proposal"
+    ],
+    "question": [
+      "材料甲：60% 受訪者希望運動會有安靜休息區。材料乙：只得兩名輪值職員，中午需求最高。哪個建議最能綜合兩份材料？",
+      "Source A: 60% of respondents want a quiet rest area at sports day. Source B: only two staff can rotate, and demand peaks at noon. Which proposal best integrates both?"
+    ],
+    "options": [
+      [
+        "先在中午試開一個安靜休息區，按可用人手安排，並檢討使用情況。",
+        "Trial one quiet rest area at noon with available staffing, then review its use.",
+        "這同時回應休息需求、時段資料及人手限制。",
+        "This combines the need for rest, timing evidence and staffing constraint."
+      ],
+      [
+        "全日開十個休息區，因為 60% 希望有休息地方。",
+        "Open ten rest areas all day because 60% want a place to rest.",
+        "民意支持不能取消人手限制，材料亦沒有支持十個區的數量。",
+        "Support does not remove the staffing limit or justify ten areas."
+      ],
+      [
+        "兩名職員必定不能管理任何形式的休息區。",
+        "Two staff cannot possibly manage any form of rest area.",
+        "這沒有考慮縮小規模或試行，結論超出材料。",
+        "This rules out scaled trials without supporting evidence."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "綜合寫作要轉化資料為有條件、可實行的論述。",
+      "Integrated writing turns evidence into a qualified, feasible argument."
+    ]
+  },
+  {
+    "subjectId": "chinese",
+    "grade": 5,
+    "level": 1,
+    "title": [
+      "反語與敘述態度",
+      "Irony and stance"
+    ],
+    "question": [
+      "『校門掛起「聆聽每把聲音」的橫額。諮詢會卻在學生上課時舉行，最後記錄寫着：「沒有學生反對。」這真是一次周全的聆聽。』末句的作用是甚麼？",
+      "Read: 『校門掛起「聆聽每把聲音」的橫額。諮詢會卻在學生上課時舉行，最後記錄寫着：「沒有學生反對。」這真是一次周全的聆聽。』 What does the final sentence do?"
+    ],
+    "options": [
+      [
+        "以反語批評程序與宣稱不一致",
+        "Uses irony to criticise a gap between process and claim",
+        "上課時間排除了參與機會，與『周全』形成反差。",
+        "The exclusionary timing contradicts the praise of comprehensive listening."
+      ],
+      [
+        "直接證明所有學生贊同措施",
+        "Proves every student supports the policy",
+        "缺席者沒有發言，不等於贊同。",
+        "Silence from absent participants is not agreement."
+      ],
+      [
+        "客觀記錄會議開幕時間",
+        "Objectively records the meeting's starting time",
+        "末句是態度表達，不是時間資料。",
+        "The sentence expresses a stance, not timing data."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "判斷反語須結合字面意思與上下文的矛盾。",
+      "Identify irony through the tension between literal wording and context."
+    ]
+  },
+  {
+    "subjectId": "chinese",
+    "grade": 5,
+    "level": 2,
+    "title": [
+      "限制語與論證精確度",
+      "Qualifying a claim precisely"
+    ],
+    "question": [
+      "社團時段自願問卷收到 80 份回覆，其中 56 人支持改到星期三。草稿寫「全校七成人支持星期三」。怎樣修訂最精確？",
+      "A voluntary club-scheduling survey receives 80 responses, 56 favouring Wednesday. The draft claims 70% of the whole school supports Wednesday. What is the most precise revision?"
+    ],
+    "options": [
+      [
+        "七成回覆者支持星期三；這不能確定全校的支持比例。",
+        "70% of respondents support Wednesday; this does not establish the school-wide proportion.",
+        "須分清自願回覆者與全校學生，不能直接外推。",
+        "Distinguish voluntary respondents from the whole student population."
+      ],
+      [
+        "全校至少七成支持",
+        "At least 70% of the school supports it",
+        "資料沒有提供全校支持比例的下限。",
+        "No school-wide lower bound is established."
+      ],
+      [
+        "全校沒有人支持",
+        "Nobody in the school supports it",
+        "56名支持者與這個結論直接矛盾。",
+        "The 56 supporting responses contradict this claim."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "寫作中的限制語應交代樣本及結論的適用範圍。",
+      "Qualifiers should identify the sample and the scope of a conclusion."
+    ]
+  },
+  {
+    "subjectId": "chinese",
+    "grade": 5,
+    "level": 3,
+    "title": [
+      "表面矛盾與資料口徑",
+      "Reconciling apparent disagreement"
+    ],
+    "question": [
+      "報告甲說博物館實地參觀人次下降；報告乙說整體參與增加，並計入網上展覽。哪個綜合最合理？",
+      "Report A says physical museum visits fell; report B says overall engagement rose and includes online exhibitions. What is the soundest synthesis?"
+    ],
+    "options": [
+      [
+        "兩者量度範圍不同，可以同時成立；先統一定義再比較。",
+        "Their measures differ and may both be true; align definitions before comparing.",
+        "實地參觀與包含網上活動的總參與不是同一指標。",
+        "Physical visits and total engagement including online activities are different indicators."
+      ],
+      [
+        "兩報告必有一份造假",
+        "One report must be fabricated",
+        "不同定義已足以產生不同趨勢，未有造假證據。",
+        "Different definitions can explain the trends without evidence of fabrication."
+      ],
+      [
+        "網上參與增加，就證明實地參觀也增加。",
+        "Increased online engagement proves physical visits also increased.",
+        "兩種參與方式可有不同趨勢，不能互相代替。",
+        "The two forms of engagement can follow different trends and cannot stand in for each other."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "綜合相異資料前，先核對定義、範圍及分母。",
+      "Before synthesising conflicting sources, compare definitions, scope and denominators."
+    ]
+  },
+  {
+    "subjectId": "chinese",
+    "grade": 6,
+    "level": 1,
+    "title": [
+      "辨識稻草人論證",
+      "Recognising a distorted rebuttal"
+    ],
+    "question": [
+      "甲主張『高風險AI評分應保留教師覆核』。乙回應『甲想禁止所有科技，讓學校倒退』。乙的主要論證問題是甚麼？",
+      "A argues that high-stakes AI scoring should retain teacher review. B replies that A wants to ban all technology and hold schools back. What is the main flaw?"
+    ],
+    "options": [
+      [
+        "把有限度的覆核要求歪曲為全面禁止",
+        "Distorting a limited review requirement into a total ban",
+        "乙反駁的是擴大的主張，不是甲實際說法。",
+        "B attacks an exaggerated position rather than the stated claim."
+      ],
+      [
+        "A 沒有提供足夠數據，所以 B 已回應覆核是否必要。",
+        "A lacks numerical data, so B has already answered whether review is necessary.",
+        "即使 A 可補證據，B 仍須回應有限覆核要求，不能把它改成全面禁用。",
+        "Even if A needs more evidence, B still needs to address the limited review proposal rather than turn it into a total ban."
+      ],
+      [
+        "甲沒有說明任何使用AI的場景",
+        "A specifies no AI-use context",
+        "高風險評分已是一個具體範圍。",
+        "High-stakes scoring defines a specific context."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "有效反駁須準確重述對方論點及限制條件。",
+      "A valid rebuttal represents the opposing claim and its limits accurately."
+    ]
+  },
+  {
+    "subjectId": "chinese",
+    "grade": 6,
+    "level": 2,
+    "title": [
+      "敘述視角的可靠程度",
+      "Evaluating narrative reliability"
+    ],
+    "question": [
+      "『他在臺下低頭，我認定他不屑我的演講。多年後讀到他的日記，才知那天他正記下我說的每一句話。』後一句如何改變前文？",
+      "Read: 『他在台下低頭，我認定他不屑我的演講。多年後讀到他的日記，才知那天他正記下我說的每一句話。』How does the second sentence reshape the first?"
+    ],
+    "options": [
+      [
+        "揭示當年『我』把可見動作誤作確定的心理證據",
+        "Reveals that the narrator mistook an action for certain evidence of motive",
+        "新資料區分了觀察與當年的主觀解釋。",
+        "New evidence separates the observation from its earlier interpretation."
+      ],
+      [
+        "證明第一人稱敘述的全部事實都是虛構",
+        "Proves all facts in first-person narration are invented",
+        "一項誤判不使所有可觀察事實都失效。",
+        "One mistaken interpretation does not invalidate every observed fact."
+      ],
+      [
+        "使低頭這個動作不曾發生",
+        "Means the downward glance never happened",
+        "被修正的是動機判斷，不是動作本身。",
+        "The motive is reinterpreted; the action remains."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "分析敘述可靠性，要區分事件、知覺與推測。",
+      "Distinguish events, perceptions and inferences when assessing narrative reliability."
+    ]
+  },
+  {
+    "subjectId": "chinese",
+    "grade": 6,
+    "level": 3,
+    "title": [
+      "結論的綜合與保留",
+      "A qualified synthesis"
+    ],
+    "question": [
+      "論證材料：AI回饋令初稿修改更快，但小組只試了兩週，部分非標準用語被誤改；學生仍需自行決定。哪個結語最能保留材料中的張力？",
+      "Evidence: AI feedback speeds initial revision, but a two-week trial finds some non-standard expressions wrongly changed; students must decide. Which conclusion best preserves these tensions?"
+    ],
+    "options": [
+      [
+        "可把AI用作初步回饋，但應保留作者判斷，並延長試行檢查不同語言背景的效果。",
+        "Use AI for initial feedback while retaining author judgment and extending evaluation across language backgrounds.",
+        "結合效益、限制和後續條件，沒有把短期結果普遍化。",
+        "This combines benefits, limits and further conditions without universalising a short trial."
+      ],
+      [
+        "修改速度較快，已足以證明AI可取代寫作教學。",
+        "Faster revision proves AI can replace writing instruction.",
+        "速度不等於整體學習成效，亦忽略誤改。",
+        "Speed does not establish overall learning effectiveness and ignores errors."
+      ],
+      [
+        "只要有一處誤改，所有AI回饋便毫無用處。",
+        "One wrong correction makes all AI feedback useless.",
+        "把局部失誤擴大成絕對否定，同樣超出材料。",
+        "This generalises a local failure into an unsupported absolute rejection."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "成熟結論可同時保留效益與限制，並提出可檢查的條件。",
+      "A mature conclusion can retain benefits and limitations while specifying testable conditions."
+    ]
+  }
+]

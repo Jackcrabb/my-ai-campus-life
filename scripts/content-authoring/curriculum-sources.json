@@ -1,0 +1,60 @@
+{
+  "chinese": [
+    "https://www.edb.gov.hk/tc/curriculum-development/kla/chi-edu/curriculum-documents.html",
+    "https://www.edb.gov.hk/attachment/tc/curriculum-development/kla/chi-edu/curriculum-documents/Junior_Sec_Chi_Lang_Curr_Guide_2023.pdf",
+    "https://www.edb.gov.hk/attachment/tc/curriculum-development/kla/chi-edu/CHI_LANG_CAGuide_2021.pdf"
+  ],
+  "english": [
+    "https://www.edb.gov.hk/en/curriculum-development/kla/eng-edu/curriculum-documents.html",
+    "https://www.edb.gov.hk/attachment/en/curriculum-development/kla/eng-edu/Curriculum%20Document/ELE%20JS%20Supplement%202018.pdf",
+    "https://www.edb.gov.hk/attachment/en/curriculum-development/kla/eng-edu/Enhancing%20Vocab%20Secondary/e-version/Appendix3.html"
+  ],
+  "maths": [
+    "https://www.edb.gov.hk/en/curriculum-development/kla/ma/curr/index2.html",
+    "https://www.edb.gov.hk/attachment/en/curriculum-development/kla/ma/curr/EN_KS3_e.pdf",
+    "https://www.edb.gov.hk/attachment/en/curriculum-development/kla/ma/curr/EN_CP_e.pdf"
+  ],
+  "chemistry": [
+    "https://www.edb.gov.hk/en/curriculum-development/kla/science-edu/curriculum-documents.html",
+    "https://www.edb.gov.hk/attachment/en/curriculum-development/kla/science-edu/jss/JS_Science_Curriculum_Framework_2025_english.pdf",
+    "https://www.edb.gov.hk/attachment/en/curriculum-development/kla/science-edu/Chem_C_and_A_Guide_updated_Eng_22082018.pdf"
+  ],
+  "geography": [
+    "https://www.edb.gov.hk/en/curriculum-development/kla/pshe/js_geog.html",
+    "https://www.edb.gov.hk/attachment/en/curriculum-development/renewal/CM/EDBC26002E.pdf",
+    "https://www.edb.gov.hk/attachment/en/curriculum-development/renewal/CM/EDBCM24255E.pdf"
+  ],
+  "computer": [
+    "https://www.edb.gov.hk/en/curriculum-development/kla/technology-edu/",
+    "https://www.edb.gov.hk/en/curriculum-development/kla/technology-edu/curriculum-doc/index.html",
+    "https://www.edb.gov.hk/attachment/en/curriculum-development/kla/technology-edu/curriculum-doc/ICT_C&A_Guide_e_final.pdf"
+  ],
+  "history": [
+    "https://www.edb.gov.hk/attachment/en/curriculum-development/kla/pshe/Hist_Curr_Guide_S1-3_Eng_final_10072019.pdf",
+    "https://www.hkeaa.edu.hk/DocLibrary/HKDSE/Subject_Information/hist/2026hkdse-e-hist.pdf"
+  ],
+  "art": [
+    "https://www.edb.gov.hk/en/curriculum-development/kla/arts-edu/curriculum-docs/index.html",
+    "https://www.edb.gov.hk/attachment/en/curriculum-development/kla/arts-edu/curriculum-docs/VA_CAGuide_e_2015.pdf"
+  ],
+  "music": [
+    "https://www.edb.gov.hk/en/curriculum-development/kla/arts-edu/curriculum-docs/index.html",
+    "https://www.edb.gov.hk/attachment/en/curriculum-development/kla/arts-edu/curriculum-docs/mus_c_and_a_e_2024.pdf"
+  ],
+  "library": [
+    "https://www.edb.gov.hk/attachment/en/edu-system/primary-secondary/applicable-to-primary-secondary/it-in-edu/Information-Literacy/IL_learningFramework/IL_LearningFramework%282024%29_EN.pdf"
+  ],
+  "rooftop": [
+    "https://www.edb.gov.hk/en/curriculum-development/kla/science-edu/curriculum-documents.html",
+    "https://www.edb.gov.hk/en/curriculum-development/kla/pshe/js_geog.html",
+    "https://www.edb.gov.hk/en/curriculum-development/major-level-of-edu/secondary/CG_documents.html"
+  ],
+  "playground": [
+    "https://www.edb.gov.hk/en/curriculum-development/kla/pe/curriculum-doc/index.html",
+    "https://www.edb.gov.hk/attachment/en/curriculum-development/kla/pe/curriculum-doc/PE%20C%26A%20Guide_e.pdf"
+  ],
+  "hall": [
+    "https://applications.edb.gov.hk/circular/upload/EDBC/EDBC24020E.pdf",
+    "https://www.edb.gov.hk/en/curriculum-development/7-learning-goals/secondary/index.html"
+  ]
+}

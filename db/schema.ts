@@ -1,4 +1,15 @@
 import { sqliteTable, text, integer, uniqueIndex } from "drizzle-orm/sqlite-core";
+export const bankUpdates = sqliteTable("campus_bank_updates", {
+    id: text("id").primaryKey(), ownerId: text("owner_id").notNull(),
+    version: text("version").notNull(), createdAt: text("created_at").notNull(),
+});
+export const worksheets = sqliteTable("campus_worksheets", {
+    id: text("id").primaryKey(), ownerId: text("owner_id").notNull(),
+    grade: integer("grade").notNull(), subjectId: text("subject_id").notNull(),
+    title: text("title").notNull(), files: text("files").notNull(),
+    createdAt: text("created_at").notNull(),
+});
+
 export const classrooms = sqliteTable("campus_classrooms", {
     id: text("id").primaryKey(), ownerId: text("owner_id").notNull(),
     schoolYear: text("school_year").notNull(), grade: integer("grade").notNull(),

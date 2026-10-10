@@ -1,0 +1,686 @@
+[
+  {
+    "subjectId": "computer",
+    "grade": 1,
+    "level": 1,
+    "title": [
+      "輸入、處理與輸出",
+      "Input, processing and output"
+    ],
+    "question": [
+      "校園溫度系統接收感應器數值，計算平均值，再在屏幕顯示。哪項屬於處理？",
+      "A campus temperature system receives sensor readings, calculates their mean and displays it. Which step is processing?"
+    ],
+    "options": [
+      [
+        "計算平均值。",
+        "Calculating the mean.",
+        "處理把輸入資料按規則轉化成結果。",
+        "Processing transforms input data according to rules."
+      ],
+      [
+        "感應器傳入溫度數值。",
+        "Receiving the sensor readings.",
+        "這是輸入，尚未計算結果。",
+        "This is input, before calculation."
+      ],
+      [
+        "屏幕顯示平均溫度。",
+        "Displaying the mean temperature.",
+        "這是輸出，把已算好的結果呈現給使用者。",
+        "This is output: presenting an already computed result."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "按資料在系統中的作用，分清輸入、處理與輸出。",
+      "Distinguish input, processing and output by each step's role in the system."
+    ]
+  },
+  {
+    "subjectId": "computer",
+    "grade": 1,
+    "level": 2,
+    "title": [
+      "試算表的範圍公式",
+      "Spreadsheet range formulas"
+    ],
+    "question": [
+      "B2 至 B6 存放五天回收紙張質量。B7 要自動計算總和。哪個公式正確？",
+      "Cells B2 to B6 contain paper-recycling masses for five days. B7 should update their total automatically. Which formula is correct?"
+    ],
+    "options": [
+      [
+        "=SUM(B2:B6)",
+        "=SUM(B2:B6)",
+        "冒號表示包含兩端的連續範圍；公式會隨數值改變重新計算。",
+        "The colon specifies the inclusive range, and the formula recalculates when values change."
+      ],
+      [
+        "=SUM(B2,B6)",
+        "=SUM(B2,B6)",
+        "這只加 B2 和 B6，遺漏中間三格。",
+        "This adds only B2 and B6, omitting the three cells between them."
+      ],
+      [
+        "=SUM(B2:B7)",
+        "=SUM(B2:B7)",
+        "B7 的公式包含自己，會造成循環參照。",
+        "A formula in B7 that includes B7 creates a circular reference."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "公式要包括正確資料範圍，同時避免把結果格納入自身計算。",
+      "Include the correct data range and avoid referencing the result cell itself."
+    ]
+  },
+  {
+    "subjectId": "computer",
+    "grade": 1,
+    "level": 3,
+    "title": [
+      "逐步追蹤條件演算法",
+      "Tracing a conditional algorithm"
+    ],
+    "question": [
+      "演算法：count=0；依次讀取 4、7、7、2；每次若數值≥5，count 加 1。最後 count 是多少？",
+      "Algorithm: count=0; read 4, 7, 7, 2 in order; add 1 to count whenever the value is ≥5. What is the final count?"
+    ],
+    "options": [
+      [
+        "2",
+        "2",
+        "兩個 7 都符合條件，各自增加一次計數。",
+        "Both occurrences of 7 meet the condition and each increments the count."
+      ],
+      [
+        "1",
+        "1",
+        "演算法數的是符合條件的出現次數，不是不同數值的種類。",
+        "The algorithm counts qualifying occurrences, not distinct values."
+      ],
+      [
+        "14",
+        "14",
+        "它每次加 1，並不是把符合條件的數值相加。",
+        "It adds 1 each time rather than summing the qualifying values."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "追蹤變量每一步的改變，分清計數與加總。",
+      "Trace variable updates step by step and distinguish counting from summing."
+    ]
+  },
+  {
+    "subjectId": "computer",
+    "grade": 2,
+    "level": 1,
+    "title": [
+      "二進制位值",
+      "Binary place values"
+    ],
+    "question": [
+      "把二進制 00101101 轉為十進制，結果是多少？",
+      "Convert binary 00101101 to decimal. What is the result?"
+    ],
+    "options": [
+      [
+        "45",
+        "45",
+        "有 1 的位值為 32、8、4、1；總和是 45。",
+        "The active place values are 32, 8, 4 and 1, totalling 45."
+      ],
+      [
+        "29",
+        "29",
+        "這遺漏了 32 位並錯置位值，應由右按 1、2、4、8… 計算。",
+        "This misreads the positions; count 1, 2, 4, 8 and so on from the right."
+      ],
+      [
+        "101101",
+        "101101",
+        "刪去前導零不會把二進制字串自動變成十進制數值。",
+        "Removing leading zeroes does not convert binary notation into decimal."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "數值取決於數碼及其進制位值，字串外觀並不等於數量。",
+      "A value depends on digits and their base-specific positions, not just the string's appearance."
+    ]
+  },
+  {
+    "subjectId": "computer",
+    "grade": 2,
+    "level": 2,
+    "title": [
+      "布林邏輯與存取條件",
+      "Boolean logic and access conditions"
+    ],
+    "question": [
+      "系統只有在 passwordValid AND NOT accountLocked 時容許登入。passwordValid=true、accountLocked=true，結果怎樣？",
+      "Access is allowed only when passwordValid AND NOT accountLocked. If both passwordValid and accountLocked are true, what happens?"
+    ],
+    "options": [
+      [
+        "拒絕登入，因為 NOT accountLocked 為 false。",
+        "Access is denied because NOT accountLocked is false.",
+        "true AND false 的結果是 false；正確密碼不能忽略鎖定狀態。",
+        "True AND false evaluates to false; a valid password does not override the lock."
+      ],
+      [
+        "容許登入，只要其中一項是 true。",
+        "Access is allowed whenever either condition is true.",
+        "這是把 AND 誤當成 OR。",
+        "This confuses AND with OR."
+      ],
+      [
+        "容許登入，因為 NOT 會把整句變成 true。",
+        "Access is allowed because NOT makes the whole expression true.",
+        "NOT 只作用於 accountLocked，不會把整句任意改成 true。",
+        "NOT applies to accountLocked; it does not make the whole expression arbitrarily true."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "先處理否定，再依運算子判斷條件組合。",
+      "Evaluate negation and then combine conditions using the stated operator."
+    ]
+  },
+  {
+    "subjectId": "computer",
+    "grade": 2,
+    "level": 3,
+    "title": [
+      "迴圈的更新次序",
+      "Order of updates in a loop"
+    ],
+    "question": [
+      "程式：total=0；FOR i=1 TO 3：total=total+2*i；END FOR。最後 total 是多少？",
+      "Program: total=0; FOR i=1 TO 3: total=total+2*i; END FOR. What is the final total?"
+    ],
+    "options": [
+      [
+        "12",
+        "12",
+        "三次分別加 2、4、6，累計 12。",
+        "The iterations add 2, 4 and 6, giving 12."
+      ],
+      [
+        "6",
+        "6",
+        "6 只是最後一次加上的值；total 保留前面累計。",
+        "6 is only the last added value; total retains earlier additions."
+      ],
+      [
+        "18",
+        "18",
+        "不能每次都使用最後的 i=3；i 依次是 1、2、3。",
+        "Do not use the final i=3 on every iteration; i takes 1, 2 and 3 in turn."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "迴圈追蹤表要記錄每輪控制變量與累計變量。",
+      "A loop trace records both the loop-control variable and the accumulator on each iteration."
+    ]
+  },
+  {
+    "subjectId": "computer",
+    "grade": 3,
+    "level": 1,
+    "title": [
+      "壓縮與資料完整性",
+      "Compression and data integrity"
+    ],
+    "question": [
+      "學校要儲存可還原每個字元的程式原始碼。哪種壓縮方法適合？",
+      "A school needs to store source code so that every original character can be recovered. Which compression approach is appropriate?"
+    ],
+    "options": [
+      [
+        "無損壓縮。",
+        "Lossless compression.",
+        "無損壓縮可精確還原原始資料，程式不能任意遺失字元。",
+        "Lossless compression restores the exact original data; code cannot arbitrarily lose characters."
+      ],
+      [
+        "有損壓縮，因為看起來差不多就足夠。",
+        "Lossy compression because looking similar is sufficient.",
+        "少一個符號也可能改變程式意思，外觀相似並不足夠。",
+        "A missing symbol can change program behaviour; visual similarity is insufficient."
+      ],
+      [
+        "把所有變量名稱刪除，仍稱為同一份原始碼。",
+        "Delete all variable names and call it the same source code.",
+        "刪除有意義字元不能精確重建原始碼。",
+        "Removing meaningful characters prevents exact reconstruction."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "壓縮方法要配合資料用途和可容許的資訊損失。",
+      "Choose compression according to the data's purpose and acceptable information loss."
+    ]
+  },
+  {
+    "subjectId": "computer",
+    "grade": 3,
+    "level": 2,
+    "title": [
+      "最大值演算法的初始值",
+      "Initialisation in a maximum algorithm"
+    ],
+    "question": [
+      "程式把 max 設為 0，再逐一比較溫度 −6、−3、−8；只有讀數比 max 大才更新。結果錯誤為 0。最好怎樣修正？",
+      "A program sets max=0, then checks temperatures −6, −3, −8, updating only when a value exceeds max. It wrongly returns 0. What is the best repair?"
+    ],
+    "options": [
+      [
+        "以第一個實際讀數初始化 max，再比較餘下讀數。",
+        "Initialise max with the first actual reading, then compare the rest.",
+        "初值來自資料，能正確處理全部為負數的情況。",
+        "A data-based initial value correctly handles an all-negative list."
+      ],
+      [
+        "把所有負號刪除後再找最大值。",
+        "Remove all minus signs before finding the maximum.",
+        "這改變了溫度資料，所得不再是原來的最大值。",
+        "This changes the temperature data and no longer finds its original maximum."
+      ],
+      [
+        "永遠把 max 設為 100。",
+        "Always initialise max to 100.",
+        "資料全低於 100 時仍不更新，同一類錯誤會持續。",
+        "Values below 100 would still never update it, preserving the same defect."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "用邊界和特殊資料測試演算法；初始值必須符合資料範圍。",
+      "Test edge cases and ensure initial values fit the data domain."
+    ]
+  },
+  {
+    "subjectId": "computer",
+    "grade": 3,
+    "level": 3,
+    "title": [
+      "遺漏資料與零值",
+      "Missing data versus zero"
+    ],
+    "question": [
+      "感應器五次讀數為 10、12、空白、8、10。程式把空白當作 0，算出平均 8。若空白代表斷線，應怎樣報告？",
+      "Five sensor entries are 10, 12, blank, 8, 10. Software treats blank as zero and reports a mean of 8. If blank means disconnection, what should be reported?"
+    ],
+    "options": [
+      [
+        "四個有效讀數平均 10，並註明缺失一次；不能聲稱代表所有時段。",
+        "The four valid readings average 10; report one missing observation and avoid claiming full time coverage.",
+        "零是實際數值，缺失是未知；剔除後仍要交代資料覆蓋限制。",
+        "Zero is a measured value; missing is unknown, and exclusion still needs a coverage caveat."
+      ],
+      [
+        "平均 8 一定正確，因為空白必定表示沒有數量。",
+        "8 must be correct because blank always means no quantity.",
+        "題目明確說空白代表斷線，不是量得零。",
+        "The blank is explicitly a disconnection, not a measured zero."
+      ],
+      [
+        "用 100 填空白，確保平均較高。",
+        "Replace the blank with 100 to ensure a higher mean.",
+        "沒有根據的填補會製造資料並改變結果。",
+        "An unsupported replacement fabricates data and changes the result."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "資料清理需保留零值和未知值的差別，並記錄處理規則。",
+      "Data cleaning should preserve the distinction between zero and unknown and document its rules."
+    ]
+  },
+  {
+    "subjectId": "computer",
+    "grade": 4,
+    "level": 1,
+    "title": [
+      "數碼影像的儲存量",
+      "Digital image storage"
+    ],
+    "question": [
+      "未壓縮 RGB 影像為 1,000×800 像素，每像素 24 bits，忽略檔頭。用 1 MB=1,000,000 bytes 計，需多少空間？",
+      "An uncompressed RGB image is 1,000×800 pixels at 24 bits per pixel, ignoring headers. With 1 MB=1,000,000 bytes, how much storage is needed?"
+    ],
+    "options": [
+      [
+        "2.4 MB",
+        "2.4 MB",
+        "800,000×24÷8=2,400,000 bytes，即 2.4 MB。",
+        "800,000×24/8=2,400,000 bytes, or 2.4 MB."
+      ],
+      [
+        "19.2 MB",
+        "19.2 MB",
+        "19.2 百萬是 bits，轉 bytes 要除以 8。",
+        "19.2 million is the bit count; divide by 8 to obtain bytes."
+      ],
+      [
+        "0.8 MB",
+        "0.8 MB",
+        "這相當於每像素只有 1 byte；24 bits 需要 3 bytes。",
+        "This assumes one byte per pixel, but 24 bits requires three."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "儲存量由像素數、色深及單位共同決定；壓縮和檔頭另作考慮。",
+      "Storage depends on pixel count, bit depth and units; compression and headers are separate factors."
+    ]
+  },
+  {
+    "subjectId": "computer",
+    "grade": 4,
+    "level": 2,
+    "title": [
+      "SQL 篩選與排序",
+      "SQL filtering and ordering"
+    ],
+    "question": [
+      "Results(name,score) 表中，要找 score 至少 80 的學生，並按分數由高至低排序。哪個查詢正確？",
+      "In Results(name,score), select students scoring at least 80 and order highest first. Which query is correct?"
+    ],
+    "options": [
+      [
+        "SELECT name,score FROM Results WHERE score>=80 ORDER BY score DESC;",
+        "SELECT name,score FROM Results WHERE score>=80 ORDER BY score DESC;",
+        "WHERE 篩選記錄，DESC 指由大至小排序。",
+        "WHERE filters rows; DESC orders values from highest to lowest."
+      ],
+      [
+        "SELECT name,score FROM Results WHERE score>80 ORDER BY score ASC;",
+        "SELECT name,score FROM Results WHERE score>80 ORDER BY score ASC;",
+        "這排除剛好 80 分，並由低至高排序。",
+        "This excludes exactly 80 and sorts lowest first."
+      ],
+      [
+        "SELECT name,score FROM Results ORDER BY name WHERE score>=80;",
+        "SELECT name,score FROM Results ORDER BY name WHERE score>=80;",
+        "SQL 子句次序不對，也沒有按分數排序。",
+        "The clause order is invalid and it does not order by score."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "把查詢需求拆成所需欄位、篩選條件及排序規則。",
+      "Break a query into required columns, filtering conditions and ordering rules."
+    ]
+  },
+  {
+    "subjectId": "computer",
+    "grade": 4,
+    "level": 3,
+    "title": [
+      "HTTPS 與可信度的界線",
+      "HTTPS and the limits of trust"
+    ],
+    "question": [
+      "一個仿冒校務登入網站也有 HTTPS 鎖頭。學生因此認為它必定屬於學校。哪項解釋正確？",
+      "A fake school-login website also has an HTTPS padlock. A student concludes that it must belong to the school. Which explanation is correct?"
+    ],
+    "options": [
+      [
+        "HTTPS 保護連線傳輸，但不保證網站內容或經營者可信；仍要核對正式網域。",
+        "HTTPS protects data in transit but does not guarantee trustworthy content or ownership; verify the official domain.",
+        "加密連線和網站是否獲學校授權是不同問題。",
+        "Encrypted transport and authorisation by the school are different questions."
+      ],
+      [
+        "有鎖頭便代表教育局已審核所有內容。",
+        "A padlock means the Education Bureau has reviewed every page.",
+        "TLS 憑證不等於教育機構對網站內容的審核。",
+        "A TLS certificate is not an educational authority's content review."
+      ],
+      [
+        "只要畫面有學校標誌，就不用核對網址。",
+        "A school logo removes the need to check the address.",
+        "標誌和介面可以被複製，不能代替網域及來源核對。",
+        "Logos and interfaces can be copied and cannot replace domain and source checks."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "區分傳輸安全、身份核實和資訊可信度。",
+      "Distinguish transport security, identity verification and information credibility."
+    ]
+  },
+  {
+    "subjectId": "computer",
+    "grade": 5,
+    "level": 1,
+    "title": [
+      "資料庫更新異常",
+      "Database update anomalies"
+    ],
+    "question": [
+      "借書表每一筆借閱都重複儲存同一學生的電話。學生改電話後，只更新一筆，出現兩個號碼。哪個設計較合理？",
+      "Every loan record repeats the student's phone number. After one record is updated, conflicting numbers remain. Which design is more appropriate?"
+    ],
+    "options": [
+      [
+        "以學生表儲存聯絡資料，借閱表用 studentId 連結。",
+        "Store contact details in a Students table and link Loans using studentId.",
+        "減少重複儲存可降低更新異常；關聯鍵保留資料連結。",
+        "Reducing duplicated storage limits update anomalies while keys preserve relationships."
+      ],
+      [
+        "把每個電話複製到更多欄位。",
+        "Copy each phone number into more columns.",
+        "更多重複會增加需要同步更新的位置。",
+        "More duplication increases the places needing consistent updates."
+      ],
+      [
+        "刪除所有學生識別欄，讓記錄無法連結。",
+        "Remove all student identifiers so records cannot be linked.",
+        "這破壞必要的關聯，不能兼顧正確查詢。",
+        "This destroys necessary relationships rather than enabling reliable queries."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "正規化以合理分表減少重複與異常，同時保留鍵的關聯。",
+      "Normalisation reduces duplication and anomalies through sensible tables and keys."
+    ]
+  },
+  {
+    "subjectId": "computer",
+    "grade": 5,
+    "level": 2,
+    "title": [
+      "二分搜尋的前提",
+      "The prerequisite for binary search"
+    ],
+    "question": [
+      "程式在未排序的學生編號清單直接使用二分搜尋，偶爾找不到存在的編號。根本原因是甚麼？",
+      "A program applies binary search directly to an unsorted list of student numbers and sometimes misses an existing value. What is the root cause?"
+    ],
+    "options": [
+      [
+        "二分搜尋依賴排序，否則不能按中間值安全排除一半。",
+        "Binary search requires ordering; without it, comparing the middle value cannot safely discard half the list.",
+        "正確性來自有序結構，不只是每次減少資料量。",
+        "Its correctness comes from order, not merely reducing the search space."
+      ],
+      [
+        "二分搜尋只適用於完全沒有重複值的清單。",
+        "Binary search works only when every value is unique.",
+        "有序清單可含重複值；查找其中一次出現仍可使用二分搜尋。",
+        "A sorted list may contain duplicates; binary search can still locate an occurrence."
+      ],
+      [
+        "清單索引必須由 1 開始，不能由 0 開始。",
+        "The list index must start at 1 rather than 0.",
+        "只要邊界計算一致，兩種索引都可用；未排序才是題目問題。",
+        "Either indexing convention works with consistent bounds; lack of sorting is the stated problem."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "選擇演算法時，要檢查其資料前提，不能只比較速度。",
+      "Check an algorithm's data prerequisites, not only its speed."
+    ]
+  },
+  {
+    "subjectId": "computer",
+    "grade": 5,
+    "level": 3,
+    "title": [
+      "分類模型的漏報",
+      "Missed positives in a classifier"
+    ],
+    "question": [
+      "一批 100 封郵件中有 30 封釣魚郵件。模型找出其中 18 封，漏掉 12 封；另誤報 2 封正常郵件。對真正釣魚郵件的召回率是多少？",
+      "Of 100 emails, 30 are phishing. A model detects 18, misses 12 and falsely flags 2 legitimate emails. What is recall for actual phishing emails?"
+    ],
+    "options": [
+      [
+        "60%",
+        "60%",
+        "召回率=找出的真正釣魚郵件÷全部真正釣魚郵件=18÷30。",
+        "Recall is detected actual positives divided by all actual positives: 18/30."
+      ],
+      [
+        "90%",
+        "90%",
+        "18÷20 是被標記郵件的精確率，不是召回率。",
+        "18/20 is precision among flagged emails, not recall."
+      ],
+      [
+        "86%",
+        "86%",
+        "(18+68)÷100 是整體準確率，沒有單獨描述漏報程度。",
+        "(18+68)/100 is overall accuracy, not a direct measure of missed positives."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "不同評估指標回答不同問題；漏報風險要查看召回率和實際代價。",
+      "Metrics answer different questions; assess missed-positive risk through recall and consequences."
+    ]
+  },
+  {
+    "subjectId": "computer",
+    "grade": 6,
+    "level": 1,
+    "title": [
+      "關聯鍵與參照完整性",
+      "Relational keys and referential integrity"
+    ],
+    "question": [
+      "Enrollments(studentId,clubId) 的 studentId 參照 Students(id)。要避免不存在學生的報名記錄，最直接使用甚麼？",
+      "Enrollments(studentId,clubId) references Students(id). What most directly prevents an enrolment from referring to a nonexistent student?"
+    ],
+    "options": [
+      [
+        "studentId 的外來鍵約束。",
+        "A foreign-key constraint on studentId.",
+        "外來鍵要求參照值對應到被參照表的有效鍵。",
+        "A foreign key requires the referenced value to match a valid key in the target table."
+      ],
+      [
+        "只為每筆報名加入獨立的主鍵，不設學生外來鍵。",
+        "Give each enrolment its own primary key but no student foreign key.",
+        "主鍵避免報名識別重複，並不保證 studentId 對應存在的學生。",
+        "A primary key distinguishes enrolments but does not ensure studentId references an existing student."
+      ],
+      [
+        "只限制 studentId 必須是整數。",
+        "Require studentId to be an integer only.",
+        "資料類型可限制格式，但不存在學生的整數仍可符合格式。",
+        "A type constraint checks format, but an integer can still refer to no student."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "資料完整性應由適當約束保障，而不只靠介面提示。",
+      "Protect data integrity through suitable constraints, not interface hints alone."
+    ]
+  },
+  {
+    "subjectId": "computer",
+    "grade": 6,
+    "level": 2,
+    "title": [
+      "查詢保留沒有記錄的學生",
+      "Keeping students with no matching records"
+    ],
+    "question": [
+      "老師要列出全班每個學生的答題次數，包括尚未答題者顯示 0。Students 與 Attempts 以 studentId 連結。哪種策略正確？",
+      "A teacher needs every student's attempt count, including zero for students with no attempts. Students and Attempts link by studentId. Which strategy is correct?"
+    ],
+    "options": [
+      [
+        "由 Students LEFT JOIN Attempts，按學生分組並 COUNT(Attempts.id)。",
+        "LEFT JOIN Attempts from Students, group by student and COUNT(Attempts.id).",
+        "LEFT JOIN 保留無配對學生；COUNT 非空 attempt id 可得 0。",
+        "LEFT JOIN retains unmatched students; counting non-null attempt IDs gives zero."
+      ],
+      [
+        "只 INNER JOIN，沒有答題者自然會顯示 0。",
+        "Use only INNER JOIN; unmatched students will automatically appear as zero.",
+        "INNER JOIN 會移除沒有配對答題的學生。",
+        "INNER JOIN excludes students without matching attempts."
+      ],
+      [
+        "LEFT JOIN 後一律 COUNT(*)，未答題者必為 0。",
+        "After LEFT JOIN, use COUNT(*) and expect zero for unmatched students.",
+        "保留的學生列仍算一列，COUNT(*) 可能把無配對列計為 1。",
+        "The preserved student row still exists, so COUNT(*) can count an unmatched row as one."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "查詢的連接方式與計數欄位會改變零記錄個案是否正確保留。",
+      "Join type and counted column determine whether zero-record cases are represented correctly."
+    ]
+  },
+  {
+    "subjectId": "computer",
+    "grade": 6,
+    "level": 3,
+    "title": [
+      "伺服器授權與最小權限",
+      "Server authorisation and least privilege"
+    ],
+    "question": [
+      "成績網站只在學生畫面隱藏「刪除題目」按鈕，但伺服器接受任何已登入者的刪除請求。最關鍵的修正是甚麼？",
+      "A results site hides ‘delete question’ from students, but its server accepts deletion requests from any logged-in user. What is the essential repair?"
+    ],
+    "options": [
+      [
+        "伺服器逐次核實教師角色及該題庫權限，拒絕未授權操作並記錄變更。",
+        "Check teacher role and bank-specific permission on every server request; reject unauthorised operations and log changes.",
+        "隱藏介面不是授權；請求可繞過按鈕，權限必須在伺服器驗證。",
+        "Hiding UI is not authorisation; requests can bypass buttons, so permissions must be checked on the server."
+      ],
+      [
+        "伺服器只檢查登入工作階段有效，不檢查角色。",
+        "Check only that the server session is valid, without checking role.",
+        "學生也有有效工作階段；身份驗證不能代替教師操作授權。",
+        "Students also have valid sessions; authentication does not establish teacher permission."
+      ],
+      [
+        "由瀏覽器在請求加入 role=teacher，伺服器相信該值。",
+        "Let the browser send role=teacher and have the server trust it.",
+        "用戶可以改動請求欄位；角色須由可信的伺服器資料判定。",
+        "Users can alter request fields; role must come from trusted server-side records."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "身份驗證與操作授權不同；每次敏感操作均須核對適當權限。",
+      "Authentication and authorisation differ; check appropriate permission for every sensitive action."
+    ]
+  }
+]

@@ -1,45 +1,88 @@
-"""Authoring-only generator. Requires OpenCC for Traditional-to-Simplified copy.
-Runtime consumes the checked-in JSON; no Python or OpenCC dependency is deployed.
+"""Build the original curriculum-referenced starter bank from authored items.
+
+Authoring only: requires opencc-python-reimplemented. No Python or OpenCC is
+shipped. Stable item IDs/scoring: the server handles versioned content refresh,
+never overwriting old assignments.
 """
+import hashlib
 import json
 from pathlib import Path
 from opencc import OpenCC
-root=Path(__file__).resolve().parents[2]
-cc=OpenCC('t2s')
-def T(zh,en): return {'zh':zh,'cn':cc.convert(zh),'en':en}
-topics={
-'chinese':['Narrative voice','Metaphor','Causal inference','Relevant evidence','Qualified stance','Synthesis'],
-'english':['Subject–verb agreement','Past tense','Passive voice','Conditionals','Cautious claims','Argument evaluation'],
-'maths':['Integer operations','Linear equations','Percentage changes','Quadratic equations','Independent events','Conditional probability'],
-'chemistry':['Separating mixtures','Controlled variables','Atomic structure','Amount of substance','pH data','Reaction rate'],
-'geography':['Map directions','Map scale','Rainfall totals','Urban temperature','Sampling bias','Population-adjusted rates'],
-'computer':['Data and instructions','Algorithms','Boolean logic','Unseen test data','Accuracy and imbalance','Data leakage'],
-'history':['Chronology','Primary sources','Source purpose','Continuity and change','Multiple causes','Independent evidence'],
-'art':['Visual contrast','Visual hierarchy','Accessible graphics','Artistic context','Design iteration','Creative process'],
-'music':['Time signatures','Note duration','Tempo','Dynamics','Fair comparison','Evidence in music criticism'],
-'library':['Catalogue search','Focused keywords','Checking citations','Neutral research questions','Sampling limitations','Research synthesis'],
-'rooftop':['Plant observations','Water savings','Mean height','Fair experiments','Missing observations','Environmental decisions'],
-'playground':['Equal participation','Lap averages','Success rates','Adapting participation','Scoring reliability','Group-level fairness'],
-'hall':['Data minimisation','Checking facts','Inclusive communication','Appeal and review','Group experience','Ongoing governance']}
-scenarios=json.loads((root/'scripts/content-authoring/grade-scenarios.json').read_text())
-items=[]
-for subject,rows in scenarios.items():
- assert len(rows)==6
- for grade,row in enumerate(rows,1):
-  topic,qzh,qen,ozh,oen,rzh,ren=row
-  zh=ozh.split('|');en=oen.split('|');assert len(zh)==len(en)==3
-  forms=[
-   (T('基礎：'+topic,'Foundation: '+topics[subject][grade-1]),T(qzh,qen),list(zip(zh,en))),
-   (T('應用：核對 AI 建議','Apply: check an AI suggestion'),T(qzh+'\nAI 回答：「'+zh[1]+'」。你應如何回應？',qen+'\nAI answers: “'+en[1]+'”. How should you respond?'),[(f'更正為「{zh[0]}」，並核對題目條件。',f'Correct it to “{en[0]}” and check the conditions.'),(f'接受「{zh[1]}」，因為是 AI 提供。',f'Accept “{en[1]}” because AI supplied it.'),('不核對，直接轉發答案。','Forward the answer without checking.')]),
-   (T('挑戰：解釋判斷依據','Challenge: explain your reasoning'),T(qzh+'\n若選擇「'+zh[0]+'」，哪項理由最充分？',qen+'\nIf you choose “'+en[0]+'”, which justification is strongest?'),[(rzh,ren),('因為回答最有自信，所以不需證據。','Because the answer sounds confident, no evidence is needed.'),('因為最多人選擇，所以必然正確。','Because most people chose it, it must be correct.')])]
-  for k,(title,question,opts) in enumerate(forms):
-   pairs=[]
-   for i,(a,b) in enumerate(opts):
-    pairs.append({'text':T(a,b),'correct':i==0,'feedback':T(rzh if i==0 else '這個選擇未能符合題目條件。'+rzh,ren if i==0 else 'This choice does not follow the conditions. '+ren)})
-   shift=(grade+k+len(subject))%3;pairs=pairs[shift:]+pairs[:shift]
-   for i,o in enumerate(pairs):o['id']='abc'[i]
-   items.append({'id':f's{grade}-{subject}-{k+1:02d}','grade':grade,'subjectId':subject,'roomId':subject,'category':'subject','level':['foundation','application','challenge'][k],'stars':k+1,'maxScore':1,'title':title,'question':question,'options':pairs,'takeaway':T(rzh,ren)})
-assert len(items)==234
-(root/'data/grade-bank.json').write_text(json.dumps(items,ensure_ascii=False,indent=2)+'\n')
-(root/'public/campus/grade-content.js').write_text('/* Original graded learning scenarios. Classroom teachers should review suitability. */\nwindow.GRADE_CONTENT = '+json.dumps(items,ensure_ascii=False,separators=(',',':'))+';\n')
-print(f'Generated {len(items)} questions: 6 grades × 13 spaces × 3 levels; complete zh/cn/en.')
+
+ROOT = Path(__file__).resolve().parents[2]
+VERSION = 'hk-curriculum-2026-10-v2'
+SUBJECTS = ['chinese', 'english', 'maths', 'chemistry', 'geography', 'computer',
+            'history', 'art', 'music', 'library', 'rooftop', 'playground', 'hall']
+LEVELS = ['foundation', 'application', 'challenge']
+SIMPLIFY = OpenCC('t2s')
+
+
+def tri(pair):
+    assert len(pair) == 2 and all(isinstance(s, str) and s.strip() for s in pair)
+    zh, en = (s.strip() for s in pair)
+    return {'zh': zh, 'cn': SIMPLIFY.convert(zh), 'en': en}
+
+
+def build():
+    sources = sorted((ROOT / 'scripts/content-authoring').glob('grade-items-*.json'))
+    authored = [item for path in sources for item in json.loads(path.read_text())]
+    keys = [(q['subjectId'], q['grade'], q['level']) for q in authored]
+    expected = {(s, g, level) for s in SUBJECTS for g in range(1, 7) for level in range(1, 4)}
+    assert len(keys) == len(set(keys)) == len(expected) == 234, 'Duplicate or missing authored items'
+    assert set(keys) == expected, 'Unexpected subject/grade/level'
+    authored.sort(key=lambda q: (SUBJECTS.index(q['subjectId']), q['grade'], q['level']))
+    items = []
+    for q in authored:
+        subject, grade, level = q['subjectId'], q['grade'], q['level']
+        assert len(q['options']) == 3 and type(q['answer']) is int and q['answer'] in range(3)
+        options = []
+        for index, option in enumerate(q['options']):
+            assert len(option) == 4
+            options.append({'text': tri(option[:2]), 'correct': index == q['answer'],
+                            'feedback': tri(option[2:])})
+        # Balance all three correct positions within each grade/room. Rotate the
+        # complete option, including its explanation, rather than rewriting it.
+        target = (grade + level + SUBJECTS.index(subject)) % 3
+        shift = (q['answer'] - target) % 3
+        options = options[shift:] + options[:shift]
+        for index, option in enumerate(options):
+            option['id'] = 'abc'[index]
+        assert options[target]['correct']
+        items.append({'id': f's{grade}-{subject}-{level:02d}', 'grade': grade,
+                      'subjectId': subject, 'roomId': subject, 'category': 'subject',
+                      'level': LEVELS[level - 1], 'stars': level, 'maxScore': 1,
+                      'title': tri(q['title']), 'question': tri(q['question']),
+                      'options': options, 'takeaway': tri(q['takeaway'])})
+    for locale in ('zh', 'cn', 'en'):
+        stems = [q['question'][locale] for q in items]
+        assert len(set(stems)) == len(stems), f'Repeated {locale} question stem'
+    bank_text = json.dumps(items, ensure_ascii=False, indent=2) + '\n'
+    (ROOT / 'data/grade-bank.json').write_text(bank_text)
+    digest = hashlib.sha256(bank_text.encode('utf-8')).hexdigest()
+    metadata = {'version': VERSION, 'contentHash': digest, 'hashFormat': 'sha256-file-utf8',
+                'questionCount': len(items), 'grades': [1, 2, 3, 4, 5, 6],
+                'subjects': SUBJECTS, 'authoringFiles': [str(p.relative_to(ROOT)) for p in sources]}
+    (ROOT / 'data/curriculum-version.json').write_text(json.dumps(metadata, ensure_ascii=False, indent=2) + '\n')
+    references = json.loads((ROOT / 'scripts/content-authoring/curriculum-sources.json').read_text())
+    assert set(references) == set(SUBJECTS), 'Missing curriculum references'
+    outcomes = []
+    for subject in SUBJECTS:
+        for grade in range(1, 7):
+            questions = [q for q in items if q['subjectId'] == subject and q['grade'] == grade]
+            outcomes.append({'subjectId': subject, 'grade': grade,
+                'placement': 'editorial sequence within key-stage references; teacher review required',
+                'sources': references[subject],
+                'items': [{'questionId': q['id'], 'level': q['level'],
+                           'focus': q['title'], 'learningOutcome': q['takeaway']} for q in questions]})
+    alignment = {'version': VERSION, 'verifiedOn': '2026-10-10', 'outcomes': outcomes}
+    (ROOT / 'data/curriculum-alignment.json').write_text(json.dumps(alignment, ensure_ascii=False, indent=2) + '\n')
+    browser = ('/* Original curriculum-referenced starter questions. Teacher review and local sequencing required. */\n'
+               'window.GRADE_CONTENT_VERSION = ' + json.dumps(VERSION) + ';\n'
+               'window.GRADE_CONTENT = ' + json.dumps(items, ensure_ascii=False, separators=(',', ':')) + ';\n')
+    (ROOT / 'public/campus/grade-content.js').write_text(browser)
+    print(f'Built {len(items)} independent questions; complete zh/cn/en; version {VERSION}')
+    print(f'SHA-256: {digest}')
+
+
+if __name__ == '__main__':
+    build()

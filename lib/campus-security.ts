@@ -9,13 +9,13 @@ export function cookie(request: Request, name: string) { return request.headers.
 export function setCookie(request: Request, name: string, value: string, maxAge: number) {
     return `${name}=${value}; Path=/; HttpOnly; SameSite=Strict; Max-Age=${maxAge}${new URL(request.url).protocol === "https:" ? "; Secure" : ""}`;
 }
-export function checkOrigin(request: Request) {
+export function checkOrigin(request: Request, contentType = "application/json") {
     if (["GET", "HEAD"].includes(request.method))
         return;
     const origin = request.headers.get("origin");
     if (origin && origin !== new URL(request.url).origin)
         throw new CampusError(403, "CROSS_ORIGIN", "Cross-origin writes are not allowed.");
-    if (!request.headers.get("content-type")?.includes("application/json"))
+    if (!request.headers.get("content-type")?.includes(contentType))
         throw new CampusError(415, "JSON_REQUIRED", "Use application/json.");
 }
 export async function readBody(request: Request) {

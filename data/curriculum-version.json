@@ -1,0 +1,39 @@
+{
+  "version": "hk-curriculum-2026-10-v2",
+  "contentHash": "9a330ec3211f62afcdeab684dbdfe869b400cd602da63bfa0fcaedc82999f2a1",
+  "hashFormat": "sha256-file-utf8",
+  "questionCount": 234,
+  "grades": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "subjects": [
+    "chinese",
+    "english",
+    "maths",
+    "chemistry",
+    "geography",
+    "computer",
+    "history",
+    "art",
+    "music",
+    "library",
+    "rooftop",
+    "playground",
+    "hall"
+  ],
+  "authoringFiles": [
+    "scripts/content-authoring/grade-items-computer.json",
+    "scripts/content-authoring/grade-items-core.json",
+    "scripts/content-authoring/grade-items-english.json",
+    "scripts/content-authoring/grade-items-geography.json",
+    "scripts/content-authoring/grade-items-humanities.json",
+    "scripts/content-authoring/grade-items-language.json",
+    "scripts/content-authoring/grade-items-rooftop.json",
+    "scripts/content-authoring/grade-items-science.json"
+  ]
+}

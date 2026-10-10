@@ -1,6 +1,6 @@
 # Generated-image manifest
 
-72 original generated PNGs, in recorded order. Existing repository assets are linked; unmatched generated drafts are copied into this folder. The artwork itself has not been translated or pixel-edited.
+98 original PNG artifacts, in recorded order (97 image-generation outputs and one deterministic QR code). Existing repository assets are linked; unmatched generated drafts are copied into this folder. The artwork itself has not been translated or pixel-edited.
 
 | # | Recorded time (Hong Kong) | Image | Size | Storage |
 |---|---|---|---|---|
@@ -76,5 +76,31 @@
 | 070 | 2026-10-09 20:18:11 HKT | [06 pixel dialogue audio proposal](../design/campus-life-review-v1/06-pixel-dialogue-audio-proposal.png) | 1672 × 941 | Existing project asset |
 | 071 | 2026-10-09 20:26:08 HKT | [Generated image 071 (archived draft)](generated-images/071-exec-883053ef-28a7-4c9e-ba7e-e64d4c85cff1.png) | 1254 × 1254 | Archived generated draft |
 | 072 | 2026-10-09 20:28:27 HKT | [cases students v2](../public/campus/assets/life/cases-students-v2.png) | 1254 × 1254 | Existing project asset |
+| 073 | 2026-10-10 00:14:28 HKT | [public game qr](../docs/assets/public-game-qr.png) | 1960 × 1960 | Existing project asset |
+| 074 | 2026-10-10 00:24:37 HKT | [07 map quiz uniform proposal](../design/campus-life-review-v1/07-map-quiz-uniform-proposal.png) | 1672 × 941 | Existing project asset |
+| 075 | 2026-10-10 00:40:29 HKT | [floorplans v1](../public/campus/assets/ui/floorplans-v1.png) | 1024 × 1536 | Existing project asset |
+| 076 | 2026-10-10 00:59:31 HKT | [Generated image 076 (archived draft)](generated-images/076-exec-07783393-75ff-4d3f-968d-a28482ab3d72.png) | 1536 × 1024 | Archived generated draft |
+| 077 | 2026-10-10 01:00:50 HKT | [cases uniform 0](../public/campus/assets/life/cases-uniform-0.png) | 1536 × 1024 | Existing project asset |
+| 078 | 2026-10-10 01:03:18 HKT | [cases uniform 1](../public/campus/assets/life/cases-uniform-1.png) | 1536 × 1024 | Existing project asset |
+| 079 | 2026-10-10 01:03:18 HKT | [cases uniform 2](../public/campus/assets/life/cases-uniform-2.png) | 1536 × 1024 | Existing project asset |
+| 080 | 2026-10-10 01:03:18 HKT | [cases uniform 3](../public/campus/assets/life/cases-uniform-3.png) | 1536 × 1024 | Existing project asset |
+| 081 | 2026-10-10 01:13:13 HKT | [Generated image 081 (archived draft)](generated-images/081-exec-ab23e2dd-abcb-4e3f-9658-2dcb8e2cd82a.png) | 1448 × 1086 | Archived generated draft |
+| 082 | 2026-10-10 01:16:22 HKT | [staff portraits v3 a](../public/campus/assets/life/staff-portraits-v3-a.png) | 1448 × 1086 | Existing project asset |
+| 083 | 2026-10-10 01:19:19 HKT | [staff portraits v3 b](../public/campus/assets/life/staff-portraits-v3-b.png) | 1448 × 1086 | Existing project asset |
+| 084 | 2026-10-10 01:35:02 HKT | [cases portraits uniforms](../public/campus/assets/life/cases-portraits-uniforms.png) | 1254 × 1254 | Existing project asset |
+| 085 | 2026-10-10 01:43:52 HKT | [08 npc identity variation proposal](../design/campus-life-review-v1/08-npc-identity-variation-proposal.png) | 1536 × 1024 | Existing project asset |
+| 086 | 2026-10-10 01:45:58 HKT | [09 worksheet station proposal](../design/campus-life-review-v1/09-worksheet-station-proposal.png) | 1536 × 1024 | Existing project asset |
+| 087 | 2026-10-10 01:50:36 HKT | [cases uniform 0 v2](../public/campus/assets/life/cases-uniform-0-v2.png) | 1536 × 1024 | Existing project asset |
+| 088 | 2026-10-10 01:53:01 HKT | [cases uniform 3 v2](../public/campus/assets/life/cases-uniform-3-v2.png) | 1536 × 1024 | Existing project asset |
+| 089 | 2026-10-10 01:55:20 HKT | [cases portraits uniforms v2](../public/campus/assets/life/cases-portraits-uniforms-v2.png) | 1254 × 1254 | Existing project asset |
+| 090 | 2026-10-10 01:55:36 HKT | [cases uniform 2 v2](../public/campus/assets/life/cases-uniform-2-v2.png) | 1536 × 1024 | Existing project asset |
+| 091 | 2026-10-10 01:55:36 HKT | [cases uniform 1 v2](../public/campus/assets/life/cases-uniform-1-v2.png) | 1536 × 1024 | Existing project asset |
+| 092 | 2026-10-10 02:20:11 HKT | [Generated image 092 (archived draft)](generated-images/092-exec-6fcceb16-a721-4553-be4c-0c36a47bf953.png) | 1672 × 941 | Archived generated draft |
+| 093 | 2026-10-10 02:22:35 HKT | [10a door hud cream enamel](../design/campus-life-review-v1/10a-door-hud-cream-enamel.png) | 1672 × 941 | Existing project asset |
+| 094 | 2026-10-10 02:28:58 HKT | [10b door hud walnut](../design/campus-life-review-v1/10b-door-hud-walnut.png) | 1672 × 941 | Existing project asset |
+| 095 | 2026-10-10 02:28:58 HKT | [10c door hud teal enamel](../design/campus-life-review-v1/10c-door-hud-teal-enamel.png) | 1672 × 941 | Existing project asset |
+| 096 | 2026-10-10 02:30:26 HKT | [Generated image 096 (archived draft)](generated-images/096-exec-080e16cd-5bb3-45db-b372-04cd09e69bf5.png) | 1672 × 941 | Archived generated draft |
+| 097 | 2026-10-10 02:30:26 HKT | [12 role entry teacher workspace](../design/campus-life-review-v1/12-role-entry-teacher-workspace.png) | 1672 × 941 | Existing project asset |
+| 098 | 2026-10-10 02:31:37 HKT | [11 consistent pixel panels](../design/campus-life-review-v1/11-consistent-pixel-panels.png) | 1672 × 941 | Existing project asset |
 
 Machine-readable dimensions, hashes, generation IDs and original asset matches are in [generated-images.json](generated-images.json).

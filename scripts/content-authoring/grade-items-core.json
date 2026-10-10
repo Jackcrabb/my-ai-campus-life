@@ -1,0 +1,686 @@
+[
+  {
+    "subjectId": "maths",
+    "grade": 1,
+    "level": 1,
+    "title": [
+      "分配與比",
+      "Sharing in a ratio"
+    ],
+    "question": [
+      "兩班按 2:3 分配 45 本新書。較少的一班應得多少本？",
+      "Two classes share 45 new books in the ratio 2:3. How many go to the smaller share?"
+    ],
+    "options": [
+      [
+        "18 本",
+        "18 books",
+        "共五份，每份九本；兩份是十八本。",
+        "There are five parts of nine books; two parts give 18."
+      ],
+      [
+        "22.5 本",
+        "22.5 books",
+        "平均分配忽略了 2:3 的條件。",
+        "Equal sharing ignores the stated 2:3 ratio."
+      ],
+      [
+        "30 本",
+        "30 books",
+        "2:3 的分母是兩份加三份，不是三份。",
+        "The whole contains 2+3 parts, not 3 parts."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "按比分配，先求總份數，再求每份大小。",
+      "Find the total number of ratio parts before calculating each share."
+    ]
+  },
+  {
+    "subjectId": "maths",
+    "grade": 1,
+    "level": 2,
+    "title": [
+      "周界的代數模型",
+      "An algebraic perimeter"
+    ],
+    "question": [
+      "長方形園圃長為 (x+3) 米、闊為 x 米，周界 30 米。闊是多少？",
+      "A rectangular garden is (x+3)m long and x m wide. Its perimeter is 30 m. What is its width?"
+    ],
+    "options": [
+      [
+        "6 米",
+        "6 m",
+        "2(x+3)+2x=30，所以4x=24。",
+        "2(x+3)+2 x=30, so 4 x=24."
+      ],
+      [
+        "13.5 米",
+        "13.5 m",
+        "只相加一次長和闊，算的是半周界。",
+        "Adding one length and one width gives half the perimeter."
+      ],
+      [
+        "7.5 米",
+        "7.5 m",
+        "這相當於把長方形誤當成正方形。",
+        "This incorrectly treats the rectangle as a square."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "用圖形關係建立方程，並把答案代回原條件。",
+      "Build an equation from the geometry and check the solution in the original conditions."
+    ]
+  },
+  {
+    "subjectId": "maths",
+    "grade": 1,
+    "level": 3,
+    "title": [
+      "平均數與極端值",
+      "Mean and an extreme value"
+    ],
+    "question": [
+      "五天借書量是 8、9、9、10、44。要描述一般一天的借書量，哪個說法最合理？",
+      "Daily loans are 8, 9, 9, 10, 44. Which statement best describes a typical day?"
+    ],
+    "options": [
+      [
+        "中位數 9 較能反映大部分日子；平均數是 16",
+        "Median 9 represents most days better; the mean is 16",
+        "44拉高平均數；中位數取排序後中央值。",
+        "44 pulls the mean upward; the median is the middle ordered value."
+      ],
+      [
+        "平均數 16 表示至少三天借出 16 本",
+        "Mean 16 means at least three days had 16 loans",
+        "平均數不表示多數觀察值必須等於它。",
+        "A mean need not equal most observations."
+      ],
+      [
+        "刪去 44，因為大數一定是錯誤",
+        "Delete 44 because a large value must be wrong",
+        "極端值可能是真實活動日，不能未查證便刪除。",
+        "An unusual event may be real; investigate before deleting it."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "選統計量時要看分佈；極端值不等於錯誤資料。",
+      "Choose summaries with the distribution in mind; an extreme value is not automatically an error."
+    ]
+  },
+  {
+    "subjectId": "maths",
+    "grade": 2,
+    "level": 1,
+    "title": [
+      "百分率的基準",
+      "Changing percentage bases"
+    ],
+    "question": [
+      "一件售價 $200 的校隊外套先減價20%，再按減價後價錢加價20%。最後售價是多少？",
+      "A $200 team jacket is discounted 20%, then increased 20% from the discounted price. What is the final price?"
+    ],
+    "options": [
+      [
+        "$192",
+        "$192",
+        "200×0.8×1.2=192，兩次百分率的基準不同。",
+        "200×0.8×1.2=192; the percentage bases differ."
+      ],
+      [
+        "$200",
+        "$200",
+        "減價與加價的百分率相同，不表示金額相同。",
+        "Equal percentage rates do not mean equal cash changes."
+      ],
+      [
+        "$160",
+        "$160",
+        "160只是完成第一次減價的售價。",
+        "160 is the price after the first change only."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "連續百分率變化應相乘，不應直接互相抵消。",
+      "Multiply successive percentage factors rather than cancelling their rates."
+    ]
+  },
+  {
+    "subjectId": "maths",
+    "grade": 2,
+    "level": 2,
+    "title": [
+      "票價的聯立方程",
+      "Simultaneous ticket equations"
+    ],
+    "question": [
+      "兩張成人票及三張學生票共 $84；一張成人票及兩張學生票共 $48。學生票是多少？",
+      "Two adult and three student tickets cost $84; one adult and two student tickets cost $48. What is a student ticket price?"
+    ],
+    "options": [
+      [
+        "$12",
+        "$12",
+        "第二式乘二後減第一式，得一張學生票$12。",
+        "Double the second equation and subtract the first to obtain$12."
+      ],
+      [
+        "$24",
+        "$24",
+        "$24是代回方程後得到的成人票價。",
+        "$24 is the adult price after substitution."
+      ],
+      [
+        "$16.8",
+        "$16.8",
+        "總價除五假設兩種票價相同。",
+        "Dividing 84 by 5 assumes both ticket types cost the same."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "聯立方程要同時符合兩項條件。",
+      "A simultaneous solution must satisfy both conditions."
+    ]
+  },
+  {
+    "subjectId": "maths",
+    "grade": 2,
+    "level": 3,
+    "title": [
+      "坡道是否達標",
+      "Testing a ramp model"
+    ],
+    "question": [
+      "設計規格要求斜邊長與垂直高度的比至少為13:5。一條直角三角形坡道高0.5米、水平長1.2米。只按這項規格，判斷如何？",
+      "A design requires slope length: vertical height to be at least 13:5. A right-triangle ramp rises 0.5 m over 1.2 m horizontally. Considering only this specification, what follows?"
+    ],
+    "options": [
+      [
+        "剛好達標：斜邊1.3米，比為13:5",
+        "Exactly meets it: slope 1.3 m gives 13:5",
+        "√(0.5²+1.2²)=1.3；此題不代表真實無障礙法規。",
+        "Pythagoras gives 1.3 m. This hypothetical specification is not an accessibility regulation."
+      ],
+      [
+        "不達標：水平長與高度比是12:5",
+        "Fails because horizontal length:height is 12:5",
+        "規格指定斜邊長，不是水平長。",
+        "The specification refers to slope length, not horizontal length."
+      ],
+      [
+        "達標：斜邊等於1.2+0.5=1.7米",
+        "Passes because slope=1.2+0.5=1.7 m",
+        "直角三角形的斜邊不能直接把兩直角邊相加。",
+        "The hypotenuse is not the sum of the two perpendicular sides."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "先辨清模型中的量，再用勾股定理驗證。",
+      "Identify the quantities in the model before applying Pythagoras."
+    ]
+  },
+  {
+    "subjectId": "maths",
+    "grade": 3,
+    "level": 1,
+    "title": [
+      "相似圖形的面積",
+      "Area under enlargement"
+    ],
+    "question": [
+      "校園地圖等比例放大，所有長度變為原來的1.5倍。一個原面積40平方釐米的區域，放大後面積是多少？",
+      "A campus map is enlarged uniformly by a length factor 1.5. An area was 40 cm². What is its enlarged area?"
+    ],
+    "options": [
+      [
+        "90 平方釐米",
+        "90 cm²",
+        "面積放大倍數為1.5²=2.25。",
+        "The area factor is 1.5²=2.25."
+      ],
+      [
+        "60 平方釐米",
+        "60 cm²",
+        "1.5是長度倍數；面積涉及兩個方向。",
+        "1.5 is the length factor; area scales in two dimensions."
+      ],
+      [
+        "100 平方釐米",
+        "100 cm²",
+        "面積倍數不是1+1.5。",
+        "The area factor is not 1+1.5."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "相似圖形長度比為k，面積比為k²。",
+      "Similar figures with length ratio k have area ratio k²."
+    ]
+  },
+  {
+    "subjectId": "maths",
+    "grade": 3,
+    "level": 2,
+    "title": [
+      "不放回抽樣",
+      "Sampling without replacement"
+    ],
+    "question": [
+      "袋中有三枚紅棋和兩枚藍棋，隨機抽兩枚且不放回。兩枚都是藍色的概率是多少？",
+      "A bag contains 3 red and 2 blue counters. Two are drawn randomly without replacement. What is the probability both are blue?"
+    ],
+    "options": [
+      [
+        "1/10",
+        "1/10",
+        "(2/5)×(1/4)=1/10；抽走一枚後總數改變。",
+        "(2/5)×(1/4)=1/10; the second draw has fewer counters."
+      ],
+      [
+        "4/25",
+        "4/25",
+        "這是假設第一次抽到藍棋後放回。",
+        "This assumes the first blue counter is replaced."
+      ],
+      [
+        "2/5",
+        "2/5",
+        "這只計算了第一枚是藍色。",
+        "This accounts only for the first blue draw."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "不放回抽樣會改變下一次抽取的條件。",
+      "Sampling without replacement changes the conditions of the next draw."
+    ]
+  },
+  {
+    "subjectId": "maths",
+    "grade": 3,
+    "level": 3,
+    "title": [
+      "量度誤差的界限",
+      "Bounds of measurement"
+    ],
+    "question": [
+      "長方形板的長和闊分別量得12釐米及8釐米，均四捨五入至最接近的釐米。其真正面積的上界是多少？",
+      "A rectangular board is measured as 12 cm by 8 cm, each rounded to the nearest centimetre. What is the upper bound of its true area?"
+    ],
+    "options": [
+      [
+        "106.25 平方釐米（不包括）",
+        "106.25 cm² (exclusive)",
+        "長<12.5、闊<8.5，所以面積<106.25。",
+        "Length<12.5 and width<8.5, so area<106.25."
+      ],
+      [
+        "96 平方釐米",
+        "96 cm²",
+        "96是用顯示數值算出的估計，不是上界。",
+        "96 is the estimate from displayed values, not an upper bound."
+      ],
+      [
+        "117 平方釐米",
+        "117 cm²",
+        "四捨五入至整數的誤差界限為0.5，而不是1。",
+        "Rounding to the nearest unit gives a half-unit bound, not one unit."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "運算前先寫量度值的上下界，避免把估計當精確值。",
+      "Establish measurement bounds before calculation instead of treating rounded values as exact."
+    ]
+  },
+  {
+    "subjectId": "maths",
+    "grade": 4,
+    "level": 1,
+    "title": [
+      "二次方程與情境",
+      "Interpreting quadratic roots"
+    ],
+    "question": [
+      "長方形花圃闊x米、長(x+2)米，面積48平方米。方程有根6和−8，哪個可用？",
+      "A garden is x m wide and (x+2)m long with area 48 m². The equation has roots 6 and −8. Which is admissible?"
+    ],
+    "options": [
+      [
+        "只有 x=6",
+        "Only x=6",
+        "長度須為正；6×8=48。",
+        "Lengths must be positive; 6×8=48."
+      ],
+      [
+        "兩個根都可用",
+        "Both roots",
+        "代數根仍要符合花圃長度的情境限制。",
+        "Algebraic roots must also satisfy the contextual length constraint."
+      ],
+      [
+        "只有 x=−8",
+        "Only x=−8",
+        "負長度不符合題目的實際量。",
+        "A negative length is invalid in this model."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "求根後須檢查定義域和情境限制。",
+      "After solving, check the domain and contextual restrictions."
+    ]
+  },
+  {
+    "subjectId": "maths",
+    "grade": 4,
+    "level": 2,
+    "title": [
+      "直線交點的意義",
+      "Interpreting a line intersection"
+    ],
+    "question": [
+      "打印店A收費為$30+$0.20n，B為$0.35n，n是頁數。何時A開始比B便宜？",
+      "Printing shop A charges $30+$0.20 n and B charges $0.35 n for n pages. When is A cheaper?"
+    ],
+    "options": [
+      [
+        "n>200",
+        "n>200",
+        "30<0.15n，所以超過200頁才較便宜。",
+        "30<0.15 n, so A is cheaper above 200 pages."
+      ],
+      [
+        "n<200",
+        "n<200",
+        "固定費用令A在少量打印時較貴。",
+        "The fixed fee makes A more expensive for smaller jobs."
+      ],
+      [
+        "n≥200",
+        "n≥200",
+        "200頁時兩店同價，尚未是較便宜。",
+        "At 200 pages the costs are equal, not cheaper."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "交點表示同價；比較便宜與否需要解不等式。",
+      "The intersection means equal cost; cheaper-than comparisons require an inequality."
+    ]
+  },
+  {
+    "subjectId": "maths",
+    "grade": 4,
+    "level": 3,
+    "title": [
+      "指數模型的限制",
+      "Limits of an exponential model"
+    ],
+    "question": [
+      "模型N=100×2ᵗ把影片每日觀看量假定為前一天兩倍。第5天預測3200。哪項新證據最直接削弱模型長期適用性？",
+      "The model N=100×2ᵗ assumes daily views double. It predicts 3200 on day 5. Which new evidence most directly weakens its long-term use?"
+    ],
+    "options": [
+      [
+        "可接觸的觀眾有限，而且新增觀看率已下降",
+        "The reachable audience is limited and growth has slowed",
+        "固定倍增需要持續成立的條件；受眾飽和會破壞它。",
+        "Constant doubling requires persistent conditions; audience saturation undermines them."
+      ],
+      [
+        "模型在首五天的預測與觀察吻合。",
+        "Its predictions matched observations for the first five days.",
+        "短期吻合支持短期適用，沒有直接反駁長期增長假設。",
+        "A short-term match supports short-term fit; it does not directly refute long-term growth."
+      ],
+      [
+        "首日瀏覽量其實是 120，而非 100。",
+        "The initial number of views was 120 rather than 100.",
+        "這要求修正起始值，卻未直接檢驗每天倍增可否長期持續。",
+        "This changes the starting value but does not directly test whether daily doubling can continue."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "計算正確不等於模型在所有時間都有效。",
+      "Correct calculation does not guarantee a model remains valid over time."
+    ]
+  },
+  {
+    "subjectId": "maths",
+    "grade": 5,
+    "level": 1,
+    "title": [
+      "相切與半徑",
+      "Tangents and radii"
+    ],
+    "question": [
+      "圓心O到圓外點P距離13釐米，半徑OT=5釐米，PT在T點與圓相切。PT長多少？",
+      "OP=13 cm from centre O to external point P; radius OT=5 cm and PT is tangent at T. Find PT."
+    ],
+    "options": [
+      [
+        "12 釐米",
+        "12 cm",
+        "半徑垂直切線，PT=√(13²−5²)=12。",
+        "Radius and tangent are perpendicular; PT=√(13²−5²)=12."
+      ],
+      [
+        "8 釐米",
+        "8 cm",
+        "13−5忽略了OT與PT互相垂直。",
+        "13−5 ignores the right angle between OT and PT."
+      ],
+      [
+        "√194 釐米",
+        "√194 cm",
+        "OP是斜邊，求PT須相減平方。",
+        "OP is the hypotenuse, so subtract the squared radius."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "先利用圓的幾何性質，再選合適計算關係。",
+      "Use the circle property to establish the geometry before calculating."
+    ]
+  },
+  {
+    "subjectId": "maths",
+    "grade": 5,
+    "level": 2,
+    "title": [
+      "條件概率的分母",
+      "The conditional denominator"
+    ],
+    "question": [
+      "40名學生中，18人參加音樂社、15人參加美術社、6人兩者都參加。已知隨機選中的學生參加美術社，他也參加音樂社的概率？",
+      "Of 40 students, 18 join music, 15 join art and 6 join both. Given that a randomly selected student joins art, what is the probability they also join music?"
+    ],
+    "options": [
+      [
+        "6/15=2/5",
+        "6/15=2/5",
+        "已知參加美術社，把樣本空間限於15人。",
+        "Conditioning on art restricts the sample space to 15 students."
+      ],
+      [
+        "6/40=3/20",
+        "6/40=3/20",
+        "這是隨機學生同時參加兩社的無條件概率。",
+        "This is the unconditional probability of joining both clubs."
+      ],
+      [
+        "6/18=1/3",
+        "6/18=1/3",
+        "這是已知參加音樂社時的反向條件概率。",
+        "This reverses the condition by starting with music members."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "條件概率先限制樣本空間；條件不能隨意交換。",
+      "Conditional probability restricts the sample space; reversing the condition changes the question."
+    ]
+  },
+  {
+    "subjectId": "maths",
+    "grade": 5,
+    "level": 3,
+    "title": [
+      "標準差與變換",
+      "Transforming spread"
+    ],
+    "question": [
+      "一組分數平均60、標準差8。每個分數都按 y=1.5x+10 轉換。新平均和標準差是甚麼？",
+      "Scores have mean 60 and standard deviation 8. Every score becomes y=1.5 x+10. What are the new mean and standard deviation?"
+    ],
+    "options": [
+      [
+        "平均100，標準差12",
+        "Mean 100, standard deviation 12",
+        "平均作同樣線性變換；加常數不改變分散程度。",
+        "The mean transforms linearly; adding a constant does not change spread."
+      ],
+      [
+        "平均100，標準差22",
+        "Mean 100, standard deviation 22",
+        "標準差不能加上10；所有數值同移不改變距離。",
+        "Do not add 10 to the standard deviation; shifting all values preserves distances."
+      ],
+      [
+        "平均90，標準差12",
+        "Mean 90, standard deviation 12",
+        "標準差算對，但平均漏了加10。",
+        "The spread is correct, but the mean omitted the added 10."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "平移改變中心，縮放同時改變中心及分散程度。",
+      "A shift changes location; scaling also changes spread."
+    ]
+  },
+  {
+    "subjectId": "maths",
+    "grade": 6,
+    "level": 1,
+    "title": [
+      "對數與倍增時間",
+      "Logarithms and growth time"
+    ],
+    "question": [
+      "儲量模型V=500×1.08ᵗ，t以年計。求V首次達1000的連續時間，應計哪個式子？",
+      "For V=500×1.08ᵗ with t in years, which expression gives the continuous time when V first reaches 1000?"
+    ],
+    "options": [
+      [
+        "log(2)/log(1.08)",
+        "log(2)/log(1.08)",
+        "先除500得1.08ᵗ=2，再取同底對數。",
+        "Divide by 500 to obtain 1.08ᵗ=2, then take logarithms with the same base."
+      ],
+      [
+        "log(1000)/log(1.08)",
+        "log(1000)/log(1.08)",
+        "這漏除了初始值500。",
+        "This omits division by the initial amount 500."
+      ],
+      [
+        "2/0.08",
+        "2/0.08",
+        "這把複合增長誤當固定量的線性增加。",
+        "This treats compound growth as a fixed linear increase."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "未知數在指數時，先整理比例再使用對數。",
+      "When the unknown is an exponent, isolate the growth ratio before using logarithms."
+    ]
+  },
+  {
+    "subjectId": "maths",
+    "grade": 6,
+    "level": 2,
+    "title": [
+      "限制條件與最佳值",
+      "Optimising under constraints"
+    ],
+    "question": [
+      "製作x個袋和y本冊，限制為x≥0、y≥0、x+y≤10、2x+y≤14。收益P=5x+3y。在可行頂點(0,0)、(0,10)、(4,6)、(7,0)中，哪點最佳？",
+      "Make x bags and y booklets with x, y≥0, x+y≤10, 2 x+y≤14. Revenue P=5 x+3 y. Which feasible vertex is best: (0, 0), (0, 10), (4, 6), (7, 0)?"
+    ],
+    "options": [
+      [
+        "(4,6)，收益38",
+        "(4, 6), revenue 38",
+        "各點收益為0、30、38、35，最大為38。",
+        "The objective values are 0, 30, 38, 35; 38 is greatest."
+      ],
+      [
+        "(7,0)，收益35",
+        "(7, 0), revenue 35",
+        "每袋收益較高，不表示全製袋的總收益最高。",
+        "A larger unit return does not make an all-bag plan optimal."
+      ],
+      [
+        "(0,10)，收益30",
+        "(0, 10), revenue 30",
+        "產量最多的一點不一定有最高收益。",
+        "The largest item count need not maximise revenue."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "比較可行頂點的目標函數，而非只看單價或產量。",
+      "Compare objective values at feasible vertices, not only prices or output counts."
+    ]
+  },
+  {
+    "subjectId": "maths",
+    "grade": 6,
+    "level": 3,
+    "title": [
+      "統計比較的反轉",
+      "When pooled rates mislead"
+    ],
+    "question": [
+      "方法A：基礎題90/100答對、進階題1/10；方法B：基礎題19/20、進階題20/100。A總正確率較高。哪項評估最合理？",
+      "Method A: 90/100 basic and 1/10 advanced correct. B: 19/20 basic and 20/100 advanced correct. A has a higher pooled rate. Which evaluation is strongest?"
+    ],
+    "options": [
+      [
+        "B在兩類題均較高；兩者題型比例不同，須標準化比較",
+        "B is better within each type; standardise the different task mixes",
+        "基礎90%對95%、進階10%對20%；混合權重可反轉結論。",
+        "Basic rates 90% vs 95%, advanced 10% vs 20%; different weights can reverse the pooled comparison."
+      ],
+      [
+        "A在每一類題都較好",
+        "A is better on every task type",
+        "分組計算顯示兩類都是B較高。",
+        "Calculating within each type shows B is higher in both."
+      ],
+      [
+        "只要總題數不同，所有正確率都不能比較",
+        "No rates can be compared if totals differ",
+        "比率容許不同樣本量；此處關鍵是題型組成及不確定性。",
+        "Rates can compare unequal sample sizes; task mix and uncertainty are the issues here."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "總平均會受組成影響；比較表現須檢查分組及權重。",
+      "Pooled performance depends on composition; inspect groups and weights."
+    ]
+  }
+]

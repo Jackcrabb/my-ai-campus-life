@@ -1,0 +1,686 @@
+[
+  {
+    "subjectId": "english",
+    "grade": 1,
+    "level": 1,
+    "title": [
+      "通告中的條件",
+      "Conditions in a notice"
+    ],
+    "question": [
+      "通告寫：‘Bring a signed form by Friday. Students without a form may watch but cannot climb.’ Mei 沒有表格。她可以怎樣？",
+      "A notice says: ‘Bring a signed form by Friday. Students without a form may watch but cannot climb.’ Mei has no form. What may she do?"
+    ],
+    "options": [
+      [
+        "觀看活動，但不能攀爬。",
+        "Watch the activity, but not climb.",
+        "‘may watch’ 與 ‘cannot climb’ 分別說明許可和限制。",
+        "‘May watch’ gives permission; ‘cannot climb’ sets a limit."
+      ],
+      [
+        "只要帶運動鞋便可以攀爬。",
+        "Climb if she brings trainers.",
+        "通告沒有以運動鞋代替表格的規定。",
+        "The notice does not allow trainers to replace the form."
+      ],
+      [
+        "不能進入活動場地。",
+        "Stay away from the activity entirely.",
+        "‘may watch’ 明確容許觀看。",
+        "‘May watch’ explicitly permits attendance as an observer."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "閱讀通告時同時找出許可、限制和所需條件。",
+      "Read permissions, restrictions and required conditions together."
+    ]
+  },
+  {
+    "subjectId": "english",
+    "grade": 1,
+    "level": 2,
+    "title": [
+      "清楚的問路請求",
+      "A clear request for directions"
+    ],
+    "question": [
+      "你第一次到校，要禮貌地向職員詢問圖書館位置。哪句最合適？",
+      "On your first school visit, you politely ask a staff member where the library is. Which sentence fits best?"
+    ],
+    "options": [
+      [
+        "Could you tell me where the library is, please?",
+        "Could you tell me where the library is, please?",
+        "這句交代清楚需要，間接問句使用 ‘where the library is’。",
+        "This is a clear polite request; the indirect question uses ‘where the library is’."
+      ],
+      [
+        "Could you tell me where is the library, please?",
+        "Could you tell me where is the library, please?",
+        "間接問句的主語 ‘the library’ 應在動詞 ‘is’ 前。",
+        "In an indirect question, the subject ‘the library’ comes before ‘is’."
+      ],
+      [
+        "You know the library, don't you?",
+        "You know the library, don't you?",
+        "這句只問對方是否知道圖書館，沒有清楚詢問位置。",
+        "This asks whether the person knows the library, rather than clearly requesting its location."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "請求要符合對象和目的；禮貌詞並不能代替清楚句意。",
+      "Match a request to its audience and purpose; politeness also needs clarity."
+    ]
+  },
+  {
+    "subjectId": "english",
+    "grade": 1,
+    "level": 3,
+    "title": [
+      "從行動推斷感受",
+      "Inferring feelings from actions"
+    ],
+    "question": [
+      "讀原創句子：‘Before her turn, Asha checked her notes three times. When her name was called, she took a deep breath and walked to the front.’ 哪項推斷最有支持？",
+      "Read this original passage: ‘Before her turn, Asha checked her notes three times. When her name was called, she took a deep breath and walked to the front.’ Which inference is best supported?"
+    ],
+    "options": [
+      [
+        "她有點緊張，但仍準備發言。",
+        "She feels nervous but is prepared to speak.",
+        "重複查看筆記及深呼吸支持緊張；走到前面顯示她仍參與。",
+        "Repeated checking and a deep breath suggest nerves; walking forward shows participation."
+      ],
+      [
+        "她對題目完全沒有準備。",
+        "She has done no preparation at all.",
+        "筆記是準備的線索，不能從緊張推斷完全未準備。",
+        "Her notes are evidence of preparation; nerves do not prove she is unprepared."
+      ],
+      [
+        "她肯定會得到全班最高分。",
+        "She will certainly receive the highest mark.",
+        "段落沒有交代表現或評分，不能推斷結果。",
+        "The passage gives no performance or assessment evidence."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "推論必須連結文本細節，並保留未能確定的部分。",
+      "Link an inference to textual details and leave uncertain outcomes open."
+    ]
+  },
+  {
+    "subjectId": "english",
+    "grade": 2,
+    "level": 1,
+    "title": [
+      "先後發生的事件",
+      "Ordering past events"
+    ],
+    "question": [
+      "‘By the time the rehearsal began, Jo ___ the sound equipment.’ 文意是 Jo 先檢查器材，綵排才開始。應填哪項？",
+      "‘By the time the rehearsal began, Jo ___ the sound equipment.’ Jo checked the equipment before the rehearsal started. Which form fits?"
+    ],
+    "options": [
+      [
+        "had checked",
+        "had checked",
+        "過去完成式表達另一過去事件之前已完成的動作。",
+        "The past perfect marks completion before another past event."
+      ],
+      [
+        "will check",
+        "will check",
+        "將來式不符合兩件事均已在過去發生的時間線。",
+        "The future form does not fit two events located in the past."
+      ],
+      [
+        "has checked",
+        "has checked",
+        "現在完成式通常連結現在；此句以過去的綵排作參照。",
+        "The present perfect links to the present, but the reference point here is a past rehearsal."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "選擇時態前，先確定事件的參照時間和先後。",
+      "Identify the reference time and event order before choosing a tense."
+    ]
+  },
+  {
+    "subjectId": "english",
+    "grade": 2,
+    "level": 2,
+    "title": [
+      "連接相反觀點",
+      "Linking contrasting ideas"
+    ],
+    "question": [
+      "要連接 ‘The route is longer’ 和 ‘It has fewer stairs’，並建議輪椅使用者考慮這條路。哪句最清楚保留兩點？",
+      "Link ‘The route is longer’ and ‘It has fewer stairs’ when suggesting a route for a wheelchair user to consider. Which sentence keeps both points clearly?"
+    ],
+    "options": [
+      [
+        "Although the route is longer, it has fewer stairs.",
+        "Although the route is longer, it has fewer stairs.",
+        "‘Although’ 表示距離與樓梯數目的取捨；仍需核對路線是否完全無梯級。",
+        "‘Although’ shows the trade-off; the route still needs checking for step-free access."
+      ],
+      [
+        "The route is longer because it has fewer stairs.",
+        "The route is longer because it has fewer stairs.",
+        "原有資料沒有證明樓梯較少是路程較長的原因。",
+        "The given information does not establish that fewer stairs cause the longer route."
+      ],
+      [
+        "The route has fewer stairs, so its distance is shorter.",
+        "The route has fewer stairs, so its distance is shorter.",
+        "這句把 ‘longer’ 的原意改成 ‘shorter’。",
+        "This changes the original meaning from ‘longer’ to ‘shorter’."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "連接詞應表達材料真正支持的關係，而非額外製造因果。",
+      "Use a connective that matches the supported relationship, without inventing causation."
+    ]
+  },
+  {
+    "subjectId": "english",
+    "grade": 2,
+    "level": 3,
+    "title": [
+      "代詞與論點連貫",
+      "Reference and coherence"
+    ],
+    "question": [
+      "‘The council suggested planting trees beside the court. It also recommended shaded seats. These measures would give students cooler places to rest.’ ‘These measures’ 指甚麼？",
+      "‘The council suggested planting trees beside the court. It also recommended shaded seats. These measures would give students cooler places to rest.’ What does ‘These measures’ refer to?"
+    ],
+    "options": [
+      [
+        "種樹和設置有遮蔭的座位。",
+        "Planting trees and providing shaded seats.",
+        "複數短語總結前兩句的兩項建議。",
+        "The plural phrase summarises the two proposals in the preceding sentences."
+      ],
+      [
+        "只指學生會本身。",
+        "Only the council itself.",
+        "學生會是提出建議的組織，不是兩項措施。",
+        "The council proposes the measures; it is not itself the measures."
+      ],
+      [
+        "只指測量球場溫度。",
+        "Only measuring the court temperature.",
+        "‘measures’ 在此指措施；段落沒有提及測量。",
+        "Here ‘measures’ means actions, and no temperature measurement is mentioned."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "利用上下文與單複數線索辨認指涉，避免只按單字常見意思理解。",
+      "Use context and number agreement to resolve reference, rather than one familiar word meaning."
+    ]
+  },
+  {
+    "subjectId": "english",
+    "grade": 3,
+    "level": 1,
+    "title": [
+      "報告中的被動語態",
+      "Passive voice in a report"
+    ],
+    "question": [
+      "報告重點是匿名問卷，而非派發者：‘Two hundred anonymous questionnaires ___ to students last Monday.’ 哪項正確？",
+      "A report focuses on anonymous questionnaires rather than who distributed them: ‘Two hundred anonymous questionnaires ___ to students last Monday.’ Which form is correct?"
+    ],
+    "options": [
+      [
+        "were distributed",
+        "were distributed",
+        "複數問卷是接受動作的對象，‘last Monday’ 要求過去式。",
+        "The plural questionnaires receive the action, and ‘last Monday’ locates it in the past."
+      ],
+      [
+        "distributed",
+        "distributed",
+        "這會令問卷變成主動派發東西的主語，句意不成立。",
+        "This makes the questionnaires perform the distribution, which does not fit the meaning."
+      ],
+      [
+        "are distributing",
+        "are distributing",
+        "現在進行式主動語態既不符合時間，也不符合動作關係。",
+        "The present progressive active form fits neither the time nor who receives the action."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "語態要配合誰做動作、誰接受動作，以及報告焦點。",
+      "Choose voice by the action roles and the report's focus."
+    ]
+  },
+  {
+    "subjectId": "english",
+    "grade": 3,
+    "level": 2,
+    "title": [
+      "撮要保留限制條件",
+      "Summarising with conditions"
+    ],
+    "question": [
+      "‘The pilot reading club attracted 24 students. Most attended regularly, but interviews were conducted only with six volunteers.’ 哪句撮要最準確？",
+      "‘The pilot reading club attracted 24 students. Most attended regularly, but interviews were conducted only with six volunteers.’ Which summary is most accurate?"
+    ],
+    "options": [
+      [
+        "出席大致穩定，但訪談只涵蓋六名自願者。",
+        "Attendance was generally regular, but interviews covered only six volunteers.",
+        "這句保留正面觀察及資料範圍。",
+        "This retains both the positive observation and the evidence boundary."
+      ],
+      [
+        "所有參加者均接受訪問並支持計劃。",
+        "All participants were interviewed and supported the programme.",
+        "只有六名自願者受訪；原文也沒有交代他們的評價。",
+        "Only six volunteers were interviewed, and their opinions are not stated."
+      ],
+      [
+        "只有六名學生參加閱讀會。",
+        "Only six students joined the reading club.",
+        "六人是受訪數目，參加人數是二十四。",
+        "Six is the interview sample; twenty-four is the participation count."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "撮要要壓縮字數，不能把樣本數、參與數和結論混為一談。",
+      "A summary reduces length without merging sample size, participation and conclusions."
+    ]
+  },
+  {
+    "subjectId": "english",
+    "grade": 3,
+    "level": 3,
+    "title": [
+      "按讀者需要修訂",
+      "Revising for an audience"
+    ],
+    "question": [
+      "校報給新生的句子是：‘Utilisation of the equipment-lending facility necessitates prior registration.’ 哪個版本最清楚而不改變要求？",
+      "A newsletter for new students says: ‘Utilisation of the equipment-lending facility necessitates prior registration.’ Which revision is clearest without changing the requirement?"
+    ],
+    "options": [
+      [
+        "Register before you borrow equipment.",
+        "Register before you borrow equipment.",
+        "直接動詞清楚交代所需步驟與次序。",
+        "Direct verbs clearly communicate the action and its order."
+      ],
+      [
+        "You might register after borrowing equipment.",
+        "You might register after borrowing equipment.",
+        "‘might’ 和 ‘after’ 把必須事先登記的要求改了。",
+        "‘Might’ and ‘after’ change the requirement to register first."
+      ],
+      [
+        "The facility is available to everyone without registration.",
+        "The facility is available to everyone without registration.",
+        "這句刪去原文的必要條件。",
+        "This removes the required condition."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "簡明英語應減少閱讀負擔，同時保留原有條件。",
+      "Plain English reduces reading effort while preserving conditions."
+    ]
+  },
+  {
+    "subjectId": "english",
+    "grade": 4,
+    "level": 1,
+    "title": [
+      "假設與現實",
+      "Hypothetical situations"
+    ],
+    "question": [
+      "學校目前沒有空置課室。‘If the school had a spare room, we ___ a quiet study area.’ 哪項最適合這個假設？",
+      "The school currently has no spare classroom. ‘If the school had a spare room, we ___ a quiet study area.’ Which form fits this hypothetical situation?"
+    ],
+    "options": [
+      [
+        "could create",
+        "could create",
+        "‘If ... had’ 配合 ‘could create’，表達與目前情況不同的可能安排。",
+        "‘If ... had’ with ‘could create’ expresses a possibility under a different present situation."
+      ],
+      [
+        "had created",
+        "had created",
+        "這是過去完成式，並不構成此句的假設結果。",
+        "The past perfect does not express the hypothetical result needed here."
+      ],
+      [
+        "create yesterday",
+        "create yesterday",
+        "動詞形式及 ‘yesterday’ 都與目前假設不符。",
+        "Both the verb form and ‘yesterday’ conflict with the present hypothetical situation."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "條件句的形式反映時間與現實程度，不只是固定詞語配對。",
+      "Conditional forms reflect time and reality, not just memorised word pairs."
+    ]
+  },
+  {
+    "subjectId": "english",
+    "grade": 4,
+    "level": 2,
+    "title": [
+      "比較兩項建議",
+      "Comparing proposals"
+    ],
+    "question": [
+      "Proposal A: 40 extra seats, costs $80,000, removes a garden. Proposal B: 25 extra seats, costs $30,000, keeps the garden. 文章要比較成本及環境取捨。哪句最有用？",
+      "Proposal A adds 40 seats for $80,000 but removes a garden. Proposal B adds 25 seats for $30,000 and keeps it. Which sentence best compares cost and environmental trade-offs?"
+    ],
+    "options": [
+      [
+        "B 增加的座位較少，但費用較低且保留花園。",
+        "B provides fewer extra seats, but costs less and preserves the garden.",
+        "這句同時交代兩方案在數量、費用與環境上的差異。",
+        "This compares capacity, cost and the environmental difference."
+      ],
+      [
+        "B 的座位最多，而且不用花費。",
+        "B provides the most seats at no cost.",
+        "B 的座位較少，且費用是三萬元。",
+        "B adds fewer seats and still costs $30,000."
+      ],
+      [
+        "A 的費用較高，因此所有人都反對。",
+        "A costs more, so everyone opposes it.",
+        "費用資料不能證明所有人的態度。",
+        "Cost figures cannot establish everyone's opinion."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "比較段落應使用相同準則，避免把數據改寫成未有證據的民意。",
+      "Compare options using common criteria without inventing public opinion."
+    ]
+  },
+  {
+    "subjectId": "english",
+    "grade": 4,
+    "level": 3,
+    "title": [
+      "辨認語氣與含意",
+      "Tone and implied criticism"
+    ],
+    "question": [
+      "原創評論寫：‘How considerate: the consultation on student wellbeing was held while every class was sitting an examination.’ 作者最可能表達甚麼？",
+      "An original commentary says: ‘How considerate: the consultation on student wellbeing was held while every class was sitting an examination.’ What is the writer most likely expressing?"
+    ],
+    "options": [
+      [
+        "諷刺安排妨礙學生參與。",
+        "Irony about scheduling that prevents student participation.",
+        "表面的讚賞與無法出席的情境形成反差。",
+        "The apparent praise conflicts with the situation that prevents attendance."
+      ],
+      [
+        "真心讚賞考試能改善所有人的身心健康。",
+        "Sincere praise that exams improve everyone's wellbeing.",
+        "句子批評的是諮詢時間；沒有證明考試的健康效果。",
+        "The contrast concerns consultation timing, not evidence of exam benefits."
+      ],
+      [
+        "主張永久取消所有諮詢活動。",
+        "A demand to end all consultations permanently.",
+        "批評一次安排不等於要求取消整類活動。",
+        "Criticising one arrangement does not imply ending all consultations."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "語氣可由字面意思與情境的反差表達；推論仍須限制範圍。",
+      "Tone can arise from a contrast between literal words and context; keep the inference proportionate."
+    ]
+  },
+  {
+    "subjectId": "english",
+    "grade": 5,
+    "level": 1,
+    "title": [
+      "限定證據能支持的說法",
+      "Calibrating a claim"
+    ],
+    "question": [
+      "A voluntary survey found that 36 of 50 respondents preferred later library hours. 哪句報告最符合證據？",
+      "A voluntary survey found that 36 of 50 respondents preferred later library hours. Which report sentence matches the evidence?"
+    ],
+    "options": [
+      [
+        "Most respondents preferred later hours; the voluntary sample may not represent the whole school.",
+        "Most respondents preferred later hours; the voluntary sample may not represent the whole school.",
+        "‘respondents’ 界定資料範圍；後半句交代抽樣限制。",
+        "‘Respondents’ defines the evidence scope; the second clause states the sampling limitation."
+      ],
+      [
+        "Exactly 72% of all students demand later hours.",
+        "Exactly 72% of all students demand later hours.",
+        "72% 是受訪者比例，不能直接推廣到全校；‘demand’ 也加強了原意。",
+        "72% describes respondents, not necessarily the whole school; ‘demand’ also overstates preference."
+      ],
+      [
+        "The survey proves later hours improve examination results.",
+        "The survey proves later hours improve examination results.",
+        "調查只量度偏好，沒有量度成績或因果關係。",
+        "The survey measures preference, not attainment or causation."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "用詞強度、母體範圍和研究量度必須一致。",
+      "Match the strength and population scope of a claim to what was measured."
+    ]
+  },
+  {
+    "subjectId": "english",
+    "grade": 5,
+    "level": 2,
+    "title": [
+      "有效回應反對意見",
+      "Responding to a counterargument"
+    ],
+    "question": [
+      "你主張延長圖書館開放時間。反對者指出職員工時限制。哪句最能推進討論？",
+      "You propose extending library hours. An objection concerns staff working hours. Which response advances the discussion most effectively?"
+    ],
+    "options": [
+      [
+        "A limited trial on one afternoon, with agreed staffing and a review, could test feasibility.",
+        "A limited trial on one afternoon, with agreed staffing and a review, could test feasibility.",
+        "這句承認限制，提出可檢驗且具體的調整。",
+        "This acknowledges the constraint and offers a specific, testable adjustment."
+      ],
+      [
+        "Anyone who mentions staffing dislikes reading.",
+        "Anyone who mentions staffing dislikes reading.",
+        "這是批評提出意見的人，沒有處理工時問題。",
+        "This attacks people rather than addressing staff time."
+      ],
+      [
+        "Students want it, so staff capacity is irrelevant.",
+        "Students want it, so staff capacity is irrelevant.",
+        "需求並不使實際資源限制消失。",
+        "Demand does not remove a practical resource constraint."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "有力的反駁要回應對方最相關的理由，並提供可行證據或調整。",
+      "A strong response addresses the relevant objection with evidence or a feasible adjustment."
+    ]
+  },
+  {
+    "subjectId": "english",
+    "grade": 5,
+    "level": 3,
+    "title": [
+      "綜合看似矛盾的資料",
+      "Synthesising apparently conflicting evidence"
+    ],
+    "question": [
+      "Report A says printed-book loans fell by 10%. Report B says total reading sessions rose by 15%, including e-books. 哪項綜合最合理？",
+      "Report A says printed-book loans fell by 10%. Report B says total reading sessions rose by 15%, including e-books. Which synthesis is most reasonable?"
+    ],
+    "options": [
+      [
+        "兩份報告可同時成立，因為量度的範圍不同。",
+        "Both reports may be consistent because they measure different categories.",
+        "紙本借閱與包含電子書的總閱讀節次不是同一指標。",
+        "Printed loans and total sessions including e-books are different indicators."
+      ],
+      [
+        "兩個百分比相加，證明紙本借閱增加 5%。",
+        "Adding the percentages proves printed loans rose by 5%.",
+        "不同指標的變幅不能直接相加當成紙本變幅。",
+        "Changes in different indicators cannot be added to obtain a printed-loan change."
+      ],
+      [
+        "百分比一升一跌，所以必有一份報告造假。",
+        "One percentage rises and the other falls, so one report must be fabricated.",
+        "不同範圍可以呈相反走勢，並不構成造假的證據。",
+        "Different categories can move in different directions without fabrication."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "綜合資料前先比較定義、時間與範圍，不能只比較數字方向。",
+      "Compare definitions, periods and scope before synthesising numerical findings."
+    ]
+  },
+  {
+    "subjectId": "english",
+    "grade": 6,
+    "level": 1,
+    "title": [
+      "修正懸垂修飾語",
+      "Repairing a dangling modifier"
+    ],
+    "question": [
+      "背景：委員會審核申請並發現錯誤。草稿寫 ‘After reviewing the applications, several errors were found.’ 哪個版本修正動作主語不清的問題，並保留先後意思？",
+      "Context: a committee reviewed applications and found errors. A draft says: ‘After reviewing the applications, several errors were found.’ Which revision fixes the unclear action subject and preserves the sequence?"
+    ],
+    "options": [
+      [
+        "After reviewing the applications, the committee found several errors.",
+        "After reviewing the applications, the committee found several errors.",
+        "主語 ‘the committee’ 同時負責 reviewing 及 found，動作關係清楚。",
+        "‘The committee’ performs both reviewing and finding, so the action roles are clear."
+      ],
+      [
+        "After reviewing the applications, several errors were found by the committee.",
+        "After reviewing the applications, several errors were found by the committee.",
+        "句首 reviewing 的動作主語仍接到主句的 errors；被動句末加委員會並未修正懸垂關係。",
+        "The introductory reviewing phrase still attaches to the main-clause subject errors; adding the committee in a by-phrase does not fix the dangling attachment."
+      ],
+      [
+        "Before reviewing the applications, the committee found several errors.",
+        "Before reviewing the applications, the committee found several errors.",
+        "主語清楚，但 before 把原文先審核後發現的順序改了。",
+        "The subject is clear, but before reverses the original sequence of reviewing and then finding errors."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "句首分詞結構應能與主句主語建立合理的動作關係。",
+      "An introductory participial phrase should logically attach to the main-clause subject."
+    ]
+  },
+  {
+    "subjectId": "english",
+    "grade": 6,
+    "level": 2,
+    "title": [
+      "區分概述與批判綜合",
+      "Critical synthesis across sources"
+    ],
+    "question": [
+      "Source A reports faster homework feedback with AI. Source B reports missed errors in culturally specific writing. 你要寫建議段落，哪句最能綜合兩者？",
+      "Source A reports faster homework feedback with AI. Source B reports missed errors in culturally specific writing. Which recommendation best synthesises both?"
+    ],
+    "options": [
+      [
+        "Use AI for initial feedback, with human review of meaning and cultural context; speed alone is insufficient.",
+        "Use AI for initial feedback, with human review of meaning and cultural context; speed alone is insufficient.",
+        "建議保留效率優點，同時以覆核回應文化語境的限制。",
+        "The recommendation retains the efficiency benefit while addressing contextual errors through review."
+      ],
+      [
+        "Faster feedback means every cultural interpretation is accurate.",
+        "Faster feedback means every cultural interpretation is accurate.",
+        "速度與語境準確度是不同面向，不能互相證明。",
+        "Speed and contextual accuracy are different dimensions; one does not prove the other."
+      ],
+      [
+        "Because some errors occur, neither source contains useful information.",
+        "Because some errors occur, neither source contains useful information.",
+        "有限制的證據仍可用來設計有條件的建議。",
+        "Limited evidence can still inform a qualified recommendation."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "批判綜合要把不同證據轉成有條件、可解釋的立場。",
+      "Critical synthesis turns different evidence into a qualified, explainable position."
+    ]
+  },
+  {
+    "subjectId": "english",
+    "grade": 6,
+    "level": 3,
+    "title": [
+      "評估因果主張的論據",
+      "Evaluating a causal argument"
+    ],
+    "question": [
+      "An editorial claims a new study app caused higher exam scores. Its only evidence is that app users scored higher than non-users. 哪項補充資料最直接削弱其因果推論？",
+      "An editorial claims a new study app caused higher exam scores. Its only evidence is that users scored higher than non-users. Which additional finding most directly weakens the causal inference?"
+    ],
+    "options": [
+      [
+        "使用者在下載程式之前已取得較高成績。",
+        "Users already had higher scores before downloading the app.",
+        "起點差異提供另一解釋，削弱把後來差距全歸因於程式的說法。",
+        "A prior difference supplies an alternative explanation for the later gap."
+      ],
+      [
+        "程式可在兩種手機系統使用。",
+        "The app runs on two phone operating systems.",
+        "系統相容性本身不解釋兩組成績差異。",
+        "Compatibility alone does not explain the groups' score difference."
+      ],
+      [
+        "文章用了三段文字描述介面。",
+        "The editorial spends three paragraphs describing the interface.",
+        "篇幅安排不直接檢驗學習效果的因果主張。",
+        "Article structure does not directly test the claimed causal effect."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "評論因果論證時，要找基線、選擇偏差及可能的替代解釋。",
+      "Evaluate causal arguments through baseline differences, selection and alternative explanations."
+    ]
+  }
+]

@@ -11,7 +11,12 @@
  * before changing language. replay() is the explicit opt-in exception.
  * Speech is synthesized when played, not a recorded/generated audio file.
  * Available voices depend on browser/OS. Web Speech exposes no standard gender
- * metadata; optional voiceGenderHints maps voiceURI or name to male/female.
+ * metadata; verified name/URI aliases and optional voiceGenderHints map voices
+ * to male/female. boy/girl character aliases normalize before selection.
+ * An explicit gender requires a known match; unknown/opposite voices cannot
+ * substitute. Hints override the small verified registry, not the language.
+ * English numeral expansion affects speech text only; one utterance retains
+ * the complete sentence and the displayed text is never changed.
  * Strict language families: zh requires Cantonese (zh-HK/yue), cn requires
  * Mandarin (zh-CN/zh-SG/zh-TW/cmn), and en requires English. Missing voices
  * return unavailable; Cantonese and Mandarin never substitute for each other.
@@ -30,7 +35,7 @@
   'use strict';
   const STORAGE_KEY = 'my-ai-campus-audio-v1';
   const DEFAULTS = Object.freeze({voiceVolume:0.8, musicVolume:0.25, muted:false});
-  const CONFIG = Object.freeze({eighthSeconds:60/70/2, lookAhead:0.35, schedulerMs:100, fadeSeconds:0.12, duck:0.24, loopRest:1.2, speechStartMs:250, speechRetryMs:300, speechQueueTimeoutMs:30000, speechMinTimeoutMs:30000, speechMaxTimeoutMs:240000, speechMsPerChar:450, musicGain:0.85, melodyGain:0.42});
+  const CONFIG = Object.freeze({eighthSeconds:60/70/2, lookAhead:0.35, schedulerMs:100, fadeSeconds:0.12, duck:0.24, loopRest:1.2, speechRate:1, speechPitch:1, speechStartMs:250, speechRetryMs:300, speechQueueTimeoutMs:30000, speechMinTimeoutMs:30000, speechMaxTimeoutMs:240000, speechMsPerChar:450, musicGain:0.85, melodyGain:0.42});
   const MELODY = [
     ['E4',1],['G4',2],['A4',1],['B4',1.5],['C5',0.5],['B4',1],['A4',2],['F#4',1],['D4',1.5],['E4',0.5],['F#4',1],['G4',2],['E4',1],['E4',1.5],['D#4',0.5],['E4',1],['F#4',3],['B3',2],
     ['E4',1],['G4',2],['A4',1],['B4',1.5],['C5',0.5],['B4',1],['A4',2],['F#4',1],['D4',1.5],['E4',0.5],['F#4',1],['G4',1.5],['F#4',0.5],['E4',1],['D#4',1.5],['C#4',0.5],['D#4',1],['E4',3],['E4',2],[null,1],
@@ -56,20 +61,94 @@
     }
     return parts[0]==='en'?(lang==='en-gb'?100:75):0;
   }
+  const normalizeGender = value => {const name=String(value||'').trim().toLowerCase();return ['male','boy'].includes(name)?'male':['female','girl'].includes(name)?'female':null;};
+  // Windows names: https://support.microsoft.com/en-us/accessibility/windows/narrator/appendix-a-supported-languages-and-voices
+  // Neural names: https://learn.microsoft.com/en-us/azure/ai-services/speech-service/language-support?tabs=tts
+  // Apple names/identifiers were checked read-only with AVSpeechSynthesisVoice.gender
+  // on 2026-10-10. Apple voices with unspecified gender (e.g. Eloquence) are
+  // deliberately absent. This registry does not install or call any provider.
+  const VOICE_GENDERS = Object.freeze([
+    ['zh','female',['sinji','sin ji','善怡','hiumaan','hiumaanneural','hiugaai','hiugaaineural','tracy']],
+    ['zh','male',['wanlung','wanlungneural','danny']],
+    ['cn','female',['tingting','ting ting','婷婷','meijia','mei jia','美佳','huihui','yaoyao','yating','hanhan','xiaoxiao','xiaoxiaoneural','xiaoyi','xiaoyineural','hsiaochen','hsiaochenneural','hsiaoyu','hsiaoyuneural']],
+    ['cn','male',['kangkang','zhiwei','yunxi','yunxineural','yunjian','yunjianneural','yunyang','yunyangneural','yunjhe','yunjheneural']],
+    ['en','female',['samantha','karen','moira','tessa','catherine','linda','hazel','susan','heera','zira','jenny','jennyneural','aria','arianeural','sonia','sonianeural','libby','libbyneural']],
+    ['en','male',['daniel','rishi','fred','james','richard','george','ravi','sean','david','mark','guy','guyneural','ryan','ryanneural']],
+  ].map(([locale,gender,names])=>Object.freeze({locale,gender,names:Object.freeze(names)})));
+  const voiceTokens = value => ' '+String(value||'').normalize('NFKC').toLowerCase().replace(/[._():/\\-]+/g,' ').replace(/\s+/g,' ').trim()+' ';
+  function voiceGender(voice, locale, hints={}) {
+    hints=hints&&typeof hints==='object'?hints:{};
+    for(const key of [voice.voiceURI,voice.name]) {
+      if(key&&Object.prototype.hasOwnProperty.call(hints,key))return normalizeGender(hints[key]);
+    }
+    const tokens=voiceTokens(voice.name)+voiceTokens(voice.voiceURI);
+    return VOICE_GENDERS.find(item=>item.locale===locale&&item.names.some(name=>tokens.includes(' '+name+' ')))?.gender||null;
+  }
   function selectVoice(voices, {locale='zh',characterId='narrator',gender}, hints={}) {
-    const tag=localeTag(locale), scored=voices.map(voice=>({voice,score:scoreVoice(voice,tag)}));
-    const best=Math.max(0,...scored.map(x=>x.score));
-    if(!best)return {voice:null,requestedLocale:tag,fallback:false,unavailable:true};
-    let pool=scored.filter(x=>x.score===best).map(x=>x.voice);
+    const tag=localeTag(locale),requestedGender=normalizeGender(gender);
+    let scored=voices.map(voice=>({voice,score:scoreVoice(voice,tag)})).filter(item=>item.score>0);
+    const unavailable=reason=>({voice:null,requestedLocale:tag,requestedGender,actualGender:null,fallback:false,unavailable:true,reason});
+    if(!scored.length)return unavailable('voice-language-unavailable');
+    // Gender is a constraint, not a preference. Even a remote/regional match
+    // takes precedence over a local standard voice of the wrong/unknown gender.
+    if(requestedGender)scored=scored.filter(item=>voiceGender(item.voice,locale,hints)===requestedGender);
+    if(!scored.length)return unavailable('voice-gender-unavailable');
+    const best=Math.max(...scored.map(item=>item.score));
+    let pool=scored.filter(item=>item.score===best).map(item=>item.voice);
     const local=pool.filter(v=>v.localService===true);if(local.length)pool=local;
-    // Prefer clear standard reading voices over novelty families when available.
     const standard=pool.filter(v=>/^(?:婷婷|善怡|美佳|ting[ -]?ting|sin[ -]?ji|mei[ -]?jia|daniel|samantha|karen|moira|tessa)(?:\b|$|[ (])/iu.test(v.name||''));
     if(standard.length)pool=standard;
-    const preferred=pool.filter(v=>hints[v.voiceURI]===gender||hints[v.name]===gender);
-    if(gender&&preferred.length)pool=preferred;
     pool.sort((a,b)=>String(a.voiceURI||a.name).localeCompare(String(b.voiceURI||b.name)));
     const voice=pool[hash(characterId)%pool.length];
-    return {voice,requestedLocale:tag,fallback:best<100,unavailable:false};
+    return {voice,requestedLocale:tag,requestedGender,actualGender:voiceGender(voice,locale,hints),fallback:best<100,unavailable:false,reason:null};
+  }
+  const SMALL_NUMBERS=Object.freeze(['zero','one','two','three','four','five','six','seven','eight','nine','ten','eleven','twelve','thirteen','fourteen','fifteen','sixteen','seventeen','eighteen','nineteen']);
+  const TENS=Object.freeze(['','','twenty','thirty','forty','fifty','sixty','seventy','eighty','ninety']);
+  const SCALES=Object.freeze(['','thousand','million','billion','trillion']);
+  const ORDINALS=Object.freeze({one:'first',two:'second',three:'third',five:'fifth',eight:'eighth',nine:'ninth',twelve:'twelfth'});
+  function underThousand(n) {
+    if(n<20)return SMALL_NUMBERS[n];
+    if(n<100)return TENS[Math.floor(n/10)]+(n%10?'-'+SMALL_NUMBERS[n%10]:'');
+    return SMALL_NUMBERS[Math.floor(n/100)]+' hundred'+(n%100?' and '+underThousand(n%100):'');
+  }
+  function englishNumber(raw) {
+    const text=String(raw).replaceAll(',',''),[integer,decimal]=text.split('.');
+    let whole=integer||'0';
+    if(whole.length>15||/^0\d/.test(whole))whole=[...whole].map(digit=>SMALL_NUMBERS[Number(digit)]).join(' ');
+    else {
+      const parts=[];let remaining=whole,scale=0;
+      while(remaining){const chunk=Number(remaining.slice(-3));if(chunk)parts.unshift(underThousand(chunk)+(SCALES[scale]?' '+SCALES[scale]:''));remaining=remaining.slice(0,-3);scale++;}
+      whole=parts.length?parts.join(' '):'zero';
+    }
+    return whole+(decimal!==undefined?' point '+[...decimal].map(digit=>SMALL_NUMBERS[Number(digit)]).join(' '):'');
+  }
+  function englishOrdinal(raw) {
+    return englishNumber(raw).replace(/[a-z]+$/,word=>ORDINALS[word]||(word.endsWith('y')?word.slice(0,-1)+'ieth':word+'th'));
+  }
+  function englishFraction(numerator,denominator) {
+    const n=Number(numerator),d=Number(denominator),word=d===2?'half':d===4?'quarter':englishOrdinal(denominator);
+    if(d>=2&&d<=20&&!/^0\d/.test(denominator))return englishNumber(numerator)+' '+(n===1?word:word==='half'?'halves':word+'s');
+    return englishNumber(numerator)+' over '+englishNumber(denominator);
+  }
+  function englishSpeechText(text) {
+    // Preserve URLs/backtick code verbatim. Do not infer dates, units or the
+    // meaning of identifiers. Digits outside those spans become English words
+    // within a single sentence, not a queue of separately spoken characters.
+    return String(text).split(/(https?:\/\/[^\s]+|`[^`]*`)/g).map((part,index)=>{
+      if(index%2)return part;
+      let spoken=part.replace(/(?<![\w./])([+−-]?)(\d+)[ \t]+(\d+)[ \t]*\/[ \t]*(\d+)(?![\w/])/g,(_,sign,whole,n,d)=>(sign==='-'||sign==='−'?'minus ':sign==='+'?'plus ':'')+englishNumber(whole)+' and '+englishFraction(n,d));
+      spoken=spoken.replace(/(?<![\w./])([+−-]?)(\d+)[ \t]*\/[ \t]*(\d+)(?![\w/])/g,(_,sign,n,d)=>(sign==='-'||sign==='−'?'minus ':sign==='+'?'plus ':'')+englishFraction(n,d));
+      return spoken.replace(/([+−-]?)(\d{1,3}(?:,\d{3})+(?:\.\d+)?|\d+(?:\.\d+)?|\.\d+)(st|nd|rd|th)?([ \t]*%)?/gi,(match,sign,number,ordinal,percent,offset,source)=>{
+        const before=source[offset-1]||'',after=source[offset+match.length]||'';
+        // An attached hyphen may be a range or identifier separator. Keep
+        // its punctuation rather than inventing a subtraction meaning.
+        const hyphen=sign==='-'&&/[\p{L}\p{N}]/u.test(before);
+        const prefix=hyphen?'-':sign==='-'||sign==='−'?'minus ':sign==='+'?'plus ':'';
+        const left=!hyphen&&/[\p{L}\p{N}]/u.test(before)?' ':'';
+        const right=/[\p{L}\p{N}]/u.test(after)?' ':'';
+        return left+prefix+(ordinal?englishOrdinal(number):englishNumber(number))+(percent?' percent':'')+right;
+      });
+    }).join('');
   }
   function create({onState=()=>{},voiceGenderHints={}}={}) {
     let settings={...DEFAULTS},storageAvailable=true,disposed=false,unlocked=false,hidden=!!document.hidden;
@@ -85,7 +164,7 @@
     const musicTarget=()=>settings.muted||hidden||!musicRequested?0:settings.musicVolume*CONFIG.musicGain*(ducking?CONFIG.duck:1);
     function rampMusic(){if(!context||!musicGain)return;const t=context.currentTime;musicGain.gain.cancelScheduledValues(t);musicGain.gain.setTargetAtTime(musicTarget(),t,CONFIG.fadeSeconds/3);}
     function finishVoice(generation,status='ready',errorCode=null) {if(generation!==speechGeneration||disposed)return;clear(voiceWatchdog);voiceWatchdog=null;clear(voiceStartTimer);voiceStartTimer=null;utterance=null;voiceStatus=status;voiceInfo={...voiceInfo,errorCode};ducking=false;rampMusic();emit();}
-    function stopVoice(status='ready') {speechGeneration++;clear(voiceWatchdog);voiceWatchdog=null;clear(voiceStartTimer);voiceStartTimer=null;if(utterance&&synth)synth.cancel();utterance=null;voiceStatus=synth&&Utterance?status:'unavailable';if(voiceInfo)voiceInfo={...voiceInfo,errorCode:null};ducking=false;rampMusic();emit();}
+    function stopVoice(status='ready') {speechGeneration++;clear(voiceWatchdog);voiceWatchdog=null;clear(voiceStartTimer);voiceStartTimer=null;if(synth&&(utterance||synth.speaking||synth.pending))synth.cancel();utterance=null;voiceStatus=synth&&Utterance?status:'unavailable';if(voiceInfo)voiceInfo={...voiceInfo,errorCode:null};ducking=false;rampMusic();emit();}
     function refreshVoices(){if(disposed)return;voices=synth?.getVoices?.()||[];emit();}
     synth?.addEventListener?.('voiceschanged',refreshVoices);refreshVoices();
     const events=[];let duration=0;
@@ -139,26 +218,34 @@
     }
     function speak(line,{force=false}={}){
       if(disposed||!line||typeof line.text!=='string'||!line.text.trim())return {played:false,reason:'empty'};
-      const record={key:String(line.key??`${line.characterId||'narrator'}:${line.text}`),text:line.text.trim().slice(0,5000),locale:['zh','cn','en'].includes(line.locale)?line.locale:'zh',characterId:line.characterId||'narrator',gender:line.gender};
+      const record={key:String(line.key??`${line.characterId||'narrator'}:${line.text}`),text:line.text.trim().slice(0,5000),locale:['zh','cn','en'].includes(line.locale)?line.locale:'zh',characterId:line.characterId||'narrator',gender:normalizeGender(line.gender)};
       lastLine=record;
-      if(!force&&record.key===lastKey)return {played:false,reason:'duplicate'};
+      const lineIdentity=JSON.stringify([record.key,record.locale,record.characterId,record.gender,record.text]);
+      if(!force&&lineIdentity===lastKey)return {played:false,reason:'duplicate'};
       if(!synth||!Utterance){voiceStatus='unavailable';emit();return {played:false,reason:'unavailable'};}
       if(!unlocked){voiceStatus='gesture-required';emit();return {played:false,reason:'gesture-required'};}
       if(hidden||settings.muted||settings.voiceVolume===0){stopVoice(hidden?'paused':'muted');return {played:false,reason:hidden?'hidden':'muted'};}
-      stopVoice();refreshVoices();const selected=selectVoice(voices,record,voiceGenderHints);
-      voiceInfo={requestedLocale:selected.requestedLocale,actualLocale:selected.voice?.lang||null,name:selected.voice?.name||null,fallback:selected.fallback,unavailable:selected.unavailable,remote:selected.voice?selected.voice.localService!==true:false,errorCode:null};
-      if(selected.unavailable){voiceStatus='unavailable';emit();return {played:false,reason:'voice-unavailable'};}
-      const generation=++speechGeneration;lastKey=record.key;let attempt=0;
+      stopVoice();refreshVoices();let selected=selectVoice(voices,record,voiceGenderHints);
+      const selectionInfo=()=>({requestedLocale:selected.requestedLocale,actualLocale:selected.voice?.lang||null,requestedGender:selected.requestedGender,actualGender:selected.actualGender,name:selected.voice?.name||null,fallback:selected.fallback,unavailable:selected.unavailable,remote:selected.voice?selected.voice.localService!==true:false,errorCode:selected.reason});
+      voiceInfo=selectionInfo();
+      if(selected.unavailable){voiceStatus='unavailable';emit();return {played:false,reason:selected.reason==='voice-gender-unavailable'?selected.reason:'voice-unavailable'};}
+      const generation=++speechGeneration;lastKey=lineIdentity;let attempt=0;
+      const speechText=record.locale==='en'?englishSpeechText(record.text):record.text;
       function queueAttempt(delay){
         voiceStatus='queued';voiceInfo={...voiceInfo,started:false,attempt:attempt+1,lastEvent:'queued',errorCode:null};ducking=false;rampMusic();
         // Let an earlier native cancellation settle. Pending starts are cancelled
         // by stopVoice; retry callbacks also require this exact generation.
         voiceStartTimer=later(()=>{
           voiceStartTimer=null;if(generation!==speechGeneration||disposed)return;
-          attempt++;const u=new Utterance(record.text);utterance=u;let started=false;
+          // Revalidate the current browser inventory before each delayed start.
+          // A removed voice must not silently become the system default.
+          selected=selectVoice(synth.getVoices?.()||voices,record,voiceGenderHints);
+          voiceInfo={...voiceInfo,...selectionInfo()};
+          if(selected.unavailable){finishVoice(generation,'unavailable',selected.reason);return;}
+          attempt++;const u=new Utterance(speechText);utterance=u;let started=false;
           const current=()=>generation===speechGeneration&&!disposed&&utterance===u;
-          u.voice=selected.voice;u.lang=selected.voice.lang;u.volume=settings.voiceVolume;u.rate=record.locale==='en'?0.96:0.93;u.pitch=1;
-          u.onstart=()=>{if(!current())return;started=true;voiceInfo={...voiceInfo,started:true,lastEvent:'start'};voiceStatus='speaking';armWatchdog(Math.min(CONFIG.speechMaxTimeoutMs,Math.max(CONFIG.speechMinTimeoutMs,record.text.length*CONFIG.speechMsPerChar)),'speech-timeout');ducking=true;rampMusic();emit();};
+          u.voice=selected.voice;u.lang=selected.voice.lang;u.volume=settings.voiceVolume;u.rate=CONFIG.speechRate;u.pitch=CONFIG.speechPitch;
+          u.onstart=()=>{if(!current())return;started=true;voiceInfo={...voiceInfo,started:true,lastEvent:'start'};voiceStatus='speaking';armWatchdog(Math.min(CONFIG.speechMaxTimeoutMs,Math.max(CONFIG.speechMinTimeoutMs,speechText.length*CONFIG.speechMsPerChar)),'speech-timeout');ducking=true;rampMusic();emit();};
           u.onend=()=>{if(!current())return;voiceInfo={...voiceInfo,lastEvent:started?'end':'end-before-start'};finishVoice(generation,started?'ready':'error',started?null:'speech-did-not-start');};
           u.onerror=event=>{
             if(!current())return;
@@ -212,5 +299,5 @@
     }
     return {unlock,speak,replay,tryVoice,stopVoice,setSettings,setMusicPlaying,resetSettings:()=>setSettings(DEFAULTS),dispose,get state(){return state();}};
   }
-  window.CampusAudio=Object.freeze({create,defaults:DEFAULTS,selectVoice,melody:MELODY.map(note=>Object.freeze([...note]))});
+  window.CampusAudio=Object.freeze({create,defaults:DEFAULTS,selectVoice,englishSpeechText,speechDefaults:Object.freeze({rate:CONFIG.speechRate,pitch:CONFIG.speechPitch}),melody:MELODY.map(note=>Object.freeze([...note]))});
 })();

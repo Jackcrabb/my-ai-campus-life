@@ -1,8 +1,8 @@
 # English conversation archive
 
-Coverage: 2026-10-08 19:11:07 HKT to 2026-10-09 21:11:43 HKT.
+Coverage: 2026-10-08 19:11:07 HKT to 2026-10-10 14:04:09 HKT.
 
-This archive translates 103 actual user and assistant text messages and places 72 generated-image events in the recorded chronology. Read [README.md](README.md) for scope, redactions and limitations. Historical claims are retained as statements made at the time; this is not the current release status.
+This archive translates 158 actual user and assistant text messages and places 98 image events in the recorded chronology. Read [README.md](README.md) for scope, redactions and limitations. Historical claims are retained as statements made at the time; this is not the current release status.
 
 ---
 
@@ -1776,3 +1776,758 @@ ChatGPT:
 *2026-10-09 21:11:43 HKT · message 103*
 
 Understood. I will fix these two issues first and pause publication. Switching language will immediately stop the old speech and read the current screen language instead. I will also add explicit playback status and controls for the background music and investigate why “Greensleeves” is silent.
+
+*2026-10-09 22:25:20 HKT · message 104*
+
+I found two specific causes: when changing language, cancellation of the old speech conflicted with starting the new speech; the background music did produce audio, but its decay was too fast and its overall volume too low.
+
+I have added a buffer when switching speech and adjusted the music volume and sustain. The English conversation archive is also complete, with 103 text messages and 72 generated-image records, and will be uploaded to the private repository.
+
+*2026-10-09 23:12:15 HKT · message 105*
+
+The language routing has been checked as Cantonese, Mandarin and English, and the music output is measurably stronger. However, the built-in browser still has a speech-compatibility problem: the English voice starts but does not correctly report completion. I therefore cannot mark “all three languages played completely” as passed.
+
+I will save the current corrections, error notices and text fallback together and document this limitation on GitHub. After the public website is updated, audible quality still needs checking in the browser actually used.
+
+*2026-10-09 23:43:28 HKT · message 106*
+
+The new version has built successfully, and the application, character, question-bank and Excel tests have passed. A source-upload connection interrupted publication once, and I am retrying. Local files and completed changes are preserved.
+
+The private GitHub repository has been created. The English README, user guide, original designs and Chat Recording folder are organised and will be uploaded together with the speech-compatibility limitation.
+
+*2026-10-09 23:50:01 HKT · message 107*
+
+The source upload succeeded. I am publishing the new website and synchronising GitHub. All design versions and generated images are retained, and test results are recorded separately from speech checks that have not passed, so you can use the project for your assignment, demonstration or further development.
+
+---
+
+User:
+
+*2026-10-10 00:05:09 HKT · message 108*
+
+1. Find a suitable text-to-speech generation solution. Give every character a different voice and fluent delivery, rather than slowly emitting one word at a time, which is not fluent at all.
+2. Simplified Chinese still has not switched to Mandarin; it is still Cantonese.
+3. Set up a domain for my website so other users can open it. Ideally add a website QR code to the GitHub README so people can scan it and try the game.
+
+---
+
+ChatGPT:
+
+*2026-10-10 00:07:13 HKT · message 109*
+
+I will switch to a speech-generation solution that allows language and character voice selection, first verify Cantonese, Mandarin and English support, and prepare a voice-casting table and integration method. The current browser reading system has not met your requirements in your environment.
+
+The website has successfully published and has a publicly accessible URL. I will add the official link and a scannable QR code to the GitHub README and check whether a phone can open it directly.
+
+*2026-10-10 00:11:51 HKT · message 110*
+
+I found a more suitable option: Google Cloud Chirp 3 HD offers Cantonese, Mandarin and English, with enough voices to give 20 NPCs separate voices. I will generate complete sentences as audio files so playback no longer depends on the user's system speech engine. Cantonese is currently a preview feature and needs a listening test for naturalness.
+
+I will finish the public link and README QR code in parallel. Actual voice generation requires connecting your speech-service account; the project currently has no usable service credentials.
+
+---
+
+User:
+
+*2026-10-10 00:12:27 HKT · message 111*
+
+I do not have a project. Please provide the setup steps.
+
+*2026-10-10 00:12:37 HKT · message 112*
+
+Attachment: a screenshot taken on 10 October 2026 at 12:09:10 am.
+
+Additional corrections:
+
+4. All student NPCs should wear uniforms matching the uniform selected by the user.
+5. Many NPC character images are very blurry and have inconsistent head/body proportions.
+6. NPC dialogue portraits should not be blurry or translucent.
+7. The map should be a 2D mini floor-plan map in the same game style.
+8. The students' question-answering window should use the same game colours and selection style as the dialogue box.
+
+---
+
+ChatGPT:
+
+*2026-10-10 00:12:58 HKT · message 113*
+
+Understood. I will include the additional items 4–8. Student NPCs will follow the player's selected uniform style, and character sharpness, body proportions and dialogue-portrait opacity will be unified. The map and quiz window will use the approved cream-and-deep-teal pixel style. I will first create a preview for your confirmation before modifying this part of the game.
+
+For Google Cloud, I will provide setup and secure-connection steps and prepare the voice roster and batch-generation script so audio generation can continue after you configure the account.
+
+<details>
+<summary>Generated image 073 · 2026-10-10 00:14:28 HKT · public game qr</summary>
+
+![Generated image 073: public game qr](../docs/assets/public-game-qr.png)
+
+[Open original PNG](../docs/assets/public-game-qr.png) · Generation ID: `deterministic-public-game-qr`.
+
+Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
+
+</details>
+
+*2026-10-10 00:22:46 HKT · message 114*
+
+You can first open [Google Cloud Console](https://console.cloud.google.com/), create a project named my-ai-campus-life-voices, link billing, then search for and enable the Cloud Text-to-Speech API. Google requires billing to be enabled even when usage is within the free allowance. Enter payment details directly into Google yourself. [Official setup instructions](https://docs.cloud.google.com/text-to-speech/docs/get-started).
+
+Once complete, only provide the Project ID. I have prepared a step-by-step Traditional Chinese guide. The next stage will use your Google sign-in on your Mac, without pasting API keys or passwords into the conversation. The first round will generate trilingual voice samples for 20 characters; complete dialogue will follow only after you approve the result.
+
+<details>
+<summary>Generated image 074 · 2026-10-10 00:24:37 HKT · 07 map quiz uniform proposal</summary>
+
+![Generated image 074: 07 map quiz uniform proposal](../design/campus-life-review-v1/07-map-quiz-uniform-proposal.png)
+
+[Open original PNG](../design/campus-life-review-v1/07-map-quiz-uniform-proposal.png) · Generation ID: `exec-85e74464-c020-4f24-9492-b9a7fceaca23`.
+
+Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
+
+</details>
+
+---
+
+User:
+
+*2026-10-10 00:29:46 HKT · message 115*
+
+Are you sure this text-to-speech work will not run up charges on my account?
+
+---
+
+ChatGPT:
+
+*2026-10-10 00:30:41 HKT · message 116*
+
+I cannot guarantee that enabling Google Cloud will never incur charges. However, I have not performed any voice generation or connected to your account, so this preparation has not incurred TTS API charges.
+
+I have limited the first audition batch to 60 clips, totalling 5, 071 characters. At the official rate of US$30 per million characters, the estimate before any free allowance is about US$0.152. The actual bill still depends on free allowances, taxes and other account usage. [Official pricing](https://cloud.google.com/text-to-speech/pricing).
+
+I will control this project's usage as follows:
+
+- First list the character count and cost locally. The API will only be called after you confirm the generation scope and amount.
+- Generate audio once and host it on the website. Repeated student playback will not call TTS again.
+- API credentials will not be placed in the webpage or GitHub. Players cannot trigger paid generation through the game.
+- The generation script will not retry indefinitely. Successful audio files will be retained to avoid duplicate generation.
+
+Google's budget alerts are not a switch that stops charges. If you want to avoid ongoing billing risk altogether, you can disable the Text-to-Speech API after all voice files have been generated. The website can still play the existing audio files. [Official disabling instructions](https://docs.cloud.google.com/text-to-speech/docs/get-started).
+
+*2026-10-10 00:30:52 HKT · message 117*
+
+Here is the interface preview for the added items 4–8: the left side shows a 2Dcampus map with floor switching; the right side shows a pixel-style quiz interface matching the dialogue box, with clear, opaque character art. At the bottom, the player and student NPC demonstrate matching uniforms. Actual full-body proportions will still be checked against your approved version one by one.
+
+![Campus map, quiz interface and matching uniforms preview](../design/campus-life-review-v1/07-map-quiz-uniform-proposal.png)
+
+---
+
+User:
+
+*2026-10-10 00:34:11 HKT · message 118*
+
+I confirm. Implement this direction.
+
+*2026-10-10 00:34:11 HKT · message 119*
+
+Teachers can change my questions at any time, so the text can also change at any time. That means newly updated text would not have speech. Please find a way to integrate text-to-speech directly into this website to solve the whole issue without using Google Cloud.
+
+---
+
+ChatGPT:
+
+*2026-10-10 00:36:49 HKT · message 120*
+
+You are right: pregenerated audio alone cannot fully support teachers editing questions at any time. I will research dynamic text-to-speech that can connect directly to the website, checking Cantonese, Mandarin, English, character voices and manageable costs, while excluding Google Cloud.
+
+The map, quiz window and NPC corrections you have approved will still be implemented. For speech, I will distinguish computation on students’ devices from computation on our own server. The latter can avoid per-character voice-provider fees, but may still involve server costs.
+
+*2026-10-10 00:40:16 HKT · message 121*
+
+I found a direction that does not depend on Google Cloud: **self-hosting CosyVoice 3**. Its official project provides a Cantonese instruction example and also supports Mandarin and English, allowing speech to be regenerated from complete sentences after a teacher edits the text. [Official project](https://github.com/FunAudioLLM/CosyVoice)
+
+I recommend: teacher saves a new revision → speech is generated in the background → the audio is saved for the whole class to reuse. A question would not be regenerated whenever another student clicks it; only changed text would require new audio. This can connect to the website, but the model needs additional computing resources and cannot run directly on the current website host. Twenty independent character voices also require reference recordings with appropriate usage rights; changing pitch alone cannot create twenty genuinely different voices.
+
+<details>
+<summary>Generated image 075 · 2026-10-10 00:40:29 HKT · floorplans v1</summary>
+
+![Generated image 075: floorplans v1](../public/campus/assets/ui/floorplans-v1.png)
+
+[Open original PNG](../public/campus/assets/ui/floorplans-v1.png) · Generation ID: `exec-13d3abb1-d5b4-445d-b0d6-e81a936f0e3a`.
+
+Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
+
+</details>
+
+---
+
+User:
+
+*2026-10-10 00:43:03 HKT · message 122*
+
+State on GitHub that audio may not update in sync when teachers add questions. Then search online for other free methods that generate fluent Cantonese, Mandarin and English and allow MP3 downloads.
+
+*2026-10-10 00:56:22 HKT · message 123*
+
+The fifth floor should be at the top of the map, and the first floor—the ground floor—should be at the bottom. Please update the map.
+
+---
+
+ChatGPT:
+
+*2026-10-10 00:59:11 HKT · message 124*
+
+The map will be arranged **from top to bottom by floor: the fifth level at the top and the first level, the ground floor, at the bottom**, while keeping rooms aligned with their actual campus locations.
+
+Following your latest decision, I will pause the Google Cloud and self-hosted speech-server options and look for free online tools that generate downloadable MP3 s. The GitHub documentation will explicitly state: **audio may not update in sync after a teacher adds or changes a question; the latest written question is authoritative.**
+
+<details>
+<summary>Generated image 076 · 2026-10-10 00:59:31 HKT · Generated image 076 (archived draft)</summary>
+
+![Generated image 076: Generated image 076 (archived draft)](generated-images/076-exec-07783393-75ff-4d3f-968d-a28482ab3d72.png)
+
+[Open original PNG](generated-images/076-exec-07783393-75ff-4d3f-968d-a28482ab3d72.png) · Generation ID: `exec-07783393-75ff-4d3f-968d-a28482ab3d72`.
+
+Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
+
+</details>
+
+<details>
+<summary>Generated image 077 · 2026-10-10 01:00:50 HKT · cases uniform 0</summary>
+
+![Generated image 077: cases uniform 0](../public/campus/assets/life/cases-uniform-0.png)
+
+[Open original PNG](../public/campus/assets/life/cases-uniform-0.png) · Generation ID: `exec-61ea8718-2e26-4871-bc42-d8631629c733`.
+
+Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
+
+</details>
+
+<details>
+<summary>Generated image 078 · 2026-10-10 01:03:18 HKT · cases uniform 1</summary>
+
+![Generated image 078: cases uniform 1](../public/campus/assets/life/cases-uniform-1.png)
+
+[Open original PNG](../public/campus/assets/life/cases-uniform-1.png) · Generation ID: `exec-65856090-c214-4cce-8cd2-8245ae413317`.
+
+Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
+
+</details>
+
+<details>
+<summary>Generated image 079 · 2026-10-10 01:03:18 HKT · cases uniform 2</summary>
+
+![Generated image 079: cases uniform 2](../public/campus/assets/life/cases-uniform-2.png)
+
+[Open original PNG](../public/campus/assets/life/cases-uniform-2.png) · Generation ID: `exec-4fdde584-4cba-4093-8fbd-07fa9507c5cf`.
+
+Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
+
+</details>
+
+<details>
+<summary>Generated image 080 · 2026-10-10 01:03:18 HKT · cases uniform 3</summary>
+
+![Generated image 080: cases uniform 3](../public/campus/assets/life/cases-uniform-3.png)
+
+[Open original PNG](../public/campus/assets/life/cases-uniform-3.png) · Generation ID: `exec-b6852c0e-963a-40b6-8421-a4de48dac2bc`.
+
+Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
+
+</details>
+
+---
+
+User:
+
+*2026-10-10 01:12:29 HKT · message 125*
+
+Keep the speech speed and pitch shown in the screenshot.
+
+[User attached “Screenshot 2026-10-10 at 1.08.09 AM.png”; the reference screenshot is not republished in this archive.]
+
+*2026-10-10 01:12:29 HKT · message 126*
+
+Mandarin may use both Chinese (CN) and Chinese (TW). Try to give every character a different voice.
+
+---
+
+ChatGPT:
+
+*2026-10-10 01:13:09 HKT · message 127*
+
+I will keep the screenshot’s **Voice Speed 100%** and **Speech Pitch 100%**, without further adjustment in subsequent voice production. For Mandarin, I will consider both **Chinese (CN)** and **Chinese (TW)** and assign voices according to each character’s gender, apparent age and personality, avoiding repetition where possible.
+
+I will record each character’s voice and settings so later additions remain consistent. There are fewer free Cantonese voices; any necessary reuse will be stated honestly.
+
+<details>
+<summary>Generated image 081 · 2026-10-10 01:13:13 HKT · Generated image 081 (archived draft)</summary>
+
+![Generated image 081: Generated image 081 (archived draft)](generated-images/081-exec-ab23e2dd-abcb-4e3f-9658-2dcb8e2cd82a.png)
+
+[Open original PNG](generated-images/081-exec-ab23e2dd-abcb-4e3f-9658-2dcb8e2cd82a.png) · Generation ID: `exec-ab23e2dd-abcb-4e3f-9658-2dcb8e2cd82a`.
+
+Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
+
+</details>
+
+<details>
+<summary>Generated image 082 · 2026-10-10 01:16:22 HKT · staff portraits v3 a</summary>
+
+![Generated image 082: staff portraits v3 a](../public/campus/assets/life/staff-portraits-v3-a.png)
+
+[Open original PNG](../public/campus/assets/life/staff-portraits-v3-a.png) · Generation ID: `exec-f2e2ea5e-dcb6-451c-ac29-51041c416a52`.
+
+Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
+
+</details>
+
+---
+
+User:
+
+*2026-10-10 01:18:28 HKT · message 128*
+
+Additional corrections:
+
+1. NPCs should have different facial features and appearances, heights and builds. They should not all use the same facial template, to avoid visual fatigue.
+2. NPC movement speed should match the protagonist’s walking animation. NPCs currently walk slowly and their movement is not smooth.
+
+<details>
+<summary>Generated image 083 · 2026-10-10 01:19:19 HKT · staff portraits v3 b</summary>
+
+![Generated image 083: staff portraits v3 b](../public/campus/assets/life/staff-portraits-v3-b.png)
+
+[Open original PNG](../public/campus/assets/life/staff-portraits-v3-b.png) · Generation ID: `exec-b0c5fea0-96a8-49a1-89ca-e56ad923b1d2`.
+
+Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
+
+</details>
+
+---
+
+ChatGPT:
+
+*2026-10-10 01:19:43 HKT · message 129*
+
+I will add both corrections. NPCs will have clear differences in facial features, hairstyles, height and build while keeping the natural body proportions you approved. I will first produce a character-difference preview so the whole cast does not become visually repetitive again.
+
+For walking, I will align movement speed with animation cadence so NPC footsteps match the distance actually travelled, improving the current slow, sliding impression.
+
+---
+
+User:
+
+*2026-10-10 01:29:20 HKT · message 130*
+
+Additional corrections:
+
+3. NPC names do not have to come only from names commonly used in Hong Kong Chinese compositions. Invent names to avoid duplicates. Names do not need frames and should appear only in dialogue boxes.
+4. The Subjects and Cases controls at the top right should only tell users whether they have earned stars. Users should not be able to click them to jump directly to a question.
+5. Many game questions are repetitive and too simple. Refer to the Hong Kong Examinations and Assessment Authority and Education Bureau’s secondary teaching requirements and redefine the questions for every subject.
+6. Put a printer only at the end of each floor’s corridor, rather than in every room or location, which looks out of place. The printer should let students print a worksheet prepared by a teacher for a subject on that floor. Teachers may provide Traditional Chinese, English or both versions, and students may select one to print.
+
+[User attached “Screenshot 2026-10-10 at 1.23.20 AM.png”; the reference screenshot is not republished in this archive.]
+
+---
+
+ChatGPT:
+
+*2026-10-10 01:31:03 HKT · message 131*
+
+I will make Cases and Subjects views show only stars and completion progress; answering will require going to the corresponding person or classroom. NPC names will appear only in dialogue, and I will give them distinct names.
+
+I will review the question bank against Hong Kong junior- and senior-secondary curriculum requirements, add scenarios, reasoning and different levels of difficulty, and record Education Bureau/HKEAA sources. Printers will be placed at the ends of corridors on each floor, allowing students to choose Traditional Chinese or English worksheets for that floor’s subjects. I will first provide a preview of this new interface for your approval.
+
+<details>
+<summary>Generated image 084 · 2026-10-10 01:35:02 HKT · cases portraits uniforms</summary>
+
+![Generated image 084: cases portraits uniforms](../public/campus/assets/life/cases-portraits-uniforms.png)
+
+[Open original PNG](../public/campus/assets/life/cases-portraits-uniforms.png) · Generation ID: `exec-f0c6ffa7-1090-4621-b883-cba86b312e01`.
+
+Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
+
+</details>
+
+*2026-10-10 01:43:19 HKT · message 132*
+
+I found two concrete causes: NPC speed was only about one-eighth of the protagonist’s, and the old bank’s Application/Challenge sections reused similar AI-judgement scenarios. I am correcting how movement speed matches walking animation and rewriting the questions subject by subject.
+
+The worksheet station will use the approved cream, deep teal and gold pixel interface. I will use imagegen to produce a preview of the corridor printer and worksheet selection screen.
+
+<details>
+<summary>Generated image 085 · 2026-10-10 01:43:52 HKT · 08 npc identity variation proposal</summary>
+
+![Generated image 085: 08 npc identity variation proposal](../design/campus-life-review-v1/08-npc-identity-variation-proposal.png)
+
+[Open original PNG](../design/campus-life-review-v1/08-npc-identity-variation-proposal.png) · Generation ID: `exec-7ab5e13b-d0e2-4cf5-af23-c7701534037b`.
+
+Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
+
+</details>
+
+---
+
+User:
+
+*2026-10-10 01:45:30 HKT · message 133*
+
+After clicking Print, will it connect directly to the user’s computer’s default printing function?
+
+---
+
+ChatGPT:
+
+*2026-10-10 01:45:57 HKT · message 134*
+
+Yes. The planned flow is: choose a subject and language → click Print → open the computer/browser’s native print dialogue. The user can then choose the printer, copies and page range, or save as PDF. A website can invoke this through `window.print()`. [MDN printing documentation](https://developer.mozilla.org/en-US/docs/Web/API/Window/print)
+
+The user still confirms the actual print job; the website will not bypass the print dialogue. If browser restrictions affect a teacher-uploaded PDF, I will retain Open PDF and Download as fallback options so the worksheet can still be printed.
+
+<details>
+<summary>Generated image 086 · 2026-10-10 01:45:58 HKT · 09 worksheet station proposal</summary>
+
+![Generated image 086: 09 worksheet station proposal](../design/campus-life-review-v1/09-worksheet-station-proposal.png)
+
+[Open original PNG](../design/campus-life-review-v1/09-worksheet-station-proposal.png) · Generation ID: `exec-249c2db6-66ce-4504-b3d4-dd390652558f`.
+
+Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
+
+</details>
+
+*2026-10-10 01:46:31 HKT · message 135*
+
+Both previews are ready: the NPC board demonstrates different face shapes, heights and builds; the worksheet station shows the corridor-end printer and subject, language and printing options. The teacher upload area shown in the preview will only be visible to signed-in, authorized teachers.
+
+As you requested earlier, I will add the new character appearance and worksheet interface to the game only after you approve the images. Work on walking speed, removing overhead names and removing question shortcuts from the progress view will continue.
+
+---
+
+User:
+
+*2026-10-10 01:47:09 HKT · message 136*
+
+Both are approved. Implement them in this direction.
+
+---
+
+ChatGPT:
+
+*2026-10-10 01:48:25 HKT · message 137*
+
+I have received approval for both designs and will implement them as previewed. Worksheets will be stored as teacher-uploaded PDFs, with Traditional Chinese and English versions available separately. Students will only see available worksheets for their class grade and subjects on that floor. The existing teacher Excel results export will remain.
+
+<details>
+<summary>Generated image 087 · 2026-10-10 01:50:36 HKT · cases uniform 0 v2</summary>
+
+![Generated image 087: cases uniform 0 v2](../public/campus/assets/life/cases-uniform-0-v2.png)
+
+[Open original PNG](../public/campus/assets/life/cases-uniform-0-v2.png) · Generation ID: `exec-c41d2921-f9d5-492a-929a-61ddd32d1240`.
+
+Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
+
+</details>
+
+<details>
+<summary>Generated image 088 · 2026-10-10 01:53:01 HKT · cases uniform 3 v2</summary>
+
+![Generated image 088: cases uniform 3 v2](../public/campus/assets/life/cases-uniform-3-v2.png)
+
+[Open original PNG](../public/campus/assets/life/cases-uniform-3-v2.png) · Generation ID: `exec-b518e59e-12bd-47a9-b8b6-bc68457b4585`.
+
+Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
+
+</details>
+
+*2026-10-10 01:53:51 HKT · message 138*
+
+Worksheet upload, floor/grade filtering, PDF preview and the print button are connected in the local version. I am testing teacher permissions and file isolation between classes. Obtaining another class’s file URL alone will not let a student read that class’s worksheet.
+
+Cases and Subjects have become progress records, with direct question-opening shortcuts removed. The new question bank is being rewritten and checked question by question, preserving teacher-authored questions and existing results.
+
+<details>
+<summary>Generated image 089 · 2026-10-10 01:55:20 HKT · cases portraits uniforms v2</summary>
+
+![Generated image 089: cases portraits uniforms v2](../public/campus/assets/life/cases-portraits-uniforms-v2.png)
+
+[Open original PNG](../public/campus/assets/life/cases-portraits-uniforms-v2.png) · Generation ID: `exec-c86c684a-61a7-4027-80a4-58c7848da15a`.
+
+Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
+
+</details>
+
+<details>
+<summary>Generated image 090 · 2026-10-10 01:55:36 HKT · cases uniform 2 v2</summary>
+
+![Generated image 090: cases uniform 2 v2](../public/campus/assets/life/cases-uniform-2-v2.png)
+
+[Open original PNG](../public/campus/assets/life/cases-uniform-2-v2.png) · Generation ID: `exec-337d346b-8331-4cfc-a50a-fbd01ef0cd85`.
+
+Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
+
+</details>
+
+<details>
+<summary>Generated image 091 · 2026-10-10 01:55:36 HKT · cases uniform 1 v2</summary>
+
+![Generated image 091: cases uniform 1 v2](../public/campus/assets/life/cases-uniform-1-v2.png)
+
+[Open original PNG](../public/campus/assets/life/cases-uniform-1-v2.png) · Generation ID: `exec-3c250108-3229-4ba0-a61e-5ad26f9a44fc`.
+
+Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
+
+</details>
+
+---
+
+User:
+
+*2026-10-10 02:00:38 HKT · message 139*
+
+Additional corrections:
+
+7. As shown in the screenshot, this window appears after I click New Game or Continue. Remove this question/prompt; users do not need to download any reports.
+8. Change speech speed to 70%, rather than 100%.
+
+[User attached “Screenshot 2026-10-10 at 1.57.11 AM.png”; the reference screenshot is not republished in this archive.]
+
+---
+
+ChatGPT:
+
+*2026-10-10 02:00:54 HKT · message 140*
+
+I will remove this prompt and student report-download controls. New Game will go straight to character setup, and Continue will return directly to the saved game. Teacher class-results Excel export and worksheet printing will remain.
+
+Speech settings change to **70% speed**, with pitch remaining at your previously specified **100%**. Subsequent auditions and voice production will use these settings.
+
+*2026-10-10 02:05:02 HKT · message 141*
+
+Free voice-generation testing revealed an issue that needs checking: the English page returned exactly the same downloadable audio file as Mandarin. I will not integrate a file merely because the page says generation is complete. I am checking each language, text and file to avoid playing the same audio again after a language switch.
+
+---
+
+User:
+
+*2026-10-10 02:07:03 HKT · message 142*
+
+NPCs now move too fast. They should be just a little slower than the protagonist. The speech also still seems too fast; please judge the speed yourself and make it normal and fluent.
+
+---
+
+ChatGPT:
+
+*2026-10-10 02:07:37 HKT · message 143*
+
+I will set NPC movement to about **85%–90%** of the protagonist’s speed, preserving natural starts, stops and short rests, with the foot animation following actual distance travelled.
+
+For speech, I will use the website’s **Default speed** as the baseline. Its “70%/100%” controls are adjustments; the earlier short generated sentences were noticeably compressed. I will aim for the rhythm of normal complete sentences and avoid raising pitch further, preserving each voice’s natural tone.
+
+---
+
+User:
+
+*2026-10-10 02:14:32 HKT · message 144*
+
+New correction tasks:
+
+1. Put every location introduction above its door as an in-world door plaque, displaying the location name. You can produce three different art previews for me to confirm the style.
+2. Physical printers are no longer needed. Move the printing service into the top-right menu.
+3. The menu should use the same decorative treatment as the dialogue boxes, with pixel-style lettering.
+
+[Attached reference: Screenshot 2026-10-10 at 2.09.20 AM; the user-uploaded image is not republished here.]
+
+---
+
+ChatGPT:
+
+*2026-10-10 02:14:48 HKT · message 145*
+
+I will first create three complete corridor-interface previews: location names above the door frames, Print moved to the top right, and menu borders and lettering consistent with the dialogue boxes. All three will retain the same scene so you can compare them directly. I will implement this new interface after you choose.
+
+NPC walking speed has also been adjusted to slightly slower than the protagonist. I will continue checking natural speech speed and the completed question-bank revisions.
+
+---
+
+User:
+
+*2026-10-10 02:15:05 HKT · message 146*
+
+These interfaces should also be updated to the game’s colour palette.
+
+[Four user-uploaded interface screenshots accompanied this request. They are references, not generated artwork, and are not republished here.]
+
+---
+
+ChatGPT:
+
+*2026-10-10 02:16:21 HKT · message 147*
+
+The location badge, Settings, Cases and Subjects that you just added will be included in the same design system. I will use the confirmed cream, deep teal and gold details, with consistent stepped pixel borders, buttons and lettering, so these screens match the dialogue boxes.
+
+<details>
+<summary>Generated image 092 · 2026-10-10 02:20:11 HKT · Generated image 092 (archived draft)</summary>
+
+![Generated image 092: Generated image 092 (archived draft)](generated-images/092-exec-6fcceb16-a721-4553-be4c-0c36a47bf953.png)
+
+[Open original PNG](generated-images/092-exec-6fcceb16-a721-4553-be4c-0c36a47bf953.png) · Generation ID: `exec-6fcceb16-a721-4553-be4c-0c36a47bf953`.
+
+Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
+
+</details>
+
+---
+
+User:
+
+*2026-10-10 02:20:51 HKT · message 148*
+
+Users should be able to choose Student or Teacher directly from the start screen. New Start → Student / Teacher → Teacher login code. Teachers should not need to enter the game interface. After login, open a screen where they choose the subject they teach, then edit that subject’s questions, upload worksheets and download student-results spreadsheets. Choosing Student should lead to the existing student-information and clothing-selection screen.
+
+<details>
+<summary>Generated image 093 · 2026-10-10 02:22:35 HKT · 10a door hud cream enamel</summary>
+
+![Generated image 093: 10a door hud cream enamel](../design/campus-life-review-v1/10a-door-hud-cream-enamel.png)
+
+[Open original PNG](../design/campus-life-review-v1/10a-door-hud-cream-enamel.png) · Generation ID: `exec-38f3ee27-9d82-4f12-83b1-bb4a11905bc2`.
+
+Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
+
+</details>
+
+---
+
+ChatGPT:
+
+*2026-10-10 02:22:37 HKT · message 149*
+
+I will change the entry flow as you specified: New Start first asks Student or Teacher. Students return to the existing information, grade/class and clothing screens. Teachers enter their login code and go straight to the workspace, choose their teaching subject, then edit questions, upload worksheets and download class results.
+
+I will add the identity-choice and teacher-workspace screens to this preview so their style can be confirmed alongside the plaques, menu and other panels.
+
+---
+
+User:
+
+*2026-10-10 02:23:12 HKT · message 150*
+
+I choose this version.
+
+[The attached image identifies the cream-enamel plaque with deep-teal and gold edging. The user-uploaded reference itself is not republished here.]
+
+---
+
+ChatGPT:
+
+*2026-10-10 02:26:39 HKT · message 151*
+
+This cream-white plaque with deep-teal and gold edging is selected. I will use it to unify the door plaques, top-right menu, location badge and functional panels. Print will be in the menu, and the physical printers will be removed from the scenes. The Student/Teacher entry screens will use the same palette and pixel borders.
+
+<details>
+<summary>Generated image 094 · 2026-10-10 02:28:58 HKT · 10b door hud walnut</summary>
+
+![Generated image 094: 10b door hud walnut](../design/campus-life-review-v1/10b-door-hud-walnut.png)
+
+[Open original PNG](../design/campus-life-review-v1/10b-door-hud-walnut.png) · Generation ID: `exec-70adfbda-4d67-49c6-910f-14459bc91531`.
+
+Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
+
+</details>
+
+<details>
+<summary>Generated image 095 · 2026-10-10 02:28:58 HKT · 10c door hud teal enamel</summary>
+
+![Generated image 095: 10c door hud teal enamel](../design/campus-life-review-v1/10c-door-hud-teal-enamel.png)
+
+[Open original PNG](../design/campus-life-review-v1/10c-door-hud-teal-enamel.png) · Generation ID: `exec-61e0fed7-403e-443e-8040-5f8733cf89e4`.
+
+Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
+
+</details>
+
+<details>
+<summary>Generated image 096 · 2026-10-10 02:30:26 HKT · Generated image 096 (archived draft)</summary>
+
+![Generated image 096: Generated image 096 (archived draft)](generated-images/096-exec-080e16cd-5bb3-45db-b372-04cd09e69bf5.png)
+
+[Open original PNG](generated-images/096-exec-080e16cd-5bb3-45db-b372-04cd09e69bf5.png) · Generation ID: `exec-080e16cd-5bb3-45db-b372-04cd09e69bf5`.
+
+Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
+
+</details>
+
+<details>
+<summary>Generated image 097 · 2026-10-10 02:30:26 HKT · 12 role entry teacher workspace</summary>
+
+![Generated image 097: 12 role entry teacher workspace](../design/campus-life-review-v1/12-role-entry-teacher-workspace.png)
+
+[Open original PNG](../design/campus-life-review-v1/12-role-entry-teacher-workspace.png) · Generation ID: `exec-1f44c71c-b181-4c24-84bd-6ad1cba4c29c`.
+
+Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
+
+</details>
+
+*2026-10-10 02:31:36 HKT · message 152*
+
+The Student and Teacher entry paths are being connected to the existing features. Teacher login will not erase student progress on the same device and will not require creating an avatar first. The workspace will first ask the teacher to choose a subject, then show its questions, worksheets and results.
+
+For speech, the three-language auditions have been regenerated at normal Default speed. The same short sentence has lengthened from around 4–5 seconds to around 9–10 seconds. This confirms that it has slowed down, but complete game narration still requires checking and integration segment by segment; it has not all been replaced yet.
+
+<details>
+<summary>Generated image 098 · 2026-10-10 02:31:37 HKT · 11 consistent pixel panels</summary>
+
+![Generated image 098: 11 consistent pixel panels](../design/campus-life-review-v1/11-consistent-pixel-panels.png)
+
+[Open original PNG](../design/campus-life-review-v1/11-consistent-pixel-panels.png) · Generation ID: `exec-5fc79292-b8ff-46b5-aa08-16b4b9b925c1`.
+
+Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
+
+</details>
+
+*2026-10-10 02:36:17 HKT · message 153*
+
+These designs extend the selected style to the other panels and the Student/Teacher entry flow. Each actual case still awards five stars; the preview icons demonstrate only colours and arrangement.
+
+![Consistent game panels](../design/campus-life-review-v1/11-consistent-pixel-panels.png)
+
+![Student and teacher entry](../design/campus-life-review-v1/12-role-entry-teacher-workspace.png)
+
+---
+
+User:
+
+*2026-10-10 09:03:38 HKT · message 154*
+
+I do not want the background colour underneath the menu.
+
+[Two user-uploaded interface reference images accompanied this request. They are not republished here.]
+
+---
+
+ChatGPT:
+
+*2026-10-10 09:03:58 HKT · message 155*
+
+Understood: you want the effect in the second image, with each button floating directly over the campus background, and the full cream-coloured band removed. I will extend the campus view to the top, retain the buttons’ own pixel borders, and check that the menu does not cover the door plaques.
+
+---
+
+User:
+
+*2026-10-10 09:26:03 HKT · message 156*
+
+Correction tasks:
+
+1. When I switch to English, numbers are still spoken in Cantonese.
+2. The NPC is a male principal, but the voice is female. Please select the appropriate voice gender for every NPC according to the character’s gender.
+
+---
+
+ChatGPT:
+
+*2026-10-10 13:51:58 HKT · message 157*
+
+I will address both voice issues together: numbers in English dialogue will use English pronunciation, and voice selection will follow each NPC’s gender. The male principal will no longer automatically receive a female voice. I will check whether speech from the previous language remains queued after a language switch and whether the current device’s voice selection is correct.
+
+*2026-10-10 14:04:09 HKT · message 158*
+
+I found the cause of the voice-gender mismatch: the character data uses “boy/girl”, while the speech module matched “male/female”, so the gender condition was not taking effect. These values are now normalized, and a check has been added to cancel old speech when switching languages.
+
+English numbers will also be converted to English wording before speech; for example, `100` is spoken as “one hundred”. The menu background band has also been removed, and the mobile buttons have been repositioned to avoid covering door plaques.

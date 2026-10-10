@@ -11,7 +11,7 @@
     $ = (id) => document.getElementById(id);
   const AVATAR_GENDERS = ["boy", "girl"];
   const AVATAR_UNIFORMS = { boy: [0, 1, 2, 3], girl: [0, 1, 2, 3] };
-  let accountDraft = {}, cloudSnapshot = null, cloudReady = false, syncTimer = null, answerPending = false, teacherHandle = null, printerSubject = null, cloudError = "", recoveryCode = "";
+  let accountDraft = {}, cloudSnapshot = null, cloudReady = false, syncTimer = null, answerPending = false, teacherHandle = null, worksheetHandle = null, printerFloor = 0, printerSubject = null, cloudError = "", recoveryCode = "";
   const cloud = window.CampusCloud;
   const pendingSubmissions = new Map();
   const inClass = () => !!cloud?.session;
@@ -281,11 +281,22 @@
     if (state.cloudStudentId && !inClass()) { showModal("account"); return false; }
     return true;
   }
+  function renderPrinter() {
+    worksheetHandle?.destroy();
+    heading(floorLabel(printerFloor), L("工作紙打印", "工作纸打印", "PRINT WORKSHEETS"));
+    $("modal-content").innerHTML = '<div id="worksheet-station"></div>';
+    worksheetHandle = window.CampusWorksheets?.open({ container: $("worksheet-station"), lang: state.lang, floor: printerFloor, grade: state.student.grade,
+      onAccount: () => showModal("account"), onResults: () => { printerSubject = window.CampusWorksheets.subjects.find(subject => subject[1] === printerFloor)?.[0] || null; showModal("teacher"); } });
+  }
   function renderTeacher() {
     teacherHandle?.destroy();
-    heading(L("教師工作台", "教师工作台", "TEACHER WORKSPACE"), printerSubject ? L("課室列印機", "教室打印机", "Classroom printer") : L("班級、題庫與學習紀錄", "班级、题库与学习记录", "Classes, questions and learning records"));
+    heading(L("教師工作台", "教师工作台", "TEACHER WORKSPACE"), printerSubject ? L("學科成績", "学科成绩", "Subject results") : L("我的教學空間", "我的教学空间", "My teaching space"));
     $("modal-content").innerHTML = `<button class="text-button teacher-panel-link" data-action="teacher-guide">${L("教學目標與課堂指引", "教学目标与课堂指引", "Learning goals and lesson guide")} ↗</button><div id="teacher-workspace"></div>`;
-    teacherHandle = window.CampusTeacher.open({ container: $("teacher-workspace"), lang: state.lang, subjectId: printerSubject || undefined, onClose: () => closeModal(), onChange: () => { if (inClass()) toast(L("教師資料已更新；新活動可在班級連線重新載入。", "教师资料已更新；新活动可在班级连接重新加载。", "Teacher records updated. Reload your class connection to open a new activity.")); } });
+    teacherHandle = window.CampusTeacher.open({ container: $("teacher-workspace"), lang: state.lang, subjectId: printerSubject || undefined, initialTab: printerSubject ? "results" : undefined, onExit: () => closeModal(), onClose: () => closeModal(), onChange: () => { if (inClass()) toast(L("教師資料已更新；新活動可在班級連線重新載入。", "教师资料已更新；新活动可在班级连接重新加载。", "Teacher records updated. Reload your class connection to open a new activity.")); } });
+  }
+  function renderRoleChoice() {
+    heading(L("新開始", "新开始", "NEW BEGINNING"), L("選擇你的身分", "选择你的身份", "Choose your role"));
+    $("modal-content").innerHTML = `<div class="role-choice-grid"><button class="role-choice-card" data-action="student-entry"><span class="role-choice-number" aria-hidden="true">01</span><strong>${L("學生", "学生", "Student")}</strong><span class="role-choice-copy">${L("填寫學生資料、選擇造型，開始校園生活。", "填写学生资料、选择造型，开始校园生活。", "Add your student details, choose your character and explore campus.")}</span><span class="role-choice-cta">${L("設定我的角色", "设置我的角色", "Create my character")}</span></button><button class="role-choice-card" data-action="teacher-entry"><span class="role-choice-number" aria-hidden="true">02</span><strong>${L("教師", "教师", "Teacher")}</strong><span class="role-choice-copy">${L("登入教學空間，管理學科題目、工作紙及班級成績。", "登录教学空间，管理学科题目、工作纸及班级成绩。", "Open your teaching space for subject questions, worksheets and class results.")}</span><span class="role-choice-cta">${L("教師登入", "教师登录", "Teacher sign in")}</span></button></div>`;
   }
   function renderAccount() {
     heading(L("我的班級", "我的班级", "MY CLASS"), inClass() ? L("學習紀錄，隨身同行", "学习记录，随身同行", "Take your progress with you") : L("加入班級或繼續學習", "加入班级或继续学习", "Join a class or resume"));
@@ -373,6 +384,7 @@
       () => T(meta.label),
     ]),
   );
+  const compactEnglishLocations = { corridor:"Corridor", corridor1:"Corridor", corridor2:"Corridor", corridor3:"Corridor", corridor4:"Corridor", playground:"Playground", hall:"Hall", chinese:"Chinese", english:"English", maths:"Maths", chemistry:"Science lab", geography:"Geography", computer:"Computer lab", history:"History", art:"Art studio", music:"Music", library:"Library", rooftop:"Rooftop" };
   const uniformTitle = i => T(window.CAMPUS_CHARACTERS.wardrobe[state.avatar.gender][i]);
   let titleOpen = true;
   let modalType = "",
@@ -384,6 +396,7 @@
     dialogueId = null,
     dialogueLine = 0,
     location = "corridor",
+    mapFloor = 0,
     toastTimer,
     returnFocus = null,
     liveDraft = "",
@@ -395,7 +408,7 @@
     lang: state.lang,
     getAvatar: () => state.avatar,
     getProgress: campusProgress,
-    onInteract: id => { if (id.startsWith("printer:")) { printerSubject = id.slice(8); showModal("teacher"); } else openDialogue(id); },
+    onInteract: id => openDialogue(id),
     onLocationChange: (loc) => {
       location = loc;
       state.location = loc;
@@ -408,7 +421,7 @@
     if (el)
       el.textContent = inClass()
         ? (cloudError || cloud?.state.conflict) ? L("尚未同步，請檢查連線", "尚未同步，请检查连接", "Not synced — check your connection") : cloud?.state.pending > 0 ? L("正在同步…", "正在同步…", "Syncing…") : L("班級進度已同步", "班级进度已同步", "Class progress synced")
-        : storageAvailable ? L("自由探索 · 進度儲存在這個瀏覽器", "自由探索 · 进度保存在此浏览器", "Free exploration · saved in this browser") : L("本機儲存不可用，離開前請下載報告", "本机保存不可用，离开前请下载报告", "Local saving unavailable; download your report");
+        : storageAvailable ? L("自由探索 · 進度儲存在這個瀏覽器", "自由探索 · 进度保存在此浏览器", "Free exploration · saved in this browser") : L("本機儲存不可用，離開後可能無法保留進度", "本机保存不可用，离开后可能无法保留进度", "Local saving unavailable; progress may not survive leaving");
   }
   function announce(s) {
     $("announcer").textContent = s;
@@ -445,23 +458,35 @@
     if (!snapshot) return;
     const audioButton = $("audio-button");
     if (audioButton) { audioButton.dataset.musicStatus = snapshot.music.status; audioButton.dataset.voiceStatus = snapshot.voice.status; audioButton.dataset.voiceError = snapshot.voice.errorCode || ""; audioButton.dataset.voiceStarted = String(snapshot.voice.started || false); audioButton.dataset.voiceEvent = snapshot.voice.lastEvent || ""; audioButton.dataset.voiceLocale = snapshot.voice.actualLocale || ""; }
-    const status = $("voice-status");
-    if (!status) return;
     const voice = snapshot.voice.requestedLocale && snapshot.voice.requestedLocale !== {zh:"zh-HK",cn:"zh-CN",en:"en-GB"}[state.lang] ? {status:"ready"} : snapshot.voice;
-    status.textContent = voice.status === "unavailable" || voice.unavailable
-      ? L("這部裝置暫無可用聲線，文字對話仍可使用。", "此设备暂无可用语音，文字对话仍可使用。", "No matching voice is available on this device. Text dialogue remains available.")
-      : voice.status === "gesture-required"
-        ? L("請按「試聽語音」啟用聲音。", "请按“试听语音”启用声音。", "Select Test voice to enable speech.")
-        : voice.status === "error"
-          ? L("語音未能播放，請重試或使用文字對話。", "语音未能播放，请重试或使用文字对话。", "Speech could not play. Try again or continue with text.")
-          : voice.name ? `${voice.name}${voice.fallback ? L(" · 替代語音", " · 替代语音", " · fallback voice") : ""}${voice.remote ? L(" · 裝置語音服務", " · 设备语音服务", " · device speech service") : ""}`
-            : L("繁體中文：粵語。聲線視裝置支援。", "简体中文：国语。语音取决于设备支持。", "English dialogue uses an English voice available on your device.");
+    const failure = voice.status === "unavailable"
+      ? voice.errorCode === "voice-gender-unavailable"
+        ? L("這部裝置暫無符合此角色性別的語種聲線；請閱讀字幕。", "此设备暂无符合此角色性别的语言声线；请阅读字幕。", "This device has no voice matching this character’s language and gender. Please use the subtitles.")
+        : L("這部裝置暫無可用聲線，文字對話仍可使用。", "此设备暂无可用语音，文字对话仍可使用。", "No matching voice is available on this device. Text dialogue remains available.")
+      : voice.status === "error"
+        ? L("語音未能播放，請重試或使用文字對話。", "语音未能播放，请重试或使用文字对话。", "Speech could not play. Try again or continue with text.")
+        : "";
+    const status = $("voice-status");
+    if (status) status.textContent = failure || (voice.status === "gesture-required"
+      ? L("請按「試聽語音」啟用聲音。", "请按“试听语音”启用声音。", "Select Test voice to enable speech.")
+      : voice.name ? `${voice.name}${voice.fallback ? L(" · 替代語音", " · 替代语音", " · fallback voice") : ""}${voice.remote ? L(" · 裝置語音服務", " · 设备语音服务", " · device speech service") : ""}`
+        : L("繁體中文：粵語。聲線視裝置支援。", "简体中文：国语。语音取决于设备支持。", "English dialogue uses an English voice available on your device."));
+    const dialogueStatus = $("dialogue-voice-status");
+    if (dialogueStatus) {
+      const visible = !!(dialogueId && !titleOpen && !panelOpen && !audioPanelOpen && !document.hidden && !$("dialogue").hidden && failure);
+      dialogueStatus.hidden = !visible;
+      dialogueStatus.textContent = visible ? failure : "";
+    }
     const musicStatus = $("music-status");
     if (musicStatus) musicStatus.textContent = snapshot.music.status === "unavailable" ? L("此瀏覽器未能播放音樂。", "此浏览器无法播放音乐。", "Music is unavailable in this browser.") : `Greensleeves · ${snapshot.music.status === "playing" ? L("播放中", "播放中", "Playing") : snapshot.music.status === "locked" || snapshot.music.status === "gesture-required" ? L("按播放啟用", "按播放启用", "Select Play to start") : L("已暫停", "已暂停", "Paused")}`;
     const musicToggle = $("music-toggle");
     if (musicToggle) musicToggle.textContent = snapshot.music.status === "playing" ? L("暫停音樂", "暂停音乐", "Pause music") : L("播放音樂", "播放音乐", "Play music");
     const mute = $("audio-mute");
     if (mute) { mute.ariaPressed = String(snapshot.settings.muted); mute.textContent = snapshot.settings.muted ? L("開啟聲音", "开启声音", "Unmute") : L("全部靜音", "全部静音", "Mute all"); }
+  }
+  function clearDialogueVoiceStatus() {
+    const status = $("dialogue-voice-status");
+    if (status) { status.hidden = true; status.textContent = ""; }
   }
   function renderAudioPanel() {
     const panel = $("audio-panel");
@@ -473,6 +498,7 @@
   function setAudioPanel(open) {
     if (open) { audioReturnFocus = document.activeElement; audio?.stopVoice(); renderAudioPanel(); }
     audioPanelOpen = open;
+    if (open) clearDialogueVoiceStatus();
     $("audio-panel").hidden = !open;
     $("audio-button").setAttribute("aria-expanded", String(open));
     syncPause();
@@ -489,6 +515,7 @@
       panelOpen && modalType === "avatar",
     );
     document.body.classList.toggle("in-game-panel", panelOpen);
+    document.body.classList.toggle("entry-panel-active", panelOpen && panelReturnToTitle && ["role-choice", "teacher", "teacher-guide"].includes(modalType));
     $("modal").hidden = !panelOpen;
     if (panelOpen) {
       $("modal").dataset.panel = modalType;
@@ -558,6 +585,7 @@
       "hud-subjects": L("學科", "学科", "Subjects"),
       "hud-map": L("地圖", "地图", "Map"),
       "hud-journal": L("手帳", "手帐", "Journal"),
+      "hud-printer": L("打印", "打印", "Print"),
       "hud-settings": L("設定", "设置", "Settings"),
       "notebook-label": L(
         "學習記錄 · LEARNING NOTEBOOK",
@@ -582,12 +610,18 @@
     };
     for (const [id, text] of Object.entries(texts)) {
       const element = $(id);
-      if (element) element.textContent = text;
+      if (element) {
+        const label = id.startsWith("hud-") ? element.querySelector(".hud-label") : null;
+        (label || element).textContent = text;
+        if (id.startsWith("hud-")) element.title = text;
+      }
     }
-    $("scene-tag").textContent =
-      L("明澄書院", "明澄书院", "Ming Ching College") +
-      " · " +
-      locations[location]();
+    const sceneLabel = $("scene-tag").querySelector(".scene-location-copy") || $("scene-tag");
+    const sceneFloor = window.CAMPUS_LOCATIONS[location]?.floor ?? 0;
+    sceneLabel.textContent = state.lang === "en"
+      ? `${sceneFloor === 0 ? "G" : sceneFloor + "F"} · ${compactEnglishLocations[location] || locations[location]()}`
+      : locations[location]();
+    $("scene-tag").ariaLabel = L("明澄書院", "明澄书院", "Ming Ching College") + " · " + locations[location]();
     $("progress-count").textContent =
       missions.filter((m) => pstate(m.id).completed).length + " / 4";
     let starSummary = $("star-summary");
@@ -624,9 +658,9 @@
       "Toggle fullscreen",
     );
     $("campus").ariaLabel = L(
-      "校園探索。WASD 或四個方向鍵移動，E 與人物對話，空白鍵或 Enter 進入房間。點擊人物、門口或樓梯可自動走近並互動。遊戲內案件與地圖提供快捷入口。",
-      "校园探索。WASD 或四个方向键移动，E 与人物对话，空格键或 Enter 进入房间。点击人物、门口或楼梯可自动走近并互动。游戏内案件与地图提供快捷入口。",
-      "Explore campus. Move with WASD or all four arrow keys; press E to talk and Space or Enter to enter rooms. Click a person, door or staircase to approach and interact automatically. In-game Cases and Map provide direct access.",
+      "校園探索。WASD 或四個方向鍵移動，E 與人物對話，空白鍵或 Enter 進入房間。點擊人物、門口或樓梯可自動走近並互動。案件與學科選單只顯示進度，請到場與角色互動；地圖可協助前往。",
+      "校园探索。WASD 或四个方向键移动，E 与人物对话，空格键或 Enter 进入房间。点击人物、门口或楼梯可自动走近并互动。案件与学科菜单仅显示进度，请到场与角色互动；地图可帮助前往。",
+      "Explore campus. Move with WASD or all four arrow keys; press E to talk and Space or Enter to enter rooms. Click a person, door or staircase to approach and interact automatically. Cases and Subjects show progress only. Meet characters in person to begin; use the map to travel.",
     );
     renderCases();
     renderIntro();
@@ -636,7 +670,7 @@
     return missions
       .map((m, i) => {
         const p = pstate(m.id);
-        return `<button class="case-item ${p.completed ? "completed" : ""} ${activeCase === m.id ? "active" : ""}" data-case="${m.id}"><span class="case-number">${L("案件 0", "案件 0", "CASE 0")}${i + 1}<span>${p.completed ? L("✓ 已結案", "✓ 已结案", "✓ RESOLVED") : p.seen.length ? L("調查中", "调查中", "OPEN") : L("待調查", "待调查", "NEW")}</span></span><strong>${esc(T(m.title))}</strong><span class="case-place">${esc(locations[m.location]())} · ${esc(T(m.name))}</span><span class="case-arrow">›</span></button>`;
+        return `<article class="case-item ${p.completed ? "completed" : ""}" data-case-progress="${m.id}"><span class="case-number">${L("案件 0", "案件 0", "CASE 0")}${i + 1}<span>${p.completed ? L("✓ 已結案", "✓ 已结案", "✓ RESOLVED") : p.seen.length ? L("調查中", "调查中", "OPEN") : L("待調查", "待调查", "NEW")}</span></span><strong>${esc(T(m.title))}</strong><span class="case-place">${esc(locations[m.location]())}</span><span class="case-stars">★ ${p.completed ? 5 : 0} / 5</span></article>`;
       })
       .join("");
   }
@@ -657,7 +691,7 @@
       ),
     );
     $("modal-content").innerHTML =
-      `<p class="modal-intro">${L("先聆聽同學，閱讀至少兩項證據，再作判斷和修正。每宗案件完成可獲 5 星；重溫不會扣除或重複獎勵星星。", "先倾听同学，阅读至少两项证据，再作判断和修正。每宗案件完成可获 5 星；重温不会扣除或重复奖励星星。", "Listen to a classmate, read at least two clues, then decide and repair. Each completed case earns 5 stars once; review does not remove or duplicate them.")}</p><div class="case-directory">${caseCards()}</div>`;
+      `<p class="modal-intro">${L("這裡只顯示完成進度。請前往對應走廊，點擊同學或按 E 開始對話；閱讀至少兩項證據，再作判斷和修正。每宗案件只獎勵 5 星一次。", "这里只显示完成进度。请前往对应走廊，点击同学或按 E 开始对话；阅读至少两项证据，再作判断和修正。每宗案件只奖励 5 星一次。", "This is a progress record. Go to the corridor and click the classmate or press E to talk. Read at least two clues before deciding and repairing. Each case awards 5 stars once.")}</p><div class="case-directory">${caseCards()}</div>`;
   }
   function renderIntro() {
     $("intro").hidden = true;
@@ -666,13 +700,16 @@
   }
   function showModal(type) {
     audio?.stopVoice();
+    clearDialogueVoiceStatus();
     teacherHandle?.destroy(); teacherHandle = null;
+    worksheetHandle?.destroy(); worksheetHandle = null;
     if (!panelOpen) {
       returnFocus = document.activeElement;
       panelReturnToTitle = titleOpen;
     }
     // Character selection enters the game screen; completing it starts the story.
     if (type === "avatar") panelReturnToTitle = false;
+    if (type === "map") mapFloor = window.CAMPUS_LOCATIONS[location]?.floor ?? 0;
     modalType = type;
     panelOpen = true;
     titleOpen = false;
@@ -691,6 +728,7 @@
   function closeModal({ resume = false, restoreFocus = true } = {}) {
     if (!panelOpen) return;
     teacherHandle?.destroy(); teacherHandle = null;
+    worksheetHandle?.destroy(); worksheetHandle = null;
     panelOpen = false;
     titleOpen = resume ? false : !state.started || panelReturnToTitle;
     panelReturnToTitle = false;
@@ -711,25 +749,26 @@
   }
   function renderModal() {
     updatePanelPortrait();
-    if (modalType === "avatar") renderAvatar();
+    if (modalType === "role-choice") renderRoleChoice();
+    else if (modalType === "avatar") renderAvatar();
     else if (modalType === "cases") renderCaseDirectory();
     else if (modalType === "case") renderInvestigation();
     else if (modalType === "review") renderReviewCase();
     else if (modalType === "map") renderMap();
     else if (modalType === "journal") renderJournal();
     else if (modalType === "teacher") renderTeacher();
+    else if (modalType === "printer") renderPrinter();
     else if (modalType === "teacher-guide") renderTeacherGuide();
     else if (modalType === "account") renderAccount();
     else if (modalType === "settings") renderSettings();
     else if (modalType === "reset") renderReset();
-    else if (modalType === "newgame") renderNewGameConfirmation();
     else if (modalType === "subject") renderSubject();
     else if (modalType === "subjects") renderSubjectDirectory();
     else if (modalType === "ending") renderEnding();
   }
   function subjectPortrait(room) { return "subject:" + room.id; }
   function applyPortrait(element, id, talking = false) {
-    const meta = window.CAMPUS_CHARACTERS?.portrait(id, talking);
+    const meta = window.CAMPUS_CHARACTERS?.portrait(id, talking, state.avatar);
     if (!element || !meta) return;
     element.className = "portrait registered-portrait" + (element.id === "panel-portrait" ? " panel-portrait" : "");
     element.dataset.portrait = id;
@@ -789,9 +828,9 @@
             "Each of 13 subject spaces has foundation, application and challenge questions worth 1, 2 and 3 stars once. Each ethics case earns 5 stars; the notebook’s transfer challenge earns 5 more. Replays help you practise but do not add duplicate stars.",
           ),
           L(
-            "累積 100 星便可到地下校門完成校園旅程，最高 103 星。星星記錄探索進度，並非品格或能力排名。你可隨時休息、寫反思和下載報告；短課節不必一次走完整間學校。",
-            "累积 100 星便可到地下校门完成校园旅程，最高 103 星。星星记录探索进度，并非品格或能力排名。你可随时休息、写反思和下载报告；短课节不必一次走完整间学校。",
-            "Reach 100 stars to finish your mission at the ground-floor gate; 103 are available. Stars track exploration, not character or ability. Pause, reflect and download a report whenever you wish; a short lesson need not cover the entire school.",
+            "累積 100 星便可到地下校門完成校園旅程，最高 103 星。星星記錄探索進度，並非品格或能力排名。你可隨時休息、寫反思；短課節不必一次走完整間學校。",
+            "累积 100 星便可到地下校门完成校园旅程，最高 103 星。星星记录探索进度，并非品格或能力排名。你可随时休息、写反思；短课节不必一次走完整间学校。",
+            "Reach 100 stars to finish your mission at the ground-floor gate; 103 are available. Stars track exploration, not character or ability. Pause, reflect whenever you wish; a short lesson need not cover the entire school.",
           ),
         ],
         "prologue-finish",
@@ -828,9 +867,9 @@
             "Good morning, new student. Sport and the hall are on the ground floor; languages and maths on 1F; science, geography and computing on 2F; history and arts on 3F; the library and rooftop on 4F.",
           ),
           L(
-            "點擊人物、樓梯或課室門，就會自動走近並互動；也可用 WASD 或方向鍵移動，再按空白鍵或 Enter。校園地圖可直接前往地點。自由探索保存在這個瀏覽器；加入班級可同步紀錄。共用裝置請完成後登出。",
-            "点击人物、楼梯或课室门，就会自动走近并互动；也可用 WASD 或方向键移动，再按空格键或 Enter。校园地图可直接前往地点。自由探索保存在这个浏览器；加入班级可同步记录。共用设备请完成后退出。",
-            "Click people, stairs or classroom doors to approach and interact automatically. You can also move with WASD or arrow keys and press Space or Enter. The map offers direct travel. Free exploration stays in this browser. Join a class to sync records; sign out after using a shared device.",
+            "點擊人物、樓梯或課室門，就會自動走近並互動；也可用 WASD 或方向鍵移動，按 E 與人物交談，按空白鍵或 Enter 進門。校園地圖可直接前往地點。自由探索保存在這個瀏覽器；加入班級可同步紀錄。共用裝置請完成後登出。",
+            "点击人物、楼梯或课室门，就会自动走近并互动；也可用 WASD 或方向键移动，按 E 与人物交谈，按空格键或 Enter 进门。校园地图可直接前往地点。自由探索保存在这个浏览器；加入班级可同步记录。共用设备请完成后退出。",
+            "Click people, stairs or classroom doors to approach and interact automatically. You can also move with WASD or arrow keys, press E to talk, and Space or Enter to enter rooms. The map offers direct travel. Free exploration stays in this browser. Join a class to sync records; sign out after using a shared device.",
           ),
         ],
         "map",
@@ -890,9 +929,9 @@
                 `You have collected ${total.stars} stars. The gate is open. Thank you for listening to four classmates and examining different questions across the school.`,
               ),
               L(
-                "行動可以結束，負責任的使用習慣仍要繼續。請在報告寫下：你發現的證據、你會改變的做法，以及誰能幫你檢查改善是否有效。",
-                "行动可以结束，负责任的使用习惯仍要继续。请在报告写下：你发现的证据、你会改变的做法，以及谁能帮你检查改进是否有效。",
-                "The school day can end; responsible habits continue. In your report, record evidence you found, a change you will make and someone who can help check whether it works.",
+                "行動可以結束，負責任的使用習慣仍要繼續。請在手帳寫下：你發現的證據、你會改變的做法，以及誰能幫你檢查改善是否有效。",
+                "行动可以结束，负责任的使用习惯仍要继续。请在手帐写下：你发现的证据、你会改变的做法，以及谁能帮你检查改进是否有效。",
+                "The school day can end; responsible habits continue. In your notebook, record evidence you found, a change you will make and someone who can help check whether it works.",
               ),
             ]
           : [
@@ -902,9 +941,9 @@
                 `You have ${total.stars} stars and need ${exitTarget() - total.stars} more to finish at the gate. The five floors, four cases and transfer challenge offer 103 stars in total.`,
               ),
               L(
-                "不用急着一次完成。你可以到地圖尋找未探索的課室，或隨時打開手帳寫反思、下載報告，稍後再回來。",
-                "不用急着一次完成。你可以到地图寻找未探索的课室，或随时打开手帐写反思、下载报告，稍后再回来。",
-                "There is no need to finish in one sitting. Find an unexplored room on the map, or reflect and download a report from the notebook before returning later.",
+                "不用急着一次完成。你可以到地圖尋找未探索的課室，或隨時打開手帳寫反思，稍後再回來。",
+                "不用急着一次完成。你可以到地图寻找未探索的课室，或随时打开手帐写反思，稍后再回来。",
+                "There is no need to finish in one sitting. Find an unexplored room on the map, or reflect in the notebook before returning later.",
               ),
             ],
         total.exitUnlocked ? "ending" : "map",
@@ -990,7 +1029,8 @@
           ? "ending"
           : "conversation";
     $("dialogue").innerHTML =
-      `${backdrop}<div class="portrait ${model.portraitIndex !== undefined ? "p" + model.portraitIndex : "staff-portrait"}" data-portrait="${model.portrait}" role="img" aria-label="${esc(model.name)}"></div><div class="dialogue-box" role="region" aria-label="${esc(L("角色對話", "角色对话", "Character dialogue"))}"><span class="speaker">${esc(model.name)}</span><button class="dialogue-close" data-action="close-dialogue" aria-label="${esc(dialogueId === "prologue" ? L("略過序章", "跳过序章", "Skip introduction") : L("結束對話", "结束对话", "End conversation"))}">${dialogueId === "prologue" ? L("略過", "跳过", "Skip") : "×"}</button><p class="dialogue-text" aria-live="polite">${esc(model.lines[dialogueLine])}</p><div class="dialogue-actions"><span>${esc(model.role)} · ${dialogueLine + 1}/${model.lines.length}</span><button class="voice-replay" data-action="voice-replay" aria-label="${esc(L("重播這句對話", "重播这句对话", "Replay this line"))}" title="${esc(L("重播語音", "重播语音", "Replay voice"))}">♪</button><button id="dialogue-next" data-action="dialogue-next">${isLast ? model.button : L("繼續聆聽", "继续倾听", "Keep listening")} <span aria-hidden="true">▸</span></button></div></div>`;
+      `${backdrop}<div class="portrait ${model.portraitIndex !== undefined ? "p" + model.portraitIndex : "staff-portrait"}" data-portrait="${model.portrait}" role="img" aria-label="${esc(model.name)}"></div><div class="dialogue-box" role="region" aria-label="${esc(L("角色對話", "角色对话", "Character dialogue"))}"><span class="speaker">${esc(model.name)}</span><button class="dialogue-close" data-action="close-dialogue" aria-label="${esc(dialogueId === "prologue" ? L("略過序章", "跳过序章", "Skip introduction") : L("結束對話", "结束对话", "End conversation"))}">${dialogueId === "prologue" ? L("略過", "跳过", "Skip") : "×"}</button><p class="dialogue-text" aria-live="polite">${esc(model.lines[dialogueLine])}</p><div class="dialogue-actions"><span>${esc(model.role)} · ${dialogueLine + 1}/${model.lines.length}</span><button class="voice-replay" data-action="voice-replay" aria-label="${esc(L("重播這句對話", "重播这句对话", "Replay this line"))}" title="${esc(L("重播語音", "重播语音", "Replay voice"))}">♪</button><button id="dialogue-next" data-action="dialogue-next">${isLast ? model.button : L("繼續聆聽", "继续倾听", "Keep listening")} <span aria-hidden="true">▸</span></button></div><p id="dialogue-voice-status" class="small-note" role="status" aria-live="polite" aria-atomic="true" hidden></p></div>`;
+    clearDialogueVoiceStatus();
     applyPortrait($("dialogue").querySelector(".portrait"), dialogueId, dialogueLine > 0);
     if (!audioPanelOpen) audio?.speak({ key:`${dialogueVisit}:${dialogueId}:${dialogueLine}:${state.lang}`, text:model.lines[dialogueLine], locale:state.lang, characterId:dialogueId, gender:window.CAMPUS_CHARACTERS?.resolve(dialogueId)?.gender });
   }
@@ -1002,6 +1042,7 @@
     }
     dialogueId = null;
     $("dialogue").hidden = true;
+    clearDialogueVoiceStatus();
     syncPause();
     $("campus").focus({ preventScroll: true });
   }
@@ -1050,14 +1091,14 @@
       html += `<div class="case-brief">${esc(T(m.scene))}</div><p class="modal-intro">${esc(T(m.task))}</p>${m.evidence.map((e, i) => `<details class="evidence-card ${p.seen.includes(i) ? "seen" : ""}" data-evidence="${i}"><summary>${esc(T(e.label))}</summary><p>${esc(T(e.text))}</p></details>`).join("")}<div class="button-row"><button class="primary" id="evidence-next" data-action="evidence-next" ${p.seen.length < 2 ? "disabled" : ""}>${L("比較方案", "比较方案", "Compare responses")} →</button><span class="small-note" id="evidence-count">${evidenceCount(p)}</span></div><p class="small-note">${L("至少閱讀兩項證據，再提出判斷。", "至少阅读两项证据，再提出判断。", "Read at least two clues before making your decision.")}</p>`;
     }
     if (p.phase === 1) {
-      html += `<p class="case-question">${esc(T(m.task))}</p><p class="modal-intro">${L("選擇你會採取的行動。下一步會呈現這個選擇的影響。", "选择你会采取的行动。下一步会呈现这个选择的影响。", "Choose an action. You will see its impact before improving the plan.")}</p>${m.options.map((o, i) => `<label class="option"><input type="radio" name="decision" value="${i}" ${p.choice === i ? "checked" : ""}><span><strong>${String.fromCharCode(65 + i)}. ${esc(T(o.title))}</strong><p>${esc(T(o.text))}</p></span></label>`).join("")}<div class="button-row"><button id="decision-submit" class="primary" data-action="decision-submit" ${p.choice === null ? "disabled" : ""}>${L("查看行動後果", "查看行动后果", "See the impact")} →</button><button class="secondary" data-action="back-evidence">${L("重看證據", "重看证据", "Review evidence")}</button></div>`;
+      html += `<p class="case-question">${esc(T(m.task))}</p><p class="modal-intro">${L("選擇你會採取的行動。下一步會呈現這個選擇的影響。", "选择你会采取的行动。下一步会呈现这个选择的影响。", "Choose an action. You will see its impact before improving the plan.")}</p>${quizOptions("decision", m.options, p.choice, true)}<div class="button-row"><button id="decision-submit" class="primary" data-action="decision-submit" ${p.choice === null ? "disabled" : ""}>${L("查看行動後果", "查看行动后果", "See the impact")} →</button><button class="secondary" data-action="back-evidence">${L("重看證據", "重看证据", "Review evidence")}</button></div>`;
     }
     if (p.phase === 2) {
       const o = m.options[p.choice];
       html += `<div class="case-brief">${L("你的行動：", "你的行动：", "Your action: ")}<strong>${esc(T(o.title))}</strong></div><div class="feedback ${o.quality < 2 ? "consider" : ""}"><h3>${o.quality === 2 ? L("有根據的起點", "有根据的起点", "An evidence-informed start") : L("還有需要照顧的地方", "还有需要照顾的地方", "There is more to consider")}</h3><p>${esc(T(o.feedback))}</p></div><p class="small-note">${L("這是本案情境的教學回饋。真實決策仍需要更多證據、使用者參與和持續覆核。", "这是本案情境的教学反馈。真实决策仍需要更多证据、用户参与和持续复核。", "This feedback applies to this scenario. Real decisions need more evidence, user participation and ongoing review.")}</p><div class="button-row"><button class="primary" data-action="to-repair">${L("把方案修好", "把方案修好", "Improve the plan")} →</button><button class="secondary" data-action="back-decision">${L("比較另一選擇", "比较另一选择", "Try another response")}</button></div>`;
     }
     if (p.phase === 3) {
-      html += `<p class="case-question">${esc(T(m.repair.question))}</p>${m.repair.options.map((o, i) => `<label class="option"><input type="radio" name="repair" value="${i}" ${p.repairChoice === i ? "checked" : ""}><span><strong>${esc(T(o.text))}</strong></span></label>`).join("")}<div id="repair-feedback" role="status">${repairFeedback ? `<div class="feedback consider">${esc(T(repairFeedback))}</div>` : ""}</div><div class="button-row"><button class="primary" id="repair-submit" data-action="repair-submit" ${p.repairChoice === null ? "disabled" : ""}>${L("測試修正方案", "测试修正方案", "Test your repair")} →</button><button class="secondary" data-action="back-evidence">${L("重看證據", "重看证据", "Review evidence")}</button></div>`;
+      html += `<p class="case-question">${esc(T(m.repair.question))}</p>${quizOptions("repair", m.repair.options, p.repairChoice)}<div id="repair-feedback" role="status">${repairFeedback ? `<div class="feedback consider">${esc(T(repairFeedback))}</div>` : ""}</div><div class="button-row"><button class="primary" id="repair-submit" data-action="repair-submit" ${p.repairChoice === null ? "disabled" : ""}>${L("測試修正方案", "测试修正方案", "Test your repair")} →</button><button class="secondary" data-action="back-evidence">${L("重看證據", "重看证据", "Review evidence")}</button></div>`;
     }
     if (p.phase === 4) {
       const r = m.repair.options.find((o) => o.correct);
@@ -1110,40 +1151,46 @@
       ? L("地下", "地下", "Ground floor")
       : L(`${floor} 樓`, `${floor} 楼`, `${floor}F`);
   }
+  // Explicit crops preserve the generated floor art without assuming equal gutters.
+  const MAP_FLOOR_ART = [
+    { y: 0, h: 300 }, { y: 302, h: 286 }, { y: 590, h: 293 },
+    { y: 886, h: 294 }, { y: 1184, h: 333 },
+  ];
+  function mapDestinationNote(id) {
+    const room = subjects.find((r) => r.location === id);
+    const mission = missions.find((m) => m.location === id);
+    if (room) return L(`${roomStars(room)}／${roomMax(room)} 星`, `${roomStars(room)}／${roomMax(room)} 星`, `${roomStars(room)} / ${roomMax(room)} stars`);
+    if (mission) return `${T(mission.name)} · ${pstate(mission.id).completed ? L("已結案", "已结案", "Case complete") : L("AI 倫理案件", "AI 伦理案件", "AI ethics case")}`;
+    return L("導師與學習手帳", "导师与学习手帐", "Mentor and learning journal");
+  }
+  function mapFloorLabel(floor) {
+    return L(`第 ${floor + 1} 層 · ${floor === 0 ? "地下" : floor + "F"}`, `第 ${floor + 1} 层 · ${floor === 0 ? "地下" : floor + "F"}`, `Floor ${floor + 1} · ${floor === 0 ? "G" : floor + "F"}`);
+  }
   function renderMap() {
-    heading(
-      L("校園導覽", "校园导览", "CAMPUS DIRECTORY"),
-      L("五層校園，自由探索", "五层校园，自由探索", "Five floors to explore"),
-    );
-    $("modal-content").innerHTML =
-      `<p class="modal-intro">${L("每層走廊都可步行、使用樓梯，並進入課室。選擇地點亦可直接前往；這個選單提供相同內容的鍵盤入口。", "每层走廊都可步行、使用楼梯，并进入课室。选择地点也可直接前往；这个菜单提供相同内容的键盘入口。", "Walk each corridor, use the stairs and enter rooms. You can also select a destination here for direct keyboard access to the same content.")}</p>${[
-        0, 1, 2, 3, 4,
-      ]
-        .map(
-          (floor) =>
-            `<section class="floor-section"><h3>${floorLabel(floor)}</h3><div class="map-grid">${Object.entries(
-              window.CAMPUS_LOCATIONS,
-            )
-              .filter(([, meta]) => meta.floor === floor)
-              .map(([id, meta]) => {
-                const room = subjects.find((r) => r.location === id);
-                const mission = missions.find((m) => m.location === id);
-                const note = room
-                  ? `${T(room.subject)} · ★ ${roomStars(room)} / ${roomMax(room)}`
-                  : mission
-                    ? `${T(mission.title)} ${pstate(mission.id).completed ? "✓" : ""}`
-                    : L(
-                        "導師與學習報告",
-                        "导师与学习报告",
-                        "Adviser and learning journal",
-                      );
-                return `<button class="map-room ${location === id ? "current" : ""}" data-travel="${id}" ${location === id ? 'aria-current="location"' : ""}><span class="eyebrow">${meta.kind === "room" ? L("學科空間", "学科空间", "SUBJECT SPACE") : L("可步行走廊", "可步行走廊", "WALKABLE CORRIDOR")}</span><strong>${esc(T(meta.label))}</strong><span>${esc(note)}</span></button>`;
-              })
-              .join("")}</div></section>`,
-        )
-        .join(
-          "",
-        )}<p class="small-note">${L("地下校務處提供導覽，二樓副校長提醒調查方法。取得 100 星後，回地下走廊左端校門完成校園旅程。", "地下校务处提供导览，二楼副校长提醒调查方法。取得 100 星后，回地下走廊左端校门完成校园旅程。", "The ground-floor office offers directions; the vice-principal on 2F offers investigation advice. With 100 stars, return to the gate at the left of the ground-floor corridor.")}</p>`;
+    const entries = Object.entries(window.CAMPUS_LOCATIONS);
+    const floors = [...new Set(entries.map(([, meta]) => meta.floor))].sort((a, b) => b - a);
+    if (!floors.includes(mapFloor)) mapFloor = window.CAMPUS_LOCATIONS[location]?.floor ?? floors[0];
+    const rooms = entries.filter(([, meta]) => meta.floor === mapFloor && meta.kind === "room");
+    const corridor = entries.find(([, meta]) => meta.floor === mapFloor && meta.kind === "corridor");
+    const crop = MAP_FLOOR_ART[mapFloor];
+    const currentLabel = T(window.CAMPUS_LOCATIONS[location]?.label || { zh: "校園", cn: "校园", en: "Campus" });
+    const destination = (id, meta, index) => {
+      const isCurrent = location === id;
+      const roomPosition = rooms.length === 2 ? [26.5, 73.5][index] : [19, 50, 81][index];
+      return `<button class="floorplan-destination ${meta.kind} ${isCurrent ? "current" : ""}" data-travel="${id}" style="--room-x:${roomPosition ?? 50}%" ${isCurrent ? 'aria-current="location"' : ""} aria-label="${esc(`${T(meta.label)} · ${mapDestinationNote(id)}${isCurrent ? " · " + L("你在這裏", "你在这里", "You are here") : ""}`)}"><strong>${esc(meta.kind === "corridor" ? L("走廊", "走廊", "Corridor") : T(meta.label))}</strong><small>${isCurrent ? L("你在這裏", "你在这里", "You are here") : esc(mapDestinationNote(id))}</small></button>`;
+    };
+    heading(L("明澄書院 · 五層校園", "明澄书院 · 五层校园", "MING CHING COLLEGE · FIVE FLOORS"), L("校園地圖", "校园地图", "Campus map"));
+    $("modal-content").innerHTML = `<div class="campus-map"><div class="map-toolbar"><p class="map-location"><span>${L("目前位置", "当前位置", "Your location")}</span><strong>${esc(currentLabel)}</strong></p></div><div class="map-layout"><div class="map-floors" role="group" aria-label="${esc(L("選擇樓層", "选择楼层", "Choose a floor"))}">${floors.map(floor => `<button data-map-floor="${floor}" aria-pressed="${floor === mapFloor}" aria-controls="floorplan-panel" aria-label="${esc(mapFloorLabel(floor))}"><span>${L(`第 ${floor + 1} 層`, `第 ${floor + 1} 层`, `Floor ${floor + 1}`)}</span><strong>${floor === 0 ? L("地下", "地下", "G") : floor + "F"}</strong></button>`).join("")}</div><section id="floorplan-panel" class="floorplan-panel" aria-label="${esc(floorLabel(mapFloor))}"><div class="floorplan-scroll" tabindex="0" aria-label="${esc(L("校園平面圖；窄螢幕可左右捲動", "校园平面图；窄屏幕可左右滚动", "Campus floor plan; scroll horizontally on a narrow screen"))}"><div class="floorplan-stage" style="--floor-ratio:1024 / ${crop.h};--floor-size:${1536 / crop.h * 100}%;--floor-y:${crop.y / (1536 - crop.h) * 100}%"><div class="floorplan-art" aria-hidden="true"></div>${rooms.map(([id, meta], index) => destination(id, meta, index)).join("")}${corridor ? destination(corridor[0], corridor[1], -1) : ""}</div></div><p class="map-caption"><span class="map-pan-hint">${L("左右滑動平面圖，查看所有房間。", "左右滑动平面图，查看所有房间。", "Swipe the floor plan sideways to see every room.")}</span>${L("點選房間或走廊即可前往；樓層由上至下排列，可用上下方向鍵切換。", "点击房间或走廊即可前往；楼层由上至下排列，可用上下方向键切换。", "Select a room or corridor to travel. Floors run from top to bottom; use Up and Down on the floor buttons.")}</p></section></div><div class="map-footer"><p>${mapFloor === 0 ? L("校務處在地下走廊。取得 100 星後，可到走廊左端校門完成旅程。", "校务处在地下走廊。取得 100 星后，可到走廊左端校门完成旅程。", "Find the school office in the ground-floor corridor. With 100 stars, finish at the gate on its left.") : mapFloor === 2 ? L("副校長在二樓走廊，可一起討論 AI 的公平與責任。", "副校长在二楼走廊，可以一起讨论 AI 的公平与责任。", "Meet the vice principal in the 2F corridor to discuss fairness and responsibility in AI.") : mapFloor === 4 ? L("四樓導師會陪你整理發現，並把所學帶到新的情境。", "四楼导师会陪你整理发现，并把所学带到新的情境。", "The mentor on 4F can help you reflect and apply your learning to a new situation.") : L("課室有學科挑戰，走廊有同學等待與你分享 AI 的難題。", "教室有学科挑战，走廊有同学等待与你分享 AI 的难题。", "Explore subject challenges in the rooms and meet a classmate with an AI dilemma in the corridor.")}</p><button class="secondary" data-action="close">${L("返回校園", "返回校园", "Return to campus")}</button></div></div>`;
+  }
+  function chooseMapFloor(value, focus = false) {
+    const floor = Number(value);
+    if (!Number.isInteger(floor) || !Object.values(window.CAMPUS_LOCATIONS).some(meta => meta.floor === floor)) return;
+    mapFloor = floor;
+    renderMap();
+    if (focus) $("modal-content").querySelector(`[data-map-floor="${floor}"]`)?.focus({ preventScroll: true });
+  }
+  function quizOptions(name, options, choice, withTitle = false) {
+    return options.map((option, index) => `<label class="option quiz-option"><input type="radio" name="${name}" value="${index}" ${choice === index ? "checked" : ""}><span class="quiz-option-letter" aria-hidden="true">${String.fromCharCode(65 + index)}</span><span class="quiz-option-copy">${withTitle ? `<strong>${esc(T(option.title))}</strong><span>${esc(T(option.text))}</span>` : esc(T(option.text))}</span></label>`).join("");
   }
   function renderSubjectDirectory() {
     heading(
@@ -1156,7 +1203,7 @@
     );
     const total = progress();
     $("modal-content").innerHTML =
-      `<p class="modal-intro">${L(`已完成 ${total.checks}／${questionCount()} 題，取得 ${total.subjectStars}／${subjectMax()} 顆學科星。每題只獎勵一次，沒有時間限制。基礎、應用和挑戰是題目層次，並非學生能力標籤。`, `已完成 ${total.checks}／${questionCount()} 题，取得 ${total.subjectStars}／${subjectMax()} 颗学科星。每题只奖励一次，没有时间限制。基础、应用和挑战是题目层次，并非学生能力标签。`, `${total.checks}/${questionCount()} questions completed, with ${total.subjectStars}/${subjectMax()} subject stars. Each question awards stars once, with no time limit. Foundation, application and challenge describe tasks, not a learner’s ability.`)}</p><div class="subject-directory">${subjects.map((room) => `<button class="map-room" data-subject="${room.id}"><span class="eyebrow">${floorLabel(room.floor)} · ★ ${roomStars(room)} / ${roomMax(room)}</span><strong>${esc(T(room.subject))}</strong><span>${esc(T(room.title))} · ${esc(T(room.npcName))}</span><span>${room.levels.map((level) => (subjectState(room.id, level.id)?.completed ? "●" : "○")).join(" ")}</span></button>`).join("")}</div><p class="small-note">${L("短課節可由老師選定路線，完成部分探索後寫反思及下載報告；不必為離校門檻而趕答。", "短课节可由老师选定路线，完成部分探索后写反思及下载报告；不必为离校门槛而赶答。", "For a short lesson, follow a teacher-selected route, then reflect and download a report. There is no need to rush to the exit threshold.")}</p>`;
+      `<p class="modal-intro">${L(`已完成 ${total.checks}／${questionCount()} 題，取得 ${total.subjectStars}／${subjectMax()} 顆學科星。每題只獎勵一次，沒有時間限制。基礎、應用和挑戰是題目層次，並非學生能力標籤。`, `已完成 ${total.checks}／${questionCount()} 题，取得 ${total.subjectStars}／${subjectMax()} 颗学科星。每题只奖励一次，没有时间限制。基础、应用和挑战是题目层次，并非学生能力标签。`, `${total.checks}/${questionCount()} questions completed, with ${total.subjectStars}/${subjectMax()} subject stars. Each question awards stars once, with no time limit. Foundation, application and challenge describe tasks, not a learner’s ability.`)}</p><div class="subject-directory">${subjects.map((room) => `<article class="map-room" data-subject-progress="${room.id}"><span class="eyebrow">${floorLabel(room.floor)} · ★ ${roomStars(room)} / ${roomMax(room)}</span><strong>${esc(T(room.subject))}</strong><span>${esc(T(room.title))}</span><span>${room.levels.map((level) => (subjectState(room.id, level.id)?.completed ? "●" : "○")).join(" ")}</span></article>`).join("")}</div><p class="small-note">${L("這裡只顯示學科進度。請前往課室與老師互動，才可開始答題。短課節可由老師選定路線，不必為離校門檻而趕答。", "这里只显示学科进度。请前往教室与老师互动，才可开始答题。短课节可由老师选定路线，不必为离校门槛而赶答。", "This is a progress record. Visit a room and interact with its teacher to begin. For a short lesson, follow a teacher-selected route without rushing to the exit threshold.")}</p>`;
   }
   function renderSubject() {
     const room = subjects.find((r) => r.id === activeSubject);
@@ -1172,7 +1219,7 @@
       T(room.subject),
     );
     $("modal-content").innerHTML =
-      `<p class="modal-intro">${esc(T(room.description))}</p><div class="subject-tabs" aria-label="${esc(L("選擇題目層次", "选择题目层次", "Choose question level"))}">${room.levels.map((item) => `<button class="subject-tab choice-chip" data-level="${item.id}" aria-pressed="${item.id === level.id}"><span>${esc(T(item.title).split(/[：:]/)[0])}</span><small>★ ${item.stars} ${subjectState(room.id, item.id)?.completed ? "✓" : ""}</small></button>`).join("")}</div><div class="subject-question"><span class="eyebrow">${esc(T(room.npcName))} · ${esc(T(room.npcRole))}</span><h3>${esc(T(level.title))}</h3><p class="case-question">${esc(T(level.question))}</p><fieldset class="subject-options"><legend class="sr-only">${esc(T(level.question))}</legend>${level.options.map((option, i) => `<label class="option"><input type="radio" name="subject-answer" value="${i}" ${p.choice === i ? "checked" : ""}><span>${esc(T(option.text))}</span></label>`).join("")}</fieldset><div class="subject-feedback" id="subject-feedback" role="status">${feedback ? `<div class="feedback ${feedback.correct ? "" : "consider"}">${esc(T(feedback.feedback))}${feedback.correct && T(level.takeaway) !== T(feedback.feedback) ? `<p>${esc(T(level.takeaway))}</p>` : ""}</div>` : ""}</div><div class="button-row"><button class="primary" id="subject-submit" data-action="subject-submit" ${p.choice === null ? "disabled" : ""}>${L("檢查我的答案", "检查我的答案", "Check my answer")}</button><button class="secondary" data-action="subject-retry">${L("重新思考", "重新思考", "Try again")}</button><button class="secondary" data-action="subjects">${L("全部學科", "全部学科", "All subjects")}</button></div><p class="small-note subject-earned">${p.completed ? L(`✓ 本題的 ${level.stars} 顆星已取得。可重做練習，不會重複加星。`, `✓ 本题的 ${level.stars} 颗星已取得。可重做练习，不会重复加星。`, `✓ This question’s ${level.stars} stars are earned. Replay for practice; stars are awarded once.`) : L(`首次答對可獲 ${level.stars} 顆星。先讀解釋，再嘗試修正想法。`, `首次答对可获 ${level.stars} 颗星。先读解释，再尝试修正想法。`, `Earn ${level.stars} stars on your first correct response. Read the explanation and revise your thinking.`)}</p></div>`;
+      `<div class="subject-tabs" aria-label="${esc(L("選擇題目層次", "选择题目层次", "Choose question level"))}">${room.levels.map((item) => `<button class="subject-tab choice-chip" data-level="${item.id}" aria-pressed="${item.id === level.id}"><span>${esc(T(item.title).split(/[：:]/)[0])}</span><small>★ ${item.stars} ${subjectState(room.id, item.id)?.completed ? "✓" : ""}</small></button>`).join("")}</div><div class="subject-question"><div class="quiz-question-meta"><span class="eyebrow">${esc(T(room.npcName))}</span><h3>${esc(T(level.title))}</h3></div><p class="case-question">${esc(T(level.question))}</p><fieldset class="subject-options"><legend class="sr-only">${esc(T(level.question))}</legend>${quizOptions("subject-answer", level.options, p.choice)}</fieldset><div class="subject-feedback" id="subject-feedback" role="status">${feedback ? `<div class="feedback ${feedback.correct ? "" : "consider"}">${esc(T(feedback.feedback))}${feedback.correct && T(level.takeaway) !== T(feedback.feedback) ? `<p>${esc(T(level.takeaway))}</p>` : ""}</div>` : ""}</div><div class="button-row"><button class="primary" id="subject-submit" data-action="subject-submit" ${p.choice === null ? "disabled" : ""}>${L("檢查我的答案", "检查我的答案", "Check my answer")}</button><button class="secondary" data-action="subject-retry">${L("重新思考", "重新思考", "Try again")}</button><button class="secondary" data-action="subjects">${L("全部學科", "全部学科", "All subjects")}</button></div><p class="small-note subject-earned">${p.completed ? L(`✓ 本題的 ${level.stars} 顆星已取得。可重做練習，不會重複加星。`, `✓ 本题的 ${level.stars} 颗星已取得。可重做练习，不会重复加星。`, `✓ This question’s ${level.stars} stars are earned. Replay for practice; stars are awarded once.`) : L(`首次答對可獲 ${level.stars} 顆星。先讀解釋，再嘗試修正想法。`, `首次答对可获 ${level.stars} 颗星。先读解释，再尝试修正想法。`, `Earn ${level.stars} stars on your first correct response. Read the explanation and revise your thinking.`)}</p></div>`;
   }
   function renderEnding() {
     const total = progress();
@@ -1190,7 +1237,7 @@
       ),
     );
     $("modal-content").innerHTML =
-      `<div class="ending-card"><span class="ending-stars">★ ${total.stars} / ${maxStars()}</span><h3>${L("調查完成，學習繼續。", "调查完成，学习继续。", "Mission complete. Learning continues.")}</h3><p>${L("你聆聽同學、檢查證據，並為不公平或不合適的 AI 做法提出修正。現在，把一項具體發現寫進你的下一步行動。", "你倾听同学、检查证据，并为不公平或不合适的 AI 做法提出修正。现在，把一项具体发现写进你的下一步行动。", "You listened to classmates, examined evidence and repaired unfair or unsuitable AI practices. Now connect one specific discovery to your next action.")}</p><p>${L("這是遊戲探索紀錄，並非能力或品格認證。你仍可回校重溫任何活動。", "这是游戏探索记录，并非能力或品格认证。你仍可回校重温任何活动。", "This records game exploration, not a qualification or judgement of character. You can revisit any activity.")}</p><div class="button-row"><button class="primary" data-action="journal">${L("寫下反思與下載報告", "写下反思与下载报告", "Reflect and download report")}</button><button class="secondary" data-action="close">${L("返回校園探索", "返回校园探索", "Return to campus")}</button></div></div>`;
+      `<div class="ending-card"><span class="ending-stars">★ ${total.stars} / ${maxStars()}</span><h3>${L("調查完成，學習繼續。", "调查完成，学习继续。", "Mission complete. Learning continues.")}</h3><p>${L("你聆聽同學、檢查證據，並為不公平或不合適的 AI 做法提出修正。現在，把一項具體發現寫進你的下一步行動。", "你倾听同学、检查证据，并为不公平或不合适的 AI 做法提出修正。现在，把一项具体发现写进你的下一步行动。", "You listened to classmates, examined evidence and repaired unfair or unsuitable AI practices. Now connect one specific discovery to your next action.")}</p><p>${L("這是遊戲探索紀錄，並非能力或品格認證。你仍可回校重溫任何活動。", "这是游戏探索记录，并非能力或品格认证。你仍可回校重温任何活动。", "This records game exploration, not a qualification or judgement of character. You can revisit any activity.")}</p><div class="button-row"><button class="primary" data-action="journal">${L("寫下反思", "写下反思", "Reflect")}</button><button class="secondary" data-action="close">${L("返回校園探索", "返回校园探索", "Return to campus")}</button></div></div>`;
   }
   function renderJournal() {
     heading(
@@ -1211,7 +1258,7 @@
         )
         .join(
           "",
-        )}<div class="teacher-section"><h3>${L("遷移挑戰：新的投訴", "迁移挑战：新的投诉", "Transfer challenge: a new complaint")}</h3>${all ? `<p>${esc(T(window.TRANSFER_CONTENT.scene))}</p><p class="case-question">${esc(T(window.TRANSFER_CONTENT.question))}</p>${window.TRANSFER_CONTENT.options.map((o, i) => `<label class="option"><input name="transfer" type="radio" value="${i}" ${state.transferChoice === i ? "checked" : ""}><span>${esc(T(o.text))}</span></label>`).join("")}<div id="transfer-feedback" role="status">${state.transferFeedbackChoice !== null ? `<div class="feedback ${window.TRANSFER_CONTENT.options[state.transferFeedbackChoice].correct ? "" : "consider"}">${esc(T(window.TRANSFER_CONTENT.options[state.transferFeedbackChoice].feedback))}</div>` : ""}</div><button class="secondary" data-action="check-transfer">${L("檢視我的判斷", "检查我的判断", "Check my reasoning")}</button>` : `<p>${L("完成四宗案件後，這裏會出現一個新情境，讓你應用所學。", "完成四宗案件后，这里会出现一个新情境，让你应用所学。", "Complete all four cases to unlock a new situation and apply what you learned.")}</p>`}</div><label class="field-label" for="reflection">${L("我的下一步行動", "我的下一步行动", "My next action")}</label><p class="small-note" style="margin:0 0 10px">${L("「下次使用 AI 時，我會＿＿，因為本案的＿＿證據顯示＿＿。我會邀請＿＿檢查效果。」請勿填寫姓名或私人資料。", "“下次使用 AI 时，我会＿＿，因为本案的＿＿证据显示＿＿。我会邀请＿＿检查效果。”请勿填写姓名或私人信息。", "“Next time I use AI, I will ___ because evidence from ___ shows ___. I will invite ___ to review the result.” Do not include names or private information.")}</p><textarea id="reflection" maxlength="1200" placeholder="${esc(L("寫下你能做到的一個具體行動……", "写下你能做到的一个具体行动……", "Write one specific action you can take…"))}">${esc(state.reflection)}</textarea><div class="button-row"><button class="primary" data-action="download">${L("下載我的學習報告", "下载我的学习报告", "Download my report")} ↓</button><button class="secondary" data-action="close">${L("繼續探索", "继续探索", "Keep exploring")}</button></div><p class="small-note">${L("自由探索的反思保存在本機；班級模式會同步到班級資料庫，供你跨裝置繼續。內容不會送往 AI 工具。下載的文字檔可由你自行分享。", "自由探索的反思保存在本机；班级模式会同步到班级数据库，供你跨设备继续。内容不会发送到 AI 工具。下载的文本文件可由你自行分享。", "Free-exploration reflections stay locally. Class mode syncs them to the class database so you can resume on another device. They are not sent to AI tools. You choose whether to share the downloaded text file.")}</p>`;
+        )}<div class="teacher-section"><h3>${L("遷移挑戰：新的投訴", "迁移挑战：新的投诉", "Transfer challenge: a new complaint")}</h3>${all ? `<p>${esc(T(window.TRANSFER_CONTENT.scene))}</p><p class="case-question">${esc(T(window.TRANSFER_CONTENT.question))}</p>${quizOptions("transfer", window.TRANSFER_CONTENT.options, state.transferChoice)}<div id="transfer-feedback" role="status">${state.transferFeedbackChoice !== null ? `<div class="feedback ${window.TRANSFER_CONTENT.options[state.transferFeedbackChoice].correct ? "" : "consider"}">${esc(T(window.TRANSFER_CONTENT.options[state.transferFeedbackChoice].feedback))}</div>` : ""}</div><button class="secondary" data-action="check-transfer">${L("檢視我的判斷", "检查我的判断", "Check my reasoning")}</button>` : `<p>${L("完成四宗案件後，這裏會出現一個新情境，讓你應用所學。", "完成四宗案件后，这里会出现一个新情境，让你应用所学。", "Complete all four cases to unlock a new situation and apply what you learned.")}</p>`}</div><label class="field-label" for="reflection">${L("我的下一步行動", "我的下一步行动", "My next action")}</label><p class="small-note" style="margin:0 0 10px">${L("「下次使用 AI 時，我會＿＿，因為本案的＿＿證據顯示＿＿。我會邀請＿＿檢查效果。」請勿填寫姓名或私人資料。", "“下次使用 AI 时，我会＿＿，因为本案的＿＿证据显示＿＿。我会邀请＿＿检查效果。”请勿填写姓名或私人信息。", "“Next time I use AI, I will ___ because evidence from ___ shows ___. I will invite ___ to review the result.” Do not include names or private information.")}</p><textarea id="reflection" maxlength="1200" placeholder="${esc(L("寫下你能做到的一個具體行動……", "写下你能做到的一个具体行动……", "Write one specific action you can take…"))}">${esc(state.reflection)}</textarea><div class="button-row"><button class="secondary" data-action="close">${L("繼續探索", "继续探索", "Keep exploring")}</button></div><p class="small-note">${L("自由探索的反思保存在本機；班級模式會同步到班級資料庫，供你跨裝置繼續。內容不會送往 AI 工具。", "自由探索的反思保存在本机；班级模式会同步到班级数据库，供你跨设备继续。内容不会发送到 AI 工具。", "Free-exploration reflections stay locally. Class mode syncs them to the class database so you can resume on another device. They are not sent to AI tools.")}</p>`;
     const total = progress();
     $("modal-content").insertAdjacentHTML(
       "afterbegin",
@@ -1229,10 +1276,10 @@
       L("讓調查成為學習", "让调查成为学习", "Turn investigation into learning"),
     );
     $("modal-content").innerHTML =
-      `<p class="modal-intro">${L("適用中學生；建議二人一組，共用一部裝置。核心循環：聆聽 → 查證 → 判斷 → 修正 → 反思。", "适用中学生；建议二人一组，共用一台设备。核心循环：倾听 → 查证 → 判断 → 修正 → 反思。", "For secondary students; pairs can share one device. The learning loop: listen → investigate → decide → repair → reflect.")}</p><section class="teacher-section"><h3>${L("可觀察的學習目標", "可观察的学习目标", "Observable learning goals")}</h3><ol><li>${L("找出 AI 語言學習工具的公平、私隱、文化或參與問題。", "找出 AI 语言学习工具的公平、隐私、文化或参与问题。", "Identify a fairness, privacy, cultural or access issue in an AI language tool.")}</li><li>${L("引用至少兩項證據，比較不同做法對人的影響。", "引用至少两项证据，比较不同做法对人的影响。", "Use at least two clues to compare the effects of different actions on people.")}</li><li>${L("提出具體修正和人工覆核方法，並應用於新情境。", "提出具体修正和人工复核方法，并应用于新情境。", "Propose a specific repair and human review process, then apply it to a new scenario.")}</li></ol></section><section class="teacher-section"><h3>${L("25 分鐘課堂流程", "25 分钟课堂流程", "A 25-minute lesson")}</h3><ul><li><b>0–3 min</b> · ${L("提問：「AI 給出的分數是否足以代表能力？」先記下理由。", "提问：“AI 给出的分数是否足以代表能力？”先记下理由。", "Ask: “Is an AI score enough to judge ability?” Record an initial reason.")}</li><li><b>3–18 min</b> · ${L("二人合作調查四案；輪流操作和解釋證據。可按班情延長。", "两人合作调查四案；轮流操作和解释证据。可按班级情况延长。", "Investigate four cases in pairs; alternate navigator and evidence reader. Extend as needed.")}</li><li><b>18–22 min</b> · ${L("完成遷移挑戰與具體行動反思。", "完成迁移挑战与具体行动反思。", "Complete the transfer challenge and an actionable reflection.")}</li><li><b>22–25 min</b> · ${L("重新回答起始問題，引用一項證據和一個仍未解決的疑問。", "重新回答起始问题，引用一项证据和一个仍未解决的疑问。", "Revisit the opening question with evidence and one unresolved question.")}</li></ul></section><section class="teacher-section"><h3>${L("形成性評量，不用道德排名", "形成性评价，不用道德排名", "Assess reasoning, not moral ranking")}</h3><p>${L("按「證據、受影響的人、修正方案、遷移」四向度，各評 0–2：0＝未提及；1＝提及但欠具體；2＝具體、有證據並能說明理由。這是教師觀察規準，不是網站自動評分。通關不等於已證明學習成效。", "按“证据、受影响的人、修正方案、迁移”四维度，各评 0–2：0＝未提及；1＝提及但不具体；2＝具体、有证据并能说明理由。这是教师观察标准，不是网站自动评分。通关不等于已证明学习成效。", "Use four dimensions: evidence, affected people, repair and transfer. For each: 0 = absent; 1 = mentioned but vague; 2 = specific, supported and explained. This is a teacher observation rubric, not an automatic site score. Completion does not establish learning effectiveness.")}</p></section><section class="teacher-section"><h3>${L("MEDD8934：10 分鐘示範安排", "MEDD8934：10 分钟演示安排", "MEDD8934: a 10-minute demonstration")}</h3><p>${L("0–1 分鐘：教學問題；1–4 分鐘：觀眾一起調查一案；4–7 分鐘：在真實 AI 工具中執行以下提示，比較原文與實際輸出；7–9 分鐘：檢查文化聲音、虛構內容和工具限制；9–10 分鐘：修正及反思。另留 2 分鐘問答。", "0–1 分钟：教学问题；1–4 分钟：观众一起调查一案；4–7 分钟：在真实 AI 工具中执行以下提示，比较原文与实际输出；7–9 分钟：检查文化声音、虚构内容和工具限制；9–10 分钟：修正及反思。另留 2 分钟问答。", "0–1 min: learning problem; 1–4: investigate a case with the audience; 4–7: run the prompt below in a real AI tool and compare input/output; 7–9: examine cultural voice, invented details and limits; 9–10: repair and reflect. Allow a separate 2-minute Q&A.")}</p><div class="feedback consider">${L("遊戲內的回應全部是預先編寫的教學模擬。遊戲本身沒有連接生成式 AI，不能代替課程要求的真實工具現場示範。", "游戏内的回应全部是预先编写的教学模拟。游戏本身没有连接生成式 AI，不能代替课程要求的真实工具现场演示。", "All in-game responses are authored simulations. The game does not connect to generative AI and does not replace the course requirement for live, real-tool use.")}</div><span class="demo-label">${L("虛構語言學習文本", "虚构语言学习文本", "Fictional learner paragraph")}</span><div class="demo-text">${esc(sample)}</div><span class="demo-label">${L("教學模擬：值得追問的改寫", "教学模拟：值得追问的改写", "Authored simulation: a revision to question")}</span><div class="demo-text">“At our school’s language festival, I helped run a tea party. My grandma taught me to say, ‘How are you?’ to guests.”<br><br>${L("它改變了「yum cha」與問候語的文化意義，也刪去了作者的寫作目的。", "它改变了“yum cha”与问候语的文化意义，也删去了作者的写作目的。", "It changes the cultural meaning of yum cha and the greeting, and removes the writer’s purpose.")}</div><span class="demo-label">${L("教學模擬：作者覆核後的可能版本", "教学模拟：作者复核后的可能版本", "Authored simulation: a possible reviewed revision")}</span><div class="demo-text">“At our school’s language festival, I helped run a yum cha stall. My grandma taught me to greet guests by asking, ‘Have you eaten yet?’ I want to explain to visitors why this greeting is meaningful to us.”</div><button class="secondary" data-action="copy-prompt">${L("複製真實工具示範提示", "复制真实工具演示提示", "Copy the live-demo prompt")}</button><details class="evidence-card" style="margin-top:12px"><summary>${L("查看完整提示", "查看完整提示", "Read the full prompt")}</summary><p>${esc(prompt)}</p></details><p class="small-note">${L("由教師按學校規定選擇工具及帳戶，將提示貼上並實際執行。記錄工具及日期；輸出可能不同。若沒有觀察到失效，應如實記錄。", "由教师按学校规定选择工具及账户，将提示粘贴并实际执行。记录工具及日期；输出可能不同。若没有观察到失效，应如实记录。", "The teacher selects an appropriate tool/account under school policy, pastes the prompt and runs it. Record the tool and date; output varies. Report honestly if no failure is observed.")}</p><label class="field-label" for="live-output" style="margin-top:16px">${L("貼上實際輸出作比較（選填）", "粘贴实际输出作比较（选填）", "Paste the actual output to compare (optional)")}</label><textarea id="live-output" maxlength="6000" placeholder="${esc(L("這裏不會呼叫 AI，也不會儲存或傳送輸出。", "这里不会调用 AI，也不会保存或发送输出。", "No AI is called here. This text is not saved or transmitted."))}">${esc(liveDraft)}</textarea></section><section class="teacher-section"><h3>${L("可及性、資料與限制", "可访问性、数据与限制", "Access, data and limitations")}</h3><p>${L("三語內容、可放大文字、全視窗校園、WASD／方向鍵移動、空白鍵／Enter 互動、點擊人物或門口自動走近，以及案件快捷入口；不設倒數或聲音必答。自由探索儲存在本機；班級模式會把姓名、學號和作答紀錄儲存在教師的班級資料庫。本網站不會把反思送給 AI；託管服務仍可能處理一般連線紀錄。共享裝置可在設定中清除進度。", "三语内容、可放大文字、全窗口校园、WASD／方向键移动、空格键／Enter 互动、点击人物或门口自动走近，以及案件快捷入口；不设倒计时或声音必答。自由探索保存在本机；班级模式会把姓名、学号和作答记录保存在教师的班级数据库。本网站不会把反思发送给 AI；托管服务仍可能处理一般连接记录。共享设备可在设置中清除进度。", "Three languages, larger text, a viewport-filling campus, WASD/arrow movement, Space/Enter interaction, click-to-approach people or doors, direct case access, no countdown and no audio-only tasks. Free exploration saves locally. Class mode stores name, student number and responses in the teacher’s class database. Reflections are not sent to AI; hosting may process standard connection logs. Clear progress in Settings on shared devices.")}</p><p style="margin-top:10px">${L("本版本尚未進行學生試行或完整無障礙稽核。人物、學校、投訴與數據皆為虛構。角色立繪使用 AI 協助生成；文字與程式使用 AI 協助製作，提交者需覆核並按課程要求作聲明。", "本版本尚未进行学生试用或完整无障碍审核。人物、学校、投诉与数据皆为虚构。角色立绘使用 AI 协助生成；文字与程序使用 AI 协助制作，提交者需复核并按课程要求作声明。", "This version has not undergone a student pilot or full accessibility audit. Characters, school, complaints and data are fictional. Portraits, content and code were created with AI assistance; presenters should review and disclose this under course requirements.")}</p></section><section class="teacher-section"><h3>${L("校服款式與官方來源", "校服款式与官方来源", "Uniform references")}</h3><p>${L("校服依公開資料重新繪製並作像素簡化；未使用校徽、校章或學校照片。本遊戲並非任何學校的官方作品。", "校服依公开资料重新绘制并作像素简化；未使用校徽、校章或学校照片。本游戏并非任何学校的官方作品。", "Outfits are original pixel interpretations of public uniform information. No crests, badges or school photos are used. This is not an official game of any school.")}</p><ul><li><a href="https://www.qc.edu.hk/en/site/view?name=School+Regulations" target="_blank" rel="noopener">${L("皇仁書院：夏季白恤衫、白長褲、黑皮帶", "皇仁书院：夏季白衬衫、白长裤、黑皮带", "Queen’s College: summer white shirt/trousers, black belt")}</a></li><li><a href="https://www.hkcwcc.edu.hk/en/school-uniform" target="_blank" rel="noopener">${L("香港中國婦女會中學：男生冬季白色長袖恤衫、灰色直腳長褲", "香港中国妇女会中学：男生冬季白色长袖衬衫、灰色直筒长裤", "HKCWCC: boys’ winter white long-sleeved shirt and grey straight-cut long trousers")}</a></li><li><a href="https://www.hkcwcc.edu.hk/en/school-uniform" target="_blank" rel="noopener">${L("香港中國婦女會中學：女生夏季白色恤衫連身裙、紅腰帶", "香港中国妇女会中学：女生夏季白色衬衫连衣裙、红腰带", "HKCWCC: girls’ summer white shirt dress, red belt")}</a></li><li><a href="https://www.sja.edu.hk/download/Resource/fileDoc/%E5%AD%B8%E6%A0%A1%E8%A8%93%E8%BC%94%E5%B0%8E%E6%94%BF%E7%AD%96%E5%8F%8A%E7%A8%8B%E5%BA%8F2025Updated_24_9_2025.pdf" target="_blank" rel="noopener">${L("聖貞德中學：初中夏季淺藍條紋裙、領呔、白襪、深褐色皮鞋（第 36–37、39 頁）", "圣贞德中学：初中夏季浅蓝条纹裙、领带、白袜、深褐色皮鞋（第 36–37、39 页）", "St. Joan of Arc: junior summer light-blue striped dress, tie, white socks, dark-brown shoes (pp. 36–37, 39)")}</a></li></ul></section><section class="teacher-section"><h3>${L("設計參考", "设计参考", "Design references")}</h3><ul><li><a href="https://www.unesco.org/en/articles/ai-competency-framework-students" target="_blank" rel="noopener">UNESCO (2024) · AI competency framework for students</a></li><li><a href="https://www.unicef.org/innocenti/reports/policy-guidance-ai-children" target="_blank" rel="noopener">UNICEF · Guidance on AI and children, version 3.0</a></li></ul><p>${L("這些框架支持以人為本、公平、私隱和共融的設計方向；不代表任何機構認證或代言本遊戲。", "这些框架支持以人为本、公平、隐私和共融的设计方向；不代表任何机构认证或代言本游戏。", "These frameworks inform the human-centred, fair, private and inclusive design direction. They do not certify or endorse this game.")}</p></section>`;
+      `<p class="modal-intro">${L("適用中學生；建議二人一組，共用一部裝置。核心循環：聆聽 → 查證 → 判斷 → 修正 → 反思。", "适用中学生；建议二人一组，共用一台设备。核心循环：倾听 → 查证 → 判断 → 修正 → 反思。", "For secondary students; pairs can share one device. The learning loop: listen → investigate → decide → repair → reflect.")}</p><section class="teacher-section"><h3>${L("可觀察的學習目標", "可观察的学习目标", "Observable learning goals")}</h3><ol><li>${L("找出 AI 語言學習工具的公平、私隱、文化或參與問題。", "找出 AI 语言学习工具的公平、隐私、文化或参与问题。", "Identify a fairness, privacy, cultural or access issue in an AI language tool.")}</li><li>${L("引用至少兩項證據，比較不同做法對人的影響。", "引用至少两项证据，比较不同做法对人的影响。", "Use at least two clues to compare the effects of different actions on people.")}</li><li>${L("提出具體修正和人工覆核方法，並應用於新情境。", "提出具体修正和人工复核方法，并应用于新情境。", "Propose a specific repair and human review process, then apply it to a new scenario.")}</li></ol></section><section class="teacher-section"><h3>${L("25 分鐘課堂流程", "25 分钟课堂流程", "A 25-minute lesson")}</h3><ul><li><b>0–3 min</b> · ${L("提問：「AI 給出的分數是否足以代表能力？」先記下理由。", "提问：“AI 给出的分数是否足以代表能力？”先记下理由。", "Ask: “Is an AI score enough to judge ability?” Record an initial reason.")}</li><li><b>3–18 min</b> · ${L("二人合作調查四案；輪流操作和解釋證據。可按班情延長。", "两人合作调查四案；轮流操作和解释证据。可按班级情况延长。", "Investigate four cases in pairs; alternate navigator and evidence reader. Extend as needed.")}</li><li><b>18–22 min</b> · ${L("完成遷移挑戰與具體行動反思。", "完成迁移挑战与具体行动反思。", "Complete the transfer challenge and an actionable reflection.")}</li><li><b>22–25 min</b> · ${L("重新回答起始問題，引用一項證據和一個仍未解決的疑問。", "重新回答起始问题，引用一项证据和一个仍未解决的疑问。", "Revisit the opening question with evidence and one unresolved question.")}</li></ul></section><section class="teacher-section"><h3>${L("形成性評量，不用道德排名", "形成性评价，不用道德排名", "Assess reasoning, not moral ranking")}</h3><p>${L("按「證據、受影響的人、修正方案、遷移」四向度，各評 0–2：0＝未提及；1＝提及但欠具體；2＝具體、有證據並能說明理由。這是教師觀察規準，不是網站自動評分。通關不等於已證明學習成效。", "按“证据、受影响的人、修正方案、迁移”四维度，各评 0–2：0＝未提及；1＝提及但不具体；2＝具体、有证据并能说明理由。这是教师观察标准，不是网站自动评分。通关不等于已证明学习成效。", "Use four dimensions: evidence, affected people, repair and transfer. For each: 0 = absent; 1 = mentioned but vague; 2 = specific, supported and explained. This is a teacher observation rubric, not an automatic site score. Completion does not establish learning effectiveness.")}</p></section><section class="teacher-section"><h3>${L("MEDD8934：10 分鐘示範安排", "MEDD8934：10 分钟演示安排", "MEDD8934: a 10-minute demonstration")}</h3><p>${L("0–1 分鐘：教學問題；1–4 分鐘：觀眾一起調查一案；4–7 分鐘：在真實 AI 工具中執行以下提示，比較原文與實際輸出；7–9 分鐘：檢查文化聲音、虛構內容和工具限制；9–10 分鐘：修正及反思。另留 2 分鐘問答。", "0–1 分钟：教学问题；1–4 分钟：观众一起调查一案；4–7 分钟：在真实 AI 工具中执行以下提示，比较原文与实际输出；7–9 分钟：检查文化声音、虚构内容和工具限制；9–10 分钟：修正及反思。另留 2 分钟问答。", "0–1 min: learning problem; 1–4: investigate a case with the audience; 4–7: run the prompt below in a real AI tool and compare input/output; 7–9: examine cultural voice, invented details and limits; 9–10: repair and reflect. Allow a separate 2-minute Q&A.")}</p><div class="feedback consider">${L("遊戲內的回應全部是預先編寫的教學模擬。遊戲本身沒有連接生成式 AI，不能代替課程要求的真實工具現場示範。", "游戏内的回应全部是预先编写的教学模拟。游戏本身没有连接生成式 AI，不能代替课程要求的真实工具现场演示。", "All in-game responses are authored simulations. The game does not connect to generative AI and does not replace the course requirement for live, real-tool use.")}</div><span class="demo-label">${L("虛構語言學習文本", "虚构语言学习文本", "Fictional learner paragraph")}</span><div class="demo-text">${esc(sample)}</div><span class="demo-label">${L("教學模擬：值得追問的改寫", "教学模拟：值得追问的改写", "Authored simulation: a revision to question")}</span><div class="demo-text">“At our school’s language festival, I helped run a tea party. My grandma taught me to say, ‘How are you?’ to guests.”<br><br>${L("它改變了「yum cha」與問候語的文化意義，也刪去了作者的寫作目的。", "它改变了“yum cha”与问候语的文化意义，也删去了作者的写作目的。", "It changes the cultural meaning of yum cha and the greeting, and removes the writer’s purpose.")}</div><span class="demo-label">${L("教學模擬：作者覆核後的可能版本", "教学模拟：作者复核后的可能版本", "Authored simulation: a possible reviewed revision")}</span><div class="demo-text">“At our school’s language festival, I helped run a yum cha stall. My grandma taught me to greet guests by asking, ‘Have you eaten yet?’ I want to explain to visitors why this greeting is meaningful to us.”</div><button class="secondary" data-action="copy-prompt">${L("複製真實工具示範提示", "复制真实工具演示提示", "Copy the live-demo prompt")}</button><details class="evidence-card" style="margin-top:12px"><summary>${L("查看完整提示", "查看完整提示", "Read the full prompt")}</summary><p>${esc(prompt)}</p></details><p class="small-note">${L("由教師按學校規定選擇工具及帳戶，將提示貼上並實際執行。記錄工具及日期；輸出可能不同。若沒有觀察到失效，應如實記錄。", "由教师按学校规定选择工具及账户，将提示粘贴并实际执行。记录工具及日期；输出可能不同。若没有观察到失效，应如实记录。", "The teacher selects an appropriate tool/account under school policy, pastes the prompt and runs it. Record the tool and date; output varies. Report honestly if no failure is observed.")}</p><label class="field-label" for="live-output" style="margin-top:16px">${L("貼上實際輸出作比較（選填）", "粘贴实际输出作比较（选填）", "Paste the actual output to compare (optional)")}</label><textarea id="live-output" maxlength="6000" placeholder="${esc(L("這裏不會呼叫 AI，也不會儲存或傳送輸出。", "这里不会调用 AI，也不会保存或发送输出。", "No AI is called here. This text is not saved or transmitted."))}">${esc(liveDraft)}</textarea></section><section class="teacher-section"><h3>${L("可及性、資料與限制", "可访问性、数据与限制", "Access, data and limitations")}</h3><p>${L("三語內容、可放大文字、全視窗校園、WASD／方向鍵移動、E 與人物交談、空白鍵／Enter 進門、點擊人物或門口自動走近，以及案件進度紀錄；不設倒數或聲音必答。自由探索儲存在本機；班級模式會把姓名、學號和作答紀錄儲存在教師的班級資料庫。本網站不會把反思送給 AI；託管服務仍可能處理一般連線紀錄。共享裝置可在設定中清除進度。", "三语内容、可放大文字、全窗口校园、WASD／方向键移动、E 与人物交谈、空格键／Enter 进门、点击人物或门口自动走近，以及案件进度记录；不设倒计时或声音必答。自由探索保存在本机；班级模式会把姓名、学号和作答记录保存在教师的班级数据库。本网站不会把反思发送给 AI；托管服务仍可能处理一般连接记录。共享设备可在设置中清除进度。", "Three languages, larger text, a viewport-filling campus, WASD/arrow movement, E to talk, Space/Enter to enter rooms, click-to-approach people or doors, case progress records, no countdown and no audio-only tasks. Free exploration saves locally. Class mode stores name, student number and responses in the teacher’s class database. Reflections are not sent to AI; hosting may process standard connection logs. Clear progress in Settings on shared devices.")}</p><p style="margin-top:10px">${L("本版本尚未進行學生試行或完整無障礙稽核。人物、學校、投訴與數據皆為虛構。角色立繪使用 AI 協助生成；文字與程式使用 AI 協助製作，提交者需覆核並按課程要求作聲明。", "本版本尚未进行学生试用或完整无障碍审核。人物、学校、投诉与数据皆为虚构。角色立绘使用 AI 协助生成；文字与程序使用 AI 协助制作，提交者需复核并按课程要求作声明。", "This version has not undergone a student pilot or full accessibility audit. Characters, school, complaints and data are fictional. Portraits, content and code were created with AI assistance; presenters should review and disclose this under course requirements.")}</p></section><section class="teacher-section"><h3>${L("校服款式與官方來源", "校服款式与官方来源", "Uniform references")}</h3><p>${L("校服依公開資料重新繪製並作像素簡化；未使用校徽、校章或學校照片。本遊戲並非任何學校的官方作品。", "校服依公开资料重新绘制并作像素简化；未使用校徽、校章或学校照片。本游戏并非任何学校的官方作品。", "Outfits are original pixel interpretations of public uniform information. No crests, badges or school photos are used. This is not an official game of any school.")}</p><ul><li><a href="https://www.qc.edu.hk/en/site/view?name=School+Regulations" target="_blank" rel="noopener">${L("皇仁書院：夏季白恤衫、白長褲、黑皮帶", "皇仁书院：夏季白衬衫、白长裤、黑皮带", "Queen’s College: summer white shirt/trousers, black belt")}</a></li><li><a href="https://www.hkcwcc.edu.hk/en/school-uniform" target="_blank" rel="noopener">${L("香港中國婦女會中學：男生冬季白色長袖恤衫、灰色直腳長褲", "香港中国妇女会中学：男生冬季白色长袖衬衫、灰色直筒长裤", "HKCWCC: boys’ winter white long-sleeved shirt and grey straight-cut long trousers")}</a></li><li><a href="https://www.hkcwcc.edu.hk/en/school-uniform" target="_blank" rel="noopener">${L("香港中國婦女會中學：女生夏季白色恤衫連身裙、紅腰帶", "香港中国妇女会中学：女生夏季白色衬衫连衣裙、红腰带", "HKCWCC: girls’ summer white shirt dress, red belt")}</a></li><li><a href="https://www.sja.edu.hk/download/Resource/fileDoc/%E5%AD%B8%E6%A0%A1%E8%A8%93%E8%BC%94%E5%B0%8E%E6%94%BF%E7%AD%96%E5%8F%8A%E7%A8%8B%E5%BA%8F2025Updated_24_9_2025.pdf" target="_blank" rel="noopener">${L("聖貞德中學：初中夏季淺藍條紋裙、領呔、白襪、深褐色皮鞋（第 36–37、39 頁）", "圣贞德中学：初中夏季浅蓝条纹裙、领带、白袜、深褐色皮鞋（第 36–37、39 页）", "St. Joan of Arc: junior summer light-blue striped dress, tie, white socks, dark-brown shoes (pp. 36–37, 39)")}</a></li></ul></section><section class="teacher-section"><h3>${L("設計參考", "设计参考", "Design references")}</h3><ul><li><a href="https://www.unesco.org/en/articles/ai-competency-framework-students" target="_blank" rel="noopener">UNESCO (2024) · AI competency framework for students</a></li><li><a href="https://www.unicef.org/innocenti/reports/policy-guidance-ai-children" target="_blank" rel="noopener">UNICEF · Guidance on AI and children, version 3.0</a></li></ul><p>${L("這些框架支持以人為本、公平、私隱和共融的設計方向；不代表任何機構認證或代言本遊戲。", "这些框架支持以人为本、公平、隐私和共融的设计方向；不代表任何机构认证或代言本游戏。", "These frameworks inform the human-centred, fair, private and inclusive design direction. They do not certify or endorse this game.")}</p></section>`;
     $("modal-content").insertAdjacentHTML(
       "afterbegin",
-      `<div class="teacher-section"><h3>${L("五層校園的課節安排", "五层校园的课节安排", "Planning a five-floor lesson")}</h3><p>${L("四宗 AI 倫理案件仍是語言教育核心。39 題跨科選擇題提供延伸探索及形成性回饋，不代表完整學科掌握。短課節可選 20–30 分鐘核心路線，並在未取得 100 星前反思、下載報告；完整校園預計 45–75 分鐘，需試玩驗證。星星是進度紀錄，並非品格或能力排名。", "四宗 AI 伦理案件仍是语言教育核心。39 题跨科选择题提供延伸探索及形成性反馈，不代表完整学科掌握。短课节可选 20–30 分钟核心路线，并在未取得 100 星前反思、下载报告；完整校园预计 45–75 分钟，需要试玩验证。星星是进度记录，并非品格或能力排名。", "The four AI ethics cases remain the language-education core. The 39 subject questions offer extension and formative feedback, not evidence of full subject mastery. A short lesson can use a 20–30 minute core route, with reflection and report download before 100 stars. A full campus run is estimated at 45–75 minutes and needs pilot testing. Stars track progress, not character or ability.")}</p><p>${L("尚未以學生試玩證明普遍學習成效；請在實施前檢視內容、安排支援並收集前後表現與學生意見。", "尚未以学生试玩证明普遍学习成效；请在实施前检查内容、安排支持并收集前后表现与学生意见。", "General learning effectiveness has not been established through learner trials. Review the content, arrange support and collect before-and-after reasoning and learner feedback.")}</p></div>`,
+      `<div class="teacher-section"><h3>${L("五層校園的課節安排", "五层校园的课节安排", "Planning a five-floor lesson")}</h3><p>${L("四宗 AI 倫理案件仍是語言教育核心。39 題跨科選擇題提供延伸探索及形成性回饋，不代表完整學科掌握。短課節可選 20–30 分鐘核心路線，並在未取得 100 星前反思；完整校園預計 45–75 分鐘，需試玩驗證。星星是進度紀錄，並非品格或能力排名。", "四宗 AI 伦理案件仍是语言教育核心。39 题跨科选择题提供延伸探索及形成性反馈，不代表完整学科掌握。短课节可选 20–30 分钟核心路线，并在未取得 100 星前反思；完整校园预计 45–75 分钟，需要试玩验证。星星是进度记录，并非品格或能力排名。", "The four AI ethics cases remain the language-education core. The 39 subject questions offer extension and formative feedback, not evidence of full subject mastery. A short lesson can use a 20–30 minute core route, with reflection before 100 stars. A full campus run is estimated at 45–75 minutes and needs pilot testing. Stars track progress, not character or ability.")}</p><p>${L("尚未以學生試玩證明普遍學習成效；請在實施前檢視內容、安排支援並收集前後表現與學生意見。", "尚未以学生试玩证明普遍学习成效；请在实施前检查内容、安排支持并收集前后表现与学生意见。", "General learning effectiveness has not been established through learner trials. Review the content, arrange support and collect before-and-after reasoning and learner feedback.")}</p></div>`,
     );
   }
   function renderSettings() {
@@ -1248,14 +1295,6 @@
     );
     $("modal-content").insertAdjacentHTML("afterbegin", `<div class="setting-row"><div><strong>${L("班級連線", "班级连接", "Class connection")}</strong><p>${inClass() ? `S${state.student.grade}${state.student.section} · ${esc(state.student.name)}` : L("加入班級，跨裝置同步學習", "加入班级，跨设备同步学习", "Join your class for cross-device learning")}</p></div><button class="secondary" data-action="account">${L("管理", "管理", "Manage")}</button></div><div class="setting-row"><div><strong>${L("教師工作台", "教师工作台", "Teacher workspace")}</strong><p>${L("題庫、班級、Excel 成績", "题库、班级、Excel 成绩", "Questions, classes and Excel reports")}</p></div><button class="secondary" data-action="teacher">${L("開啟", "打开", "Open")}</button></div>`);
   }
-  function renderNewGameConfirmation() {
-    heading(
-      L("新的校園生活", "新的校园生活", "A NEW SCHOOL DAY"),
-      L("開始新的遊戲？", "开始新的游戏？", "Start a new game?"),
-    );
-    $("modal-content").innerHTML =
-      `<p class="modal-intro">${L("確認後，現有案件、學科星數和反思會被新的遊戲進度取代。班級的雲端成績仍會保留，你可用恢復碼再次登入。你可先下載目前的報告。語言、文字大小及校園造型會保留，然後重新選擇造型開始。", "确认后，现有案件、学科星数和反思会被新的游戏进度取代。班级的云端成绩仍会保留，你可用恢复码再次登录。你可先下载目前的报告。语言、文字大小及校园造型会保留，然后重新选择造型开始。", "Confirming replaces your cases, subject stars and reflection with a new game. Cloud class results are retained and can be restored with your recovery code. You can download the current report first. Your language, text size and appearance preferences will be kept, then you can choose your appearance again.")}</p><div class="button-row"><button class="secondary" data-action="download">${L("下載目前報告", "下载目前报告", "Download current report")}</button><button class="primary" data-action="cancel-new-game">${L("保留現有遊戲", "保留现有游戏", "Keep current game")}</button><button class="secondary danger" data-action="confirm-new-game">${L("確認新開始", "确认新开始", "Confirm new game")}</button></div>`;
-  }
   function renderReset() {
     heading(
       L("重設本機進度", "重置本机进度", "RESET LOCAL PROGRESS"),
@@ -1266,95 +1305,7 @@
       ),
     );
     $("modal-content").innerHTML =
-      `<p class="modal-intro">${L("本機案件紀錄、造型和反思將會刪除；班級雲端成績仍會保留，可用恢復碼再次登入。你可以先到學習報告下載紀錄。", "本机案件记录、造型和反思将会删除；班级云端成绩仍会保留，可用恢复码再次登录。你可以先到学习报告下载记录。", "Local cases, appearance and reflection will be removed. Cloud class results are retained; sign in again with your recovery code. Download your learning journal first if you want to keep it.")}</p><div class="button-row"><button class="secondary" data-action="cancel-reset">${L("保留進度", "保留进度", "Keep progress")}</button><button class="secondary danger" data-action="reset">${L("確認清除", "确认清除", "Clear progress")}</button></div>`;
-  }
-  function downloadReport() {
-    const title = L(
-      "我的AI校園生活｜學習報告",
-      "我的AI校园生活｜学习报告",
-      "My AI Campus Life | Learning journal",
-    );
-    const rows = [
-      title,
-      "",
-      L(
-        "本報告記錄學習過程，不是能力認證。",
-        "本报告记录学习过程，不是能力认证。",
-        "This report records learning activity, not a qualification.",
-      ),
-      "",
-    ];
-    for (const m of missions) {
-      const p = pstate(m.id);
-      rows.push(
-        T(m.title),
-        L("完成：", "完成：", "Completed: ") +
-          (p.completed ? L("是", "是", "Yes") : L("否", "否", "No")),
-        evidenceCount(p),
-      );
-      if (p.firstChoice !== null)
-        rows.push(
-          L("初次判斷：", "初次判断：", "First decision: ") +
-            T(m.options[p.firstChoice].title),
-        );
-      if (p.completed) rows.push(T(m.takeaway));
-      rows.push("");
-    }
-    rows.push(
-      L("遷移挑戰：", "迁移挑战：", "Transfer challenge: ") +
-        (state.transferAwarded
-          ? L("已完成", "已完成", "Completed")
-          : L("未完成", "未完成", "Not completed")),
-      "",
-      L("我的下一步行動", "我的下一步行动", "My next action"),
-      state.reflection || L("尚未填寫", "尚未填写", "Not written yet"),
-      "",
-      "All in-game cases and AI responses are fictional teaching simulations.",
-    );
-    const total = progress();
-    rows.push(
-      "",
-      L("校園探索紀錄", "校园探索记录", "Campus exploration record"),
-      `★ ${total.stars} / ${maxStars()}`,
-      L("離校門檻：", "离校门槛：", "Exit threshold: ") + EXIT_STARS,
-      L("完成題目：", "完成题目：", "Questions completed: ") +
-        `${total.checks} / ${questionCount()}`,
-      L(
-        "星星記錄參與進度，不是品格、能力或課程認證。",
-        "星星记录参与进度，不是品格、能力或课程认证。",
-        "Stars record activity progress, not character, ability or curriculum certification.",
-      ),
-      "",
-    );
-    for (const room of subjects) {
-      rows.push(
-        `${floorLabel(room.floor)} · ${T(room.subject)} · ★ ${roomStars(room)} / ${roomMax(room)}`,
-      );
-      for (const level of room.levels) {
-        const record = subjectState(room.id, level.id);
-        rows.push(
-          `  ${record.completed ? "✓" : "○"} ${T(level.title)} (${record.completed ? level.stars : 0}/${level.stars})`,
-        );
-        if (record.completed) rows.push("  " + T(level.takeaway));
-      }
-      rows.push("");
-    }
-    const blob = new Blob([rows.join("\n")], {
-      type: "text/plain;charset=utf-8",
-    });
-    const url = URL.createObjectURL(blob),
-      a = document.createElement("a");
-    a.href = url;
-    a.download = "My-AI-Campus-Life-Report-" + state.lang + ".txt";
-    a.click();
-    setTimeout(() => URL.revokeObjectURL(url), 1000);
-    toast(
-      L(
-        "學習報告已準備下載",
-        "学习报告已准备下载",
-        "Your learning journal is ready to download",
-      ),
-    );
+      `<p class="modal-intro">${L("本機案件紀錄、造型和反思將會刪除；班級雲端成績仍會保留，可用恢復碼再次登入。", "本机案件记录、造型和反思将会删除；班级云端成绩仍会保留，可用恢复码再次登录。", "Local cases, appearance and reflection will be removed. Cloud class results are retained; sign in again with your recovery code.")}</p><div class="button-row"><button class="secondary" data-action="cancel-reset">${L("保留進度", "保留进度", "Keep progress")}</button><button class="secondary danger" data-action="reset">${L("確認清除", "确认清除", "Clear progress")}</button></div>`;
   }
   function start() {
     if (!requireLearningSession()) return;
@@ -1377,9 +1328,9 @@
     $("campus").focus({ preventScroll: true });
     toast(
       L(
-        "歡迎來到明澄書院。先到手帳選擇案件，或向右探索。",
-        "欢迎来到明澄书院。先到手帐选择案件，或向右探索。",
-        "Welcome to Ming Ching College. Pick a case or explore to the right.",
+        "歡迎來到明澄書院。向右探索，與同學或老師交談。",
+        "欢迎来到明澄书院。向右探索，与同学或老师交谈。",
+        "Welcome to Ming Ching College. Explore to the right and meet a classmate or teacher.",
       ),
     );
   }
@@ -1433,40 +1384,21 @@
       }
       case "continue":
         if (!state.started) break;
+        closeModal({ resume: true, restoreFocus: false });
         titleOpen = false;
         updateChrome();
         syncPause();
         if (!state.prologueSeen) openDialogue("prologue");
         else $("campus").focus({ preventScroll: true });
         break;
-      case "new-game": {
-        const hasProgress =
-          state.started ||
-          state.reflection.trim() ||
-          missions.some((mission) => {
-            const record = pstate(mission.id);
-            return (
-              record.seen.length ||
-              record.choice !== null ||
-              record.repairAttempts
-            );
-          }) ||
-          subjects.some((room) =>
-            room.levels.some((level) => {
-              const record = subjectState(room.id, level.id);
-              return (
-                record.completed || record.attempts || record.choice !== null
-              );
-            }),
-          );
-        showModal(hasProgress ? "newgame" : "avatar");
+      case "new-game":
+        showModal("role-choice");
         break;
-      }
-      case "cancel-new-game":
-        closeModal();
+      case "teacher-entry":
+        printerSubject = null;
+        showModal("teacher");
         break;
-      case "confirm-new-game": {
-        if (modalType !== "newgame" || !panelOpen) break;
+      case "student-entry": {
         if (inClass() || state.cloudStudentId) { clearTimeout(syncTimer); await cloud.logout(); cloudSnapshot = null; recoveryCode = ""; }
         const preferences = {
           lang: state.lang,
@@ -1519,6 +1451,11 @@
         break;
       case "map":
         showModal("map");
+        break;
+      case "printer":
+        printerFloor = window.CAMPUS_LOCATIONS[location]?.floor ?? 0;
+        printerSubject = null;
+        showModal("printer");
         break;
       case "audio-close":
         setAudioPanel(false); break;
@@ -1707,9 +1644,6 @@
           );
         break;
       }
-      case "download":
-        downloadReport();
-        break;
       case "copy-prompt":
         try {
           await navigator.clipboard.writeText(prompt);
@@ -1774,16 +1708,7 @@
         pending.catch(error => { cloudError = cloud?.messageFor(error, state.lang) || L("操作未完成，請再試。", "操作未完成，请重试。", "The action did not complete. Try again."); toast(cloudError); updateSaveLabel(); }).finally(() => { if (b.isConnected) b.disabled = false; });
       }
     }
-    if (b.dataset.case) {
-      const m = missions.find((m) => m.id === b.dataset.case);
-      if (!state.started) {
-        activeCase = m.id;
-        showModal("avatar");
-        return;
-      }
-      engine.setLocation(m.location);
-      openDialogue(m.id);
-    }
+    if (b.dataset.mapFloor !== undefined) chooseMapFloor(b.dataset.mapFloor, true);
     if (b.dataset.travel) {
       if (!locations[b.dataset.travel]) return;
       if (!state.started) {
@@ -1795,23 +1720,6 @@
       engine.setLocation(b.dataset.travel);
       $("campus").focus({ preventScroll: true });
       toast(locations[b.dataset.travel]());
-    }
-    if (b.dataset.subject) {
-      const room = subjects.find((r) => r.id === b.dataset.subject);
-      if (!room) return;
-      if (!state.started) {
-        showModal("avatar");
-        return;
-      }
-      if (dialogueId) endDialogue();
-      activeSubject = room.id;
-      activeLevel = (
-        room.levels.find(
-          (level) => !subjectState(room.id, level.id)?.completed,
-        ) || room.levels[0]
-      )?.id || "";
-      if (state.started) engine.setLocation(room.location);
-      showModal("subject");
     }
     if (b.dataset.level) {
       const room = subjects.find((r) => r.id === activeSubject);
@@ -1972,6 +1880,15 @@
     }
   };
   document.addEventListener("keydown", (e) => {
+    const floorButton = e.target?.closest?.("[data-map-floor]");
+    if (modalType === "map" && floorButton && ["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight", "Home", "End"].includes(e.key)) {
+      e.preventDefault();
+      const floors = [...new Set(Object.values(window.CAMPUS_LOCATIONS).map(meta => meta.floor))].sort((a, b) => b - a);
+      const current = floors.indexOf(Number(floorButton.dataset.mapFloor));
+      const next = e.key === "Home" ? 0 : e.key === "End" ? floors.length - 1 : (current + (["ArrowDown", "ArrowRight"].includes(e.key) ? 1 : -1) + floors.length) % floors.length;
+      chooseMapFloor(floors[next], true);
+      return;
+    }
     if (e.key !== "Escape") return;
     if (audioPanelOpen) { e.preventDefault(); setAudioPanel(false); return; }
     if (panelOpen) {

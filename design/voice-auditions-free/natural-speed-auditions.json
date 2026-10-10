@@ -1,0 +1,67 @@
+{
+  "version": 1,
+  "clips": [
+    {
+      "file": "en-gb-sonia-default.mp3",
+      "voice": "en-GB-SoniaNeural",
+      "locale": "en",
+      "text": "Hello, and welcome to Ming Ching College. Let’s check the information used by the AI, then consider whether its recommendation is fair to everyone.",
+      "provider": "TTSFree",
+      "source": "https://ttsfree.com/text-to-speech/english-united-kingdom",
+      "generatedOn": "2026-10-10",
+      "settings": {
+        "voiceSpeedRaw": 0,
+        "speechPitchRaw": 0,
+        "label": "Default",
+        "addedMusic": false
+      },
+      "durationSeconds": 9.639184,
+      "sha256": "b7946bc3ad172cb95a9b7d16eb71bdd60437605858ac3b1f50fbb1a1871debee",
+      "status": "audition-only-listening-review-pending",
+      "inGame": false
+    },
+    {
+      "file": "zh-hk-hiumaan-default.mp3",
+      "voice": "zh-HK-HiuMaanNeural",
+      "locale": "zh",
+      "text": "你好，歡迎嚟到明澄書院。我哋先睇吓人工智能用咗邊啲資料，再一齊諗吓個建議公唔公平。",
+      "provider": "TTSFree",
+      "source": "https://ttsfree.com/text-to-speech/chinese-cantonese-traditional",
+      "generatedOn": "2026-10-10",
+      "settings": {
+        "voiceSpeedRaw": 0,
+        "speechPitchRaw": 0,
+        "label": "Default",
+        "addedMusic": false
+      },
+      "durationSeconds": 10.004898,
+      "sha256": "ac643badcd6627f11b4e9a99456be0cea719ef7b25016661b8e40ebefb517a54",
+      "status": "audition-only-listening-review-pending",
+      "inGame": false
+    },
+    {
+      "file": "zh-cn-xiaoyi-default.mp3",
+      "voice": "zh-CN-XiaoyiNeural",
+      "locale": "cn",
+      "text": "你好，欢迎来到明澄书院。我们先看看人工智能使用了哪些资料，再一起判断它的建议是否公平。",
+      "provider": "TTSFree",
+      "source": "https://ttsfree.com/text-to-speech/chinese-mandarin-simplified",
+      "generatedOn": "2026-10-10",
+      "settings": {
+        "voiceSpeedRaw": 0,
+        "speechPitchRaw": 0,
+        "label": "Default",
+        "addedMusic": false
+      },
+      "durationSeconds": 9.325714,
+      "sha256": "a3c159ce160f8e67ff2b2795bab78474d95efb490301b17f463c6ad15eda3f87",
+      "status": "audition-only-listening-review-pending",
+      "inGame": false
+    }
+  ],
+  "failedAttempt": {
+    "voice": "zh-TW-YunJheNeural",
+    "attempts": 2,
+    "result": "Provider returned zero-duration, zero-size output. Not downloaded or used."
+  }
+}

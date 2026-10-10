@@ -1,0 +1,686 @@
+[
+  {
+    "subjectId": "geography",
+    "grade": 1,
+    "level": 1,
+    "title": [
+      "地圖比例尺與距離",
+      "Map scale and distance"
+    ],
+    "question": [
+      "一幅比例尺 1:25,000 的地圖上，兩點直線距離為 4 cm。實際直線距離是多少？",
+      "Two points are 4 cm apart on a 1:25,000 map. What is their straight-line ground distance?"
+    ],
+    "options": [
+      [
+        "1 km",
+        "1 km",
+        "4×25,000=100,000 cm，即 1,000 m 或 1 km。",
+        "4×25,000=100,000 cm, which is 1,000 m or 1 km."
+      ],
+      [
+        "100 km",
+        "100 km",
+        "須把釐米正確換算成公里；100,000 cm 不是 100 km。",
+        "Convert centimetres correctly: 100,000 cm is not 100 km."
+      ],
+      [
+        "0.1 km",
+        "0.1 km",
+        "0.1 km 是 10,000 cm，少了一個十倍。",
+        "0.1 km is 10,000 cm, a factor of ten too small."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "比例尺計算先用相同單位，再換成適合表達的地面距離。",
+      "Use matching units for scale calculations, then convert to a useful ground-distance unit."
+    ]
+  },
+  {
+    "subjectId": "geography",
+    "grade": 1,
+    "level": 2,
+    "title": [
+      "等高線與坡度",
+      "Contours and gradient"
+    ],
+    "question": [
+      "同一幅地圖上，甲路與乙路都由 100 m 上升到 200 m。甲路的等高線較密，乙路較疏。哪項判斷最合理？",
+      "On the same map, routes A and B both rise from 100 m to 200 m. Contours are closer together along A. Which judgement is most reasonable?"
+    ],
+    "options": [
+      [
+        "甲路平均較陡；兩路的總垂直上升相同。",
+        "A is generally steeper; both have the same total vertical rise.",
+        "相同高差在較短水平距離內出現，代表較大坡度。",
+        "The same rise over a shorter horizontal distance gives a steeper gradient."
+      ],
+      [
+        "乙路較陡，因為等高線較少擠在一起。",
+        "B is steeper because its contours are farther apart.",
+        "等高線疏代表同一高差分佈在較長水平距離。",
+        "Widely spaced contours spread the same rise over a longer horizontal distance."
+      ],
+      [
+        "甲路終點一定比乙路高。",
+        "A must end higher than B.",
+        "題目已說兩條路的終點均為 200 m。",
+        "Both endpoints are explicitly at 200 m."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "把高差與水平距離一併解讀，不能只數線條。",
+      "Interpret vertical rise together with horizontal distance, not just the number of lines."
+    ]
+  },
+  {
+    "subjectId": "geography",
+    "grade": 1,
+    "level": 3,
+    "title": [
+      "校園實地考察的取樣",
+      "Sampling in a campus field study"
+    ],
+    "question": [
+      "學生想比較全校不同地方的垃圾量，卻只在垃圾桶旁數垃圾。哪個改良最能提高代表性？",
+      "Students want to compare litter across the campus but count only beside bins. Which change most improves representativeness?"
+    ],
+    "options": [
+      [
+        "先把校園分成不同區域，在各區按一致方法選點及計數。",
+        "Divide the campus into areas and choose/count sites consistently within each area.",
+        "涵蓋不同環境可減少只選特殊位置造成的偏差。",
+        "Covering different environments reduces bias from selecting one special type of location."
+      ],
+      [
+        "只在最多垃圾的桶旁重複十次。",
+        "Repeat ten counts only at the dirtiest bin.",
+        "重複可增加該點資料，仍不能代表其他區域。",
+        "Repetition adds information about that site but not the other areas."
+      ],
+      [
+        "改用較漂亮的地圖展示原有數字。",
+        "Display the same counts on a more attractive map.",
+        "展示品質不能修正取樣範圍的偏差。",
+        "Presentation quality cannot correct biased sampling coverage."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "實地考察需把研究範圍、取樣位置和一致程序連結。",
+      "Connect the study area, sampling locations and consistent procedures in fieldwork."
+    ]
+  },
+  {
+    "subjectId": "geography",
+    "grade": 2,
+    "level": 1,
+    "title": [
+      "河曲的侵蝕與沉積",
+      "Erosion and deposition in a meander"
+    ],
+    "question": [
+      "河曲外岸水流較快，內岸較慢。若其他條件相近，最可能出現哪個配對？",
+      "Water flows faster at a meander's outer bank and slower at its inner bank. Under otherwise similar conditions, which pairing is most likely?"
+    ],
+    "options": [
+      [
+        "外岸侵蝕較強，內岸較易沉積。",
+        "Stronger erosion at the outer bank; more deposition at the inner bank.",
+        "較快水流有較大侵蝕能力；減速時較易沉積所搬運物。",
+        "Faster flow has greater erosive capacity; slowing flow more readily deposits transported material."
+      ],
+      [
+        "外岸只沉積，內岸只侵蝕。",
+        "Deposition only at the outer bank; erosion only at the inner bank.",
+        "這倒轉了題目水流速度所支持的主要過程。",
+        "This reverses the main processes supported by the stated flow speeds."
+      ],
+      [
+        "兩岸永遠沒有變化。",
+        "Neither bank ever changes.",
+        "流水會侵蝕、搬運和沉積，河岸並非固定不變。",
+        "Flowing water erodes, transports and deposits material, so banks are not permanently fixed."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "把水流能量與侵蝕、搬運、沉積過程連結。",
+      "Link flow energy to erosion, transport and deposition."
+    ]
+  },
+  {
+    "subjectId": "geography",
+    "grade": 2,
+    "level": 2,
+    "title": [
+      "都市地表與地表徑流",
+      "Urban surfaces and runoff"
+    ],
+    "question": [
+      "同一場雨中，面積相同的草地有 30% 雨水成為地表徑流，鋪面地有 80%。兩地各收到 1,000 L 雨水。鋪面地多產生多少徑流？",
+      "During the same storm, 30% of rain becomes runoff on grass and 80% on paving. Equal areas each receive 1,000 L. How much more runoff comes from the paved area?"
+    ],
+    "options": [
+      [
+        "500 L",
+        "500 L",
+        "800−300=500 L；較少滲透令更多雨水流向排水系統。",
+        "800−300=500 L; less infiltration sends more water to drainage."
+      ],
+      [
+        "50 L",
+        "50 L",
+        "差異是 50 個百分點，要乘以 1,000 L，不是直接當作 50 L。",
+        "The difference is 50 percentage points of 1,000 L, not 50 L."
+      ],
+      [
+        "1,100 L",
+        "1,100 L",
+        "1,100 L 是兩者總徑流，題目問差額。",
+        "1,100 L is their combined runoff; the question asks for the difference."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "用雨量、土地覆蓋與滲透解釋徑流，分清差額和總量。",
+      "Explain runoff through rainfall, land cover and infiltration; distinguish difference from total."
+    ]
+  },
+  {
+    "subjectId": "geography",
+    "grade": 2,
+    "level": 3,
+    "title": [
+      "迎風坡與背風坡",
+      "Windward and leeward slopes"
+    ],
+    "question": [
+      "潮濕氣流吹向山脈，迎風坡降雨較多，背風坡較乾。哪個過程鏈最合理？",
+      "Moist air approaches a mountain range. The windward slope is wetter and the leeward slope drier. Which sequence best explains this?"
+    ],
+    "options": [
+      [
+        "氣流上升冷卻凝結降雨；越山後下沉增暖，相對濕度下降。",
+        "Air rises, cools and condenses; after crossing, it descends and warms, reducing relative humidity.",
+        "上升冷卻與下沉增暖可解釋兩坡差異。",
+        "Cooling during ascent and warming during descent explain the contrast."
+      ],
+      [
+        "氣流上升時愈來愈熱，所以水汽直接變成雨。",
+        "Rising air becomes hotter, so vapour directly turns to rain.",
+        "此機制通常涉及上升冷卻至凝結，並非升溫造成凝結。",
+        "This mechanism involves cooling to condensation, not heating causing condensation."
+      ],
+      [
+        "山脈吸走所有氧氣，所以背風坡乾燥。",
+        "Mountains remove all oxygen, making the leeward slope dry.",
+        "氧氣被吸走並不是地形雨的成因。",
+        "Oxygen removal is not the mechanism of orographic rainfall."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "用連貫的物理過程解釋空間差異，而不只背誦兩坡名稱。",
+      "Explain spatial differences through a connected physical process, not only slope labels."
+    ]
+  },
+  {
+    "subjectId": "geography",
+    "grade": 3,
+    "level": 1,
+    "title": [
+      "板塊邊界與自然災害",
+      "Plate boundaries and natural hazards"
+    ],
+    "question": [
+      "海洋板塊向大陸板塊移動並隱沒。哪組現象最符合這種邊界？",
+      "An oceanic plate converges with and subducts beneath a continental plate. Which set of features best fits this boundary?"
+    ],
+    "options": [
+      [
+        "海溝、地震和火山活動。",
+        "A trench, earthquakes and volcanic activity.",
+        "隱沒形成海溝及地震帶，相關巖漿活動可形成火山。",
+        "Subduction produces a trench and earthquake zone; associated magma can feed volcanoes."
+      ],
+      [
+        "兩板塊遠離，中央形成洋中脊。",
+        "The plates separate and form a mid-ocean ridge.",
+        "洋中脊對應張裂邊界，與題目的聚合隱沒不同。",
+        "A mid-ocean ridge fits divergence, not the stated convergent subduction."
+      ],
+      [
+        "只有水平錯動的地震，完全沒有隱沒。",
+        "Only earthquakes from horizontal sliding, with no subduction.",
+        "這描述轉形邊界的主要移動方式，與題目明確的隱沒不同。",
+        "This describes mainly transform motion, unlike the subduction explicitly stated."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "由板塊移動方式推斷地形與災害，避免混淆邊界類型。",
+      "Infer landforms and hazards from plate motion without mixing boundary types."
+    ]
+  },
+  {
+    "subjectId": "geography",
+    "grade": 3,
+    "level": 2,
+    "title": [
+      "人口總量與密度",
+      "Population totals and density"
+    ],
+    "question": [
+      "甲區人口 150,000、面積 30 km²；乙區人口 80,000、面積 10 km²。哪項比較正確？",
+      "Area A has 150,000 people in 30 km²; B has 80,000 in 10 km². Which comparison is correct?"
+    ],
+    "options": [
+      [
+        "乙區人口較少，但密度較高：8,000 對 5,000 人/km²。",
+        "B has fewer people but higher density: 8,000 versus 5,000 people/km².",
+        "密度等於人口除以面積，總人口較多不等於密度較高。",
+        "Density is population divided by area; a larger total need not mean higher density."
+      ],
+      [
+        "甲區密度較高，因為總人口較多。",
+        "A is denser because it has more people.",
+        "這忽略了甲區面積也是乙區三倍。",
+        "This ignores that A has three times B's area."
+      ],
+      [
+        "兩區密度相同，因為都是市區。",
+        "Both have equal density because both are urban.",
+        "地區名稱不能取代人口與面積的計算。",
+        "An urban label cannot replace the population-to-area calculation."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "空間比較需要選擇合適分母，總量和密度回答不同問題。",
+      "Spatial comparisons need an appropriate denominator; totals and densities answer different questions."
+    ]
+  },
+  {
+    "subjectId": "geography",
+    "grade": 3,
+    "level": 3,
+    "title": [
+      "都市熱島的考察設計",
+      "Designing an urban heat-island study"
+    ],
+    "question": [
+      "學生中午在市中心量得 34°C，傍晚在郊區量得 28°C，便把 6°C 全歸因於都市熱島。主要改良是甚麼？",
+      "Students record 34°C downtown at noon and 28°C in the countryside at dusk, attributing all 6°C to an urban heat island. What is the main improvement?"
+    ],
+    "options": [
+      [
+        "在相近高度和遮蔭條件下同步量度多個市區及郊區地點，並重複。",
+        "Measure several urban and rural sites simultaneously under comparable height/shade conditions, and repeat.",
+        "時間與量度環境會影響氣溫，須控制纔可比較土地利用。",
+        "Time and measurement conditions affect temperature and must be controlled to compare land use."
+      ],
+      [
+        "只把兩個讀數四捨五入成整十數。",
+        "Round both temperatures to the nearest ten.",
+        "取整數沒有消除中午與傍晚的時間差異。",
+        "Rounding does not remove the noon-versus-dusk confound."
+      ],
+      [
+        "只保留 34°C，因為市中心讀數較高。",
+        "Keep only 34°C because it is the higher urban reading.",
+        "沒有比較點便更不能判斷都市熱島差異。",
+        "Removing the comparison makes the urban–rural difference harder to assess."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "比較地理因素時，要控制時間、位置和儀器條件。",
+      "Control time, location conditions and instruments when comparing geographical factors."
+    ]
+  },
+  {
+    "subjectId": "geography",
+    "grade": 4,
+    "level": 1,
+    "title": [
+      "沿岸漂移與海岸管理",
+      "Longshore drift and coastal management"
+    ],
+    "question": [
+      "沿岸漂移把沙由西向東搬運。新丁壩在西側累積沙，東側海灘變窄。最合理解釋是甚麼？",
+      "Longshore drift transports sand west to east. A new groyne traps sand on its west side while the beach to the east narrows. What best explains this?"
+    ],
+    "options": [
+      [
+        "丁壩攔截沉積物，令下游方向的沙供應減少。",
+        "The groyne intercepts sediment, reducing supply in the downdrift direction.",
+        "海岸管理會改變沉積物收支，保護一處可能影響鄰近海岸。",
+        "Coastal structures alter sediment budgets; protecting one site can affect neighbouring coasts."
+      ],
+      [
+        "丁壩增加東側的沙供應，但沙越多海灘越窄。",
+        "The groyne increases sand supply to the east, and extra sand narrows the beach.",
+        "題目西側堆沙符合攔截供應；東側變窄不能用額外沉積解釋。",
+        "West-side accumulation indicates interception; extra deposition would not explain eastern narrowing."
+      ],
+      [
+        "東側海灘變窄證明沿岸漂移已完全消失。",
+        "The narrowing eastern beach proves longshore drift has stopped everywhere.",
+        "攔截部分沙供應不等於所有沿岸搬運停止。",
+        "Intercepting sediment does not mean all longshore transport has ceased."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "評估海岸工程須考慮沉積物系統與鄰近地區的影響。",
+      "Evaluate coastal engineering within the sediment system and its effects on neighbouring areas."
+    ]
+  },
+  {
+    "subjectId": "geography",
+    "grade": 4,
+    "level": 2,
+    "title": [
+      "河流流量估算",
+      "Estimating river discharge"
+    ],
+    "question": [
+      "考察中把河道橫截面近似為寬 4 m、平均深 0.5 m 的長方形，平均流速 2 m/s。按此簡化模型，流量是多少？",
+      "A field study approximates a river cross-section as 4 m wide and 0.5 m deep on average. Mean velocity is 2 m/s. Under this simplified model, what is discharge?"
+    ],
+    "options": [
+      [
+        "4 m³/s",
+        "4 m³/s",
+        "橫截面積 4×0.5=2 m²；流量=面積×流速=4 m³/s。",
+        "Cross-sectional area is 2 m²; discharge is area×velocity=4 m³/s."
+      ],
+      [
+        "8 m/s",
+        "8 m/s",
+        "這忽略深度，而且 m/s 是速度單位，不是流量。",
+        "This ignores depth and uses a velocity unit rather than volume per time."
+      ],
+      [
+        "1 m³/s",
+        "1 m³/s",
+        "流量應乘以流速，不能把面積除以流速。",
+        "Discharge multiplies area by velocity; it does not divide area by velocity."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "將流量連結到截面積和平均流速，並檢查模型假設與單位。",
+      "Relate discharge to cross-sectional area and mean velocity; check assumptions and units."
+    ]
+  },
+  {
+    "subjectId": "geography",
+    "grade": 4,
+    "level": 3,
+    "title": [
+      "災害強度與災害風險",
+      "Hazard intensity and disaster risk"
+    ],
+    "question": [
+      "兩城面對相近地震強度，甲城損失較低，且建築抗震、疏散演練較完善。哪項評估最恰當？",
+      "Two cities experience similar earthquake intensity. A has lower losses and stronger buildings and evacuation preparation. Which assessment is most appropriate?"
+    ],
+    "options": [
+      [
+        "損失差異可能與脆弱度和應對能力有關，不能只看地震強度。",
+        "Losses may differ because of vulnerability and response capacity, not hazard intensity alone.",
+        "風險涉及暴露、脆弱度及能力；還需比較人口與資產等背景。",
+        "Risk also involves exposure, vulnerability and capacity; population and assets still need comparison."
+      ],
+      [
+        "甲城損失少，證明沒有真正發生地震。",
+        "Lower losses prove A did not experience an earthquake.",
+        "相近強度是已知條件；損失少不等於沒有災害事件。",
+        "Similar intensity is given; lower losses do not mean no hazard occurred."
+      ],
+      [
+        "單憑兩城比較可證明演練是唯一原因。",
+        "The two-city comparison proves drills are the sole cause.",
+        "建築、暴露等因素也可能不同，不能只歸因於演練。",
+        "Buildings, exposure and other factors may also differ; drills cannot be isolated as the sole cause."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "災害分析需區分自然事件、暴露、脆弱度和應對能力。",
+      "Distinguish the physical hazard, exposure, vulnerability and capacity in disaster analysis."
+    ]
+  },
+  {
+    "subjectId": "geography",
+    "grade": 5,
+    "level": 1,
+    "title": [
+      "工業區位的多重因素",
+      "Multiple factors in industrial location"
+    ],
+    "question": [
+      "高科技企業選擇工資較高但鄰近大學、研發機構和專業供應商的城市。哪項解釋最合理？",
+      "A high-tech firm chooses a higher-wage city near universities, research institutes and specialist suppliers. Which explanation is most reasonable?"
+    ],
+    "options": [
+      [
+        "人才、知識交流和產業聯繫的利益可能超過較高工資成本。",
+        "Skilled labour, knowledge exchange and production links may outweigh higher wage costs.",
+        "區位選擇取決於企業需求及多種成本效益，不只是最低工資。",
+        "Location depends on the firm's needs and multiple costs and benefits, not wages alone."
+      ],
+      [
+        "工資越高必定代表每件產品的總成本越低。",
+        "Higher wages always mean a lower total cost per product.",
+        "生產力可能抵銷工資，但不能只憑工資高低保證總成本。",
+        "Productivity may offset wages, but wage level alone cannot guarantee total unit cost."
+      ],
+      [
+        "鄰近供應商會自動令所有運輸成本變成零。",
+        "Nearby suppliers automatically reduce every transport cost to zero.",
+        "鄰近可減少部分成本，但不代表所有原料和產品都無需運輸。",
+        "Proximity may reduce some costs but does not eliminate every transport requirement."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "工業區位是多因素的權衡，因素的重要性隨產業改變。",
+      "Industrial location is a multi-factor trade-off whose priorities vary by industry."
+    ]
+  },
+  {
+    "subjectId": "geography",
+    "grade": 5,
+    "level": 2,
+    "title": [
+      "糧食產量與取得糧食的能力",
+      "Food supply and access"
+    ],
+    "question": [
+      "某地區全年糧食總量足夠，但洪水阻斷道路、價格急升，低收入家庭挨餓。哪項措施最直接處理題目的成因？",
+      "A region has enough food overall, but floods block roads, prices rise and low-income households go hungry. Which measure most directly addresses the stated causes?"
+    ],
+    "options": [
+      [
+        "恢復配送通道，並為受影響家庭提供有針對性的糧食或購買支援。",
+        "Restore distribution routes and provide targeted food or purchasing support to affected households.",
+        "問題是分配及取得糧食的能力，單看總產量會漏掉這些障礙。",
+        "The problem concerns distribution and access, which aggregate supply alone misses."
+      ],
+      [
+        "只公佈全區總產量，便可確保人人喫飽。",
+        "Publish regional production totals to ensure everyone is fed.",
+        "數據公佈本身不會修復道路或恢復家庭購買力。",
+        "Publishing data does not repair roads or restore purchasing power."
+      ],
+      [
+        "只增加下一季出口，完全不用處理當前道路。",
+        "Increase next season's exports without addressing current roads.",
+        "這沒有直接解決受困家庭眼前的配送及價格困難。",
+        "This does not directly address the current distribution and affordability barriers."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "糧食安全涉及供應、取得、利用及穩定性，不能只看平均產量。",
+      "Food security involves availability, access, use and stability, not only average output."
+    ]
+  },
+  {
+    "subjectId": "geography",
+    "grade": 5,
+    "level": 3,
+    "title": [
+      "氣候趨勢與地點變化",
+      "Climate trends and station changes"
+    ],
+    "question": [
+      "某測站 30 年升溫 1.5°C，期間附近由草地變成密集樓宇。要估計更廣泛的區域氣候趨勢，最需要補充甚麼？",
+      "A station warms by 1.5°C over 30 years while nearby grassland becomes dense buildings. What additional evidence is most useful for estimating the wider regional climate trend?"
+    ],
+    "options": [
+      [
+        "周邊多個長期測站及土地利用、儀器遷移記錄。",
+        "Records from multiple long-term stations plus land-use and instrument/site changes.",
+        "這可協助區分區域變化和本地都市化、量度條件的影響。",
+        "These help distinguish regional change from local urbanisation and measurement changes."
+      ],
+      [
+        "只選該站最熱的一天代表三十年。",
+        "Use only the station's hottest day to represent thirty years.",
+        "極端單日不能代表長期趨勢或分辨原因。",
+        "A single extreme day cannot represent a long-term trend or separate causes."
+      ],
+      [
+        "假定所有升溫只由城市化造成，毋須比較。",
+        "Assume all warming is caused by urbanisation without comparison.",
+        "城市化是可能因素，但不能預先排除區域氣候變化。",
+        "Urbanisation is a possible factor, but regional climate change cannot be ruled out in advance."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "長期環境數據的解讀要檢查地點、儀器和空間尺度。",
+      "Interpret long-term environmental data with attention to site, instruments and spatial scale."
+    ]
+  },
+  {
+    "subjectId": "geography",
+    "grade": 6,
+    "level": 1,
+    "title": [
+      "重現期的風險含義",
+      "Interpreting a return period"
+    ],
+    "question": [
+      "某洪水規模在簡化且穩定的模型中，每年超越機率是 2%，稱為五十年一遇。哪項理解正確？",
+      "In a simplified stationary model, a flood magnitude has a 2% annual exceedance probability, described as a 50-year event. Which interpretation is correct?"
+    ],
+    "options": [
+      [
+        "每年仍有 2% 機會，不保證兩次洪水相隔五十年。",
+        "Each year still has a 2% chance; floods are not guaranteed to be fifty years apart.",
+        "重現期是長期機率概念，不是事件時間表；模型也依賴穩定性假設。",
+        "A return period is a probability concept, not a timetable, and depends on stationarity assumptions."
+      ],
+      [
+        "發生後的四十九年必定安全。",
+        "The next forty-nine years are guaranteed safe after a flood.",
+        "曾發生並不令其後年份的風險自動消失。",
+        "An event does not automatically remove the following years' risk."
+      ],
+      [
+        "五十年內一定剛好發生一次。",
+        "Exactly one event must occur in every fifty-year period.",
+        "機率不能保證固定次數。",
+        "A probability does not guarantee a fixed event count."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "將重現期解讀為模型中的機率，並留意氣候和土地利用可令假設改變。",
+      "Read return periods as model probabilities and consider changes in climate and land use."
+    ]
+  },
+  {
+    "subjectId": "geography",
+    "grade": 6,
+    "level": 2,
+    "title": [
+      "可持續旅遊的多準則決策",
+      "Multi-criteria decisions in sustainable tourism"
+    ],
+    "question": [
+      "某海岸旅遊區高峯期擠迫、步道侵蝕，但居民依賴旅遊收入。哪項方案最能同時回應三個條件？",
+      "A coastal destination has peak-time crowding and trail erosion, while residents rely on tourism income. Which plan best addresses all three conditions?"
+    ],
+    "options": [
+      [
+        "按生態監測調整預約人數、引導離峯旅遊，並讓居民參與收益和管理。",
+        "Adjust booking limits using ecological monitoring, spread visits off-peak and involve residents in benefits and management.",
+        "方案同時處理承載壓力、時間分佈和居民生計；仍需持續評估。",
+        "The plan addresses ecological pressure, timing and livelihoods, with ongoing evaluation still needed."
+      ],
+      [
+        "只宣傳吸引更多高峯期遊客，不改善步道。",
+        "Advertise more peak-time visits without managing trails.",
+        "收入可能增加，但會加劇題目指出的擠迫及侵蝕。",
+        "Revenue may rise, but the stated crowding and erosion pressures may worsen."
+      ],
+      [
+        "永久封閉整區，毋須討論居民替代生計。",
+        "Close the entire area permanently without considering alternative livelihoods.",
+        "可能減少遊客壓力，但沒有回應依賴旅遊的居民需要。",
+        "This may reduce visitor pressure but does not address residents' livelihood needs."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "可持續管理需要比較環境、社會和經濟取捨及其分配。",
+      "Sustainable management compares environmental, social and economic trade-offs and who experiences them."
+    ]
+  },
+  {
+    "subjectId": "geography",
+    "grade": 6,
+    "level": 3,
+    "title": [
+      "GIS 選址與權重敏感度",
+      "GIS siting and sensitivity to weights"
+    ],
+    "question": [
+      "GIS 模型以交通便利和土地價格加權選出新診所位置；模型未加入長者分佈或水浸風險。決策前哪步最關鍵？",
+      "A GIS model weights transport access and land cost to select a clinic site, omitting older residents and flood risk. What is most important before deciding?"
+    ],
+    "options": [
+      [
+        "加入服務需要和風險圖層，與持份者檢視權重，測試排名是否穩定。",
+        "Add need and risk layers, review weights with stakeholders and test whether rankings remain stable.",
+        "地圖結果取決於選用準則、數據和權重，不能把最高分視為中立的唯一答案。",
+        "The ranking depends on criteria, data and weights; the top score is not a uniquely neutral answer."
+      ],
+      [
+        "只提高交通便利的權重，因為它已有完整數據。",
+        "Increase only the transport weight because its data are complete.",
+        "容易取得的資料不應自動壓過服務需要或安全；這仍遺漏重要圖層。",
+        "Convenient data should not automatically outweigh need or safety; important layers remain omitted."
+      ],
+      [
+        "模型由電腦計算，所以毋須檢查權重。",
+        "A computer calculated it, so the weights need no review.",
+        "權重仍包含人的價值判斷與設計選擇。",
+        "Weights still embody human values and design choices."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "空間模型是決策工具；應檢視資料遺漏、權重及受影響羣體。",
+      "Spatial models support decisions; inspect missing data, weights and affected groups."
+    ]
+  }
+]

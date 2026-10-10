@@ -802,16 +802,58 @@
   }
   const MOTION = Object.freeze({
     playerAcceleration: 680, playerDeceleration: 900, depthAcceleration: 360,
-    npcSpeed: 22, npcAcceleration: 44, npcDeceleration: 65,
-    npcRange: 94, npcRest: 3.8, interactionRange: 76, interactionCooldown: 0.35,
+    npcSpeed: 150, npcAcceleration: 680, npcDeceleration: 900,
+    npcRange: 220, npcRest: 3.8, interactionRange: 76, interactionCooldown: 0.35,
   });
   function approach(value, target, amount) {
     return value < target ? Math.min(target, value + amount) : Math.max(target, value - amount);
   }
-  function registeredFrame(look, walking, phase, npc) {
-    const registry = window.CAMPUS_CHARACTERS;
+  function registeredFrame(look, walking, phase, npc, avatar = {}) {
+    // Measured against the 1536 × 512 source panels. Each entrance shares
+  // one art anchor for its plaque, doorway hit area and walking destination.
+  // Stair pairs on 1F/2F are mounted above the same painted stairwell.
+  const ENTRANCE_ART = Object.freeze({
+    corridor: { exit: [132, 104, 126], playground: [643, 104, 124], hall: [1096, 103, 126], corridor1: [1420, 76, 126] },
+    corridor1: { chinese: [100, 63, 130], english: [790, 64, 132], maths: [1045, 62, 140], corridor: [1295, 64, 116], corridor2: [1430, 64, 116] },
+    corridor2: { chemistry: [179, 65, 132], geography: [895, 65, 132], computer: [1213, 65, 130], corridor1: [1370, 61, 105], corridor3: [1480, 61, 102] },
+    corridor3: { corridor2: [91, 66, 124], history: [445, 65, 117], art: [963, 65, 121], music: [1304, 65, 115], corridor4: [1471, 65, 110] },
+    corridor4: { corridor3: [103, 65, 123], library: [644, 65, 124], rooftop: [956, 65, 124] },
+    playground: { corridor: [104, 167, 176] },
+    hall: { corridor: [97, 215, 144] },
+    chinese: { corridor1: [90, 78, 136] },
+    english: { corridor1: [90, 77, 136] },
+    maths: { corridor1: [100, 56, 140] },
+    chemistry: { corridor2: [106, 94, 142] },
+    geography: { corridor2: [106, 79, 142] },
+    computer: { corridor2: [85, 78, 137] },
+    history: { corridor3: [111, 64, 139] },
+    art: { corridor3: [109, 66, 139] },
+    music: { corridor3: [100, 65, 140] },
+    library: { corridor4: [81, 60, 132] },
+    rooftop: { corridor4: [91, 117, 122] },
+  });
+  // Approved reference mounts plaques in the upper transom above the door leaf.
+  // The roof door has no glazed transom, so its plaque mounts on its upper panel.
+  const PLAQUE_OFFSETS = Object.freeze({
+    corridor:26, corridor1:26, corridor2:18, corridor3:26, corridor4:18,
+    playground:12, hall:2, chinese:26, english:30, maths:20, chemistry:14,
+    geography:15, computer:27, history:21, art:20, music:15, library:23, rooftop:11,
+  });
+  for (const [locationId, entrances] of Object.entries(ENTRANCE_ART)) {
+    for (const door of LOCATIONS[locationId].doors) {
+      const [x, top, width] = entrances[door.id];
+      door.x = Math.round(x * 1500 / 1536);
+      door.artTop = Math.round(top * 500 / 512);
+      door.plaqueTop = Math.round((top + PLAQUE_OFFSETS[locationId]) * 500 / 512);
+      door.artWidth = Math.round(width * 1500 / 1536);
+      door.plaqueWidth = Math.min(door.artWidth, 148);
+      // Keep the physical plaque entirely within the world, not pinned to a viewport.
+      door.x = Math.max(door.plaqueWidth / 2 + 6, Math.min(1500 - door.plaqueWidth / 2 - 6, door.x));
+    }
+  }
+  const registry = window.CAMPUS_CHARACTERS;
     if (!registry) return null;
-    const character = npc ? registry.resolve(look.identityId) : registry.player(look);
+    const character = npc ? registry.npc(look.identityId, avatar) : registry.player(look);
     const atlas = character && registry.atlases[character.atlasId];
     if (!atlas) return null;
     const identity = atlas.identities[npc ? 0 : character.hair] || atlas.identities[0];
@@ -1277,7 +1319,7 @@
     scene.width = 1500;
   }
   const registry = window.CAMPUS_CHARACTERS;
-  for (const scene of Object.values(LOCATIONS)) {
+  for (const [locationId, scene] of Object.entries(LOCATIONS)) {
     for (const npc of [scene.npc, ...(scene.extras || [])]) {
       const identity = registry?.resolve(npc.id);
       if (identity) {
@@ -1286,7 +1328,6 @@
         npc.look = { ...identity.look };
       }
     }
-    if (scene.kind === 'room') scene.printer = { id: 'printer:' + scene.subjectId, x: 1095 };
   }
   function createRuntimeScenes() {
     return Object.fromEntries(Object.entries(LOCATIONS).map(([id, scene], sceneIndex) => {
@@ -1620,12 +1661,8 @@
         this.walkTo(selectedNpc.x, selectedNpc.id);
         return;
       }
-      if (scene.printer && Math.abs(px - scene.printer.x) < 45 && py > ground - 97 && py < ground - 21) {
-        this.walkTo(scene.printer.x, scene.printer.id);
-        return;
-      }
       const door = scene.doors.find(
-        (d) => Math.abs(px - d.x) < 58 && py > ground - 255 && py < ground - 12,
+        (d) => Math.abs(px - d.x) < (d.artWidth || 116) / 2 && py > (d.artTop || ground - 255) - 36 && py < ground - 12,
       );
       if (door) {
         this.walkTo(door.x, "door:" + door.id);
@@ -1668,7 +1705,6 @@
       if (this.paused || this.destroyed || this.time < this.interactionReadyAt) return;
       const scene = this.scenes[this.location];
       const targets = this.npcs().map(npc => ({ id: npc.id, x: npc.x }));
-      if (scene.printer) targets.push(scene.printer);
       targets.push(...scene.doors.map(door => ({ id: 'door:' + door.id, x: door.x })));
       const nearest = targets.filter(target => Math.abs(this.x - target.x) < MOTION.interactionRange)
         .sort((a, b) => Math.abs(this.x - a.x) - Math.abs(this.x - b.x))[0];
@@ -1676,7 +1712,7 @@
     }
     actorCanWalk(actor) {
       const npc = Boolean(actor.look.identityId);
-      const selected = registeredFrame(actor.look, true, actor.phase, npc);
+      const selected = registeredFrame(actor.look, true, actor.phase, npc, this.getAvatar() || {});
       // A still image must never glide around the room pretending to walk.
       return Boolean(selected && selected.identity.walk.length >= 2 && requestRaster(selected.atlas.src, this._onAssetReady));
     }
@@ -1692,16 +1728,17 @@
         if (!mobile) { actor.state = 'idle'; actor.speed = 0; continue; }
         if ((actor.state === 'idle' || actor.state === 'stop') && this.time >= actor.nextChange) {
           actor.turns += 1;
-          const range = actor.interactive === false ? 160 : MOTION.npcRange;
+          const range = MOTION.npcRange + (actor.interactive === false ? 40 : 0);
           actor.targetX = Math.max(180, Math.min(scene.width - 190, actor.homeX + (actor.turns % 2 ? 1 : -1) * range));
-          actor.state = 'walk';
+          actor.state = 'walk'; actor.phase = 0;
           if (actor.interactive === false) actor.activity = 'walk';
         }
         if (actor.state === 'walk') {
           const delta = actor.targetX - actor.x;
-          const limit = actor.interactive === false ? MOTION.npcSpeed * 1.55 : MOTION.npcSpeed;
+          const limit = MOTION.npcSpeed;
           const desired = Math.sign(delta) * Math.min(limit, Math.sqrt(2 * MOTION.npcDeceleration * Math.abs(delta)));
-          actor.speed = approach(actor.speed, desired, MOTION.npcAcceleration * dt);
+          const acceleration = Math.abs(desired) < Math.abs(actor.speed) ? MOTION.npcDeceleration : MOTION.npcAcceleration;
+          actor.speed = approach(actor.speed, desired, acceleration * dt);
           let move = actor.speed * dt;
           if (Math.abs(move) > Math.abs(delta)) move = delta;
           actor.x += move;
@@ -1719,7 +1756,11 @@
     }
     resize(){
       if(this.destroyed)return;
-      const box=this.canvas.getBoundingClientRect(),dpr=Math.min(window.devicePixelRatio||1,2);
+      const box=this.canvas.getBoundingClientRect();
+      // World units stay 500 high; the backing bitmap follows the displayed size.
+      // A tall phone/desktop viewport must not magnify a fixed 500px raster.
+      const density=Math.min(window.devicePixelRatio||1,2);
+      const dpr=density*Math.max(1,(box.height||H)/H);
       if(box.width>0&&box.height>0)this.viewWidth=Math.max(200,Math.min(1500,Math.round(box.width/box.height*H)));
       const width=Math.round(this.viewWidth*dpr),height=Math.round(H*dpr);
       if(this.canvas.width!==width)this.canvas.width=width;if(this.canvas.height!==height)this.canvas.height=height;
@@ -2013,7 +2054,7 @@
       this.rect(c, x + 10, 303, 2, 53, "#527c6d");
       this.rect(c, x + 14, 355, 61, 3, "#213f40");
       this.rect(c, x + 73, 306, 2, 11, "#ffdaa1");
-      this.sign(c, this.word(d.label), d.x, 122, 140);
+      this.mountedPlaque(c, this.entranceLabel(d), d.x, 120, 140);
       this.rect(c, d.x - 7, 352, 14, 3, "#c4d9c6");
       this.rect(c, d.x - 2, 347, 4, 13, "#c4d9c6");
     }
@@ -2241,7 +2282,7 @@
       this.rect(c, x + 16, 305, 3, 40, "#41675c");
       this.rect(c, x + 86, 188, 3, 47, "#41675c");
       this.rect(c, x - 3, 374, 112, 8, "#746f5d");
-      this.sign(c, this.word(d.label), d.x, 120, 155);
+      this.mountedPlaque(c, this.entranceLabel(d), d.x, 120, 155);
       this.text(c, d.stairs === "up" ? "↑" : "↓", d.x + 32, 341, 23, "#355b54");
     }
     pixelLine(c, x1, y1, x2, y2, size, color) {
@@ -3166,8 +3207,10 @@
     characterHeight(look = {}) {
       const registry = window.CAMPUS_CHARACTERS;
       const doorHeight = registry?.sceneScale?.[this.location] || 229;
-      const adult = Boolean(look.adult || registry?.resolve(look.identityId)?.adult);
-      return doorHeight * (adult ? registry?.proportions?.adultToDoor || 0.89 : registry?.proportions?.studentToDoor || 0.82);
+      const identity = registry?.resolve(look.identityId);
+      const adult = Boolean(look.adult || identity?.adult);
+      const relativeHeight = identity?.heightCm ? identity.heightCm / (adult ? 174 : 168) : 1;
+      return doorHeight * (adult ? registry?.proportions?.adultToDoor || 0.89 : registry?.proportions?.studentToDoor || 0.82) * relativeHeight;
     }
     strideDistance(look) {
       return this.characterHeight(look) * (window.CAMPUS_CHARACTERS?.proportions?.strideToHeight || 0.75);
@@ -3226,23 +3269,60 @@
       );
       return true;
     }
+    entranceLabel(door) {
+      const roomLabels = {
+        chinese: { zh: '中文課室', cn: '中文课室', en: 'Chinese' },
+        english: { zh: '英語課室', cn: '英语课室', en: 'English' },
+        maths: { zh: '數學課室', cn: '数学课室', en: 'Mathematics' },
+      };
+      if (roomLabels[door.id]) return this.word(roomLabels[door.id]);
+      if (this.scenes[this.location].kind === 'room') {
+        const floor = this.scenes[this.location].floor;
+        return (floor ? floor + 'F' : 'G') + (this.isEnglish() ? ' · CORRIDOR' : ' · 走廊');
+      }
+      return this.word(door.label);
+    }
+    mountedPlaque(c, label, x, top, width) {
+      const left = Math.round(x - width / 2), y = Math.round(top), h = 28;
+      // Opaque enamel, two-step corners, a brass inset and four fixing pins.
+      const step = (px, py, w, height, color) => {
+        this.rect(c, px + 4, py, w - 8, height, color);
+        this.rect(c, px, py + 4, w, height - 8, color);
+        this.rect(c, px + 2, py + 2, w - 4, height - 4, color);
+      };
+      step(left + 1, y + 3, width, h, 'rgba(34,51,42,.25)');
+      step(left, y, width, h, '#153f3c');
+      step(left + 2, y + 2, width - 4, h - 4, '#d5b66b');
+      step(left + 3, y + 3, width - 6, h - 6, '#fff8e4');
+      for (const offset of [6, width - 8]) {
+        this.rect(c, left + offset, y + 6, 2, 2, '#b48d43');
+        this.rect(c, left + offset, y + h - 8, 2, 2, '#b48d43');
+      }
+      let size = 10.5;
+      const pixelFont = this.lang === 'cn' ? 'Campus Fusion Pixel SC' : 'Campus Fusion Pixel HK';
+      c.font = `${size}px "${pixelFont}", monospace`;
+      while (size > 7 && c.measureText(label).width > width - 22) {
+        size -= .5;
+        c.font = `${size}px "${pixelFont}", monospace`;
+      }
+      c.fillStyle = '#153f3c'; c.textAlign = 'center'; c.textBaseline = 'middle';
+      c.fillText(label, Math.round(x), y + h / 2 + .5);
+    }
     drawArtEntrances(c, scene, cam, ground) {
       for (const door of scene.doors) {
-        const x = door.x - cam;
-        if (x < -100 || x > this.viewWidth + 100) continue;
-        const close = Math.abs(this.x - door.x) < 90,
-          w = door.stairs ? 138 : 156;
-        const labelX = Math.max(w / 2 + 9, Math.min(this.viewWidth - w / 2 - 9, x));
-        const top = ground - 213;
-        this.frostPanel(c, labelX - w / 2, top, w, 28, close);
-        this.text(c, this.word(door.label), labelX, top + 14, 10, "#314959");
-        this.rect(c, x - 13, ground - 17, 27, 3, close ? "#f3d687" : "#dce3bf");
-        this.rect(c, x - 8, ground - 21, 17, 3, close ? "#f3d687" : "#dce3bf");
-        this.rect(c, x - 3, ground - 25, 7, 3, close ? "#f3d687" : "#dce3bf");
+        const x = door.x - cam, w = door.plaqueWidth || 140;
+        if (x + w / 2 < 0 || x - w / 2 > this.viewWidth) continue;
+        // A real wall object: camera motion never moves it away from its doorway.
+        const top = door.plaqueTop ?? Math.max(8, (door.artTop || ground - 240) + 22);
+        this.mountedPlaque(c, this.entranceLabel(door), x, top, w);
+        const close = Math.abs(this.x - door.x) < 90;
+        this.rect(c, x - 13, ground - 17, 27, 3, close ? '#f3d687' : '#dce3bf');
+        this.rect(c, x - 8, ground - 21, 17, 3, close ? '#f3d687' : '#dce3bf');
+        this.rect(c, x - 3, ground - 25, 7, 3, close ? '#f3d687' : '#dce3bf');
       }
     }
     drawAtlasCharacter(c, x, y, look, walking, phase, direction, npc) {
-      const selected = registeredFrame(look, walking, phase, npc);
+      const selected = registeredFrame(look, walking, phase, npc, this.getAvatar() || {});
       if (selected) {
         const img = requestRaster(selected.atlas.src, this._onAssetReady);
         if (img && selected.frame) {
@@ -3312,30 +3392,13 @@
         Math.round(88 * fallbackScale),
       );
     }
-    drawPrinter(c, printer, cam, ground) {
-      if (!printer) return;
-      const x = printer.x - cam, close = Math.abs(this.x - printer.x) < MOTION.interactionRange;
-      if (x < -90 || x > this.viewWidth + 90) return;
-      // Printer is an in-world desk object, with a generous intentional hit area.
-      this.rect(c, x - 39, ground - 35, 78, 7, '#7d6552');
-      this.rect(c, x - 33, ground - 28, 6, 27, '#645342');
-      this.rect(c, x + 27, ground - 28, 6, 27, '#645342');
-      this.rect(c, x - 26, ground - 69, 52, 33, '#53696b');
-      this.rect(c, x - 24, ground - 67, 48, 20, '#d6e0d9');
-      this.rect(c, x - 17, ground - 92, 34, 28, '#fffaf0');
-      this.rect(c, x - 12, ground - 84, 24, 2, '#b8c9c4');
-      this.rect(c, x - 12, ground - 79, 17, 2, '#b8c9c4');
-      this.rect(c, x - 17, ground - 50, 34, 5, '#273e42');
-      this.rect(c, x + 14, ground - 60, 5, 4, '#76bea0');
-      this.frostPanel(c, x - 57, ground - 125, 114, 25, close);
-      this.text(c, this.isEnglish() ? 'WORKSHEETS' : this.lang === 'cn' ? '打印工作纸' : '列印工作紙', x, ground - 112, 10, COLORS.deep);
-    }
     drawAmbient(c, actor, cam, ground) {
       const x = actor.x - cam;
       const height = this.characterHeight(actor.look);
       if (x < -100 || x > this.viewWidth + 100) return;
       const npc = Boolean(actor.look.identityId);
-      this.worldSprite(c, x, ground + actor.depth, actor.look, actor.state === 'walk' && Math.abs(actor.speed) > 0.1, actor.phase, actor.direction, npc);
+      const look = !npc ? { ...actor.look, uniform: window.CAMPUS_CHARACTERS?.player(this.getAvatar() || {}).uniform ?? 0 } : actor.look;
+      this.worldSprite(c, x, ground + actor.depth, look, actor.state === 'walk' && Math.abs(actor.speed) > 0.1, actor.phase, actor.direction, npc);
       if (actor.activity === 'reading') {
         this.rect(c, x - 13, ground + actor.depth - height * 0.55, 25, 16, '#596d8b');
         this.rect(c, x - 10, ground + actor.depth - height * 0.55 + 2, 19, 12, '#f4ecd8');
@@ -3372,7 +3435,6 @@
       }
       const scene = this.scenes[this.location], progress = this.getProgress() || {}, npcs = this.npcs();
       for (const actor of scene.ambient) this.drawAmbient(c, actor, cam, ground);
-      this.drawPrinter(c, scene.printer, cam, ground);
       for (const [index, npc] of npcs.entries()) {
         const nx = npc.x - cam;
         if (nx < -100 || nx > this.viewWidth + 100) continue;
@@ -3385,9 +3447,6 @@
         const badgeTop = ground - this.characterHeight(npc.look) - 40 + pulse;
         this.frostPanel(c, nx - 13, badgeTop, 26, 25, completed, 9);
         this.text(c, completed ? '✓' : '!', nx, badgeTop + 13, 16, completed ? '#327e69' : '#577086');
-        const labelWidth = npc.look.adult ? 116 : 64;
-        this.frostPanel(c, nx - labelWidth / 2, ground + 9, labelWidth, 23);
-        this.text(c, this.word(npc.name), nx, ground + 20, npc.look.adult ? 10 : 11, COLORS.deep);
       }
       this.worldSprite(
         c,
@@ -3413,11 +3472,9 @@
         );
       }
       const nearNpc = npcs.some((n) => Math.abs(this.x - n.x) < MOTION.interactionRange),
-        nearDoor = scene.doors.find((d) => Math.abs(this.x - d.x) < MOTION.interactionRange),
-        nearPrinter = scene.printer && Math.abs(this.x - scene.printer.x) < MOTION.interactionRange;
-      if (!this.paused && (nearNpc || nearDoor || nearPrinter)) {
-        const action = nearPrinter ? (this.isEnglish() ? 'Print' : this.lang === 'cn' ? '打印' : '列印')
-          : nearNpc ? (this.isEnglish() ? 'Talk' : this.lang === 'cn' ? '对话' : '對話')
+        nearDoor = scene.doors.find((d) => Math.abs(this.x - d.x) < MOTION.interactionRange);
+      if (!this.paused && (nearNpc || nearDoor)) {
+        const action = nearNpc ? (this.isEnglish() ? 'Talk' : this.lang === 'cn' ? '对话' : '對話')
           : (this.isEnglish() ? 'Enter' : this.lang === 'cn' ? '进入' : '進入');
         const label = this.inputMode === "pointer"
           ? (this.isEnglish() ? "Tap · " : "輕觸 · ") + action

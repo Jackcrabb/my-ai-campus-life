@@ -1,0 +1,238 @@
+/* Approved map and quiz panels. Scoped away from enrolment and teacher tools. */
+#modal.game-panel:is([data-panel="map"], [data-panel="subject"], [data-panel="case"], [data-panel="review"], [data-panel="journal"]) {
+  color: var(--campus-ink);
+  background: #123f4838;
+}
+#modal.game-panel:is([data-panel="map"], [data-panel="subject"], [data-panel="case"], [data-panel="review"], [data-panel="journal"]) :is(.modal-heading, #modal-content) {
+  border: 12px solid transparent;
+  border-image: var(--pixel-frame) 12 fill / 12px / 0 stretch;
+  border-radius: 0;
+  background: none;
+  color: var(--campus-ink);
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+#modal.game-panel:is([data-panel="map"], [data-panel="subject"], [data-panel="case"], [data-panel="review"], [data-panel="journal"]) .modal-heading {
+  margin: 16px 24px 0;
+  padding: 12px 20px;
+}
+#modal.game-panel:is([data-panel="map"], [data-panel="subject"], [data-panel="case"], [data-panel="review"], [data-panel="journal"]) .modal-heading h2 {
+  font-family: Georgia, "Songti TC", "Noto Serif TC", serif;
+  font-size: clamp(23px, 2.7vw, 34px);
+  line-height: 1.25;
+}
+#modal.game-panel:is([data-panel="map"], [data-panel="subject"], [data-panel="case"], [data-panel="review"], [data-panel="journal"]) .modal-heading .eyebrow {
+  color: #526b66;
+  font-size: 11px;
+  line-height: 1.5;
+  letter-spacing: .06em;
+}
+#modal.game-panel:is([data-panel="map"], [data-panel="subject"], [data-panel="case"], [data-panel="review"], [data-panel="journal"]) .close-button {
+  border: 2px solid var(--campus-ink);
+  border-radius: 0;
+  background: var(--campus-paper);
+  color: var(--campus-ink);
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+}
+#modal.game-panel:is([data-panel="map"], [data-panel="journal"]) #modal-content {
+  width: calc(100% - 48px);
+  max-width: 1160px;
+  margin: 12px auto 20px;
+  padding: 18px 20px;
+}
+#modal.game-panel:is([data-panel="subject"], [data-panel="case"], [data-panel="review"]) :is(.modal-heading, #modal-content) {
+  width: calc(68% - 32px);
+  margin-left: auto;
+  margin-right: 24px;
+}
+#modal.game-panel:is([data-panel="subject"], [data-panel="case"], [data-panel="review"]) #modal-content {
+  max-height: calc(100% - 32px);
+  margin-top: 12px;
+  margin-bottom: 20px;
+  padding: 18px 22px;
+}
+#modal.game-panel:is([data-panel="subject"], [data-panel="case"], [data-panel="review"]) .panel-portrait.registered-portrait {
+  left: 1.5%;
+  right: auto;
+  bottom: 0;
+  top: auto;
+  width: 29%;
+  height: auto;
+  max-height: 90%;
+  opacity: 1;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  filter: none;
+  mask-image: none;
+  -webkit-mask-image: none;
+  image-rendering: pixelated;
+  z-index: 3;
+}
+#modal.game-panel:is([data-panel="map"], [data-panel="subject"], [data-panel="case"], [data-panel="review"], [data-panel="journal"]) :is(.primary, .secondary, .subject-tab) {
+  border: 2px solid var(--campus-ink);
+  border-radius: 0;
+  min-height: 44px;
+  padding: 10px 16px;
+  color: var(--campus-ink);
+  background: var(--campus-paper);
+  box-shadow: inset 0 0 0 2px #d7b15b55;
+}
+#modal.game-panel:is([data-panel="subject"], [data-panel="case"], [data-panel="review"], [data-panel="journal"]) .primary,
+#modal.game-panel[data-panel="subject"] .subject-tab[aria-pressed="true"] {
+  color: var(--campus-paper);
+  background: var(--campus-ink);
+  border-color: var(--campus-gold);
+  outline: 2px solid var(--campus-ink);
+  outline-offset: -1px;
+}
+#modal.game-panel:is([data-panel="map"], [data-panel="subject"], [data-panel="case"], [data-panel="review"], [data-panel="journal"]) button:focus-visible,
+.game-panel .quiz-option:has(input:focus-visible), .floorplan-scroll:focus-visible {
+  outline: 3px solid #277e8e;
+  outline-offset: 4px;
+}
+.game-panel .quiz-option {
+  display: flex;
+  position: relative;
+  align-items: stretch;
+  gap: 0;
+  padding: 0;
+  margin: 8px 0;
+  min-height: 62px;
+  border: 2px solid #6b8987;
+  border-radius: 0;
+  background: #fffdf0;
+  color: var(--campus-ink);
+  box-shadow: inset 0 0 0 2px #e2d9b4;
+  cursor: pointer;
+  overflow: hidden;
+  transition: background-color .12s ease, border-color .12s ease;
+}
+.game-panel .quiz-option input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+}
+.game-panel .quiz-option-letter {
+  display: grid;
+  place-items: center;
+  flex: 0 0 48px;
+  margin: 3px;
+  padding: 7px 0;
+  border: 1px solid #d7b15b8c;
+  color: var(--campus-paper);
+  background: var(--campus-ink);
+  font-family: Georgia, serif;
+  font-size: 27px;
+  line-height: 1;
+  font-weight: 700;
+}
+.game-panel .quiz-option-copy {
+  flex: 1;
+  min-width: 0;
+  padding: 13px 16px;
+  align-self: center;
+  font-size: 17px;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+  white-space: pre-line;
+}
+.game-panel .quiz-option-copy strong { display: block; font-size: inherit; }
+.game-panel .quiz-option-copy > span { display: block; margin-top: 3px; font-size: .9em; color: #49645f; }
+.game-panel .quiz-option:hover { background: #f0f4db; border-color: #3b706c; }
+.game-panel .quiz-option:has(input:checked) {
+  padding: 0;
+  background: #d7f0da;
+  border-color: #b28b2e;
+  box-shadow: inset 0 0 0 2px #ebc965;
+  color: var(--campus-ink);
+}
+.game-panel .quiz-option:has(input:checked) .quiz-option-letter { background: #1e686a; }
+#modal.game-panel[data-panel="subject"] .subject-tabs { gap: 10px; margin: 0 0 14px; padding: 0 0 14px; border-color: #d0c399; flex-wrap: wrap; }
+#modal.game-panel[data-panel="subject"] .subject-tab { flex: 1 1 120px; font-size: 13px; line-height: 1.45; }
+#modal.game-panel[data-panel="subject"] .subject-tab[aria-pressed="true"] small { color: #f4dfa1; }
+#modal.game-panel[data-panel="subject"] .subject-question { margin: 0; white-space: normal; }
+#modal.game-panel[data-panel="subject"] .subject-question h3 { color: #5c745f; font-size: 15px; margin: 4px 0; }
+#modal.game-panel:is([data-panel="subject"], [data-panel="case"], [data-panel="journal"]) .case-question { color: var(--campus-ink); font-size: clamp(19px, 1.75vw, 25px); font-weight: 650; line-height: 1.65; margin: 12px 0 16px; }
+#modal.game-panel:is([data-panel="subject"], [data-panel="case"], [data-panel="journal"]) .feedback { background: #e5efd7; border: 1px solid #88a48b; border-left: 4px solid #497662; border-radius: 0; color: #224e48; }
+#modal.game-panel:is([data-panel="subject"], [data-panel="case"], [data-panel="journal"]) .feedback.consider { background: #fff0d0; border-color: #c4a054; color: #624b24; }
+#modal.game-panel:is([data-panel="subject"], [data-panel="case"], [data-panel="journal"]) .button-row { gap: 12px; margin-top: 20px; }
+#modal.game-panel:is([data-panel="subject"], [data-panel="case"], [data-panel="journal"]) .small-note { color: #586b63; line-height: 1.65; }
+.map-toolbar { margin-bottom: 15px; }
+.map-layout { display:grid; grid-template-columns:106px minmax(0,1fr); align-items:start; gap:16px; }
+.map-location { margin: 0; min-width: 0; }
+.map-location span { display: block; color: #687768; font-size: 11px; letter-spacing: .08em; margin-bottom: 4px; }
+.map-location strong { color: var(--campus-ink); font-size: 17px; }
+.map-floors { display: flex; flex-direction:column; gap: 9px; }
+.map-floors button { min-width: 0; min-height: 51px; padding: 4px 12px; border: 2px solid #7b9590; border-radius: 0; background: var(--campus-paper); color: var(--campus-ink); font: 700 21px Georgia, serif; box-shadow: inset 0 0 0 2px #d9cc9b; }
+.map-floors button span { display:block; font:500 11px/1.2 system-ui,sans-serif; margin-bottom:3px; }
+.map-floors button strong { display:block; font-size:21px; line-height:1.1; }
+.map-floors button[aria-pressed="true"] { border-color: var(--campus-gold); background: var(--campus-ink); color: var(--campus-paper); outline: 2px solid var(--campus-ink); outline-offset: 1px; }
+.floorplan-panel { margin: 0; }
+.floorplan-scroll { overflow-x: auto; overscroll-behavior-x: contain; scrollbar-width: thin; border: 3px solid var(--campus-ink); background: #d9d3b8; }
+.floorplan-stage { position: relative; aspect-ratio: var(--floor-ratio); min-width: 660px; isolation: isolate; }
+.floorplan-art { position: absolute; inset: 0; z-index: -1; background-image: url("assets/ui/floorplans-v1.png"); background-size: 100% var(--floor-size); background-position: 0 var(--floor-y); background-repeat: no-repeat; image-rendering: pixelated; }
+.floorplan-destination { position: absolute; transform: translateX(-50%); border: 2px solid var(--campus-ink); border-radius: 0; color: var(--campus-ink); background: #fffbe8f7; padding: 8px 10px; min-height: 48px; min-width: 95px; width: 25%; max-width: 250px; box-shadow: 2px 3px 0 #143a4855; text-align: center; }
+.floorplan-destination.room { left: var(--room-x); top: 35%; }
+.floorplan-destination.corridor { left: 50%; bottom: 5%; width: 30%; max-width: 285px; }
+.floorplan-destination strong { display: block; font-size: clamp(13px, 1.4vw, 19px); line-height: 1.35; }
+.floorplan-destination small { display: block; margin-top: 3px; font-size: 11px; line-height: 1.3; color: #486b62; }
+.floorplan-destination.current { color: var(--campus-paper); background: var(--campus-ink); border-color: #eac14f; outline: 3px solid #f0ce66; outline-offset: 2px; }
+.floorplan-destination.current small { color: #f9df8f; }
+.floorplan-destination:hover { background: #d9efdc; color: var(--campus-ink); }
+.floorplan-destination.current:hover small { color: #3c6455; }
+.map-pan-hint { display:none; }
+.map-caption { margin: 12px 0 0; color: #557166; font-size: 13px; line-height: 1.6; }
+.map-footer { display: flex; gap: 22px; align-items: center; margin-top: 12px; padding-top: 12px; border-top: 1px solid #d7c694; }
+.map-footer p { flex: 1; margin: 0; color: #5f7167; font-size: 13px; line-height: 1.6; }
+.map-footer button { flex-shrink: 0; }
+@media (max-width: 900px) {
+  #modal.game-panel:is([data-panel="subject"], [data-panel="case"], [data-panel="review"]) :is(.modal-heading, #modal-content) { width: calc(76% - 22px); margin-right: 12px; }
+  #modal.game-panel:is([data-panel="subject"], [data-panel="case"], [data-panel="review"]) .panel-portrait.registered-portrait { left: 0; width: 23%; }
+  .map-layout { grid-template-columns:92px minmax(0,1fr); gap:12px; }
+}
+@media (max-width: 650px) {
+  #modal.game-panel:is([data-panel="subject"], [data-panel="case"], [data-panel="review"]) :is(.modal-heading, #modal-content) { width:calc(100% - 16px); margin-left:8px; margin-right:8px; }
+  .map-pan-hint { display:block; font-weight:650; margin-bottom:4px; }
+  #modal.game-panel:is([data-panel="map"], [data-panel="subject"], [data-panel="case"], [data-panel="review"], [data-panel="journal"]) .modal-heading { margin: 8px 8px 0; padding: 9px 10px; width: calc(100% - 16px); }
+  #modal.game-panel:is([data-panel="map"], [data-panel="subject"], [data-panel="case"], [data-panel="review"], [data-panel="journal"]) .modal-heading h2 { font-size: 24px; }
+  #modal.game-panel:is([data-panel="map"], [data-panel="subject"], [data-panel="case"], [data-panel="review"], [data-panel="journal"]) #modal-content { width: calc(100% - 16px); margin: 8px auto 10px; max-height: calc(100% - 18px); padding: 12px 10px; }
+  #modal.game-panel:is([data-panel="subject"], [data-panel="case"], [data-panel="review"]) .modal-heading { min-height: 148px; padding-right: 116px; align-items: center; }
+  #modal.game-panel:is([data-panel="subject"], [data-panel="case"], [data-panel="review"]) .modal-heading h2 { font-size: 22px; }
+  #modal.game-panel:is([data-panel="subject"], [data-panel="case"], [data-panel="review"]) .modal-heading .eyebrow { font-size: 10px; }
+  #modal.game-panel:is([data-panel="subject"], [data-panel="case"], [data-panel="review"]) .close-button { position: absolute; right: 6px; top: 5px; width: 32px; height: 32px; min-width: 32px; z-index: 4; }
+  #modal.game-panel:is([data-panel="subject"], [data-panel="case"], [data-panel="review"]) .panel-portrait.registered-portrait { left: auto; right: 31px; top: 112px; bottom: auto; width: 88px; max-height: 118px; opacity: 1; z-index: 3; }
+  .map-layout { grid-template-columns:64px minmax(0,1fr); gap:10px; }
+  .map-floors { gap:7px; }
+  .map-floors button { min-width:0; min-height:50px; padding:6px 3px; font-size:17px; }
+  .map-floors button span { font-size:10px; }
+  .map-floors button strong { font-size:18px; }
+  .floorplan-stage { min-width: 660px; }
+  .map-footer { flex-direction: column; align-items: stretch; gap: 14px; }
+  .game-panel .quiz-option { min-height: 60px; }
+  .game-panel .quiz-option-letter { flex-basis: 35px; font-size: 23px; }
+  .game-panel .quiz-option-copy { padding: 11px 10px; font-size: 16px; }
+  #modal.game-panel:is([data-panel="subject"], [data-panel="case"], [data-panel="journal"]) .case-question { font-size: 19px; }
+  #modal.game-panel[data-panel="subject"] .subject-tab { flex: 1 1 80px; padding: 8px 7px; font-size: 12px; }
+  #modal.game-panel:is([data-panel="subject"], [data-panel="case"], [data-panel="journal"]) .button-row > button { flex: 1 1 125px; }
+}
+@media (prefers-reduced-motion: reduce) { .game-panel .quiz-option { transition: none; } }
+
+#modal.game-panel[data-panel="subject"] .quiz-question-meta { display:flex; flex-wrap:wrap; align-items:baseline; gap:6px 15px; }
+#modal.game-panel[data-panel="subject"] .quiz-question-meta .eyebrow { margin:0; font-size:12px; }
+#modal.game-panel[data-panel="subject"] .subject-options { margin:8px 0 0; }
+#modal.game-panel[data-panel="subject"] .case-question { white-space:pre-line; }
+.large-text .game-panel .quiz-option-copy { font-size:20px; }
+.large-text #modal.game-panel:is([data-panel="subject"], [data-panel="case"], [data-panel="journal"]) .case-question { font-size:26px; }
+.large-text #modal.game-panel:is([data-panel="map"], [data-panel="subject"], [data-panel="case"], [data-panel="journal"]) .small-note,
+.large-text .map-caption, .large-text .map-footer p { font-size:16px; }
+
+/* Progress directories are records, not travel or question shortcuts. */
+article.case-item, article.map-room { cursor: default; }
+article.case-item:hover, article.map-room:hover { transform: none; }
+.case-stars { font-weight: 700; color: #725622; white-space: nowrap; }

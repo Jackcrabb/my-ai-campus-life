@@ -1,0 +1,4106 @@
+[
+  {
+    "subjectId": "history",
+    "grade": 1,
+    "level": 1,
+    "title": [
+      "古代事件的先後",
+      "Ordering ancient events"
+    ],
+    "question": [
+      "展板列出：甲公元前221年、乙公元前500年、丙公元220年。由最早到最遲應怎樣排列？",
+      "A display dates A to 221 BCE, B to 500 BCE and C to 220 CE. Which order runs from earliest to latest?"
+    ],
+    "options": [
+      [
+        "乙→甲→丙",
+        "B → A → C",
+        "公元前年份數字愈大，年代愈早；兩個公元前事件都早於公元220年。",
+        "Larger BCE year numbers are earlier; both BCE events precede 220 CE."
+      ],
+      [
+        "甲→乙→丙",
+        "A → B → C",
+        "這把公元前的數字當作公元後順序；公元前500年早於公元前221年。",
+        "This treats BCE numbering like CE numbering; 500 BCE comes before 221 BCE."
+      ],
+      [
+        "丙→甲→乙",
+        "C → A → B",
+        "這是由較近至較遠的方向，與題目要求相反。",
+        "This runs towards the more distant past, opposite to the requested order."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "排列年代前，先分辨公元前與公元後的計年方向。",
+      "Distinguish BCE and CE before placing events on a timeline."
+    ]
+  },
+  {
+    "subjectId": "history",
+    "grade": 1,
+    "level": 2,
+    "title": [
+      "河流與文明",
+      "Rivers and civilisations"
+    ],
+    "question": [
+      "古埃及農民利用尼羅河氾濫後留下的肥沃泥土耕種。哪條因果鏈最能解釋這項環境條件與定居生活的關係？",
+      "Ancient Egyptian farmers grew crops in fertile soil left by Nile floods. Which causal chain best links this environment to settled life?"
+    ],
+    "options": [
+      [
+        "肥沃土壤→較穩定的農業供應→支持定居人口",
+        "Fertile soil → a more dependable food supply → support for settled communities",
+        "農業剩餘有助支持定居人口，但並不代表每年都沒有旱災或饑荒。",
+        "Agricultural surplus can support settlement; it does not mean every year was free of drought or famine."
+      ],
+      [
+        "河流存在→人人不需工作→城市自然出現",
+        "A river exists → nobody needs to work → cities appear automatically",
+        "河流仍須配合耕作及組織，不會自動提供生活所需。",
+        "A river still requires farming and organisation; it does not automatically provide all necessities."
+      ],
+      [
+        "洪水→不能耕種→永久放棄河谷",
+        "Floods → no farming is possible → permanent abandonment of the valley",
+        "這忽略題目所述氾濫帶來肥沃土壤的作用。",
+        "This ignores the fertile deposits described in the question."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "歷史因果解釋須指出中間機制，避免把環境視為唯一決定因素。",
+      "Explain the mechanism linking an environment to change, without treating geography as the only cause."
+    ]
+  },
+  {
+    "subjectId": "history",
+    "grade": 1,
+    "level": 3,
+    "title": [
+      "陶片能告訴我們甚麼",
+      "What can pottery show?"
+    ],
+    "question": [
+      "虛構考古練習：兩個相距很遠、年代相近的聚落出土同類陶器。未有文字記錄。哪項是證據最能支持、但仍需覈查的推論？",
+      "Fictional archaeology exercise: two distant settlements from a similar period contain similar pottery, with no written records. Which inference is best supported but still needs checking?"
+    ],
+    "options": [
+      [
+        "兩地可能有交流，須再比較原料與製作方法",
+        "The places may have had contact; compare clay sources and production methods",
+        "相似器物可提示交流；原料及工藝比較能檢查貿易、仿製等解釋。",
+        "Similar objects suggest contact; materials and techniques can test trade, imitation and other explanations."
+      ],
+      [
+        "兩地一定由同一位君主統治",
+        "Both places must have had the same ruler",
+        "器物相似本身不足以證明政治統治相同。",
+        "Similar pottery alone cannot establish common political rule."
+      ],
+      [
+        "兩地的人一定說同一種語言",
+        "Everyone in both places must have spoken the same language",
+        "陶器形制不能直接證明使用哪種語言。",
+        "Pottery form cannot directly establish the language people spoke."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "區分器物所顯示的線索與尚未證實的政治或文化結論。",
+      "Separate material clues from unproven political or cultural conclusions."
+    ]
+  },
+  {
+    "subjectId": "history",
+    "grade": 2,
+    "level": 1,
+    "title": [
+      "印刷的影響",
+      "The effects of printing"
+    ],
+    "question": [
+      "研究近代歐洲時，學生比較手抄書與活字印刷。同一篇文字可重複排印，主要直接降低哪項限制？",
+      "A class compares manuscripts and movable-type printing in early modern Europe. Reusing type to print the same text most directly reduces which constraint?"
+    ],
+    "options": [
+      [
+        "每份書都要重新逐字抄寫的時間",
+        "The need to copy every book again by hand",
+        "重複印製減少每份複本所需的抄寫工作，有助文字流通。",
+        "Repeated printing reduces the copying work per copy and helps texts circulate."
+      ],
+      [
+        "讀者必須學習閱讀的需要",
+        "The need for readers to learn to read",
+        "印刷增加書籍供應，卻不會自動令讀者識字。",
+        "Printing increases supply but does not automatically make readers literate."
+      ],
+      [
+        "所有出版物受到審查的可能性",
+        "Every possibility of censorship",
+        "生產技術改變不等於審查制度必定消失。",
+        "A production change does not necessarily remove censorship."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "分析技術影響時，要分清直接效果與不一定發生的社會結果。",
+      "Distinguish a technology’s direct effects from social outcomes that are not automatic."
+    ]
+  },
+  {
+    "subjectId": "history",
+    "grade": 2,
+    "level": 2,
+    "title": [
+      "工廠選址的改變",
+      "Changing factory locations"
+    ],
+    "question": [
+      "工業革命課堂模型：甲廠只能用河流水力；乙廠改用燃煤蒸汽機。其他條件相同，乙廠選址的哪項限制最直接減少？",
+      "Industrial Revolution classroom model: factory A depends on river power; B uses a coal-fired steam engine. Other conditions equal, which location constraint is most directly reduced for B?"
+    ],
+    "options": [
+      [
+        "必須靠近合適的急流",
+        "Having to be beside a suitable fast-flowing river",
+        "蒸汽動力減少對天然流水動力的依賴；燃料及運輸仍然重要。",
+        "Steam reduces dependence on flowing water for power; fuel and transport still matter."
+      ],
+      [
+        "必須考慮燃料運輸",
+        "Having to consider fuel transport",
+        "燃煤蒸汽機需要燃料，運輸限制不會因此消失。",
+        "A coal-fired engine needs fuel, so fuel transport remains relevant."
+      ],
+      [
+        "必須有工人操作機器",
+        "Having workers operate machinery",
+        "動力來源改變，並不代表當時工廠完全不需要工人。",
+        "Changing the power source did not make contemporary factories entirely worker-free."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "用技術所改變的實際條件解釋工業發展，而非假定所有限制都消失。",
+      "Explain industrial change through the specific constraints a technology alters."
+    ]
+  },
+  {
+    "subjectId": "history",
+    "grade": 2,
+    "level": 3,
+    "title": [
+      "十九世紀香港的兩種記錄",
+      "Two records of nineteenth-century Hong Kong"
+    ],
+    "question": [
+      "以下為虛構教學資料：一份1890年代商會報告說「港口貿易興旺」；工人的日記說「工時長，住處擠迫」。哪個研究結論最合理？",
+      "Fictional teaching sources: an 1890s chamber-of-commerce report says port trade is thriving; a worker’s diary describes long hours and crowded housing. Which conclusion is most reasonable?"
+    ],
+    "options": [
+      [
+        "經濟擴張與工人生活困難可以同時存在",
+        "Economic expansion and difficult worker living conditions can coexist",
+        "兩份資料關注不同層面；經濟總量增長不表示每個羣體同樣受惠。",
+        "The sources address different dimensions; growth does not mean every group benefits equally."
+      ],
+      [
+        "日記必然推翻所有貿易增長資料",
+        "The diary necessarily disproves all evidence of trade growth",
+        "居住及工時資料不會直接否定貿易量增長。",
+        "Housing and working-hour evidence does not directly disprove growing trade."
+      ],
+      [
+        "商會報告足以證明所有居民生活改善",
+        "The report proves every resident’s life improved",
+        "商會的貿易觀點不足以代表所有居民的生活經驗。",
+        "A trade organisation’s account cannot represent every resident’s experience."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "比較不同羣體的材料，可辨識同一發展帶來的不均等經驗。",
+      "Compare perspectives to recognise uneven experiences within the same historical development."
+    ]
+  },
+  {
+    "subjectId": "history",
+    "grade": 3,
+    "level": 1,
+    "title": [
+      "導火線與長期原因",
+      "Trigger and long-term causes"
+    ],
+    "question": [
+      "第一次世界大戰前，歐洲存在同盟競爭及軍備擴張；1914年薩拉熱窩刺殺事件加劇危機。哪項最能區分兩類因素？",
+      "Before the First World War, Europe experienced alliance rivalry and an arms build-up; the Sarajevo assassination in 1914 intensified the crisis. Which distinction is most useful?"
+    ],
+    "options": [
+      [
+        "同盟及軍備屬長期背景；刺殺事件是直接導火線之一",
+        "Alliances and armaments were longer-term conditions; the assassination was an immediate trigger",
+        "這能區分累積的緊張與促使危機迅速升級的事件。",
+        "This distinguishes accumulated tensions from an event that rapidly escalated the crisis."
+      ],
+      [
+        "只有先發生的因素纔可能是原因",
+        "Only the earliest factor can be a cause",
+        "歷史事件可有長期與短期因素共同作用。",
+        "Long-term and short-term factors can interact in historical causation."
+      ],
+      [
+        "事件發生在最後，所以必定是唯一原因",
+        "The last event must be the sole cause",
+        "時間接近不能證明它足以獨自解釋整場戰爭。",
+        "Being close in time does not make an event a sufficient explanation of the whole war."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "歷史解釋可同時包含結構性背景、促成因素與導火線。",
+      "Historical explanations can combine structural conditions, contributing factors and triggers."
+    ]
+  },
+  {
+    "subjectId": "history",
+    "grade": 3,
+    "level": 2,
+    "title": [
+      "國際合作的執行問題",
+      "Enforcing international cooperation"
+    ],
+    "question": [
+      "教學簡化模型：一個戰後國際組織可以譴責侵略，但執行制裁依賴會員合作。若主要會員拒絕合作，最直接的限制是甚麼？",
+      "Simplified teaching model: a post-war international organisation can condemn aggression, but sanctions depend on members’ cooperation. If major members refuse, what is the most direct limitation?"
+    ],
+    "options": [
+      [
+        "決議與實際執行之間出現落差",
+        "A gap develops between a resolution and its enforcement",
+        "組織能作出決議，不代表自動取得會員提供的執行資源。",
+        "Passing a resolution does not automatically secure resources or action from members."
+      ],
+      [
+        "組織的所有會議記錄立即失效",
+        "Every meeting record immediately becomes invalid",
+        "執行困難不會令已存在的會議記錄消失或自動失效。",
+        "Enforcement problems do not erase or automatically invalidate existing records."
+      ],
+      [
+        "會員之間不再有任何共同利益",
+        "Members no longer share any interests",
+        "拒絕某項制裁不足以證明所有合作利益均不存在。",
+        "Refusing one sanction does not establish that all shared interests have vanished."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "分析國際組織時，分辨正式權限、會員意願與執行能力。",
+      "Distinguish an international organisation’s formal powers, members’ willingness and practical capacity."
+    ]
+  },
+  {
+    "subjectId": "history",
+    "grade": 3,
+    "level": 3,
+    "title": [
+      "戰後就業結構",
+      "Post-war employment structure"
+    ],
+    "question": [
+      "虛構香港教學數據：1960年製造業佔就業45%、服務業40%；1990年分別25%、65%。數據最直接支持哪項描述？",
+      "Fictional Hong Kong teaching data: manufacturing accounts for 45% of employment and services 40% in 1960; in 1990 they account for 25% and 65%. What do the data most directly support?"
+    ],
+    "options": [
+      [
+        "就業比重由製造業向服務業轉移",
+        "The employment mix shifted from manufacturing towards services",
+        "這是比例的變化；沒有總就業數，不能判定製造業人數減少多少。",
+        "This describes changing shares; without total employment, the fall in manufacturing headcount is unknown."
+      ],
+      [
+        "製造業就業人數恰好減少20萬",
+        "Manufacturing employment fell by exactly 200,000",
+        "百分點變化不能直接轉成人數，還需要兩年的總就業數。",
+        "Percentage-point changes cannot give headcounts without the totals for both years."
+      ],
+      [
+        "1990年已經沒有製造業",
+        "Manufacturing had disappeared by 1990",
+        "數據仍列出25%的製造業就業比重。",
+        "The data still show manufacturing at 25% of employment."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "描述歷史統計時，區分比例、百分點及絕對人數。",
+      "Distinguish shares, percentage points and headcounts when using historical statistics."
+    ]
+  },
+  {
+    "subjectId": "history",
+    "grade": 4,
+    "level": 1,
+    "title": [
+      "革命中的延續",
+      "Continuity through revolution"
+    ],
+    "question": [
+      "研究1911年後的中國。虛構地方檔案顯示：官署名稱改變，但某縣翌年的主要稅收方式維持。哪句最貼合這兩項證據？",
+      "A study of China after 1911 uses fictional local records: the government office’s name changes, but one county retains its main tax-collection method the next year. Which statement best fits both?"
+    ],
+    "options": [
+      [
+        "政治名稱改變，部分地方行政做法仍延續",
+        "Political labels changed while some local administrative practices continued",
+        "不同層面的變化速度可以不同，兩項證據並不矛盾。",
+        "Different dimensions can change at different speeds; the two observations are compatible."
+      ],
+      [
+        "名稱改變證明所有制度立即完全改變",
+        "The new name proves every institution changed immediately",
+        "名稱是變化證據，卻不能代表所有制度與地方實務。",
+        "A new name is evidence of change, not proof about every institution and local practice."
+      ],
+      [
+        "稅收方式延續證明沒有發生任何政治變化",
+        "Continuity in taxation proves no political change occurred",
+        "一項延續不能抹去官署等其他層面的變化。",
+        "One continuity does not erase changes in other dimensions."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "以明確層面及時段比較延續與轉變，避免全有或全無的結論。",
+      "Compare specified dimensions and periods rather than treating change as all-or-nothing."
+    ]
+  },
+  {
+    "subjectId": "history",
+    "grade": 4,
+    "level": 2,
+    "title": [
+      "宣傳海報的用途",
+      "Using a propaganda poster"
+    ],
+    "question": [
+      "虛構1930年代政府海報把工廠畫得整潔繁榮，標語鼓勵加入生產。它最直接適合研究甚麼？",
+      "A fictional 1930s government poster depicts spotless, thriving factories and urges people to join production. What can it most directly help investigate?"
+    ],
+    "options": [
+      [
+        "政府希望向公眾塑造的工業形象",
+        "The industrial image the government wanted to promote",
+        "發行者、畫面與呼籲可顯示宣傳目的；不等於實際工廠普查。",
+        "Producer, imagery and appeal reveal promotional intent, not a survey of actual factories."
+      ],
+      [
+        "每間工廠真實的衛生水平",
+        "The actual hygiene level in every factory",
+        "理想化宣傳圖像不能直接量度所有工廠的環境。",
+        "Idealised promotional images cannot directly measure conditions in every factory."
+      ],
+      [
+        "所有工人對政府的私人態度",
+        "Every worker’s private attitude to the government",
+        "政府發布的海報不是工人的代表性意見調查。",
+        "A government poster is not a representative survey of workers’ views."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "有立場的史料仍可用；用途須配合它的來源與目的。",
+      "A partisan source can be useful when the research question fits its origin and purpose."
+    ]
+  },
+  {
+    "subjectId": "history",
+    "grade": 4,
+    "level": 3,
+    "title": [
+      "反證與有限主張",
+      "Counter-evidence and a limited claim"
+    ],
+    "question": [
+      "虛構材料：1920年代一份城市婦女雜誌倡議新教育；同年某鄉村入學記錄顯示女童入學仍少。哪項論點能同時處理兩者？",
+      "Fictional sources: a 1920s urban women’s magazine advocates new education; a rural enrolment record from the same year shows few girls attending school. Which argument accommodates both?"
+    ],
+    "options": [
+      [
+        "教育新觀念正在流傳，但實際機會因地區而異",
+        "New educational ideas circulated, but access varied by locality",
+        "雜誌反映倡議，入學記錄反映一地實況；兩者不能互相替代。",
+        "The magazine shows advocacy and the register shows local practice; neither substitutes for the other."
+      ],
+      [
+        "倡議已出現，所以全國男女已平等入學",
+        "Advocacy proves equal enrolment nationwide",
+        "理念的出現不等於已在所有地方實現。",
+        "The appearance of an ideal does not establish universal implementation."
+      ],
+      [
+        "一村女童入學少，所以城市沒有教育改革討論",
+        "Low enrolment in one village proves cities had no reform debate",
+        "局部實況不能否定另一地區已有的公開討論。",
+        "A local outcome does not disprove documented discussion elsewhere."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "把思想、政策與落實情況分開，按地域及羣體限定主張。",
+      "Distinguish ideas, policy and implementation, and qualify claims by place and group."
+    ]
+  },
+  {
+    "subjectId": "history",
+    "grade": 5,
+    "level": 1,
+    "title": [
+      "冷戰材料的措辭",
+      "Language in Cold War sources"
+    ],
+    "question": [
+      "兩份虛構冷戰報章談同一援助計劃：甲稱「友好合作」，乙稱「擴大勢力」。單看這兩個詞組，可最有把握指出甚麼？",
+      "Two fictional Cold War newspapers describe the same aid programme: A calls it “friendly cooperation”; B calls it “expanding influence”. What can these phrases most securely show?"
+    ],
+    "options": [
+      [
+        "兩份報章採用不同的評價框架",
+        "The newspapers use different evaluative frames",
+        "詞語揭示態度差異；要判斷計劃實際效果仍須其他證據。",
+        "The wording reveals different attitudes; judging actual effects requires further evidence."
+      ],
+      [
+        "甲必定掌握較多未公開文件",
+        "A must possess more confidential documents",
+        "正面措辭本身不能證明報章有更多內部資料。",
+        "Positive wording alone cannot establish access to more internal documents."
+      ],
+      [
+        "乙所報道的所有數字必然錯誤",
+        "Every numerical claim in B must be false",
+        "立場可能影響選材，但不能據此判定每項數字皆錯。",
+        "A viewpoint may shape selection but does not make every number false."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "辨認用語立場後，再逐項覈查事實，不把偏向等同全無史料價值。",
+      "Identify framing, then test factual claims individually rather than dismissing an entire source."
+    ]
+  },
+  {
+    "subjectId": "history",
+    "grade": 5,
+    "level": 2,
+    "title": [
+      "口述歷史的追問",
+      "Following up oral history"
+    ],
+    "question": [
+      "一位受訪者在1980年回憶1950年的遷居：「大家都是為了工作而來。」哪個追問最能改善這項證據的可用性？",
+      "In 1980, an interviewee recalls a move in 1950: “Everyone came for work.” Which follow-up best improves the evidence?"
+    ],
+    "options": [
+      [
+        "你當時親自認識哪些遷居者？他們還提過甚麼原因？",
+        "Which migrants did you know personally, and what other reasons did they mention?",
+        "追問經驗範圍及其他動機，可檢查「大家」這個概括。",
+        "This establishes the scope of direct experience and tests the generalisation “everyone”."
+      ],
+      [
+        "可否把答案說得更有信心？",
+        "Could you say that more confidently?",
+        "語氣更堅定不會增加記憶或樣本的可靠性。",
+        "Greater confidence does not improve the evidence’s memory accuracy or coverage."
+      ],
+      [
+        "我們已知只有工作因素，你同意嗎？",
+        "We know work was the only factor; do you agree?",
+        "這是引導式提問，容易壓縮或扭曲受訪者的原有經驗。",
+        "This leading question may narrow or distort the interviewee’s account."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "口述史追問應釐清接觸範圍、時間與記憶，而非誘導預定答案。",
+      "Use oral-history follow-ups to clarify scope, timing and memory without steering the answer."
+    ]
+  },
+  {
+    "subjectId": "history",
+    "grade": 5,
+    "level": 3,
+    "title": [
+      "比較不等於因果",
+      "Comparison is not causation"
+    ],
+    "question": [
+      "虛構1960年代數據：甲地出口增長快且擴建港口；乙地出口增長慢且沒有擴建。兩地同時在教育及市場准入上不同。哪個結論最嚴謹？",
+      "Fictional 1960s data: region A expands its port and exports grow rapidly; B does neither. They also differ in education and market access. Which conclusion is most defensible?"
+    ],
+    "options": [
+      [
+        "港口可能有作用，但須比較其他差異及擴建時間",
+        "The port may matter, but other differences and the timing of expansion must be examined",
+        "多項條件同時不同，單一比較不足以隔離港口的效果。",
+        "Several conditions differ, so one comparison cannot isolate the port’s effect."
+      ],
+      [
+        "出口差距完全由港口擴建造成",
+        "Port expansion entirely caused the export gap",
+        "這忽略已知的教育及市場條件等其他解釋。",
+        "This ignores known alternatives involving education and market access."
+      ],
+      [
+        "存在其他因素，所以港口絕對不可能有影響",
+        "Other factors mean the port could have had no effect",
+        "其他原因的存在不會排除港口作為共同因素。",
+        "Other causes do not exclude the port as a contributing factor."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "多因解釋應比較機制、時序及替代因素，而非只找單一相關性。",
+      "Evaluate mechanisms, timing and alternatives when constructing a multi-causal explanation."
+    ]
+  },
+  {
+    "subjectId": "history",
+    "grade": 6,
+    "level": 1,
+    "title": [
+      "三篇報道是否三份證據",
+      "Are three reports three independent sources?"
+    ],
+    "question": [
+      "三份虛構1956年報章報道同一罷工，都註明轉載同一家通訊社。研究者說「已有三個獨立見證」。問題在哪裏？",
+      "Three fictional 1956 newspapers report the same strike and credit one news agency. A researcher calls them “three independent witnesses”. What is the problem?"
+    ],
+    "options": [
+      [
+        "三篇可能共用一個原始消息來源",
+        "The reports may share one underlying source",
+        "出版於三份報章不等於三次獨立觀察；須追查資料來源。",
+        "Three publications do not establish three independent observations; trace their source."
+      ],
+      [
+        "報章不能用作任何歷史研究",
+        "Newspapers cannot be used in any historical research",
+        "報章可作史料；本題限制是來源重複，並非媒介完全無用。",
+        "Newspapers can be evidence; the issue is duplicated sourcing, not a useless medium."
+      ],
+      [
+        "只要文字相同，事件必定沒有發生",
+        "Identical wording proves the event never happened",
+        "文字共源影響獨立性，不會自行證明事件虛構。",
+        "Shared wording affects independence, not whether the event happened."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "證據的數量須連同來源獨立性評估。",
+      "Assess the number of sources together with their independence."
+    ]
+  },
+  {
+    "subjectId": "history",
+    "grade": 6,
+    "level": 2,
+    "title": [
+      "總量與分配的歷史解釋",
+      "Historical totals and distribution"
+    ],
+    "question": [
+      "虛構戰後研究：全地區平均實質工資上升，某個工人家庭的日記卻記載生活惡化。哪種處理最合理？",
+      "Fictional post-war research shows rising regional average real wages, while one worker’s family diary describes worsening living conditions. What is the best response?"
+    ],
+    "options": [
+      [
+        "核對家庭收入、就業狀況與開支，檢查平均值掩蓋的差異",
+        "Examine the household’s income, employment and expenses for differences hidden by the average",
+        "總體平均與個案可同時成立，家庭結構及收入分配值得調查。",
+        "An average and an individual case can both be accurate; household circumstances and distribution matter."
+      ],
+      [
+        "刪除日記，因為統計必定適用每個人",
+        "Discard the diary because the average applies to everyone",
+        "平均值不代表所有家庭都出現同樣變化。",
+        "An average does not imply the same change for every household."
+      ],
+      [
+        "只保留日記，因為個案足以推翻全區平均",
+        "Keep only the diary because one case disproves the regional average",
+        "個案可揭示差異，但本身不能計算或推翻全區平均。",
+        "A case can reveal variation but cannot by itself calculate or disprove the regional average."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "綜合宏觀與個人史料，先檢查它們是否回答相同層面的問題。",
+      "When synthesising aggregate and personal sources, check whether they address the same level of analysis."
+    ]
+  },
+  {
+    "subjectId": "history",
+    "grade": 6,
+    "level": 3,
+    "title": [
+      "有條件的歷史結論",
+      "A qualified historical conclusion"
+    ],
+    "question": [
+      "虛構改革資料：法令在1905年頒布，1907年只有首都執行，1912年才擴至多個省份。哪句最適合作研究結論？",
+      "Fictional reform evidence: a law is issued in 1905, implemented only in the capital in 1907, and extended to several provinces in 1912. Which conclusion best fits?"
+    ],
+    "options": [
+      [
+        "1905年是法律起點，實際推行分階段且地域不均",
+        "1905 marks the legal beginning, while implementation was phased and geographically uneven",
+        "結論同時處理頒布、落實時差及地域差異，沒有超出證據。",
+        "This accounts for enactment, implementation delays and regional variation without exceeding the evidence."
+      ],
+      [
+        "改革在1905年已於全國完成",
+        "The reform was complete nationwide in 1905",
+        "法令日期不能當作所有地區完成實施的日期。",
+        "The law’s date is not the date of full implementation everywhere."
+      ],
+      [
+        "1912年前沒有任何改革發生",
+        "No reform occurred before 1912",
+        "1905年的頒布及1907年的首都執行都是較早的變化。",
+        "Enactment in 1905 and implementation in the capital in 1907 were earlier changes."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "高質素歷史論證以證據限定起點、範圍及變化程度。",
+      "A strong historical argument qualifies its timing, scope and degree of change with evidence."
+    ]
+  },
+  {
+    "subjectId": "art",
+    "grade": 1,
+    "level": 1,
+    "title": [
+      "線條的方向感",
+      "Directional lines"
+    ],
+    "question": [
+      "一幅畫用多條斜線帶領視線向右上方移動。哪個描述直接指出所用的視覺元素？",
+      "A drawing uses repeated diagonal lines to lead the eye upwards and right. Which description identifies the visual element?"
+    ],
+    "options": [
+      [
+        "線條的方向與重複",
+        "Direction and repetition of lines",
+        "斜線及其重複形成視覺動勢。",
+        "Repeated diagonals create directional movement."
+      ],
+      [
+        "色彩的冷暖對比",
+        "Warm–cool colour contrast",
+        "題目描述斜線的方向，沒有提供色彩冷暖資料。",
+        "The prompt describes diagonal direction, not warm or cool colours."
+      ],
+      [
+        "形狀的左右對稱",
+        "Left–right symmetry of shapes",
+        "對稱關乎兩側對應，不能直接描述斜線引導視線的作用。",
+        "Symmetry concerns correspondence across sides, not the stated directional effect."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "描述作品時，先指出可觀察的視覺元素及效果。",
+      "Describe observable visual elements and their effects."
+    ]
+  },
+  {
+    "subjectId": "art",
+    "grade": 1,
+    "level": 2,
+    "title": [
+      "主體與負空間",
+      "Subject and negative space"
+    ],
+    "question": [
+      "要畫出兩個杯子之間空隙的形狀，你應集中觀察甚麼？",
+      "To draw the shape of the gap between two cups, what should you observe?"
+    ],
+    "options": [
+      [
+        "由杯子外緣界定的空白形狀",
+        "The empty shape bounded by the cups’ edges",
+        "負空間是主體周圍或之間的空間，也有可觀察形狀。",
+        "Negative space around or between subjects has an observable shape."
+      ],
+      [
+        "杯子內部能盛多少水",
+        "How much water the cups hold",
+        "容量並不是杯子之間空隙的外形。",
+        "Capacity does not describe the gap between the cups."
+      ],
+      [
+        "只記住一般杯子的符號畫法",
+        "Only a memorised symbol for a cup",
+        "套用符號容易忽略眼前實際的間距及輪廓。",
+        "A memorised symbol may miss the actual spacing and contours."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "同時觀察主體與負空間，有助檢查比例及位置。",
+      "Observing both the subject and negative space helps check proportion and placement."
+    ]
+  },
+  {
+    "subjectId": "art",
+    "grade": 1,
+    "level": 3,
+    "title": [
+      "低彩度中的焦點",
+      "A focal point in muted colours"
+    ],
+    "question": [
+      "海報大部分用低彩度灰綠色，只有中央一朵花用鮮橙色。哪個理由最能解釋花為何突出？",
+      "A poster is mostly muted grey-green, with one bright orange flower in the centre. Why does the flower stand out?"
+    ],
+    "options": [
+      [
+        "花與背景的彩度及色相形成對比",
+        "Its saturation and hue contrast with the background",
+        "鮮明程度及顏色差異使視線容易集中在花。",
+        "Differences in vividness and hue draw attention to the flower."
+      ],
+      [
+        "橙色物件在所有作品中必定最大",
+        "Orange objects must be the largest in every artwork",
+        "顏色不會決定物件的實際大小。",
+        "Colour does not determine an object’s size."
+      ],
+      [
+        "中央位置令顏色完全沒有作用",
+        "A central position makes colour irrelevant",
+        "位置與色彩可以共同建立焦點。",
+        "Position and colour can work together to establish focus."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "解釋焦點時，要連結具體對比與觀者的視線。",
+      "Explain a focal point by connecting a specific contrast to the viewer’s attention."
+    ]
+  },
+  {
+    "subjectId": "art",
+    "grade": 2,
+    "level": 1,
+    "title": [
+      "互補色的配搭",
+      "Complementary colour pairing"
+    ],
+    "question": [
+      "本題使用傳統紅、黃、藍色輪；色輪上藍色的對面是橙色。哪組屬互補色？",
+      "Use a traditional red-yellow-blue colour wheel, where orange is opposite blue. Which pair is complementary?"
+    ],
+    "options": [
+      [
+        "藍與橙",
+        "Blue and orange",
+        "互補色位於此色輪的相對位置。",
+        "Complementary colours occupy opposite positions on this wheel."
+      ],
+      [
+        "藍與藍綠",
+        "Blue and blue-green",
+        "這兩色相鄰，屬近似色關係。",
+        "These are neighbouring, analogous colours."
+      ],
+      [
+        "藍與淺藍",
+        "Blue and light blue",
+        "這是同一色相的明度變化，不是相對色相。",
+        "These differ in value within one hue, rather than being opposite hues."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "色彩判斷須說明所用色輪，分辨色相、明度與彩度。",
+      "Specify the colour model and distinguish hue, value and saturation."
+    ]
+  },
+  {
+    "subjectId": "art",
+    "grade": 2,
+    "level": 2,
+    "title": [
+      "版印的左右反轉",
+      "Reversal in printing"
+    ],
+    "question": [
+      "把字母R刻在印版上，想印出方向正常的R。印版上的字母應如何安排？",
+      "You carve the letter R into a block and want the printed R to face normally. How should it appear on the block?"
+    ],
+    "options": [
+      [
+        "先左右鏡像反轉",
+        "Reverse it left to right first",
+        "印版接觸紙張時，圖像左右方向會反轉。",
+        "The printed impression reverses the image left to right."
+      ],
+      [
+        "保持正常方向",
+        "Keep it in its normal orientation",
+        "這樣印在紙上會得到反轉的R。",
+        "This would produce a reversed R on the paper."
+      ],
+      [
+        "只把字母放大",
+        "Only enlarge the letter",
+        "放大會改變大小，不能處理方向反轉。",
+        "Enlargement changes size, not orientation."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "瞭解媒材的操作特性，再規劃圖像。",
+      "Plan an image around the working properties of its medium."
+    ]
+  },
+  {
+    "subjectId": "art",
+    "grade": 2,
+    "level": 3,
+    "title": [
+      "不用加字的空間感",
+      "Creating depth without a label"
+    ],
+    "question": [
+      "畫面中甲樹擋住乙樹一部分，甲樹亦畫得較大。若兩棵真樹大小相近，觀者通常會怎樣理解？",
+      "Tree A partly overlaps tree B and is drawn larger. If the real trees are similar in size, how will viewers usually read this?"
+    ],
+    "options": [
+      [
+        "甲樹較靠近觀者",
+        "A is closer to the viewer",
+        "重疊與相對大小共同提供前後距離線索。",
+        "Overlap and relative size jointly suggest depth."
+      ],
+      [
+        "乙樹一定位於甲樹內部",
+        "B must be inside A",
+        "被遮擋部分不表示一物位於另一物內部。",
+        "Partial occlusion does not imply one object is inside another."
+      ],
+      [
+        "兩棵樹必定位於同一平面",
+        "Both trees must lie on the same plane",
+        "題目提供的重疊與大小線索通常指向不同深度。",
+        "The overlap and size cues usually suggest different depths."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "空間感可由重疊、相對大小及位置等線索共同建立。",
+      "Depth can be constructed through overlap, relative size and placement."
+    ]
+  },
+  {
+    "subjectId": "art",
+    "grade": 3,
+    "level": 1,
+    "title": [
+      "閱讀次序",
+      "Reading hierarchy"
+    ],
+    "question": [
+      "展覽海報要讓人先讀活動名稱，再看日期，最後看報名細節。哪個安排最符合目的？",
+      "An exhibition poster should lead readers from title to date to registration details. Which arrangement best serves this?"
+    ],
+    "options": [
+      [
+        "標題最突出，日期次之，細節分組並保留間距",
+        "Emphasise the title, then the date, grouping details with spacing",
+        "大小、位置及留白共同建立資訊層次。",
+        "Scale, position and spacing establish an information hierarchy."
+      ],
+      [
+        "全部字體同大，字距全部收窄",
+        "Use one size and tightly pack all text",
+        "缺乏層次及間距會增加尋找重點的負擔。",
+        "Lack of hierarchy and spacing makes key information harder to find."
+      ],
+      [
+        "把日期放在最不顯眼的裝飾內",
+        "Hide the date inside a minor decoration",
+        "日期是第二重要資訊，不能靠隱藏達成清楚次序。",
+        "The second-priority information should not be hidden."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "視覺層次須配合資訊優先次序及使用情境。",
+      "Match visual hierarchy to information priorities and the viewing context."
+    ]
+  },
+  {
+    "subjectId": "art",
+    "grade": 3,
+    "level": 2,
+    "title": [
+      "灰階後仍可讀",
+      "Readable in greyscale"
+    ],
+    "question": [
+      "校園地圖以紅色和綠色區分兩條路線，影印成灰階後難以分辨。哪項修改最有效保留區分？",
+      "A campus map distinguishes routes in red and green, but they merge in a greyscale photocopy. Which change best preserves the distinction?"
+    ],
+    "options": [
+      [
+        "一條用實線，一條用虛線，兩者加路線名稱",
+        "Use solid and dashed lines and label both routes",
+        "線型及文字提供不依靠顏色的資訊。",
+        "Line patterns and labels provide information independently of colour."
+      ],
+      [
+        "把紅綠都換成相近深淺的藍色",
+        "Replace both with blue shades of similar value",
+        "相近灰階明度仍可能難以區分。",
+        "Similar values may still be indistinguishable in greyscale."
+      ],
+      [
+        "只把地圖外框加粗",
+        "Only thicken the map’s outer border",
+        "外框不會改變兩條路線的辨識線索。",
+        "The border does not distinguish the routes."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "重要資訊應以多於一種視覺線索傳達。",
+      "Communicate essential information through more than one visual cue."
+    ]
+  },
+  {
+    "subjectId": "art",
+    "grade": 3,
+    "level": 3,
+    "title": [
+      "對稱不等於唯一平衡",
+      "Balance beyond symmetry"
+    ],
+    "question": [
+      "構圖左邊有一塊大型淡灰形狀，右邊有一小塊濃黑形狀。評估是否平衡，哪個說法最恰當？",
+      "A composition has a large pale-grey shape on the left and a small black shape on the right. Which approach best evaluates balance?"
+    ],
+    "options": [
+      [
+        "比較面積、明暗、位置產生的視覺重量",
+        "Compare the visual weight created by area, value and position",
+        "小而濃黑的形狀也可有較強視覺重量，平衡不只看面積。",
+        "A small dark shape may carry strong visual weight; area is not the only factor."
+      ],
+      [
+        "只要兩邊面積不同，就必定失衡",
+        "Different areas always mean imbalance",
+        "非對稱構圖亦可透過不同因素取得平衡。",
+        "Asymmetrical compositions can balance through different factors."
+      ],
+      [
+        "只要有黑色，其他元素就完全不影響",
+        "Once black appears, other elements have no influence",
+        "面積、距離及其他視覺元素仍會共同影響效果。",
+        "Area, distance and other elements still contribute."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "以視覺重量解釋構圖，而非只套用左右相等的規則。",
+      "Analyse balance through visual weight rather than simply requiring equal sides."
+    ]
+  },
+  {
+    "subjectId": "art",
+    "grade": 4,
+    "level": 1,
+    "title": [
+      "媒材與表達",
+      "Medium and expression"
+    ],
+    "question": [
+      "創作目標是表現邊緣逐漸消散的霧。哪個水彩操作最直接配合此目標？",
+      "The artistic aim is to suggest mist with gradually dissolving edges. Which watercolour method most directly supports it?"
+    ],
+    "options": [
+      [
+        "在濕紙上加水彩，讓色彩柔和擴散",
+        "Apply watercolour to wet paper for soft spreading edges",
+        "濕畫法可產生柔和滲化，切合題目的邊緣效果。",
+        "Wet-on-wet can produce soft diffusion matching the stated aim."
+      ],
+      [
+        "每個色塊都先用防水黑線封邊",
+        "Outline every area with waterproof black lines",
+        "清楚硬邊通常削弱題目要求的消散感。",
+        "Strong hard outlines usually work against dissolving edges."
+      ],
+      [
+        "在乾紙上用少水顏料畫出清晰邊界",
+        "Use concentrated paint on dry paper for crisp boundaries",
+        "清楚乾燥的邊界較難呈現題目指定的柔和消散。",
+        "Crisp dry edges work against the requested soft diffusion."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "媒材技巧應有明確表達目的，而非以昂貴程度判斷效果。",
+      "Choose techniques for their expressive purpose, not their cost."
+    ]
+  },
+  {
+    "subjectId": "art",
+    "grade": 4,
+    "level": 2,
+    "title": [
+      "詮釋與作品脈絡",
+      "Interpretation and context"
+    ],
+    "question": [
+      "一件虛構作品用舊車票拼成路線；作者說主題是家人每天往返兩區的生活。哪段評論結合了形式與脈絡？",
+      "A fictional artwork arranges used tickets into routes. The artist links it to family journeys between two districts. Which comment connects form and context?"
+    ],
+    "options": [
+      [
+        "重複車票及交錯路線呼應日常移動與家庭經驗",
+        "Repeated tickets and intersecting routes echo everyday movement and family experience",
+        "評論把可見材料、組織方式及已提供脈絡連起來。",
+        "This links visible materials and organisation with the stated context."
+      ],
+      [
+        "所有舊物必然只代表懷舊",
+        "All old objects can only mean nostalgia",
+        "這把單一象徵套在所有作品，忽略本作資料。",
+        "This imposes one meaning on every work and ignores the supplied context."
+      ],
+      [
+        "作者有家庭，所以作品不需要視覺分析",
+        "The artist has a family, so visual analysis is unnecessary",
+        "脈絡不能代替對作品形式及材料的分析。",
+        "Context does not replace analysis of form and materials."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "有根據的詮釋連結可見特徵、材料及具體脈絡。",
+      "Support interpretation with visible features, materials and specific context."
+    ]
+  },
+  {
+    "subjectId": "art",
+    "grade": 4,
+    "level": 3,
+    "title": [
+      "策展中的對話",
+      "Dialogue between exhibits"
+    ],
+    "question": [
+      "展覽主題是「城市的節奏」。甲作以規律重複窗格呈現秩序；乙作以不規則街道線條呈現變化。哪段並置說明最貼題？",
+      "An exhibition explores “urban rhythms”. Work A repeats window grids regularly; B uses irregular street lines. Which explanation best justifies showing them together?"
+    ],
+    "options": [
+      [
+        "兩作以不同節奏處理城市秩序與變化，形成對照",
+        "Their contrasting rhythms explore urban order and change",
+        "策展理由同時回應主題及兩作的具體形式差異。",
+        "The rationale connects the theme to specific formal differences."
+      ],
+      [
+        "只因兩幅作品大小相同",
+        "Only because both works have the same size",
+        "尺寸方便陳列，但不足以解釋主題關係。",
+        "Similar dimensions help installation but do not explain the thematic relationship."
+      ],
+      [
+        "乙作必然比甲作更真實",
+        "B must be more truthful than A",
+        "不規則形式本身不能證明作品較真實。",
+        "Irregular form alone does not establish greater truthfulness."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "策展選擇須說明作品之間如何共同建立意義。",
+      "Explain how relationships between works contribute to an exhibition’s meaning."
+    ]
+  },
+  {
+    "subjectId": "art",
+    "grade": 5,
+    "level": 1,
+    "title": [
+      "過程記錄的價值",
+      "The value of process records"
+    ],
+    "question": [
+      "作品集保留三次草圖、修改註解及試材照片。這些資料最直接展示甚麼？",
+      "A portfolio retains three sketches, revision notes and material tests. What do they most directly demonstrate?"
+    ],
+    "options": [
+      [
+        "意念如何經試驗及反思發展",
+        "How ideas developed through experimentation and reflection",
+        "過程資料可追蹤選擇與修改的理由。",
+        "Process evidence traces decisions and reasons for revision."
+      ],
+      [
+        "最後作品必定獲所有觀眾喜歡",
+        "That every viewer must like the final work",
+        "完整過程不保證所有人的審美反應相同。",
+        "A documented process does not guarantee universal approval."
+      ],
+      [
+        "每次修改都一定比前次更好",
+        "That every revision was necessarily an improvement",
+        "試驗也可能失敗；記錄有助說明如何從中學習。",
+        "Experiments may fail; recording them can show what was learned."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "作品集應呈現思考與取捨，而不只是最終成品。",
+      "A portfolio should reveal reasoning and choices as well as finished work."
+    ]
+  },
+  {
+    "subjectId": "art",
+    "grade": 5,
+    "level": 2,
+    "title": [
+      "一次只改一個設計因素",
+      "Testing a design variable"
+    ],
+    "question": [
+      "想知道指示牌的字體大小會否影響辨讀距離。哪個比較較能隔離字體大小的作用？",
+      "To investigate whether type size affects a sign’s reading distance, which comparison best isolates size?"
+    ],
+    "options": [
+      [
+        "同樣文字、字體及對比，只改字體大小",
+        "Keep wording, typeface and contrast constant; vary type size",
+        "控制其他因素可較清楚比較大小的影響。",
+        "Holding other factors constant helps isolate size."
+      ],
+      [
+        "同時更換文字、色彩及字體大小",
+        "Change wording, colour and size together",
+        "多個因素同時改變，不能知道是哪項造成差異。",
+        "Several simultaneous changes prevent attribution to size."
+      ],
+      [
+        "讓設計者選自己較喜歡的一張",
+        "Ask the designer to choose a personal favourite",
+        "喜好不等於實際辨讀距離的測試。",
+        "Preference is not a test of reading distance."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "設計測試先訂可觀察目標，再控制影響比較的因素。",
+      "Define an observable design outcome and control factors that affect the comparison."
+    ]
+  },
+  {
+    "subjectId": "art",
+    "grade": 5,
+    "level": 3,
+    "title": [
+      "再用圖像的清楚署名",
+      "Transparent use of an image"
+    ],
+    "question": [
+      "教師已準許使用一張授權照片製作拼貼。作品加入自己的裁切、重排及手繪。哪項說明最能清楚交代貢獻？",
+      "A teacher has approved a licensed photograph for a collage. The student crops, rearranges and adds drawing. Which note most clearly explains the contributions?"
+    ],
+    "options": [
+      [
+        "列原照片作者與來源，並說明自己的改動",
+        "Credit the photograph’s creator and source and describe the student’s changes",
+        "署名與過程說明可區分原素材及新增創作。",
+        "Credit and a process statement distinguish source material from new contributions."
+      ],
+      [
+        "只寫「全部由我拍攝」",
+        "State “all photography by me”",
+        "這與題目中的原照片來源不符。",
+        "This contradicts the photograph’s stated origin."
+      ],
+      [
+        "因為加入手繪，就刪除原照片來源",
+        "Remove the source because drawing was added",
+        "新增創作不會改變原照片的作者身分。",
+        "Adding work does not change who created the source photograph."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "清楚區分來源素材、使用依據及自己的創作決定。",
+      "Distinguish source material, the basis for using it and your own creative decisions."
+    ]
+  },
+  {
+    "subjectId": "art",
+    "grade": 6,
+    "level": 1,
+    "title": [
+      "評論的證據",
+      "Evidence in criticism"
+    ],
+    "question": [
+      "某評論只說「這雕塑很有張力」。哪項補充能把評語變成可討論的分析？",
+      "A review only says “this sculpture has tension”. Which addition makes that judgement analysable?"
+    ],
+    "options": [
+      [
+        "指出傾斜軸線、狹窄支點及它們造成的不穩定感",
+        "Identify its tilted axis, narrow support and the resulting sense of instability",
+        "具體形式特徵讓讀者檢查評論與作品的關係。",
+        "Specific formal features let readers assess the interpretation."
+      ],
+      [
+        "重複「非常非常有張力」",
+        "Repeat “very, very tense”",
+        "加強語氣沒有增加可檢查的視覺依據。",
+        "Stronger wording adds no observable evidence."
+      ],
+      [
+        "只推斷作者創作時一定很憤怒",
+        "Only infer that the artist must have felt angry",
+        "作品效果不等於作者當時情緒；仍需具體形式證據。",
+        "An artwork’s effect does not establish the artist’s emotions; formal evidence is still needed."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "評價應由具體分析支撐，容許他人提出有根據的不同解讀。",
+      "Support judgement with analysis that allows informed alternative readings."
+    ]
+  },
+  {
+    "subjectId": "art",
+    "grade": 6,
+    "level": 2,
+    "title": [
+      "修改與創作意圖",
+      "Revision and artistic intention"
+    ],
+    "question": [
+      "作品意圖表現擁擠都市中的孤立。一位同學建議刪掉所有人物令畫面更整齊。創作者最有理由先問甚麼？",
+      "The intention is isolation within a crowded city. A peer suggests removing every figure to make it neater. What should the artist ask first?"
+    ],
+    "options": [
+      [
+        "刪掉人羣會否削弱「在人羣中孤立」的關係？",
+        "Would removing the crowd weaken the idea of isolation among people?",
+        "修改須按創作目的評估，整齊並非唯一標準。",
+        "Evaluate revision against intention; neatness is not the only criterion."
+      ],
+      [
+        "怎樣修改才會令所有觀眾都同意？",
+        "What change will make every viewer agree?",
+        "藝術回應可以不同，不能保證全體一致。",
+        "Responses to art can differ; universal agreement cannot be guaranteed."
+      ],
+      [
+        "既然有人建議，是否必須全部照做？",
+        "Must every suggestion be followed because someone offered it?",
+        "同儕回饋是思考材料，不會取代創作者的判斷。",
+        "Feedback informs rather than replaces the artist’s judgement."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "將回饋與意圖、形式及觀眾反應互相比較，再決定修訂。",
+      "Weigh feedback against intention, form and audience response before revising."
+    ]
+  },
+  {
+    "subjectId": "art",
+    "grade": 6,
+    "level": 3,
+    "title": [
+      "可追溯的創作論述",
+      "A traceable artistic argument"
+    ],
+    "question": [
+      "展覽要求作品回應「記憶不完整」。哪份創作說明最能建立可追溯的意圖、實踐與評估關係？",
+      "An exhibition asks artists to address “incomplete memory”. Which process statement best connects intention, practice and evaluation?"
+    ],
+    "options": [
+      [
+        "說明用破碎照片表現缺口，記錄不同拼接試驗，再比較觀眾是否讀出斷續感",
+        "Explain the use of fragmented photos, record assembly trials and compare whether viewers perceive discontinuity",
+        "意圖、形式選擇、試驗及回應形成可檢查的發展過程。",
+        "Intention, formal choices, trials and responses form a traceable process."
+      ],
+      [
+        "只列最後作品尺寸與售價",
+        "List only final dimensions and price",
+        "這些資料不能說明作品如何回應主題或經過修訂。",
+        "These details do not explain the thematic response or development."
+      ],
+      [
+        "宣稱素材愈多，主題必定愈深刻",
+        "Claim that more materials necessarily make the theme deeper",
+        "數量不自動構成意義，仍需交代選擇與效果。",
+        "Quantity does not automatically create meaning; choices and effects require explanation."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "綜合創作與評賞時，建立意圖、證據、試驗和反思之間的關係。",
+      "Connect intention, evidence, experimentation and reflection when integrating making and criticism."
+    ]
+  },
+  {
+    "subjectId": "music",
+    "grade": 1,
+    "level": 1,
+    "title": [
+      "四拍小節",
+      "A four-beat bar"
+    ],
+    "question": [
+      "在4/4拍中，以四分音符為一拍。一小節先有一個二分音符，還需多少個四分音符才完整？",
+      "In 4/4, a quarter note is one beat. A bar begins with one half note. How many quarter notes complete the bar?"
+    ],
+    "options": [
+      [
+        "2個",
+        "2",
+        "二分音符佔兩拍，四拍小節還餘兩拍。",
+        "The half note occupies two beats, leaving two beats."
+      ],
+      [
+        "1個",
+        "1",
+        "兩拍加一拍只有三拍，小節尚欠一拍。",
+        "Two plus one gives three beats, one short."
+      ],
+      [
+        "4個",
+        "4",
+        "再加四拍會令全小節達六拍。",
+        "Adding four beats would make six in total."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "計算小節時值時，把音符都轉成相同拍值再相加。",
+      "Convert notes to the same beat unit when checking a bar’s duration."
+    ]
+  },
+  {
+    "subjectId": "music",
+    "grade": 1,
+    "level": 2,
+    "title": [
+      "休止仍佔時間",
+      "Rests still take time"
+    ],
+    "question": [
+      "4/4拍中依次有四分音符、四分休止符、二分音符。第二拍應怎樣做？",
+      "A 4/4 bar contains a quarter note, quarter rest and half note in that order. What happens on beat two?"
+    ],
+    "options": [
+      [
+        "不發聲，但持續數拍",
+        "Remain silent but keep counting",
+        "休止符是有時值的安靜，不是把一拍刪去。",
+        "A rest is timed silence, not a deleted beat."
+      ],
+      [
+        "略過這一拍，立即奏二分音符",
+        "Skip the beat and immediately play the half note",
+        "略過休止會令節奏提早一拍。",
+        "Skipping the rest makes the next note a beat early."
+      ],
+      [
+        "把速度減半",
+        "Halve the tempo",
+        "休止符本身不要求改變整體速度。",
+        "A rest does not itself require a tempo change."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "穩定拍子在發聲和休止時都持續存在。",
+      "The underlying pulse continues through notes and rests."
+    ]
+  },
+  {
+    "subjectId": "music",
+    "grade": 1,
+    "level": 3,
+    "title": [
+      "拍子與節奏",
+      "Pulse and rhythm"
+    ],
+    "question": [
+      "甲同學穩定地每秒拍一下；乙同學在同樣時間內拍出長短不同的組合。兩人的配合最能示範甚麼？",
+      "Student A taps steadily once a second while B performs a pattern of unequal durations over the same time. What does this best demonstrate?"
+    ],
+    "options": [
+      [
+        "穩定拍子可承託不同節奏",
+        "A steady pulse can support different rhythms",
+        "拍子提供規律時間框架，節奏安排長短及重音。",
+        "Pulse supplies a regular framework; rhythm organises durations and accents."
+      ],
+      [
+        "只要節奏改變，拍子必須停止",
+        "The pulse must stop whenever the rhythm changes",
+        "不同節奏可以共用同一穩定拍子。",
+        "Different rhythms can share one steady pulse."
+      ],
+      [
+        "較多聲響必定代表速度較快",
+        "More sounds always mean a faster tempo",
+        "較細的音符可在原有速度內增加聲響數量。",
+        "Shorter notes can increase note density without changing tempo."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "分辨速度、拍子和節奏密度，避免把音符多誤當加速。",
+      "Distinguish tempo, pulse and rhythmic density."
+    ]
+  },
+  {
+    "subjectId": "music",
+    "grade": 2,
+    "level": 1,
+    "title": [
+      "附點音符",
+      "Dotted notes"
+    ],
+    "question": [
+      "附點增加原音符一半的時值。以四分音符為一拍，附點二分音符有多少拍？",
+      "A dot adds half the note’s original value. With a quarter note as one beat, how many beats is a dotted half note?"
+    ],
+    "options": [
+      [
+        "3拍",
+        "3 beats",
+        "二分音符兩拍，加一半即一拍，共三拍。",
+        "A half note is two beats; adding half of that gives three."
+      ],
+      [
+        "2.5拍",
+        "2.5 beats",
+        "附點增加原音符的一半，不是固定加半拍。",
+        "The dot adds half the note’s value, not always half a beat."
+      ],
+      [
+        "4拍",
+        "4 beats",
+        "四拍是二分音符的兩倍，不是增加一半。",
+        "Four beats doubles rather than adds half to the original."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "附點按原音符的時值計算，不是固定加某個拍數。",
+      "Calculate a dot from the original note’s value."
+    ]
+  },
+  {
+    "subjectId": "music",
+    "grade": 2,
+    "level": 2,
+    "title": [
+      "旋律與伴奏織體",
+      "Melody and accompaniment"
+    ],
+    "question": [
+      "一名歌手唱清楚的旋律，鋼琴以和絃伴奏。哪個描述最符合此織體？",
+      "A singer carries a clear melody while a piano supplies chordal accompaniment. Which texture best fits?"
+    ],
+    "options": [
+      [
+        "主調織體：主旋律配和聲伴奏",
+        "Homophonic: a main melody with harmonic accompaniment",
+        "主旋律最突出，其餘部分提供和聲支持。",
+        "The melody leads while other parts provide harmonic support."
+      ],
+      [
+        "單音織體：只有一條無伴奏旋律",
+        "Monophonic: one unaccompanied melodic line",
+        "題目已有鋼琴和絃伴奏，不是單一旋律線。",
+        "The piano chords mean there is more than one melodic line alone."
+      ],
+      [
+        "複調織體：多條同等突出的獨立旋律",
+        "Polyphonic: several equally prominent independent melodies",
+        "題目描述主旋律與和絃伴奏，不是多條同等獨立的旋律。",
+        "The prompt describes a lead melody and chords rather than several independent melodic lines."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "根據聲部之間的關係描述織體，而非只數樂器。",
+      "Describe texture through relationships between parts, not simply the number of instruments."
+    ]
+  },
+  {
+    "subjectId": "music",
+    "grade": 2,
+    "level": 3,
+    "title": [
+      "樂段與曲式",
+      "Sections and form"
+    ],
+    "question": [
+      "一首短曲先奏樂段A，再奏新樂段B，最後原樣重奏A。最簡潔的曲式標記是甚麼？",
+      "A short piece presents section A, then contrasting B, then repeats A unchanged. What is the simplest form label?"
+    ],
+    "options": [
+      [
+        "ABA",
+        "ABA",
+        "結尾回到原來樂段，形成三段體。",
+        "The return of the opening section creates ternary form."
+      ],
+      [
+        "AB",
+        "AB",
+        "這遺漏了最後返回A的部分。",
+        "This omits the final return to A."
+      ],
+      [
+        "ABC",
+        "ABC",
+        "最後是A重現，不是第三個全新樂段。",
+        "The ending repeats A rather than introducing a third new section."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "以材料是否重現或對比來標記曲式。",
+      "Label form by identifying returning and contrasting material."
+    ]
+  },
+  {
+    "subjectId": "music",
+    "grade": 3,
+    "level": 1,
+    "title": [
+      "旋律移調",
+      "Transposing a melody"
+    ],
+    "question": [
+      "把C–D–E整體向上移大二度，並保持各音間距。結果是甚麼？",
+      "Transpose C–D–E up a major second, preserving intervals. What results?"
+    ],
+    "options": [
+      [
+        "D–E–F♯",
+        "D–E–F♯",
+        "每個音都上移兩個半音；E上移後是F♯。",
+        "Each note rises two semitones; E becomes F-sharp."
+      ],
+      [
+        "D–E–F",
+        "D–E–F",
+        "E至F只有一個半音，沒有保持原來最後的全音距離。",
+        "E to F is only one semitone and changes the final whole-step interval."
+      ],
+      [
+        "D–F–A",
+        "D–F–A",
+        "這改變了音程關係，並非整體等距移調。",
+        "This changes the intervals rather than shifting the whole melody equally."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "移調時每個音都移相同音程，不能只換起音。",
+      "Transpose every note by the same interval, not just the starting note."
+    ]
+  },
+  {
+    "subjectId": "music",
+    "grade": 3,
+    "level": 2,
+    "title": [
+      "三和絃的構成",
+      "Building a triad"
+    ],
+    "question": [
+      "以C大調第1、3、5級音建立主三和絃，應包含哪些音？",
+      "Build the tonic triad from degrees 1, 3 and 5 of C major. Which notes belong?"
+    ],
+    "options": [
+      [
+        "C、E、G",
+        "C, E and G",
+        "C大調第1、3、5級依次是C、E、G。",
+        "Degrees 1, 3 and 5 in C major are C, E and G."
+      ],
+      [
+        "C、D、E",
+        "C, D and E",
+        "這是第1、2、3級的相鄰音，並非指定三和絃。",
+        "These are adjacent degrees 1, 2 and 3, not the specified triad."
+      ],
+      [
+        "D、F、A",
+        "D, F and A",
+        "這是由第2級開始的三和絃，不是主和絃。",
+        "This is a triad built on degree 2, not the tonic."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "用調式中的音級理解和絃功能，與單純連續音階區分。",
+      "Use scale degrees to understand chords and distinguish them from consecutive scale notes."
+    ]
+  },
+  {
+    "subjectId": "music",
+    "grade": 3,
+    "level": 3,
+    "title": [
+      "力度不等於速度",
+      "Dynamics are not tempo"
+    ],
+    "question": [
+      "樂譜標示由p漸強至f，但沒有改變速度記號。最貼合記譜的演奏是甚麼？",
+      "A score moves from p to f through a crescendo without a tempo change. Which performance best follows it?"
+    ],
+    "options": [
+      [
+        "逐漸增加音量，維持原有拍速",
+        "Gradually grow louder while maintaining the pulse",
+        "漸強處理力度；沒有加速記號時不應自動加速。",
+        "A crescendo changes dynamics; it does not automatically require acceleration."
+      ],
+      [
+        "逐漸加快，但音量完全不變",
+        "Accelerate while keeping loudness unchanged",
+        "這把力度指示誤當成速度指示。",
+        "This mistakes a dynamic instruction for a tempo instruction."
+      ],
+      [
+        "只把所有音提高八度",
+        "Raise every note by an octave",
+        "改變音區並不等於按要求漸強。",
+        "Changing register is not the requested crescendo."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "分別處理力度、速度與音高的記譜訊息。",
+      "Read dynamic, tempo and pitch information as distinct musical dimensions."
+    ]
+  },
+  {
+    "subjectId": "music",
+    "grade": 4,
+    "level": 1,
+    "title": [
+      "複合拍子的重拍",
+      "Beats in compound metre"
+    ],
+    "question": [
+      "在通常的6/8拍中，六個八分音符分成兩組，每組三個。主要拍子通常有多少個？",
+      "In a usual 6/8 pattern, six eighth notes form two groups of three. How many main beats are normally felt?"
+    ],
+    "options": [
+      [
+        "2個附點四分音符拍",
+        "2 dotted-quarter beats",
+        "每組三個八分音符構成一個主要拍子。",
+        "Each group of three eighth notes forms one main beat."
+      ],
+      [
+        "6個二分音符拍",
+        "6 half-note beats",
+        "這既改變時值單位，也與每小節六個八分音符不符。",
+        "This changes the duration unit and does not match six eighth notes."
+      ],
+      [
+        "3個附點四分音符拍",
+        "3 dotted-quarter beats",
+        "三個附點四分音符共九個八分音符，超出6/8小節。",
+        "Three dotted quarters equal nine eighth notes, exceeding the bar."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "複合拍子要區分主要拍子與其三等分細分。",
+      "In compound metre, distinguish main beats from their three-part subdivisions."
+    ]
+  },
+  {
+    "subjectId": "music",
+    "grade": 4,
+    "level": 2,
+    "title": [
+      "終止式的功能",
+      "The function of a cadence"
+    ],
+    "question": [
+      "在C大調樂句末，G大三和絃接C大三和絃，即V–I。這通常帶來哪種效果？",
+      "At the end of a C-major phrase, G major moves to C major, or V–I. What effect does this normally create?"
+    ],
+    "options": [
+      [
+        "由屬和絃解決至主和絃的結束感",
+        "A sense of resolution from dominant to tonic",
+        "V–I把和聲帶回主和絃，常用來建立結束感。",
+        "V–I returns the harmony to the tonic and commonly supports closure."
+      ],
+      [
+        "必定轉到一個完全不相關的調",
+        "An inevitable move to an unrelated key",
+        "此處V–I在原來C大調內完成，不必轉調。",
+        "This V–I occurs within C major and does not require modulation."
+      ],
+      [
+        "必定令拍號由4/4變成3/4",
+        "An inevitable metre change from 4/4 to 3/4",
+        "和絃進行不會自行決定拍號改變。",
+        "A chord progression does not itself determine metre."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "把和聲功能與調性關係連起來，而非與速度或拍號混淆。",
+      "Connect harmonic function with tonality rather than tempo or metre."
+    ]
+  },
+  {
+    "subjectId": "music",
+    "grade": 4,
+    "level": 3,
+    "title": [
+      "保留動機的發展",
+      "Developing a motif"
+    ],
+    "question": [
+      "原動機是「短、短、長」的節奏，上行三個音。哪種改寫最清楚保留節奏身分，同時發展旋律？",
+      "A motif uses a short–short–long rhythm and three rising notes. Which variation retains its rhythmic identity while developing the melody?"
+    ],
+    "options": [
+      [
+        "保留短短長，把音高走向改為下行",
+        "Keep short–short–long but make the pitches descend",
+        "節奏身分保持，音高輪廓改變，形成可辨認的變奏。",
+        "The rhythm remains recognisable while the contour changes."
+      ],
+      [
+        "把節奏及所有音程都換成無關材料",
+        "Replace both rhythm and intervals with unrelated material",
+        "缺少共同特徵，較難聽出與原動機的關係。",
+        "Without shared features, the connection to the motif becomes weak."
+      ],
+      [
+        "完全照奏原動機，不作任何改變",
+        "Repeat the motif with no change",
+        "這是重複，沒有題目要求的旋律發展。",
+        "This is repetition without the requested melodic development."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "動機發展在保留可辨認特徵與引入變化之間取捨。",
+      "Motivic development balances recognisable identity and change."
+    ]
+  },
+  {
+    "subjectId": "music",
+    "grade": 5,
+    "level": 1,
+    "title": [
+      "切分音的重音",
+      "Syncopated emphasis"
+    ],
+    "question": [
+      "4/4拍中，一個音在第2拍後半拍開始，延續跨過第3拍的開始。這種安排可產生甚麼效果？",
+      "In 4/4, a note begins on the second half of beat 2 and sustains across the start of beat 3. What effect can this create?"
+    ],
+    "options": [
+      [
+        "弱位置的起音跨過強位置，形成切分效果",
+        "An off-beat onset carried across a stronger position creates syncopation",
+        "聲音在弱位置開始並跨越拍點，打破預期重音。",
+        "The off-beat onset across the beat disrupts expected emphasis."
+      ],
+      [
+        "拍號必然變為5/4",
+        "The metre necessarily changes to 5/4",
+        "切分可發生在原有4/4框架內。",
+        "Syncopation can occur within the original 4/4 metre."
+      ],
+      [
+        "音高必然上升",
+        "Pitch must rise",
+        "節奏位置不會自行決定音高走向。",
+        "Rhythmic placement does not determine pitch direction."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "切分改變重音與起音的關係，不一定改變拍號。",
+      "Syncopation changes the relation of onset to metrical emphasis without necessarily changing metre."
+    ]
+  },
+  {
+    "subjectId": "music",
+    "grade": 5,
+    "level": 2,
+    "title": [
+      "配器中的遮蓋",
+      "Masking in an arrangement"
+    ],
+    "question": [
+      "柔和木管旋律被同音區的厚重銅管伴奏掩蓋。若要保留木管為主角，哪項修改最直接？",
+      "A soft woodwind melody is masked by dense brass accompaniment in the same register. To keep the woodwind prominent, which revision is most direct?"
+    ],
+    "options": [
+      [
+        "降低伴奏力度並減薄同音區聲部",
+        "Reduce accompaniment dynamics and thin its parts in that register",
+        "減少音量及音區競爭可改善旋律清晰度。",
+        "Reducing loudness and register competition can improve melodic clarity."
+      ],
+      [
+        "只把木管樂譜紙印大",
+        "Only print the woodwind part on larger paper",
+        "排版不會改變實際音響平衡。",
+        "Page layout does not alter the sounding balance."
+      ],
+      [
+        "增加更多同音區銅管聲部",
+        "Add more brass parts in the same register",
+        "這通常加重遮蓋問題，與目標相反。",
+        "This generally increases the masking rather than resolving it."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "配器考慮音色、音區、力度和織體的互相作用。",
+      "Consider interactions among timbre, register, dynamics and texture in orchestration."
+    ]
+  },
+  {
+    "subjectId": "music",
+    "grade": 5,
+    "level": 3,
+    "title": [
+      "音高變化與速度變化",
+      "Pitch change and speed change"
+    ],
+    "question": [
+      "數碼軟件把一段錄音的播放速度由100%改為120%，而沒有啟用音高保留功能。通常會出現甚麼？",
+      "Audio software plays a recording at 120% speed without pitch preservation. What usually happens?"
+    ],
+    "options": [
+      [
+        "時間縮短，音高也上升",
+        "Duration decreases and pitch rises",
+        "直接提高播放取樣速度通常同時改變時長與頻率。",
+        "Faster sample playback normally changes both duration and frequency."
+      ],
+      [
+        "時間縮短，但音高必定完全不變",
+        "Duration decreases but pitch must remain unchanged",
+        "保持音高需要額外處理；題目明確沒有啟用。",
+        "Pitch preservation requires additional processing, which is excluded here."
+      ],
+      [
+        "時間增加，音高下降",
+        "Duration increases and pitch falls",
+        "這較符合降低播放速度，而非提高至120%。",
+        "That describes slower rather than faster playback."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "分析音訊工具時，分清一般變速與保留音高的時間伸縮。",
+      "Distinguish ordinary speed changes from pitch-preserving time stretching."
+    ]
+  },
+  {
+    "subjectId": "music",
+    "grade": 6,
+    "level": 1,
+    "title": [
+      "有證據的演奏比較",
+      "Evidence-based performance comparison"
+    ],
+    "question": [
+      "兩次演奏同一樂句。甲每個音等長等強；乙在高潮增加力度、句末稍放鬆。哪段比較最有音樂依據？",
+      "Two performances use the same phrase. A gives each note equal duration and emphasis; B grows towards the climax and relaxes at the end. Which comparison is best supported?"
+    ],
+    "options": [
+      [
+        "乙以力度及句末處理塑造樂句方向",
+        "B shapes the phrase through dynamics and ending treatment",
+        "評論直接引用已描述的可聽特徵。",
+        "This refers directly to the described audible features."
+      ],
+      [
+        "乙全曲必定比甲更快",
+        "B must be faster throughout the piece",
+        "力度及句末處理不能證明全曲速度都較快。",
+        "Dynamic shaping and an ending do not establish a faster overall tempo."
+      ],
+      [
+        "甲的音高一定較不準確",
+        "A must have less accurate pitch",
+        "題目沒有提供音準資料，不能作此比較。",
+        "No pitch-accuracy evidence is provided for this comparison."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "音樂評論應討論可聽證據，不猜測演奏者背景。",
+      "Discuss audible evidence rather than guessing a performer’s background."
+    ]
+  },
+  {
+    "subjectId": "music",
+    "grade": 6,
+    "level": 2,
+    "title": [
+      "選擇適合的創作修訂",
+      "Choosing a purposeful composition revision"
+    ],
+    "question": [
+      "短曲想表現「漸漸聚集的力量」，但整段只有同一力度的單音旋律。哪個修訂最能建立漸進發展？",
+      "A piece aims to convey “gathering strength” but remains a single melody at one dynamic level. Which revision best creates gradual development?"
+    ],
+    "options": [
+      [
+        "逐步增加聲部密度及力度，保留主要動機",
+        "Gradually add textural density and dynamics while retaining the main motif",
+        "多個參數有方向地發展，且動機維持整體連貫。",
+        "Directed change across parameters builds momentum while the motif maintains coherence."
+      ],
+      [
+        "在最後一秒突然插入完全無關的強音",
+        "Insert an unrelated loud sound in the final second",
+        "突發強音不等於整段逐漸聚集的過程。",
+        "A sudden loud event is not a gradual build-up."
+      ],
+      [
+        "只更改曲名，不改聲音",
+        "Only change the title",
+        "曲名不能代替音樂中可聽到的發展。",
+        "A title cannot substitute for audible musical development."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "創作修訂須讓聽者在聲音組織中感受到意圖。",
+      "Make an artistic intention audible through the organisation of sound."
+    ]
+  },
+  {
+    "subjectId": "music",
+    "grade": 6,
+    "level": 3,
+    "title": [
+      "公平比較混音版本",
+      "Comparing mixes fairly"
+    ],
+    "question": [
+      "同一演奏有兩個混音版本。B整體音量較大，試聽者因而覺得「細節較清楚」。要比較混音清晰度，最先應怎樣改善測試？",
+      "Two mixes use the same performance. B is louder and listeners call it “clearer”. What should be improved first when comparing clarity?"
+    ],
+    "options": [
+      [
+        "以相近的感知音量播放，再比較聲部可辨程度",
+        "Match perceived loudness, then compare how clearly parts can be distinguished",
+        "控制音量差異可減少把「較響」誤作「較清楚」的偏差。",
+        "Loudness matching reduces the bias of treating louder as clearer."
+      ],
+      [
+        "只保留B，因為較響就是音質較好",
+        "Keep only B because louder means better quality",
+        "音量是比較中的混雜因素，並不直接等於清晰度。",
+        "Loudness is a confound, not the same as clarity."
+      ],
+      [
+        "把兩個版本改成不同樂曲",
+        "Replace them with different pieces",
+        "改曲會增加新的差異，更難比較混音本身。",
+        "Different music introduces further differences and weakens the comparison."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "錄音評估須控制比較條件，再用明確音樂準則判斷。",
+      "Control listening conditions and use explicit musical criteria when evaluating recordings."
+    ]
+  },
+  {
+    "subjectId": "library",
+    "grade": 1,
+    "level": 1,
+    "title": [
+      "找到指定版本",
+      "Finding a specified edition"
+    ],
+    "question": [
+      "虛構書目練習：老師指定閱讀《城市樹木》陳文著、2022年版。目錄出現三本同名書。最應先核對哪組欄位？",
+      "Fictional catalogue exercise: A teacher assigns City Trees by Chan Man, 2022 edition. The catalogue shows three books with that title. Which fields should you check first?"
+    ],
+    "options": [
+      [
+        "作者及出版年／版本",
+        "Author and publication year/edition",
+        "同名書未必同作者或同版本，這些欄位可確認指定書目。",
+        "A shared title does not guarantee the same author or edition."
+      ],
+      [
+        "封面顏色及書本厚度",
+        "Cover colour and thickness",
+        "外觀不能可靠辨識指定作者和版本。",
+        "Appearance does not reliably identify the assigned author and edition."
+      ],
+      [
+        "借閱次數及評分",
+        "Loan count and rating",
+        "人氣不能確定是否指定的版本。",
+        "Popularity does not identify the required edition."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "查找指定資源時，使用完整書目資料而非只看書名。",
+      "Use complete bibliographic details when locating a specified resource."
+    ]
+  },
+  {
+    "subjectId": "library",
+    "grade": 1,
+    "level": 2,
+    "title": [
+      "書架排序",
+      "Shelf order"
+    ],
+    "question": [
+      "本館此書架按索書號數值由小至大排列：510、512.4、513。索書號512.37的書應放在哪裏？",
+      "This shelf orders call numbers numerically: 510, 512.4, 513. Where should 512.37 go?"
+    ],
+    "options": [
+      [
+        "510與512.4之間",
+        "Between 510 and 512.4",
+        "512.37小於512.40，但大於510。",
+        "512.37 is less than 512.40 and greater than 510."
+      ],
+      [
+        "512.4與513之間",
+        "Between 512.4 and 513",
+        "37與4不能當作整數直接比較；應比較小數值。",
+        "Do not compare 37 and 4 as integers; compare the decimal values."
+      ],
+      [
+        "513之後",
+        "After 513",
+        "512.37仍小於513。",
+        "512.37 is still smaller than 513."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "依圖書館指定的排序規則逐部分比較索書號。",
+      "Follow the library’s stated filing rules when comparing call numbers."
+    ]
+  },
+  {
+    "subjectId": "library",
+    "grade": 1,
+    "level": 3,
+    "title": [
+      "為問題選資料",
+      "Choosing a source for a question"
+    ],
+    "question": [
+      "你要知道校內圖書館「今天幾點關門」。哪項來源最直接合適？",
+      "You need to know when the school library closes today. Which source is most directly suitable?"
+    ],
+    "options": [
+      [
+        "圖書館今天發布的開放時間通知",
+        "Today’s opening-hours notice from the library",
+        "問題關乎今天的安排，應查負責單位最新通知。",
+        "The question concerns today, so use the responsible service’s current notice."
+      ],
+      [
+        "三年前的校慶特刊",
+        "A school anniversary booklet from three years ago",
+        "舊刊可提供歷史資料，卻未必反映今天安排。",
+        "It may provide historical information but not today’s schedule."
+      ],
+      [
+        "一本介紹世界圖書館的百科全書",
+        "An encyclopaedia about libraries worldwide",
+        "內容範圍太廣，不能直接回答本校今天的時間。",
+        "Its scope does not answer today’s local schedule."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "來源是否合適，取決於問題的時間、地點和用途。",
+      "A source’s suitability depends on the question’s time, place and purpose."
+    ]
+  },
+  {
+    "subjectId": "library",
+    "grade": 2,
+    "level": 1,
+    "title": [
+      "擴闊同義詞搜尋",
+      "Searching synonyms"
+    ],
+    "question": [
+      "資料庫把OR解釋為「符合任何一個詞」。要同時找到使用teenagers或adolescents的文章，應輸入甚麼？",
+      "A database defines OR as matching either term. Which search finds articles using teenagers or adolescents?"
+    ],
+    "options": [
+      [
+        "teenagers OR adolescents",
+        "teenagers OR adolescents",
+        "OR把兩組結果合併，有助涵蓋不同用語。",
+        "OR combines result sets to cover different terminology."
+      ],
+      [
+        "teenagers AND adolescents",
+        "teenagers AND adolescents",
+        "AND要求兩詞同時出現，可能漏掉只用其中一詞的文章。",
+        "AND requires both terms and may exclude articles using only one."
+      ],
+      [
+        "teenagers NOT adolescents",
+        "teenagers NOT adolescents",
+        "NOT會排除含adolescents的結果，與目標相反。",
+        "NOT excludes results containing adolescents, contrary to the aim."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "搜尋同義或相關詞時，可用OR擴闊覆蓋；AND用來交集。",
+      "Use OR to cover alternatives and AND to intersect concepts."
+    ]
+  },
+  {
+    "subjectId": "library",
+    "grade": 2,
+    "level": 2,
+    "title": [
+      "縮窄過廣搜尋",
+      "Narrowing a broad search"
+    ],
+    "question": [
+      "研究題目是「香港中學生的睡眠習慣」。只搜尋sleep得到太多無關結果，哪個修訂最聚焦？",
+      "A project concerns sleep habits among Hong Kong secondary students. Searching sleep returns too much irrelevant material. Which revision is most focused?"
+    ],
+    "options": [
+      [
+        "sleep AND \"Hong Kong\" AND \"secondary students\"",
+        "sleep AND \"Hong Kong\" AND \"secondary students\"",
+        "加入地點和研究對象，讓搜尋對應題目範圍。",
+        "Adding location and population aligns the search with the topic."
+      ],
+      [
+        "sleep OR holidays OR animals",
+        "sleep OR holidays OR animals",
+        "增加無關的OR詞組會擴大而非聚焦結果。",
+        "Unrelated OR terms broaden rather than focus the results."
+      ],
+      [
+        "刪去sleep，只搜尋students",
+        "Remove sleep and search only students",
+        "這失去主題限制，可能得到更多不相關內容。",
+        "This removes the topic constraint and may add irrelevant results."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "把研究題目拆成主題、對象及情境，再組合搜尋詞。",
+      "Break a research topic into concept, population and context when choosing search terms."
+    ]
+  },
+  {
+    "subjectId": "library",
+    "grade": 2,
+    "level": 3,
+    "title": [
+      "摘要與原文",
+      "Abstract and full text"
+    ],
+    "question": [
+      "搜尋結果摘要說研究「可能有幫助」。你準備引用具體改善幅度，下一步最需要甚麼？",
+      "A search abstract says an intervention “may help”. You want to cite the size of the improvement. What do you need next?"
+    ],
+    "options": [
+      [
+        "閱讀原文的方法及結果，確認數值與適用對象",
+        "Read the full methods and results to check the value and population",
+        "摘要未提供所需數據，原文可確認量度方式及條件。",
+        "The abstract lacks the required detail; the paper explains measurement and conditions."
+      ],
+      [
+        "把「可能」改成「一定」，使文章更清楚",
+        "Replace “may” with “definitely” for clarity",
+        "這提高了確定程度，卻沒有增加證據。",
+        "This increases certainty without adding evidence."
+      ],
+      [
+        "只引用搜尋結果的排序位置",
+        "Cite only its position in the search results",
+        "排序不是研究效果大小的證據。",
+        "Search rank is not evidence of effect size."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "引用精確結果前，核對原文中的方法、數值與範圍。",
+      "Check methods, values and scope in the original before citing a precise result."
+    ]
+  },
+  {
+    "subjectId": "library",
+    "grade": 3,
+    "level": 1,
+    "title": [
+      "改寫仍須引用",
+      "Paraphrasing still needs a citation"
+    ],
+    "question": [
+      "你用自己的句子概括一篇文章的核心論點，沒有逐字抄寫。應如何交代？",
+      "You summarise an article’s central argument in your own words without copying its wording. How should you acknowledge it?"
+    ],
+    "options": [
+      [
+        "保留原意，並註明文章來源",
+        "Preserve the meaning and cite the article",
+        "表達方式改變，論點來源仍需要交代。",
+        "Changing the wording does not remove the source of the idea."
+      ],
+      [
+        "因為字句不同，所以不用引用",
+        "Do not cite because the wording differs",
+        "引用不只用於直接引文，也用於借用的觀點。",
+        "Citation also acknowledges borrowed ideas, not just quotations."
+      ],
+      [
+        "加引號，但不寫來源",
+        "Use quotation marks without a source",
+        "引號用於準確直接引文，亦不能代替來源資料。",
+        "Quotation marks indicate exact wording and do not replace attribution."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "區分直接引文與改寫，兩者都要讓讀者追查來源。",
+      "Distinguish quotation from paraphrase and make both traceable."
+    ]
+  },
+  {
+    "subjectId": "library",
+    "grade": 3,
+    "level": 2,
+    "title": [
+      "引用是否真的支持",
+      "Does the citation support the claim?"
+    ],
+    "question": [
+      "文章說「所有學生都偏好電子書」，引用的調查卻只訪問圖書學會20名會員，其中12人偏好電子書。哪句修訂符合資料？",
+      "An article claims all students prefer e-books. Its cited survey asked 20 library-club members, of whom 12 preferred e-books. Which revision fits?"
+    ],
+    "options": [
+      [
+        "受訪的20名會員中，有12人偏好電子書",
+        "Of the 20 club members surveyed, 12 preferred e-books",
+        "保留樣本範圍及實際結果，沒有推廣至全校。",
+        "This retains the sample and result without generalising to the whole school."
+      ],
+      [
+        "所有會員及全校學生都偏好電子書",
+        "All members and all students prefer e-books",
+        "樣本內也不是人人偏好，更不能推廣至未受訪者。",
+        "Not even all respondents preferred them, and others were not surveyed."
+      ],
+      [
+        "只有12名學生懂得使用電子書",
+        "Only 12 students know how to use e-books",
+        "偏好調查沒有量度使用能力。",
+        "The survey measured preference, not ability."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "檢查引用是否支持主張的對象、數量及確定程度。",
+      "Check whether a citation supports a claim’s population, quantity and certainty."
+    ]
+  },
+  {
+    "subjectId": "library",
+    "grade": 3,
+    "level": 3,
+    "title": [
+      "版本更正",
+      "Corrections and versions"
+    ],
+    "question": [
+      "某研究原報告寫40%，更正公告說因資料輸入錯誤應為30%。你尚未交功課，最合理的處理是甚麼？",
+      "A report originally states 40%; a correction changes it to 30% after a data-entry error. Your assignment is not yet submitted. What should you do?"
+    ],
+    "options": [
+      [
+        "採用更正值，並記錄所引用的更正版本",
+        "Use the corrected figure and record the corrected version",
+        "最新更正直接影響數值，引用須讓讀者辨識版本。",
+        "The correction changes the value; the citation should identify the version."
+      ],
+      [
+        "保留40%，因為先看到的版本較可靠",
+        "Keep 40% because the first version you saw is more reliable",
+        "先看到不代表正確，且已有明確更正。",
+        "Seeing a version first does not make it more accurate."
+      ],
+      [
+        "把40%與30%平均成35%",
+        "Average 40% and 30% to get 35%",
+        "舊值是已知輸入錯誤，不是可與新值平均的獨立估計。",
+        "The old value is a known error, not an independent estimate to average."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "研究記錄應保留版本資訊，並處理已發布的更正。",
+      "Track versions and account for published corrections."
+    ]
+  },
+  {
+    "subjectId": "library",
+    "grade": 4,
+    "level": 1,
+    "title": [
+      "把概念變成量度",
+      "Operationalising a concept"
+    ],
+    "question": [
+      "研究「圖書館是否更方便使用」，哪個變項最直接量度找書效率？",
+      "To study whether the library is easier to use, which variable most directly measures book-finding efficiency?"
+    ],
+    "options": [
+      [
+        "在相同找書任務中完成所需時間",
+        "Time to complete the same book-finding task",
+        "明確任務與時間可形成可比較量度。",
+        "A defined task and completion time provide a comparable measure."
+      ],
+      [
+        "受訪者喜歡的書封顏色",
+        "Respondents’ favourite cover colours",
+        "封面喜好並非找書效率的直接量度。",
+        "Cover preference does not directly measure search efficiency."
+      ],
+      [
+        "圖書館名稱有多少個字",
+        "The number of letters in the library’s name",
+        "名稱長度沒有直接量度使用者完成任務的效率。",
+        "Name length does not directly measure task efficiency."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "把抽象概念轉成與研究問題相關、可重複量度的指標。",
+      "Translate an abstract concept into relevant, repeatable measures."
+    ]
+  },
+  {
+    "subjectId": "library",
+    "grade": 4,
+    "level": 2,
+    "title": [
+      "避免引導式問卷",
+      "Avoiding a leading survey"
+    ],
+    "question": [
+      "想了解新自修室的使用經驗，哪個問題最中立？",
+      "Which question most neutrally investigates experiences of a new study room?"
+    ],
+    "options": [
+      [
+        "你使用自修室時，哪些安排有幫助，哪些有困難？",
+        "Which features helped you, and which caused difficulties?",
+        "問題容許正面、負面或混合經驗，不預定結論。",
+        "It allows positive, negative or mixed experiences without presupposing a result."
+      ],
+      [
+        "你是否同意這間出色的自修室應立即擴建？",
+        "Do you agree this excellent room should be expanded immediately?",
+        "「出色」及擴建主張已引導評價方向。",
+        "“Excellent” and the expansion claim steer the response."
+      ],
+      [
+        "為何新自修室浪費大家時間？",
+        "Why does the new room waste everyone’s time?",
+        "問題先假定負面效果，無法中立收集經驗。",
+        "This assumes a negative effect before collecting evidence."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "問卷措辭應讓不同經驗都能被表達。",
+      "Phrase surveys so different experiences can be expressed."
+    ]
+  },
+  {
+    "subjectId": "library",
+    "grade": 4,
+    "level": 3,
+    "title": [
+      "自選樣本",
+      "Self-selected samples"
+    ],
+    "question": [
+      "網上閱讀問卷只在閱讀獎勵羣組發布，80%的回覆者每天閱讀。最重要的推論限制是甚麼？",
+      "A reading survey is posted only in a reading-award group; 80% of respondents read daily. What is the main limitation?"
+    ],
+    "options": [
+      [
+        "羣組成員及自願回覆者可能較喜歡閱讀",
+        "Group members and volunteers may be more interested in reading",
+        "招募途徑與自選回覆可能偏向特定習慣。",
+        "Recruitment and self-selection may favour particular habits."
+      ],
+      [
+        "只要有百分率，就已代表全校",
+        "A percentage automatically represents the school",
+        "百分率不能消除取樣偏差。",
+        "Expressing a result as a percentage does not remove sampling bias."
+      ],
+      [
+        "所有回覆必定是假資料",
+        "Every response must be fabricated",
+        "代表性不足不等於個別回覆必定造假。",
+        "Limited representativeness does not mean responses are fabricated."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "評估調查時，先問誰有機會被邀請及誰選擇回覆。",
+      "Ask who could be recruited and who chose to respond."
+    ]
+  },
+  {
+    "subjectId": "library",
+    "grade": 5,
+    "level": 1,
+    "title": [
+      "相對增加與基準",
+      "Relative growth and the baseline"
+    ],
+    "question": [
+      "報告標題說「借閱量增加100%」，正文說由每週2本增至4本。哪個摘要最完整？",
+      "A headline says borrowing rose 100%; the report specifies an increase from two to four books weekly. Which summary is most informative?"
+    ],
+    "options": [
+      [
+        "每週由2本增至4本，增加2本，即100%",
+        "Weekly borrowing rose from 2 to 4 books: 2 more, or 100%",
+        "同時列基準、絕對差和相對變化，有助理解規模。",
+        "The baseline, absolute difference and relative change clarify the scale."
+      ],
+      [
+        "借閱量增加100本",
+        "Borrowing rose by 100 books",
+        "100%是相對比例，不是增加100本。",
+        "100% is a relative change, not 100 additional books."
+      ],
+      [
+        "因為增幅大，所以已證明政策成功",
+        "The large percentage proves the policy succeeded",
+        "兩個數值不會自行證明因果或政策成效。",
+        "Two figures alone do not establish causation or policy success."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "報道百分率時，保留基準和絕對數，避免放大印象。",
+      "Report baselines and absolute values alongside percentages."
+    ]
+  },
+  {
+    "subjectId": "library",
+    "grade": 5,
+    "level": 2,
+    "title": [
+      "區分觀察與實驗",
+      "Observational and experimental evidence"
+    ],
+    "question": [
+      "研究發現常到圖書館的學生平均成績較高，但沒有隨機分配使用次數。哪個結論最合適？",
+      "Students who visit the library often have higher average grades, but visits were not randomly assigned. Which conclusion is best?"
+    ],
+    "options": [
+      [
+        "兩者有關聯，但學習動機等因素也可能影響結果",
+        "There is an association, but motivation and other factors may contribute",
+        "觀察性比較不能單獨排除共同影響因素。",
+        "An observational comparison cannot by itself exclude confounders."
+      ],
+      [
+        "每多到圖書館一次都必然令成績上升",
+        "Every extra visit necessarily raises a student’s grade",
+        "研究沒有隔離每次到訪的因果效果。",
+        "The study did not isolate the causal effect of each visit."
+      ],
+      [
+        "兩者沒有任何關係，因為不是實驗",
+        "There is no relationship because it was not an experiment",
+        "觀察資料仍可顯示關聯，只是因果推論有限。",
+        "Observational data can show association despite limited causal inference."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "研究設計決定可作出的推論，不把關聯寫成已證實因果。",
+      "Match the strength of a conclusion to the study design."
+    ]
+  },
+  {
+    "subjectId": "library",
+    "grade": 5,
+    "level": 3,
+    "title": [
+      "有系統地找反方證據",
+      "Searching beyond agreement"
+    ],
+    "question": [
+      "研究者主張延長開放時間有效，卻只搜尋「延長開放的好處」。怎樣改善文獻搜尋最合適？",
+      "A researcher argues that longer opening hours help but searches only for “benefits of longer hours”. What best improves the search?"
+    ],
+    "options": [
+      [
+        "加入成效有限、成本及不同情境的搜尋詞，記錄納入準則",
+        "Search also for limited effects, costs and contexts, recording inclusion criteria",
+        "搜尋設計須容許找到挑戰原有主張的資料。",
+        "A search should be capable of finding evidence that challenges the initial claim."
+      ],
+      [
+        "只增加更多「好處」同義詞",
+        "Add only more synonyms for benefits",
+        "這可能增加數量，但仍保留同一方向的選材偏差。",
+        "This may add results while retaining the same directional bias."
+      ],
+      [
+        "遇到不同結論就刪除文章",
+        "Delete any article reaching another conclusion",
+        "依結論篩選會令綜合失去公正的證據基礎。",
+        "Filtering by conclusion undermines a fair synthesis."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "搜尋及納入準則應先於結論，避免只收集支持自己的資料。",
+      "Set search and inclusion criteria independently of the desired conclusion."
+    ]
+  },
+  {
+    "subjectId": "library",
+    "grade": 6,
+    "level": 1,
+    "title": [
+      "引用鏈與原始研究",
+      "Citation chains and original studies"
+    ],
+    "question": [
+      "五篇網誌都引用同一項研究，卻沒有新增資料。作證據綜合時，應如何計算獨立研究數目？",
+      "Five blog posts cite the same study and add no new data. How should a synthesis count independent studies?"
+    ],
+    "options": [
+      [
+        "這條引用鏈只有一項原始研究",
+        "This citation chain contains one original study",
+        "轉述次數不會增加獨立研究或樣本數。",
+        "Repeated reporting does not add independent studies or participants."
+      ],
+      [
+        "共有六項互相驗證的研究",
+        "There are six mutually confirming studies",
+        "原研究加五篇轉述不是六次獨立調查。",
+        "One study plus five reports is not six independent investigations."
+      ],
+      [
+        "網誌沒有新增資料，所以原研究也不存在",
+        "Because the blogs add no data, the original study does not exist",
+        "二手報道無新增證據，不代表原研究不存在。",
+        "Secondary repetition does not erase the underlying study."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "追溯到原始資料，避免把多次轉述重複計入證據。",
+      "Trace original data to avoid double-counting repeated reports."
+    ]
+  },
+  {
+    "subjectId": "library",
+    "grade": 6,
+    "level": 2,
+    "title": [
+      "結果不同如何綜合",
+      "Synthesising different results"
+    ],
+    "question": [
+      "研究甲：有導師支援的初學者進步；研究乙：獨立使用同一工具的熟練者沒有明顯進步。哪個綜合最合理？",
+      "Study A finds gains for beginners with tutoring; B finds no clear gains for experienced users working alone with the same tool. Which synthesis is most reasonable?"
+    ],
+    "options": [
+      [
+        "效果可能與原有能力及支援條件有關，需比較設計",
+        "Effects may depend on prior skill and support; compare the study designs",
+        "兩項研究的對象及條件不同，不能只把結果視為直接矛盾。",
+        "Different participants and conditions mean the findings are not simply contradictory."
+      ],
+      [
+        "兩個結論互相抵消，所以不需再看方法",
+        "The findings cancel out, so methods are irrelevant",
+        "研究結果不能像相反數字般直接抵消。",
+        "Findings cannot simply be cancelled like opposite numbers."
+      ],
+      [
+        "只選自己較喜歡的一項",
+        "Choose only the study you prefer",
+        "個人喜好不能代替方法與適用範圍的比較。",
+        "Preference cannot replace comparing methods and scope."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "證據綜合要解釋差異可能來自甚麼，而非只統計支持或反對篇數。",
+      "Synthesis should explain differences rather than merely count favourable and unfavourable studies."
+    ]
+  },
+  {
+    "subjectId": "library",
+    "grade": 6,
+    "level": 3,
+    "title": [
+      "可重做的研究記錄",
+      "A reproducible research record"
+    ],
+    "question": [
+      "同學要依你的文獻搜尋重做一次。哪組記錄最能協助重現？",
+      "A classmate wants to repeat your literature search. Which record best supports replication?"
+    ],
+    "options": [
+      [
+        "資料庫、日期、完整搜尋式、篩選準則及排除原因",
+        "Databases, dates, full queries, selection criteria and exclusion reasons",
+        "這些資料讓他人理解如何找到及選擇證據。",
+        "These details reveal how evidence was located and selected."
+      ],
+      [
+        "只列最後三篇最喜歡的文章",
+        "Only the final three favourite articles",
+        "結果清單沒有交代搜尋範圍和篩選過程。",
+        "A final list does not document search scope or selection."
+      ],
+      [
+        "只保存文章封面的截圖",
+        "Only screenshots of article covers",
+        "封面通常不包含重做搜尋所需的方法資訊。",
+        "Covers usually lack the methodological details needed."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "透明研究須保存搜尋與選擇過程，讓限制可被檢查。",
+      "Document search and selection processes so the research and its limits can be examined."
+    ]
+  },
+  {
+    "subjectId": "playground",
+    "grade": 1,
+    "level": 1,
+    "title": [
+      "傳球後的支援",
+      "Supporting after a pass"
+    ],
+    "question": [
+      "三人傳球練習中，你把球傳給隊友後，怎樣最有助下一次配合？",
+      "In a three-player passing drill, what best supports the next move after you pass?"
+    ],
+    "options": [
+      [
+        "移到可接應的空位，讓持球者看見你",
+        "Move into visible space to offer a return pass",
+        "移動可建立新的傳球角度，避免與持球者擠在一起。",
+        "Movement creates a new passing angle instead of crowding the ball carrier."
+      ],
+      [
+        "一直跟在持球者身後貼近他",
+        "Stay immediately behind the ball carrier",
+        "這容易重疊位置，減少可用傳球角度。",
+        "This crowds the same space and reduces passing options."
+      ],
+      [
+        "傳球後完全停止觀察場面",
+        "Stop watching the play after passing",
+        "支援需要持續留意隊友、防守者及空位。",
+        "Support requires continued awareness of players and space."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "球類配合不只看持球動作，也看無球時的位置。",
+      "Team play depends on off-ball positioning as well as actions with the ball."
+    ]
+  },
+  {
+    "subjectId": "playground",
+    "grade": 1,
+    "level": 2,
+    "title": [
+      "身體平衡",
+      "Body balance"
+    ],
+    "question": [
+      "在老師指導的靜態平衡示範中，其他條件相同，哪個姿勢通常較穩定？",
+      "In a teacher-led static-balance demonstration, other conditions equal, which position is generally more stable?"
+    ],
+    "options": [
+      [
+        "支撐面較闊，重心較低",
+        "A wider base of support and a lower centre of gravity",
+        "較闊支撐面及較低重心通常增加抗傾倒的穩定性。",
+        "A wider base and lower centre of gravity generally improve resistance to tipping."
+      ],
+      [
+        "支撐面較窄，重心較高",
+        "A narrower base and a higher centre of gravity",
+        "這通常令身體較容易失去平衡。",
+        "This generally makes loss of balance easier."
+      ],
+      [
+        "支撐面不變，只把重心升得更高",
+        "Keep the base unchanged but raise the centre of gravity",
+        "其他條件相同，提高重心通常不會增加靜態穩定性。",
+        "Other conditions equal, raising the centre of gravity generally does not improve static stability."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "以重心及支撐面解釋穩定性，並在教師安排下練習。",
+      "Explain stability through centre of gravity and base of support in supervised practice."
+    ]
+  },
+  {
+    "subjectId": "playground",
+    "grade": 1,
+    "level": 3,
+    "title": [
+      "清楚的比賽訊號",
+      "Clear signals in a game"
+    ],
+    "question": [
+      "小組遊戲用哨聲表示停止，但有同學未能清楚聽到。怎樣保留同一規則並改善全組參與？",
+      "A group game uses a whistle to signal stop, but some players cannot hear it clearly. How can the same rule be made accessible?"
+    ],
+    "options": [
+      [
+        "同步使用大家先練習過的明顯手勢或旗號",
+        "Pair the whistle with a visible gesture or flag practised by everyone",
+        "多種訊號傳達同一指令，讓所有人及時理解。",
+        "Multiple signals communicate the same instruction in time."
+      ],
+      [
+        "只要求沒聽到的人退出",
+        "Require those who missed it to leave",
+        "退出沒有改善訊號，也減少參與機會。",
+        "Exclusion does not improve the signal and reduces participation."
+      ],
+      [
+        "隨機更改停止的意思",
+        "Randomly change what stop means",
+        "規則不一致會令所有人更難安全配合。",
+        "Inconsistent meanings make coordinated play harder."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "清楚、一致及可感知的規則訊號有助安全參與。",
+      "Clear, consistent and perceptible signals support safe participation."
+    ]
+  },
+  {
+    "subjectId": "playground",
+    "grade": 2,
+    "level": 1,
+    "title": [
+      "訓練頻率",
+      "Training frequency"
+    ],
+    "question": [
+      "FITT中的frequency指頻率。計劃由每週兩次活動改為三次，而每次時長和強度不變，主要改了甚麼？",
+      "In FITT, frequency describes how often activity occurs. A plan changes from two sessions weekly to three, with duration and intensity unchanged. What changes?"
+    ],
+    "options": [
+      [
+        "頻率",
+        "Frequency",
+        "改變的是每週次數，而非每次時間或強度。",
+        "The number of weekly sessions changes, not session duration or intensity."
+      ],
+      [
+        "每次時長",
+        "Duration per session",
+        "題目已說每次時長不變。",
+        "The question states that session duration stays the same."
+      ],
+      [
+        "活動類型",
+        "Activity type",
+        "題目沒有更換活動種類。",
+        "No change of activity type is stated."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "用頻率、強度、時間與類型分開描述活動計劃。",
+      "Describe frequency, intensity, time and type separately."
+    ]
+  },
+  {
+    "subjectId": "playground",
+    "grade": 2,
+    "level": 2,
+    "title": [
+      "技能回饋的焦點",
+      "Focused skill feedback"
+    ],
+    "question": [
+      "傳球練習後，哪句回饋最能讓同學知道下一次要改甚麼？",
+      "After a passing drill, which feedback most clearly identifies what to change next?"
+    ],
+    "options": [
+      [
+        "「傳球前先望接球者，確認他已準備好。」",
+        "“Look at the receiver before passing and check they are ready.”",
+        "回饋指出可觀察、可實行的一項動作。",
+        "It identifies one observable and actionable behaviour."
+      ],
+      [
+        "「你永遠都不擅長球類。」",
+        "“You are always bad at ball games.”",
+        "固定標籤沒有提供改進方法。",
+        "A fixed label offers no method for improvement."
+      ],
+      [
+        "「總之做得好一點。」",
+        "“Just do better.”",
+        "說法太籠統，沒有指出可調整的行動。",
+        "This is too vague to identify a change."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "有效回饋針對可改變的動作，而非給人固定能力標籤。",
+      "Useful feedback targets adjustable actions rather than fixed ability labels."
+    ]
+  },
+  {
+    "subjectId": "playground",
+    "grade": 2,
+    "level": 3,
+    "title": [
+      "控制球場空間",
+      "Using playing space"
+    ],
+    "question": [
+      "進攻時四名隊員全擠在持球者旁邊，防守者容易封鎖傳球。哪個調整最能改善局面？",
+      "Four attackers crowd around the ball carrier, making passes easy to block. Which adjustment best improves the attack?"
+    ],
+    "options": [
+      [
+        "拉開適當距離，形成不同方向的接應點",
+        "Spread out to create receiving options in different directions",
+        "寬度及不同角度可增加防守者要覆蓋的空間。",
+        "Width and varied angles increase the space defenders must cover."
+      ],
+      [
+        "全部再靠近持球者",
+        "Move everyone even closer to the ball",
+        "這會進一步減少空間與傳球選擇。",
+        "This further reduces space and passing options."
+      ],
+      [
+        "只增加傳球力度，不改站位",
+        "Pass harder without changing positions",
+        "力度不能直接解決路線被集中封鎖的問題。",
+        "Power alone does not solve blocked passing lanes."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "戰術選擇要回應空間、隊友及對手的位置。",
+      "Base tactical choices on space and the positions of teammates and opponents."
+    ]
+  },
+  {
+    "subjectId": "playground",
+    "grade": 3,
+    "level": 1,
+    "title": [
+      "速度的量度",
+      "Measuring speed"
+    ],
+    "question": [
+      "教學數據：一名學生用20秒跑100米，平均速度是多少？",
+      "Teaching data: a student covers 100 metres in 20 seconds. What is the average speed?"
+    ],
+    "options": [
+      [
+        "5米／秒",
+        "5 m/s",
+        "平均速度＝距離÷時間＝100÷20。",
+        "Average speed equals distance divided by time: 100 ÷ 20."
+      ],
+      [
+        "0.2米／秒",
+        "0.2 m/s",
+        "這把時間除以距離，單位也不是速度。",
+        "This divides time by distance rather than distance by time."
+      ],
+      [
+        "2000米／秒",
+        "2000 m/s",
+        "距離乘時間不會得到速度。",
+        "Multiplying distance by time does not give speed."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "運動數據應同時核對計算方法及單位。",
+      "Check both the calculation and its units when analysing performance data."
+    ]
+  },
+  {
+    "subjectId": "playground",
+    "grade": 3,
+    "level": 2,
+    "title": [
+      "動作學習的練習安排",
+      "Practice for skill learning"
+    ],
+    "question": [
+      "初學者剛學會一個基本傳球動作。老師想先讓他穩定掌握，再適應變化。哪個安排較符合這個次序？",
+      "A beginner has just learned a basic pass. The teacher wants consistency first, then adaptation. Which sequence fits?"
+    ],
+    "options": [
+      [
+        "先在穩定條件重複，再逐步改變距離及接應位置",
+        "Repeat under stable conditions, then gradually vary distance and receiver position",
+        "先建立動作，再加入變化，可配合不同學習階段。",
+        "Establishing the action before adding variability fits different learning stages."
+      ],
+      [
+        "首次就同時改變所有條件且不給回饋",
+        "Change every condition immediately and provide no feedback",
+        "大量新變項會令初學者難以找出動作問題。",
+        "Many new variables make it harder for a beginner to identify errors."
+      ],
+      [
+        "永遠只練一個固定情境",
+        "Practise one fixed situation forever",
+        "這可建立熟悉感，卻不足以練習情境適應。",
+        "This builds familiarity but does not develop adaptation."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "練習結構應配合技能熟練程度及所需遷移。",
+      "Match practice structure to skill stage and transfer needs."
+    ]
+  },
+  {
+    "subjectId": "playground",
+    "grade": 3,
+    "level": 3,
+    "title": [
+      "勝負以外的體育精神",
+      "Sportsmanship beyond winning"
+    ],
+    "question": [
+      "在自行裁判的友誼賽，你清楚看到己方球員最後碰球出界，但對方未看見。哪個行動符合雙方事前同意的誠實報界規則？",
+      "In a self-officiated friendly game, you clearly see your teammate touch the ball last before it goes out; opponents miss it. What follows the agreed honest-calling rule?"
+    ],
+    "options": [
+      [
+        "主動指出己方最後觸球，按規則交球",
+        "Acknowledge your team’s last touch and award possession by the rules",
+        "遵守已同意的規則需要在對己方不利時也誠實報告。",
+        "Following the agreement includes honest calls when they disadvantage your team."
+      ],
+      [
+        "因為沒有裁判，就可隨時更改規則",
+        "Change the rule because no referee is present",
+        "自行裁判仍依靠共同規則，並非沒有規則。",
+        "Self-officiating still depends on shared rules."
+      ],
+      [
+        "只在己方領先時才誠實報界",
+        "Make honest calls only when your team leads",
+        "按比分選擇是否守規則並不一致。",
+        "Applying honesty selectively by score is inconsistent."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "體育精神包括一致遵守共同規則與承擔責任。",
+      "Sportsmanship includes consistent rules and responsibility."
+    ]
+  },
+  {
+    "subjectId": "playground",
+    "grade": 4,
+    "level": 1,
+    "title": [
+      "訓練的專項性",
+      "Training specificity"
+    ],
+    "question": [
+      "兩個課堂訓練例子：甲反覆練短距離快速起步，乙做持續較長時間的穩定活動。甲較直接針對哪項能力？",
+      "Two classroom examples: A practises repeated short, fast starts; B performs steady activity for longer periods. Which ability does A target more directly?"
+    ],
+    "options": [
+      [
+        "起步加速表現",
+        "Starting acceleration",
+        "短距離快速起步較接近加速動作的要求。",
+        "Fast short starts more closely match the demands of acceleration."
+      ],
+      [
+        "長時間持續活動能力",
+        "Capacity for prolonged continuous activity",
+        "這較接近乙的練習形式。",
+        "That more closely matches B’s activity."
+      ],
+      [
+        "讀懂比賽規則的速度",
+        "Speed of reading game rules",
+        "題目練習的是身體動作，沒有直接訓練閱讀。",
+        "These are movement tasks, not direct reading practice."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "訓練適應與練習所施加的具體要求有關。",
+      "Training adaptations relate to the specific demands practised."
+    ]
+  },
+  {
+    "subjectId": "playground",
+    "grade": 4,
+    "level": 2,
+    "title": [
+      "衝量與接球",
+      "Impulse and catching"
+    ],
+    "question": [
+      "簡化力學模型：同一顆球以相同速度到達，最後都停止。若接球時把減速時間延長，平均作用力通常怎樣變化？",
+      "Simplified mechanics: the same ball arrives at the same speed and is brought to rest. If stopping time increases, what normally happens to average force?"
+    ],
+    "options": [
+      [
+        "減少",
+        "It decreases",
+        "動量改變相同時，平均力＝動量改變÷作用時間。",
+        "For the same momentum change, average force equals that change divided by time."
+      ],
+      [
+        "增加",
+        "It increases",
+        "在相同動量改變下，時間增加會使平均力減少。",
+        "With momentum change fixed, increasing time reduces average force."
+      ],
+      [
+        "必定變成零",
+        "It must become zero",
+        "只要球的動量改變，有限時間內仍需要作用力。",
+        "Changing momentum over a finite time still requires force."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "把運動技巧與作用時間、動量改變及平均力連繫。",
+      "Connect movement technique with contact time, momentum change and average force."
+    ]
+  },
+  {
+    "subjectId": "playground",
+    "grade": 4,
+    "level": 3,
+    "title": [
+      "技能成功率的比較",
+      "Comparing skill success rates"
+    ],
+    "question": [
+      "虛構練習：甲近距離射門10次中8次，乙遠距離射門10次中6次。能否只憑數字判定甲的射門能力較高？",
+      "Fictional practice: A scores 8 of 10 close shots; B scores 6 of 10 long shots. Can these figures alone rank their shooting skill?"
+    ],
+    "options": [
+      [
+        "不能；距離不同，應在可比較條件再測",
+        "No; distances differ, so retest under comparable conditions",
+        "難度條件不同，成功率不能直接作相同能力的比較。",
+        "Different difficulty conditions prevent a direct like-for-like comparison."
+      ],
+      [
+        "能；8永遠代表比6更高的能力",
+        "Yes; 8 always represents greater ability than 6",
+        "得分數未反映兩種任務的難度差異。",
+        "The counts do not account for different task difficulty."
+      ],
+      [
+        "不能，因為成功率完全沒有用途",
+        "No, because success rates are entirely useless",
+        "成功率有用，但須配合相同或已調整的條件。",
+        "Success rates are useful when conditions are comparable or adjusted."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "比較運動表現前，確認任務難度和量度條件相稱。",
+      "Check task difficulty and measurement conditions before comparing performance."
+    ]
+  },
+  {
+    "subjectId": "playground",
+    "grade": 5,
+    "level": 1,
+    "title": [
+      "開放與閉鎖技能",
+      "Open and closed skills"
+    ],
+    "question": [
+      "以下哪項較接近開放技能：環境會改變，運動員需即時適應？",
+      "Which task most closely illustrates an open skill, requiring adaptation to a changing environment?"
+    ],
+    "options": [
+      [
+        "比賽中因應對手移動選擇傳球路線",
+        "Choosing a pass as opponents move during a game",
+        "對手及隊友動態變化，需要持續調整。",
+        "Changing players’ positions require ongoing adjustment."
+      ],
+      [
+        "在固定環境獨自投向同一靜止目標",
+        "Throwing alone at the same stationary target in fixed conditions",
+        "環境較穩定、可預測，較接近閉鎖技能。",
+        "The stable, predictable environment is closer to a closed skill."
+      ],
+      [
+        "在固定位置、無對手幹擾時自行決定發球時間",
+        "Serving at a chosen moment from a fixed position without opponent interference",
+        "這個起始環境較穩定且可自行控制時間，較接近閉鎖技能。",
+        "The initial environment is stable and self-paced, closer to a closed skill."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "技能分類要看環境可預測程度及所需即時調整。",
+      "Classify skills by environmental predictability and adaptation demands."
+    ]
+  },
+  {
+    "subjectId": "playground",
+    "grade": 5,
+    "level": 2,
+    "title": [
+      "速度測試的可靠性",
+      "Reliability of a speed test"
+    ],
+    "question": [
+      "兩次短跑測試的起跑提示、距離、地面及計時方法都不同。要提高重測可靠性，應先怎樣做？",
+      "Two sprint tests use different start cues, distances, surfaces and timing methods. What should be done first to improve test–retest reliability?"
+    ],
+    "options": [
+      [
+        "標準化上述程序，安排一致的測試條件",
+        "Standardise procedures and keep testing conditions consistent",
+        "減少量度程序差異，較能比較同一表現。",
+        "Reducing procedural variation makes repeated measurements more comparable."
+      ],
+      [
+        "只記錄較快的一次並刪掉其他資料",
+        "Keep only the faster trial and delete the rest",
+        "選擇性保留無法改善測試程序，也掩蓋變異。",
+        "Selective recording does not improve the procedure and hides variability."
+      ],
+      [
+        "每次更換全新的測試方法",
+        "Use an entirely new test each time",
+        "方法更不一致，重測比較更困難。",
+        "Greater inconsistency makes repeated comparison harder."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "可靠性關乎一致量度，不等於只挑看來最好的結果。",
+      "Reliability concerns consistent measurement, not selecting the best-looking result."
+    ]
+  },
+  {
+    "subjectId": "playground",
+    "grade": 5,
+    "level": 3,
+    "title": [
+      "回饋逐步減少",
+      "Reducing feedback gradually"
+    ],
+    "question": [
+      "同學已能穩定完成技能，卻每次都要等教練立即評語。若目標是提升自我判斷，哪個安排較合適？",
+      "A learner performs consistently but waits for immediate coaching after every attempt. To develop self-evaluation, which arrangement is more suitable?"
+    ],
+    "options": [
+      [
+        "先讓他自評，再間歇提供具體回饋",
+        "Ask for self-evaluation first, then provide specific feedback intermittently",
+        "自評與逐步減少外來提示可練習獨立辨識動作效果。",
+        "Self-evaluation and reduced external prompting develop independent error recognition."
+      ],
+      [
+        "每個動作都增加更多即時指令",
+        "Add more immediate instructions to every movement",
+        "這可能加強依賴，而不是自我判斷。",
+        "This may increase dependence rather than self-evaluation."
+      ],
+      [
+        "從此不准他尋求任何回饋",
+        "Never allow feedback again",
+        "完全禁止回饋不等於有計劃地發展自我調節。",
+        "Banning all feedback is not a planned approach to self-regulation."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "按學習階段調整回饋頻率，逐步培養自主監察。",
+      "Adjust feedback frequency to develop self-monitoring as skill grows."
+    ]
+  },
+  {
+    "subjectId": "playground",
+    "grade": 6,
+    "level": 1,
+    "title": [
+      "效度與測試目的",
+      "Validity and test purpose"
+    ],
+    "question": [
+      "老師想量度球員的傳球決策能力，卻只用100米跑時間排名。主要問題是甚麼？",
+      "A teacher wants to assess passing decisions but ranks players solely by 100-metre sprint time. What is the main problem?"
+    ],
+    "options": [
+      [
+        "測試與要量度的能力不相符",
+        "The test does not match the intended ability",
+        "跑速可量度速度，卻未直接觀察傳球判斷。",
+        "Sprint time measures speed, not passing decisions directly."
+      ],
+      [
+        "只要秒錶準確，便能量度任何能力",
+        "An accurate stopwatch can measure any ability",
+        "量度準確不等於測到正確構念。",
+        "Precise measurement does not guarantee the right construct is measured."
+      ],
+      [
+        "所有體育測試都不能提供資料",
+        "No sports test can provide information",
+        "問題在測試選擇，不是所有測試皆無用。",
+        "The issue is test selection, not the usefulness of all testing."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "先界定學習目標，再選能直接觀察該能力的量度。",
+      "Define the learning objective before selecting a measure that captures it."
+    ]
+  },
+  {
+    "subjectId": "playground",
+    "grade": 6,
+    "level": 2,
+    "title": [
+      "觀察者評分的一致性",
+      "Consistency between observers"
+    ],
+    "question": [
+      "兩位評判用同一張傳球決策量表，對同段影片評分差距很大。哪個改善最直接？",
+      "Two assessors use the same passing-decision rubric but give very different scores to one video. Which improvement is most direct?"
+    ],
+    "options": [
+      [
+        "共同評分示例，釐清各級描述及分歧",
+        "Score examples together and clarify criteria and disagreements",
+        "以示例校準判斷可改善評判對準則的共同理解。",
+        "Calibration with examples improves shared interpretation of criteria."
+      ],
+      [
+        "把兩人的分數相加就當作沒有分歧",
+        "Add their scores and treat the disagreement as resolved",
+        "加總不能解釋或改善評分差異的原因。",
+        "Adding scores does not resolve why they differ."
+      ],
+      [
+        "刪去量表，只憑印象",
+        "Remove the rubric and rely on impressions",
+        "缺乏清楚準則通常更難保持一致。",
+        "Removing clear criteria generally makes consistency harder."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "評分工具需要清楚準則及共同校準，而不只是同一張表格。",
+      "A shared rubric needs clear criteria and calibration, not merely an identical form."
+    ]
+  },
+  {
+    "subjectId": "playground",
+    "grade": 6,
+    "level": 3,
+    "title": [
+      "調適後仍評核同一目標",
+      "Adapting access without changing the goal"
+    ],
+    "question": [
+      "課堂目標是傳球決策，某同學需要較慢的比賽節奏。哪個調適最能保留目標？",
+      "The lesson assesses passing decisions, and one student needs a slower pace. Which adaptation best preserves the objective?"
+    ],
+    "options": [
+      [
+        "降低整組移動速度，仍要求觀察空位並選擇傳球",
+        "Slow the group’s movement while retaining choices based on available space",
+        "調整參與條件，同時保留觀察及決策的核心要求。",
+        "This changes access conditions while retaining observation and decision-making."
+      ],
+      [
+        "替該同學決定每次傳球對象",
+        "Choose every receiver for the student",
+        "這移除了要評核的決策本身。",
+        "This removes the decision-making being assessed."
+      ],
+      [
+        "只讓他抄寫比賽規則，當作完成傳球決策",
+        "Replace the task with copying rules and count it as passing decisions",
+        "抄寫規則沒有展示在場上的觀察與選擇。",
+        "Copying rules does not demonstrate decisions in play."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "包容調適應區分參與障礙與真正要學習、評核的能力。",
+      "Distinguish access barriers from the actual learning and assessment target."
+    ]
+  },
+  {
+    "subjectId": "hall",
+    "grade": 1,
+    "level": 1,
+    "title": [
+      "有限資源與選擇",
+      "Scarcity and choice"
+    ],
+    "question": [
+      "班會只有一小時場地時間，但兩個活動各需完整一小時，不能同時進行。問題最直接反映哪個概念？",
+      "A class has one hour of venue time, but two activities each require a full hour and cannot run together. Which concept is illustrated?"
+    ],
+    "options": [
+      [
+        "資源有限，必須作出選擇",
+        "Limited resources require a choice",
+        "可用時間不足以同時滿足兩項用途，因此要取捨。",
+        "Available time cannot meet both uses, so a choice is necessary."
+      ],
+      [
+        "只要活動免費，就沒有資源限制",
+        "Free activities face no resource constraints",
+        "金錢不是唯一資源，時間及場地仍有限。",
+        "Money is not the only resource; time and space are limited too."
+      ],
+      [
+        "所有人的偏好必定相同",
+        "Everyone must have identical preferences",
+        "資源限制並不決定大家有相同偏好。",
+        "Resource scarcity does not determine people’s preferences."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "免費不等於沒有成本；時間、空間及人力同樣有限。",
+      "Free admission does not remove constraints on time, space and labour."
+    ]
+  },
+  {
+    "subjectId": "hall",
+    "grade": 1,
+    "level": 2,
+    "title": [
+      "機會成本",
+      "Opportunity cost"
+    ],
+    "question": [
+      "你只有足夠時間參加一項活動，偏好次序是籃球、戲劇、棋藝。若選籃球，最主要放棄的下一最佳選擇是甚麼？",
+      "You have time for one activity and rank basketball first, drama second and chess third. If you choose basketball, what is the next-best alternative forgone?"
+    ],
+    "options": [
+      [
+        "戲劇活動",
+        "Drama",
+        "機會成本是所放棄的下一最佳選擇，不是所有選項相加。",
+        "Opportunity cost is the next-best alternative forgone, not the sum of all alternatives."
+      ],
+      [
+        "戲劇和棋藝的全部價值總和",
+        "The combined value of drama and chess",
+        "你本來也不能同時參加兩者，不能把它們全部相加。",
+        "You could not take both, so their values should not simply be added."
+      ],
+      [
+        "籃球活動本身",
+        "Basketball itself",
+        "籃球是得到的選擇，不是放棄的替代方案。",
+        "Basketball is the chosen activity, not the alternative forgone."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "分析選擇時，找出真正可行的下一最佳替代方案。",
+      "Identify the feasible next-best alternative when analysing a choice."
+    ]
+  },
+  {
+    "subjectId": "hall",
+    "grade": 1,
+    "level": 3,
+    "title": [
+      "活動預算",
+      "An activity budget"
+    ],
+    "question": [
+      "虛構班會預算：收入600元，場地200元，材料每人15元，共20人。活動後餘額是多少？",
+      "Fictional class budget: income is $600, venue cost $200, and materials cost $15 each for 20 students. What remains?"
+    ],
+    "options": [
+      [
+        "100元",
+        "$100",
+        "材料費15×20＝300元；600−200−300＝100元。",
+        "Materials cost 15 × 20 = 300; 600 − 200 − 300 = 100."
+      ],
+      [
+        "385元",
+        "$385",
+        "這只扣了一人的材料費，漏算其餘19人。",
+        "This subtracts materials for only one student."
+      ],
+      [
+        "300元",
+        "$300",
+        "只扣材料費會漏掉200元場地開支。",
+        "Subtracting only materials omits the $200 venue cost."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "預算要區分固定開支和隨人數改變的開支。",
+      "Distinguish fixed costs from costs that vary with participation."
+    ]
+  },
+  {
+    "subjectId": "hall",
+    "grade": 2,
+    "level": 1,
+    "title": [
+      "按單位比較價格",
+      "Comparing unit prices"
+    ],
+    "question": [
+      "同款果汁：甲600毫升售12元，乙1000毫升售18元。只比較每100毫升價格，哪個較低？",
+      "The same juice costs $12 for 600 mL or $18 for 1000 mL. Which has the lower price per 100 mL?"
+    ],
+    "options": [
+      [
+        "乙，每100毫升1.8元",
+        "B, at $1.80 per 100 mL",
+        "甲每100毫升2元，乙1.8元；比較需使用相同單位。",
+        "A costs $2 per 100 mL and B $1.80; use a common unit."
+      ],
+      [
+        "甲，因為總價12元較少",
+        "A, because $12 is the smaller total",
+        "總價較低不代表每單位較便宜。",
+        "A lower total price does not mean a lower unit price."
+      ],
+      [
+        "兩者相同，因為是同款果汁",
+        "They are equal because the juice is the same",
+        "產品相同也可能有不同包裝單價。",
+        "Identical products can have different unit prices."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "單價有助比較，但購買時仍要考慮實際需要與可用預算。",
+      "Unit prices support comparison, alongside actual need and available budget."
+    ]
+  },
+  {
+    "subjectId": "hall",
+    "grade": 2,
+    "level": 2,
+    "title": [
+      "需求增加的模型",
+      "A rise in demand"
+    ],
+    "question": [
+      "簡化市場模型：學校紀念冊供應量暫時固定，更多人願意在原價購買。其他條件不變，市場價格通常面對哪種壓力？",
+      "Simplified market model: yearbook supply is fixed in the short run and more people want to buy at the original price. Other things equal, what price pressure arises?"
+    ],
+    "options": [
+      [
+        "上升壓力",
+        "Upward pressure",
+        "原價下需求增加而供應未增，出現向上的價格壓力。",
+        "Higher demand with unchanged supply creates upward price pressure."
+      ],
+      [
+        "下降壓力，因更多人想買就會自動增加供應",
+        "Downward pressure because more buyers automatically create more copies",
+        "需求增加不會自動增加題目中暫時固定的供應。",
+        "Extra demand does not automatically expand the stipulated fixed supply."
+      ],
+      [
+        "完全沒有任何壓力，因為印製成本未改",
+        "No pressure because printing costs are unchanged",
+        "市場價格也受需求與供應影響，不只看成本。",
+        "Market price depends on demand and supply as well as cost."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "在「其他條件不變」的模型中，分別分析需求與供應的變動。",
+      "Analyse demand and supply changes separately under an other-things-equal assumption."
+    ]
+  },
+  {
+    "subjectId": "hall",
+    "grade": 2,
+    "level": 3,
+    "title": [
+      "可比較的消費資訊",
+      "Comparable consumer information"
+    ],
+    "question": [
+      "兩款水樽都聲稱「更耐用」，但測試方法不同。哪項資訊最有助有根據地比較？",
+      "Two bottles both claim to be more durable but use different tests. Which information best supports a reasoned comparison?"
+    ],
+    "options": [
+      [
+        "相同條件的測試方法、結果及限制",
+        "Methods, results and limitations from comparable test conditions",
+        "同條件資料較能比較產品表現，而不只是廣告措辭。",
+        "Comparable conditions support a performance comparison beyond advertising language."
+      ],
+      [
+        "只比較兩款廣告對「耐用」一詞的使用次數",
+        "Only count how often each advert says “durable”",
+        "宣傳次數不能代替可比較的產品測試。",
+        "Repetition of a claim cannot replace comparable product testing."
+      ],
+      [
+        "只看哪個售價較高",
+        "Only which costs more",
+        "售價較高並不直接證明相同測試下更耐用。",
+        "A higher price does not prove better durability under the same test."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "消費判斷應檢查主張的量度方式、比較基準及限制。",
+      "Assess how consumer claims are measured, compared and qualified."
+    ]
+  },
+  {
+    "subjectId": "hall",
+    "grade": 3,
+    "level": 1,
+    "title": [
+      "第三者受到的影響",
+      "Effects on third parties"
+    ],
+    "question": [
+      "午間音樂活動令參加者開心，但鄰近自修室使用者難以集中；他們沒有參加活動。哪項分析最準確？",
+      "A lunchtime music event benefits participants but distracts nearby study-room users who are not taking part. Which analysis fits?"
+    ],
+    "options": [
+      [
+        "活動對非參與者產生外部影響",
+        "The activity creates an external effect on non-participants",
+        "影響落在活動參與者以外的人身上，也應納入決策。",
+        "Effects on people outside the activity should also be considered."
+      ],
+      [
+        "只要參加者滿意，就沒有其他影響",
+        "If participants are happy, there are no other effects",
+        "這忽略題目中已出現的第三者影響。",
+        "This ignores the stated effects on third parties."
+      ],
+      [
+        "所有音樂活動必須永久取消",
+        "Every music event must be permanently cancelled",
+        "指出外部影響不等於只有取消一種處理方法。",
+        "Recognising an external effect does not make cancellation the only response."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "公共決策須考慮直接參與者以外的人受到的影響。",
+      "Consider effects on people beyond the direct participants in a public decision."
+    ]
+  },
+  {
+    "subjectId": "hall",
+    "grade": 3,
+    "level": 2,
+    "title": [
+      "共同資源的安排",
+      "Managing a shared resource"
+    ],
+    "question": [
+      "自修室有20個座位，30名學生同時需要使用。若目標是讓更多人有合理使用機會，哪個方案最直接處理座位限制？",
+      "A study room has 20 seats and 30 students need it at once. Which plan most directly addresses capacity while broadening access?"
+    ],
+    "options": [
+      [
+        "公佈分時段預約及合理使用時限，並檢查實際需求",
+        "Publish timed bookings and reasonable limits, then review demand",
+        "時段安排把有限容量分配到不同時間，亦可依需求調整。",
+        "Time slots distribute limited capacity over time and can be adjusted to demand."
+      ],
+      [
+        "讓最早到的20人每天整天保留座位",
+        "Let the first 20 arrivals keep their seats all day",
+        "這雖容易執行，卻未增加其餘學生的使用機會。",
+        "This is simple to administer but does not broaden access for the remaining students."
+      ],
+      [
+        "容許首批使用者永久保留座位",
+        "Let the first users reserve seats permanently",
+        "這可能排除後來有需要的人，沒有增加使用機會。",
+        "This can exclude later users rather than broaden access."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "共同資源分配須有清楚程序，並按實際使用情況檢討。",
+      "Use clear procedures and review real usage when allocating shared resources."
+    ]
+  },
+  {
+    "subjectId": "hall",
+    "grade": 3,
+    "level": 3,
+    "title": [
+      "多數意見的界限",
+      "Limits of a majority view"
+    ],
+    "question": [
+      "80%的受訪者贊成把通知只放在手機應用程式，但部分學生沒有合適裝置。決定前最應補充哪項資料？",
+      "Eighty percent of respondents favour app-only notices, but some students lack a suitable device. What additional information matters most before deciding?"
+    ],
+    "options": [
+      [
+        "無法使用的人數、原因，以及可行的替代接收方法",
+        "How many cannot access it, why, and what alternative delivery is feasible",
+        "多數偏好不能回答少數是否會失去必要資訊。",
+        "Majority preference does not establish whether others would lose essential information."
+      ],
+      [
+        "只計算全校平均每人擁有多少部裝置",
+        "Only calculate the average number of devices per student",
+        "平均數可能掩蓋有人沒有合適裝置，仍未回答誰無法接收通知。",
+        "An average can conceal students with no suitable device and does not identify who misses notices."
+      ],
+      [
+        "假定未回覆者全部同意",
+        "Assume every non-respondent agrees",
+        "未回覆不能當作贊成，也不能忽略其接收限制。",
+        "Non-response is not agreement and may reflect access barriers."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "使用調查結果時，同時檢查未被平均數或多數票反映的需要。",
+      "Examine needs that averages or majority preferences may hide."
+    ]
+  },
+  {
+    "subjectId": "hall",
+    "grade": 4,
+    "level": 1,
+    "title": [
+      "名義收入與購買力",
+      "Nominal income and purchasing power"
+    ],
+    "question": [
+      "教學模型：每月零用錢由100元增至110元，同一籃物品價格由100元增至120元。購買同一籃物品的能力如何變化？",
+      "Teaching model: monthly allowance rises from $100 to $110, while the same basket of goods rises from $100 to $120. What happens to purchasing power?"
+    ],
+    "options": [
+      [
+        "下降，因收入增幅低於該籃物品價格增幅",
+        "It falls because income grows less than the basket’s price",
+        "原先可買一籃，現在110÷120不足一籃。",
+        "The allowance previously bought one basket; 110 ÷ 120 now buys less than one."
+      ],
+      [
+        "上升，因為收到的金額增加",
+        "It rises because the cash amount increases",
+        "名義金額增加不代表相對價格後的購買力增加。",
+        "More cash does not necessarily mean greater purchasing power after price changes."
+      ],
+      [
+        "不變，因兩項都增加10%以上",
+        "It is unchanged because both increase by at least 10%",
+        "兩項增幅不同，不能因同樣上升就視為抵消。",
+        "Different growth rates do not cancel merely because both rise."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "比較生活負擔時，區分金額變化與相對價格後的購買力。",
+      "Distinguish nominal amounts from purchasing power after price changes."
+    ]
+  },
+  {
+    "subjectId": "hall",
+    "grade": 4,
+    "level": 2,
+    "title": [
+      "事實判斷與價值判斷",
+      "Factual and value judgements"
+    ],
+    "question": [
+      "以下哪句主要是可用資料檢查的事實主張，而非對應然分配的價值判斷？",
+      "Which statement is primarily an empirically testable claim rather than a value judgement about allocation?"
+    ],
+    "options": [
+      [
+        "新安排下，每週可預約時段由10個增至14個",
+        "Under the new plan, weekly bookable slots rose from 10 to 14",
+        "可以核對時間表驗證數量變化。",
+        "Timetables can verify the numerical change."
+      ],
+      [
+        "所有人都應優先選自己最喜歡的時段",
+        "Everyone should have priority for their favourite slot",
+        "「應」表達分配上的價值立場，需討論準則。",
+        "“Should” expresses an allocation principle that requires evaluation."
+      ],
+      [
+        "公平一定比效率更重要",
+        "Fairness must always matter more than efficiency",
+        "這是對價值優先次序的判斷，不能只用時段數證明。",
+        "This ranks values and cannot be proved solely by counting slots."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "分辨可查證的實然主張與需說明理由的價值立場。",
+      "Distinguish testable descriptive claims from value positions requiring justification."
+    ]
+  },
+  {
+    "subjectId": "hall",
+    "grade": 4,
+    "level": 3,
+    "title": [
+      "諮詢的代表性",
+      "Representation in consultation"
+    ],
+    "question": [
+      "新校園路線只諮詢每天坐校車的學生，但方案也改變步行者和輪椅使用者的出入口。哪個補充最能改善諮詢？",
+      "A route plan consults only school-bus users but changes entrances for walkers and wheelchair users too. What best improves the consultation?"
+    ],
+    "options": [
+      [
+        "讓受影響但未被訪問的使用者試走並提供回饋",
+        "Invite affected, previously unconsulted users to test the routes and comment",
+        "補足使用經驗，有助發現現有樣本未涵蓋的問題。",
+        "Additional user experience can reveal problems absent from the initial sample."
+      ],
+      [
+        "只增加更多校車使用者，仍不問其他人",
+        "Add more bus users but no other groups",
+        "增加相同羣體數量不會填補未涵蓋的經驗。",
+        "A larger sample of the same group does not fill the missing perspectives."
+      ],
+      [
+        "只模擬校車上落客時間，代替所有使用者測試",
+        "Simulate only bus boarding times instead of testing with all users",
+        "這可改善校車資料，卻仍未涵蓋步行及無障礙出入口。",
+        "This improves bus data but still omits walking and accessible entrances."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "諮詢品質不只看人數，也看是否涵蓋受影響的經驗。",
+      "Consultation quality depends on coverage of affected experiences, not only headcount."
+    ]
+  },
+  {
+    "subjectId": "hall",
+    "grade": 5,
+    "level": 1,
+    "title": [
+      "利益衝突的程序",
+      "A conflict-of-interest procedure"
+    ],
+    "question": [
+      "學生委員會選活動供應商，一名委員的家人擁有其中一家公司。最能維持可檢查決策程序的安排是甚麼？",
+      "A student committee selects an event supplier; one member’s family owns a bidding company. Which procedure best supports an accountable decision?"
+    ],
+    "options": [
+      [
+        "申報關係，按既定規則退出相關評分，由其他人按同一準則評估",
+        "Declare the connection and follow recusal rules, with others using the same criteria",
+        "申報及適當避席可減少私人利益影響評分的風險。",
+        "Disclosure and appropriate recusal reduce the risk of private interests shaping the score."
+      ],
+      [
+        "只要委員保證公正，就不用告知其他人",
+        "Keep it undisclosed if the member promises fairness",
+        "未申報關係令他人無法檢查可能影響判斷的因素。",
+        "Undisclosed connections prevent scrutiny of possible influences."
+      ],
+      [
+        "直接選另一家公司，不需比較質素及價格",
+        "Automatically choose another company without comparing quality or price",
+        "處理衝突不等於放棄透明、一致的評估準則。",
+        "Managing a conflict does not remove the need for consistent evaluation criteria."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "問責程序要使關係、準則和決定可被檢查。",
+      "Accountable procedures make relevant relationships, criteria and decisions examinable."
+    ]
+  },
+  {
+    "subjectId": "hall",
+    "grade": 5,
+    "level": 2,
+    "title": [
+      "平均改善與羣體差異",
+      "Average improvement and group differences"
+    ],
+    "question": [
+      "虛構試行：全校平均排隊時間由8分鐘降至6分鐘，但需要無障礙櫃位者由10分鐘升至15分鐘。哪句最準確？",
+      "Fictional pilot: average queuing time falls from 8 to 6 minutes overall, but rises from 10 to 15 for users of an accessible counter. Which statement is most accurate?"
+    ],
+    "options": [
+      [
+        "整體平均改善，但某羣體的經驗惡化，需分開檢討",
+        "The overall average improves while one group fares worse, requiring separate review",
+        "分組資料顯示平均值未反映的負擔。",
+        "Disaggregated data reveal burdens hidden by the overall average."
+      ],
+      [
+        "所有人都快了2分鐘",
+        "Everyone waits 2 minutes less",
+        "平均差額不能套用到每個羣體或個人。",
+        "An average difference cannot be assigned to every group or person."
+      ],
+      [
+        "只看15分鐘就能判定全校平均上升",
+        "The 15-minute figure proves the school-wide average increased",
+        "單一羣體結果不能取代題目已提供的整體平均。",
+        "One subgroup does not replace the stated overall average."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "評估公共方案時，同時看整體效果及負擔如何分配。",
+      "Evaluate both overall effects and how benefits and burdens are distributed."
+    ]
+  },
+  {
+    "subjectId": "hall",
+    "grade": 5,
+    "level": 3,
+    "title": [
+      "短期成本與持續成本",
+      "Initial and recurring costs"
+    ],
+    "question": [
+      "兩個活動方案：甲初期300元，其後每月80元；乙初期600元，其後每月20元。若完整使用6個月，哪個總成本較低？",
+      "Two plans cost: A, $300 initially plus $80 per month; B, $600 initially plus $20 per month. Over six full months, which total is lower?"
+    ],
+    "options": [
+      [
+        "乙：720元；甲：780元",
+        "B: $720; A: $780",
+        "甲300＋6×80＝780；乙600＋6×20＝720。",
+        "A costs 300 + 6 × 80 = 780; B costs 600 + 6 × 20 = 720."
+      ],
+      [
+        "甲：只需300元",
+        "A: only $300",
+        "這漏掉持續六個月的每月費用。",
+        "This omits six months of recurring charges."
+      ],
+      [
+        "兩者同為600元",
+        "Both cost $600",
+        "初期與每月費用必須分別累加，不能忽略其中一項。",
+        "Initial and recurring costs must both be counted."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "比較方案要選定共同時段，計入初期及持續開支。",
+      "Compare plans over the same time horizon, including initial and recurring costs."
+    ]
+  },
+  {
+    "subjectId": "hall",
+    "grade": 6,
+    "level": 1,
+    "title": [
+      "準則與可行方案",
+      "Criteria and feasible options"
+    ],
+    "question": [
+      "學校預算1000元，要求方案至少服務50人且提供無障礙入口。甲900元／60人／有入口；乙800元／70人／無入口；丙1100元／80人／有入口。哪個符合全部既定條件？",
+      "A school has $1000 and requires capacity for at least 50 people and an accessible entrance. A: $900/60 people/accessible; B: $800/70/no access; C: $1100/80/accessible. Which meets all conditions?"
+    ],
+    "options": [
+      [
+        "甲",
+        "A",
+        "甲符合預算、人數及入口三項限制。",
+        "A meets the budget, capacity and access constraints."
+      ],
+      [
+        "乙",
+        "B",
+        "乙成本較低、人數較多，但未符合無障礙入口條件。",
+        "B is cheaper and larger but fails the access requirement."
+      ],
+      [
+        "丙",
+        "C",
+        "丙雖有人數及入口優勢，卻超出預算。",
+        "C meets capacity and access but exceeds the budget."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "先識別必須符合的限制，再比較可行方案的優劣。",
+      "Identify binding constraints before comparing feasible alternatives."
+    ]
+  },
+  {
+    "subjectId": "hall",
+    "grade": 6,
+    "level": 2,
+    "title": [
+      "未回覆者的聲音",
+      "Understanding non-response"
+    ],
+    "question": [
+      "網上諮詢有40%學生回覆，多數支持方案；未回覆者中有不少較少使用網上平臺。哪個後續最能檢查是否漏掉重要意見？",
+      "An online consultation receives responses from 40% of students, mostly supportive; many non-respondents rarely use the platform. What follow-up best checks missing views?"
+    ],
+    "options": [
+      [
+        "用紙本或面談接觸部分未回覆者，再比較需要與意見",
+        "Reach some non-respondents by paper or interview and compare needs and views",
+        "改變接觸方式可檢查平臺使用習慣是否造成系統性遺漏。",
+        "Another contact method can test whether platform use caused systematic omissions."
+      ],
+      [
+        "把60%未回覆者都算作支持",
+        "Count the 60% non-response as support",
+        "沉默沒有提供贊成的證據。",
+        "Silence supplies no evidence of support."
+      ],
+      [
+        "只把同一網上連結重貼給原來回覆者",
+        "Resend the same link only to previous respondents",
+        "這沒有接觸原本被漏掉的人。",
+        "This does not reach those missing from the initial responses."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "未回覆並不等於沒有需要；評估接觸方式對參與的影響。",
+      "Non-response does not mean no need; examine how access methods shape participation."
+    ]
+  },
+  {
+    "subjectId": "hall",
+    "grade": 6,
+    "level": 3,
+    "title": [
+      "有指標的政策檢討",
+      "Reviewing a policy with indicators"
+    ],
+    "question": [
+      "新自修室安排目標是縮短等候並保留不同羣體的使用機會。哪個三個月檢討最能回應兩項目標？",
+      "A new study-room plan aims to reduce waits while preserving access for different groups. Which three-month review best addresses both?"
+    ],
+    "options": [
+      [
+        "比較前後等候時間、各羣體成功預約比例及未能使用的原因",
+        "Compare waiting times, booking success by group and reasons for failed access",
+        "指標直接對應效率和機會分配，並能指出需要修訂之處。",
+        "The measures address efficiency and access distribution and can guide revisions."
+      ],
+      [
+        "只看總預約次數增加了多少",
+        "Only count the increase in total bookings",
+        "總次數不能充分反映等候或哪些羣體未能使用。",
+        "Total bookings do not adequately show waits or excluded groups."
+      ],
+      [
+        "只問工作人員是否喜歡新表格",
+        "Only ask whether staff like the new form",
+        "工作便利可以考慮，但不能取代原定學生使用目標。",
+        "Staff convenience matters but does not replace the stated access objectives."
+      ]
+    ],
+    "answer": 0,
+    "takeaway": [
+      "公共方案須把目標轉成可檢查指標，並預留根據結果修訂的機會。",
+      "Translate public goals into testable indicators and allow revision based on results."
+    ]
+  }
+]
