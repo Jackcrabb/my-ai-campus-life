@@ -6,6 +6,8 @@
 
 ## 直接在瀏覽器遊玩
 
+> **發布狀態 — 2026 年 10 月 11 日：** 最新手機地圖及普通話／英文固定配音修正已存於此倉庫及本機版本。託管端上傳回傳 HTTP 403，公開網站暫時仍為舊版本；QR code 也會開啟該舊版本，直至發布成功。
+
 **[開啟公開遊戲](https://lumen-lab-ai-ethics.tart-vale-4903.chatgpt.site)** — 自由探索毋須下載程式或登入 GitHub。Windows、Mac、平板及手機均透過瀏覽器開啟；班級功能需要網絡連線。
 
 <a href="https://lumen-lab-ai-ethics.tart-vale-4903.chatgpt.site"><img src="docs/assets/public-game-qr.png" width="220" alt="掃描遊玩我的 AI 校園生活" /></a>

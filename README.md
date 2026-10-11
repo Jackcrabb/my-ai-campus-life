@@ -6,6 +6,8 @@
 
 ## Play in your browser
 
+> **Publication status — 11 October 2026:** The latest mobile-map layout and bundled Mandarin/English dialogue fixes are available in this repository and the local build. The public site still serves the earlier version: the hosting source service returned HTTP 403 during upload. The QR code will open that earlier public version until deployment succeeds.
+
 **[Open the public game](https://lumen-lab-ai-ethics.tart-vale-4903.chatgpt.site)** — no download or GitHub account is needed for free exploration. Works through a web browser on Windows, Mac, tablets and phones; an internet connection is required for classroom services.
 
 <a href="https://lumen-lab-ai-ethics.tart-vale-4903.chatgpt.site"><img src="docs/assets/public-game-qr.png" width="220" alt="Scan to play My AI Campus Life" /></a>
