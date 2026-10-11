@@ -10,7 +10,7 @@ import ts from 'typescript';
 const root = path.resolve(import.meta.dirname, '..');
 const temp = fs.mkdtempSync(path.join(os.tmpdir(), 'campus-worksheet-backend-'));
 fs.mkdirSync(path.join(temp, 'lib')); fs.mkdirSync(path.join(temp, 'data'));
-for (const name of ['grade-bank.json', 'starter-bank-previous-hashes.json'])
+for (const name of ['grade-bank.json', 'starter-bank-previous-hashes.json', 'tts-script-catalog.json'])
   fs.copyFileSync(path.join(root, 'data', name), path.join(temp, 'data', name));
 for (const name of fs.readdirSync(path.join(root, 'lib')).filter(x => x.startsWith('campus-') && x.endsWith('.ts'))) {
   fs.writeFileSync(path.join(temp, 'lib', name.replace(/\.ts$/, '.js')), ts.transpileModule(fs.readFileSync(path.join(root, 'lib', name), 'utf8'), {

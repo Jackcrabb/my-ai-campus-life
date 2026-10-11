@@ -11,6 +11,7 @@ const root = path.resolve(import.meta.dirname, ".."), temp = fs.mkdtempSync(path
 fs.mkdirSync(path.join(temp, "lib"));
 fs.mkdirSync(path.join(temp, "data"));
 fs.copyFileSync(path.join(root, "data/starter-bank-previous-hashes.json"), path.join(temp, "data/starter-bank-previous-hashes.json"));
+fs.copyFileSync(path.join(root, "data/tts-script-catalog.json"), path.join(temp, "data/tts-script-catalog.json"));
 const fixtureMode = process.argv.includes("--fixture");
 if (fixtureMode) {
     const tri = value => ({ zh: value, cn: value, en: value });
@@ -160,7 +161,7 @@ try {
     const sync = await call("student/progress", { method: "PUT", cookie: aCookie, body: { version: 0, progress: { reflection: "I will check evidence.", stars: 999, score: 999, avatar: { gender: "girl", uniform: 0, hair: 1, skin: 2 }, cases: { voice: { completed: true, seen: [0, 1], choice: 0, repairChoice: 1 } } } } });
     assert.ok(!("stars" in sync.data.progress));
     assert.ok(!("completed" in sync.data.progress.cases.voice));
-    assert.equal(sync.data.progress.avatar.uniform, 2);
+    assert.equal(sync.data.progress.avatar.uniform, 0);
     checks += 3;
     await call("student/progress", { method: "PUT", cookie: resume.cookie, body: { version: 0, progress: { reflection: "stale" } }, expected: 409 });
     const restored = (await call("student/progress", { cookie: resume.cookie })).data;
@@ -170,6 +171,23 @@ try {
     assert.equal(bProgress.attempts.length, 0);
     assert.equal(bProgress.progress.reflection, undefined);
     checks += 2;
+    let wardrobeVersion = restored.version;
+    for (const gender of ["boy", "girl"]) {
+        for (let uniform = 0; uniform < 4; uniform++) {
+            const avatar = { gender, uniform, hair: 1, skin: 2 };
+            const saved = (await call("student/progress", { method: "PUT", cookie: aCookie, body: { version: wardrobeVersion, progress: { avatar } } })).data;
+            wardrobeVersion = saved.version;
+            const onAnotherDevice = (await call("student/progress", { cookie: resume.cookie })).data;
+            assert.deepEqual(onAnotherDevice.progress.avatar, avatar, "all eight approved gender/uniform pairs survive cross-device progress storage");
+            checks++;
+        }
+    }
+    for (const uniform of [-1, 4, 1.5, "invalid"]) {
+        const saved = (await call("student/progress", { method: "PUT", cookie: aCookie, body: { version: wardrobeVersion, progress: { avatar: { gender: "girl", uniform, hair: 1, skin: 2 } } } })).data;
+        wardrobeVersion = saved.version;
+        assert.deepEqual(saved.progress.avatar, { gender: "girl", uniform: 0, hair: 1, skin: 2 }, "invalid uniform slots fall back without changing the remaining appearance");
+        checks++;
+    }
     const caseQ = questionResponse.questions.find(q => q.category === "case"), transfer = questionResponse.questions.find(q => q.category === "transfer");
     await call("attempts", { method: "POST", cookie: aCookie, body: { assignmentId: a.assignmentId, questionId: caseQ.id, revision: caseQ.revision, optionId: "1", idempotencyKey: requestId() }, expected: 400 });
     await call("cases", { method: "POST", cookie: aCookie, body: { assignmentId: a.assignmentId, caseId: "voice", decisionIndex: 0, repairIndex: 1, seenEvidence: [0, 0], idempotencyKey: requestId() }, expected: 400 });

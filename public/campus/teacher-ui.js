@@ -96,10 +96,13 @@
       return values ? this.L(...values) : error.message;
     }
     async refresh() {
+      if (this.state.busy || this.destroyed) return;
+      const wasUnlocked = Boolean(this.state.session?.allowed && this.state.session?.unlocked);
       await this.run(async () => {
         this.state.session = await this.api('/teacher/session');
         if (this.state.session.allowed && this.state.session.unlocked) { await this.loadClasses(); await this.loadTab(); }
       });
+      if (!wasUnlocked && this.state.session?.allowed && this.state.session?.unlocked && !this.state.error) this.resetNavigationPosition();
     }
     async loadClasses() {
       this.state.classes = (await this.api('/teacher/classes')).classes || [];
@@ -138,12 +141,23 @@
       }
       return true;
     }
+    resetNavigationPosition() {
+      if (this.destroyed) return;
+      // The host modal owns scrolling; standalone mounts can scroll themselves.
+      const scrollHost = this.container.closest?.('#modal-content') || this.container;
+      scrollHost.scrollTop = 0;
+      const heading = this.container.querySelector('.ct-body h3') || this.container.querySelector('.ct-header h2');
+      if (heading) { heading.tabIndex = -1; heading.focus?.({ preventScroll: true }); }
+    }
     async navigate(tab) {
+      if (this.state.busy || this.destroyed) return;
       if (!['subjects','hub','classes','questions','worksheets','results'].includes(tab)) return;
       if (tab === 'worksheets' && this.state.subjectId === 'ai-ethics') tab = 'hub';
+      const changedView = this.state.tab !== tab || Boolean(this.state.confirm);
       this.captureEditor();
       this.state.tab = tab; this.state.confirm = null;
-      return this.run(() => this.loadTab());
+      await this.run(() => this.loadTab());
+      if (changedView) this.resetNavigationPosition();
     }
     subjectChooserView() {
       return `<div class="ct-section-heading"><div><h3>${this.L('選擇任教科目','选择任教科目','Choose your teaching subject')}</h3><p>${this.L('選定科目後，可管理題目、上傳工作紙及查看成績。','选定科目后，可管理题目、上传工作纸及查看成绩。','Choose a subject to manage questions, upload worksheets and view results.')}</p></div></div><div class="ct-subject-grid">${subjects.map(([id], index) => `<button class="ct-subject-card" data-ct="subject" data-subject="${id}" aria-pressed="${this.state.subjectId === id}"><span aria-hidden="true">${String(index + 1).padStart(2,'0')}</span><strong>${esc(this.subjectName(id))}</strong></button>`).join('')}</div><p class="ct-note">${this.L('圖書館及環境研習屬跨學科研習空間；科目選擇用於整理工具。','图书馆及环境研习属于跨学科研习空间；科目选择用于整理工具。','Library and environmental inquiry are interdisciplinary spaces. This selection organises your tools.')}</p>`;
@@ -232,18 +246,18 @@
         const code = this.state.classes.find(item => item.id === button.dataset.id)?.classCode;
         return this.run(async () => { if (!navigator.clipboard?.writeText) throw new Error(this.L('請選取加入代碼並手動複製。','请选择加入代码并手动复制。','Select the join code and copy it manually.')); await navigator.clipboard.writeText(code); this.state.notice = this.L('已複製加入代碼。','已复制加入代码。','Join code copied.'); });
       }
-      if (action === 'class-results') { this.state.classId = button.dataset.id; this.state.assignmentId = ''; this.state.tab = 'results'; return this.run(() => this.loadTab()); }
-      if (action === 'assignment' || action === 'archive') { this.state.confirm = { type: action, id: button.dataset.id }; this.render(); return; }
-      if (action === 'cancel-confirm') { this.state.confirm = null; this.render(); return; }
+      if (action === 'class-results') { this.state.classId = button.dataset.id; this.state.assignmentId = ''; return this.navigate('results'); }
+      if (action === 'assignment' || action === 'archive') { this.state.confirm = { type: action, id: button.dataset.id }; this.render(); this.resetNavigationPosition(); return; }
+      if (action === 'cancel-confirm') { this.state.confirm = null; this.render(); this.resetNavigationPosition(); return; }
       if (action === 'confirm-archive') return this.run(async () => { await this.api('/teacher/questions/'+encodeURIComponent(this.state.confirm.id),'DELETE',{}); this.state.confirm = null; await this.loadTab(); this.onChange(); });
-      if (action === 'edit') { const question = this.state.questions.find(item => item.id === button.dataset.id); if (question?.category !== 'subject') return; this.state.editing = copy(question); this.state.editLocale = this.lang; this.render(); return; }
+      if (action === 'edit') { const question = this.state.questions.find(item => item.id === button.dataset.id); if (question?.category !== 'subject') return; this.state.editing = copy(question); this.state.editLocale = this.lang; this.render(); this.resetNavigationPosition(); return; }
       if (action === 'new-question') {
         if (!this.state.subjectId || this.state.subjectId === 'ai-ethics') return;
         this.state.editing = { id: 'q-' + crypto.randomUUID(), grade: this.state.grade, subjectId: this.state.subjectId, roomId: this.state.subjectId, category: 'subject', level: 'foundation', stars: 1, maxScore: 1, status: 'draft', title: blank(), question: blank(), options: ['a','b','c'].map((id,index) => ({id,correct:index === 0,text:blank(),feedback:blank()})), takeaway: blank() };
-        this.state.editLocale = this.lang; this.render(); return;
+        this.state.editLocale = this.lang; this.render(); this.resetNavigationPosition(); return;
       }
       if (action === 'edit-locale') { this.captureEditor(); this.state.editLocale = button.dataset.locale; this.render(); return; }
-      if (action === 'cancel-edit') { this.state.editing = null; this.render(); return; }
+      if (action === 'cancel-edit') { this.state.editing = null; this.render(); this.resetNavigationPosition(); return; }
       if (action === 'export' || action === 'export-all') return this.run(() => this.exportResults(action === 'export-all'));
       if (action === 'print') this.printWorksheet();
     }
@@ -251,12 +265,14 @@
       const control = event.target.closest('[data-filter]');
       if (!control || this.state.busy) return;
       if (!this.state.session?.allowed || !this.state.session?.unlocked) return;
+      const changedSubject = control.name === 'subjectId' && control.value !== this.state.subjectId;
       if (control.name === 'subjectId') { if (!this.setSubject(control.value)) return; }
       else if (control.name === 'grade') { const grade = Number(control.value); if (!Number.isInteger(grade) || grade < 1 || grade > 6) return; this.state.grade = grade; }
       else if (control.name === 'classId') { if (!this.state.classes.some(item => item.id === control.value)) return; this.state.classId = control.value; this.state.assignmentId = ''; }
       else if (control.name === 'assignmentId') { if (!this.state.assignments.some(item => item.id === control.value)) return; this.state.assignmentId = control.value; }
       else return;
       await this.run(() => this.loadTab());
+      if (changedSubject) this.resetNavigationPosition();
     }
     async submit(event) {
       const form = event.target.closest('[data-form]');
@@ -268,7 +284,9 @@
         if (!this.state.session?.allowed) return;
         const pin = String(data.get('pin') || '');
         form.elements.pin.value = '';
-        return this.run(async () => { await this.api('/teacher/unlock','POST',{pin}); this.state.session = await this.api('/teacher/session'); if (this.state.session.allowed && this.state.session.unlocked) { await this.loadClasses(); await this.loadTab(); } this.onChange(); });
+        await this.run(async () => { await this.api('/teacher/unlock','POST',{pin}); this.state.session = await this.api('/teacher/session'); if (this.state.session.allowed && this.state.session.unlocked) { await this.loadClasses(); await this.loadTab(); } this.onChange(); });
+        if (this.state.session?.allowed && this.state.session?.unlocked && !this.state.error) this.resetNavigationPosition();
+        return;
       }
       if (!this.state.session?.allowed || !this.state.session?.unlocked) return;
       if (kind === 'seed' || kind === 'class') {

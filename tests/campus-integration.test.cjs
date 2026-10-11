@@ -9,8 +9,10 @@ const {webcrypto} = require('node:crypto');
 
 // Run the actual application with small DOM/engine adapters. The test-only hook
 // is injected into the source in memory; production exposes no state API.
-function launch(saved, server) {
+function launch(saved, server, transformSource = source => source) {
   const timers = new Map(); let timerId=0; const windowListeners={};
+  const audioCalls = [];
+  const audio = {state:{settings:{musicVolume:0.25,voiceVolume:0.8,muted:false},music:{status:'ready'},voice:{status:'ready'},unlocked:true},stopVoice(){audioCalls.push({type:'stop'});},speak(line){audioCalls.push({type:'speak',...line});},unlock:async()=>true,dispose:async()=>{}};
   const elements = new Map();
   const listeners = {};
   let savedText = saved === undefined ? null : JSON.stringify(saved);
@@ -49,14 +51,14 @@ function launch(saved, server) {
     setLocation(location) { engineOptions.onLocationChange(location); }
   }
   const context = vm.createContext({
-    window: { innerHeight: 900, crypto:webcrypto, fetch:server.fetch, addEventListener(type,fn) { (windowListeners[type] ??= []).push(fn); }, dispatchEvent(event) { for(const fn of windowListeners[event.type]||[]) fn(event); } }, document, CampusEngine, URLSearchParams, Uint8Array, Date, CustomEvent: class {constructor(type,{detail}){this.type=type;this.detail=detail;}},
+    window: { CampusAudio:{create:()=>audio}, innerHeight: 900, crypto:webcrypto, fetch:server.fetch, addEventListener(type,fn) { (windowListeners[type] ??= []).push(fn); }, dispatchEvent(event) { for(const fn of windowListeners[event.type]||[]) fn(event); } }, document, CampusEngine, URLSearchParams, Uint8Array, Date, CustomEvent: class {constructor(type,{detail}){this.type=type;this.detail=detail;}},
     localStorage: { getItem() { return savedText; }, setItem(key, text) { savedText = text; } },
     setTimeout(fn,delay) {const id=++timerId; timers.set(id,{fn,delay});return id;}, clearTimeout(id) {timers.delete(id);}, console,
   });
   for (const file of ['content.js', 'subjects.js', 'grade-content.js', 'characters.js', 'engine.js', 'campus-cloud.js']) {
     vm.runInContext(fs.readFileSync(path.join(root, 'public/campus', file), 'utf8'), context, { filename: file });
   }
-  let source = fs.readFileSync(path.join(root, 'public/campus/app.js'), 'utf8');
+  let source = transformSource(fs.readFileSync(path.join(root, 'public/campus/app.js'), 'utf8'));
   source = source.replace(/\}\)\(\);\s*$/, `window.testApp = {
     state: () => state, progress, campusProgress, pstate, subjectState, action, applyCloud, refreshClass, updateSaveLabel,
     cloud: () => cloud, subjects: () => subjects,
@@ -68,14 +70,14 @@ function launch(saved, server) {
   }; })();`);
   source = source.replace('  initialiseCloud();', '  window.startup = initialiseCloud();');
   vm.runInContext(source, context, { filename: 'app.js', timeout: 2000 });
-  return { context, ready:()=>context.window.startup, async flushSave(){const item=[...timers].find(([,t])=>t.delay===900);if(item){timers.delete(item[0]);await item[1].fn();}}, app: context.window.testApp, elements, listeners, body: document.body, talking: () => talkingId, snapshot: () => JSON.parse(savedText) };
+  return { context, audioCalls, ready:()=>context.window.startup, async flushSave(){const item=[...timers].find(([,t])=>t.delay===900);if(item){timers.delete(item[0]);await item[1].fn();}}, app: context.window.testApp, elements, listeners, body: document.body, talking: () => talkingId, snapshot: () => JSON.parse(savedText) };
 }
 
-function mockServer({joined=true,optionCount=3,roomId='maths'}={}) {
+function mockServer({joined=true,optionCount=3,roomId='maths',grade=2}={}) {
   const tri = text=>({zh:text,cn:text,en:text});
-  const profile={studentId:'s1',classId:'class2B',studentNumber:'03',name:'示範學生',grade:2,section:'B',schoolYear:'2026-27',assignmentId:'a1'};
+  const profile={studentId:'s1',classId:'class2B',studentNumber:'03',name:'示範學生',grade,section:'B',schoolYear:'2026-27',assignmentId:'a1'};
   const bank=JSON.parse(fs.readFileSync(path.join(root,'data/grade-bank.json'),'utf8'));
-  const source=bank.find(q=>q.grade===2 && q.subjectId==='maths');
+  const source=bank.find(q=>q.grade===grade && q.subjectId==='maths');
   source.roomId=roomId;
   if(optionCount!==3){source.options=Array.from({length:optionCount},(_,index)=>({id:'custom-option-'+index,text:tri('Option '+index),correct:index===optionCount-1,feedback:tri('Feedback '+index)}));}
   let assignmentId='a1', revision=1, questionId='q1', version=0, metadata={}, records=[], shouldDrop=false, conflicts=false;
@@ -90,7 +92,7 @@ function mockServer({joined=true,optionCount=3,roomId='maths'}={}) {
     nextActivity(){assignmentId='a2';questionId='q2';revision=2;records=[];profile.assignmentId=assignmentId;},
     async fetch(url,options){const route=url.split('/api/campus/')[1].split('?')[0];const body=options.body?JSON.parse(options.body):null;requests.push({route,method:options.method,body});
       if(route==='bootstrap')return response({grades:[1,2,3,4,5,6],sections:['A','B','C','D'],session:joined?{...profile,assignmentId}:null});
-      if(route==='questions')return response({assignmentId,grade:2,questions:questions()});
+      if(route==='questions')return response({assignmentId,grade,questions:questions()});
       if(route==='student/join'||route==='student/resume'){joined=true;return response({session:{...profile,assignmentId},progress:progress(),...(route==='student/join'?{recoveryCode:'EXAMPLE-CODE'}:{})});}
       if(route==='student/logout'){joined=false;return response({ok:true});}
       if(route==='student/progress'&&options.method==='GET')return response(progress());
@@ -114,8 +116,15 @@ function mockServer({joined=true,optionCount=3,roomId='maths'}={}) {
   assert.equal(app.state().cloudStudentId,'s1');assert.equal(app.state().started,true);
   assert.equal(app.subjects().find(r=>r.id==='maths').levels[0].id,'q1');
   assert.equal(app.subjectState('maths','q1').serverVerified,true);
+  app.openDialogue('subject:maths');
+  assert.equal(game.audioCalls.filter(call=>call.type==='speak').length,1,'NPC greeting is spoken');
+  assert.equal(game.audioCalls.at(-1).kind,'dialogue');
+  app.endDialogue();
+  const greetingCount=game.audioCalls.filter(call=>call.type==='speak').length;
   app.setSubject('maths','q1');app.subjectState('maths','q1').choice=server.source.options.findIndex(o=>o.correct);
+  app.showModal('subject');
   await app.action('subject-submit');
+  assert.equal(game.audioCalls.filter(call=>call.type==='speak').length,greetingCount,'academic question, choices and feedback must not speak');
   assert.equal(app.subjectState('maths','q1').completed,true);assert.equal(app.progress().stars,server.source.stars);
   assert.equal(server.requests.find(r=>r.route==='attempts').body.assignmentId,'a1');
 
@@ -152,5 +161,74 @@ function mockServer({joined=true,optionCount=3,roomId='maths'}={}) {
     await custom.app.refreshClass();assert.equal(custom.app.subjectState(roomId,'q1').solvedChoice,count-1,'fourth/fifth option index survives hydration');
     assert.equal(custom.app.subjects().find(r=>r.id===roomId).levels[0].id,'q1','display room agrees with server hydration roomId');
   }
+
+  // Fixed recordings must match the fully initialized application, not just
+  // isolated dialogue functions: question hydration can mutate room metadata.
+  const manifestContext={window:{}};vm.runInNewContext(fs.readFileSync(path.join(root,'public/campus/fixed-voices.js'),'utf8'),manifestContext);
+  const fixedClips=manifestContext.window.CAMPUS_FIXED_VOICES.clips;
+  const tuple=line=>JSON.stringify([line.characterId,line.gender,line.locale,line.text]);
+  const approvedTuples=new Set(fixedClips.filter(clip=>clip.approved===true).map(tuple)),observedTuples=new Set();
+  assert.equal(fixedClips.length,104);assert.equal(approvedTuples.size,104);
+  const sentinel='TEACHER_DYNAMIC_QUESTION_TEXT';
+  function checkDialogue(runtime,id,label){
+    const before=runtime.audioCalls.length;
+    runtime.app.openDialogue(id);
+    const model=runtime.app.dialogueModel();assert.ok(model,`${label}/${id}: actual dialogue exists`);
+    for(let line=1;line<model.lines.length;line++)runtime.app.nextDialogue();
+    const spoken=runtime.audioCalls.slice(before).filter(call=>call.type==='speak');
+    assert.equal(spoken.length,model.lines.length,`${label}/${id}: every displayed line is spoken once`);
+    spoken.forEach((call,index)=>{
+      const identity=runtime.context.window.CAMPUS_CHARACTERS.resolve(call.characterId);
+      assert.ok(identity,`${label}/${id}: canonical speaker`);assert.equal(call.kind,'dialogue');
+      assert.equal(call.text,model.lines[index],`${label}/${id}: exact displayed text enters audio`);
+      assert.equal(call.gender,identity.gender,`${label}/${id}: runtime and portrait genders agree`);
+      const key=tuple({characterId:identity.id,gender:identity.gender==='boy'?'male':'female',locale:call.locale,text:call.text});
+      assert.ok(approvedTuples.has(key),`No approved MP3 for hydrated dialogue ${label}/${id}/${index}: ${call.text}`);
+      assert.ok(!call.text.includes(sentinel),'teacher question text must not enter fixed speech');observedTuples.add(key);
+    });
+    runtime.app.endDialogue();
+  }
+  function checkEveryDialogue(runtime,server,label){
+    const app=runtime.app;
+    assert.equal(app.progress().exitUnlocked,false,`${label}: start with the locked gate branch`);
+    for(const id of ['prologue',...app.subjects().map(room=>'subject:'+room.id),'staff:office','staff:vice','finale','exit'])checkDialogue(runtime,id,label);
+    for(const mission of app.missions){
+      app.state().missions[mission.id]={completed:false};checkDialogue(runtime,mission.id,label+'/opening');
+      app.state().missions[mission.id]={completed:true,choice:0,repairChoice:mission.repair.options.findIndex(option=>option.correct)};
+      assert.equal(app.pstate(mission.id).completed,true);checkDialogue(runtime,mission.id,label+'/completed');
+    }
+    if(app.cloud().session)app.applyCloud({...server.progress(),stars:103,maxStars:103});
+    else{
+      for(const room of app.subjects())for(const level of room.levels)app.subjectState(room.id,level.id).completed=true;
+      app.state().transferAwarded=true;
+    }
+    assert.equal(app.progress().exitUnlocked,true,`${label}: exercise the actual unlocked gate branch`);checkDialogue(runtime,'exit',label+'/unlocked');
+  }
+  for(const grade of [1,2,3,4,5,6])for(const locale of ['cn','en'])for(const joined of [false,true]){
+    const profile={version:2,started:true,prologueSeen:true,lang:locale,student:{grade,section:'D',number:'17',name:'PROFILE_NAME_MUST_NOT_ENTER_FIXED_SPEECH'}};
+    const hydratedServer=mockServer({joined,grade});hydratedServer.profile.name='CHANGED_CLOUD_STUDENT_NAME';
+    const dynamicText={zh:sentinel+'繁中',cn:sentinel+'简中',en:sentinel+'English'};
+    hydratedServer.source.title={...dynamicText};hydratedServer.source.question={...dynamicText};hydratedServer.source.takeaway={...dynamicText};
+    for(const option of hydratedServer.source.options){option.text={...dynamicText};option.feedback={...dynamicText};}
+    const runtime=launch(profile,hydratedServer);await runtime.ready();
+    const label=`S${grade}/${locale}/${joined?'class':'free'}`;
+    assert.equal(runtime.app.state().student.grade,grade);assert.equal(runtime.app.state().lang,locale);
+    assert.ok(hydratedServer.requests.some(request=>request.route==='bootstrap'),`${label}: actual bootstrap ran`);
+    if(joined){assert.ok(hydratedServer.requests.some(request=>request.route==='questions'));assert.equal(runtime.app.subjects().find(room=>room.id==='maths').levels[0].question.en,dynamicText.en);}
+    else assert.ok(runtime.app.subjects().every(room=>room.levels.length>0&&room.levels.every(level=>level.grade===grade)),`${label}: local grade question hydration ran`);
+    checkEveryDialogue(runtime,hydratedServer,label);
+    if(joined){
+      hydratedServer.nextActivity();hydratedServer.source.question={zh:sentinel+'新版本',cn:sentinel+'新版本',en:sentinel+'new revision'};
+      await runtime.app.refreshClass();assert.equal(runtime.app.subjects().find(room=>room.id==='maths').levels[0].id,'q2');
+      checkEveryDialogue(runtime,hydratedServer,label+'/teacher-revision');
+    }
+  }
+  assert.equal(observedTuples.size,approvedTuples.size,'every released recording is reached by actual hydrated app dialogue');
+  // The bug previously escaped an isolated exporter: simulate that same
+  // upstream overwrite while leaving all dialogue function source unchanged.
+  const regression=launch({version:2,started:true,lang:'cn',student:{grade:3}},mockServer({joined:false,grade:3}),source=>source.replace('  function setGradeQuestions(records = null) {','  function setGradeQuestions(records = null) {\n    subjects[0].description = {cn:"HYDRATION_OVERWRITTEN_GREETING",en:"HYDRATION_OVERWRITTEN_GREETING"};'));
+  await regression.ready();
+  assert.throws(()=>checkDialogue(regression,'subject:playground','upstream-mutation'),/No approved MP3 for hydrated dialogue/,'the integration guard catches metadata overwrites outside the exported functions');
+  console.log('PASS hydrated fixed speech: all 104 released tuples reached; grades 1–6 cn/en, free/class bootstrap, every dialogue branch, teacher revisions, exact speaker/gender/text and upstream-mutation regression.');
   console.log('PASS campus integration: authenticated hydration, authoritative scores, new activities, uncertain retries, explicit conflict reload, logout, join and4/5-option custom questions in their assigned rooms.');
 })().catch(error=>{console.error(error);process.exitCode=1;});

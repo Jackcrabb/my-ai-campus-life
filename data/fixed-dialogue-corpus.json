@@ -1,0 +1,733 @@
+{
+  "schemaVersion": 1,
+  "lines": [
+    {
+      "id": "access-cn-6e35a33f7f1e44bc7d90",
+      "characterId": "access",
+      "gender": "female",
+      "locale": "cn",
+      "text": "有同学只能用键盘，有人家中网络不稳。他们不是不愿意学，只是进不去。"
+    },
+    {
+      "id": "access-cn-85bbac2e2066c705aa12",
+      "characterId": "access",
+      "gender": "female",
+      "locale": "cn",
+      "text": "公平不一定是人人使用同一方式。以共同学习目标设计不同途径，并让受影响的学生参与测试。"
+    },
+    {
+      "id": "access-cn-a84cc13f24e022bdc124",
+      "characterId": "access",
+      "gender": "female",
+      "locale": "cn",
+      "text": "新的 AI 对话练习很受欢迎，但只有语音输入，还要倒数作答。"
+    },
+    {
+      "id": "access-en-30213504903df31eb3f8",
+      "characterId": "access",
+      "gender": "female",
+      "locale": "en",
+      "text": "The new AI conversation practice is popular, but it only takes voice input and has a countdown."
+    },
+    {
+      "id": "access-en-7e76672cf8907c721ae8",
+      "characterId": "access",
+      "gender": "female",
+      "locale": "en",
+      "text": "One learner uses a keyboard, and another has an unreliable connection at home. They want to learn. The design is blocking them."
+    },
+    {
+      "id": "access-en-982c94eac92ca42cb509",
+      "characterId": "access",
+      "gender": "female",
+      "locale": "en",
+      "text": "Fairness does not always mean using the same route. Design varied routes to a shared learning goal, and involve affected learners in testing."
+    },
+    {
+      "id": "culture-cn-703abe40d18812e64661",
+      "characterId": "culture",
+      "gender": "female",
+      "locale": "cn",
+      "text": "流畅不等于忠实。翻译须照顾语境、读者及作者声音；按任务要求清楚交代 AI 协助。"
+    },
+    {
+      "id": "culture-cn-77f5c669f4bbb22ee4d8",
+      "characterId": "culture",
+      "gender": "female",
+      "locale": "cn",
+      "text": "这是我们感谢校工的展板。AI 的英文很顺，但把“饮水思源”改成了成功口号。"
+    },
+    {
+      "id": "culture-cn-bbfa18197d67db8c4fb4",
+      "characterId": "culture",
+      "gender": "female",
+      "locale": "cn",
+      "text": "同学说直接用就好。可是这样展出的，还是我们想说的话吗？"
+    },
+    {
+      "id": "culture-en-2943803824a4850743f5",
+      "characterId": "culture",
+      "gender": "female",
+      "locale": "en",
+      "text": "This display thanks our school support staff. The AI’s English is smooth, but it turned “飲水思源” into a success slogan."
+    },
+    {
+      "id": "culture-en-30c0635a4dce4cb0a2b9",
+      "characterId": "culture",
+      "gender": "female",
+      "locale": "en",
+      "text": "Fluency is not faithfulness. Translation needs context, audience and author voice, with AI assistance explained according to the task’s requirements."
+    },
+    {
+      "id": "culture-en-ead28a8093fc410f390c",
+      "characterId": "culture",
+      "gender": "female",
+      "locale": "en",
+      "text": "Someone said we should just use it. But would the display still say what we mean?"
+    },
+    {
+      "id": "privacy-cn-4d534475bed7f6a6aa29",
+      "characterId": "privacy",
+      "gender": "male",
+      "locale": "cn",
+      "text": "把姓名删掉就安全吗？这个工具会保留多久，我完全不知道。"
+    },
+    {
+      "id": "privacy-cn-56d76a1d41c04c85929e",
+      "characterId": "privacy",
+      "gender": "male",
+      "locale": "cn",
+      "text": "我只想请 AI 帮忙改英文。上传前才发现，作文写了同学家里的事。"
+    },
+    {
+      "id": "privacy-cn-af4da12fa1ff14945b55",
+      "characterId": "privacy",
+      "gender": "male",
+      "locale": "cn",
+      "text": "先减少资料，再查核工具。只分享学习所需的内容，并让学生理解安排及保有选择。"
+    },
+    {
+      "id": "privacy-en-2ff0f69d0dfb58841046",
+      "characterId": "privacy",
+      "gender": "male",
+      "locale": "en",
+      "text": "Minimise data first, then check the tool. Share only what learning requires, and help students understand the arrangements and retain a choice."
+    },
+    {
+      "id": "privacy-en-4bb2e8e2131aebe1e415",
+      "characterId": "privacy",
+      "gender": "male",
+      "locale": "en",
+      "text": "I only wanted AI feedback on the English. Before uploading, I noticed the essay describes a classmate’s family situation."
+    },
+    {
+      "id": "privacy-en-c430073342908b72b1de",
+      "characterId": "privacy",
+      "gender": "male",
+      "locale": "en",
+      "text": "Is removing the name enough? I have no idea how long this tool keeps our writing."
+    },
+    {
+      "id": "staff-art-cn-237dfec4e9114b889759",
+      "characterId": "staff-art",
+      "gender": "female",
+      "locale": "cn",
+      "text": "你可以选择任何一题开始。先读清楚条件，作答后看看解释；答错也可以再试。题目的星数会显示在挑战页面。"
+    },
+    {
+      "id": "staff-art-cn-82706bf1767eb67baaee",
+      "characterId": "staff-art",
+      "gender": "female",
+      "locale": "cn",
+      "text": "探索视觉层次、色彩及作品语境。展板、作品与作者说明均为原创虚构例子。"
+    },
+    {
+      "id": "staff-art-en-3ad3c1e0287d0c2de318",
+      "characterId": "staff-art",
+      "gender": "female",
+      "locale": "en",
+      "text": "Explore visual hierarchy, colour and artistic context through original fictional posters, artworks and artist statements."
+    },
+    {
+      "id": "staff-art-en-8248fa77b371a108f607",
+      "characterId": "staff-art",
+      "gender": "female",
+      "locale": "en",
+      "text": "Start with any question. Read its conditions, make a choice and review the explanation. You can retry. The challenge page shows the available stars."
+    },
+    {
+      "id": "staff-chemistry-cn-41cbbe73fd0ebdc32c27",
+      "characterId": "staff-chemistry",
+      "gender": "female",
+      "locale": "cn",
+      "text": "你可以选择任何一题开始。先读清楚条件，作答后看看解释；答错也可以再试。题目的星数会显示在挑战页面。"
+    },
+    {
+      "id": "staff-chemistry-cn-ace0b98f302f9a9e671d",
+      "characterId": "staff-chemistry",
+      "gender": "female",
+      "locale": "cn",
+      "text": "阅读模拟记录，辨认变量、质量及证据支持的结论。本室不要求实际进行实验。"
+    },
+    {
+      "id": "staff-chemistry-en-c602b0a61f069c36407e",
+      "characterId": "staff-chemistry",
+      "gender": "female",
+      "locale": "en",
+      "text": "Start with any question. Read its conditions, make a choice and review the explanation. You can retry. The challenge page shows the available stars."
+    },
+    {
+      "id": "staff-chemistry-en-e8155a1b18118bddd81b",
+      "characterId": "staff-chemistry",
+      "gender": "female",
+      "locale": "en",
+      "text": "Read simulated records to identify variables, mass and supported conclusions. No real experiment is required."
+    },
+    {
+      "id": "staff-chinese-cn-846a3a4f6c675e57f4b6",
+      "characterId": "staff-chinese",
+      "gender": "female",
+      "locale": "cn",
+      "text": "从原创短文读出成语、比喻及作者态度。人物和事件均属虚构。"
+    },
+    {
+      "id": "staff-chinese-cn-902c3d9d94fb91ccccfd",
+      "characterId": "staff-chinese",
+      "gender": "female",
+      "locale": "cn",
+      "text": "你可以选择任何一题开始。先读清楚条件，作答后看看解释；答错也可以再试。题目的星数会显示在挑战页面。"
+    },
+    {
+      "id": "staff-chinese-en-11a3b2a46dd8ee711010",
+      "characterId": "staff-chinese",
+      "gender": "female",
+      "locale": "en",
+      "text": "Interpret idioms, metaphors and an author’s stance in original Chinese passages. People and events are fictional."
+    },
+    {
+      "id": "staff-chinese-en-acb88c39826313010a1e",
+      "characterId": "staff-chinese",
+      "gender": "female",
+      "locale": "en",
+      "text": "Start with any question. Read its conditions, make a choice and review the explanation. You can retry. The challenge page shows the available stars."
+    },
+    {
+      "id": "staff-computer-cn-14fc9630e7df5b9eece2",
+      "characterId": "staff-computer",
+      "gender": "female",
+      "locale": "cn",
+      "text": "你可以选择任何一题开始。先读清楚条件，作答后看看解释；答错也可以再试。题目的星数会显示在挑战页面。"
+    },
+    {
+      "id": "staff-computer-cn-d4e20912c72f9e9ace14",
+      "characterId": "staff-computer",
+      "gender": "female",
+      "locale": "cn",
+      "text": "辨认钓鱼信息、检查权限及核对 AI 数字。信息与数据表均为虚构，不含真实登录链接。"
+    },
+    {
+      "id": "staff-computer-en-a985d07783de69b2eb9d",
+      "characterId": "staff-computer",
+      "gender": "female",
+      "locale": "en",
+      "text": "Start with any question. Read its conditions, make a choice and review the explanation. You can retry. The challenge page shows the available stars."
+    },
+    {
+      "id": "staff-computer-en-b31e60b7bff511a5d99b",
+      "characterId": "staff-computer",
+      "gender": "female",
+      "locale": "en",
+      "text": "Recognise phishing, inspect permissions and verify AI calculations. Messages and tables are fictional, with no real sign-in links."
+    },
+    {
+      "id": "staff-english-cn-2be57711e21662fb747d",
+      "characterId": "staff-english",
+      "gender": "female",
+      "locale": "cn",
+      "text": "练习英文条件句、代词及批判阅读。例句与调查均为原创模拟；英语学习文本保留英文。"
+    },
+    {
+      "id": "staff-english-cn-4d97de889ebe57153889",
+      "characterId": "staff-english",
+      "gender": "female",
+      "locale": "cn",
+      "text": "你可以选择任何一题开始。先读清楚条件，作答后看看解释；答错也可以再试。题目的星数会显示在挑战页面。"
+    },
+    {
+      "id": "staff-english-en-595f6cbdc1f2deebf044",
+      "characterId": "staff-english",
+      "gender": "female",
+      "locale": "en",
+      "text": "Start with any question. Read its conditions, make a choice and review the explanation. You can retry. The challenge page shows the available stars."
+    },
+    {
+      "id": "staff-english-en-b2b8f9639ee4865132bd",
+      "characterId": "staff-english",
+      "gender": "female",
+      "locale": "en",
+      "text": "Practise conditionals, pronouns and critical reading. Sentences and survey details are original fictional examples."
+    },
+    {
+      "id": "staff-geography-cn-b40f0bf7f9497fbb8df9",
+      "characterId": "staff-geography",
+      "gender": "male",
+      "locale": "cn",
+      "text": "阅读比例尺、等高线及长期气温记录。地点与数据均属虚构。"
+    },
+    {
+      "id": "staff-geography-cn-caa515d2676fb4b93e50",
+      "characterId": "staff-geography",
+      "gender": "male",
+      "locale": "cn",
+      "text": "你可以选择任何一题开始。先读清楚条件，作答后看看解释；答错也可以再试。题目的星数会显示在挑战页面。"
+    },
+    {
+      "id": "staff-geography-en-3106b3d4ceb01e00b400",
+      "characterId": "staff-geography",
+      "gender": "male",
+      "locale": "en",
+      "text": "Read map scales, contours and long-term temperature records. Locations and data are fictional."
+    },
+    {
+      "id": "staff-geography-en-f0b00176e8d935ae29b9",
+      "characterId": "staff-geography",
+      "gender": "male",
+      "locale": "en",
+      "text": "Start with any question. Read its conditions, make a choice and review the explanation. You can retry. The challenge page shows the available stars."
+    },
+    {
+      "id": "staff-history-cn-189d065f5ac2c2901c75",
+      "characterId": "staff-history",
+      "gender": "male",
+      "locale": "cn",
+      "text": "你可以选择任何一题开始。先读清楚条件，作答后看看解释；答错也可以再试。题目的星数会显示在挑战页面。"
+    },
+    {
+      "id": "staff-history-cn-a38bac600e63a5b7cc96",
+      "characterId": "staff-history",
+      "gender": "male",
+      "locale": "cn",
+      "text": "中国历史与历史是不同学科；本室分别练习史料分类及多角度查证。账簿、引文、城市及日期记录均为虚构教材。"
+    },
+    {
+      "id": "staff-history-en-5523a1f0c749a26c1b7c",
+      "characterId": "staff-history",
+      "gender": "male",
+      "locale": "en",
+      "text": "Start with any question. Read its conditions, make a choice and review the explanation. You can retry. The challenge page shows the available stars."
+    },
+    {
+      "id": "staff-history-en-c4a833d132ecf5da0913",
+      "characterId": "staff-history",
+      "gender": "male",
+      "locale": "en",
+      "text": "Chinese History and History are distinct subjects. Practise source classification and multiple perspectives through fictional ledgers, quotations, cities and records."
+    },
+    {
+      "id": "staff-library-cn-5b636106d30c7383e047",
+      "characterId": "staff-library",
+      "gender": "female",
+      "locale": "cn",
+      "text": "你可以选择任何一题开始。先读清楚条件，作答后看看解释；答错也可以再试。题目的星数会显示在挑战页面。"
+    },
+    {
+      "id": "staff-library-cn-7346d322cb583b4685e4",
+      "characterId": "staff-library",
+      "gender": "female",
+      "locale": "cn",
+      "text": "练习查找来源、忠实转述及评估研究限制。本室书目与研究摘录均为虚构示例，不能当作真实文献引用。"
+    },
+    {
+      "id": "staff-library-en-3831ffd95bb0d6263c2b",
+      "characterId": "staff-library",
+      "gender": "female",
+      "locale": "en",
+      "text": "Start with any question. Read its conditions, make a choice and review the explanation. You can retry. The challenge page shows the available stars."
+    },
+    {
+      "id": "staff-library-en-53efa1fae59c893b68e1",
+      "characterId": "staff-library",
+      "gender": "female",
+      "locale": "en",
+      "text": "Practise finding sources, faithful paraphrasing and research limits. Bibliographies and extracts here are fictional examples, not real references to cite."
+    },
+    {
+      "id": "staff-maths-cn-073853a0b77da93c5eff",
+      "characterId": "staff-maths",
+      "gender": "male",
+      "locale": "cn",
+      "text": "你可以选择任何一题开始。先读清楚条件，作答后看看解释；答错也可以再试。题目的星数会显示在挑战页面。"
+    },
+    {
+      "id": "staff-maths-cn-1904eaff7f756f9a5c36",
+      "characterId": "staff-maths",
+      "gender": "male",
+      "locale": "cn",
+      "text": "用比、百分率及共同分母解读资料。价格及测试结果均为教学模拟。"
+    },
+    {
+      "id": "staff-maths-en-58ecc33480060c167806",
+      "characterId": "staff-maths",
+      "gender": "male",
+      "locale": "en",
+      "text": "Start with any question. Read its conditions, make a choice and review the explanation. You can retry. The challenge page shows the available stars."
+    },
+    {
+      "id": "staff-maths-en-71184a73f520984b0e89",
+      "characterId": "staff-maths",
+      "gender": "male",
+      "locale": "en",
+      "text": "Interpret ratios, percentages and comparable denominators. Prices and test results are simulated."
+    },
+    {
+      "id": "staff-mentor-cn-23eff1f5805bb2738814",
+      "characterId": "staff-mentor",
+      "gender": "female",
+      "locale": "cn",
+      "text": "完成四宗案件后，手帐会开放迁移挑战。把证据、受影响的人和修正方法连起来，再写下你会邀请谁检查效果。"
+    },
+    {
+      "id": "staff-mentor-cn-2567795ec4ae413fd28f",
+      "characterId": "staff-mentor",
+      "gender": "female",
+      "locale": "cn",
+      "text": "13 个学科空间各有基础、应用和挑战题，首次完成分别获 1、2、3 星。每宗案件获 5 星，手帐的迁移挑战再获 5 星。重做可以练习，但不会重复加星。"
+    },
+    {
+      "id": "staff-mentor-cn-71e25ca81e32994c4625",
+      "characterId": "staff-mentor",
+      "gender": "female",
+      "locale": "cn",
+      "text": "累积 100 星便可到地下校门完成校园旅程，最高 103 星。星星记录探索进度，并非品格或能力排名。你可随时休息、写反思；短课节不必一次走完整间学校。"
+    },
+    {
+      "id": "staff-mentor-cn-a5b38642e842921dceeb",
+      "characterId": "staff-mentor",
+      "gender": "female",
+      "locale": "cn",
+      "text": "由地下走到四楼，与同学、老师和校务处职员交谈。调查公平、隐私、文化与共融：先看证据，再作决定，最后修正方案。"
+    },
+    {
+      "id": "staff-mentor-cn-e1d0da2a00f88e0b4c5e",
+      "characterId": "staff-mentor",
+      "gender": "female",
+      "locale": "cn",
+      "text": "走到四楼了。你可以把今天的发现带回日常生活：下一次使用 AI，你会作出哪一项具体改变？"
+    },
+    {
+      "id": "staff-mentor-cn-f8bc665a3300f922f304",
+      "characterId": "staff-mentor",
+      "gender": "female",
+      "locale": "cn",
+      "text": "欢迎入读明澄书院，新同学！今天你会认识校园、挑战学科问题，并帮助同学一起面对使用 AI 的难题。"
+    },
+    {
+      "id": "staff-mentor-en-21b401425152800e1b70",
+      "characterId": "staff-mentor",
+      "gender": "female",
+      "locale": "en",
+      "text": "You have reached 4F. Take your discoveries into everyday life. What specific change will you make next time you use AI?"
+    },
+    {
+      "id": "staff-mentor-en-781357cbaebc0fc43f8b",
+      "characterId": "staff-mentor",
+      "gender": "female",
+      "locale": "en",
+      "text": "Explore five floors and talk to students, teachers and office staff. Investigate fairness, privacy, culture and inclusion: examine evidence, decide, then repair the approach."
+    },
+    {
+      "id": "staff-mentor-en-8e51beb0494f009e419d",
+      "characterId": "staff-mentor",
+      "gender": "female",
+      "locale": "en",
+      "text": "Reach 100 stars to finish your mission at the ground-floor gate; 103 are available. Stars track exploration, not character or ability. Pause, reflect whenever you wish; a short lesson need not cover the entire school."
+    },
+    {
+      "id": "staff-mentor-en-91e57fadd0bbbdec9201",
+      "characterId": "staff-mentor",
+      "gender": "female",
+      "locale": "en",
+      "text": "Welcome to Ming Ching College! Get to know your campus, explore subject challenges and help classmates think through AI dilemmas."
+    },
+    {
+      "id": "staff-mentor-en-bc7155876e7d40d50efe",
+      "characterId": "staff-mentor",
+      "gender": "female",
+      "locale": "en",
+      "text": "Each of 13 subject spaces has foundation, application and challenge questions worth 1, 2 and 3 stars once. Each ethics case earns 5 stars; the notebook’s transfer challenge earns 5 more. Replays help you practise but do not add duplicate stars."
+    },
+    {
+      "id": "staff-mentor-en-ca6680030995f0d18355",
+      "characterId": "staff-mentor",
+      "gender": "female",
+      "locale": "en",
+      "text": "The transfer challenge opens after all four cases. Connect evidence, the people affected and a practical repair. Then record whom you would invite to review the result."
+    },
+    {
+      "id": "staff-music-cn-1863fddbe4348c20ba2c",
+      "characterId": "staff-music",
+      "gender": "male",
+      "locale": "cn",
+      "text": "你可以选择任何一题开始。先读清楚条件，作答后看看解释；答错也可以再试。题目的星数会显示在挑战页面。"
+    },
+    {
+      "id": "staff-music-cn-6a66a5d84ce7b946b916",
+      "characterId": "staff-music",
+      "gender": "male",
+      "locale": "cn",
+      "text": "计算节拍、速度与乐句时间，并辨认创作贡献。音乐作业情境属虚构。"
+    },
+    {
+      "id": "staff-music-en-d6735566a4491fcacc3f",
+      "characterId": "staff-music",
+      "gender": "male",
+      "locale": "en",
+      "text": "Start with any question. Read its conditions, make a choice and review the explanation. You can retry. The challenge page shows the available stars."
+    },
+    {
+      "id": "staff-music-en-e397398c3df0b26efe31",
+      "characterId": "staff-music",
+      "gender": "male",
+      "locale": "en",
+      "text": "Calculate beats, tempo and phrase duration, then identify creative contributions. Assignment scenarios are fictional."
+    },
+    {
+      "id": "staff-office-cn-5d6006a1ef91347fdfe8",
+      "characterId": "staff-office",
+      "gender": "male",
+      "locale": "cn",
+      "text": "早晨，新同学。地下有操场和礼堂，一楼是语文及数学，二楼有科学、地理和电脑，三楼是历史与艺术，四楼有图书馆和天台。"
+    },
+    {
+      "id": "staff-office-cn-90a7495d8e4273a8764e",
+      "characterId": "staff-office",
+      "gender": "male",
+      "locale": "cn",
+      "text": "点击人物、楼梯或课室门，就会自动走近并互动；也可用 WASD 或方向键移动，按 E 与人物交谈，按空格键或 Enter 进门。校园地图可直接前往地点。自由探索保存在这个浏览器；加入班级可同步记录。共用设备请完成后退出。"
+    },
+    {
+      "id": "staff-office-en-37ed47eb1d2e4a3439ee",
+      "characterId": "staff-office",
+      "gender": "male",
+      "locale": "en",
+      "text": "Good morning, new student. Sport and the hall are on the ground floor; languages and maths on 1F; science, geography and computing on 2F; history and arts on 3F; the library and rooftop on 4F."
+    },
+    {
+      "id": "staff-office-en-f24bfdcff81e23bbdfbb",
+      "characterId": "staff-office",
+      "gender": "male",
+      "locale": "en",
+      "text": "Click people, stairs or classroom doors to approach and interact automatically. You can also move with WASD or arrow keys, press E to talk, and Space or Enter to enter rooms. The map offers direct travel. Free exploration stays in this browser. Join a class to sync records; sign out after using a shared device."
+    },
+    {
+      "id": "staff-playground-cn-8cc38059c1d74b27b799",
+      "characterId": "staff-playground",
+      "gender": "male",
+      "locale": "cn",
+      "text": "检查安全参与、轮流练习及表现记录。以下练习安排和数据均为教学模拟。"
+    },
+    {
+      "id": "staff-playground-cn-e1eb4227f18bad846504",
+      "characterId": "staff-playground",
+      "gender": "male",
+      "locale": "cn",
+      "text": "你可以选择任何一题开始。先读清楚条件，作答后看看解释；答错也可以再试。题目的星数会显示在挑战页面。"
+    },
+    {
+      "id": "staff-playground-en-8542d47e448df96d66bf",
+      "characterId": "staff-playground",
+      "gender": "male",
+      "locale": "en",
+      "text": "Start with any question. Read its conditions, make a choice and review the explanation. You can retry. The challenge page shows the available stars."
+    },
+    {
+      "id": "staff-playground-en-d6ad870f9e7ddc365261",
+      "characterId": "staff-playground",
+      "gender": "male",
+      "locale": "en",
+      "text": "Examine safe participation, practice rotations and performance records. All practice plans and data here are simulated."
+    },
+    {
+      "id": "staff-principal-cn-1b22363a86054f281d55",
+      "characterId": "staff-principal",
+      "gender": "male",
+      "locale": "cn",
+      "text": "你可以选择任何一题开始。先读清楚条件，作答后看看解释；答错也可以再试。题目的星数会显示在挑战页面。"
+    },
+    {
+      "id": "staff-principal-cn-1e2b211c63f8cf4cc1ff",
+      "characterId": "staff-principal",
+      "gender": "male",
+      "locale": "cn",
+      "text": "不用急着一次完成。你可以到地图寻找未探索的课室，或随时打开手帐写反思，稍后再回来。"
+    },
+    {
+      "id": "staff-principal-cn-7eb1104717c7d633c2c5",
+      "characterId": "staff-principal",
+      "gender": "male",
+      "locale": "cn",
+      "text": "你已达到星章目标，校门现已开启。谢谢你倾听四位同学，也认真检查校园里的不同问题。"
+    },
+    {
+      "id": "staff-principal-cn-7faa6e97f1225df98602",
+      "characterId": "staff-principal",
+      "gender": "male",
+      "locale": "cn",
+      "text": "行动可以结束，负责任的使用习惯仍要继续。请在手帐写下：你发现的证据、你会改变的做法，以及谁能帮你检查改进是否有效。"
+    },
+    {
+      "id": "staff-principal-cn-a12c553e4d7c7ead8f17",
+      "characterId": "staff-principal",
+      "gender": "male",
+      "locale": "cn",
+      "text": "你还未达到离校的星章目标。看看画面上的星章进度，再到教室、走廊或手帐继续探索吧。"
+    },
+    {
+      "id": "staff-principal-cn-c84f3be2170b8eca0dea",
+      "characterId": "staff-principal",
+      "gender": "male",
+      "locale": "cn",
+      "text": "以代表性、有限资源及参与条件作校园决定。以下计划、成本及人数均属虚构。"
+    },
+    {
+      "id": "staff-principal-en-0bb5e89dad66e0a075dd",
+      "characterId": "staff-principal",
+      "gender": "male",
+      "locale": "en",
+      "text": "Make school decisions using representation, limited resources and access criteria. Plans, costs and numbers are fictional."
+    },
+    {
+      "id": "staff-principal-en-851fe52eb1a6db6d3bd8",
+      "characterId": "staff-principal",
+      "gender": "male",
+      "locale": "en",
+      "text": "The school day can end; responsible habits continue. In your notebook, record evidence you found, a change you will make and someone who can help check whether it works."
+    },
+    {
+      "id": "staff-principal-en-c8fbc5d15d172fb23a2b",
+      "characterId": "staff-principal",
+      "gender": "male",
+      "locale": "en",
+      "text": "You have reached your star target. The gate is open. Thank you for listening to four classmates and examining different questions across the school."
+    },
+    {
+      "id": "staff-principal-en-d5914bc78f7e716d4667",
+      "characterId": "staff-principal",
+      "gender": "male",
+      "locale": "en",
+      "text": "Start with any question. Read its conditions, make a choice and review the explanation. You can retry. The challenge page shows the available stars."
+    },
+    {
+      "id": "staff-principal-en-e6f6cc8a55e5af850e83",
+      "characterId": "staff-principal",
+      "gender": "male",
+      "locale": "en",
+      "text": "There is no need to finish in one sitting. Find an unexplored room on the map, or reflect in the notebook before returning later."
+    },
+    {
+      "id": "staff-principal-en-f989515554cf91792234",
+      "characterId": "staff-principal",
+      "gender": "male",
+      "locale": "en",
+      "text": "You have not reached the star target for leaving yet. Check the star counter, then explore a classroom, a corridor or your notebook."
+    },
+    {
+      "id": "staff-rooftop-cn-6b37c02edb96587e8bfb",
+      "characterId": "staff-rooftop",
+      "gender": "male",
+      "locale": "cn",
+      "text": "你可以选择任何一题开始。先读清楚条件，作答后看看解释；答错也可以再试。题目的星数会显示在挑战页面。"
+    },
+    {
+      "id": "staff-rooftop-cn-7274bf414b08434a5e69",
+      "characterId": "staff-rooftop",
+      "gender": "male",
+      "locale": "cn",
+      "text": "以物种记录、观察方法及热环境资料进行探究。A、B、C 是模拟物种代号，所有数据均属虚构。"
+    },
+    {
+      "id": "staff-rooftop-en-d4febaa3854dc05903a2",
+      "characterId": "staff-rooftop",
+      "gender": "male",
+      "locale": "en",
+      "text": "Investigate species records, observation methods and heat conditions. A, B and C label simulated species; all data are fictional."
+    },
+    {
+      "id": "staff-rooftop-en-d6e278ee10aeaa1f6b1d",
+      "characterId": "staff-rooftop",
+      "gender": "male",
+      "locale": "en",
+      "text": "Start with any question. Read its conditions, make a choice and review the explanation. You can retry. The challenge page shows the available stars."
+    },
+    {
+      "id": "staff-vice-cn-3cff42270741fcd3932e",
+      "characterId": "staff-vice",
+      "gender": "female",
+      "locale": "cn",
+      "text": "调查时不要只问“AI 答得对不对”。也要问：谁被忽略？哪些信息没有必要收集？受影响的人能否提出异议？"
+    },
+    {
+      "id": "staff-vice-cn-528be722d8ad96feeaa4",
+      "characterId": "staff-vice",
+      "gender": "female",
+      "locale": "cn",
+      "text": "星星是探索记录，不是道德排名。先完成四宗案件，再到手帐应用新情境；用一项具体证据支持你的下一步行动。"
+    },
+    {
+      "id": "staff-vice-en-0820df4e8a33a32b6585",
+      "characterId": "staff-vice",
+      "gender": "female",
+      "locale": "en",
+      "text": "Ask more than whether an AI answer is correct. Who was overlooked? Which data is unnecessary? Can the people affected challenge a decision?"
+    },
+    {
+      "id": "staff-vice-en-4024d2588c2bf5d9d2be",
+      "characterId": "staff-vice",
+      "gender": "female",
+      "locale": "en",
+      "text": "Stars record exploration, not moral rank. Resolve the four cases, then try the new situation in your notebook. Support your next action with a specific piece of evidence."
+    },
+    {
+      "id": "voice-cn-0202a335beb358944f88",
+      "characterId": "voice",
+      "gender": "female",
+      "locale": "cn",
+      "text": "可是队友都听懂了我的论点。我需要改善的，到底是表达，还是口音？"
+    },
+    {
+      "id": "voice-cn-44418c7bef8a9009d132",
+      "characterId": "voice",
+      "gender": "female",
+      "locale": "cn",
+      "text": "同学，你看这张反馈单。AI 说我的英语不够好，理由竟然是“不像母语者”！"
+    },
+    {
+      "id": "voice-cn-974c4c4da7f20e8eb7ff",
+      "characterId": "voice",
+      "gender": "female",
+      "locale": "cn",
+      "text": "先问“衡量什么”，再看分数。AI 反馈要对准学习目标，并容许人类复核及提出异议。"
+    },
+    {
+      "id": "voice-en-5404a509ca1651c7b31f",
+      "characterId": "voice",
+      "gender": "female",
+      "locale": "en",
+      "text": "But my teammates understood my argument. Am I meant to improve my communication, or change my accent?"
+    },
+    {
+      "id": "voice-en-936280416e2619b5f0c2",
+      "characterId": "voice",
+      "gender": "female",
+      "locale": "en",
+      "text": "Ask what is being measured before trusting a score. Align AI feedback with learning goals, and provide human review and a way to challenge it."
+    },
+    {
+      "id": "voice-en-c951df625ee8056710fc",
+      "characterId": "voice",
+      "gender": "female",
+      "locale": "en",
+      "text": "Hey, look at this feedback. The AI says my English is weak because I do not sound like a native speaker!"
+    }
+  ]
+}

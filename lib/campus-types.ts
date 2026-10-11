@@ -27,6 +27,15 @@ export type CampusEnv = {
     TEACHER_EMAILS?: string;
     TEACHER_PIN?: string;
     CAMPUS_LOCAL_TEACHER?: string;
+    OPENROUTER_API_KEY?: string;
+    CAMPUS_TTS_ENABLED?: string;
+    CAMPUS_TTS_MODE?: string;
+    CAMPUS_TTS_AUDITION_ONLY?: string;
+    CAMPUS_TTS_BLOCKED_LOCALES?: string;
+    CAMPUS_TTS_CONFIG?: string;
+    CAMPUS_TTS_DAILY_CHARACTERS?: string;
+    CAMPUS_TTS_DAILY_REQUESTS?: string;
+    CAMPUS_TTS_DAILY_USD?: string;
 };
 export type TeacherIdentity = {
     userId: string;

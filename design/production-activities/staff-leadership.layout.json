@@ -1,0 +1,233 @@
+{
+  "id": "staff-leadership",
+  "src": "assets/activities/staff-leadership.png",
+  "width": 1086,
+  "height": 1448,
+  "cols": 4,
+  "rows": 4,
+  "facing": "right",
+  "frames": [
+    {
+      "x": 86,
+      "y": 10,
+      "w": 129,
+      "h": 361,
+      "anchorX": 150,
+      "baseline": 366
+    },
+    {
+      "x": 355,
+      "y": 11,
+      "w": 151,
+      "h": 360,
+      "anchorX": 420,
+      "baseline": 366
+    },
+    {
+      "x": 628,
+      "y": 11,
+      "w": 150,
+      "h": 361,
+      "anchorX": 690,
+      "baseline": 367
+    },
+    {
+      "x": 891,
+      "y": 10,
+      "w": 121,
+      "h": 361,
+      "anchorX": 952,
+      "baseline": 366
+    },
+    {
+      "x": 89,
+      "y": 373,
+      "w": 132,
+      "h": 354,
+      "anchorX": 142,
+      "baseline": 722
+    },
+    {
+      "x": 361,
+      "y": 374,
+      "w": 138,
+      "h": 352,
+      "anchorX": 414,
+      "baseline": 721
+    },
+    {
+      "x": 633,
+      "y": 374,
+      "w": 133,
+      "h": 352,
+      "anchorX": 686,
+      "baseline": 721
+    },
+    {
+      "x": 900,
+      "y": 374,
+      "w": 114,
+      "h": 352,
+      "anchorX": 950,
+      "baseline": 721
+    },
+    {
+      "x": 83,
+      "y": 726,
+      "w": 157,
+      "h": 355,
+      "anchorX": 148,
+      "baseline": 1076
+    },
+    {
+      "x": 359,
+      "y": 726,
+      "w": 130,
+      "h": 355,
+      "anchorX": 420,
+      "baseline": 1076
+    },
+    {
+      "x": 627,
+      "y": 727,
+      "w": 130,
+      "h": 354,
+      "anchorX": 687,
+      "baseline": 1076
+    },
+    {
+      "x": 889,
+      "y": 726,
+      "w": 125,
+      "h": 355,
+      "anchorX": 950,
+      "baseline": 1076
+    },
+    {
+      "x": 97,
+      "y": 1082,
+      "w": 119,
+      "h": 352,
+      "anchorX": 146,
+      "baseline": 1429
+    },
+    {
+      "x": 365,
+      "y": 1083,
+      "w": 163,
+      "h": 351,
+      "anchorX": 415,
+      "baseline": 1429
+    },
+    {
+      "x": 635,
+      "y": 1083,
+      "w": 160,
+      "h": 352,
+      "anchorX": 686,
+      "baseline": 1430
+    },
+    {
+      "x": 899,
+      "y": 1083,
+      "w": 119,
+      "h": 352,
+      "anchorX": 950,
+      "baseline": 1430
+    }
+  ],
+  "identities": [
+    {
+      "id": "staff-principal",
+      "standingHeight": 357,
+      "activities": {
+        "read": {
+          "enter": [
+            0
+          ],
+          "loop": [
+            1,
+            2
+          ],
+          "exit": [
+            3
+          ],
+          "fps": 0.65
+        }
+      }
+    },
+    {
+      "id": "staff-vice",
+      "standingHeight": 348,
+      "activities": {
+        "check": {
+          "enter": [
+            4
+          ],
+          "loop": [
+            5,
+            6
+          ],
+          "exit": [
+            7
+          ],
+          "fps": 0.65
+        }
+      }
+    },
+    {
+      "id": "staff-office",
+      "standingHeight": 351,
+      "activities": {
+        "organise": {
+          "enter": [
+            8
+          ],
+          "loop": [
+            9,
+            10
+          ],
+          "exit": [
+            11
+          ],
+          "fps": 0.65
+        }
+      }
+    },
+    {
+      "id": "staff-mentor",
+      "standingHeight": 348,
+      "activities": {
+        "read": {
+          "enter": [
+            12
+          ],
+          "loop": [
+            13,
+            14
+          ],
+          "exit": [
+            15
+          ],
+          "fps": 0.65
+        }
+      }
+    }
+  ],
+  "alphaThresholdForBounds": 32,
+  "alpha": {
+    "transparentPixels": 995081,
+    "opaquePixels": 3044,
+    "nearOpaquePixels": 400485,
+    "minimum": 0,
+    "maximum": 255,
+    "cornerAlpha": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "notes": "Original PNG unchanged. Connected alpha components measured; two-pixel crop padding. Head center anchors and feet-minus-three baseline. One median standing height per identity; never resize per frame. Four drawn activity poses: enter, main A, main B, exit. Inspect images before registration.",
+  "releaseStatus": "released"
+}

@@ -8,9 +8,9 @@ window.GAME_CONTENT = {
       location: "corridor",
       portrait: 0,
       name: {
-        zh: "一心",
-        en: "Yat-sum",
-        cn: "一心",
+        zh: "程曉嵐",
+        en: "Ching Hiu-laam",
+        cn: "程晓岚",
       },
       role: {
         zh: "學生・英語辯論隊隊員",
@@ -45,9 +45,9 @@ window.GAME_CONTENT = {
         },
       ],
       scene: {
-        zh: "明澄書院正在試用 AI 英語口說回饋。一心把一張評分單交給你：低評級旁寫着「口音不夠地道」。本案人物及紀錄均屬虛構。",
-        en: "Ming Ching College is piloting AI speaking feedback. Yat-sum hands you a low-rated report marked “accent not native-like.” This case and its records are fictional.",
-        cn: "明澄书院正在试用 AI 英语口语反馈。一心把一张评分单交给你：低评级旁写着“口音不够地道”。本案人物及记录均属虚构。",
+        zh: "明澄書院正在試用 AI 英語口說回饋。在地下走廊，程曉嵐把一張評分單交給你：低評級旁寫着「口音不夠地道」。本案人物及紀錄均屬虛構。",
+        en: "Ming Ching College is piloting AI speaking feedback. In the ground-floor corridor, Ching Hiu-laam hands you a low-rated report marked “accent not native-like.” This case and its records are fictional.",
+        cn: "明澄书院正在试用 AI 英语口语反馈。在地下走廊，程晓岚把一张评分单交给你：低评级旁写着“口音不够地道”。本案人物及记录均属虚构。",
       },
       task: {
         zh: "查明評分是否符合學習目標，再建議試行安排。",
@@ -74,9 +74,9 @@ window.GAME_CONTENT = {
             cn: "线索 02｜听众笔记",
           },
           text: {
-            zh: "同伴能說出一心的建議及理由。老師指出一處停頓可以更清楚。這次紀錄值得追查，但不足以證明整個系統公平或不公平。",
-            en: "Peers correctly restate Yat-sum’s proposal and reason. A teacher suggests one clearer pause. This classroom record warrants investigation, but cannot establish whether the whole system is fair or unfair.",
-            cn: "同伴能说出一心的建议及理由。老师指出一处停顿可以更清楚。这次记录值得追查，但不足以证明整个系统公平或不公平。",
+            zh: "同伴能說出程曉嵐的建議及理由。老師指出一處停頓可以更清楚。這次紀錄值得追查，但不足以證明整個系統公平或不公平。",
+            en: "Peers correctly restate Ching Hiu-laam’s proposal and reason. A teacher suggests one clearer pause. This classroom record warrants investigation, but cannot establish whether the whole system is fair or unfair.",
+            cn: "同伴能说出程晓岚的建议及理由。老师指出一处停顿可以更清楚。这次记录值得追查，但不足以证明整个系统公平或不公平。",
           },
         },
         {
@@ -211,12 +211,12 @@ window.GAME_CONTENT = {
       id: "privacy",
       icon: "shield",
       color: "coral",
-      location: "computer",
+      location: "corridor1",
       portrait: 1,
       name: {
-        zh: "允行",
-        en: "Wan-hang",
-        cn: "允行",
+        zh: "許晉言",
+        en: "Hui Chun-yin",
+        cn: "许晋言",
       },
       role: {
         zh: "學生・班刊編輯",
@@ -251,9 +251,9 @@ window.GAME_CONTENT = {
         },
       ],
       scene: {
-        zh: "電腦室的上傳視窗仍未送出。允行正準備把一篇真人真事作文貼進新工具，換取即時寫作回饋。你的決定仍能改變資料去向。",
-        en: "An upload window waits in the computer room. Wan-hang is about to send a personal essay to a new tool for instant writing feedback. You can still change what gets shared.",
-        cn: "电脑室的上传窗口仍未发送。允行正准备把一篇真人真事作文贴进新工具，换取即时写作反馈。你的决定仍能改变资料去向。",
+        zh: "在一樓走廊，許晉言把尚未送出的作文上傳畫面給你看。他正準備把一篇真人真事作文貼進新工具，換取即時寫作回饋。你的決定仍能改變資料去向。",
+        en: "In the 1F corridor, Hui Chun-yin shows you an unsent essay upload. He is about to send a personal essay to a new tool for instant writing feedback. You can still change what gets shared.",
+        cn: "在一楼走廊，许晋言把尚未发送的作文上传画面给你看。他正准备把一篇真人真事作文贴进新工具，换取即时写作反馈。你的决定仍能改变资料去向。",
       },
       task: {
         zh: "保留寫作支援，同時減少不必要的個人資料外傳。",
@@ -280,9 +280,9 @@ window.GAME_CONTENT = {
             cn: "线索 02｜尚未查核的设置",
           },
           text: {
-            zh: "學校尚未查核工具的資料保留、存取及訓練用途。首頁寫着「安全」，但允行未能找到足以確認這些做法的設定或說明。",
-            en: "The school has not checked the tool’s retention, access or training settings. Its homepage says “secure,” but Wan-hang cannot find enough information to confirm how this writing would be handled.",
-            cn: "学校尚未查核工具的资料保留、访问及训练用途。首页写着“安全”，但允行未能找到足以确认这些做法的设置或说明。",
+            zh: "學校尚未查核工具的資料保留、存取及訓練用途。首頁寫着「安全」，但許晉言未能找到足以確認這些做法的設定或說明。",
+            en: "The school has not checked the tool’s retention, access or training settings. Its homepage says “secure,” but Hui Chun-yin cannot find enough information to confirm how this writing would be handled.",
+            cn: "学校尚未查核工具的资料保留、访问及训练用途。首页写着“安全”，但许晋言未能找到足以确认这些做法的设置或说明。",
           },
         },
         {
@@ -417,12 +417,12 @@ window.GAME_CONTENT = {
       id: "culture",
       icon: "spark",
       color: "amber",
-      location: "library",
+      location: "corridor2",
       portrait: 2,
       name: {
-        zh: "家寶",
-        en: "Ka-po",
-        cn: "家宝",
+        zh: "沈樂葵",
+        en: "Shum Lok-kwai",
+        cn: "沈乐葵",
       },
       role: {
         zh: "學生・雙語展覽策展員",
@@ -457,9 +457,9 @@ window.GAME_CONTENT = {
         },
       ],
       scene: {
-        zh: "圖書館將展出學生雙語作品。一段致謝文字經 AI 翻譯後變得流暢，卻換了重點。家寶請你找回文字原本的心意。",
-        en: "The library is preparing a bilingual student display. An AI translation made a message fluent but shifted its purpose. Ka-po asks you to recover what the writers intended.",
-        cn: "图书馆将展出学生双语作品。一段致谢文字经 AI 翻译后变得流畅，却换了重点。家宝请你找回文字原本的心意。",
+        zh: "在二樓走廊，沈樂葵拿着圖書館雙語展覽的文稿。一段致謝文字經 AI 翻譯後變得流暢，卻換了重點。她請你找回文字原本的心意。",
+        en: "In the 2F corridor, Shum Lok-kwai holds a draft for the library’s bilingual display. An AI translation made a message fluent but shifted its purpose. She asks you to recover what the writers intended.",
+        cn: "在二楼走廊，沈乐葵拿着图书馆双语展览的文稿。一段致谢文字经 AI 翻译后变得流畅，却换了重点。她请你找回文字原本的心意。",
       },
       task: {
         zh: "決定如何使用 AI 翻譯，同時保留作者意思及交代協助方式。",
@@ -623,12 +623,12 @@ window.GAME_CONTENT = {
       id: "access",
       icon: "path",
       color: "violet",
-      location: "courtyard",
+      location: "corridor3",
       portrait: 3,
       name: {
-        zh: "思賢",
-        en: "Sze-yin",
-        cn: "思贤",
+        zh: "韓芊澄",
+        en: "Hon Chin-ching",
+        cn: "韩芊澄",
       },
       role: {
         zh: "學生・語言學習大使",
@@ -663,9 +663,9 @@ window.GAME_CONTENT = {
         },
       ],
       scene: {
-        zh: "小息時，思賢在庭院收集試用意見。學校想用 AI 對話練習「提出澄清問題」，但現有入口限制了部分同學參與。",
-        en: "At break, Sze-yin collects pilot feedback in the courtyard. The school wants AI dialogue practice for asking clarification questions, but the current entry points exclude some learners.",
-        cn: "课间时，思贤在庭院收集试用意见。学校想用 AI 对话练习“提出澄清问题”，但现有入口限制了部分同学参与。",
+        zh: "小息時，韓芊澄在三樓走廊收集試用意見。學校想用 AI 對話練習「提出澄清問題」，但現有入口限制了部分同學參與。",
+        en: "At break, Hon Chin-ching collects pilot feedback in the 3F corridor. The school wants AI dialogue practice for asking clarification questions, but the current entry points exclude some learners.",
+        cn: "课间时，韩芊澄在三楼走廊收集试用意见。学校想用 AI 对话练习“提出澄清问题”，但现有入口限制了部分同学参与。",
       },
       task: {
         zh: "在有限開發時間內，設計能保留學習目標的參與途徑。",

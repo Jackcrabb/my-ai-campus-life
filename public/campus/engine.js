@@ -803,55 +803,13 @@
   const MOTION = Object.freeze({
     playerAcceleration: 680, playerDeceleration: 900, depthAcceleration: 360,
     npcSpeed: 150, npcAcceleration: 680, npcDeceleration: 900,
-    npcRange: 220, npcRest: 3.8, interactionRange: 76, interactionCooldown: 0.35,
+    interactionRange: 76, interactionCooldown: 0.35,
   });
   function approach(value, target, amount) {
     return value < target ? Math.min(target, value + amount) : Math.max(target, value - amount);
   }
   function registeredFrame(look, walking, phase, npc, avatar = {}) {
-    // Measured against the 1536 × 512 source panels. Each entrance shares
-  // one art anchor for its plaque, doorway hit area and walking destination.
-  // Stair pairs on 1F/2F are mounted above the same painted stairwell.
-  const ENTRANCE_ART = Object.freeze({
-    corridor: { exit: [132, 104, 126], playground: [643, 104, 124], hall: [1096, 103, 126], corridor1: [1420, 76, 126] },
-    corridor1: { chinese: [100, 63, 130], english: [790, 64, 132], maths: [1045, 62, 140], corridor: [1295, 64, 116], corridor2: [1430, 64, 116] },
-    corridor2: { chemistry: [179, 65, 132], geography: [895, 65, 132], computer: [1213, 65, 130], corridor1: [1370, 61, 105], corridor3: [1480, 61, 102] },
-    corridor3: { corridor2: [91, 66, 124], history: [445, 65, 117], art: [963, 65, 121], music: [1304, 65, 115], corridor4: [1471, 65, 110] },
-    corridor4: { corridor3: [103, 65, 123], library: [644, 65, 124], rooftop: [956, 65, 124] },
-    playground: { corridor: [104, 167, 176] },
-    hall: { corridor: [97, 215, 144] },
-    chinese: { corridor1: [90, 78, 136] },
-    english: { corridor1: [90, 77, 136] },
-    maths: { corridor1: [100, 56, 140] },
-    chemistry: { corridor2: [106, 94, 142] },
-    geography: { corridor2: [106, 79, 142] },
-    computer: { corridor2: [85, 78, 137] },
-    history: { corridor3: [111, 64, 139] },
-    art: { corridor3: [109, 66, 139] },
-    music: { corridor3: [100, 65, 140] },
-    library: { corridor4: [81, 60, 132] },
-    rooftop: { corridor4: [91, 117, 122] },
-  });
-  // Approved reference mounts plaques in the upper transom above the door leaf.
-  // The roof door has no glazed transom, so its plaque mounts on its upper panel.
-  const PLAQUE_OFFSETS = Object.freeze({
-    corridor:26, corridor1:26, corridor2:18, corridor3:26, corridor4:18,
-    playground:12, hall:2, chinese:26, english:30, maths:20, chemistry:14,
-    geography:15, computer:27, history:21, art:20, music:15, library:23, rooftop:11,
-  });
-  for (const [locationId, entrances] of Object.entries(ENTRANCE_ART)) {
-    for (const door of LOCATIONS[locationId].doors) {
-      const [x, top, width] = entrances[door.id];
-      door.x = Math.round(x * 1500 / 1536);
-      door.artTop = Math.round(top * 500 / 512);
-      door.plaqueTop = Math.round((top + PLAQUE_OFFSETS[locationId]) * 500 / 512);
-      door.artWidth = Math.round(width * 1500 / 1536);
-      door.plaqueWidth = Math.min(door.artWidth, 148);
-      // Keep the physical plaque entirely within the world, not pinned to a viewport.
-      door.x = Math.max(door.plaqueWidth / 2 + 6, Math.min(1500 - door.plaqueWidth / 2 - 6, door.x));
-    }
-  }
-  const registry = window.CAMPUS_CHARACTERS;
+    const registry = window.CAMPUS_CHARACTERS;
     if (!registry) return null;
     const character = npc ? registry.npc(look.identityId, avatar) : registry.player(look);
     const atlas = character && registry.atlases[character.atlasId];
@@ -1318,6 +1276,48 @@
       extra.x = Math.round(extra.x * ratio);
     scene.width = 1500;
   }
+  // Measured against the 1536 × 512 source panels. Each entrance shares
+  // one art anchor for its plaque, doorway hit area and walking destination.
+  // Stair pairs on 1F/2F are mounted above the same painted stairwell.
+  const ENTRANCE_ART = Object.freeze({
+    corridor: { exit: [132, 104, 126], playground: [643, 104, 124], hall: [1096, 103, 126], corridor1: [1420, 76, 126] },
+    corridor1: { chinese: [100, 63, 130], english: [790, 64, 132], maths: [1045, 62, 140], corridor: [1295, 64, 116], corridor2: [1430, 64, 116] },
+    corridor2: { chemistry: [179, 65, 132], geography: [895, 65, 132], computer: [1213, 65, 130], corridor1: [1370, 61, 105], corridor3: [1480, 61, 102] },
+    corridor3: { corridor2: [91, 66, 124], history: [445, 65, 117], art: [963, 65, 121], music: [1304, 65, 115], corridor4: [1471, 65, 110] },
+    corridor4: { corridor3: [103, 65, 123], library: [644, 65, 124], rooftop: [956, 65, 124] },
+    playground: { corridor: [104, 167, 176] },
+    hall: { corridor: [97, 215, 144] },
+    chinese: { corridor1: [90, 78, 136] },
+    english: { corridor1: [90, 77, 136] },
+    maths: { corridor1: [100, 56, 140] },
+    chemistry: { corridor2: [106, 94, 142] },
+    geography: { corridor2: [106, 79, 142] },
+    computer: { corridor2: [85, 78, 137] },
+    history: { corridor3: [111, 64, 139] },
+    art: { corridor3: [109, 66, 139] },
+    music: { corridor3: [100, 65, 140] },
+    library: { corridor4: [81, 60, 132] },
+    rooftop: { corridor4: [91, 117, 122] },
+  });
+  // Approved reference mounts plaques in the upper transom above the door leaf.
+  // The roof door has no glazed transom, so its plaque mounts on its upper panel.
+  const PLAQUE_OFFSETS = Object.freeze({
+    corridor:26, corridor1:26, corridor2:18, corridor3:26, corridor4:18,
+    playground:12, hall:2, chinese:26, english:30, maths:20, chemistry:14,
+    geography:15, computer:27, history:21, art:20, music:15, library:23, rooftop:11,
+  });
+  for (const [locationId, entrances] of Object.entries(ENTRANCE_ART)) {
+    for (const door of LOCATIONS[locationId].doors) {
+      const [x, top, width] = entrances[door.id];
+      door.x = Math.round(x * 1500 / 1536);
+      door.artTop = Math.round(top * 500 / 512);
+      door.plaqueTop = Math.round((top + PLAQUE_OFFSETS[locationId]) * 500 / 512);
+      door.artWidth = Math.round(width * 1500 / 1536);
+      door.plaqueWidth = Math.min(door.artWidth, 148);
+      // Keep the physical plaque entirely within the world, not pinned to a viewport.
+      door.x = Math.max(door.plaqueWidth / 2 + 6, Math.min(1500 - door.plaqueWidth / 2 - 6, door.x));
+    }
+  }
   const registry = window.CAMPUS_CHARACTERS;
   for (const [locationId, scene] of Object.entries(LOCATIONS)) {
     for (const npc of [scene.npc, ...(scene.extras || [])]) {
@@ -1329,18 +1329,60 @@
       }
     }
   }
+  const ROUTINES = window.CAMPUS_ROUTINES;
+  const routineSample = (actor, salt, range) => {
+    const key = actor.id + ':' + actor.turns + ':' + salt;
+    let hash = 2166136261;
+    for (let i = 0; i < key.length; i++) hash = Math.imul(hash ^ key.charCodeAt(i), 16777619);
+    return range[0] + ((hash >>> 0) % 1001) / 1000 * (range[1] - range[0]);
+  };
+  function clearStationX(scene, preferred, occupied = []) {
+    const valid = x => x >= 65 && x <= scene.width - 65 && scene.doors.every(door => Math.abs(door.x - x) >= (door.artWidth || 110) / 2 + (ROUTINES?.timing.stationClearance || 34)) && occupied.every(other => Math.abs(other - x) >= 58);
+    for (let offset = 0; offset <= scene.width; offset += 2) {
+      for (const x of [preferred + offset, preferred - offset]) if (valid(x)) return Math.round(x);
+    }
+    return Math.max(65, Math.min(scene.width - 65, preferred));
+  }
   function createRuntimeScenes() {
     return Object.fromEntries(Object.entries(LOCATIONS).map(([id, scene], sceneIndex) => {
-      const actor = (base, offset = 0) => ({ ...base, look: { ...base.look }, homeX: base.x,
-        state: 'idle', speed: 0, phase: 0, direction: -1, targetX: base.x, restActivity: base.activity,
-        nextChange: 2.4 + (sceneIndex + offset) % 4, turns: 0, depth: offset ? -8 : 0 });
-      const ambient = [
-        actor({ id: 'ambient-boy-' + id, x: 265, interactive: false, activity: 'walk', look: { gender: 'boy', uniform: sceneIndex % 4, hair: sceneIndex % 2, skin: 0 } }, 1),
-        actor({ id: 'ambient-girl-' + id, x: 1240, interactive: false, activity: 'reading', look: { gender: 'girl', uniform: sceneIndex % 4, hair: 1, skin: 0 } }, 2),
-      ];
-      const teacher = registry?.byId[registry.staffIds[(sceneIndex + 6) % 16]];
-      if (teacher && teacher.id !== scene.npc.characterId) ambient.push(actor({ id: 'ambient-staff-' + id, characterId: teacher.id, x: 910, interactive: false, activity: 'chat', look: { ...teacher.look } }, 3));
-      return [id, { ...scene, npc: actor(scene.npc), extras: (scene.extras || []).map((item, i) => actor(item, i + 1)), ambient }];
+      const actor = (base, definition, offset = 0) => {
+        const steps = (definition?.steps || []).map(step => ({ ...step, x: clearStationX(scene, step.x), dwell: [...step.dwell] }));
+        const first = steps[0], x = first?.x ?? base.x;
+        return { ...base, look: { ...base.look }, homeX: x, x,
+          routine: { ...definition, steps }, stepIndex: 0, state: steps.length ? 'prepare' : 'idle',
+          elapsed: 0, duration: (ROUTINES?.timing.prepare || 0) + ((sceneIndex * 3 + offset * 5) % 9) / 8 * (ROUTINES?.timing.initialStagger || 0),
+          speed: 0, phase: 0, direction: first?.facing || -1, targetX: x, targetDepth: first?.depth || 0,
+          activity: first?.activity || null, activityElapsed: 0, activityDwell: 0,
+          turns: 0, depth: first?.depth || 0, pairId: null, pairCooldown: 0,
+          held: null, checkpoint: null, resumeCheckpoint: null, reservation: null };
+      };
+      const main = [scene.npc, ...(scene.extras || [])].map((base, index) => actor(base, ROUTINES?.definitions[base.characterId || base.id], index));
+      const mainStations = main.flatMap(item => item.routine.steps.map(step => step.x));
+      const occupied = [...mainStations];
+      const ambient = [], duties = ROUTINES?.ambientDuties[id] || ['read'];
+      const addPupil = (pupilId, preferred, gender, role) => {
+        if (ambient.some(item => item.id === pupilId)) return;
+        const x = clearStationX(scene, preferred, occupied); occupied.push(x);
+        const target = clearStationX(scene, x + (x > 1000 ? -80 : 80), [...mainStations, x]);
+        const index = ambient.length, activity = duties[index % duties.length];
+        ambient.push(actor({ id: pupilId, x, interactive: false, role, look: { gender, uniform: sceneIndex % 4, hair: index % 2, skin: index % 3 } }, {
+          id: pupilId, scene: id, steps: [
+            { station: role + '-preparation', x, depth: -6, facing: 1, activity, dwell: [30,55] },
+            { station: role + '-review', x: target, depth: -6, facing: -1, activity: duties[(index + 1) % duties.length], dwell: [20,40] },
+          ],
+        }, main.length + index));
+      };
+      for (const person of main) {
+        const partnerId = person.routine.partnerId;
+        if (partnerId) addPupil(partnerId, person.routine.steps[1].x + 78, partnerId.includes('-girl-') ? 'girl' : 'boy', person.routine.steps[1].station + '-partner');
+      }
+      const count = scene.kind === 'corridor' ? 5 : 3;
+      const candidates = [240, 1210, 660, 1030, 350];
+      while (ambient.length < count) {
+        const index = ambient.length;
+        addPupil('ambient-pupil-' + index + '-' + id, candidates[index], index % 2 ? 'girl' : 'boy', 'independent-schoolwork-' + index);
+      }
+      return [id, { ...scene, npc: main[0], extras: main.slice(1), ambient, reservations: new Map(), pairs: new Map() }];
     }));
   }
   window.CAMPUS_LOCATIONS = CAMPUS_LOCATIONS;
@@ -1387,6 +1429,7 @@
       this.frame = 0;
       this.time = 0;
       this.backgrounds = new Map();
+      this.activityDiagnostics = new Set();
       this.talkingId = null;
       this._onAssetReady = () => {
         if (!this.destroyed) this.render();
@@ -1602,7 +1645,7 @@
       if(movement.includes(key)||['e',' ','enter'].includes(key))e.preventDefault();
       this.inputMode='keyboard';
       if(movement.includes(key)){this.keys.add(key);this.target=null;this.targetDepth=null;this.pendingInteraction=null;this.schedule();}
-      if(['e',' ','enter'].includes(key)&&!e.repeat)this.interact();
+      if(['e',' ','enter'].includes(key)&&!e.repeat)this.interact(key==='e'?'npc':'door');
     }
     keyUp(e) {
       this.keys.delete(e.key.toLowerCase());
@@ -1688,7 +1731,8 @@
       this.touchDirection = 0;
       this.touchVertical = 0;
       const npc = this.npcs().find(item => item.id === interaction);
-      if (npc) { npc.state = 'stop'; npc.speed = 0; npc.nextChange = this.time + MOTION.npcRest; }
+      if (npc && ROUTINES) this.interruptActor(npc, 'approach');
+      else if (npc) { npc.state = 'idle'; npc.speed = 0; }
       if (Math.abs(this.x - x) < MOTION.interactionRange && Math.abs(this.depth - this.targetDepth) < 2) this.finishInteraction();
       else this.schedule();
     }
@@ -1701,11 +1745,11 @@
       else if (id.startsWith('door:')) this.setLocation(id.slice(5));
       else this.onInteract(id);
     }
-    interact() {
+    interact(kind = 'any') {
       if (this.paused || this.destroyed || this.time < this.interactionReadyAt) return;
       const scene = this.scenes[this.location];
-      const targets = this.npcs().map(npc => ({ id: npc.id, x: npc.x }));
-      targets.push(...scene.doors.map(door => ({ id: 'door:' + door.id, x: door.x })));
+      const targets = kind === 'door' ? [] : this.npcs().map(npc => ({ id: npc.id, x: npc.x }));
+      if (kind !== 'npc') targets.push(...scene.doors.map(door => ({ id: 'door:' + door.id, x: door.x })));
       const nearest = targets.filter(target => Math.abs(this.x - target.x) < MOTION.interactionRange)
         .sort((a, b) => Math.abs(this.x - a.x) - Math.abs(this.x - b.x))[0];
       if (nearest) { this.pendingInteraction = nearest.id; this.finishInteraction(); }
@@ -1716,43 +1760,166 @@
       // A still image must never glide around the room pretending to walk.
       return Boolean(selected && selected.identity.walk.length >= 2 && requestRaster(selected.atlas.src, this._onAssetReady));
     }
-    updateActors(dt) {
-      if (this.reducedMotion || dt <= 0) return;
-      const scene = this.scenes[this.location];
-      for (const actor of [...this.npcs(), ...scene.ambient]) {
-        const conversing = this.talkingId && (actor.id === this.talkingId || actor.characterId === window.CAMPUS_CHARACTERS?.resolve(this.talkingId)?.id);
-        if (conversing) { actor.state = 'converse'; actor.speed = 0; actor.direction = this.x < actor.x ? -1 : 1; continue; }
-        if (actor.state === 'converse') { actor.state = 'stop'; actor.nextChange = this.time + MOTION.npcRest; }
-        if (actor.id === this.pendingInteraction) { actor.state = 'stop'; actor.speed = 0; actor.direction = this.x < actor.x ? -1 : 1; continue; }
-        const mobile = this.actorCanWalk(actor);
-        if (!mobile) { actor.state = 'idle'; actor.speed = 0; continue; }
-        if ((actor.state === 'idle' || actor.state === 'stop') && this.time >= actor.nextChange) {
-          actor.turns += 1;
-          const range = MOTION.npcRange + (actor.interactive === false ? 40 : 0);
-          actor.targetX = Math.max(180, Math.min(scene.width - 190, actor.homeX + (actor.turns % 2 ? 1 : -1) * range));
-          actor.state = 'walk'; actor.phase = 0;
-          if (actor.interactive === false) actor.activity = 'walk';
-        }
-        if (actor.state === 'walk') {
-          const delta = actor.targetX - actor.x;
-          const limit = MOTION.npcSpeed;
-          const desired = Math.sign(delta) * Math.min(limit, Math.sqrt(2 * MOTION.npcDeceleration * Math.abs(delta)));
-          const acceleration = Math.abs(desired) < Math.abs(actor.speed) ? MOTION.npcDeceleration : MOTION.npcAcceleration;
-          actor.speed = approach(actor.speed, desired, acceleration * dt);
-          let move = actor.speed * dt;
-          if (Math.abs(move) > Math.abs(delta)) move = delta;
-          actor.x += move;
-          if (Math.abs(move) > 0.001) { actor.direction = Math.sign(move); actor.phase += Math.abs(move) * Math.PI * 2 / this.strideDistance(actor.look); }
-          if (Math.abs(actor.targetX - actor.x) < 0.5) {
-            actor.x = actor.targetX; actor.speed = 0; actor.state = 'stop';
-            if (actor.interactive === false) actor.activity = actor.restActivity;
-            actor.nextChange = this.time + MOTION.npcRest + actor.turns % 3;
-          }
-        } else {
-          actor.speed = 0;
-          if (actor.state === 'stop' && this.time + 0.4 < actor.nextChange) actor.state = 'idle';
-        }
+    routineStep(actor) { return actor.routineOverride || actor.routine.steps[actor.stepIndex]; }
+    releaseStation(actor) {
+      if (actor.reservation) this.scenes[this.location].reservations.delete(actor.reservation);
+      actor.reservation = null;
+    }
+    reserveStation(actor, step) {
+      const reservations = this.scenes[this.location].reservations;
+      for (const reservation of reservations.values()) {
+        if (reservation.actorId !== actor.id && Math.abs(reservation.x - step.x) < ROUTINES.timing.actorSeparation && Math.abs(reservation.depth - step.depth) < 12) return false;
       }
+      this.releaseStation(actor);
+      actor.reservation = actor.id + ':' + step.station;
+      reservations.set(actor.reservation, { actorId: actor.id, x: step.x, depth: step.depth });
+      return true;
+    }
+    routineCheckpoint(actor) {
+      if (actor.resumeCheckpoint) return { ...actor.resumeCheckpoint };
+      return { stepIndex: actor.stepIndex, state: actor.state, elapsed: actor.elapsed, duration: actor.duration,
+        activity: actor.activity, activityElapsed: actor.activityElapsed, activityDwell: actor.activityDwell };
+    }
+    interruptActor(actor, kind = 'conversation') {
+      if (actor.pairId) this.endPair(actor.pairId, true);
+      if (!actor.held) actor.checkpoint = this.routineCheckpoint(actor);
+      actor.held = kind; actor.state = 'converse'; actor.speed = 0; actor.pairTalking = false;
+      actor.direction = this.x < actor.x ? -1 : 1;
+    }
+    resumeActor(actor) {
+      if (!actor.held) return;
+      actor.held = null; actor.resumeCheckpoint = actor.checkpoint; actor.checkpoint = null;
+      actor.state = 'recover'; actor.elapsed = 0; actor.speed = 0; actor.phase = 0;
+      actor.duration = routineSample(actor, 'conversation-recovery', ROUTINES.timing.conversationRecovery);
+    }
+    restoreRoutine(actor) {
+      const saved = actor.resumeCheckpoint;
+      actor.resumeCheckpoint = null;
+      if (!saved) return false;
+      actor.stepIndex = saved.stepIndex;
+      const step = this.routineStep(actor);
+      actor.activity = saved.activity; actor.activityDwell = saved.activityDwell;
+      if (saved.state === 'activity' && Math.abs(actor.x - step.x) < 1 && Math.abs(actor.depth - step.depth) < 1) {
+        actor.state = 'activity'; actor.elapsed = saved.elapsed; actor.duration = saved.duration; actor.activityElapsed = saved.activityElapsed;
+      } else {
+        actor.resumeAfterTravel = saved.state === 'activity' ? saved : null;
+        actor.state = 'prepare'; actor.elapsed = 0; actor.duration = ROUTINES.timing.prepare;
+      }
+      return true;
+    }
+    beginActivity(actor) {
+      const step = this.routineStep(actor), resumed = actor.resumeAfterTravel;
+      actor.resumeAfterTravel = null; actor.state = 'activity'; actor.activity = step.activity;
+      actor.activityDwell = resumed?.activityDwell || routineSample(actor, step.station, step.dwell);
+      actor.elapsed = resumed?.elapsed || 0; actor.duration = resumed?.duration || actor.activityDwell;
+      actor.activityElapsed = resumed?.activityElapsed || 0; actor.direction = step.facing || actor.direction;
+      if (step.pair && !resumed && actor.pairCooldown <= 0) this.beginPair(actor);
+    }
+    beginPair(leader) {
+      const scene = this.scenes[this.location], partner = scene.ambient.find(item => item.id === leader.routine.partnerId);
+      if (!partner || partner.held || partner.pairId || leader.pairId) return false;
+      const step = this.routineStep(leader);
+      const occupied = [...scene.reservations.values()].filter(slot => slot.actorId !== partner.id).map(slot => slot.x);
+      const x = clearStationX(scene, step.x + 78, [step.x, ...occupied]);
+      const id = leader.id + ':' + leader.turns;
+      partner.pairCheckpoint = this.routineCheckpoint(partner);
+      this.releaseStation(partner);
+      partner.routineOverride = { station: step.station + '-listener', x, depth: step.depth, facing: x < step.x ? 1 : -1, activity: 'listen', dwell: ROUTINES.timing.pairDwell };
+      this.reserveStation(partner, partner.routineOverride);
+      leader.pairId = partner.pairId = id;
+      leader.state = 'arrive'; leader.elapsed = 0; leader.duration = ROUTINES.timing.arrive;
+      partner.state = 'prepare'; partner.elapsed = 0; partner.duration = ROUTINES.timing.prepare; partner.speed = 0;
+      scene.pairs.set(id, { leader, partner, started: false, wait: 0, elapsed: 0, turnElapsed: 0, turn: 0,
+        duration: routineSample(leader, 'pair-dwell', ROUTINES.timing.pairDwell), turnDuration: routineSample(leader, 'pair-turn-0', ROUTINES.timing.pairTurn) });
+      return true;
+    }
+    endPair(id, interrupted = false) {
+      const scene = this.scenes[this.location], pair = scene.pairs.get(id);
+      if (!pair) return;
+      scene.pairs.delete(id);
+      for (const actor of [pair.leader, pair.partner]) {
+        actor.pairId = null; actor.pairTalking = false; actor.speed = 0;
+        actor.pairCooldown = routineSample(actor, 'pair-cooldown', ROUTINES.timing.pairCooldown);
+      }
+      const partner = pair.partner;
+      this.releaseStation(partner); partner.routineOverride = null;
+      partner.resumeCheckpoint = partner.pairCheckpoint; partner.pairCheckpoint = null;
+      partner.state = 'recover'; partner.elapsed = 0; partner.duration = ROUTINES.timing.recover;
+      const leader = pair.leader, step = this.routineStep(leader);
+      leader.activity = step.activity; leader.activityElapsed = 0;
+      leader.state = interrupted ? 'activity' : 'recover'; leader.elapsed = 0;
+      leader.duration = interrupted ? Math.max(20, leader.activityDwell - pair.elapsed) : ROUTINES.timing.recover;
+    }
+    updatePairs(dt) {
+      const scene = this.scenes[this.location];
+      for (const [id, pair] of scene.pairs) {
+        const { leader, partner } = pair;
+        if (!pair.started) {
+          // Allow the measured journey itself; the short timeout bounds an
+          // unavailable or obstructed partner, not a pupil already approaching.
+          if (partner.state !== 'walk') pair.wait += dt;
+          const ready = [leader, partner].every(actor => actor.state === 'arrive' && actor.elapsed >= ROUTINES.timing.arrive && Math.abs(actor.x - this.routineStep(actor).x) < 1);
+          if (ready) {
+            pair.started = true;
+            for (const actor of [leader, partner]) { actor.state = 'activity'; actor.elapsed = 0; actor.activityElapsed = 0; }
+          } else if (pair.wait >= ROUTINES.timing.pairWait) { this.endPair(id, true); continue; }
+        }
+        if (!pair.started) continue;
+        pair.elapsed += dt; pair.turnElapsed += dt;
+        if (pair.turnElapsed >= pair.turnDuration) {
+          pair.turn++; pair.turnElapsed = 0;
+          pair.turnDuration = routineSample(leader, 'pair-turn-' + pair.turn, ROUTINES.timing.pairTurn);
+        }
+        leader.direction = partner.x < leader.x ? -1 : 1;
+        partner.direction = leader.x < partner.x ? -1 : 1;
+        leader.pairTalking = pair.turn % 2 === 0; partner.pairTalking = !leader.pairTalking;
+        for (const actor of [leader, partner]) { actor.activity = actor.pairTalking ? 'explain' : 'listen'; actor.activityElapsed = pair.turnElapsed; }
+        if (pair.elapsed >= pair.duration) this.endPair(id);
+      }
+    }
+    updateRoutineActor(actor, dt) {
+      if (!actor.routine.steps.length) return;
+      actor.pairCooldown = Math.max(0, actor.pairCooldown - dt);
+      const talking = this.talkingId && (actor.id === this.talkingId || actor.characterId === window.CAMPUS_CHARACTERS?.resolve(this.talkingId)?.id);
+      if (talking || actor.id === this.pendingInteraction) { this.interruptActor(actor, talking ? 'conversation' : 'approach'); return; }
+      if (actor.held) this.resumeActor(actor);
+      if (actor.pairId && this.scenes[this.location].pairs.get(actor.pairId)?.started) return;
+      actor.elapsed += dt;
+      const step = this.routineStep(actor);
+      if (actor.state === 'prepare' && actor.elapsed >= actor.duration) {
+        if (!this.reserveStation(actor, step)) {
+          if (actor.elapsed > actor.duration + ROUTINES.timing.pairWait) { actor.state = 'activity'; actor.elapsed = 0; actor.duration = 20; actor.activity = null; }
+          return;
+        }
+        if (!this.actorCanWalk(actor)) { actor.state = 'activity'; actor.elapsed = 0; actor.duration = 20; actor.activity = null; return; }
+        actor.state = 'walk'; actor.speed = 0; actor.activity = step.activity; actor.targetX = step.x; actor.targetDepth = step.depth;
+      }
+      if (actor.state === 'walk') {
+        const dx = actor.targetX - actor.x, dy = actor.targetDepth - actor.depth, distance = Math.hypot(dx, dy);
+        const desired = Math.min(MOTION.npcSpeed, Math.sqrt(2 * MOTION.npcDeceleration * distance));
+        actor.speed = approach(actor.speed, desired, (desired < actor.speed ? MOTION.npcDeceleration : MOTION.npcAcceleration) * dt);
+        const travel = Math.min(distance, actor.speed * dt);
+        if (distance > 0 && travel > 0) {
+          actor.x += dx / distance * travel; actor.depth += dy / distance * travel;
+          if (Math.abs(dx) > .1) actor.direction = Math.sign(dx);
+          actor.phase += travel * Math.PI * 2 / this.strideDistance(actor.look);
+        }
+        if (distance - travel < .5) { actor.x = actor.targetX; actor.depth = actor.targetDepth; actor.speed = 0; actor.state = 'arrive'; actor.elapsed = 0; actor.duration = ROUTINES.timing.arrive; }
+      } else if (actor.state === 'arrive' && actor.elapsed >= actor.duration && !actor.pairId) this.beginActivity(actor);
+      else if (actor.state === 'activity') {
+        actor.activityElapsed += dt;
+        if (actor.elapsed >= actor.duration) { actor.state = 'recover'; actor.elapsed = 0; actor.duration = ROUTINES.timing.recover; }
+      } else if (actor.state === 'recover' && actor.elapsed >= actor.duration) {
+        if (this.restoreRoutine(actor)) return;
+        this.releaseStation(actor); actor.turns++; actor.stepIndex = (actor.stepIndex + 1) % actor.routine.steps.length;
+        actor.state = 'prepare'; actor.elapsed = 0; actor.duration = ROUTINES.timing.prepare;
+      }
+    }
+    updateActors(dt) {
+      if (!ROUTINES || this.reducedMotion || this.paused || document.hidden || dt <= 0) return;
+      const scene = this.scenes[this.location];
+      for (const actor of [...this.npcs(), ...scene.ambient]) this.updateRoutineActor(actor, dt);
+      this.updatePairs(dt);
     }
     resize(){
       if(this.destroyed)return;
@@ -3229,12 +3396,10 @@
       this.talkingId = talking ? id : null;
       for (const actor of this.npcs()) {
         if (talking && (actor.id === id || actor.characterId === canonical)) {
-          actor.state = 'converse'; actor.speed = 0;
-          actor.direction = this.x < actor.x ? -1 : 1;
-        } else if (actor.state === 'converse') {
-          actor.state = 'stop'; actor.speed = 0; actor.phase = 0;
-          actor.nextChange = this.time + MOTION.npcRest;
-        }
+          if (ROUTINES) this.interruptActor(actor);
+          else { actor.state = 'converse'; actor.speed = 0; actor.direction = this.x < actor.x ? -1 : 1; }
+        } else if (actor.held === 'conversation' && ROUTINES) this.resumeActor(actor);
+        else if (actor.state === 'converse' && !ROUTINES) { actor.state = 'idle'; actor.speed = 0; }
       }
       this.render();
     }
@@ -3392,22 +3557,38 @@
         Math.round(88 * fallbackScale),
       );
     }
-    drawAmbient(c, actor, cam, ground) {
+    drawRoutineActivity(c, actor, x, y, look) {
+      if (actor.held || !this.reducedMotion && (actor.state === 'walk' || actor.state === 'prepare')) return false;
+      const activity = this.reducedMotion ? this.routineStep(actor)?.activity : actor.activity;
+      if (!activity) return false;
+      const id = actor.characterId || actor.id;
+      const stage = this.reducedMotion ? 'loop' : actor.state === 'arrive' ? 'enter' : actor.state === 'recover' ? 'exit' : 'loop';
+      const elapsed = this.reducedMotion ? 0 : stage === 'loop' ? actor.activityElapsed : actor.elapsed;
+      const pose = window.CAMPUS_CHARACTERS?.activity?.(id, activity, elapsed, this.getAvatar() || {}, stage);
+      const image = pose && requestRaster(pose.atlas.src, this._onAssetReady);
+      if (!pose || !image || !pose.frame || !(pose.identity.standingHeight > 0)) {
+        this.activityDiagnostics.add(id + ':' + activity);
+        return false;
+      }
+      const { frame, atlas, identity } = pose;
+      const scale = this.characterHeight(look) / identity.standingHeight;
+      const mirror = atlas.facing === 'left' ? actor.direction > 0 : actor.direction < 0;
+      c.save(); c.translate(Math.round(x), Math.round(y));
+      if (mirror) c.scale(-1, 1);
+      c.drawImage(image, frame.x, frame.y, frame.w, frame.h,
+        Math.round((frame.x - frame.anchorX) * scale), -Math.round((frame.baseline - frame.y) * scale),
+        Math.round(frame.w * scale), Math.round(frame.h * scale));
+      c.restore();
+      return true;
+    }
+    drawRoutineActor(c, actor, cam, ground) {
       const x = actor.x - cam;
-      const height = this.characterHeight(actor.look);
       if (x < -100 || x > this.viewWidth + 100) return;
       const npc = Boolean(actor.look.identityId);
-      const look = !npc ? { ...actor.look, uniform: window.CAMPUS_CHARACTERS?.player(this.getAvatar() || {}).uniform ?? 0 } : actor.look;
-      this.worldSprite(c, x, ground + actor.depth, look, actor.state === 'walk' && Math.abs(actor.speed) > 0.1, actor.phase, actor.direction, npc);
-      if (actor.activity === 'reading') {
-        this.rect(c, x - 13, ground + actor.depth - height * 0.55, 25, 16, '#596d8b');
-        this.rect(c, x - 10, ground + actor.depth - height * 0.55 + 2, 19, 12, '#f4ecd8');
-        this.rect(c, x - 1, ground + actor.depth - height * 0.55 + 2, 1, 12, '#bcae91');
-      }
-      if (actor.activity === 'chat') {
-        this.frostPanel(c, x + 17, ground + actor.depth - height + 12, 29, 18, false, 7);
-        this.text(c, '···', x + 32, ground + actor.depth - height + 21, 13, '#617b79');
-      }
+      const look = { ...actor.look, ...(!npc ? { uniform: window.CAMPUS_CHARACTERS?.player(this.getAvatar() || {}).uniform ?? 0 } : {}),
+        talking: actor.held === 'conversation' || actor.pairTalking === true };
+      if (this.drawRoutineActivity(c, actor, x, ground + actor.depth, look)) return;
+      this.worldSprite(c, x, ground + actor.depth, look, !this.reducedMotion && actor.state === 'walk' && Math.abs(actor.speed) > 0.1, actor.phase, actor.direction, npc);
     }
     render() {
       if (this.destroyed || !this.ctx) return;
@@ -3434,17 +3615,15 @@
         );
       }
       const scene = this.scenes[this.location], progress = this.getProgress() || {}, npcs = this.npcs();
-      for (const actor of scene.ambient) this.drawAmbient(c, actor, cam, ground);
+      for (const actor of scene.ambient) this.drawRoutineActor(c, actor, cam, ground);
       for (const [index, npc] of npcs.entries()) {
         const nx = npc.x - cam;
         if (nx < -100 || nx > this.viewWidth + 100) continue;
         const active = !this.paused && !this.reducedMotion;
-        const blink = active && (this.time + (npc.homeX % 5)) % 5.2 < 0.13;
-        this.worldSprite(c, nx, ground, { ...npc.look, blink, talking: npc.state === 'converse' },
-          npc.state === 'walk' && Math.abs(npc.speed) > 0.1, npc.phase, npc.direction, true);
+        this.drawRoutineActor(c, npc, cam, ground);
         const state = progress[npc.id], completed = Boolean(state && (state === true || state.completed || state.done));
         const pulse = active ? Math.round(Math.sin(this.time * 2.5 + index) * 2) : 0;
-        const badgeTop = ground - this.characterHeight(npc.look) - 40 + pulse;
+        const badgeTop = ground + npc.depth - this.characterHeight(npc.look) - 40 + pulse;
         this.frostPanel(c, nx - 13, badgeTop, 26, 25, completed, 9);
         this.text(c, completed ? '✓' : '!', nx, badgeTop + 13, 16, completed ? '#327e69' : '#577086');
       }

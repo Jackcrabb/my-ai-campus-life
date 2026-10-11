@@ -5,8 +5,12 @@ const path = require('node:path');
 const vm = require('node:vm');
 const root = path.join(__dirname,'..','public','campus');
 function launch(options = {}) {
-  const calls = [], worksheetMounts = [], state = { unlocked:false,allowed:true,classes:[],rejectPin:false,questions:[] };
-  const container = { innerHTML:'', handlers:{}, addEventListener(name,fn){this.handlers[name]=fn;}, removeEventListener(name){delete this.handlers[name];},querySelectorAll(){return[];},querySelector(selector){return selector==='[data-worksheet-manager]'&&this.innerHTML.includes('data-worksheet-manager')?{innerHTML:''}:null;},contains(){return true;} };
+  const calls = [], worksheetMounts = [], state = { unlocked:options.unlocked===true,allowed:true,classes:[],rejectPin:false,questions:[] };
+  const modalScroll = {scrollTop:options.scrollTop||0}, headingFocus = [];
+  const heading = {tabIndex:0,focus(options){headingFocus.push({...options,html:container.innerHTML});}};
+  const container = { innerHTML:'', scrollTop:0, handlers:{}, addEventListener(name,fn){this.handlers[name]=fn;}, removeEventListener(name){delete this.handlers[name];},querySelectorAll(){return[];},
+    closest(selector){return selector==='#modal-content'&&!options.standalone?modalScroll:null;},
+    querySelector(selector){if(selector==='[data-worksheet-manager]'&&this.innerHTML.includes('data-worksheet-manager'))return{innerHTML:''};if(selector==='.ct-header h2'||selector==='.ct-body h3')return heading;return null;},contains(){return true;} };
   const context = vm.createContext({window:{CampusWorksheets:{open(options){const handle={...options,destroyed:false,destroy(){this.destroyed=true;}};worksheetMounts.push(handle);return handle;}}},console,TextEncoder,Uint8Array,DataView,Blob,URL,URLSearchParams,AbortController,
     FormData:class {constructor(form){this.data=form.data;}get(key){return this.data[key];}},
     crypto:require('node:crypto').webcrypto,navigator:{clipboard:{writeText:async()=>{}}},
@@ -33,13 +37,26 @@ function launch(options = {}) {
   const submit=(kind,data)=>workspace.submit({preventDefault(){},target:{closest(){return{dataset:{form:kind},data,elements:{pin:{value:'test-only'}}};}}});
   const click=(action,extra={})=>workspace.click({target:{closest:()=>({dataset:{ct:action,...extra}})}});
   const change=(name,value)=>workspace.change({target:{closest:()=>({name,value})}});
-  return {workspace,context,container,calls,settle,submit,state,click,change,worksheetMounts};
+  return {workspace,context,container,calls,settle,submit,state,click,change,worksheetMounts,modalScroll,headingFocus,heading};
 }
 (async()=>{
+  const entry=fs.readFileSync(path.join(__dirname,'../public/campus/index.html'),'utf8');assert.doesNotMatch(entry,/speech-studio\.(?:js|css)/,'game entry does not load retired studio assets');
+  const obsolete=launch({subjectId:'maths',initialTab:'speech'});await obsolete.settle();assert.equal(obsolete.workspace.state.tab,'hub','obsolete initial tab falls back to the subject home');obsolete.workspace.destroy();
   const printer=launch({subjectId:'maths',initialTab:'results'});await printer.settle();
   assert.equal(printer.workspace.state.tab,'results','explicit results shortcut opens the Results workspace');
   assert.equal(printer.workspace.state.subjectId,'maths','explicit shortcut retains its subject');
   printer.workspace.destroy();
+  const standalone=launch({standalone:true});await standalone.settle();await standalone.submit('unlock',{pin:'fixture'});await standalone.settle();
+  standalone.container.scrollTop=400;await standalone.click('subject',{subject:'maths'});
+  assert.equal(standalone.container.scrollTop,0,'standalone teacher navigation resets its own scroll container');
+  standalone.workspace.destroy();
+  const alreadyUnlocked=launch({unlocked:true,scrollTop:505.5});await alreadyUnlocked.settle();
+  assert.equal(alreadyUnlocked.modalScroll.scrollTop,0,'initial authorized workspace clears the inherited settings scroll');
+  assert.match(alreadyUnlocked.headingFocus.at(-1).html,/aria-busy="false"/,'auth navigation resets after the final async render');
+  alreadyUnlocked.modalScroll.scrollTop=240;const focusedAfterInitial=alreadyUnlocked.headingFocus.length;await alreadyUnlocked.workspace.refresh();
+  assert.equal(alreadyUnlocked.modalScroll.scrollTop,240,'refreshing an already authorized view preserves its position');assert.equal(alreadyUnlocked.headingFocus.length,focusedAfterInitial);alreadyUnlocked.workspace.destroy();
+  const refreshedLogin=launch({scrollTop:420});await refreshedLogin.settle();refreshedLogin.state.unlocked=true;await refreshedLogin.workspace.refresh();
+  assert.equal(refreshedLogin.modalScroll.scrollTop,0,'session recheck after external sign-in starts the authorized workspace at the top');assert.match(refreshedLogin.headingFocus.at(-1).html,/aria-busy="false"/);refreshedLogin.workspace.destroy();
   const chosen=[]; let exits=0;
   const game=launch({onSubject:id=>chosen.push(id),onExit:()=>exits++});await game.settle();
   assert.match(game.container.innerHTML,/解鎖教師工作台/);
@@ -48,20 +65,42 @@ function launch(options = {}) {
   assert.equal(game.context.window.CampusEngine,undefined,'teacher tools run without an engine or student game');
   await game.click('subject',{subject:'maths'});await game.click('tab',{tab:'questions'});
   assert.equal(game.calls.length,1,'locked tools cannot request private question data');
+  game.modalScroll.scrollTop=505.5;const focusedBeforeUnlock=game.headingFocus.length;
   game.state.rejectPin=true;await game.submit('unlock',{pin:'wrong-fixture'});await game.settle();
   assert.equal(game.workspace.state.session.unlocked,false);assert.match(game.container.innerHTML,/PIN 不正確/);
+  assert.equal(game.modalScroll.scrollTop,505.5,'failed PIN leaves the login position intact');assert.equal(game.headingFocus.length,focusedBeforeUnlock);
   assert.ok(!game.calls.some(call=>call.url.endsWith('/teacher/classes')),'failed unlock cannot load private classes');
   game.state.rejectPin=false;await game.submit('unlock',{pin:'test-only'});await game.settle();
   assert.ok(game.workspace.state.session.unlocked);
+  assert.equal(game.modalScroll.scrollTop,0,'successful unlock reveals heading and tabs after inherited settings scroll');
+  assert.match(game.headingFocus.at(-1).html,/aria-busy="false"/,'unlock focus targets the final rendered workspace');
+  assert.equal(game.headingFocus.at(-1).preventScroll,true);
   assert.equal(game.workspace.state.subjectId,'','login does not silently choose the first subject');
   assert.match(game.container.innerHTML,/選擇任教科目/);
   assert.equal((game.container.innerHTML.match(/data-ct="subject"/g)||[]).length,14,'13rooms and the shared AI activities are available');
+  game.modalScroll.scrollTop=560;
   await game.click('subject',{subject:'maths'});
+  assert.equal(game.modalScroll.scrollTop,0,'choosing a subject resets the actual parent modal scroll, not only the inner mount');
+  assert.equal(game.heading.tabIndex,-1,'the new view heading is programmatically focusable');
+  assert.equal(game.headingFocus.at(-1).preventScroll,true,'focus does not scroll past the restored workspace header');
   assert.equal(game.workspace.state.tab,'hub');assert.deepEqual(chosen,['maths']);
   assert.match(game.container.innerHTML,/上傳工作紙/);
+  game.modalScroll.scrollTop=350;
   await game.click('tab',{tab:'questions'});
+  assert.equal(game.modalScroll.scrollTop,0,'tool navigation starts at the top after the async render');
   assert.ok(game.calls.some(call=>call.url.includes('grade=2&subjectId=maths')));
+  game.modalScroll.scrollTop=275;const focusBeforeFilter=game.headingFocus.length;
   await game.change('grade','5');
+  assert.equal(game.modalScroll.scrollTop,275,'grade filtering preserves the current position');
+  assert.equal(game.headingFocus.length,focusBeforeFilter,'filtering does not steal focus');
+  await game.workspace.run(async()=>{throw new Error('Fixture save failure');});
+  assert.equal(game.modalScroll.scrollTop,275,'an error rerender does not jump to the top');
+  assert.equal(game.headingFocus.length,focusBeforeFilter,'an error rerender does not focus a heading');
+  await game.click('tab',{tab:'questions'});
+  assert.equal(game.modalScroll.scrollTop,275,'refreshing the current tab is not a navigation reset');
+  await game.change('subjectId','chinese');
+  assert.equal(game.modalScroll.scrollTop,0,'changing subject in a filter starts the new subject at the top');
+  assert.equal(game.workspace.state.grade,5,'subject navigation retains the grade filter');
   await game.click('tab',{tab:'subjects'});await game.click('subject',{subject:'english'});
   assert.equal(game.workspace.state.grade,5,'changing subject preserves the grade filter');
   await game.click('tab',{tab:'worksheets'});
@@ -69,6 +108,17 @@ function launch(options = {}) {
   mounted.onScopeChange({grade:4,subjectId:'english'});
   await game.click('tab',{tab:'questions'});assert.equal(mounted.destroyed,true);
   assert.ok(game.calls.some(call=>call.url.includes('grade=4&subjectId=english')),'worksheet grade follows back to question tools');
+  const previousTab=game.workspace.state.tab,previousRequestCount=game.calls.length;
+  await game.click('tab',{tab:'speech'});
+  assert.equal(game.workspace.state.tab,previousTab,'retired speech tab cannot be navigated to');
+  assert.equal(game.calls.length,previousRequestCount,'retired speech action sends no requests');
+  for(const locale of ['zh','cn','en']){
+    game.workspace.setLanguage(locale);
+    assert.doesNotMatch(game.container.innerHTML,/語音工作室|语音工作室|Speech studio|data-speech-studio|data-tab="speech"/);
+    await game.click('tab',{tab:'hub'});
+    assert.doesNotMatch(game.container.innerHTML,/語音工作室|语音工作室|Speech studio|data-tab="speech"/,'subject hub has only teaching tools');
+  }
+  game.workspace.setLanguage('zh');
   await game.click('tab',{tab:'classes'});assert.match(game.container.innerHTML,/尚未建立班級/);
   assert.ok(game.calls.every(call=>call.credentials==='same-origin'));
   await game.submit('seed',{schoolYear:'2026-27'});
@@ -82,7 +132,9 @@ function launch(options = {}) {
   const translated={zh:'測試',cn:'测试',en:'Test'};
   const question={id:'stable-question',revision:3,grade:2,subjectId:'maths',roomId:'maths',category:'subject',level:'application',stars:2,maxScore:1,status:'published',title:{...translated},question:{...translated},takeaway:{...translated},options:['a','b','c'].map((id,index)=>({id,text:{...translated},feedback:{...translated},correct:index===1}))};
   game.workspace.state.tab='questions';game.workspace.state.editing=question;
+  game.modalScroll.scrollTop=380;const focusBeforeSave=game.headingFocus.length;
   await game.submit('question',{});
+  assert.equal(game.modalScroll.scrollTop,380,'normal question saving retains the current position');assert.equal(game.headingFocus.length,focusBeforeSave,'saving does not focus a navigation heading');
   const patch=game.calls.find(call=>call.method==='PATCH');
   assert.equal(patch.url,'/api/campus/teacher/questions/stable-question');
   assert.equal(patch.body.expectedRevision,3,'editing includes the server revision for conflict detection');
@@ -125,5 +177,5 @@ function launch(options = {}) {
   assert.equal(Object.keys(game.container.handlers).length,0,'destroy removes delegated listeners');
   const denied=launch();await denied.settle();denied.state.allowed=false;await denied.workspace.refresh();
   const before=denied.calls.length;await denied.submit('unlock',{pin:'test-only'});assert.equal(denied.calls.length,before,'identity authorization remains required before PIN submission');denied.workspace.destroy();
-  console.log('PASS teacher workspace: standalone login, denied/invalid PIN handling,14subject chooser, persistent scope, worksheet mount, read-only AI cases, explicit class creation, versioned editing, scoped/all XLSX, locales and exit lifecycle.');
+  console.log('PASS teacher workspace: standalone login, denied/invalid PIN handling,14subject chooser, persistent scope, worksheet mount, read-only AI cases, explicit class creation, versioned editing, scoped/all XLSX, navigation scroll/focus, stable filter/error position, locales and exit lifecycle.');
 })();

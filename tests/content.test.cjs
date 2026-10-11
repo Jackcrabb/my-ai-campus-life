@@ -9,7 +9,10 @@ const context = vm.createContext({ window: {} });
 const filename = __dirname + '/../public/campus/content.js';
 vm.runInContext(fs.readFileSync(filename, 'utf8'), context, { filename, timeout: 1000 });
 
-const { GAME_CONTENT, TRANSFER_CONTENT } = context.window;
+for (const file of ['characters.js', 'engine.js']) {
+  vm.runInContext(fs.readFileSync(__dirname + '/../public/campus/' + file, 'utf8'), context, { filename: file, timeout: 1000 });
+}
+const { GAME_CONTENT, TRANSFER_CONTENT, CAMPUS_CHARACTERS, CAMPUS_LOCATIONS } = context.window;
 const locales = ['zh', 'cn', 'en'];
 let translatedFields = 0;
 
@@ -59,10 +62,17 @@ assert.equal(GAME_CONTENT.missions.length, 4, 'The campus investigation requires
 
 const expectedLocations = {
   voice: 'corridor',
-  privacy: 'computer',
-  culture: 'library',
-  access: 'courtyard'
+  privacy: 'corridor1',
+  culture: 'corridor2',
+  access: 'corridor3'
 };
+const meetingLabels = {
+  corridor: {zh: '地下走廊', cn: '地下走廊', en: 'ground-floor corridor'},
+  corridor1: {zh: '一樓走廊', cn: '一楼走廊', en: '1F corridor'},
+  corridor2: {zh: '二樓走廊', cn: '二楼走廊', en: '2F corridor'},
+  corridor3: {zh: '三樓走廊', cn: '三楼走廊', en: '3F corridor'},
+};
+const retiredNames = /一心|允行|家寶|家宝|思賢|思贤|Yat-sum|Wan-hang|Ka-po|Sze-yin/;
 const missionIds = new Set();
 const bestDecisionPositions = new Set();
 const translatedMissionFields = [
@@ -81,6 +91,23 @@ for (const mission of GAME_CONTENT.missions) {
     assert.ok(typeof mission[field] === 'string' && mission[field].trim(), `${path}.${field}: missing visual metadata`);
   }
   for (const field of translatedMissionFields) translated(mission[field], `${path}.${field}`);
+
+  // Test the prose as well as the dialogue heading: the app's registry lookup
+  // previously concealed obsolete names and meeting places inside case text.
+  const identity = CAMPUS_CHARACTERS.resolve(mission.id);
+  assert.ok(identity, `${path}: world/portrait identity must exist`);
+  const place = CAMPUS_LOCATIONS[mission.location];
+  assert.equal(place?.kind, 'corridor', `${path}: this classmate is met in a corridor`);
+  assert.equal(place.floor, Object.keys(expectedLocations).indexOf(mission.id), `${path}: meeting floor matches the campus`);
+  for (const locale of locales) {
+    assert.equal(mission.name[locale], identity.name[locale], `${path}: canonical ${locale} name`);
+    assert.ok(mission.scene[locale].includes(identity.name[locale]), `${path}: scene uses the same ${locale} identity`);
+    assert.ok(mission.scene[locale].includes(meetingLabels[mission.location][locale]), `${path}: scene describes the actual ${locale} meeting place`);
+  }
+  assert.ok(!retiredNames.test(JSON.stringify(mission)), `${path}: retired NPC names must not remain in evidence or prose`);
+  if (/\bHe\b/.test(mission.scene.en)) assert.equal(identity.gender, 'boy', `${path}: singular pronoun matches identity`);
+  if (/\bShe\b/.test(mission.scene.en)) assert.equal(identity.gender, 'girl', `${path}: singular pronoun matches identity`);
+
 
   assert.ok(Array.isArray(mission.opening), `${path}.opening: dialogue must be an array`);
   assert.equal(mission.opening.length, 2, `${path}.opening: two opening dialogue lines are required`);

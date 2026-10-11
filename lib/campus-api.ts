@@ -1,4 +1,5 @@
 import { handleWorksheets } from "./campus-worksheets";
+import { handleTts } from "./campus-tts";
 import { CASE_RULES } from "./campus-cases";
 import { CampusError, type CampusContext } from "./campus-types";
 import { allowedTeacher, checkOrigin, cookie, equalSecret, hash, iso, limit, now, readBody, requireTeacher, setCookie, STUDENT_COOKIE, TEACHER_COOKIE, textField, token } from "./campus-security";
@@ -82,8 +83,10 @@ function sanitiseProgress(raw: Record<string, unknown>) {
     if (typeof raw.prologueSeen === "boolean")
         result.prologueSeen = raw.prologueSeen;
     if (raw.avatar && typeof raw.avatar === "object") {
-        const a = raw.avatar as Record<string, unknown>, gender = a.gender === "girl" ? "girl" : "boy", uniform = Number(a.uniform), allowed = gender === "boy" ? [0, 1] : [2, 3];
-        result.avatar = { gender, uniform: allowed.includes(uniform) ? uniform : allowed[0], hair: a.hair === 1 ? 1 : 0, skin: [0, 1, 2].includes(Number(a.skin)) ? Number(a.skin) : 0 };
+        const a = raw.avatar as Record<string, unknown>, gender = a.gender === "girl" ? "girl" : "boy", uniform = Number(a.uniform);
+        // Both approved wardrobes now provide all four uniform slots. Keep the
+        // selected slot when resuming on another device, regardless of gender.
+        result.avatar = { gender, uniform: Number.isInteger(uniform) && uniform >= 0 && uniform < 4 ? uniform : 0, hair: a.hair === 1 ? 1 : 0, skin: [0, 1, 2].includes(Number(a.skin)) ? Number(a.skin) : 0 };
     }
     // Presentation choices may sync; completion, scores and stars are calculated
     // exclusively from validated server attempts and are never accepted here.
@@ -103,6 +106,7 @@ function sanitiseProgress(raw: Record<string, unknown>) {
 }
 export async function handleCampus(request: Request, ctx: CampusContext): Promise<Response> {
     try {
+        if (/^\/api\/campus\/(?:teacher\/tts|student\/tts|tts|audio)(?:\/|$)/.test(new URL(request.url).pathname)) return await handleTts(request, ctx);
         if (/^\/api\/campus\/(?:teacher\/worksheets|student\/worksheets|worksheets)(?:\/|$)/.test(new URL(request.url).pathname)) return await handleWorksheets(request, ctx);
         checkOrigin(request);
         const url = new URL(request.url), path = url.pathname.replace(/^\/api\/campus\/?/, "").split("/").filter(Boolean), route = path.join("/"), method = request.method;

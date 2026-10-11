@@ -104,6 +104,30 @@ async function rejectsCode(promise, code) {
   assert.equal(calls.at(-1).body.version, 7);
   assert.equal(cloud.state.conflict, false);
 
+  // Autosave and answer responses must not race the authoritative score snapshot.
+  let finishSlowSave;
+  responses.push(() => new Promise(resolve => { finishSlowSave = resolve; }));
+  const beforeQueuedMutation = calls.length;
+  const slowSave = cloud.saveProgress({ reflection: 'Before answering' });
+  await Promise.resolve();
+  enqueue({ correct: true, progress: progress(9, { stars: 2 }) });
+  const queuedAnswer = cloud.attempt({ questionId: question.id, revision: 3, optionId: 'b', idempotencyKey: 'queue-regression-answer' });
+  await Promise.resolve();
+  assert.equal(calls.length, beforeQueuedMutation + 1, 'answer waits until the earlier metadata response is accepted');
+  finishSlowSave(response(progress(9, { stars: 0 })));
+  await Promise.all([slowSave, queuedAnswer]);
+  assert.equal(cloud.lastProgress.stars, 2, 'a metadata response cannot replace the later successful answer snapshot');
+  assert.equal(calls.at(-1).body.idempotencyKey, 'queue-regression-answer');
+
+  responses.push(async () => { throw new TypeError('Save response lost'); });
+  enqueue({ correct: true, progress: progress(10, { stars: 2 }) });
+  const afterFailure = await Promise.allSettled([
+    cloud.saveProgress({ reflection: 'A failed save' }),
+    cloud.attempt({ questionId: question.id, revision: 3, optionId: 'b' }),
+  ]);
+  assert.equal(afterFailure[0].status, 'rejected');
+  assert.equal(afterFailure[1].status, 'fulfilled', 'a failed save does not poison the shared mutation queue');
+
   responses.push(async () => { throw new TypeError('Network down'); });
   const failure = await rejectsCode(cloud.attempt({ questionId: question.id, revision: 3, optionId: 'b' }), 'NETWORK_ERROR');
   assert.equal(cloud.state.status, 'offline');
@@ -141,6 +165,22 @@ async function rejectsCode(promise, code) {
 
   enqueue({ session, progress: progress(9), recoveryCode: 'EXAMPLE' });
   await cloud.join({ classCode: 'EXAMPLE', studentNumber: '01', name: '陳晴' });
+  let finishPreviousSessionSave;
+  responses.push(() => new Promise(resolve => { finishPreviousSessionSave = resolve; }));
+  const inFlightSave = cloud.saveProgress({ reflection: 'Old-session save' });
+  await Promise.resolve();
+  const oldQueuedAnswer = cloud.attempt({ questionId: question.id, revision: 3, optionId: 'b' });
+  const oldQueuedSave = cloud.saveProgress({ reflection: 'Old queued draft' });
+  const oldMutations = Promise.allSettled([inFlightSave, oldQueuedAnswer, oldQueuedSave]);
+  enqueue({ ok: true }); await cloud.logout();
+  enqueue({ session, progress: progress(11, { progress: { reflection: 'New session' } }) });
+  await cloud.resume({ classCode: 'EXAMPLE', studentNumber: '01', recoveryCode: 'EXAMPLE' });
+  const requestsAfterResume = calls.length;
+  finishPreviousSessionSave(response(progress(10)));
+  const cancelledMutations = await oldMutations;
+  assert.ok(cancelledMutations.every(result => result.status === 'rejected' && result.reason.code === 'SESSION_CHANGED'));
+  assert.equal(calls.length, requestsAfterResume, 'old queued mutations are cancelled before any new-session network write');
+  assert.equal(cloud.lastProgress.progress.reflection, 'New session', 'even resuming the same student cannot revive old queued work');
   let resolveOldRead;
   responses.push(() => new Promise(resolve => { resolveOldRead = resolve; }));
   const oldRead = cloud.loadProgress();

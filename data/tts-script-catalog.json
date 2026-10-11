@@ -1,0 +1,226 @@
+{
+  "schemaVersion": 1,
+  "description": "Fictional, name-free teacher audition samples. Not a replacement for all runtime dialogue.",
+  "lines": [
+    {
+      "id": "sample-staff-chinese",
+      "characterId": "staff-chinese",
+      "revision": 1,
+      "text": {
+        "zh": "讀文章唔使急住搵標準答案，先睇清楚上下文，再講出支持你想法嘅證據。",
+        "cn": "读文章时不用急着找标准答案，先看清楚上下文，再说出支持你想法的证据。",
+        "en": "Take your time with the passage. Read it in context, then show me the evidence that supports your interpretation."
+      },
+      "gender": "female"
+    },
+    {
+      "id": "sample-staff-english",
+      "characterId": "staff-english",
+      "revision": 1,
+      "text": {
+        "zh": "講英文最緊要表達清楚，唔使怕口音唔同。試吓用自己嘅說話解釋，我會留心聽。",
+        "cn": "说英语时，清楚表达很重要，不用担心自己的口音不同。试着用自己的话解释，我会认真听。",
+        "en": "Your accent doesn't have to sound like mine. Try explaining your idea in your own words, and I'll listen carefully."
+      },
+      "gender": "female"
+    },
+    {
+      "id": "sample-staff-maths",
+      "characterId": "staff-maths",
+      "revision": 1,
+      "text": {
+        "zh": "比較兩組數據之前，先問吓總人數係咪一樣。計清楚比例，先至知道個比較公唔公平。",
+        "cn": "比较两组数据之前，先看看两组的总人数是否相同。算清楚比例，才能判断这样的比较是否公平。",
+        "en": "Before comparing two groups, check how many people are in each. Work out the proportions so your comparison is fair."
+      },
+      "gender": "male"
+    },
+    {
+      "id": "sample-staff-chemistry",
+      "characterId": "staff-chemistry",
+      "revision": 1,
+      "text": {
+        "zh": "做科學探究，每次只改一個因素，其他條件盡量一樣。咁樣先容易睇到，究竟係乜嘢令結果改變。",
+        "cn": "做科学探究时，每次只改变一个因素，其他条件尽量保持相同。这样才容易看出，究竟是什么让结果发生了变化。",
+        "en": "Change one factor at a time and keep the other conditions the same. That helps us explain what caused the result."
+      },
+      "gender": "female"
+    },
+    {
+      "id": "sample-staff-geography",
+      "characterId": "staff-geography",
+      "revision": 1,
+      "text": {
+        "zh": "今日好熱，唔代表我哋已經了解一個地方嘅氣候。一齊睇吓長期記錄，再比較唔同地方，好嗎？",
+        "cn": "今天很热，并不代表我们已经了解一个地方的气候。一起看看长期记录，再比较不同的地方，好吗？",
+        "en": "One hot day doesn't tell us a place's climate. Let's look at long-term records before we compare different places."
+      },
+      "gender": "male"
+    },
+    {
+      "id": "sample-staff-computer",
+      "characterId": "staff-computer",
+      "revision": 1,
+      "text": {
+        "zh": "收到催你即刻登入嘅訊息，先停一停。自己打開官方網站查證，唔好急住撳入面嗰條連結。",
+        "cn": "收到催你马上登录的消息，先停一下。自己打开官方网站核实，不要急着点击消息里的链接。",
+        "en": "If a message pressures you to log in immediately, pause. Open the official website yourself and check before clicking the link."
+      },
+      "gender": "female"
+    },
+    {
+      "id": "sample-staff-history",
+      "characterId": "staff-history",
+      "revision": 1,
+      "text": {
+        "zh": "讀歷史資料，要問清楚邊個寫、幾時寫，同埋寫畀邊個睇。再搵其他資料互相比較，先作判斷。",
+        "cn": "读历史材料，要弄清楚是谁写的、什么时候写的，以及写给谁看。再找其他材料相互比较，然后作出判断。",
+        "en": "Ask who created a source, when they made it, and who it was for. Then compare other evidence before drawing a conclusion."
+      },
+      "gender": "male"
+    },
+    {
+      "id": "sample-staff-art",
+      "characterId": "staff-art",
+      "revision": 1,
+      "text": {
+        "zh": "構圖可以引導人哋先睇邊度。你想突出乜嘢？試吓調整大小同留白，再講吓你點解咁樣安排。",
+        "cn": "构图可以引导观众先看哪里。你想突出什么？试着调整大小和留白，再说说你为什么这样安排。",
+        "en": "Composition guides where people look first. What would you like them to notice? Try changing the scale and spacing, then explain your choice."
+      },
+      "gender": "female"
+    },
+    {
+      "id": "sample-staff-music",
+      "characterId": "staff-music",
+      "revision": 1,
+      "text": {
+        "zh": "先聽清楚穩定嘅拍子，再輕輕跟住拍手。節奏有長有短，但拍子會幫我哋一齊行落去。",
+        "cn": "先听清楚稳定的节拍，再轻轻跟着拍手。节奏中的音有长有短，而稳定的节拍能帮助大家一起演奏。",
+        "en": "Listen for the steady beat, then clap along gently. The rhythm may change, but the beat helps us stay together."
+      },
+      "gender": "male"
+    },
+    {
+      "id": "sample-staff-library",
+      "characterId": "staff-library",
+      "revision": 1,
+      "text": {
+        "zh": "資料個名聽落好專業，都唔代表真係有呢份資料。我哋一齊查吓作者、出版資料，同埋原文先。",
+        "cn": "资料的名字听起来很专业，也不代表它真的存在。我们先一起核对作者、出版信息和原文吧。",
+        "en": "A source can sound convincing without actually existing. Let's check the author, publication details, and original text before we rely on it."
+      },
+      "gender": "female"
+    },
+    {
+      "id": "sample-staff-rooftop",
+      "characterId": "staff-rooftop",
+      "revision": 1,
+      "text": {
+        "zh": "想知道樹蔭有幾涼，我哋可以喺同一時間，用同樣方法量度唔同位置，再記低環境有乜分別。",
+        "cn": "想知道树荫有多凉快，我们可以在同一时间，用同样的方法测量不同位置，再记录环境有哪些区别。",
+        "en": "To investigate shade, measure different spots at the same time using the same method, and record the surrounding conditions."
+      },
+      "gender": "male"
+    },
+    {
+      "id": "sample-staff-playground",
+      "characterId": "staff-playground",
+      "revision": 1,
+      "text": {
+        "zh": "運動之前，先檢查場地同器材，再做好熱身。覺得唔舒服就停低同我講，我哋可以一齊調整活動。",
+        "cn": "运动前，先检查场地和器材，再做好热身。如果感到不舒服，就停下来告诉我，我们可以一起调整活动。",
+        "en": "Check the space and equipment, then warm up. If you feel unwell, stop and tell me. We can adapt the activity together."
+      },
+      "gender": "male"
+    },
+    {
+      "id": "sample-staff-principal",
+      "characterId": "staff-principal",
+      "revision": 1,
+      "text": {
+        "zh": "改變校園之前，我哋要聽吓唔同同學嘅需要。好嘅建議，應該講清楚證據，同埋會影響到邊啲人。",
+        "cn": "在改变校园之前，我们要听听不同同学的需要。好的建议，应该说清楚证据，以及会影响到哪些人。",
+        "en": "Before changing our school, let's listen to different students' needs. A good proposal explains the evidence and considers everyone it could affect."
+      },
+      "gender": "male"
+    },
+    {
+      "id": "sample-staff-vice",
+      "characterId": "staff-vice",
+      "revision": 1,
+      "text": {
+        "zh": "工具話個答案啱，我哋都可以追問點解。有疑問唔緊要，重要係願意查證，同埋聽吓唔同意見。",
+        "cn": "工具说答案正确，我们也可以追问为什么。有疑问没关系，重要的是愿意核实，也愿意听听不同的意见。",
+        "en": "Even when a tool says an answer is correct, we can ask why. Stay curious, check the evidence, and listen to different views."
+      },
+      "gender": "female"
+    },
+    {
+      "id": "sample-staff-office",
+      "characterId": "staff-office",
+      "revision": 1,
+      "text": {
+        "zh": "第一次嚟，唔熟路好正常。你可以先睇校園地圖，有需要就過嚟搵我，我會幫你。",
+        "cn": "第一次来，不熟悉路线很正常。你可以先看看校园地图，有需要就来找我，我会帮助你。",
+        "en": "It's fine to feel a little lost on your first visit. Start with the campus map, and come to me if you need help."
+      },
+      "gender": "male"
+    },
+    {
+      "id": "sample-staff-mentor",
+      "characterId": "staff-mentor",
+      "revision": 1,
+      "text": {
+        "zh": "唔使急住完成所有挑戰，先揀一個地方，慢慢探索，同人傾吓偈先。",
+        "cn": "不用急着完成所有挑战，先选一个地方，慢慢探索，和大家聊聊天吧。",
+        "en": "There's no need to finish every challenge at once. Choose a place to explore, take your time, and get to know people."
+      },
+      "gender": "female"
+    },
+    {
+      "id": "sample-voice",
+      "characterId": "voice",
+      "revision": 1,
+      "text": {
+        "zh": "我想練好英文，但唔想只係因為口音唔同，就畀人工智能扣分。我哋一齊睇吓啲證據，好嗎？",
+        "cn": "我想练好英语，但不希望仅仅因为口音不同，就被人工智能扣分。我们一起看看证据，好吗？",
+        "en": "I want to improve my English, but I don't want an AI tool to mark me down just because my accent is different. Can we check the evidence together?"
+      },
+      "gender": "female"
+    },
+    {
+      "id": "sample-privacy",
+      "characterId": "privacy",
+      "revision": 1,
+      "text": {
+        "zh": "人工智能畀咗我寫作建議，但我想先知道篇文會儲存喺邊，同埋邊個睇到。你可以同我一齊查清楚嗎？",
+        "cn": "人工智能给了我写作建议，但我想先知道文章会存在哪里，又有谁能看到。你能和我一起查清楚吗？",
+        "en": "The AI tool gave me writing advice, but I want to know where my work is stored and who can read it. Will you help me find out?"
+      },
+      "gender": "male"
+    },
+    {
+      "id": "sample-culture",
+      "characterId": "culture",
+      "revision": 1,
+      "text": {
+        "zh": "翻譯可以幫人明白我，但都要保留我本來想講嘅意思。你可唔可以幫我比較吓兩個版本，睇吓有乜唔同？",
+        "cn": "翻译可以帮助别人理解我，但也要保留我原本想表达的意思。你能帮我比较两个版本，看看有什么不同吗？",
+        "en": "Translation can help people understand me, but it should preserve what I mean. Could you compare these two versions with me and see what has changed?"
+      },
+      "gender": "female"
+    },
+    {
+      "id": "sample-access",
+      "characterId": "access",
+      "revision": 1,
+      "text": {
+        "zh": "我希望每個同學都可以參與語言練習。我哋可唔可以一齊諗吓，點樣畀大家多一個選擇，做到同一個學習目標？",
+        "cn": "我希望每位同学都能参与语言练习。我们能不能一起想想，怎样给大家多一种选择，达到同一个学习目标？",
+        "en": "I want everyone to be able to join our language practice. Could we offer another way to take part while working towards the same learning goal?"
+      },
+      "gender": "female"
+    }
+  ]
+}

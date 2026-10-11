@@ -10,7 +10,8 @@
  * used when submitting an answer. Case sourceIds are case-voice etc.; transfer
  * has sourceId 'transfer'. Scores/stars/completion are always server values.
  *
- * saveProgress sends metadata only. Saves from this adapter are serialized.
+ * saveProgress sends metadata only. Metadata and answer mutations share one
+ * queue so a late autosave cannot replace a newer answer's score snapshot.
  * A 409 fetches the current server snapshot and rejects with latestProgress;
  * it never silently merges or overwrites another device's work. Queued saves
  * remain blocked until keepServerProgress() or a deliberate saveProgress(draft,
@@ -34,7 +35,7 @@
     lastContactAt: null, lastSavedAt: null, pending: 0,
     conflict: false,
   };
-  let saveQueue = Promise.resolve();
+  let progressQueue = Promise.resolve();
   let authGeneration = 0;
   let authPending = false;
   class CloudError extends Error {
@@ -124,6 +125,11 @@
       const error = new CloudError("SESSION_CHANGED", "The student changed while this request was in progress.", 409); failure(error); throw error;
     }
   }
+  function queueProgress(work) {
+    const result = progressQueue.then(work, work);
+    progressQueue = result.catch(() => {});
+    return result;
+  }
   async function bootstrap(options) {
     const generation = authGeneration;
     const data = await request("bootstrap", options);
@@ -184,16 +190,19 @@
     const generation = authGeneration;
     let payload;
     try { payload = assignedBody(body); } catch (error) { failure(error); throw error; }
-    try {
-      const result = await request(path, { ...options, method: "POST", body: payload });
-      requireGeneration(generation);
-      acceptProgress(result.progress); state.lastSavedAt = new Date().toISOString(); emit();
-      return result;
-    } catch (error) {
-      // Retain this exact key if the caller explicitly retries after an unknown
-      // network outcome. A new key would represent another real attempt.
-      error.request = { path, body: payload }; throw error;
-    }
+    return queueProgress(async () => {
+      try {
+        requireGeneration(generation);
+        const result = await request(path, { ...options, method: "POST", body: payload });
+        requireGeneration(generation);
+        acceptProgress(result.progress); state.lastSavedAt = new Date().toISOString(); emit();
+        return result;
+      } catch (error) {
+        // Retain this exact key if the caller explicitly retries after an unknown
+        // network outcome. A new key would represent another real attempt.
+        error.request = { path, body: payload }; throw error;
+      }
+    });
   }
   async function attempt(body, options) { return submit("attempts", body, options); }
   async function submitCase(body, options) { return submit("cases", body, options); }
@@ -206,10 +215,11 @@
   async function practiceCheck(body, options = {}) { return request("practice/check", { ...options, method: "POST", body }); }
   function saveProgress(metadata, options = {}) {
     const capturedStudentId = state.session?.studentId;
+    const generation = authGeneration;
     // Capture values now, not when a queued write eventually begins.
     const captured = JSON.parse(JSON.stringify(metadata ?? {}));
     const run = async () => {
-      const generation = authGeneration;
+      requireGeneration(generation);
       if (!capturedStudentId || capturedStudentId !== state.session?.studentId) {
         const error = new CloudError("STUDENT_SESSION_REQUIRED", "The student session changed before this save.", 401); failure(error); throw error;
       }
@@ -236,9 +246,7 @@
         throw error;
       }
     };
-    const promise = saveQueue.then(run, run);
-    saveQueue = promise.catch(() => {});
-    return promise;
+    return queueProgress(run);
   }
   function hydrate(progress = state.lastProgress, questions = state.questions) {
     if (!progress) return null;

@@ -110,7 +110,7 @@
     const bank = records || (window.GRADE_CONTENT || []).filter(q => q.grade === state.student.grade);
     for (const room of subjects) {
       room.levels = bank.filter(q => q.roomId === room.id && q.category === "subject").map(q => ({ ...q, sourceId: q.sourceId || q.id, revision: q.revision || 1 }));
-      room.description = { zh: `中${state.student.grade} · 選擇題目，運用證據檢查答案，再閱讀回饋修正想法。`, cn: `中${state.student.grade} · 选择题目，运用证据检查答案，再阅读反馈修正想法。`, en: `Form ${state.student.grade} · Choose a question, check the evidence, and use feedback to refine your reasoning.` };
+      // Keep the fixed room greeting separate from the editable, graded question bank.
       const identity = window.CAMPUS_CHARACTERS?.resolve("subject:" + room.id);
       if (identity) { room.npcName = identity.name; room.npcRole = identity.role; }
     }
@@ -457,7 +457,7 @@
   function updateAudioStatus(snapshot) {
     if (!snapshot) return;
     const audioButton = $("audio-button");
-    if (audioButton) { audioButton.dataset.musicStatus = snapshot.music.status; audioButton.dataset.voiceStatus = snapshot.voice.status; audioButton.dataset.voiceError = snapshot.voice.errorCode || ""; audioButton.dataset.voiceStarted = String(snapshot.voice.started || false); audioButton.dataset.voiceEvent = snapshot.voice.lastEvent || ""; audioButton.dataset.voiceLocale = snapshot.voice.actualLocale || ""; }
+    if (audioButton) { audioButton.dataset.musicStatus = snapshot.music.status; audioButton.dataset.voiceStatus = snapshot.voice.status; audioButton.dataset.voiceError = snapshot.voice.errorCode || ""; audioButton.dataset.voiceStarted = String(snapshot.voice.started || false); audioButton.dataset.voiceEvent = snapshot.voice.lastEvent || ""; audioButton.dataset.voiceLocale = snapshot.voice.actualLocale || ""; audioButton.dataset.voiceSource = snapshot.voice.source || ""; audioButton.dataset.voiceGender = snapshot.voice.actualGender || ""; }
     const voice = snapshot.voice.requestedLocale && snapshot.voice.requestedLocale !== {zh:"zh-HK",cn:"zh-CN",en:"en-GB"}[state.lang] ? {status:"ready"} : snapshot.voice;
     const failure = voice.status === "unavailable"
       ? voice.errorCode === "voice-gender-unavailable"
@@ -470,7 +470,7 @@
     if (status) status.textContent = failure || (voice.status === "gesture-required"
       ? L("請按「試聽語音」啟用聲音。", "请按“试听语音”启用声音。", "Select Test voice to enable speech.")
       : voice.name ? `${voice.name}${voice.fallback ? L(" · 替代語音", " · 替代语音", " · fallback voice") : ""}${voice.remote ? L(" · 裝置語音服務", " · 设备语音服务", " · device speech service") : ""}`
-        : L("繁體中文：粵語。聲線視裝置支援。", "简体中文：国语。语音取决于设备支持。", "English dialogue uses an English voice available on your device."));
+        : L("繁體中文使用裝置粵語聲線。", "简体中文优先播放普通话角色录音。", "English dialogue uses bundled character recordings."));
     const dialogueStatus = $("dialogue-voice-status");
     if (dialogueStatus) {
       const visible = !!(dialogueId && !titleOpen && !panelOpen && !audioPanelOpen && !document.hidden && !$("dialogue").hidden && failure);
@@ -492,7 +492,7 @@
     const panel = $("audio-panel");
     if (!panel) return;
     const settings = audio?.state.settings || { musicVolume:0, voiceVolume:0, muted:true };
-    panel.innerHTML = `<div class="audio-heading"><h2 id="audio-title">${L("音量設定", "音量设置", "Sound settings")}</h2><button class="audio-close" data-action="audio-close" aria-label="${esc(L("關閉音量設定", "关闭音量设置", "Close sound settings"))}">×</button></div><div class="audio-control"><label for="music-volume">${L("音樂", "音乐", "Music")}</label><div class="audio-slider"><input id="music-volume" data-volume="musicVolume" type="range" min="0" max="100" value="${Math.round(settings.musicVolume*100)}"><output for="music-volume">${Math.round(settings.musicVolume*100)}%</output></div><small id="music-status">Greensleeves</small><button id="music-toggle" class="music-toggle" data-action="music-toggle"></button></div><div class="audio-control"><label for="voice-volume">${L("角色語音", "角色语音", "Character voice")}</label><div class="audio-slider"><input id="voice-volume" data-volume="voiceVolume" type="range" min="0" max="100" value="${Math.round(settings.voiceVolume*100)}"><output for="voice-volume">${Math.round(settings.voiceVolume*100)}%</output></div><small id="voice-status" role="status"></small></div><div class="audio-buttons"><button data-action="voice-test">${L("試聽語音", "试听语音", "Test voice")}</button><button id="audio-mute" data-action="audio-mute" aria-pressed="${settings.muted}"></button></div><p class="audio-note">${L("對話出現時朗讀一次。語音由裝置即時合成；部分聲線會使用裝置供應商的服務。", "对话出现时朗读一次。语音由设备即时合成；部分语音会使用设备供应商的服务。", "Each dialogue line is read once. Speech is synthesized by your device; some voices use its provider’s service.")}</p>`;
+    panel.innerHTML = `<div class="audio-heading"><h2 id="audio-title">${L("音量設定", "音量设置", "Sound settings")}</h2><button class="audio-close" data-action="audio-close" aria-label="${esc(L("關閉音量設定", "关闭音量设置", "Close sound settings"))}">×</button></div><div class="audio-control"><label for="music-volume">${L("音樂", "音乐", "Music")}</label><div class="audio-slider"><input id="music-volume" data-volume="musicVolume" type="range" min="0" max="100" value="${Math.round(settings.musicVolume*100)}"><output for="music-volume">${Math.round(settings.musicVolume*100)}%</output></div><small id="music-status">Greensleeves</small><button id="music-toggle" class="music-toggle" data-action="music-toggle"></button></div><div class="audio-control"><label for="voice-volume">${L("角色語音", "角色语音", "Character voice")}</label><div class="audio-slider"><input id="voice-volume" data-volume="voiceVolume" type="range" min="0" max="100" value="${Math.round(settings.voiceVolume*100)}"><output for="voice-volume">${Math.round(settings.voiceVolume*100)}%</output></div><small id="voice-status" role="status"></small></div><div class="audio-buttons"><button data-action="voice-test">${L("試聽語音", "试听语音", "Test voice")}</button><button id="audio-mute" data-action="audio-mute" aria-pressed="${settings.muted}"></button></div><p class="audio-note">${L("固定對白播放一次。普通話與英語使用角色錄音；粵語使用裝置聲線。學科題目不朗讀。", "固定对白播放一次。普通话与英语使用角色录音；粤语使用设备语音。学科题目不朗读。", "Fixed dialogue plays once. Mandarin and English use character recordings; Cantonese uses device speech. Subject questions are not read aloud.")}</p>`;
     updateAudioStatus(audio?.state);
   }
   function setAudioPanel(open) {
@@ -797,7 +797,7 @@
     [0,1,2,3].forEach(uniform=>CampusEngine.drawPlayerPreview($("uniform-preview-"+uniform), { ...state.avatar, uniform }));
   }
   function specialDialogue(id) {
-    const principal = L("何校長", "何校长", "Principal Ho");
+    const principal = L("鍾允修校長", "钟允修校长", "Principal Chung");
     const staff = (name, role, portrait, lines, next, button) => ({
       name,
       role,
@@ -808,14 +808,14 @@
     });
     if (id === "prologue")
       return staff(
-        principal,
-        L("明澄書院校長", "明澄书院校长", "Principal · Ming Ching College"),
-        "principal",
+        L("唐若寧老師", "唐若宁老师", "Ms Tong"),
+        L("新生導師", "新生导师", "New student mentor"),
+        "prologue",
         [
           L(
-            `歡迎入讀明澄書院，中${state.student.grade}${state.student.section}班的新同學！今天你會認識校園、挑戰學科問題，並幫助同學一起面對使用 AI 的難題。`,
-            `欢迎入读明澄书院，中${state.student.grade}${state.student.section}班的新同学！今天你会认识校园、挑战学科问题，并帮助同学一起面对使用 AI 的难题。`,
-            `Welcome to Ming Ching College, class S${state.student.grade}${state.student.section}! Get to know your campus, explore subject challenges and help classmates think through AI dilemmas.`,
+            "歡迎入讀明澄書院，新同學！今天你會認識校園、挑戰學科問題，並幫助同學一起面對使用 AI 的難題。",
+            "欢迎入读明澄书院，新同学！今天你会认识校园、挑战学科问题，并帮助同学一起面对使用 AI 的难题。",
+            "Welcome to Ming Ching College! Get to know your campus, explore subject challenges and help classmates think through AI dilemmas.",
           ),
           L(
             "由地下走到四樓，與同學、老師和校務處職員交談。調查公平、私隱、文化與共融：先看證據，再作決定，最後修正方案。",
@@ -846,9 +846,9 @@
         [
           T(room.description),
           L(
-            `你可以選擇任何一題開始。先讀清楚條件，作答後看看解釋；答錯也可以再試。這裏共有 ${room.levels.length} 題，可取得 ${roomMax(room)} 顆星。`,
-            `你可以选择任何一题开始。先读清楚条件，作答后看看解释；答错也可以再试。这里共有 ${room.levels.length} 题，可取得 ${roomMax(room)} 颗星。`,
-            `Start with any question. Read its conditions, make a choice and review the explanation. You can retry. This room has ${room.levels.length} questions worth ${roomMax(room)} stars.`,
+            "你可以選擇任何一題開始。先讀清楚條件，作答後看看解釋；答錯也可以再試。題目的星數會顯示在挑戰頁面。",
+            "你可以选择任何一题开始。先读清楚条件，作答后看看解释；答错也可以再试。题目的星数会显示在挑战页面。",
+            "Start with any question. Read its conditions, make a choice and review the explanation. You can retry. The challenge page shows the available stars.",
           ),
         ],
         "subject",
@@ -857,7 +857,7 @@
     }
     if (id === "staff:office")
       return staff(
-        L("林書記", "林书记", "Ms Lam"),
+        L("盧世祺書記", "卢世祺书记", "Mr Lo"),
         L("校務處職員", "校务处职员", "School office clerk"),
         "office",
         [
@@ -877,7 +877,7 @@
       );
     if (id === "staff:vice")
       return staff(
-        L("周副校長", "周副校长", "Vice-principal Chau"),
+        L("蘇韻衡副校長", "苏韵衡副校长", "Vice Principal So"),
         L("副校長", "副校长", "Vice-principal"),
         "vice",
         [
@@ -897,7 +897,7 @@
       );
     if (id === "finale")
       return staff(
-        L("許老師", "许老师", "Teacher Hui"),
+        L("唐若寧老師", "唐若宁老师", "Ms Tong"),
         L("新生導師", "新生导师", "New student mentor"),
         "teacher",
         [
@@ -924,9 +924,9 @@
         total.exitUnlocked
           ? [
               L(
-                `你已收集 ${total.stars} 顆星，校門現已開啟。謝謝你聆聽四位同學，也認真檢視校園裏的不同問題。`,
-                `你已收集 ${total.stars} 颗星，校门现已开启。谢谢你倾听四位同学，也认真检查校园里的不同问题。`,
-                `You have collected ${total.stars} stars. The gate is open. Thank you for listening to four classmates and examining different questions across the school.`,
+                "你已達到星章目標，校門現已開啟。謝謝你聆聽四位同學，也認真檢視校園裏的不同問題。",
+                "你已达到星章目标，校门现已开启。谢谢你倾听四位同学，也认真检查校园里的不同问题。",
+                "You have reached your star target. The gate is open. Thank you for listening to four classmates and examining different questions across the school.",
               ),
               L(
                 "行動可以結束，負責任的使用習慣仍要繼續。請在手帳寫下：你發現的證據、你會改變的做法，以及誰能幫你檢查改善是否有效。",
@@ -936,9 +936,9 @@
             ]
           : [
               L(
-                `目前有 ${total.stars} 星，還需 ${exitTarget() - total.stars} 星才可完成離校目標。五層樓的學科題、四宗案件及遷移挑戰，合共提供 103 星。`,
-                `目前有 ${total.stars} 星，还需 ${exitTarget() - total.stars} 星才可完成离校目标。五层楼的学科题、四宗案件及迁移挑战，合共提供 103 星。`,
-                `You have ${total.stars} stars and need ${exitTarget() - total.stars} more to finish at the gate. The five floors, four cases and transfer challenge offer 103 stars in total.`,
+                "你還未達到離校的星章目標。看看畫面上的星章進度，再到課室、走廊或手帳繼續探索吧。",
+                "你还未达到离校的星章目标。看看画面上的星章进度，再到教室、走廊或手帐继续探索吧。",
+                "You have not reached the star target for leaving yet. Check the star counter, then explore a classroom, a corridor or your notebook.",
               ),
               L(
                 "不用急着一次完成。你可以到地圖尋找未探索的課室，或隨時打開手帳寫反思，稍後再回來。",
@@ -1032,7 +1032,9 @@
       `${backdrop}<div class="portrait ${model.portraitIndex !== undefined ? "p" + model.portraitIndex : "staff-portrait"}" data-portrait="${model.portrait}" role="img" aria-label="${esc(model.name)}"></div><div class="dialogue-box" role="region" aria-label="${esc(L("角色對話", "角色对话", "Character dialogue"))}"><span class="speaker">${esc(model.name)}</span><button class="dialogue-close" data-action="close-dialogue" aria-label="${esc(dialogueId === "prologue" ? L("略過序章", "跳过序章", "Skip introduction") : L("結束對話", "结束对话", "End conversation"))}">${dialogueId === "prologue" ? L("略過", "跳过", "Skip") : "×"}</button><p class="dialogue-text" aria-live="polite">${esc(model.lines[dialogueLine])}</p><div class="dialogue-actions"><span>${esc(model.role)} · ${dialogueLine + 1}/${model.lines.length}</span><button class="voice-replay" data-action="voice-replay" aria-label="${esc(L("重播這句對話", "重播这句对话", "Replay this line"))}" title="${esc(L("重播語音", "重播语音", "Replay voice"))}">♪</button><button id="dialogue-next" data-action="dialogue-next">${isLast ? model.button : L("繼續聆聽", "继续倾听", "Keep listening")} <span aria-hidden="true">▸</span></button></div><p id="dialogue-voice-status" class="small-note" role="status" aria-live="polite" aria-atomic="true" hidden></p></div>`;
     clearDialogueVoiceStatus();
     applyPortrait($("dialogue").querySelector(".portrait"), dialogueId, dialogueLine > 0);
-    if (!audioPanelOpen) audio?.speak({ key:`${dialogueVisit}:${dialogueId}:${dialogueLine}:${state.lang}`, text:model.lines[dialogueLine], locale:state.lang, characterId:dialogueId, gender:window.CAMPUS_CHARACTERS?.resolve(dialogueId)?.gender });
+    // Only this character-dialogue path opts into fixed recordings. Subject
+    // questions, answer options and feedback remain text-only.
+    if (!audioPanelOpen) audio?.speak({ kind:"dialogue", key:`${dialogueVisit}:${dialogueId}:${dialogueLine}:${state.lang}`, text:model.lines[dialogueLine], locale:state.lang, characterId:dialogueId, gender:window.CAMPUS_CHARACTERS?.resolve(dialogueId)?.gender });
   }
   function endDialogue() {
     audio?.stopVoice();
@@ -1180,7 +1182,7 @@
       return `<button class="floorplan-destination ${meta.kind} ${isCurrent ? "current" : ""}" data-travel="${id}" style="--room-x:${roomPosition ?? 50}%" ${isCurrent ? 'aria-current="location"' : ""} aria-label="${esc(`${T(meta.label)} · ${mapDestinationNote(id)}${isCurrent ? " · " + L("你在這裏", "你在这里", "You are here") : ""}`)}"><strong>${esc(meta.kind === "corridor" ? L("走廊", "走廊", "Corridor") : T(meta.label))}</strong><small>${isCurrent ? L("你在這裏", "你在这里", "You are here") : esc(mapDestinationNote(id))}</small></button>`;
     };
     heading(L("明澄書院 · 五層校園", "明澄书院 · 五层校园", "MING CHING COLLEGE · FIVE FLOORS"), L("校園地圖", "校园地图", "Campus map"));
-    $("modal-content").innerHTML = `<div class="campus-map"><div class="map-toolbar"><p class="map-location"><span>${L("目前位置", "当前位置", "Your location")}</span><strong>${esc(currentLabel)}</strong></p></div><div class="map-layout"><div class="map-floors" role="group" aria-label="${esc(L("選擇樓層", "选择楼层", "Choose a floor"))}">${floors.map(floor => `<button data-map-floor="${floor}" aria-pressed="${floor === mapFloor}" aria-controls="floorplan-panel" aria-label="${esc(mapFloorLabel(floor))}"><span>${L(`第 ${floor + 1} 層`, `第 ${floor + 1} 层`, `Floor ${floor + 1}`)}</span><strong>${floor === 0 ? L("地下", "地下", "G") : floor + "F"}</strong></button>`).join("")}</div><section id="floorplan-panel" class="floorplan-panel" aria-label="${esc(floorLabel(mapFloor))}"><div class="floorplan-scroll" tabindex="0" aria-label="${esc(L("校園平面圖；窄螢幕可左右捲動", "校园平面图；窄屏幕可左右滚动", "Campus floor plan; scroll horizontally on a narrow screen"))}"><div class="floorplan-stage" style="--floor-ratio:1024 / ${crop.h};--floor-size:${1536 / crop.h * 100}%;--floor-y:${crop.y / (1536 - crop.h) * 100}%"><div class="floorplan-art" aria-hidden="true"></div>${rooms.map(([id, meta], index) => destination(id, meta, index)).join("")}${corridor ? destination(corridor[0], corridor[1], -1) : ""}</div></div><p class="map-caption"><span class="map-pan-hint">${L("左右滑動平面圖，查看所有房間。", "左右滑动平面图，查看所有房间。", "Swipe the floor plan sideways to see every room.")}</span>${L("點選房間或走廊即可前往；樓層由上至下排列，可用上下方向鍵切換。", "点击房间或走廊即可前往；楼层由上至下排列，可用上下方向键切换。", "Select a room or corridor to travel. Floors run from top to bottom; use Up and Down on the floor buttons.")}</p></section></div><div class="map-footer"><p>${mapFloor === 0 ? L("校務處在地下走廊。取得 100 星後，可到走廊左端校門完成旅程。", "校务处在地下走廊。取得 100 星后，可到走廊左端校门完成旅程。", "Find the school office in the ground-floor corridor. With 100 stars, finish at the gate on its left.") : mapFloor === 2 ? L("副校長在二樓走廊，可一起討論 AI 的公平與責任。", "副校长在二楼走廊，可以一起讨论 AI 的公平与责任。", "Meet the vice principal in the 2F corridor to discuss fairness and responsibility in AI.") : mapFloor === 4 ? L("四樓導師會陪你整理發現，並把所學帶到新的情境。", "四楼导师会陪你整理发现，并把所学带到新的情境。", "The mentor on 4F can help you reflect and apply your learning to a new situation.") : L("課室有學科挑戰，走廊有同學等待與你分享 AI 的難題。", "教室有学科挑战，走廊有同学等待与你分享 AI 的难题。", "Explore subject challenges in the rooms and meet a classmate with an AI dilemma in the corridor.")}</p><button class="secondary" data-action="close">${L("返回校園", "返回校园", "Return to campus")}</button></div></div>`;
+    $("modal-content").innerHTML = `<div class="campus-map"><div class="map-toolbar"><p class="map-location"><span>${L("目前位置", "当前位置", "Your location")}</span><strong>${esc(currentLabel)}</strong></p></div><div class="map-layout"><div class="map-floors" role="group" aria-label="${esc(L("選擇樓層", "选择楼层", "Choose a floor"))}">${floors.map(floor => `<button data-map-floor="${floor}" aria-pressed="${floor === mapFloor}" aria-controls="floorplan-panel" aria-label="${esc(mapFloorLabel(floor))}"><span>${L(`第 ${floor + 1} 層`, `第 ${floor + 1} 层`, `Floor ${floor + 1}`)}</span><strong>${floor === 0 ? L("地下", "地下", "G") : floor + "F"}</strong></button>`).join("")}</div><section id="floorplan-panel" class="floorplan-panel" aria-label="${esc(floorLabel(mapFloor))}"><div class="floorplan-scroll" tabindex="0" aria-label="${esc(L("校園平面圖", "校园平面图", "Campus floor plan"))}"><div class="floorplan-stage" style="--floor-ratio:1024 / ${crop.h};--floor-size:${1536 / crop.h * 100}%;--floor-y:${crop.y / (1536 - crop.h) * 100}%"><div class="floorplan-art" aria-hidden="true"></div>${rooms.map(([id, meta], index) => destination(id, meta, index)).join("")}${corridor ? destination(corridor[0], corridor[1], -1) : ""}</div></div><p class="map-caption"><span class="map-pan-hint">${L("左右滑動平面圖，查看所有房間。", "左右滑动平面图，查看所有房间。", "Swipe the floor plan sideways to see every room.")}</span>${L("點選房間或走廊即可前往；樓層由上至下排列，可用上下方向鍵切換。", "点击房间或走廊即可前往；楼层由上至下排列，可用上下方向键切换。", "Select a room or corridor to travel. Floors run from top to bottom; use Up and Down on the floor buttons.")}</p></section></div><div class="map-footer"><p>${mapFloor === 0 ? L("校務處在地下走廊。取得 100 星後，可到走廊左端校門完成旅程。", "校务处在地下走廊。取得 100 星后，可到走廊左端校门完成旅程。", "Find the school office in the ground-floor corridor. With 100 stars, finish at the gate on its left.") : mapFloor === 2 ? L("副校長在二樓走廊，可一起討論 AI 的公平與責任。", "副校长在二楼走廊，可以一起讨论 AI 的公平与责任。", "Meet the vice principal in the 2F corridor to discuss fairness and responsibility in AI.") : mapFloor === 4 ? L("四樓導師會陪你整理發現，並把所學帶到新的情境。", "四楼导师会陪你整理发现，并把所学带到新的情境。", "The mentor on 4F can help you reflect and apply your learning to a new situation.") : L("課室有學科挑戰，走廊有同學等待與你分享 AI 的難題。", "教室有学科挑战，走廊有同学等待与你分享 AI 的难题。", "Explore subject challenges in the rooms and meet a classmate with an AI dilemma in the corridor.")}</p><button class="secondary" data-action="close">${L("返回校園", "返回校园", "Return to campus")}</button></div></div>`;
   }
   function chooseMapFloor(value, focus = false) {
     const floor = Number(value);

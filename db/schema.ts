@@ -1,4 +1,23 @@
-import { sqliteTable, text, integer, uniqueIndex } from "drizzle-orm/sqlite-core";
+import { sqliteTable, text, integer, uniqueIndex, index } from "drizzle-orm/sqlite-core";
+export const speechClips = sqliteTable("campus_speech_clips", {
+    hash: text("hash").primaryKey(), ownerId: text("owner_id").notNull(),
+    scope: text("scope").notNull(), classroomId: text("classroom_id"),
+    sourceKind: text("source_kind").notNull(), sourceId: text("source_id").notNull(),
+    revision: integer("revision").notNull(), part: text("part").notNull(),
+    characterId: text("character_id").notNull(), locale: text("locale").notNull(),
+    model: text("model").notNull(), voice: text("voice").notNull(),
+    status: text("status").notNull(), budgetDay: text("budget_day").notNull(),
+    characters: integer("characters").notNull(), reservedMicros: integer("reserved_micros").notNull(),
+    bytes: integer("bytes").notNull().default(0), generationId: text("generation_id"),
+    failureCode: text("failure_code"), createdAt: text("created_at").notNull(),
+    auditionOnly: integer("audition_only").notNull().default(0),
+    reviewedBy: text("reviewed_by"), reviewedAt: text("reviewed_at"),
+}, t => [index("campus_speech_budget_day").on(t.budgetDay)]);
+export const speechRequests = sqliteTable("campus_speech_requests", {
+    id: text("id").primaryKey(), ownerId: text("owner_id").notNull(),
+    idempotencyKey: text("idempotency_key").notNull(), clipHash: text("clip_hash").notNull(),
+    createdAt: text("created_at").notNull(),
+}, t => [uniqueIndex("campus_speech_request_owner_key").on(t.ownerId, t.idempotencyKey)]);
 export const bankUpdates = sqliteTable("campus_bank_updates", {
     id: text("id").primaryKey(), ownerId: text("owner_id").notNull(),
     version: text("version").notNull(), createdAt: text("created_at").notNull(),

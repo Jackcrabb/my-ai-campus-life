@@ -1,4 +1,6 @@
-# NPC voice corpus audit
+# Historical NPC voice corpus audit
+
+> **Historical proposal, superseded on 11 October 2026.** Keep this audit as a dated corpus inventory, not current playback policy. The user retained strict device Cantonese, removed the teacher Speech Studio and made all academic questions/options/explanations text-only. The current source bundles 104 exact fixed-dialogue MP3s (52 Mandarin and 52 English) for 20 canonical characters, with provider locale/gender and complete decoding/integrity checks; human listening review is not claimed. The earlier “no Web Speech fallback” recommendation below no longer applies. See the [current internal speech service](OPENROUTER-TTS-SERVICE.md) and [README sound policy](../README.md#sound).
 
 Audit date: 10 October 2026. Scope: inspect the current game and author an audition corpus. No runtime changes or speech-synthesis requests were made by this audit.
 

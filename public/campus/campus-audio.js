@@ -9,7 +9,11 @@
  * reuse it on rerenders to avoid duplicate speech. Include locale and visit in
  * the key when a translated line or new visit should play. Cancel old speech
  * before changing language. replay() is the explicit opt-in exception.
- * Speech is synthesized when played, not a recorded/generated audio file.
+ * Speech normally uses the device. Fixed lines may opt in with kind:'dialogue'
+ * to approved local MP3s in CAMPUS_FIXED_VOICES (cn/en only). Exact canonical
+ * character, full text, language and gender must match; questions never opt in.
+ * Cantonese always uses the strict device voice path below. Missing recordings
+ * can fall back before playback starts, never after a line has started.
  * Available voices depend on browser/OS. Web Speech exposes no standard gender
  * metadata; verified name/URI aliases and optional voiceGenderHints map voices
  * to male/female. boy/girl character aliases normalize before selection.
@@ -35,7 +39,7 @@
   'use strict';
   const STORAGE_KEY = 'my-ai-campus-audio-v1';
   const DEFAULTS = Object.freeze({voiceVolume:0.8, musicVolume:0.25, muted:false});
-  const CONFIG = Object.freeze({eighthSeconds:60/70/2, lookAhead:0.35, schedulerMs:100, fadeSeconds:0.12, duck:0.24, loopRest:1.2, speechRate:1, speechPitch:1, speechStartMs:250, speechRetryMs:300, speechQueueTimeoutMs:30000, speechMinTimeoutMs:30000, speechMaxTimeoutMs:240000, speechMsPerChar:450, musicGain:0.85, melodyGain:0.42});
+  const CONFIG = Object.freeze({eighthSeconds:60/70/2, lookAhead:0.35, schedulerMs:100, fadeSeconds:0.12, duck:0.24, loopRest:1.2, speechRate:1, speechPitch:1, speechStartMs:250, voiceLoadWaitMs:3000, speechRetryMs:300, speechQueueTimeoutMs:30000, speechMinTimeoutMs:30000, speechMaxTimeoutMs:240000, speechMsPerChar:450, musicGain:0.85, melodyGain:0.42});
   const MELODY = [
     ['E4',1],['G4',2],['A4',1],['B4',1.5],['C5',0.5],['B4',1],['A4',2],['F#4',1],['D4',1.5],['E4',0.5],['F#4',1],['G4',2],['E4',1],['E4',1.5],['D#4',0.5],['E4',1],['F#4',3],['B3',2],
     ['E4',1],['G4',2],['A4',1],['B4',1.5],['C5',0.5],['B4',1],['A4',2],['F#4',1],['D4',1.5],['E4',0.5],['F#4',1],['G4',1.5],['F#4',0.5],['E4',1],['D#4',1.5],['C#4',0.5],['D#4',1],['E4',3],['E4',2],[null,1],
@@ -154,7 +158,10 @@
     let settings={...DEFAULTS},storageAvailable=true,disposed=false,unlocked=false,hidden=!!document.hidden;
     try {const raw=JSON.parse(localStorage.getItem(STORAGE_KEY)||'null');if(raw&&typeof raw==='object')settings={voiceVolume:clamp(raw.voiceVolume,DEFAULTS.voiceVolume),musicVolume:clamp(raw.musicVolume,DEFAULTS.musicVolume),muted:raw.muted===true};}catch{storageAvailable=false;}
     const synth=window.speechSynthesis,Utterance=window.SpeechSynthesisUtterance,Context=window.AudioContext||window.webkitAudioContext;
-    let voices=[],voiceStatus=synth&&Utterance?'ready':'unavailable',voiceInfo=null,lastLine=null,lastKey=null,utterance=null,speechGeneration=0,voiceWatchdog=null,voiceStartTimer=null;
+    const manifest=window.CAMPUS_FIXED_VOICES;
+    const fixedClips=manifest?.schemaVersion===1&&Array.isArray(manifest.clips)?manifest.clips.filter(clip=>clip?.approved===true&&['cn','en'].includes(clip.locale)&&typeof clip.text==='string'&&typeof clip.characterId==='string'&&normalizeGender(clip.gender)&&(clip.speechLocale===undefined||(typeof clip.speechLocale==='string'&&scoreVoice({lang:clip.speechLocale},localeTag(clip.locale))>0))&&/^assets\/voices\/(?:[a-zA-Z0-9_-]+\/)*[a-zA-Z0-9_-]+\.mp3$/.test(clip.src)).map(clip=>({...clip,gender:normalizeGender(clip.gender)})):[];
+    const voiceAvailable=()=>!!(synth&&Utterance)||(typeof window.Audio==='function'&&fixedClips.length>0);
+    let voices=[],voiceStatus=voiceAvailable()?'ready':'unavailable',voiceInfo=null,lastLine=null,lastKey=null,utterance=null,recordedAudio=null,speechGeneration=0,voiceWatchdog=null,voiceStartTimer=null,pendingVoice=null,voiceLoadTimer=null;
     let context=null,musicGain=null,musicStatus=Context?'locked':'unavailable',musicRequested=true,musicTimer=null,eventIndex=0,loopStart=0,ducking=false,musicError=null;
     const nodes=new Set(),timers=new Set();
     const state=()=>({settings:{...settings},voice:{status:voiceStatus,...voiceInfo},music:{status:musicStatus,requested:musicRequested,contextState:context?.state||'uninitialized',gain:musicTarget(),ducking,errorCode:musicError},unlocked,hidden,storageAvailable,disposed});
@@ -163,9 +170,24 @@
     const clear=id=>{if(id!==null){clearTimeout(id);timers.delete(id);}};
     const musicTarget=()=>settings.muted||hidden||!musicRequested?0:settings.musicVolume*CONFIG.musicGain*(ducking?CONFIG.duck:1);
     function rampMusic(){if(!context||!musicGain)return;const t=context.currentTime;musicGain.gain.cancelScheduledValues(t);musicGain.gain.setTargetAtTime(musicTarget(),t,CONFIG.fadeSeconds/3);}
-    function finishVoice(generation,status='ready',errorCode=null) {if(generation!==speechGeneration||disposed)return;clear(voiceWatchdog);voiceWatchdog=null;clear(voiceStartTimer);voiceStartTimer=null;utterance=null;voiceStatus=status;voiceInfo={...voiceInfo,errorCode};ducking=false;rampMusic();emit();}
-    function stopVoice(status='ready') {speechGeneration++;clear(voiceWatchdog);voiceWatchdog=null;clear(voiceStartTimer);voiceStartTimer=null;if(synth&&(utterance||synth.speaking||synth.pending))synth.cancel();utterance=null;voiceStatus=synth&&Utterance?status:'unavailable';if(voiceInfo)voiceInfo={...voiceInfo,errorCode:null};ducking=false;rampMusic();emit();}
-    function refreshVoices(){if(disposed)return;voices=synth?.getVoices?.()||[];emit();}
+    function releaseRecorded(){const media=recordedAudio;recordedAudio=null;if(!media)return;media.onplaying=media.onended=media.onerror=null;try{media.pause();media.removeAttribute('src');media.load();}catch{/* Release also tolerates an unavailable media implementation. */}}
+    function clearVoiceLoading(){pendingVoice=null;clear(voiceLoadTimer);voiceLoadTimer=null;}
+    function finishVoice(generation,status='ready',errorCode=null) {if(generation!==speechGeneration||disposed)return;clearVoiceLoading();clear(voiceWatchdog);voiceWatchdog=null;clear(voiceStartTimer);voiceStartTimer=null;utterance=null;releaseRecorded();voiceStatus=status;voiceInfo={...voiceInfo,errorCode,loading:false};ducking=false;rampMusic();emit();}
+    function stopVoice(status='ready') {speechGeneration++;clearVoiceLoading();clear(voiceWatchdog);voiceWatchdog=null;clear(voiceStartTimer);voiceStartTimer=null;releaseRecorded();if(synth&&(utterance||synth.speaking||synth.pending))synth.cancel();utterance=null;voiceStatus=voiceAvailable()?status:'unavailable';if(voiceInfo)voiceInfo={...voiceInfo,errorCode:null,loading:false};ducking=false;rampMusic();emit();}
+    function fixedVoice(record){
+      if(record.kind!=='dialogue'||record.locale==='zh'||!record.gender||typeof window.Audio!=='function')return null;
+      const character=window.CAMPUS_CHARACTERS?.resolve(record.characterId);
+      if(!character||normalizeGender(character.gender)!==record.gender)return null;
+      const matches=fixedClips.filter(clip=>clip.characterId===character.id&&clip.locale===record.locale&&clip.gender===record.gender&&clip.text===record.fullText);
+      return matches.length===1?matches[0]:null;
+    }
+    function resumePendingVoice(){
+      const pending=pendingVoice;
+      if(!pending||pending.generation!==speechGeneration||disposed||hidden||settings.muted||settings.voiceVolume===0||!unlocked)return false;
+      if(selectVoice(voices,pending.record,voiceGenderHints).unavailable)return false;
+      speakBrowser(pending.record,pending.lineIdentity,pending.recordingFallback,false);return true;
+    }
+    function refreshVoices(){if(disposed)return;voices=synth?.getVoices?.()||[];resumePendingVoice();emit();}
     synth?.addEventListener?.('voiceschanged',refreshVoices);refreshVoices();
     const events=[];let duration=0;
     for(const [note,beats]of MELODY){if(note)events.push({at:duration,note,duration:beats*CONFIG.eighthSeconds,volume:CONFIG.melodyGain});duration+=beats*CONFIG.eighthSeconds;}
@@ -213,23 +235,68 @@
         try{if(!context){context=new Context();musicGain=context.createGain();musicGain.gain.value=0;musicGain.connect(context.destination);context.onstatechange=()=>{if(disposed||hidden)return;if(context.state==='running')startMusic();else{clear(musicTimer);musicTimer=null;musicStatus=context.state==='interrupted'?'interrupted':'gesture-required';emit();}};}if(context.state!=='running')await context.resume();if(disposed)return false;if(context.state==='running')startMusic();else musicStatus='gesture-required';}
         catch(error){musicStatus='unavailable';musicError=error?.name||'audio-context-error';}
       }
-      if(voiceStatus==='gesture-required')voiceStatus=synth&&Utterance?'ready':'unavailable';
+      if(voiceStatus==='gesture-required')voiceStatus=voiceAvailable()?'ready':'unavailable';
       refreshVoices();emit();return true;
     }
-    function speak(line,{force=false}={}){
+    function speak(line,{force=false,preserveHistory=false}={}){
       if(disposed||!line||typeof line.text!=='string'||!line.text.trim())return {played:false,reason:'empty'};
-      const record={key:String(line.key??`${line.characterId||'narrator'}:${line.text}`),text:line.text.trim().slice(0,5000),locale:['zh','cn','en'].includes(line.locale)?line.locale:'zh',characterId:line.characterId||'narrator',gender:normalizeGender(line.gender)};
-      lastLine=record;
-      const lineIdentity=JSON.stringify([record.key,record.locale,record.characterId,record.gender,record.text]);
+      const record={key:String(line.key??`${line.characterId||'narrator'}:${line.text}`),text:line.text.trim().slice(0,5000),fullText:line.text,kind:line.kind==='dialogue'?'dialogue':null,locale:['zh','cn','en'].includes(line.locale)?line.locale:'zh',characterId:line.characterId||'narrator',gender:normalizeGender(line.gender),preserveHistory};
+      if(!preserveHistory)lastLine=record;
+      const lineIdentity=JSON.stringify([record.key,record.locale,record.characterId,record.gender,record.fullText,record.kind]);
       if(!force&&lineIdentity===lastKey)return {played:false,reason:'duplicate'};
-      if(!synth||!Utterance){voiceStatus='unavailable';emit();return {played:false,reason:'unavailable'};}
+      const clip=fixedVoice(record);
+      if(!clip&&(!synth||!Utterance))return speakBrowser(record,lineIdentity);
       if(!unlocked){voiceStatus='gesture-required';emit();return {played:false,reason:'gesture-required'};}
       if(hidden||settings.muted||settings.voiceVolume===0){stopVoice(hidden?'paused':'muted');return {played:false,reason:hidden?'hidden':'muted'};}
+      return clip?speakRecorded(record,lineIdentity,clip):speakBrowser(record,lineIdentity);
+    }
+    function speakRecorded(record,lineIdentity,clip){
+      stopVoice();const generation=++speechGeneration;if(!record.preserveHistory)lastKey=lineIdentity;let started=false,media;
+      voiceInfo={source:'recorded',requestedLocale:localeTag(record.locale),actualLocale:clip.speechLocale||(record.locale==='cn'?'cmn':'en'),requestedGender:record.gender,actualGender:clip.gender,name:'Bundled recording',src:clip.src,fallback:false,unavailable:false,remote:false,started:false,attempt:1,lastEvent:'queued',errorCode:null};
+      voiceStatus='queued';
+      const current=()=>generation===speechGeneration&&!disposed&&recordedAudio===media;
+      function fail(code){
+        if(!current())return;
+        // Only a pre-start failure may use the device. Stop/replacement clears
+        // the media identity first, so late play() rejections cannot restart it.
+        if(!started){speakBrowser(record,lineIdentity,code);return;}
+        voiceInfo={...voiceInfo,lastEvent:'error'};finishVoice(generation,'error',code);
+      }
+      function watchdog(timeout,code){clear(voiceWatchdog);voiceWatchdog=later(()=>fail(code),timeout);}
+      try{
+        media=new window.Audio();recordedAudio=media;media.preload='auto';media.volume=settings.voiceVolume;media.playbackRate=1;
+        media.onplaying=()=>{if(!current()||started)return;started=true;voiceInfo={...voiceInfo,started:true,lastEvent:'start'};voiceStatus='speaking';ducking=true;rampMusic();watchdog(Math.min(CONFIG.speechMaxTimeoutMs,Math.max(CONFIG.speechMinTimeoutMs,record.fullText.length*CONFIG.speechMsPerChar)),'recording-timeout');emit();};
+        media.onended=()=>{if(!current())return;if(!started){fail('recording-did-not-start');return;}voiceInfo={...voiceInfo,lastEvent:'end'};finishVoice(generation);};
+        media.onerror=()=>fail('recording-unavailable');
+        media.src=clip.src;watchdog(CONFIG.speechQueueTimeoutMs,'recording-start-timeout');
+        media.play()?.catch(error=>fail(error?.name||'recording-play-error'));
+      }catch(error){return speakBrowser(record,lineIdentity,error?.name||'recording-play-error');}
+      emit();return {played:true,voice:voiceInfo};
+    }
+    function speakBrowser(record,lineIdentity,recordingFallback=null,allowVoiceWait=true){
+      if(!synth||!Utterance){stopVoice('unavailable');voiceInfo={source:'browser',unavailable:true,errorCode:recordingFallback||'voice-language-unavailable',recordingFallback};emit();return {played:false,reason:'unavailable'};}
       stopVoice();refreshVoices();let selected=selectVoice(voices,record,voiceGenderHints);
-      const selectionInfo=()=>({requestedLocale:selected.requestedLocale,actualLocale:selected.voice?.lang||null,requestedGender:selected.requestedGender,actualGender:selected.actualGender,name:selected.voice?.name||null,fallback:selected.fallback,unavailable:selected.unavailable,remote:selected.voice?selected.voice.localService!==true:false,errorCode:selected.reason});
+      const selectionInfo=()=>({source:'browser',requestedLocale:selected.requestedLocale,actualLocale:selected.voice?.lang||null,requestedGender:selected.requestedGender,actualGender:selected.actualGender,name:selected.voice?.name||null,fallback:selected.fallback,unavailable:selected.unavailable,remote:selected.voice?selected.voice.localService!==true:false,errorCode:selected.reason,recordingFallback,loading:false});
       voiceInfo=selectionInfo();
-      if(selected.unavailable){voiceStatus='unavailable';emit();return {played:false,reason:selected.reason==='voice-gender-unavailable'?selected.reason:'voice-unavailable'};}
-      const generation=++speechGeneration;lastKey=lineIdentity;let attempt=0;
+      if(selected.unavailable){
+        // Some browsers populate an initially empty inventory asynchronously.
+        // Preserve only this requested line for one bounded window. A populated
+        // inventory with no matching language/gender is not a loading condition.
+        if(allowVoiceWait&&voices.length===0){
+          const generation=speechGeneration;if(!record.preserveHistory)lastKey=lineIdentity;
+          pendingVoice={generation,record,lineIdentity,recordingFallback};
+          voiceStatus='queued';voiceInfo={...voiceInfo,loading:true,unavailable:false,errorCode:null,lastEvent:'voices-loading'};
+          voiceLoadTimer=later(()=>{
+            voiceLoadTimer=null;if(pendingVoice?.generation!==generation||generation!==speechGeneration||disposed)return;
+            voices=synth.getVoices?.()||[];
+            if(resumePendingVoice())return;
+            selected=selectVoice(voices,record,voiceGenderHints);voiceInfo=selectionInfo();finishVoice(generation,'unavailable',selected.reason);
+          },CONFIG.voiceLoadWaitMs);
+          emit();return {played:true,reason:'voices-loading',voice:voiceInfo};
+        }
+        voiceStatus='unavailable';emit();return {played:false,reason:selected.reason==='voice-gender-unavailable'?selected.reason:'voice-unavailable'};
+      }
+      const generation=++speechGeneration;if(!record.preserveHistory)lastKey=lineIdentity;let attempt=0;
       const speechText=record.locale==='en'?englishSpeechText(record.text):record.text;
       function queueAttempt(delay){
         voiceStatus='queued';voiceInfo={...voiceInfo,started:false,attempt:attempt+1,lastEvent:'queued',errorCode:null};ducking=false;rampMusic();
@@ -273,13 +340,21 @@
       queueAttempt(CONFIG.speechStartMs);
       emit();return {played:true,voice:voiceInfo};
     }
-    function replay(){return lastLine?speak(lastLine,{force:true}):{played:false,reason:'no-line'};}
-    function tryVoice(locale='zh') {const previousLine=lastLine,previousKey=lastKey;const text=locale==='en'?'Welcome to your AI campus life.':locale==='cn'?'欢迎来到我的人工智能校园生活。':'歡迎來到我的人工智能校園生活。';const result=speak({key:'voice-preview',text,locale,characterId:'preview'},{force:true});lastLine=previousLine;lastKey=previousKey;return result;}
+    function replay(){return lastLine?speak({...lastLine,text:lastLine.fullText},{force:true}):{played:false,reason:'no-line'};}
+    function tryVoice(locale='zh') {
+      const previousLine=lastLine,previousKey=lastKey;
+      const mentor=window.CAMPUS_CHARACTERS?.resolve('prologue');
+      const previews=locale==='zh'||!mentor?[]:fixedClips.filter(clip=>clip.preview===true&&clip.locale===locale&&clip.characterId===mentor.id&&clip.gender===normalizeGender(mentor.gender));
+      const clip=previews.length===1?previews[0]:null;
+      const text=clip?.text||(locale==='en'?'Welcome to your AI campus life.':locale==='cn'?'欢迎来到我的人工智能校园生活。':'歡迎來到我的人工智能校園生活。');
+      try{return speak({key:'voice-preview',text,locale,characterId:clip?mentor.id:'preview',gender:clip?.gender,kind:clip?'dialogue':undefined},{force:true,preserveHistory:true});}
+      finally{lastLine=previousLine;lastKey=previousKey;}
+    }
     function setSettings(patch={}){
       if(disposed)return state();const previous=settings;
       settings={voiceVolume:clamp(patch.voiceVolume,settings.voiceVolume),musicVolume:clamp(patch.musicVolume,settings.musicVolume),muted:typeof patch.muted==='boolean'?patch.muted:settings.muted};
       try{localStorage.setItem(STORAGE_KEY,JSON.stringify(settings));}catch{storageAvailable=false;}
-      if(settings.muted||settings.voiceVolume===0)stopVoice('muted');else if(utterance&&previous.voiceVolume!==settings.voiceVolume)utterance.volume=settings.voiceVolume;
+      if(settings.muted||settings.voiceVolume===0)stopVoice('muted');else if(previous.voiceVolume!==settings.voiceVolume){if(utterance)utterance.volume=settings.voiceVolume;if(recordedAudio)recordedAudio.volume=settings.voiceVolume;}
       if(settings.muted||settings.musicVolume===0)stopMusic();else if(unlocked)startMusic();rampMusic();emit();return state();
     }
     function setMusicPlaying(value){musicRequested=value===true;if(musicRequested)startMusic();else stopMusic();emit();}
