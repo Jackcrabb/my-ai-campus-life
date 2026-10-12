@@ -149,13 +149,59 @@ try {
   for (const statement of fs.readFileSync(rotation.sqlPath,'utf8').split(';').map(value=>value.trim()).filter(Boolean)) await db.prepare(statement).run();
   await call('teacher/classes',{cookie:otherLogin.cookie,expected:401});
   const rotationCode = JSON.parse(fs.readFileSync(rotation.credentialPath,'utf8')).accessCode;
-  await call('teacher/unlock',{method:'POST',body:{pin:rotationCode}});
+  const rotationLogin = await call('teacher/unlock',{method:'POST',body:{pin:rotationCode}});
 
   const limited = {...base,clientIp:'203.0.113.99'};
   for (let i=0;i<20;i++) await call('teacher/unlock',{method:'POST',body:{pin:'1234'},context:limited,headers:{'cf-connecting-ip':'198.51.100.'+i,'x-forwarded-for':'198.51.100.'+i},expected:401});
   await call('teacher/unlock',{method:'POST',body:{pin:rotationCode},context:limited,headers:{'cf-connecting-ip':'198.51.100.250'},expected:429});
   await call('teacher/unlock',{method:'POST',body:{pin:rotationCode},context:{...limited,now:base.now+16*60*1000}});
-  console.log(`PASS independent teacher auth: ${checks} checks; anonymous login, legacy preservation, owner and worksheet isolation, ignored identity headers, trusted-IP limits, hashed credentials, secure sessions, expiry, logout and revocation. Fresh login ${otherLogin.queries}/50 SQL statements; 24-class setup ${defaults.queries}/50, including concurrent/idempotent setup.`);
+
+  const pinContext = {...base,clientIp:'203.0.113.11'}, codeFile = path.join(directory,'numeric-code.txt');
+  for (const invalid of ['123','1234567890123','12x4','1234\n5678']) {
+    fs.writeFileSync(codeFile,invalid,{mode:0o600});
+    assert.throws(() => provisionTeacherCode({label:'Invalid code',codeFile,directory}),/4–12 digit/); checks++;
+  }
+  fs.writeFileSync(codeFile,'1234\n',{mode:0o600});
+  fs.chmodSync(codeFile,0o644);
+  assert.throws(() => provisionTeacherCode({label:'Shared file',codeFile,directory}),/regular private file/); checks++;
+  fs.chmodSync(codeFile,0o600);
+  const link = path.join(directory,'code-link.txt'); fs.symlinkSync(codeFile,link);
+  assert.throws(() => provisionTeacherCode({label:'Linked file',codeFile:link,directory}),/regular private file/); checks++;
+
+  // Record a real student result before replacing the credential. Rotation must
+  // keep the existing owner, class, bank, assignment and earned score intact.
+  const preservedClass = defaults.data.classes[0];
+  const pinQuestions = (await call('teacher/questions?grade=1&subjectId=maths',{cookie:rotationLogin.cookie,context:pinContext})).data;
+  const pinQuestion = pinQuestions.questions[0];
+  const learner = await call('student/join',{method:'POST',body:{classCode:preservedClass.classCode,studentNumber:'2',name:'PIN rotation learner'},context:pinContext});
+  const assignment = (await call('questions?subjectId=maths',{cookie:learner.cookie,context:pinContext})).data;
+  const answer = await call('attempts',{method:'POST',cookie:learner.cookie,context:pinContext,body:{questionId:pinQuestion.id,revision:pinQuestion.revision,assignmentId:assignment.assignmentId,optionId:pinQuestion.options.find(option=>option.correct).id,idempotencyKey:crypto.randomUUID()}});
+  assert.ok(answer.data.awardedStars > 0); checks++;
+  const priorResults = (await call(`teacher/results?classId=${preservedClass.id}`,{cookie:rotationLogin.cookie,context:pinContext})).data;
+  const priorClasses = (await call('teacher/classes',{cookie:rotationLogin.cookie,context:pinContext})).data;
+  const numeric = provisionTeacherCode({label:'Shared teacher workspace',ownerId:second.ownerId,replaceExisting:true,codeFile,directory});
+  assert.equal(JSON.parse(fs.readFileSync(numeric.credentialPath,'utf8')).accessCode,'1234'); checks++;
+  const numericSql = fs.readFileSync(numeric.sqlPath,'utf8');
+  assert.ok(!numericSql.includes("'1234'")); checks++;
+  for (const statement of numericSql.split(';').map(value=>value.trim()).filter(Boolean)) await db.prepare(statement).run();
+  await call('teacher/classes',{cookie:rotationLogin.cookie,context:pinContext,expected:401});
+  await call('teacher/classes',{cookie:otherLogin.cookie,context:pinContext,expected:401});
+  for (const pin of [rotationCode,secondPrivate.accessCode,'4321','123','1234567890123',1234])
+    await call('teacher/unlock',{method:'POST',body:{pin},context:pinContext,expected:401});
+  const numericLogin = await call('teacher/unlock',{method:'POST',body:{pin:' 1234 '},context:pinContext});
+  assert.match(numericLogin.cookie,/^campus_teacher=[a-f0-9]{48}$/);
+  assert.match(numericLogin.headers.get('set-cookie'),/HttpOnly; SameSite=Strict; Max-Age=1800; Secure/);
+  const numericSession = await db.prepare('SELECT owner_id,credential_id FROM campus_teacher_unlocks WHERE token_hash=?').bind(sha(numericLogin.cookie.split('=')[1])).first();
+  assert.deepEqual(numericSession,{owner_id:second.ownerId,credential_id:numeric.credentialId}); checks += 3;
+  assert.deepEqual((await call('teacher/classes',{cookie:numericLogin.cookie,context:pinContext})).data,priorClasses);
+  assert.deepEqual((await call('teacher/questions?grade=1&subjectId=maths',{cookie:numericLogin.cookie,context:pinContext})).data,pinQuestions);
+  assert.deepEqual((await call(`teacher/results?classId=${preservedClass.id}`,{cookie:numericLogin.cookie,context:pinContext})).data,priorResults); checks += 3;
+  await call('teacher/classes',{cookie:'campus_teacher=1234',context:pinContext,expected:401});
+  const pinLimited = {...base,clientIp:'203.0.113.98'};
+  for (let i=0;i<20;i++) await call('teacher/unlock',{method:'POST',body:{pin:'4321'},context:pinLimited,expected:401});
+  await call('teacher/unlock',{method:'POST',body:{pin:'1234'},context:pinLimited,expected:429});
+  await call('teacher/unlock',{method:'POST',body:{pin:'1234'},context:{...pinLimited,now:base.now+16*60*1000}});
+  console.log(`PASS independent teacher auth: ${checks} checks; provisioned numeric and private codes, legacy preservation, owner and worksheet isolation, ignored identity headers, trusted-IP limits, hashed credentials, secure sessions, expiry, logout and rotation preserving classes, questions and student results. Fresh login ${otherLogin.queries}/50 SQL statements; 24-class setup ${defaults.queries}/50, including concurrent/idempotent setup.`);
 } finally {
   await worker.dispose();
   fs.rmSync(temp,{recursive:true,force:true});

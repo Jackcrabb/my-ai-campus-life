@@ -47,6 +47,15 @@
       "height": 822,
       "bytes": 261747,
       "sha256": "cfa8893dfb79ebaf150b5e03c7ba1af3399f0bcb20435c3c1ea9d2d94a9e58fa"
+    },
+    {
+      "file": "teacher-shared-code-workspace.jpg",
+      "kind": "browser-screenshot",
+      "description": "Published teacher workspace after successful replacement numeric-code login through New Game → Teacher; the browser verified 14 subject/theme entries.",
+      "width": 1728,
+      "height": 822,
+      "bytes": 212429,
+      "sha256": "5851b8c30ea99712931ab36bb0b6401d8f56966b237c9d11791f13a5049cabb6"
     }
   ]
 }

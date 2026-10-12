@@ -75,7 +75,9 @@ export async function independentTeacherLogin(ctx: CampusContext, value: unknown
     await limit(ctx, "teacher-code-ip:" + await hash(ip), 20, 15 * 60 * 1000);
     await limit(ctx, "teacher-code-global", 200, 60 * 1000);
     const code = typeof value === "string" ? value.trim().toLowerCase() : "";
-    if (!/^[a-f0-9]{48}$/.test(code))
+    // Numeric codes are accepted only when their hash has been provisioned.
+    // Session tokens retain their separate 48-character random-token format.
+    if (!/^(?:[a-f0-9]{48}|[0-9]{4,12})$/.test(code))
         throw new CampusError(401, "INVALID_TEACHER_CODE", "The teacher access code is not valid.");
     const row = await ctx.db.prepare("SELECT id,owner_id FROM campus_teacher_credentials WHERE code_hash=? AND revoked_at IS NULL").bind(await hash(code)).first<{ id: string; owner_id: string }>();
     if (!row)

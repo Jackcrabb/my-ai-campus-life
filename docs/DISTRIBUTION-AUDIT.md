@@ -8,7 +8,7 @@ This document keeps dated deployment and access checks for **My AI Campus Life**
 
 **Published:** [independent public game](https://my-ai-campus-life.hjhlgz.workers.dev/campus/), deployed on 13 October 2026 (Hong Kong time). Cloudflare reported version `3d48a39b-baf3-4e68-9c46-d6f4c5b0fc2f`. The live API checks, browser login checks and new PNG QR validation below passed. The account owner explicitly authorized the official Wrangler scopes for account/user reads, Worker deployment, D1 administration and background access. Login succeeded, the selected account was verified, and its dashboard displayed **Workers Free, current plan, USD 0**. A new D1 database was created with an APAC location hint, the campus and worksheet migrations were applied, and the teacher credential digest was provisioned. Account identifiers, OAuth credentials, database identifiers and teacher codes are not published in this audit.
 
-The standalone entrypoint uses the same game assets and campus API on an owner-controlled Cloudflare hostname. It replaces platform-account teacher authentication with a private per-teacher access code, a 30-minute session and owner-scoped records. The code is not a student class code; the historical shared `1234` PIN cannot authenticate this deployment. The original Sites deployment remains separate and available. Source uploads and account setup alone do not prove a working public release.
+The standalone entrypoint uses the same game assets and campus API on an owner-controlled Cloudflare hostname. The initial rollout replaced platform-account teacher authentication with a private per-teacher access code, a 30-minute session and owner-scoped records. At that initial verification, the historical shared `1234` PIN could not authenticate. The later code-setting follow-up below supersedes that credential-format restriction; the code is still distinct from a student class code. The original Sites deployment remains separate and available. Source uploads and account setup alone do not prove a working public release.
 
 Worksheets use bounded D1 chunk storage: **5 MiB per PDF, 100 MiB shared across teachers**. Static images, fonts and bundled MP3 files use Workers Static Assets. No R2 subscription, paid Workers upgrade, domain purchase or paid speech generation is part of this setup. The standalone Worker disables online TTS generation; existing fixed Mandarin/English audio and device Cantonese behavior are preserved.
 
@@ -33,6 +33,16 @@ Direct use on every Hong Kong ISP or school network and physical printing remain
 
 The [deployment guide](../deployment/cloudflare/README.md) contains the reproducible setup and separation from the retained Sites project. See [Workers Free limits](https://developers.cloudflare.com/workers/platform/limits/) and [D1 pricing and limits](https://developers.cloudflare.com/d1/platform/pricing/) for provider limits.
 
+## 13 October 2026 teacher-code follow-up
+
+The owner requested an administrator-selected numeric teacher login code after the initial independent rollout. The change permits configured numeric credentials as well as the existing longer private credentials; matching is still against a stored credential digest, not a hardcoded authentication bypass. The replacement credential retains the original primary workspace’s owner ID, so its records remain attached to the same workspace. Everyone using a shared code has that workspace’s teacher permissions; separate owner credentials remain isolated.
+
+**Published — 13 October 2026:** Cloudflare reported version `60908d51-92b4-4211-86b7-1df9ae44536a`. The configured numeric code now opens the original primary workspace. Its previous long code and existing sessions were revoked. The [machine-readable follow-up verification](releases/2026-10-13-teacher-code-verification.json) records **nine successful live API checks**: numeric login with a secure session cookie, unchanged owner/data, recognised session, rejection of an unconfigured numeric code, rejection of the previous code and session, anonymous data denial, updated shared-workspace interface copy, and logout invalidation.
+
+The primary workspace’s before/after data snapshots have the same SHA-256: **239 questions, 0 classes, 0 worksheets and 0 results**. This proves that the checked live snapshot was preserved; it is not a claim that populated real classroom data was migrated. Separate isolated regressions passed **164 authentication checks and 207 backend checks**, including retention of populated owner records during code replacement. The original 12-check result above remains evidence of the initial rollout rather than a rerun of every classroom operation after this change. No login-code value is included in this audit.
+
+Browser verification followed **New Game → Teacher → configured numeric code** on the published site and reached the **14-entry subject/theme chooser**. The [actual 1728 × 822 workspace capture](../resources/design/qa-independent/teacher-shared-code-workspace.jpg) records that result without exposing the code or student records. This check covers desktop entry and the rendered workspace; it is not a repeat of the full mobile, worksheet or printing workflow.
+
 ## 12 October 2026 release verification
 
 Sites public **version 4** was successfully deployed from source `6aa6badaa59ed1481743c3bcafafcba76abc79c5` to the retained `lumen-lab-ai-ethics.tart-vale-4903.chatgpt.site` game URL. The earlier source-upload failure is resolved. The source transport succeeded with HTTP/1.1 and a buffered upload after an HTTP/2 protocol error. No GitHub Pages site was introduced; Sites serves the full game and classroom API while the GitHub source repository remains private.
@@ -51,7 +61,7 @@ The local browser tool rejected the requested localhost tab under its URL policy
 
 ## Recommended way to share
 
-**Share the [independent public game](https://my-ai-campus-life.hjhlgz.workers.dev) using the current link and QR in the [README](../README.md).** Students use free exploration directly; teachers enter their private application code. Optional browser installation gives regular players an app-like window. Keep the GitHub repository private, as requested; it is a source archive for authorized collaborators.
+**Share the [independent public game](https://my-ai-campus-life.hjhlgz.workers.dev) using the current link and QR in the [README](../README.md).** Students use free exploration directly; teachers enter the application login code issued by the administrator. Optional browser installation gives regular players an app-like window. Keep the GitHub repository private, as requested; it is a source archive for authorized collaborators.
 
 | Option | Practical use | Current limitation |
 |---|---|---|

@@ -39,12 +39,12 @@ A free-exploration save belongs to the browser and hostname where it was created
 ## Teachers: open the workspace and create classes
 
 1. From the title screen, choose **New Game → Teacher**. This opens the teacher workspace directly, without a student avatar or campus session. The in-game **Settings → Teacher workspace → Open** entry is also available.
-2. Paste the complete **private teacher access code** issued by the site administrator and choose **Sign in**. The code has 48 characters and opens your own workspace directly; it is different from a student class code or recovery code. The older shared `1234` PIN cannot open the independent teacher workspace.
+2. Enter the complete **teacher login code** issued by the site administrator and choose **Sign in**. This may be an administrator-selected numeric code or a longer private code. It opens the assigned workspace directly and is different from a student class code or recovery code.
 3. Choose your teaching subject. The hub offers 13 learning subjects plus **AI Ethics and Inclusion**. Use **Change subject** when needed; grade, class and activity filters remain available across tools. Core AI questions can be reviewed but not edited.
 4. In **Classes**, expand **Create classes**. Enter the school year, grade and section to create one class, or deliberately choose **Create 24 classes** for S1–S6 × A–D.
 5. Copy each class's join code and share it with that class. Ask students to retain their own recovery codes.
 
-Only your own classes are visible. Sessions expire after 30 minutes and incorrect code attempts are rate-limited. Use **Lock** when leaving the workspace on a shared computer. Keep the code private; anyone who holds it can enter your workspace. If it is missing, incorrect or revoked, contact the site administrator instead of repeatedly guessing. A replacement code can revoke the old one and its sessions.
+Only classes belonging to the code’s workspace are visible. Everyone using the same shared code can manage the same classes, questions, worksheets and student results; the system does not distinguish people using that code. Separate owner credentials retain separate workspaces. Sessions expire after 30 minutes and incorrect code attempts are rate-limited. Use **Lock** when leaving the workspace on a shared computer. Share the code only with the intended teaching team; anyone who holds it can enter that workspace. If it is missing, incorrect or revoked, contact the site administrator instead of repeatedly guessing. A replacement code can revoke the old one and its sessions.
 
 
 

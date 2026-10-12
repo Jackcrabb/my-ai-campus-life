@@ -73,7 +73,7 @@ Class connection, teacher tools, introduction replay and larger text are separat
 
 The PIN label, input and unlock action are clearly visible. The outer game panel and inner teacher component each supply a title and close button. This duplicated header is a **P3 polish issue**: it consumes scarce vertical space and offers two visually competing exits. Consolidation can wait for a scoped design pass; it is not part of the current scroll repair.
 
-Production access requires the trusted allowlisted identity **and** the server PIN; knowing `1234` is insufficient. The [distribution audit](DISTRIBUTION-AUDIT.md) separately records anonymous denial. This image does not verify a public teacher sign-in or authorize anyone depicted by a screenshot.
+**Historical retained Sites flow:** at the time of this screenshot, production access required the trusted allowlisted identity **and** the server PIN; knowing the PIN alone was insufficient. The independent Cloudflare deployment now uses an administrator-issued teacher login code instead. The [distribution audit](DISTRIBUTION-AUDIT.md) separates those release checks. This historical image does not verify the current public teacher sign-in or authorize anyone depicted by a screenshot.
 
 ### 7. Choose a subject and open its tools — repaired scrolling and clean phone entry verified
 

@@ -201,8 +201,8 @@
       if (session.authMode === 'access-code') {
         const access = session.configured === false
           ? `<p role="status">${this.L('教師登入尚未完成設定，請聯絡管理員。','教师登录尚未完成设置，请联系管理员。','Teacher access is not configured yet. Contact the administrator.')}</p><button data-ct="refresh">${this.L('重新檢查','重新检查','Check again')}</button>`
-          : `<form data-form="unlock"><label>${this.L('教師登入碼','教师登录码','Teacher access code')}<input name="pin" type="password" inputmode="text" autocomplete="off" autocapitalize="none" spellcheck="false" maxlength="128" required></label><p class="ct-code-hint">${this.L('請貼上管理員提供的專屬登入碼。','请粘贴管理员提供的专属登录码。','Paste the personal access code provided by your administrator.')}</p><button class="ct-primary" type="submit">${this.L('登入工作台','登录工作台','Open teacher workspace')}</button></form>`;
-        return `<div class="ct-access ct-code-access">${access}<button data-ct="close" class="ct-return">${this.L('返回首頁','返回首页','Return to home')}</button><p class="ct-code-privacy">${this.L('每位教師只能查看自己的班級與學生成績。','每位教师只能查看自己的班级与学生成绩。','Each teacher can only view their own classes and student results.')}</p></div>`;
+          : `<form data-form="unlock"><label>${this.L('教師登入碼','教师登录码','Teacher access code')}<input name="pin" type="password" inputmode="text" autocomplete="off" autocapitalize="none" spellcheck="false" maxlength="128" required></label><p class="ct-code-hint">${this.L('請輸入管理員提供的教師登入碼。','请输入管理员提供的教师登录码。','Enter the teacher access code provided by your administrator.')}</p><button class="ct-primary" type="submit">${this.L('登入工作台','登录工作台','Open teacher workspace')}</button></form>`;
+        return `<div class="ct-access ct-code-access">${access}<button data-ct="close" class="ct-return">${this.L('返回首頁','返回首页','Return to home')}</button><p class="ct-code-privacy">${this.L('使用相同登入碼的教師會共用同一個工作台。','使用相同登录码的教师会共用同一个工作台。','Teachers using the same code share one workspace.')}</p></div>`;
       }
       if (!session.allowed) {
         const href = typeof session.signInUrl === 'string' && !/^javascript:/i.test(session.signInUrl.trim()) ? session.signInUrl : '/';

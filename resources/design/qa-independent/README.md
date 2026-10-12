@@ -8,10 +8,13 @@ Recorded on **13 October 2026** for **My AI Campus Life**. These files distingui
 | [Desktop teacher login](teacher-login-desktop.jpg) | Browser capture of the independently hosted implementation, 1728 × 822. The unwanted subtitle is absent. |
 | [Mobile teacher login](teacher-login-mobile.jpg) | Browser capture at 390 × 844. The login card fits without observed horizontal overflow. |
 | [Teacher workspace](teacher-workspace-desktop.jpg) | Browser capture after successful teacher-code login, 1728 × 822, showing the 14-entry subject/theme chooser. |
+| [Shared-code teacher workspace](teacher-shared-code-workspace.jpg) | Browser capture after the later numeric-code replacement, 1728 × 822. New Game → Teacher → the configured code reached the workspace; the browser verified 14 subject/theme entries. |
 | [Desktop student setup](student-setup-desktop.jpg) | Browser capture of the student setup, 1728 × 822, with the school background and full character visible. |
 
 The generated proposal used the project’s existing pixel-campus interface as a visual reference. It is not a screenshot or runtime asset. The captures were taken from [the independently hosted game](https://my-ai-campus-life.hjhlgz.workers.dev/campus/); they are not newly generated artwork and do not display a teacher code or student records. File sizes, dimensions and SHA-256 hashes are recorded in [assets.json](assets.json).
 
 The approved preview’s obsolete subtitle must not be copied back into the interface. Browser screenshots establish the observed layout and login/subject-chooser state, not every teacher workflow, physical audio or printing. The [release audit](../../../docs/DISTRIBUTION-AUDIT.md#13-october-2026-independent-hosting-rollout) separately records 12 live API checks, cleanup and remaining network/device limits.
 
-This package contains **one new generated preview and four browser screenshots**. It supplements the conversation archive; it does not change the earlier verified archive’s 98-image count or its historical cutoff.
+The [teacher-code follow-up audit](../../../docs/DISTRIBUTION-AUDIT.md#13-october-2026-teacher-code-follow-up) records the later code replacement, nine live checks and the new browser login check.
+
+This package contains **one new generated preview and five browser screenshots**. It supplements the conversation archive; it does not change the earlier verified archive’s 98-image count or its historical cutoff.

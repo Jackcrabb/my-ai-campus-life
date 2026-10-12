@@ -6,7 +6,7 @@
 
 ## Play in your browser
 
-> **Independent site published — 13 October 2026:** The game is now hosted on the owner’s Cloudflare Free account. Students open it directly; teachers use a private teacher access code. Live checks passed for anonymous entry, teacher-code login, class activities, configurable stars, results and PDF access. The QR now opens the independent site. The [release audit](docs/DISTRIBUTION-AUDIT.md#13-october-2026-independent-hosting-rollout) records the exact verification scope.
+> **Independent site published — 13 October 2026:** The game is now hosted on the owner’s Cloudflare Free account. Students open it directly; teachers use an administrator-issued teacher access code. Live checks passed for anonymous entry, teacher-code login, class activities, configurable stars, results and PDF access. The QR now opens the independent site. The [release audit](docs/DISTRIBUTION-AUDIT.md#13-october-2026-independent-hosting-rollout) records the exact verification scope.
 
 **[Open the public game](https://my-ai-campus-life.hjhlgz.workers.dev)** — no download or GitHub account is needed for free exploration. Works through a web browser on Windows, Mac, tablets and phones; an internet connection is required for classroom services.
 
@@ -16,7 +16,7 @@
 
 1. Open the link or scan the QR code, then choose your language with **A**.
 2. Choose **New Game → Student**, set up your character and enter the campus. Choose **Continue** to resume a save on the same browser.
-3. For a school activity, use the class code supplied by your teacher. **New Game → Teacher** accepts the private access code issued by the site administrator; `1234` is not a valid replacement.
+3. For a school activity, use the class code supplied by your teacher. **New Game → Teacher** accepts the teacher login code issued by the site administrator.
 
 For everyday use, share this game link. The [private GitHub repository](https://github.com/Jackcrabb/my-ai-campus-life) and its source ZIP are for authorized collaborators; see the separate download and development sections below.
 
@@ -83,7 +83,7 @@ These are formative records, not moral ratings or a secure examination system. T
 
 ## Teacher workspace
 
-From the title screen, choose **New Game → Teacher**. After signing in and unlocking, choose one of **13 learning subjects or AI Ethics and Inclusion**. The subject hub opens question management, worksheets or results; **Change subject** returns to the chooser. Grade, class and activity filters are retained while switching tools. The in-game **Settings → Teacher workspace** entry also remains available. On the independent Cloudflare deployment, enter your private **teacher access code** supplied by the site administrator. It is a 48-character code for one teacher workspace; copy and paste the complete value. No platform account is involved. Incorrect attempts are rate-limited, the session lasts 30 minutes, and each code can access only its own classes. Use **Lock** on a shared computer and contact the administrator if the code is lost or revoked. Never publish it in GitHub, worksheets or class messages. The earlier shared `1234` PIN does not grant access to this deployment. The separately retained Sites version keeps its existing identity-and-PIN authentication.
+From the title screen, choose **New Game → Teacher**. After signing in and unlocking, choose one of **13 learning subjects or AI Ethics and Inclusion**. The subject hub opens question management, worksheets or results; **Change subject** returns to the chooser. Grade, class and activity filters are retained while switching tools. The in-game **Settings → Teacher workspace** entry also remains available. On the independent Cloudflare deployment, enter the **teacher login code** supplied by the site administrator. The administrator can issue a numeric code or a longer private code; enter the complete value. No platform account is involved. Incorrect attempts are rate-limited and the session lasts 30 minutes. Each code opens its assigned workspace: everyone using the same shared code can manage all of that workspace’s classes, questions, worksheets and student results. Separate credentials assigned to different owners retain separate workspaces. Use **Lock** on a shared computer and contact the administrator if the code is lost or revoked. Share it only with the intended teaching team, never in student worksheets or class messages. The separately retained Sites version keeps its existing identity-and-PIN authentication.
 
 Teachers can create individual classes or explicitly create all 24 classes (S1–S6, sections A–D), copy class codes, author and archive subject questions, and start new class activities. In **Questions → New question**, add as many questions as the lesson needs; three is only the starter-bank default. Set each question to **1–10 whole-number stars**, save it as **Published**, then use **Classes → New activity** to make the updated bank available to students. Each activity freezes its question revisions and star values, so subsequent edits do not change previous questions, scores or available-star totals. The **AI Ethics and Inclusion** hub provides read-only access to the four core AI scenarios and transfer task, plus their results. These core entries cannot be edited, and PDF uploads are provided for the 13 learning subjects.
 

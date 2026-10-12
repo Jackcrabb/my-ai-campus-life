@@ -222,3 +222,17 @@ I authorize these permissions. Please continue.
 
 
 Editorial evidence note: the later implemented [desktop login](../resources/design/qa-independent/teacher-login-desktop.jpg), [mobile login](../resources/design/qa-independent/teacher-login-mobile.jpg) [teacher subject chooser](../resources/design/qa-independent/teacher-workspace-desktop.jpg) and [desktop student setup](../resources/design/qa-independent/student-setup-desktop.jpg) are linked for comparison. These are browser captures, not reconstructed ChatGPT messages or additional image-generation events. Their [metadata record](../resources/design/qa-independent/assets.json) keeps them separate from the original generated preview.
+
+
+---
+
+## 13 October 2026 teacher-code follow-up
+
+The following request was supplied directly in the active conversation after the independent deployment. The date records this supplement, not an exact message time. No assistant reply has been reconstructed. The requested credential value is redacted under this archive’s existing privacy policy.
+
+User:
+
+I still want to change the teacher login code to [redacted private value].
+
+
+Editorial evidence note: the later [shared-code teacher workspace](../resources/design/qa-independent/teacher-shared-code-workspace.jpg) is an actual browser capture after the requested login-code replacement. The browser flow opened New Game → Teacher and successfully reached the subject chooser. This evidence note is not a reconstructed ChatGPT reply or a generated-image event. File metadata is preserved in the independent-login [asset record](../resources/design/qa-independent/assets.json).

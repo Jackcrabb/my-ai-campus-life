@@ -1,8 +1,10 @@
 # Independent Cloudflare hosting
 
-This optional entrypoint serves the game and teacher workspace from an owner-controlled `workers.dev` hostname or custom domain. Students and teachers do not need ChatGPT accounts. Teachers still need a private application access code. The existing Sites deployment is retained separately.
+This optional entrypoint serves the game and teacher workspace from an owner-controlled `workers.dev` hostname or custom domain. Students and teachers do not need ChatGPT accounts. Teachers still need an administrator-issued application login code. The existing Sites deployment is retained separately.
 
 **Published — 13 October 2026:** [open the independent game](https://my-ai-campus-life.hjhlgz.workers.dev/campus/). The owner’s Workers Free plan was verified, the new APAC D1 database was migrated, and the Worker/assets were deployed. Twelve live API checks and six cleanup operations passed; desktop teacher login and the mobile login layout were also checked. See the [release audit](../../docs/DISTRIBUTION-AUDIT.md#13-october-2026-independent-hosting-rollout) for evidence and remaining limits. These checks do not prove access from every Hong Kong network or migrate old browser saves.
+
+**Teacher-code follow-up — 13 October 2026:** The current release also supports administrator-selected numeric codes. The primary workspace’s code was replaced without changing its owner or checked records; the previous code and sessions were revoked. Nine live API checks passed. See the [follow-up audit](../../docs/DISTRIBUTION-AUDIT.md#13-october-2026-teacher-code-follow-up) and the code-replacement instructions below.
 
 ## Free setup
 
@@ -16,13 +18,27 @@ The Free plan has request, CPU and database limits. Exceeding these can interrup
 4. Enter the account ID from the Cloudflare dashboard in `account_id`. Keep the database ID placeholder until the next step. Run `npm run cloudflare:verify-account`.
 5. After checking Workers Free, run `npm run cloudflare:create-database -- --confirm-free-plan`. Copy the returned D1 database ID into `.cloudflare/wrangler.json`.
 6. **For a new empty database only**, run `npm run cloudflare:migrate -- --confirm-free-plan`. This installs the existing campus schema and standalone worksheet storage. If migrating existing classes, use the migration notes below before running any schema commands.
-7. Run `node scripts/provision-teacher-code.mjs --label "Teacher name"` to create a private code file and a separate digest-only SQL file in ignored `.teacher-access/`. Apply that SQL to the selected database using `npm run cloudflare:import-teacher -- --confirm-free-plan --file .teacher-access/GENERATED_ID.sql`; the account is verified again before import. Share only the private code with its intended teacher. Reuse an existing `owner_id` with `--owner-id` only after confirming the correct historical owner. Do not commit either private file.
+7. Run `node scripts/provision-teacher-code.mjs --label "Teacher name"` to create a private code file and a separate digest-only SQL file in ignored `.teacher-access/`. Apply that SQL to the selected database using `npm run cloudflare:import-teacher -- --confirm-free-plan --file .teacher-access/GENERATED_ID.sql`; the account is verified again before import. Share the code only with its intended teacher or teaching team. Reuse an existing `owner_id` with `--owner-id` only after confirming the correct historical owner. Do not commit either private file.
 8. Run `npm run cloudflare:doctor`, `npm run cloudflare:dry-run` and `npm run cloudflare:test`. Then run `npm run cloudflare:deploy -- --confirm-free-plan`.
 9. Open the returned HTTPS URL in a signed-out browser on a Hong Kong connection. Check Student exploration and Teacher access-code login, create a test question, upload/download a PDF, and verify a test student's score export. Only then replace the README link and QR code.
 
 `cloudflare:doctor` is offline. `cloudflare:dry-run` builds locally with a dummy database ID and does not upload or provision anything. `cloudflare:verify-account` performs a read-only Cloudflare login/account check; it does not inspect or change subscription billing. Remote commands fail before mutation if the selected account does not match the authenticated account list.
 
 The compatibility date stays pinned to `2026-05-15`, matching the locked local runtime. It does not represent the date of publication. Update it only alongside verified runtime/dependency upgrades.
+
+## Choose or replace a teacher login code
+
+The provisioning command generates a random 48-character private code by default. For an administrator-selected **4–12 digit code**, save only the desired digits in an ignored local file such as `.teacher-access/selected-code.txt`, with file permissions `600`. Use an editor rather than putting the code in a shell command. The script accepts a regular file of at most 64 bytes, rejects symlinks or group/other access, and never prints the code.
+
+To replace an existing workspace’s code, first verify its exact owner ID, then run:
+
+```sh
+node scripts/provision-teacher-code.mjs --label "Teaching team" --owner-id EXISTING_OWNER_ID --replace-existing --code-file .teacher-access/selected-code.txt
+```
+
+Import the generated digest-only SQL with the same `cloudflare:import-teacher` command in step 7. Keeping the owner ID preserves access to the same classes and records; `--replace-existing` revokes the owner’s prior credentials and invalidates their sessions. It does not recreate or delete class data. Without that flag, existing credentials remain active. Keep the selected-code file and generated files out of GitHub.
+
+All holders of a shared code use the same workspace and can manage its questions, worksheets and student results. Use separate owner credentials when teachers need separate workspaces. A short, predictable code is easier to guess; rate limits do not distinguish authorised holders from someone else who knows it.
 
 ## Existing records and cutover
 

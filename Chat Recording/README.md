@@ -6,7 +6,7 @@ This folder preserves the accessible development conversation for **My AI Campus
 
 - [conversation-en.md](conversation-en.md): chronological English translation with `User:` and `ChatGPT:` labels and generated images at their recorded positions.
 - [recent-user-messages-en.md](recent-user-messages-en.md): clearly separated, partial English supplements of later user messages and two actual assistant progress messages, including the independent-hosting request and approval; no invented replies or timestamps.
-- [Independent teacher-login preview and verification](../resources/design/qa-independent/README.md): one later approved generated preview and four browser screenshots, with a separate metadata record; not part of the historical 98-image count.
+- [Independent teacher-login preview and verification](../resources/design/qa-independent/README.md): one later approved generated preview and five browser screenshots, with a separate metadata record; not part of the historical 98-image count.
 - [generated-images.md](generated-images.md): browsable chronological image catalogue.
 - [generated-images.json](generated-images.json): image provenance, dimensions, byte counts, SHA-256 hashes and repository-relative paths.
 - [generated-images/](generated-images/): copies of generated drafts that did not have an identical existing file in the project.
@@ -40,6 +40,8 @@ The 11 October 2026 supplement records later layout/NPC requests, OpenRouter set
 The 12 October 2026 append records the request for additional teacher-authored questions, teacher-selected star values and stars in result reports, followed by the request to update the public no-login game link/QR and organize repository files. It records requests only and does not claim that publication succeeded.
 
 The 13 October 2026 append records the missing-GitHub-update report, the requirement for a public website usable in Hong Kong, free Cloudflare account setup, approval of private teacher-code login, removal of the “No ChatGPT required” interface phrase, and explicit Wrangler authorization. It records actual user messages and selected responses only; it does not claim that deployment or migration succeeded. The later generated preview and four implementation screenshots are preserved in the linked independent-login package, with file hashes and dimensions. They are separate from the historical 98-image count; screenshots are not image-generation events.
+
+A separate 13 October teacher-code follow-up records the owner’s later request for a different login code, with the credential value redacted. The quoted message records the request only. A separate editorial evidence note links the subsequent successful browser login capture; it is not a reconstructed assistant reply or an additional image-generation event.
 
 Historical progress reports and claims are translated faithfully as things said at that time. They do not override later corrections and are not independent verification of the current software. Current installation, configuration, known limitations and release status belong in the repository's main README and project documentation.
 

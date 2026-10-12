@@ -227,12 +227,12 @@ function launch(options = {}) {
   assert.match(independent.container.innerHTML,/input name="pin" type="password" inputmode="text"/);
   assert.match(independent.container.innerHTML,/autocapitalize="none" spellcheck="false" maxlength="128"/);
   assert.doesNotMatch(independent.container.innerHTML,/ChatGPT|href=|inputmode="numeric"/,'independent entry stays in the game and omits the removed subtitle');
-  const fixtureCode='a1'.repeat(24);
+  const fixtureCode='1234';
   independent.state.rejectPin=true;await independent.submit('unlock',{pin:fixtureCode});
   assert.equal(independent.forms.at(-1).elements.pin.value,'','rejected code is cleared immediately');
   assert.match(independent.container.innerHTML,/教師登入碼不正確或已停用/);
   assert.ok(!independent.calls.some(call=>call.url.endsWith('/teacher/classes')),'invalid access code cannot load private data');
-  for(const [locale,caption,privacy] of [['cn','教师登录码','自己的班级与学生成绩'],['en','Teacher access code','their own classes and student results']]){
+  for(const [locale,caption,privacy] of [['cn','教师登录码','共用同一个工作台'],['en','Teacher access code','share one workspace']]){
     independent.workspace.setLanguage(locale);
     assert.ok(independent.container.innerHTML.includes(caption));assert.ok(independent.container.innerHTML.includes(privacy));
     await independent.submit('unlock',{pin:fixtureCode});

@@ -1,0 +1,53 @@
+{
+  "origin": "https://my-ai-campus-life.hjhlgz.workers.dev",
+  "startedAt": "2026-10-12T17:28:36.739Z",
+  "finishedAt": "2026-10-12T17:32:39.132Z",
+  "ok": true,
+  "checks": [
+    {
+      "name": "configured-numeric-code-unlocks",
+      "ok": true
+    },
+    {
+      "name": "existing-owner-and-data-preserved",
+      "ok": true
+    },
+    {
+      "name": "authenticated-session-unlocked",
+      "ok": true
+    },
+    {
+      "name": "unconfigured-numeric-code-denied",
+      "ok": true
+    },
+    {
+      "name": "previous-long-code-revoked",
+      "ok": true
+    },
+    {
+      "name": "previous-session-revoked",
+      "ok": true
+    },
+    {
+      "name": "anonymous-teacher-data-denied",
+      "ok": true
+    },
+    {
+      "name": "shared-workspace-copy-published",
+      "ok": true
+    },
+    {
+      "name": "test-session-logout-invalidates",
+      "ok": true
+    }
+  ],
+  "preserved": {
+    "digest": "d1f10ae02e275cdc3069a1b9a63c8aec289fc1fa26061dd555dd6d0b2121c81d",
+    "questionCount": 239,
+    "classCount": 0,
+    "worksheetCount": 0,
+    "resultCount": 0
+  },
+  "oldCredentialRevoked": true,
+  "sameOwner": true
+}
