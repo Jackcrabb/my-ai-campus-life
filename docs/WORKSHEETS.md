@@ -4,11 +4,13 @@
 
 ## 教師操作
 
-1. 首頁按「新開始」→「教師」，使用獲授權教師身份登入並輸入 PIN。選擇任教科目後，在科目首頁按「上傳工作紙」；此流程毋須建立學生角色或啟動校園場景。
+1. 首頁按「新開始」→「教師」，輸入管理員提供的私人教師登入碼（獨立網站）；另行保留的 Sites 網站仍使用原有身份及 PIN 流程。選擇任教科目後，在科目首頁按「上傳工作紙」；此流程毋須建立學生角色或啟動校園場景。
 2. 輸入名稱、選擇中一至中六。學科沿用科目首頁的選擇；按「更改科目」可切換，年級及班別篩選會保留。繁體中文 PDF、英文 PDF 可只提供一種，也可同時提供兩種；每種語言一份。
 3. 每份檔案上限為 **5 MiB（5 × 1024 × 1024 bytes；介面簡寫 5 MB）**，不是兩份合計 5 MB。空檔案、超額檔案及缺少 PDF 標頭的檔案會被拒絕；伺服器另行驗證及執行權限檢查。
 4. 按「上傳工作紙」。操作期間控制項暫停，避免重複送出。失敗時保留同一個表單節點、名稱及所選檔案，顯示錯誤後可再試。伺服器接受上傳後才清空表單；即使隨後重新載入清單失敗，也不會保留檔案而鼓勵重複上傳。
 5. 年級篩選器控制本科清單；上傳表單可指定工作紙年級。刪除需在同一面板按「確認刪除」，不使用瀏覽器確認視窗。
+
+獨立 Cloudflare 網站使用 D1 分塊儲存 PDF，**所有教師合計上限 100 MiB**，毋須啟用 R2。容量已滿時會拒絕新的上傳，請先刪除不再使用的工作紙再重試。原有 Sites 部署仍保留 D1 資料及 R2 檔案路徑，兩者的資料並不會自動同步。
 
 請勿上傳未獲授權的課本掃描、學生名冊或含私人資料的文件。遊戲不會翻譯、修改或替老師產生 PDF 內容。
 
@@ -45,6 +47,6 @@ node --check public/campus/game/worksheet-ui.js
 
 ## English summary
 
-Teachers upload one Traditional Chinese PDF, one English PDF, or both, up to **5 MiB per file**. A failed upload preserves the actual form and chosen files; a successful server acceptance resets it. The teacher role opens directly from New game without creating a student avatar. A selected subject scopes both questions and PDF uploads, while grade and class filters persist. The AI ethics entry offers read-only shared activities and results, not unsupported core-event edits or PDF upload. Students open worksheets from the top-right Print HUD control. They receive only server-authorized worksheets for their teacher, grade and current floor. The UI does not offer a student grade switch or create missing translations.
+Teachers upload one Traditional Chinese PDF, one English PDF, or both, up to **5 MiB per file**. The independent Cloudflare site stores PDFs in D1 chunks with a **100 MiB shared cap** across all teachers; it does not require R2 activation. Its teacher workspace uses a private access code. A failed upload preserves the actual form and chosen files; a successful server acceptance resets it. The teacher role opens directly from New game without creating a student avatar. A selected subject scopes both questions and PDF uploads, while grade and class filters persist. The AI ethics entry offers read-only shared activities and results, not unsupported core-event edits or PDF upload. Students open worksheets from the top-right Print HUD control. They receive only server-authorized worksheets for their teacher, grade and current floor. The UI does not offer a student grade switch or create missing translations.
 
 Selecting a language loads a preview but never prints automatically. The explicit Print button becomes available after that preview loads. Open PDF and Download PDF remain available for devices whose embedded viewer cannot preview or print reliably. Physical printing and the native print dialog were not tested. Isolated component tests and responsive browser checks passed; browser file-picker upload remained blocked by the local extension permission, and no permission was changed.

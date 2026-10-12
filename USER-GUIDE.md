@@ -2,7 +2,7 @@
 
 [Project overview](README.md) · [Teaching design](DESIGN-AND-TEACHING-GUIDE.md)
 
-This guide describes the current repository workflow. Consult the corresponding release record for the deployed revision and verification scope.
+This guide describes the independent Cloudflare workflow. Use the current public link in the [README](README.md); the retained Sites website has a separate older account-and-PIN teacher entry. Consult the [release record](docs/DISTRIBUTION-AUDIT.md) for the deployed revision and verification scope.
 
 ## Students: start and explore
 
@@ -32,15 +32,19 @@ Returning students should resume their existing record rather than join again. A
 
 Class mode stores your name, class, number, answers and necessary progress, including your saved reflection, in the class database. It does not send reflections to a generative AI tool. Free exploration stays in the same browser and its previous scores are not imported into class results. Sign out after using a shared device. If a sync conflict appears, reload the latest record before continuing; do not assume a failed save succeeded.
 
+### Moving to a new website address
+
+A free-exploration save belongs to the browser and hostname where it was created. Opening the independent site does not automatically copy a save from the old Sites address; keep the original address to continue that local save. Teachers sign in again at the new address. Classroom recovery can work there only after the corresponding server records have been migrated; the cutover audit records whether any records needed moving.
+
 ## Teachers: open the workspace and create classes
 
 1. From the title screen, choose **New Game → Teacher**. This opens the teacher workspace directly, without a student avatar or campus session. The in-game **Settings → Teacher workspace → Open** entry is also available.
-2. Sign in with your **authorized teacher ChatGPT account** if prompted, then unlock with the configured teacher PIN. The project's requested shared PIN is **1234**. The PIN alone does not grant access: your identity must also be on the server's teacher allowlist.
+2. Paste the complete **private teacher access code** issued by the site administrator and choose **Sign in**. The code has 48 characters and opens your own workspace directly; it is different from a student class code or recovery code. The older shared `1234` PIN cannot open the independent teacher workspace.
 3. Choose your teaching subject. The hub offers 13 learning subjects plus **AI Ethics and Inclusion**. Use **Change subject** when needed; grade, class and activity filters remain available across tools. Core AI questions can be reviewed but not edited.
 4. In **Classes**, expand **Create classes**. Enter the school year, grade and section to create one class, or deliberately choose **Create 24 classes** for S1–S6 × A–D.
 5. Copy each class's join code and share it with that class. Ask students to retain their own recovery codes.
 
-Only your own classes are visible. Unlocks expire after 30 minutes and incorrect PIN attempts are rate-limited. Use **Lock** when leaving the workspace on a shared computer. If access is denied, check that you used the authorized identity; repeatedly entering the PIN will not fix an allowlist problem.
+Only your own classes are visible. Sessions expire after 30 minutes and incorrect code attempts are rate-limited. Use **Lock** when leaving the workspace on a shared computer. Keep the code private; anyone who holds it can enter your workspace. If it is missing, incorrect or revoked, contact the site administrator instead of repeatedly guessing. A replacement code can revoke the old one and its sessions.
 
 
 
@@ -67,7 +71,7 @@ For example, an S2 mathematics teacher can revise a ratios or probability questi
 
 ## Upload and print worksheets
 
-Teacher-authored question worksheets can still use the Questions workspace’s print action. For uploaded PDFs, open **Worksheets** under one of the 13 learning subjects. The subject is fixed to your selection; set the title and grade, then upload a Traditional Chinese version, an English version, or both. Each file may be at most **5 MiB**; only authorized PDF content should be uploaded.
+Teacher-authored question worksheets can still use the Questions workspace’s print action. For uploaded PDFs, open **Worksheets** under one of the 13 learning subjects. The subject is fixed to your selection; set the title and grade, then upload a Traditional Chinese version, an English version, or both. Each file may be at most **5 MiB**; only authorized PDF content should be uploaded. The independent site has **100 MiB of shared worksheet storage** for all teachers. A full-storage error leaves the chosen files available for retry; remove an unused worksheet before trying again.
 
 Students first connect to their class, then use **Print in the top-right HUD** from the relevant floor. There are no physical printer objects in corridors or rooms. Choose a subject on that floor and a language version the teacher has actually supplied. The server restricts access by teacher ownership, student class grade and floor; students cannot select a different grade. Moving to another floor changes the subjects available through Print.
 

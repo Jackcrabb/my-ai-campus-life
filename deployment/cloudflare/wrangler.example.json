@@ -1,0 +1,26 @@
+{
+  "$schema": "../node_modules/wrangler/config-schema.json",
+  "name": "my-ai-campus-life",
+  "account_id": "REPLACE_WITH_YOUR_CLOUDFLARE_ACCOUNT_ID",
+  "main": "../deployment/cloudflare/worker.ts",
+  "compatibility_date": "2026-05-15",
+  "workers_dev": true,
+  "preview_urls": false,
+  "assets": {
+    "directory": "../public",
+    "binding": "ASSETS",
+    "run_worker_first": ["/api/*", "/signin-with-chatgpt", "/signout-with-chatgpt", "/callback"]
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "my-ai-campus-life",
+      "database_id": "REPLACE_WITH_YOUR_D1_DATABASE_ID",
+      "migrations_dir": "../drizzle"
+    }
+  ],
+  "vars": {
+    "TEACHER_AUTH_MODE": "access-code",
+    "CAMPUS_TTS_ENABLED": "0"
+  }
+}

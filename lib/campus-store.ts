@@ -6,6 +6,7 @@ import { STUDENT_COOKIE, cookie, hash, iso, now, textField, token } from "./camp
 export const BANK = [...gradeBank as CampusQuestion[], ...CAMPUS_CASES];
 export const SUBJECT_IDS = ["playground", "hall", "chinese", "english", "maths", "chemistry", "geography", "computer", "history", "art", "music", "library", "rooftop"];
 const MAX_SUBJECT_QUESTION_STARS = 10;
+const STARTER_BANK_VERSION = "hk-curriculum-2026-10-v2";
 export type ClassRow = {
     id: string;
     owner_id: string;
@@ -61,21 +62,27 @@ export async function seedQuestions(ctx: CampusContext, ownerId: string) {
     const statements: D1PreparedStatement[] = [];
     // Bounded multi-row statements reduce first-run database calls while staying
     // below 100 bound values per prepared statement.
-    for (let i = 0; i < BANK.length; i += 10) {
-        const slice = BANK.slice(i, i + 10), values = slice.flatMap(q => [`${prefix}-${q.id}`, ownerId, q.id, q.grade, q.subjectId, q.roomId, q.category, iso(ctx)]);
+    for (let i = 0; i < BANK.length; i += 12) {
+        const slice = BANK.slice(i, i + 12), values = slice.flatMap(q => [`${prefix}-${q.id}`, ownerId, q.id, q.grade, q.subjectId, q.roomId, q.category, iso(ctx)]);
         statements.push(ctx.db.prepare("INSERT OR IGNORE INTO campus_questions (id,owner_id,source_id,grade,subject_id,room_id,category,current_revision,status,created_at) VALUES " + slice.map(() => "(?,?,?,?,?,?,?,1,'published',?)").join(",")).bind(...values));
     }
-    for (let i = 0; i < BANK.length; i += 15) {
-        const slice = BANK.slice(i, i + 15), values = slice.flatMap(q => { const id = `${prefix}-${q.id}`, data = splitQuestion(q); return [id + ":1", id, data.content, data.answer, iso(ctx)]; });
+    for (let i = 0; i < BANK.length; i += 20) {
+        const slice = BANK.slice(i, i + 20), values = slice.flatMap(q => { const id = `${prefix}-${q.id}`, data = splitQuestion(q); return [id + ":1", id, data.content, data.answer, iso(ctx)]; });
         statements.push(ctx.db.prepare("INSERT OR IGNORE INTO campus_question_revisions (id,question_id,revision,content,answer,created_at) VALUES " + slice.map(() => "(?,?,1,?,?,?)").join(",")).bind(...values));
     }
     await batch(ctx, statements);
-    await refreshStarterBank(ctx, ownerId);
+    // A fresh bank already uses this version. Avoid rereading and hashing every
+    // question during the first login on the Free Worker's small CPU budget.
+    if ((existing?.n ?? 0) === 0) await markStarterBankCurrent(ctx, ownerId);
+    else await refreshStarterBank(ctx, ownerId);
+}
+async function markStarterBankCurrent(ctx: CampusContext, ownerId: string) {
+    await ctx.db.prepare("INSERT OR IGNORE INTO campus_bank_updates (id,owner_id,version,created_at) VALUES (?,?,?,?)").bind(ownerId + ":" + STARTER_BANK_VERSION, ownerId, STARTER_BANK_VERSION, iso(ctx)).run();
 }
 // Refresh only untouched legacy starter questions. Existing assignments point at
 // immutable revisions, while teacher edits, drafts and archives remain intact.
 export async function refreshStarterBank(ctx: CampusContext, ownerId: string) {
-    const version = "hk-curriculum-2026-10-v2", updateId = ownerId + ":" + version;
+    const updateId = ownerId + ":" + STARTER_BANK_VERSION;
     if (await ctx.db.prepare("SELECT id FROM campus_bank_updates WHERE id=?").bind(updateId).first()) return;
     const rows = await ctx.db.prepare("SELECT q.id,q.source_id,q.current_revision AS revision,r.content,r.answer FROM campus_questions q JOIN campus_question_revisions r ON r.question_id=q.id AND r.revision=1 WHERE q.owner_id=? AND q.current_revision=1 AND q.status='published' AND q.category='subject'").bind(ownerId).all<QuestionRow>();
     const statements: D1PreparedStatement[] = [];
@@ -89,7 +96,7 @@ export async function refreshStarterBank(ctx: CampusContext, ownerId: string) {
         statements.push(ctx.db.prepare("UPDATE campus_questions SET current_revision=2 WHERE id=? AND owner_id=? AND current_revision=1 AND status='published' AND EXISTS (SELECT 1 FROM campus_question_revisions r WHERE r.question_id=campus_questions.id AND r.revision=2)").bind(row.id, ownerId));
     }
     await batch(ctx, statements);
-    await ctx.db.prepare("INSERT OR IGNORE INTO campus_bank_updates (id,owner_id,version,created_at) VALUES (?,?,?,?)").bind(updateId, ownerId, version, iso(ctx)).run();
+    await markStarterBankCurrent(ctx, ownerId);
 }
 export async function ownedClass(ctx: CampusContext, ownerId: string, id: string) {
     const row = await ctx.db.prepare("SELECT * FROM campus_classrooms WHERE id=? AND owner_id=?").bind(id, ownerId).first<ClassRow>();
@@ -126,6 +133,43 @@ export async function createClass(ctx: CampusContext, ownerId: string, grade: nu
         row.active_assignment_id = assignment.id;
     }
     return classPublic(row);
+}
+export async function createDefaultClasses(ctx: CampusContext, ownerId: string, schoolYear: string) {
+    await seedQuestions(ctx, ownerId);
+    const createdAt = iso(ctx), classes = Array.from({ length: 24 }, (_, index) => ({
+        id: crypto.randomUUID(), ownerId, schoolYear, grade: Math.floor(index / 4) + 1,
+        section: ["A", "B", "C", "D"][index % 4], joinCode: token().slice(0, 10).toUpperCase(), createdAt,
+    }));
+    // Set-based statements keep all 24 classes below Free D1's per-request
+    // query limit. Existing classes, join codes and activities are preserved.
+    await ctx.db.prepare(`INSERT OR IGNORE INTO campus_classrooms (id,owner_id,school_year,grade,section,join_code,created_at)
+        SELECT json_extract(value,'$.id'),json_extract(value,'$.ownerId'),json_extract(value,'$.schoolYear'),
+            json_extract(value,'$.grade'),json_extract(value,'$.section'),json_extract(value,'$.joinCode'),json_extract(value,'$.createdAt')
+        FROM json_each(?)`).bind(JSON.stringify(classes)).run();
+    const rows = (await ctx.db.prepare("SELECT * FROM campus_classrooms WHERE owner_id=? AND school_year=? ORDER BY grade,section").bind(ownerId, schoolYear).all<ClassRow>()).results;
+    const pending = rows.filter(row => !row.active_assignment_id).map(row => ({ id: crypto.randomUUID(), classId: row.id }));
+    if (pending.length) {
+        const selected = JSON.stringify(pending);
+        // Check the active pointer again inside the transaction: concurrent
+        // setup requests cannot replace or duplicate another request's activity.
+        await ctx.db.batch([
+            ctx.db.prepare(`INSERT INTO campus_assignments (id,classroom_id,title,created_at)
+                SELECT json_extract(p.value,'$.id'),c.id,'Campus learning 1',? FROM json_each(?) p
+                JOIN campus_classrooms c ON c.id=json_extract(p.value,'$.classId')
+                WHERE c.owner_id=? AND c.active_assignment_id IS NULL`).bind(createdAt, selected, ownerId),
+            ctx.db.prepare(`INSERT INTO campus_assignment_items (id,assignment_id,question_id,revision)
+                SELECT a.id || ':' || q.id,a.id,q.id,q.current_revision FROM json_each(?) p
+                JOIN campus_assignments a ON a.id=json_extract(p.value,'$.id')
+                JOIN campus_classrooms c ON c.id=a.classroom_id
+                JOIN campus_questions q ON q.owner_id=c.owner_id AND (q.grade=c.grade OR q.grade=0)
+                WHERE c.owner_id=? AND q.status='published'`).bind(selected, ownerId),
+            ctx.db.prepare(`UPDATE campus_classrooms SET active_assignment_id=(
+                SELECT a.id FROM campus_assignments a JOIN json_each(?) p ON a.id=json_extract(p.value,'$.id')
+                WHERE a.classroom_id=campus_classrooms.id)
+                WHERE owner_id=? AND school_year=? AND active_assignment_id IS NULL`).bind(selected, ownerId, schoolYear),
+        ]);
+    }
+    return (await ctx.db.prepare("SELECT * FROM campus_classrooms WHERE owner_id=? AND school_year=? ORDER BY grade,section").bind(ownerId, schoolYear).all<ClassRow>()).results.map(classPublic);
 }
 export async function requireStudent(request: Request, ctx: CampusContext) {
     const raw = cookie(request, STUDENT_COOKIE);

@@ -38,6 +38,9 @@ export function textField(value: unknown, name: string, max = 100) {
     return value.trim();
 }
 export function allowedTeacher(ctx: CampusContext): TeacherIdentity {
+    // Sites identity headers and the local testing override are not credentials
+    // on an independent host, even if a caller supplies them in the context.
+    if (ctx.env.TEACHER_AUTH_MODE === "access-code") return null;
     const emails = (ctx.env.TEACHER_EMAILS ?? "").split(",").map(x => x.trim().toLowerCase()).filter(Boolean);
     if (ctx.teacher && emails.includes(ctx.teacher.email.toLowerCase()))
         return ctx.teacher;
@@ -46,6 +49,16 @@ export function allowedTeacher(ctx: CampusContext): TeacherIdentity {
     return null;
 }
 export async function requireTeacher(request: Request, ctx: CampusContext, unlocked = true) {
+    if (ctx.env.TEACHER_AUTH_MODE === "access-code") {
+        const key = cookie(request, TEACHER_COOKIE);
+        if (!/^[a-f0-9]{48}$/.test(key))
+            throw new CampusError(401, "TEACHER_LOCKED", "Enter your teacher access code.");
+        const row = await ctx.db.prepare("SELECT s.owner_id FROM campus_teacher_unlocks s JOIN campus_teacher_credentials c ON c.id=s.credential_id AND c.owner_id=s.owner_id WHERE s.token_hash=? AND s.expires_at>? AND c.revoked_at IS NULL").bind(await hash(key), now(ctx)).first<{ owner_id: string }>();
+        if (!row)
+            throw new CampusError(401, "TEACHER_LOCKED", "Enter your teacher access code.");
+        // Independent credentials do not require or disclose a teacher email.
+        return { userId: row.owner_id, email: "" };
+    }
     const identity = allowedTeacher(ctx);
     if (!identity)
         throw new CampusError(403, "TEACHER_FORBIDDEN", "Sign in with an authorised teacher account.");
@@ -56,6 +69,18 @@ export async function requireTeacher(request: Request, ctx: CampusContext, unloc
             throw new CampusError(401, "TEACHER_LOCKED", "Unlock the teacher workspace.");
     }
     return identity;
+}
+export async function independentTeacherLogin(ctx: CampusContext, value: unknown) {
+    const ip = ctx.clientIp?.trim() || "unavailable";
+    await limit(ctx, "teacher-code-ip:" + await hash(ip), 20, 15 * 60 * 1000);
+    await limit(ctx, "teacher-code-global", 200, 60 * 1000);
+    const code = typeof value === "string" ? value.trim().toLowerCase() : "";
+    if (!/^[a-f0-9]{48}$/.test(code))
+        throw new CampusError(401, "INVALID_TEACHER_CODE", "The teacher access code is not valid.");
+    const row = await ctx.db.prepare("SELECT id,owner_id FROM campus_teacher_credentials WHERE code_hash=? AND revoked_at IS NULL").bind(await hash(code)).first<{ id: string; owner_id: string }>();
+    if (!row)
+        throw new CampusError(401, "INVALID_TEACHER_CODE", "The teacher access code is not valid.");
+    return row;
 }
 export async function limit(ctx: CampusContext, key: string, maximum: number, windowMs: number) {
     const time = now(ctx);

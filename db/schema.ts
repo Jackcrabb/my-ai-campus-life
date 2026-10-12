@@ -44,8 +44,14 @@ export const sessions = sqliteTable("campus_sessions", {
     tokenHash: text("token_hash").primaryKey(), studentId: text("student_id").notNull().references(() => students.id),
     expiresAt: integer("expires_at").notNull(), createdAt: text("created_at").notNull(),
 });
+export const teacherCredentials = sqliteTable("campus_teacher_credentials", {
+    id: text("id").primaryKey(), ownerId: text("owner_id").notNull(),
+    label: text("label").notNull(), codeHash: text("code_hash").notNull().unique(),
+    createdAt: text("created_at").notNull(), revokedAt: text("revoked_at"),
+});
 export const teacherUnlocks = sqliteTable("campus_teacher_unlocks", {
     tokenHash: text("token_hash").primaryKey(), ownerId: text("owner_id").notNull(), expiresAt: integer("expires_at").notNull(),
+    credentialId: text("credential_id").references(() => teacherCredentials.id),
 });
 export const questions = sqliteTable("campus_questions", {
     id: text("id").primaryKey(), ownerId: text("owner_id").notNull(), sourceId: text("source_id"),

@@ -6,21 +6,21 @@
 
 ## 直接在瀏覽器遊玩
 
-> **已發布 — 2026 年 10 月 12 日：** 公開第 4 版已包含手機地圖、固定配音修正、教師自訂題目及每題 1–10 星、Excel／列印成績星數欄位，以及分類後的資源。遊戲免登入開啟；已用匿名請求核對入口、32 個線上資源及教師權限，詳見[發布驗證](docs/DISTRIBUTION-AUDIT.md#12-october-2026-release-verification)。
+> **獨立網站已發布 — 2026 年 10 月 13 日：** 遊戲現已由擁有者自己的 Cloudflare Free 帳戶託管。學生直接開啟，教師以私人登入碼進入工作台。匿名入口、教師登入碼、班級活動、自訂星數、成績及 PDF 權限均通過線上核查，QR code 已指向獨立網站。實際驗證範圍見[部署紀錄](docs/DISTRIBUTION-AUDIT.md#13-october-2026-independent-hosting-rollout)。
 
-**[開啟公開遊戲](https://lumen-lab-ai-ethics.tart-vale-4903.chatgpt.site)** — 自由探索毋須下載程式或登入 GitHub。Windows、Mac、平板及手機均透過瀏覽器開啟；班級功能需要網絡連線。
+**[開啟公開遊戲](https://my-ai-campus-life.hjhlgz.workers.dev)** — 自由探索毋須下載程式或登入 GitHub。Windows、Mac、平板及手機均透過瀏覽器開啟；班級功能需要網絡連線。
 
-<a href="https://lumen-lab-ai-ethics.tart-vale-4903.chatgpt.site"><img src="docs/assets/public-game-qr.png" width="220" alt="掃描遊玩我的 AI 校園生活" /></a>
+<a href="https://my-ai-campus-life.hjhlgz.workers.dev"><img src="docs/assets/public-game-qr.png" width="220" alt="掃描遊玩我的 AI 校園生活" /></a>
 
 [QR code PNG](docs/assets/public-game-qr.png) · [列印用 SVG](docs/assets/public-game-qr.svg) · [發佈與下載核查](docs/DISTRIBUTION-AUDIT.md)
 
 1. 開啟網址或掃描 QR code，以右上角 **A** 選擇語言。
 2. 選擇 **新開始 → 學生**，設定角色後進入校園；已有同一瀏覽器存檔時選 **繼續遊戲**。
-3. 上課活動使用教師提供的班級代碼。**新開始 → 教師** 只供已授權身份及伺服器 PIN 登入；只知道 `1234` 並不會取得教師權限。
+3. 上課活動使用教師提供的班級代碼。**新開始 → 教師** 使用管理員提供的私人教師登入碼，不能以 `1234` 代替。
 
 日常分享請用上述遊戲網址。[私人 GitHub 原始碼倉庫](https://github.com/Jackcrabb/my-ai-campus-life)及 ZIP 只供已獲授權的協作者，下載與開發步驟另列於下方。
 
-現行程式採 **Sites / Vinext + Cloudflare D1（紀錄）及 R2（工作紙檔案）** 架構，前端在 `public/campus/`。本文說明目前來源版本；公開入口及 32 個已部署資源於 2026 年 10 月 12 日（香港時間）核查，詳見[驗證範圍](docs/DISTRIBUTION-AUDIT.md)。
+獨立版本採 **Cloudflare Worker + Static Assets + D1**，班級紀錄及分塊工作紙 PDF 均存於 D1，不啟用 R2。前端在 `public/campus/`；既有 Sites / Vinext 部署另行保留。兩個版本的發布及核查範圍分別記錄於[部署紀錄](docs/DISTRIBUTION-AUDIT.md)，修改來源檔案本身不等於已發布網站。
 
 **美術及語音進度：2026 年 10 月 12 日。** 電腦版角色設定背景及完整身形已有修正截圖。NPC 日常行為已實裝；已釋出 7 張動作圖集，涵蓋 24 個身份／服飾組合，共 96 幅動作。第 1–2 款校服的 8 個同學組合及無五官背景學生尚未完成。來源版本現已包含 104 段固定對白 MP3：普通話及英文各 52 段，涵蓋 20 位角色；繁中保留原有粵語朗讀。教師語音工作室已移除，學科題目一律文字呈現。音檔完整解碼、雜湊及聲線性別／語言資料已驗證；公開第 4 版已包含這批音檔，逐段聆聽仍須另外完成。詳見[介面稽核](docs/UX-AUDIT.md)、[NPC 進度](docs/NPC-BEHAVIOR-PLAN.md)及[語音服務](docs/OPENROUTER-TTS-SERVICE.md)。
 
@@ -45,7 +45,7 @@
 
 ## 自由探索與班級模式
 
-自由探索不需要登入；角色、進度和反思留在同一瀏覽器，沿用舊存檔的讀取遷移。現行儲存鍵為 `my-ai-campus-life-v2`。自由探索分數不會匯入班級正式作答紀錄。
+自由探索不需要登入；角色、進度和反思留在同一瀏覽器，沿用舊存檔的讀取遷移。現行儲存鍵為 `my-ai-campus-life-v2`。自由探索分數不會匯入班級正式作答紀錄。瀏覽器存檔綁定網站網域；轉用新網址不會自動帶走舊 Sites 網址的自由探索存檔。需要繼續舊存檔時保留原連結。班級恢復碼只有在相應班級資料已遷移後，才可在新網站還原紀錄。
 
 班級模式由教師提供班級代碼。學生首次輸入學號及姓名後取得一次顯示的恢復碼；換裝置時使用班級代碼、學號及恢復碼繼續。學生不需要 ChatGPT 帳戶。恢復碼代表對紀錄的持有權，並不是核實真實學生身份的學校 SSO。遺失時由授權教師重設；重設亦會撤銷舊學生登入。共用裝置完成後請登出。
 
@@ -57,7 +57,7 @@
 
 ## 教師工作台與 Excel
 
-教師從主選單「新開始 → 教師」登入，解鎖後先選擇 13 個學習學科之一或「AI 倫理與共融」，再開啟題目、工作紙或成績功能。「更換學科」返回選科，切換工具時保留年級、班別與活動篩選。遊戲內「設定 → 教師工作台」入口亦保留。正式環境須先經 Sites 的 ChatGPT 身份登入、符合 `TEACHER_EMAILS` 擁有者名單，再輸入伺服器驗證的教師 PIN。按目前使用者設定，PIN 為 **1234**，由 `TEACHER_PIN` 環境設定提供；**PIN 不是獨立帳戶認證，也不能代替擁有者身份檢查**。PIN 錯誤有速率限制，解鎖有效 30 分鐘。
+教師從主選單「新開始 → 教師」登入，解鎖後先選擇 13 個學習學科之一或「AI 倫理與共融」，再開啟題目、工作紙或成績功能。「更換學科」返回選科，切換工具時保留年級、班別與活動篩選。遊戲內「設定 → 教師工作台」入口亦保留。獨立 Cloudflare 版本直接輸入管理員提供的 **私人教師登入碼**，不經平台帳戶認證。每個登入碼有 48 個字元，請完整複製貼上；只可存取所屬教師的班級。錯誤嘗試有速率限制，登入有效 30 分鐘。共用電腦離開前按「鎖定」，登入碼遺失或被撤銷時聯絡管理員。不要把登入碼放到 GitHub、工作紙或班級群組。舊有公開 `1234` PIN 不能登入獨立版本；另行保留的 Sites 版本繼續使用其原有身份及 PIN 認證。
 
 工作台可明確建立一班或 24 班（S1–S6 × A–D），查看／複製班級代碼，新增、修改、發佈或封存學科題目，並為班級開始新活動。在「題目 → 新增題目」可按教學需要繼續加題，每科三題只是起始題庫設定；每題可選擇 **1–10 顆整數星星**。儲存為「已發佈」後，到「班級 → 新活動」發佈更新題庫，學生才會使用新版本。每次活動凍結題目及星數設定；後續改題不會重算舊活動、舊成績或可得星數。「AI 倫理與共融」可檢視核心情境、遷移題及成績，但不可編輯核心題目；PDF 上傳供其餘 13 個學科使用。
 
@@ -70,7 +70,7 @@
 
 匯出由已授權教師主動下載，不會公開列出學生名單。
 
-學生從右上角 HUD 的「打印」開啟工作紙，校園場景內不設實體打印機。教師在所選學科的「工作紙」頁籤指定年級，上傳繁中或英文 PDF，亦可兩種一併提供，每份上限 5 MiB。學生只會看到自己班級所屬年級、該樓層科目的授權版本；選擇版本後預覽，按「列印 PDF」才請求閱讀器／瀏覽器列印。保留「開啟 PDF」及「下載 PDF」作備用，不會自動送印。詳見[工作紙指南](docs/WORKSHEETS.md)。
+學生從右上角 HUD 的「打印」開啟工作紙，校園場景內不設實體打印機。教師在所選學科的「工作紙」頁籤指定年級，上傳繁中或英文 PDF，亦可兩種一併提供，每份上限 5 MiB。獨立版本的 PDF 儲存總上限為所有教師合計 **100 MiB**；容量用盡時，先刪除不再使用的工作紙再上傳。學生只會看到自己班級所屬年級、該樓層科目的授權版本；選擇版本後預覽，按「列印 PDF」才請求閱讀器／瀏覽器列印。保留「開啟 PDF」及「下載 PDF」作備用，不會自動送印。詳見[工作紙指南](docs/WORKSHEETS.md)。
 
 ## 音樂與語音
 
@@ -88,7 +88,7 @@
 
 錄音必須同時符合角色身份、語言及完整文本才可播放。固定對白改為提示玩家查看畫面的班別／進度，避免把會改變的學生資料或星數寫進錄音。文本改動或檔案缺失時可使用嚴格匹配的裝置聲線；聲線清單尚未載入時最多等待三秒，再回報不可用，不使用錯誤語言或已知性別。內置普通話對白因此不再依賴裝置有沒有男聲，粵語仍依賴系統聲線；畫面文字始終保留。
 
-獨立保留的內部 OpenRouter 試音服務只使用 `fish-audio/s2.1-pro-free:free`，全站每日上限為 **6 次、3,000 字元、0 美元**，生成前核對零收費資料，沒有付費備援，API Key 只存在伺服器。它並非上述內置 MP3 的來源，遊玩時亦不依賴它。免費 Edge 製作端點可能改動或停止服務，但已儲存的音檔不需重新生成。製作步驟與驗證限制見[內部語音服務指南](docs/OPENROUTER-TTS-SERVICE.md)。較早的 [TTSFree 手動試音紀錄](resources/design/voice-auditions-free/README.md)保留作歷史製作資料。
+獨立 Cloudflare Worker 完全停用線上語音生成。保留的 Sites 來源另有內部 OpenRouter 試音服務，只使用 `fish-audio/s2.1-pro-free:free`，全站每日上限為 **6 次、3,000 字元、0 美元**，生成前核對零收費資料，沒有付費備援，API Key 只存在伺服器。它並非上述內置 MP3 的來源，遊玩時亦不依賴它。免費 Edge 製作端點可能改動或停止服務，但已儲存的音檔不需重新生成。製作步驟與驗證限制見[內部語音服務指南](docs/OPENROUTER-TTS-SERVICE.md)。較早的 [TTSFree 手動試音紀錄](resources/design/voice-auditions-free/README.md)保留作歷史製作資料。
 
 背景《Greensleeves》使用 [Mutopia 公版旋律](https://www.mutopiaproject.org/ftp/Traditional/greensleeves/greensleeves-let.pdf)，由本專案以 Web Audio 原創樂器及伴奏合成，沒有使用 DSE 或商業演奏錄音。音樂及語音音量獨立；需要使用者手勢解鎖播放，對話時音樂降低，頁面隱藏時暫停。詳見[資源來源](ASSET-PROVENANCE.md)。
 
@@ -110,7 +110,15 @@ Safari 網頁 App 與 Safari 的網站資料分開，不能假設自由探索存
 
 ZIP 是原始碼快照，不是安裝包，也不是雙擊即可玩的遊戲；不包含正式資料庫紀錄、已上載工作紙、憑證或已安裝依賴。解壓後在終端機進入資料夾，依下方開發步驟設定。只想使用遊戲的學生及教師，直接開啟公開網址即可。
 
+## 獨立 Cloudflare 託管
+
+使用擁有者的 **Workers Free + Static Assets + D1**，免費 `workers.dev` 網址毋須購買網域。PDF 以 D1 分塊儲存，每份 5 MiB、全站共 100 MiB，不需啟用 R2。免費方案仍有請求、CPU 及資料庫用量限制，超額可暫停服務，並非無限容量。帳戶核對、資料庫遷移、私人教師登入碼及部署步驟見[獨立部署指南](deployment/cloudflare/README.md)。
+
+Cloudflare 憑證、部署帳戶設定及教師登入碼放於已忽略的本機資料夾，不納入 GitHub；倉庫只提供安全設定範本。原有 Sites 網站另行保留。
+
 ## 開發與資料庫
+
+以下保留原有 Sites / Vinext 本機開發流程；上述獨立 Worker 共用前後端程式，但不使用 Sites 身份或 R2。
 
 需要 Node.js 22.13+ 及專案依賴。首次安裝用專案的 `npm run install:ci`；已有依賴時直接執行：
 
@@ -120,7 +128,7 @@ npm run dev
 
 使用命令實際顯示的本機網址，首頁會導向 `/campus/index.html`。不要再用 `python -m http.server dist` 測試班級功能；它不能提供身份驗證或 D1 API。
 
-D1 binding 名稱為 `DB`，R2 工作紙儲存 binding 為 `BUCKET`，設定在 `.openai/hosting.json`；schema 在 `db/schema.ts`，遷移在 `drizzle/`。改 schema 後執行 `npm run db:generate`。新的空白本機資料庫可在首次 build 產生 Worker 設定後，依次套用以下五個既有遷移各一次：
+原有 Sites 開發路徑的 D1 binding 名稱為 `DB`，R2 工作紙儲存 binding 為 `BUCKET`，設定在 `.openai/hosting.json`；schema 在 `db/schema.ts`，遷移在 `drizzle/`。改 schema 後執行 `npm run db:generate`。新的空白本機資料庫可在首次 build 產生 Worker 設定後，依次套用以下六個既有遷移各一次：
 
 ```sh
 npm run build
@@ -129,11 +137,12 @@ node --import ./scripts/sites-env.mjs ./node_modules/wrangler/bin/wrangler.js d1
 node --import ./scripts/sites-env.mjs ./node_modules/wrangler/bin/wrangler.js d1 execute DB --local --config dist/server/wrangler.json --persist-to .wrangler/state --file drizzle/0002_lazy_catseye.sql
 node --import ./scripts/sites-env.mjs ./node_modules/wrangler/bin/wrangler.js d1 execute DB --local --config dist/server/wrangler.json --persist-to .wrangler/state --file drizzle/0003_peaceful_mister_fear.sql
 node --import ./scripts/sites-env.mjs ./node_modules/wrangler/bin/wrangler.js d1 execute DB --local --config dist/server/wrangler.json --persist-to .wrangler/state --file drizzle/0004_mighty_miek.sql
+node --import ./scripts/sites-env.mjs ./node_modules/wrangler/bin/wrangler.js d1 execute DB --local --config dist/server/wrangler.json --persist-to .wrangler/state --file drizzle/0005_independent_teacher.sql
 ```
 
 既有資料庫只套用尚未執行的遷移，不要重複執行已套用的 SQL。測試使用隔離的 Miniflare D1/R2，不需要重設正在預覽的班級資料。
 
-正式環境必須設定 `TEACHER_EMAILS` 及 `TEACHER_PIN`，未配置擁有者名單時不授予教師權限。忽略於 Git 的 `.dev.vars` 可設定 `CAMPUS_LOCAL_TEACHER=1` 供本機教師測試；此例外只在非 production 且 loopback host 生效，production build 不會啟用。不要將 `.dev.vars`、憑證、課程 PDF、私人筆記或學生匯出放進 `public/`。
+Sites 正式環境必須設定 `TEACHER_EMAILS` 及 `TEACHER_PIN`，未配置擁有者名單時不授予教師權限。忽略於 Git 的 `.dev.vars` 可設定 `CAMPUS_LOCAL_TEACHER=1` 供本機教師測試；此例外只在非 production 且 loopback host 生效，production build 不會啟用。不要將 `.dev.vars`、憑證、課程 PDF、私人筆記或學生匯出放進 `public/`。
 
 ## 程式結構與驗證
 
@@ -142,7 +151,9 @@ node --import ./scripts/sites-env.mjs ./node_modules/wrangler/bin/wrangler.js d1
 
 | 路徑 | 用途 |
 |---|---|
-| `app/page.tsx`、`app/api/campus/[...path]/route.ts` | 網站入口、同源 API、平台身份 |
+| `deployment/cloudflare/worker.ts`、`scripts/cloudflare-cli.mjs` | 獨立網站入口、D1 工作紙儲存及部署核查 |
+| `scripts/provision-teacher-code.mjs` | 私人教師登入碼製作及摘要匯入 |
+| `app/page.tsx`、`app/api/campus/[...path]/route.ts` | 保留的 Sites 入口、同源 API、平台身份 |
 | `lib/campus-*.ts`、`db/schema.ts`、`drizzle/` | 學生／教師權限、版本化題目、活動、計分、D1 schema |
 | `data/grade-bank.json`、`scripts/content-authoring/` | 234 題資料及題庫編製來源 |
 | `public/campus/game/app.js`、`campus-cloud.js` | 遊戲狀態、雲端連接與衝突處理 |
@@ -175,7 +186,7 @@ node_modules/.bin/tsc --noEmit
 npm run build
 ```
 
-本次後端測試使用正式編製題庫，在隔離的本機 D1/R2 通過 **166 項 assertions/API checks**。另已驗證起始題更新不改動教師自編版本、封存題或已凍結活動；工作紙測試涵蓋檔案上限、授權、Unicode 檔名及可重試的儲存失敗。教師元件測試涵蓋獨立選科入口、學科工作紙、核心題唯讀及單科／全科匯出。整合測試涵蓋首次加入、登入還原、新活動、遺失回應後同鍵重試、四／五選項題及不同教室映射。TTS 後端以隔離 D1/R2 及模擬供應商通過 **180 項檢查**，包括以 HTTP 410 拒絕學科語音；整合測試亦確認 NPC 問候可朗讀，接着的學科題目、選項及回饋保持靜音。音效測試不能代替實際聽感及裝置驗證。其他測試與視覺結果以各次執行紀錄為準，不宣稱未執行的檢查通過。
+較早的後端測試使用正式編製題庫，在隔離的本機 D1/R2 通過 **166 項 assertions/API checks**。另已驗證起始題更新不改動教師自編版本、封存題或已凍結活動；工作紙測試涵蓋檔案上限、授權、Unicode 檔名及可重試的儲存失敗。教師元件測試涵蓋獨立選科入口、學科工作紙、核心題唯讀及單科／全科匯出。整合測試涵蓋首次加入、登入還原、新活動、遺失回應後同鍵重試、四／五選項題及不同教室映射。TTS 後端以隔離 D1/R2 及模擬供應商通過 **180 項檢查**，包括以 HTTP 410 拒絕學科語音；整合測試亦確認 NPC 問候可朗讀，接着的學科題目、選項及回饋保持靜音。音效測試不能代替實際聽感及裝置驗證。其他測試與視覺結果以各次執行紀錄為準，不宣稱未執行的檢查通過。
 
 以上功能以本機來源版本為準；新修正是否已上線須另看部署驗證。工作紙已做元件及隔離瀏覽器預覽／下載檢查，尚未驗證系統列印視窗或實體列印。
 
@@ -185,10 +196,12 @@ npm run build
 
 ### 分享遊戲
 
-請使用本文頂部的公開連結及 QR code。QR code 儲存公開根網址，再前往 `/campus/`；PNG 為 1960 × 1960 像素、300 dpi，講義或投影片可使用 SVG 縮放，並保留四周淺色邊界。公開入口、QR code 及私人倉庫的日期與核查結果見[發佈與下載核查](docs/DISTRIBUTION-AUDIT.md)。
+請使用本文頂部的公開連結及 QR code。QR code 儲存 `https://my-ai-campus-life.hjhlgz.workers.dev/campus/`；PNG 為 820 × 820 像素，講義或投影片可使用 SVG 縮放，並保留四周淺色邊界。公開入口、QR code 及私人倉庫的日期與核查結果見[發佈與下載核查](docs/DISTRIBUTION-AUDIT.md)。
 
 公開遊戲與私人原始碼的權限各自獨立。入口可連線不等於所有班級操作、原生列印對話框或每部裝置聲線均已驗證；正式上課前請按上方清單試用。
 
 ### 更新部署
 
-更新版本時須部署包含 API、D1 資料庫及 R2 工作紙儲存的完整 Sites 專案，保留既有 project identity；只上傳靜態檔案不能提供跨裝置班級功能。遷移、正式環境變數、擁有者登入與公開學生流程應在部署時驗證，再以另一瀏覽器或裝置確認存取。
+獨立公開版本依[Cloudflare 部署指南](deployment/cloudflare/README.md)發布 Worker、靜態資源及已設定的 D1 資料庫。更換分享網址及 QR code 前，核對 Free 方案、遷移、教師登入碼、匿名學生入口與班級／工作紙操作。私人登入碼及正式資料庫紀錄不納入原始碼倉庫。
+
+原有 Sites 網站是另一個部署，保留其 project identity 與 D1/R2 設定。上傳 GitHub 不會自動部署任何後端；只發布靜態檔案亦不能提供跨裝置班級功能。

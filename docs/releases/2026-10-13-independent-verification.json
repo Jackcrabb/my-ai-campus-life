@@ -1,0 +1,106 @@
+{
+  "origin": "https://my-ai-campus-life.hjhlgz.workers.dev",
+  "startedAt": "2026-10-12T16:43:19.482Z",
+  "finishedAt": "2026-10-12T16:44:33.493Z",
+  "ok": true,
+  "checks": [
+    {
+      "name": "anonymous-entry-assets",
+      "ok": true,
+      "ms": 1315
+    },
+    {
+      "name": "anonymous-teacher-session",
+      "ok": true,
+      "ms": 755
+    },
+    {
+      "name": "anonymous-protected-route-denied",
+      "ok": true,
+      "ms": 208
+    },
+    {
+      "name": "public-1234-denied",
+      "ok": true,
+      "ms": 1820
+    },
+    {
+      "name": "qa-first-login-and-full-bank-seeding",
+      "ok": true,
+      "ms": 8575,
+      "questionCount": 239
+    },
+    {
+      "name": "teacher-authored-star-boundaries",
+      "ok": true,
+      "ms": 2650
+    },
+    {
+      "name": "synthetic-class-and-new-assignment",
+      "ok": true,
+      "ms": 3794
+    },
+    {
+      "name": "synthetic-student-join",
+      "ok": true,
+      "ms": 4550
+    },
+    {
+      "name": "student-earns-one-and-ten-stars-once",
+      "ok": true,
+      "ms": 16473
+    },
+    {
+      "name": "teacher-results-include-earned-and-available-stars",
+      "ok": true,
+      "ms": 2404,
+      "earnedStars": 11,
+      "availableStars": 17,
+      "score": 2
+    },
+    {
+      "name": "primary-login-and-owner-isolation",
+      "ok": true,
+      "ms": 6291
+    },
+    {
+      "name": "five-mib-pdf-upload-download-and-isolation",
+      "ok": true,
+      "ms": 14999,
+      "bytes": 5242880,
+      "sha256Matched": true
+    }
+  ],
+  "cleanup": [
+    {
+      "name": "delete-only-qa-worksheet",
+      "ok": true
+    },
+    {
+      "name": "archive-only-qa-question",
+      "ok": true
+    },
+    {
+      "name": "archive-only-qa-question",
+      "ok": true
+    },
+    {
+      "name": "student-logout",
+      "ok": true
+    },
+    {
+      "name": "qa-teacher-logout",
+      "ok": true
+    },
+    {
+      "name": "primary-teacher-logout",
+      "ok": true
+    }
+  ],
+  "remainingSyntheticRecords": [
+    "Dedicated QA owner and seeded question bank",
+    "S6D, school year 2099-00 synthetic class and activities",
+    "Synthetic learner and scoring attempts; API provides no removal endpoint",
+    "Archived test questions remain as immutable activity history"
+  ]
+}

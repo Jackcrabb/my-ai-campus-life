@@ -1,0 +1,52 @@
+{
+  "recordedDate": "2026-10-13",
+  "generatedPreviewSource": "built-in imagegen; output exec-880f35eb-489d-45aa-a97a-9124614f08c3.png",
+  "screenshotSite": "https://my-ai-campus-life.hjhlgz.workers.dev/campus/",
+  "assets": [
+    {
+      "file": "teacher-login-approved-preview.png",
+      "kind": "generated-design-preview",
+      "description": "Approved cream, deep-teal and gold teacher-code login proposal; its platform-account subtitle was subsequently removed at the user’s request.",
+      "width": 1672,
+      "height": 941,
+      "bytes": 2458698,
+      "sha256": "8990c1199d96382c02d99d0b1d5f01698b45a08853e1a01744c541ceb43962d2"
+    },
+    {
+      "file": "teacher-login-desktop.jpg",
+      "kind": "browser-screenshot",
+      "description": "Published standalone teacher login, captured at desktop size.",
+      "width": 1728,
+      "height": 822,
+      "bytes": 252816,
+      "sha256": "fe06ce540c0676b7d1e78960d059139cc026b7691647b64905e6135b48074a3e"
+    },
+    {
+      "file": "teacher-login-mobile.jpg",
+      "kind": "browser-screenshot",
+      "description": "Published standalone teacher login at 390 × 844; no horizontal overflow observed.",
+      "width": 390,
+      "height": 844,
+      "bytes": 43778,
+      "sha256": "94bc61a93ad58ac9fcf7265b783fa3fbabf2b0f4db139fa21846841398b7986f"
+    },
+    {
+      "file": "teacher-workspace-desktop.jpg",
+      "kind": "browser-screenshot",
+      "description": "Published teacher workspace after successful code login, showing 14 subject/theme entries.",
+      "width": 1728,
+      "height": 822,
+      "bytes": 212401,
+      "sha256": "d28e08d25644f15fc6971017b5e8aafa35c475842c5274df9277d4ee8044138f"
+    },
+    {
+      "file": "student-setup-desktop.jpg",
+      "kind": "browser-screenshot",
+      "description": "Published desktop student setup with the school background and full character visible.",
+      "width": 1728,
+      "height": 822,
+      "bytes": 261747,
+      "sha256": "cfa8893dfb79ebaf150b5e03c7ba1af3399f0bcb20435c3c1ea9d2d94a9e58fa"
+    }
+  ]
+}

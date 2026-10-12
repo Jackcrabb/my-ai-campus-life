@@ -11,7 +11,16 @@
     "build": "node scripts/run-framework.mjs build",
     "start": "node --import ./scripts/sites-env.mjs ./node_modules/wrangler/bin/wrangler.js dev --config dist/server/wrangler.json --local --persist-to .wrangler/state --ip 127.0.0.1 --inspector-port 0",
     "lint": "eslint . --ignore-pattern dist --ignore-pattern .next",
-    "db:generate": "drizzle-kit generate"
+    "db:generate": "drizzle-kit generate",
+    "cloudflare:login": "node scripts/cloudflare-cli.mjs login",
+    "cloudflare:doctor": "node scripts/cloudflare-cli.mjs doctor",
+    "cloudflare:dry-run": "node scripts/cloudflare-cli.mjs dry-run",
+    "cloudflare:verify-account": "node scripts/cloudflare-cli.mjs verify-account",
+    "cloudflare:create-database": "node scripts/cloudflare-cli.mjs create-database",
+    "cloudflare:migrate": "node scripts/cloudflare-cli.mjs migrate",
+    "cloudflare:import-teacher": "node scripts/cloudflare-cli.mjs import-teacher",
+    "cloudflare:deploy": "node scripts/cloudflare-cli.mjs deploy",
+    "cloudflare:test": "node scripts/cloudflare-smoke.test.mjs"
   },
   "dependencies": {
     "@base-ui/react": "^1.7.0",

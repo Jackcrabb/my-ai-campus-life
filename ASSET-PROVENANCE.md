@@ -13,6 +13,12 @@ The user first selected **Version 1: Crafted Pixel RPG**, recorded in the [art-d
 
 Production art was generated with the built-in imagegen tool. Original generated PNGs and exact prompts/source paths are retained in the linked records. User-provided game screenshots informed composition and interaction; they are not embedded as runtime assets. No third-party game sprites or official school photographs were downloaded for the game. Pixel art and CSS controls are separate: interface text and controls are rendered by the game rather than baked into the scene.
 
+## Independent teacher login — 13 October 2026
+
+The [independent-login evidence package](resources/design/qa-independent/README.md) contains one built-in-imagegen proposal and four actual browser screenshots. The user approved the cream/teal/gold pixel style, then explicitly removed the proposal’s “No ChatGPT account required” subtitle from the implementation. The original proposal remains unchanged for traceability; the desktop/mobile screenshots show the published login without that subtitle, a workspace screenshot shows the subject chooser after login, and the desktop student setup capture shows the school background and complete character.
+
+These are review/evidence assets, not new runtime backgrounds. [Per-file metadata](resources/design/qa-independent/assets.json) records dimensions, bytes and SHA-256 hashes. The package supplements the earlier conversation archive without changing its 98-image historical count. No teacher credential or student record is included.
+
 ## Player wardrobe
 
 Eight source atlases each contain two hairstyles and five poses per hairstyle: idle plus four alternating walking phases. Skin-region masks support three selectable skin tones. Two character categories × four outfits × two hairstyles × three skin tones produce **48 appearance combinations**, not 48 independently generated atlases. Clothes, hair and skin do not affect learning access or scoring.

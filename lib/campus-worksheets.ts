@@ -50,6 +50,7 @@ async function canRead(request: Request, ctx: CampusContext, row: WorksheetRow) 
 export async function handleWorksheets(request: Request, ctx: CampusContext): Promise<Response> {
     const url = new URL(request.url), parts = url.pathname.replace(/^\/api\/campus\//, "").split("/");
     const teacherRoute = parts[0] === "teacher", method = request.method;
+    const bucket = ctx.worksheetBucket ?? ctx.bucket;
     checkOrigin(request, method === "POST" ? "multipart/form-data" : "application/json");
     if (teacherRoute) {
         const teacher = await requireTeacher(request, ctx), ownerId = teacher.userId;
@@ -58,7 +59,7 @@ export async function handleWorksheets(request: Request, ctx: CampusContext): Pr
             return json({ worksheets: rows.results.filter(row => (!url.searchParams.has("grade") || row.grade === Number(url.searchParams.get("grade"))) && (!url.searchParams.has("subjectId") || row.subject_id === url.searchParams.get("subjectId"))).map(publicWorksheet), maxFileBytes: WORKSHEET_MAX_BYTES });
         }
         if (method === "POST" && parts.length === 2) {
-            if (!ctx.bucket) throw new CampusError(503, "WORKSHEET_STORAGE", "Worksheet storage is not configured.");
+            if (!bucket) throw new CampusError(503, "WORKSHEET_STORAGE", "Worksheet storage is not configured.");
             await limit(ctx, "worksheet-upload:" + ownerId, 30, 60 * 60 * 1000);
             const form = await formDataLimited(request), grade = Number(form.get("grade"));
             const title = textField(form.get("title"), "title", 160), subject = textField(form.get("subjectId"), "subjectId", 40);
@@ -80,18 +81,18 @@ export async function handleWorksheets(request: Request, ctx: CampusContext): Pr
             if (!uploads.length) throw new CampusError(400, "WORKSHEET_FILE", "Provide a Traditional Chinese or English PDF, or both.");
             const uploaded: string[] = [];
             try {
-                for (const item of uploads) { await ctx.bucket.put(item.key, item.bytes, { httpMetadata: { contentType: "application/pdf" } }); uploaded.push(item.key); }
+                for (const item of uploads) { await bucket.put(item.key, item.bytes, { httpMetadata: { contentType: "application/pdf" } }); uploaded.push(item.key); }
                 await ctx.db.prepare("INSERT INTO campus_worksheets (id,owner_id,grade,subject_id,title,files,created_at) VALUES (?,?,?,?,?,?,?)").bind(id, ownerId, grade, subject, title, JSON.stringify(files), iso(ctx)).run();
-            } catch (error) { if (uploaded.length) await ctx.bucket.delete(uploaded); throw error; }
+            } catch (error) { if (uploaded.length) await bucket.delete(uploaded); throw error; }
             return json({ worksheet: publicWorksheet({ id, owner_id: ownerId, grade, subject_id: subject, title, files: JSON.stringify(files), created_at: iso(ctx) }) }, 201);
         }
         if (method === "DELETE" && parts.length === 3) {
             const row = await ctx.db.prepare("SELECT * FROM campus_worksheets WHERE id=? AND owner_id=?").bind(parts[2], ownerId).first<WorksheetRow>();
             if (!row) throw new CampusError(404, "WORKSHEET_NOT_FOUND", "Worksheet not found.");
-            if (!ctx.bucket) throw new CampusError(503, "WORKSHEET_STORAGE", "Worksheet storage is not configured.");
-            // R2 deletion is idempotent. Keep the row until it succeeds, so a
+            if (!bucket) throw new CampusError(503, "WORKSHEET_STORAGE", "Worksheet storage is not configured.");
+            // Object deletion is idempotent. Keep the row until it succeeds, so a
             // transient storage failure leaves keys available for a safe retry.
-            await ctx.bucket.delete(Object.values(filesFor(row)).map(file => file!.key));
+            await bucket.delete(Object.values(filesFor(row)).map(file => file!.key));
             await ctx.db.prepare("DELETE FROM campus_worksheets WHERE id=? AND owner_id=?").bind(row.id, ownerId).run();
             return json({ deleted: true });
         }
@@ -104,7 +105,7 @@ export async function handleWorksheets(request: Request, ctx: CampusContext): Pr
         const row = await ctx.db.prepare("SELECT * FROM campus_worksheets WHERE id=?").bind(parts[1]).first<WorksheetRow>();
         if (!row) throw new CampusError(404, "WORKSHEET_NOT_FOUND", "Worksheet not found.");
         await canRead(request, ctx, row);
-        const file = filesFor(row)[parts[2] as "zh" | "en"], object = file && await ctx.bucket?.get(file.key);
+        const file = filesFor(row)[parts[2] as "zh" | "en"], object = file && await bucket?.get(file.key);
         if (!object) throw new CampusError(404, "WORKSHEET_NOT_FOUND", "This language version is not available.");
         return new Response(object.body, { headers: { "content-type": "application/pdf", "content-length": String(object.size), "cache-control": "private, no-store", "x-content-type-options": "nosniff", "content-disposition": `${url.searchParams.has("download") ? "attachment" : "inline"}; filename="worksheet-${parts[2]}.pdf"; filename*=UTF-8''${encodeURIComponent(file!.filename)}` } });
     }

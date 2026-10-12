@@ -1,3 +1,4 @@
+import type { CampusWorksheetBucket } from "./campus-worksheet-storage";
 export type Tri = {
     zh: string;
     cn: string;
@@ -24,6 +25,7 @@ export type CampusQuestion = {
     takeaway: Tri;
 };
 export type CampusEnv = {
+    TEACHER_AUTH_MODE?: "sites" | "access-code";
     TEACHER_EMAILS?: string;
     TEACHER_PIN?: string;
     CAMPUS_LOCAL_TEACHER?: string;
@@ -44,10 +46,13 @@ export type TeacherIdentity = {
 export type CampusContext = {
     db: D1Database;
     bucket?: R2Bucket;
+    worksheetBucket?: CampusWorksheetBucket;
     env: CampusEnv;
     teacher: TeacherIdentity;
     now?: number;
     localDevelopment?: boolean;
+    // Supplied only by the trusted hosting adapter, never arbitrary forwarded headers.
+    clientIp?: string;
 };
 export class CampusError extends Error {
     status: number;

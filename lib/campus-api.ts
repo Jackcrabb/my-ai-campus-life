@@ -2,8 +2,8 @@ import { handleWorksheets } from "./campus-worksheets";
 import { handleTts } from "./campus-tts";
 import { CASE_RULES } from "./campus-cases";
 import { CampusError, type CampusContext } from "./campus-types";
-import { allowedTeacher, checkOrigin, cookie, equalSecret, hash, iso, limit, now, readBody, requireTeacher, setCookie, STUDENT_COOKIE, TEACHER_COOKIE, textField, token } from "./campus-security";
-import { assignmentQuestions, BANK, calculateResults, classPublic, createAssignment, createClass, ownedClass, progressFor, publicQuestion, requireStudent, seedQuestions, splitQuestion, studentAttempts, studentPublic, teacherQuestion, validateQuestion, type ClassRow, type QuestionRow, type StudentRow } from "./campus-store";
+import { allowedTeacher, checkOrigin, cookie, equalSecret, hash, independentTeacherLogin, iso, limit, now, readBody, requireTeacher, setCookie, STUDENT_COOKIE, TEACHER_COOKIE, textField, token } from "./campus-security";
+import { assignmentQuestions, BANK, calculateResults, classPublic, createAssignment, createClass, createDefaultClasses, ownedClass, progressFor, publicQuestion, requireStudent, seedQuestions, splitQuestion, studentAttempts, studentPublic, teacherQuestion, validateQuestion, type ClassRow, type QuestionRow, type StudentRow } from "./campus-store";
 const json = (value: unknown, status = 200, headers: Record<string, string> = {}) => new Response(JSON.stringify(value), { status, headers: { "content-type": "application/json; charset=utf-8", "cache-control": "no-store", ...headers } });
 const forbidden = () => { throw new CampusError(404, "NOT_FOUND", "This resource was not found."); };
 const number = (v: unknown, min: number, max: number, label: string) => { if (!Number.isInteger(v) || Number(v) < min || Number(v) > max)
@@ -225,6 +225,13 @@ export async function handleCampus(request: Request, ctx: CampusContext): Promis
             return json(await recordAttempt(ctx, student, body, assigned.row, assigned.assignmentId, optionId));
         }
         if (route === "teacher/session" && method === "GET") {
+            if (ctx.env.TEACHER_AUTH_MODE === "access-code") {
+                let authenticated = false;
+                try { await requireTeacher(request, ctx); authenticated = true; }
+                catch (error) { if (!(error instanceof CampusError && error.code === "TEACHER_LOCKED")) throw error; }
+                const configured = !!await ctx.db.prepare("SELECT id FROM campus_teacher_credentials WHERE revoked_at IS NULL LIMIT 1").first();
+                return json({ authMode: "access-code", configured, signedIn: authenticated, allowed: authenticated, unlocked: authenticated, localDevelopment: false });
+            }
             const identity = allowedTeacher(ctx);
             let unlocked = false;
             if (identity) {
@@ -237,9 +244,19 @@ export async function handleCampus(request: Request, ctx: CampusContext): Promis
                         throw error;
                 }
             }
-            return json({ signedIn: !!ctx.teacher, allowed: !!identity, unlocked, localDevelopment: ctx.localDevelopment === true && ctx.env.CAMPUS_LOCAL_TEACHER === "1", signInUrl: "/signin-with-chatgpt?return_to=%2F" });
+            return json({ authMode: "sites", signedIn: !!ctx.teacher, allowed: !!identity, unlocked, localDevelopment: ctx.localDevelopment === true && ctx.env.CAMPUS_LOCAL_TEACHER === "1", signInUrl: "/signin-with-chatgpt?return_to=%2F" });
         }
         if (route === "teacher/unlock" && method === "POST") {
+            if (ctx.env.TEACHER_AUTH_MODE === "access-code") {
+                const credential = await independentTeacherLogin(ctx, body.pin), raw = token(), lifetime = 30 * 60;
+                await seedQuestions(ctx, credential.owner_id);
+                // Bind to the verified credential as well as owner. Revoking a code
+                // therefore disables all sessions it issued immediately.
+                await ctx.db.prepare("INSERT INTO campus_teacher_unlocks (token_hash,owner_id,expires_at,credential_id) SELECT ?,?,?,id FROM campus_teacher_credentials WHERE id=? AND owner_id=? AND revoked_at IS NULL").bind(await hash(raw), credential.owner_id, now(ctx) + lifetime * 1000, credential.id, credential.owner_id).run();
+                const checked = new Request(request.url, { headers: { cookie: `${TEACHER_COOKIE}=${raw}` } });
+                await requireTeacher(checked, ctx);
+                return json({ unlocked: true, expiresIn: lifetime }, 200, { "set-cookie": setCookie(request, TEACHER_COOKIE, raw, lifetime) });
+            }
             const identity = await requireTeacher(request, ctx, false);
             await limit(ctx, "teacher-pin:" + identity.userId, 5, 15 * 60 * 1000);
             const configured = ctx.env.TEACHER_PIN ?? (ctx.localDevelopment ? "1234" : undefined);
@@ -253,6 +270,11 @@ export async function handleCampus(request: Request, ctx: CampusContext): Promis
             return json({ unlocked: true, expiresIn: lifetime }, 200, { "set-cookie": setCookie(request, TEACHER_COOKIE, raw, lifetime) });
         }
         if (route === "teacher/lock" && method === "POST") {
+            if (ctx.env.TEACHER_AUTH_MODE === "access-code") {
+                const raw = cookie(request, TEACHER_COOKIE);
+                if (raw) await ctx.db.prepare("DELETE FROM campus_teacher_unlocks WHERE token_hash=?").bind(await hash(raw)).run();
+                return json({ ok: true }, 200, { "set-cookie": setCookie(request, TEACHER_COOKIE, "", 0) });
+            }
             const identity = await requireTeacher(request, ctx, false), raw = cookie(request, TEACHER_COOKIE);
             if (raw)
                 await ctx.db.prepare("DELETE FROM campus_teacher_unlocks WHERE token_hash=? AND owner_id=?").bind(await hash(raw), identity.userId).run();
@@ -264,13 +286,8 @@ export async function handleCampus(request: Request, ctx: CampusContext): Promis
                 return json({ classes: (await ctx.db.prepare("SELECT * FROM campus_classrooms WHERE owner_id=? ORDER BY school_year DESC,grade,section").bind(ownerId).all<ClassRow>()).results.map(classPublic) });
             if (route === "teacher/classes" && method === "POST") {
                 if (body.seedDefault === true) {
-                    const classes = [];
-                    for (let grade = 1; grade <= 6; grade++)
-                        for (const section of ["A", "B", "C", "D"]) {
-                            const details = classDetails({ ...body, grade, section });
-                            classes.push(await createClass(ctx, ownerId, details.grade, details.section, details.schoolYear));
-                        }
-                    return json({ classes }, 201);
+                    const details = classDetails({ ...body, grade: 1, section: "A" });
+                    return json({ classes: await createDefaultClasses(ctx, ownerId, details.schoolYear) }, 201);
                 }
                 const d = classDetails(body);
                 return json({ classroom: await createClass(ctx, ownerId, d.grade, d.section, d.schoolYear) }, 201);

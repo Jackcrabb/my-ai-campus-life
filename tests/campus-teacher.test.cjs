@@ -5,7 +5,7 @@ const path = require('node:path');
 const vm = require('node:vm');
 const root = path.join(__dirname,'..','public','campus','game');
 function launch(options = {}) {
-  const calls = [], worksheetMounts = [], prints = [], printListeners = new Map(), printSheets = [], state = { unlocked:options.unlocked===true,allowed:true,classes:[],rejectPin:false,questions:[] };
+  const calls = [], worksheetMounts = [], prints = [], printListeners = new Map(), printSheets = [], forms = [], state = { authMode:options.authMode,configured:options.configured!==false,unlocked:options.unlocked===true,allowed:options.authMode!=='access-code'||options.unlocked===true,classes:[],rejectPin:false,questions:[] };
   const modalScroll = {scrollTop:options.scrollTop||0}, headingFocus = [];
   const heading = {tabIndex:0,focus(options){headingFocus.push({...options,html:container.innerHTML});}};
   const container = { innerHTML:'', scrollTop:0, handlers:{}, addEventListener(name,fn){this.handlers[name]=fn;}, removeEventListener(name){delete this.handlers[name];},querySelectorAll(){return[];},
@@ -18,8 +18,8 @@ function launch(options = {}) {
     fetch:async(url,options)=>{
       const body=options.body?JSON.parse(options.body):null;calls.push({url,method:options.method,body,credentials:options.credentials});
       let data={};
-      if(url.endsWith('/teacher/session'))data={signedIn:true,allowed:state.allowed,unlocked:state.unlocked};
-      if(url.endsWith('/teacher/unlock')){if(state.rejectPin)return{ok:false,status:401,json:async()=>({error:{code:'INVALID_PIN',message:'Invalid PIN'}})};state.unlocked=true;data={unlocked:true};}
+      if(url.endsWith('/teacher/session'))data={signedIn:state.allowed,allowed:state.allowed,unlocked:state.unlocked,...(state.authMode?{authMode:state.authMode,configured:state.configured}:{})};
+      if(url.endsWith('/teacher/unlock')){if(state.rejectPin)return{ok:false,status:401,json:async()=>({error:{code:state.authMode==='access-code'?'INVALID_TEACHER_CODE':'INVALID_PIN',message:'Invalid fixture credential'}})};state.allowed=true;state.unlocked=true;data={unlocked:true};}
       if(url.endsWith('/teacher/lock'))state.unlocked=false;
       if(url.endsWith('/teacher/classes')){
         if(options.method==='POST')state.classes=Array.from({length:body.seedDefault?24:1},(_,i)=>({id:'class-'+i,label:'S'+(i+1),schoolYear:body.schoolYear,classCode:'TEST'+i,assignmentId:'activity'}));
@@ -36,10 +36,10 @@ function launch(options = {}) {
   vm.runInContext(fs.readFileSync(path.join(root,'teacher-ui.js'),'utf8'),context);
   const workspace=context.window.CampusTeacher.open({container,lang:'zh',...options});
   const settle=async()=>{for(let i=0;i<10;i++)await new Promise(resolve=>setImmediate(resolve));};
-  const submit=(kind,data)=>workspace.submit({preventDefault(){},target:{closest(){return{dataset:{form:kind},data,elements:{pin:{value:'test-only'}}};}}});
+  const submit=(kind,data)=>{const form={dataset:{form:kind},data,elements:{pin:{value:data.pin||''}}};forms.push(form);return workspace.submit({preventDefault(){},target:{closest(){return form;}}});};
   const click=(action,extra={})=>workspace.click({target:{closest:()=>({dataset:{ct:action,...extra}})}});
   const change=(name,value)=>workspace.change({target:{closest:()=>({name,value})}});
-  return {workspace,context,container,calls,settle,submit,state,click,change,worksheetMounts,modalScroll,headingFocus,heading,prints,printListeners,printSheets};
+  return {workspace,context,container,calls,settle,submit,state,click,change,worksheetMounts,modalScroll,headingFocus,heading,prints,printListeners,printSheets,forms};
 }
 (async()=>{
   const entry=fs.readFileSync(path.join(__dirname,'../public/campus/index.html'),'utf8');assert.doesNotMatch(entry,/speech-studio\.(?:js|css)/,'game entry does not load retired studio assets');
@@ -219,5 +219,42 @@ function launch(options = {}) {
   assert.equal(Object.keys(game.container.handlers).length,0,'destroy removes delegated listeners');
   const denied=launch();await denied.settle();denied.state.allowed=false;await denied.workspace.refresh();
   const before=denied.calls.length;await denied.submit('unlock',{pin:'test-only'});assert.equal(denied.calls.length,before,'identity authorization remains required before PIN submission');denied.workspace.destroy();
-  console.log('PASS teacher workspace: standalone login, denied/invalid PIN handling,14subject chooser, persistent scope, worksheet mount, read-only AI cases, explicit class creation, versioned editing, more than three questions,1–10star validation, scoped/all XLSX and native printed star reports, navigation scroll/focus, stable filter/error position, locales and exit lifecycle.');
+  let independentExits=0;
+  const independent=launch({authMode:'access-code',onExit:()=>independentExits++});await independent.settle();
+  assert.equal(independent.workspace.state.session.allowed,false,'a new code session begins unauthenticated');
+  assert.match(independent.container.innerHTML,/class="campus-teacher ct-code-login"/);
+  assert.match(independent.container.innerHTML,/<h2>教師登入<\/h2>/);
+  assert.match(independent.container.innerHTML,/input name="pin" type="password" inputmode="text"/);
+  assert.match(independent.container.innerHTML,/autocapitalize="none" spellcheck="false" maxlength="128"/);
+  assert.doesNotMatch(independent.container.innerHTML,/ChatGPT|href=|inputmode="numeric"/,'independent entry stays in the game and omits the removed subtitle');
+  const fixtureCode='a1'.repeat(24);
+  independent.state.rejectPin=true;await independent.submit('unlock',{pin:fixtureCode});
+  assert.equal(independent.forms.at(-1).elements.pin.value,'','rejected code is cleared immediately');
+  assert.match(independent.container.innerHTML,/教師登入碼不正確或已停用/);
+  assert.ok(!independent.calls.some(call=>call.url.endsWith('/teacher/classes')),'invalid access code cannot load private data');
+  for(const [locale,caption,privacy] of [['cn','教师登录码','自己的班级与学生成绩'],['en','Teacher access code','their own classes and student results']]){
+    independent.workspace.setLanguage(locale);
+    assert.ok(independent.container.innerHTML.includes(caption));assert.ok(independent.container.innerHTML.includes(privacy));
+    await independent.submit('unlock',{pin:fixtureCode});
+    assert.match(independent.container.innerHTML,locale==='en'?/incorrect or inactive/:/不正确或已停用/);
+  }
+  independent.workspace.setLanguage('zh');independent.state.rejectPin=false;
+  await independent.submit('unlock',{pin:fixtureCode});
+  assert.equal(independent.workspace.state.session.unlocked,true,'independent code authenticates without a preceding external identity');
+  assert.equal(independent.forms.at(-1).elements.pin.value,'','successful code is also cleared');
+  assert.match(independent.container.innerHTML,/選擇任教科目/);
+  assert.doesNotMatch(independent.container.innerHTML,/ct-code-login/,'authenticated tools return to the full workspace layout');
+  assert.ok(!independent.container.innerHTML.includes(fixtureCode),'raw access code is never rendered');
+  await independent.workspace.run(async()=>{throw Object.assign(new Error('Expired fixture'),{status:401,code:'TEACHER_LOCKED'});});
+  assert.match(independent.container.innerHTML,/ct-code-login/,'expiry restores the code login card');
+  assert.match(independent.container.innerHTML,/重新解鎖/);
+  await independent.submit('unlock',{pin:fixtureCode});await independent.click('lock');
+  assert.match(independent.container.innerHTML,/教師登入码|教師登入碼/,'manual lock returns to the same code entry');
+  await independent.click('close');assert.equal(independentExits,1);assert.equal(Object.keys(independent.container.handlers).length,0);
+  const unconfigured=launch({authMode:'access-code',configured:false});await unconfigured.settle();
+  assert.match(unconfigured.container.innerHTML,/尚未完成設定/);assert.doesNotMatch(unconfigured.container.innerHTML,/data-form="unlock"/);
+  const beforeUnconfigured=unconfigured.calls.length;await unconfigured.submit('unlock',{pin:fixtureCode});
+  assert.equal(unconfigured.calls.length,beforeUnconfigured,'unconfigured entry does not submit an unusable login form');
+  unconfigured.workspace.destroy();
+  console.log('PASS teacher workspace: independent code login, invalid/inactive code, configured state, expiry, code clearing, three locales, preserved Sites identity/PIN handling,14subject chooser, persistent scope, worksheet mount, read-only AI cases, explicit class creation, versioned editing, more than three questions,1–10star validation, scoped/all XLSX and native printed star reports, navigation scroll/focus, stable filter/error position and exit lifecycle.');
 })();

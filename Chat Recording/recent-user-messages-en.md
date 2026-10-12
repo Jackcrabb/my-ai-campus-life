@@ -149,3 +149,76 @@ Can the game let teachers add more questions, perhaps more than three, and decid
 User:
 
 After completing that improvement, upload it again and update the public webpage linked from GitHub, so anyone can play by opening the link or scanning the QR code without logging in. Also organize the files already uploaded to GitHub into folders such as game, resources, audio, images and data.
+
+
+---
+
+## 13 October 2026 hosting supplement
+
+The following user messages and selected answers were supplied directly in the active conversation. This date records the supplement, not exact message times. Missing assistant replies are not reconstructed. Private credentials and internal permission details are not included.
+
+User:
+
+I did not see any updates on GitHub.
+
+---
+
+User:
+
+https://github.com/Jackcrabb/my-ai-campus-life
+
+---
+
+User:
+
+Not every user can use ChatGPT, including users in regions with restrictions, such as Hong Kong. Please make sure Hong Kong users can open and play my website at any time without logging into ChatGPT, including opening the teacher permissions.
+
+---
+
+User:
+
+I do not have an account. Set up a free account.
+
+[The user's selected response to the Cloudflare account question.]
+
+---
+
+User:
+
+Completed.
+
+[The user's selected response after registering and verifying the Cloudflare account.]
+
+---
+
+User:
+
+Confirmed. Implement it this way.
+
+[The user's approval of the pixel-style teacher access-code login preview. The original generated preview is preserved below; the following user message requests removal of its platform-account subtitle. This new artifact is separate from the earlier 98-image archive count.]
+
+<details>
+<summary>Generated image: approved teacher login preview</summary>
+
+![Approved generated teacher login preview](../resources/design/qa-independent/teacher-login-approved-preview.png)
+
+[Provenance and implemented screenshots](../resources/design/qa-independent/README.md)
+
+</details>
+
+---
+
+User:
+
+You can remove the wording “No ChatGPT required.”
+
+---
+
+User:
+
+I authorize these permissions. Please continue.
+
+[The user's explicit authorization of the official Wrangler access request for User Read, Account Read, Workers Scripts Write, D1 Write and Background Access. No token, code or credential value is included.]
+
+
+Editorial evidence note: the later implemented [desktop login](../resources/design/qa-independent/teacher-login-desktop.jpg), [mobile login](../resources/design/qa-independent/teacher-login-mobile.jpg) [teacher subject chooser](../resources/design/qa-independent/teacher-workspace-desktop.jpg) and [desktop student setup](../resources/design/qa-independent/student-setup-desktop.jpg) are linked for comparison. These are browser captures, not reconstructed ChatGPT messages or additional image-generation events. Their [metadata record](../resources/design/qa-independent/assets.json) keeps them separate from the original generated preview.

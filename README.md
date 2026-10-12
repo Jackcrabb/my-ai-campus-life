@@ -6,17 +6,17 @@
 
 ## Play in your browser
 
-> **Published — 12 October 2026:** Public version 4 includes the mobile-map and fixed-dialogue repairs, teacher-created questions with 1–10 stars, star columns in Excel/printed results, and the organized resource folders. The game opens without login. Anonymous checks verified the entry, 32 deployed resources and protected teacher routes; see the [release audit](docs/DISTRIBUTION-AUDIT.md#12-october-2026-release-verification).
+> **Independent site published — 13 October 2026:** The game is now hosted on the owner’s Cloudflare Free account. Students open it directly; teachers use a private teacher access code. Live checks passed for anonymous entry, teacher-code login, class activities, configurable stars, results and PDF access. The QR now opens the independent site. The [release audit](docs/DISTRIBUTION-AUDIT.md#13-october-2026-independent-hosting-rollout) records the exact verification scope.
 
-**[Open the public game](https://lumen-lab-ai-ethics.tart-vale-4903.chatgpt.site)** — no download or GitHub account is needed for free exploration. Works through a web browser on Windows, Mac, tablets and phones; an internet connection is required for classroom services.
+**[Open the public game](https://my-ai-campus-life.hjhlgz.workers.dev)** — no download or GitHub account is needed for free exploration. Works through a web browser on Windows, Mac, tablets and phones; an internet connection is required for classroom services.
 
-<a href="https://lumen-lab-ai-ethics.tart-vale-4903.chatgpt.site"><img src="docs/assets/public-game-qr.png" width="220" alt="Scan to play My AI Campus Life" /></a>
+<a href="https://my-ai-campus-life.hjhlgz.workers.dev"><img src="docs/assets/public-game-qr.png" width="220" alt="Scan to play My AI Campus Life" /></a>
 
 [QR code: PNG](docs/assets/public-game-qr.png) · [Print-ready SVG](docs/assets/public-game-qr.svg) · [Distribution checks and limitations](docs/DISTRIBUTION-AUDIT.md)
 
 1. Open the link or scan the QR code, then choose your language with **A**.
 2. Choose **New Game → Student**, set up your character and enter the campus. Choose **Continue** to resume a save on the same browser.
-3. For a school activity, use the class code supplied by your teacher. **New Game → Teacher** is restricted to an authorized teacher identity plus the server PIN; knowing `1234` alone does not grant access.
+3. For a school activity, use the class code supplied by your teacher. **New Game → Teacher** accepts the private access code issued by the site administrator; `1234` is not a valid replacement.
 
 For everyday use, share this game link. The [private GitHub repository](https://github.com/Jackcrabb/my-ai-campus-life) and its source ZIP are for authorized collaborators; see the separate download and development sections below.
 
@@ -26,7 +26,7 @@ For everyday use, share this game link. The [private GitHub repository](https://
 
 Join the fictional **Ming Ching College** as an ordinary new student. Choose your year, class and appearance, explore five floors, meet classmates and staff, and practise making thoughtful decisions about AI. The learning loop is simple: **listen → examine evidence → decide → repair → reflect**.
 
-This README describes the current repository version. The public entry and 32 deployed resources were checked on 12 October 2026 (Hong Kong time); the exact scope is recorded in the [distribution audit](docs/DISTRIBUTION-AUDIT.md).
+This README describes the current repository version. The independent release and the retained Sites release have separate verification records in the [distribution audit](docs/DISTRIBUTION-AUDIT.md). Source changes alone do not publish a new website.
 
 **Artwork and speech checkpoint — 12 October 2026:** desktop character setup has verified background/full-figure repairs. Purposeful NPC routines are implemented; seven released activity sheets cover 24 identity/outfit variants with 96 drawings. The remaining eight peer variants in uniforms 1–2 and faceless ambient art are not complete. The source now bundles 104 fixed-dialogue MP3s: 52 Mandarin and 52 English lines for 20 canonical characters. Traditional Chinese retains existing Cantonese read-aloud; academic questions are text-only and the teacher Speech Studio has been removed. MP3 integrity and provider voice metadata are verified, and public version 4 includes this bundle. Full listening review remains a separate check. See the [UX audit](docs/UX-AUDIT.md), [routine status](docs/NPC-BEHAVIOR-PLAN.md) and [speech service](docs/OPENROUTER-TTS-SERVICE.md).
 
@@ -67,7 +67,7 @@ Appearance selection, dialogue, questions and the journal use in-page panels. Th
 
 ## Free exploration and class mode
 
-**Free exploration** needs no sign-in and saves progress in the same browser. Its existing scores are not imported into class assessment.
+**Free exploration** needs no sign-in and saves progress in the same browser. Its existing scores are not imported into class assessment. Browser saves belong to the website hostname: moving from the older Sites URL to the new host does not transfer an anonymous save. Keep the old link for that save; classroom recovery works on another host only when the corresponding class records have been migrated.
 
 **Class mode** uses a teacher-provided class code. A student joins with their number and name, then receives a private recovery code. The class code, student number and recovery code allow them to continue on another device without a ChatGPT account. Names and numbers are self-reported; this is not school SSO or independent identity verification.
 
@@ -83,7 +83,7 @@ These are formative records, not moral ratings or a secure examination system. T
 
 ## Teacher workspace
 
-From the title screen, choose **New Game → Teacher**. After signing in and unlocking, choose one of **13 learning subjects or AI Ethics and Inclusion**. The subject hub opens question management, worksheets or results; **Change subject** returns to the chooser. Grade, class and activity filters are retained while switching tools. The in-game **Settings → Teacher workspace** entry also remains available. Production access requires a trusted **ChatGPT identity**, membership in the server's teacher allowlist, and the configured **teacher PIN**. The requested shared PIN is **1234**, supplied through `TEACHER_PIN`; it is not sufficient without the authorized identity. Incorrect PIN attempts are rate-limited, and an unlock lasts 30 minutes.
+From the title screen, choose **New Game → Teacher**. After signing in and unlocking, choose one of **13 learning subjects or AI Ethics and Inclusion**. The subject hub opens question management, worksheets or results; **Change subject** returns to the chooser. Grade, class and activity filters are retained while switching tools. The in-game **Settings → Teacher workspace** entry also remains available. On the independent Cloudflare deployment, enter your private **teacher access code** supplied by the site administrator. It is a 48-character code for one teacher workspace; copy and paste the complete value. No platform account is involved. Incorrect attempts are rate-limited, the session lasts 30 minutes, and each code can access only its own classes. Use **Lock** on a shared computer and contact the administrator if the code is lost or revoked. Never publish it in GitHub, worksheets or class messages. The earlier shared `1234` PIN does not grant access to this deployment. The separately retained Sites version keeps its existing identity-and-PIN authentication.
 
 Teachers can create individual classes or explicitly create all 24 classes (S1–S6, sections A–D), copy class codes, author and archive subject questions, and start new class activities. In **Questions → New question**, add as many questions as the lesson needs; three is only the starter-bank default. Set each question to **1–10 whole-number stars**, save it as **Published**, then use **Classes → New activity** to make the updated bank available to students. Each activity freezes its question revisions and star values, so subsequent edits do not change previous questions, scores or available-star totals. The **AI Ethics and Inclusion** hub provides read-only access to the four core AI scenarios and transfer task, plus their results. These core entries cannot be edited, and PDF uploads are provided for the 13 learning subjects.
 
@@ -94,7 +94,7 @@ The Results tab filters by class, subject and activity and shows both **earned s
 
 A result can show earned stars while its percentage score is still incomplete. Stars record one-time correct completion, including a correct retry; the percentage keeps the first response to each question. The report never recalculates an old activity with newly edited star values.
 
-Class lists and results exports are available only through authorized teacher access. In the **Worksheets** tab, the selected subject is carried through from the hub; teachers choose a grade and upload a Traditional Chinese PDF, an English PDF, or both, up to **5 MiB per file**. Students see only authorized worksheets for their class grade and the current floor’s subjects. A chosen version opens a preview; **Print PDF** then requests the viewer/browser print flow. **Open PDF** and **Download PDF** are retained as fallbacks. Opening Print or loading a preview does not print automatically. See the [worksheet guide](docs/WORKSHEETS.md) and [user guide](USER-GUIDE.md).
+Class lists and results exports are available only through authorized teacher access. In the **Worksheets** tab, the selected subject is carried through from the hub; teachers choose a grade and upload a Traditional Chinese PDF, an English PDF, or both, up to **5 MiB per file**. The independent deployment has a **100 MiB shared PDF-storage cap** across all teachers; delete unused worksheets before adding files when it is full. Students see only authorized worksheets for their class grade and the current floor’s subjects. A chosen version opens a preview; **Print PDF** then requests the viewer/browser print flow. **Open PDF** and **Download PDF** are retained as fallbacks. Opening Print or loading a preview does not print automatically. See the [worksheet guide](docs/WORKSHEETS.md) and [user guide](USER-GUIDE.md).
 
 ## Sound
 
@@ -112,7 +112,7 @@ The current source includes **104 exact fixed-dialogue MP3s — 52 Mandarin and 
 
 Recordings play only when the canonical character, locale and complete text match the manifest. Fixed lines refer to the displayed class/progress information instead of including changing student details or star counts. A changed or missing line can use a suitable strict device voice; an empty voice inventory waits up to three seconds before reporting unavailable. No fallback may use the wrong language or known gender. This removes the missing male Mandarin device-voice dependency for the bundled lines, while Cantonese still depends on installed voices. Text remains visible throughout.
 
-The separate internal OpenRouter audition service remains restricted to `fish-audio/s2.1-pro-free:free`, with site-wide daily caps of **6 requests, 3,000 characters and USD 0**, live zero-price checks, no paid fallback and server-only credentials. It is not the source of the bundled MP3s or a gameplay dependency. The free Edge authoring endpoint can change or become unavailable; existing local files need no further generation. See the [internal speech-service guide](docs/OPENROUTER-TTS-SERVICE.md) for reproducible authoring and review limits. The earlier [manual TTSFree audition record](resources/design/voice-auditions-free/README.md) is historical production evidence.
+The independent Cloudflare Worker disables online speech generation entirely. The retained Sites source includes a separate internal OpenRouter audition service, restricted to `fish-audio/s2.1-pro-free:free`, with site-wide daily caps of **6 requests, 3,000 characters and USD 0**, live zero-price checks, no paid fallback and server-only credentials. It is not the source of the bundled MP3s or a gameplay dependency. The free Edge authoring endpoint can change or become unavailable; existing local files need no further generation. See the [internal speech-service guide](docs/OPENROUTER-TTS-SERVICE.md) for reproducible authoring and review limits. The earlier [manual TTSFree audition record](resources/design/voice-auditions-free/README.md) is historical production evidence.
 
 Background *Greensleeves* is newly synthesized with an original Web Audio arrangement based on the [Mutopia public-domain score](https://www.mutopiaproject.org/ftp/Traditional/greensleeves/greensleeves-let.pdf). No DSE or commercial performance recording is used. Music and voice have separate volumes; playback requires a user gesture, music lowers during dialogue and pauses when the page is hidden. See [asset provenance](ASSET-PROVENANCE.md).
 
@@ -134,9 +134,15 @@ Sign in to GitHub with an account that has access to the **[private source repos
 
 The ZIP contains a source snapshot, not an installer or a double-click game. It does not include production database records, uploaded worksheet files, credentials or installed dependencies. Unzip it, open the extracted folder in a terminal and follow the developer setup below. Students and teachers who only want to use the game should use the public link instead.
 
+## Independent Cloudflare hosting
+
+The standalone entrypoint serves the same browser game and classroom API using **Cloudflare Workers Static Assets + D1**. D1 also stores PDF bytes in chunks, with a 5 MiB per-file limit and a 100 MiB shared cap; no R2 activation is needed. The setup uses the owner’s **Workers Free** plan and a `workers.dev` address, with no domain purchase. Request, CPU and database quotas still apply and can interrupt services when exhausted; this is not unlimited hosting. See the [deployment guide](deployment/cloudflare/README.md) for account verification, migrations, teacher-code provisioning, local checks and publication.
+
+Cloudflare credentials, deployment account identifiers and teacher-code files stay in ignored local folders. The repository contains only a safe configuration template. The existing Sites deployment remains separate and is not removed by this setup.
+
 ## Local development
 
-The application uses **Sites / Vinext, a vanilla JavaScript canvas frontend, Cloudflare D1 and R2 worksheet storage**. Use **Node.js 22.13 or newer** and npm.
+The retained development path uses **Sites / Vinext, a vanilla JavaScript canvas frontend, Cloudflare D1 and R2 worksheet storage**. The standalone Worker above reuses the frontend and backend without Sites identity or R2. Use **Node.js 22.13 or newer** and npm.
 
 ```sh
 npm run install:ci
@@ -147,11 +153,11 @@ Open the URL printed by the development command. The application entry redirects
 
 ### Environment and database
 
-The D1 binding is **`DB`** and the R2 worksheet binding is **`BUCKET`**, configured in `.openai/hosting.json`. Production must configure `TEACHER_EMAILS` and `TEACHER_PIN` through the deployment environment; an empty owner allowlist grants no teacher access. Do not commit personal owner addresses, credentials, runtime class/recovery codes or student exports.
+For the retained Sites path, the D1 binding is **`DB`** and the R2 worksheet binding is **`BUCKET`**, configured in `.openai/hosting.json`. Production must configure `TEACHER_EMAILS` and `TEACHER_PIN` through the deployment environment; an empty owner allowlist grants no teacher access. Do not commit personal owner addresses, credentials, runtime class/recovery codes or student exports.
 
 An ignored `.dev.vars` file can enable the existing `CAMPUS_LOCAL_TEACHER` development flag for local teacher testing. That exception requires non-production execution and a loopback host; it is not a production sign-in route. Use the real authorized identity flow to verify a production build.
 
-The schema lives in `db/schema.ts`; generated migrations live in `drizzle/`. After changing the schema, run `npm run db:generate` and review the migration. For a **new, empty local database**, generate the Worker configuration and apply all five existing migrations once, in order:
+The schema lives in `db/schema.ts`; generated migrations live in `drizzle/`. After changing the schema, run `npm run db:generate` and review the migration. For a **new, empty local database**, generate the Worker configuration and apply all six existing migrations once, in order:
 
 ```sh
 npm run build
@@ -160,6 +166,7 @@ node --import ./scripts/sites-env.mjs ./node_modules/wrangler/bin/wrangler.js d1
 node --import ./scripts/sites-env.mjs ./node_modules/wrangler/bin/wrangler.js d1 execute DB --local --config dist/server/wrangler.json --persist-to .wrangler/state --file drizzle/0002_lazy_catseye.sql
 node --import ./scripts/sites-env.mjs ./node_modules/wrangler/bin/wrangler.js d1 execute DB --local --config dist/server/wrangler.json --persist-to .wrangler/state --file drizzle/0003_peaceful_mister_fear.sql
 node --import ./scripts/sites-env.mjs ./node_modules/wrangler/bin/wrangler.js d1 execute DB --local --config dist/server/wrangler.json --persist-to .wrangler/state --file drizzle/0004_mighty_miek.sql
+node --import ./scripts/sites-env.mjs ./node_modules/wrangler/bin/wrangler.js d1 execute DB --local --config dist/server/wrangler.json --persist-to .wrangler/state --file drizzle/0005_independent_teacher.sql
 npm run start
 ```
 
@@ -171,7 +178,9 @@ Browse the actual grouped folders: [game code](public/campus/game/) · [images](
 
 | Path | Responsibility |
 |---|---|
-| `app/page.tsx`, `app/api/campus/[...path]/route.ts` | Application entry, same-origin API and platform identity |
+| `deployment/cloudflare/worker.ts`, `scripts/cloudflare-cli.mjs` | Independent public entry, D1 PDF storage and deployment checks |
+| `scripts/provision-teacher-code.mjs` | Private teacher-code provisioning; digest-only database import |
+| `app/page.tsx`, `app/api/campus/[...path]/route.ts` | Retained Sites entry, same-origin API and platform identity |
 | `lib/campus-*.ts`, `db/schema.ts`, `drizzle/` | Authorization, records, versioned assignments, scoring and persistence |
 | `data/grade-bank.json`, `scripts/content-authoring/` | Curated question data and authoring sources |
 | `public/campus/game/app.js`, `campus-cloud.js` | Game state and cloud integration |
@@ -210,7 +219,7 @@ node_modules/.bin/tsc --noEmit
 npm run build
 ```
 
-The current backend run completed **166 assertions/API checks against real isolated D1/R2**, using the authored production question bank. Separate starter-update checks verify that untouched starter questions can be upgraded without changing teacher edits, archives or frozen activities. Worksheet checks cover PDF limits, authorization, Unicode filenames and retryable storage failures. Teacher component checks cover the standalone subject hub, selected-subject worksheets, core-content restrictions and scoped/all-subject exports. The TTS backend passed **180 checks** against isolated D1/R2 with a mocked provider, including HTTP 410 rejection of academic speech. Integration mocks verify that NPC greetings speak and subsequent academic questions, options and feedback stay silent. Fixed-dialogue checks cover all 104 corpus entries; five authoring tests and the complete offline checksum/decode validation passed. Offline audio validation requires `ffmpeg` and `ffprobe`; the Edge package is needed only for authoring. These checks do not establish audible quality on classroom devices. See execution and QA records for other checks rather than assuming every command above has passed on every platform.
+An earlier backend run completed **166 assertions/API checks against real isolated D1/R2**, using the authored production question bank. Separate starter-update checks verify that untouched starter questions can be upgraded without changing teacher edits, archives or frozen activities. Worksheet checks cover PDF limits, authorization, Unicode filenames and retryable storage failures. Teacher component checks cover the standalone subject hub, selected-subject worksheets, core-content restrictions and scoped/all-subject exports. The TTS backend passed **180 checks** against isolated D1/R2 with a mocked provider, including HTTP 410 rejection of academic speech. Integration mocks verify that NPC greetings speak and subsequent academic questions, options and feedback stay silent. Fixed-dialogue checks cover all 104 corpus entries; five authoring tests and the complete offline checksum/decode validation passed. Offline audio validation requires `ffmpeg` and `ffprobe`; the Edge package is needed only for authoring. These checks do not establish audible quality on classroom devices. See execution and QA records for other checks rather than assuming every command above has passed on every platform.
 
 The descriptions above refer to the repository version; deployment verification is separate. Component checks cover NPC identities/crops, wardrobe mapping, responsive canvas resolution and movement. Worksheet preview/download screenshots cover desktop and mobile; native printing and physical output remain unverified. They do not establish that every recent source change is already on the public site.
 
@@ -220,13 +229,15 @@ Before a classroom session, verify the deployed URL on the intended devices, tes
 
 ### Sharing the game
 
-Use the public link and QR at the top of this README. The QR stores the public root URL and resolves to `/campus/`. The PNG is 1960 × 1960 pixels at 300 dpi; use the SVG when resizing it for handouts or slides and preserve the clear border. See the [distribution audit](docs/DISTRIBUTION-AUDIT.md) for the dated public-access, QR and private-repository checks.
+Use the public link and QR at the top of this README. The QR stores `https://my-ai-campus-life.hjhlgz.workers.dev/campus/`. The PNG is 820 × 820 pixels; use the SVG when resizing it for handouts or slides and preserve the clear border. See the [distribution audit](docs/DISTRIBUTION-AUDIT.md) for the dated public-access, QR and private-repository checks.
 
 Public student access and private source access are separate. A successful page response does not establish that every classroom workflow, native print dialog or device voice works; complete the classroom checks above before a lesson.
 
 ### Deploying an updated release
 
-Deploy the complete Sites project with its API, D1 database and R2 worksheet binding, retaining its existing project identity. Verify production environment settings, database migrations, teacher authorization and the public student flow. Publishing static assets alone does not provide cross-device class records.
+For the independent public release, follow the [Cloudflare deployment guide](deployment/cloudflare/README.md) and publish the Worker together with its static assets and configured D1 database. Verify the Free plan, migrations, teacher-code login, anonymous student entry and class/worksheet operations before changing the shared link or QR. Keep private codes and production records out of the source archive.
+
+The retained Sites version is a separate deployment with its existing project identity and D1/R2 bindings. Uploading to GitHub does not deploy either backend; publishing static files alone cannot provide cross-device class records.
 
 - [User guide](USER-GUIDE.md): play, join, recover, manage classes and export.
 - [Design and teaching guide](DESIGN-AND-TEACHING-GUIDE.md): learning objectives, rubric, lesson plan, live AI demonstration and evaluation plan.

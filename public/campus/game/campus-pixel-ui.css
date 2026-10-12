@@ -695,3 +695,41 @@ body.entry-panel-active #modal.game-panel[data-panel] { background: #153f4559; }
   #modal.game-panel[data-panel="map"] .map-footer { gap: 10px; margin-top: 10px; padding-top: 10px; }
   #modal.game-panel[data-panel="map"] .campus-map .map-footer button { min-height: 44px; font-size: 15px; padding: 6px 10px; }
 }
+
+/* The independent teacher entry is one compact enamel card over the campus. */
+#modal.game-panel[data-panel="teacher"]:has(.ct-code-login) {
+  inset: 0;
+  grid-template-rows: minmax(0, 1fr);
+  align-items: center;
+  padding-bottom: 20px;
+}
+#modal.game-panel[data-panel="teacher"]:has(.ct-code-login) :is(.modal-heading, .teacher-panel-link) { display: none; }
+#modal.game-panel[data-panel="teacher"]:has(.ct-code-login) #modal-content {
+  width: min(calc(100% - 32px), 560px);
+  align-self: center;
+  max-height: 100%;
+  margin: 0 auto;
+  padding: 24px 28px;
+}
+.ct-code-login .ct-header { position: relative; justify-content: center; text-align: center; padding: 0 44px 18px; margin-bottom: 22px; border-bottom: 1px solid var(--pixel-gold); }
+.ct-code-login .ct-header > .ct-actions { position: absolute; top: 0; right: 0; }
+.ct-code-login .ct-header h2 { font-size: 30px; }
+.ct-code-login .ct-eyebrow { font-size: 15px; margin-bottom: 8px; letter-spacing: .03em; }
+.campus-teacher.ct-code-login .ct-code-access { max-width: none; margin: 0; padding: 0; border: 0; background: none; box-shadow: none; }
+.ct-code-login .ct-code-access form { gap: 12px; }
+.ct-code-login .ct-code-access label { font-size: 18px; gap: 10px; }
+.ct-code-login .ct-code-access input { min-height: 52px; font-size: 18px; letter-spacing: .08em; }
+.ct-code-login .ct-code-access .ct-code-hint { font-size: 15px; line-height: 1.6; margin: 0 0 4px; }
+.ct-code-login .ct-code-access :is(.ct-primary, .ct-return) { width: 100%; min-height: 48px; font-size: 18px; }
+.ct-code-login .ct-code-access .ct-return { margin-top: 12px; }
+.ct-code-login .ct-code-access .ct-code-privacy { font-size: 14px; line-height: 1.7; margin: 22px 0 0; padding-top: 18px; border-top: 1px solid var(--pixel-gold); }
+@media (max-width: 600px) {
+  #modal.game-panel[data-panel="teacher"]:has(.ct-code-login) { padding-bottom: 12px; }
+  #modal.game-panel[data-panel="teacher"]:has(.ct-code-login) #modal-content { width: calc(100% - 20px); padding: 18px 14px; }
+  .ct-code-login .ct-header { padding: 0 38px 16px; margin-bottom: 18px; }
+  .ct-code-login .ct-header h2 { font-size: 24px; }
+  .ct-code-login .ct-eyebrow { font-size: 12px; }
+  .ct-code-login .ct-code-access :is(label, .ct-primary, .ct-return) { font-size: 16px; }
+  .ct-code-login .ct-code-access .ct-code-hint { font-size: 14px; }
+  .ct-code-login .ct-code-access .ct-code-privacy { font-size: 13px; }
+}
