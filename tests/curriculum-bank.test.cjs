@@ -99,7 +99,7 @@ assert.ok((9+4)/2<(6+8)/2 && .8*9+.2*4>.8*6+.2*8);
 assert.match(correct('s6-rooftop-02'), /^B ranks higher.*A ranks higher/);
 
 const browser = vm.createContext({window:{}});
-vm.runInContext(fs.readFileSync('public/campus/grade-content.js','utf8'),browser);
+vm.runInContext(fs.readFileSync('public/campus/game/grade-content.js','utf8'),browser);
 assert.equal(browser.window.GRADE_CONTENT_VERSION,version.version);
 assert.deepEqual(JSON.parse(JSON.stringify(browser.window.GRADE_CONTENT)),bank);
 console.log('PASS curriculum replacement: 234 independent tasks, balanced options, source/outcome mapping, stable scoring, version hash, browser parity and independent numeric checks.');

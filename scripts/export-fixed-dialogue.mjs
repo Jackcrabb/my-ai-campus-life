@@ -14,7 +14,7 @@ const tuple = line => JSON.stringify([line.characterId, line.gender, line.locale
 const plain = value => JSON.parse(JSON.stringify(value));
 
 export async function loadDialogueSources(root = ROOT) {
-  return Object.fromEntries(await Promise.all(FILES.map(async file => [file, await readFile(resolve(root, 'public/campus', file), 'utf8')])));
+  return Object.fromEntries(await Promise.all(FILES.map(async file => [file, await readFile(resolve(root, 'public/campus/game', file), 'utf8')])));
 }
 
 function between(source, start, end) {

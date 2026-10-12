@@ -2,7 +2,7 @@
 const NativeContext=window.AudioContext||window.webkitAudioContext;
 const observations=[];
 if(NativeContext){window.AudioContext=class extends NativeContext{constructor(){super();this.meter=this.createAnalyser();this.meter.fftSize=2048;this.meter.connect(this.destination);observations.push(this);}createGain(){const gain=super.createGain(),connect=gain.connect.bind(gain);gain.connect=(destination,...args)=>connect(destination===this.destination?this.meter:destination,...args);return gain;}};}
-</script><script src="characters.js"></script><script src="fixed-voices.js"></script><script src="campus-audio.js"></script><script>
+</script><script src="game/characters.js"></script><script src="game/fixed-voices.js"></script><script src="game/campus-audio.js"></script><script>
 let scenario='idle',events=[],previousSignature='',scenarioTimer=null;
 function onAudioState(s){
  document.getElementById('state').textContent=JSON.stringify(s,null,2);

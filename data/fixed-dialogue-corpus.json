@@ -387,18 +387,11 @@
       "text": "完成四宗案件后，手帐会开放迁移挑战。把证据、受影响的人和修正方法连起来，再写下你会邀请谁检查效果。"
     },
     {
-      "id": "staff-mentor-cn-2567795ec4ae413fd28f",
+      "id": "staff-mentor-cn-639009d7cd4c6f992a1e",
       "characterId": "staff-mentor",
       "gender": "female",
       "locale": "cn",
-      "text": "13 个学科空间各有基础、应用和挑战题，首次完成分别获 1、2、3 星。每宗案件获 5 星，手帐的迁移挑战再获 5 星。重做可以练习，但不会重复加星。"
-    },
-    {
-      "id": "staff-mentor-cn-71e25ca81e32994c4625",
-      "characterId": "staff-mentor",
-      "gender": "female",
-      "locale": "cn",
-      "text": "累积 100 星便可到地下校门完成校园旅程，最高 103 星。星星记录探索进度，并非品格或能力排名。你可随时休息、写反思；短课节不必一次走完整间学校。"
+      "text": "13 个学科空间有不同题目，每题可得的星星会显示在题目上。每宗案件获 5 星，手帐的迁移挑战再获 5 星。重做可以练习，但不会重复加星。"
     },
     {
       "id": "staff-mentor-cn-a5b38642e842921dceeb",
@@ -406,6 +399,13 @@
       "gender": "female",
       "locale": "cn",
       "text": "由地下走到四楼，与同学、老师和校务处职员交谈。调查公平、隐私、文化与共融：先看证据，再作决定，最后修正方案。"
+    },
+    {
+      "id": "staff-mentor-cn-d535077d3a71f1bcac6b",
+      "characterId": "staff-mentor",
+      "gender": "female",
+      "locale": "cn",
+      "text": "达到画面显示的星星目标，便可到地下校门完成校园旅程。星星记录探索进度，并非品格或能力排名。你可随时休息、写反思；短课节不必一次走完整间学校。"
     },
     {
       "id": "staff-mentor-cn-e1d0da2a00f88e0b4c5e",
@@ -429,18 +429,18 @@
       "text": "You have reached 4F. Take your discoveries into everyday life. What specific change will you make next time you use AI?"
     },
     {
+      "id": "staff-mentor-en-608497f63cd60e8e202a",
+      "characterId": "staff-mentor",
+      "gender": "female",
+      "locale": "en",
+      "text": "Explore questions in 13 subject spaces. Each question shows the stars you can earn. Each ethics case earns 5 stars; the notebook’s transfer challenge earns 5 more. Replays help you practise but do not add duplicate stars."
+    },
+    {
       "id": "staff-mentor-en-781357cbaebc0fc43f8b",
       "characterId": "staff-mentor",
       "gender": "female",
       "locale": "en",
       "text": "Explore five floors and talk to students, teachers and office staff. Investigate fairness, privacy, culture and inclusion: examine evidence, decide, then repair the approach."
-    },
-    {
-      "id": "staff-mentor-en-8e51beb0494f009e419d",
-      "characterId": "staff-mentor",
-      "gender": "female",
-      "locale": "en",
-      "text": "Reach 100 stars to finish your mission at the ground-floor gate; 103 are available. Stars track exploration, not character or ability. Pause, reflect whenever you wish; a short lesson need not cover the entire school."
     },
     {
       "id": "staff-mentor-en-91e57fadd0bbbdec9201",
@@ -450,18 +450,18 @@
       "text": "Welcome to Ming Ching College! Get to know your campus, explore subject challenges and help classmates think through AI dilemmas."
     },
     {
-      "id": "staff-mentor-en-bc7155876e7d40d50efe",
-      "characterId": "staff-mentor",
-      "gender": "female",
-      "locale": "en",
-      "text": "Each of 13 subject spaces has foundation, application and challenge questions worth 1, 2 and 3 stars once. Each ethics case earns 5 stars; the notebook’s transfer challenge earns 5 more. Replays help you practise but do not add duplicate stars."
-    },
-    {
       "id": "staff-mentor-en-ca6680030995f0d18355",
       "characterId": "staff-mentor",
       "gender": "female",
       "locale": "en",
       "text": "The transfer challenge opens after all four cases. Connect evidence, the people affected and a practical repair. Then record whom you would invite to review the result."
+    },
+    {
+      "id": "staff-mentor-en-d28519b071f238c10af2",
+      "characterId": "staff-mentor",
+      "gender": "female",
+      "locale": "en",
+      "text": "Reach the star target shown on screen to finish your journey at the ground-floor gate. Stars track exploration, not character or ability. Pause, reflect whenever you wish; a short lesson need not cover the entire school."
     },
     {
       "id": "staff-music-cn-1863fddbe4348c20ba2c",

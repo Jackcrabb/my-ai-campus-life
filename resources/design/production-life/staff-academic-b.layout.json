@@ -1,0 +1,261 @@
+{
+  "id": "staff-academic-b",
+  "src": "images/life/staff-academic-b.png",
+  "width": 1086,
+  "height": 1448,
+  "cols": 6,
+  "rows": 4,
+  "facing": "right",
+  "frames": [
+    {
+      "x": 61,
+      "y": 73,
+      "w": 104,
+      "h": 312,
+      "anchorX": 116,
+      "baseline": 380
+    },
+    {
+      "x": 228,
+      "y": 73,
+      "w": 140,
+      "h": 309,
+      "anchorX": 286,
+      "baseline": 377
+    },
+    {
+      "x": 406,
+      "y": 77,
+      "w": 98,
+      "h": 305,
+      "anchorX": 466,
+      "baseline": 377
+    },
+    {
+      "x": 580,
+      "y": 74,
+      "w": 133,
+      "h": 309,
+      "anchorX": 636,
+      "baseline": 378
+    },
+    {
+      "x": 754,
+      "y": 74,
+      "w": 103,
+      "h": 308,
+      "anchorX": 806,
+      "baseline": 377
+    },
+    {
+      "x": 914,
+      "y": 74,
+      "w": 138,
+      "h": 310,
+      "anchorX": 970,
+      "baseline": 379
+    },
+    {
+      "x": 67,
+      "y": 425,
+      "w": 94,
+      "h": 312,
+      "anchorX": 110,
+      "baseline": 732
+    },
+    {
+      "x": 225,
+      "y": 425,
+      "w": 150,
+      "h": 308,
+      "anchorX": 287,
+      "baseline": 728
+    },
+    {
+      "x": 409,
+      "y": 425,
+      "w": 98,
+      "h": 308,
+      "anchorX": 462,
+      "baseline": 728
+    },
+    {
+      "x": 584,
+      "y": 425,
+      "w": 137,
+      "h": 309,
+      "anchorX": 634,
+      "baseline": 729
+    },
+    {
+      "x": 760,
+      "y": 426,
+      "w": 95,
+      "h": 308,
+      "anchorX": 806,
+      "baseline": 729
+    },
+    {
+      "x": 932,
+      "y": 426,
+      "w": 126,
+      "h": 311,
+      "anchorX": 972,
+      "baseline": 732
+    },
+    {
+      "x": 55,
+      "y": 758,
+      "w": 123,
+      "h": 319,
+      "anchorX": 116,
+      "baseline": 1072
+    },
+    {
+      "x": 228,
+      "y": 758,
+      "w": 146,
+      "h": 319,
+      "anchorX": 293,
+      "baseline": 1072
+    },
+    {
+      "x": 415,
+      "y": 758,
+      "w": 96,
+      "h": 317,
+      "anchorX": 470,
+      "baseline": 1070
+    },
+    {
+      "x": 577,
+      "y": 760,
+      "w": 144,
+      "h": 317,
+      "anchorX": 641,
+      "baseline": 1072
+    },
+    {
+      "x": 761,
+      "y": 761,
+      "w": 97,
+      "h": 315,
+      "anchorX": 816,
+      "baseline": 1071
+    },
+    {
+      "x": 914,
+      "y": 759,
+      "w": 157,
+      "h": 319,
+      "anchorX": 980,
+      "baseline": 1073
+    },
+    {
+      "x": 74,
+      "y": 1089,
+      "w": 97,
+      "h": 316,
+      "anchorX": 115,
+      "baseline": 1400
+    },
+    {
+      "x": 235,
+      "y": 1090,
+      "w": 150,
+      "h": 314,
+      "anchorX": 294,
+      "baseline": 1399
+    },
+    {
+      "x": 415,
+      "y": 1087,
+      "w": 105,
+      "h": 315,
+      "anchorX": 473,
+      "baseline": 1397
+    },
+    {
+      "x": 584,
+      "y": 1090,
+      "w": 150,
+      "h": 315,
+      "anchorX": 642,
+      "baseline": 1400
+    },
+    {
+      "x": 774,
+      "y": 1088,
+      "w": 97,
+      "h": 314,
+      "anchorX": 820,
+      "baseline": 1397
+    },
+    {
+      "x": 934,
+      "y": 1089,
+      "w": 130,
+      "h": 316,
+      "anchorX": 978,
+      "baseline": 1400
+    }
+  ],
+  "identities": [
+    {
+      "id": "staff-geography",
+      "idle": 0,
+      "walk": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "talk": 5,
+      "standingHeight": 308
+    },
+    {
+      "id": "staff-computer",
+      "idle": 6,
+      "walk": [
+        7,
+        8,
+        9,
+        10
+      ],
+      "talk": 11,
+      "standingHeight": 308
+    },
+    {
+      "id": "staff-history",
+      "idle": 12,
+      "walk": [
+        13,
+        14,
+        15,
+        16
+      ],
+      "talk": 17,
+      "standingHeight": 315
+    },
+    {
+      "id": "staff-art",
+      "idle": 18,
+      "walk": [
+        19,
+        20,
+        21,
+        22
+      ],
+      "talk": 23,
+      "standingHeight": 312
+    }
+  ],
+  "cycle": [
+    "left-contact",
+    "passing-a",
+    "right-contact",
+    "passing-b"
+  ],
+  "alphaThresholdForBounds": 16,
+  "notes": "Original selected image copied unchanged; real RGBA alpha. Explicit measured bounds override nominal grid because generated gutters vary. Bounds include 2px padding; anchorX uses head center in upper 18 percent, baseline is feet minus 3px. Use one invariant scale from identity.standingHeight, never per-frame height. No image pixel editing performed."
+}

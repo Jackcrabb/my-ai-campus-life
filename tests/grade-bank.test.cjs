@@ -4,7 +4,7 @@ const fs = require('node:fs');
 const vm = require('node:vm');
 const bank = JSON.parse(fs.readFileSync('data/grade-bank.json','utf8'));
 const context = vm.createContext({window:{}});
-vm.runInContext(fs.readFileSync('public/campus/grade-content.js','utf8'),context);
+vm.runInContext(fs.readFileSync('public/campus/game/grade-content.js','utf8'),context);
 assert.deepEqual(JSON.parse(JSON.stringify(context.window.GRADE_CONTENT)),bank,'guest and server starter bank agree');
 assert.equal(bank.length,234);
 assert.equal(new Set(bank.map(q=>q.id)).size,bank.length,'stable unique question IDs');

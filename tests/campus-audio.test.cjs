@@ -1,6 +1,6 @@
 'use strict';
 const assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm'),path=require('node:path');
-const source=fs.readFileSync(path.join(__dirname,'../public/campus/campus-audio.js'),'utf8');
+const source=fs.readFileSync(path.join(__dirname,'../public/campus/game/campus-audio.js'),'utf8');
 function launch({voices,stored,tts=true,audio=true,storageFails=false,gesture=true,cancelRace=false,voiceGenderHints={},fixedVoices,characters,mediaSupported=true}={}){
   let now=0,nextTimer=0,storedText=stored===undefined?null:JSON.stringify(stored);const timers=new Map(),docListeners=new Map(),speechListeners=new Map(),contexts=[],utterances=[],states=[],media=[];
   const document={hidden:false,addEventListener(k,fn){docListeners.set(k,fn);},removeEventListener(k){docListeners.delete(k);}};
@@ -103,7 +103,7 @@ function launch({voices,stored,tts=true,audio=true,storageFails=false,gesture=tr
     assert.equal(selected.actualGender,['boy','male'].includes(gender)?'male':'female');
     assert.equal(selected.requestedGender,selected.actualGender);
   }
-  const registryWindow={};vm.runInNewContext(fs.readFileSync(path.join(__dirname,'../public/campus/characters.js'),'utf8'),{window:registryWindow});
+  const registryWindow={};vm.runInNewContext(fs.readFileSync(path.join(__dirname,'../public/campus/game/characters.js'),'utf8'),{window:registryWindow});
   const characters=Object.values(registryWindow.CAMPUS_CHARACTERS.byId);assert.equal(characters.length,20);
   for(const character of characters)for(const locale of ['zh','cn','en']) {
     const selected=g.module.selectVoice(castVoices,{locale,gender:character.gender,characterId:character.id});
@@ -202,8 +202,8 @@ function launch({voices,stored,tts=true,audio=true,storageFails=false,gesture=tr
   assert.equal(g.module.selectVoice([{name:'Rocko (中文)',lang:'zh-CN',localService:true},{name:'婷婷',lang:'zh-CN',localService:true}],{locale:'cn'}).voice.name,'婷婷');
   assert.equal(g.module.melody[0][0],'E4');assert.equal(g.module.melody.at(-1)[0],null);
   const fixedLine={key:'fixed-welcome',kind:'dialogue',text:'Collect 100 stars.',locale:'en',characterId:'staff-principal',gender:'boy'};
-  const fixedClip={characterId:'staff-principal',locale:'en',text:fixedLine.text,gender:'male',src:'assets/voices/principal/en-welcome.mp3',approved:true};
-  const fixedManifest={schemaVersion:1,clips:[fixedClip,{...fixedClip,locale:'cn',text:'收集100颗星。',src:'assets/voices/principal/cn-welcome.mp3'}]};
+  const fixedClip={characterId:'staff-principal',locale:'en',text:fixedLine.text,gender:'male',src:'audio/voices/principal/en-welcome.mp3',approved:true};
+  const fixedManifest={schemaVersion:1,clips:[fixedClip,{...fixedClip,locale:'cn',text:'收集100颗星。',src:'audio/voices/principal/cn-welcome.mp3'}]};
   const fixedOptions={voices:castVoices,fixedVoices:fixedManifest,characters:registryWindow.CAMPUS_CHARACTERS};
   const recorded=launch(fixedOptions);
   assert.equal(recorded.media.length,0,'manifest loading never creates or preloads media');
@@ -219,7 +219,7 @@ function launch({voices,stored,tts=true,audio=true,storageFails=false,gesture=tr
   recorded.api.replay();assert.equal(recorded.media.length,2);assert.equal(recorded.media[1].volume,0.35);assert.equal(recorded.media[1].src,fixedClip.src);
   staleStart();staleEnd();staleError();assert.equal(recorded.api.state.voice.status,'queued');assert.equal(recorded.utterances.length,0,'stale media callbacks cannot finish or fall back over replay');
   clip1.rejectPlay(Object.assign(new Error('late failure'),{name:'AbortError'}));await Promise.resolve();recorded.advance(500);assert.equal(recorded.utterances.length,0);
-  recorded.media[1].onplaying();recorded.api.speak({...fixedLine,key:'cn-line',locale:'cn',text:'收集100颗星。'});assert.equal(recorded.media[1].pauses,1);assert.equal(recorded.media[2].src,'assets/voices/principal/cn-welcome.mp3');assert.equal(recorded.api.state.voice.actualLocale,'cmn');
+  recorded.media[1].onplaying();recorded.api.speak({...fixedLine,key:'cn-line',locale:'cn',text:'收集100颗星。'});assert.equal(recorded.media[1].pauses,1);assert.equal(recorded.media[2].src,'audio/voices/principal/cn-welcome.mp3');assert.equal(recorded.api.state.voice.actualLocale,'cmn');
   recorded.api.speak({...fixedLine,key:'zh-line',locale:'zh',text:'收集100顆星。'});recorded.advance(250);assert.equal(recorded.media[2].pauses,1);assert.equal(recorded.utterances.at(-1).voice.lang,'zh-HK','Cantonese continues through the existing device path');
   recorded.api.speak({...fixedLine,key:'stop-media'});const canceled=recorded.media.at(-1),canceledStart=canceled.onplaying,canceledEnd=canceled.onended,canceledError=canceled.onerror;const beforeCanceled=recorded.utterances.length;
   recorded.api.stopVoice();canceledStart();canceledEnd();canceledError();canceled.rejectPlay(new Error('late'));await Promise.resolve();recorded.advance(1000);
@@ -242,12 +242,12 @@ function launch({voices,stored,tts=true,audio=true,storageFails=false,gesture=tr
     ['wrong speech locale',fixedLine,{schemaVersion:1,clips:[{...fixedClip,speechLocale:'zh-HK'}]}],
     ['ambiguous speech locale',fixedLine,{schemaVersion:1,clips:[{...fixedClip,speechLocale:'zh'}]}],
     ['unknown schema',fixedLine,{schemaVersion:2,clips:[fixedClip]}],
-    ['duplicate ambiguous recording',fixedLine,{schemaVersion:1,clips:[fixedClip,{...fixedClip,src:'assets/voices/other.mp3'}]}],
-    ...['https://example.test/voice.mp3','//example.test/voice.mp3','assets/voices/../other.mp3','assets/voices/%2e%2e/other.mp3','assets/voices/file.mp3?url=remote','assets/voices/file.wav','assets/voices/x\\evil.mp3'].map(src=>['unsafe source '+src,fixedLine,{schemaVersion:1,clips:[{...fixedClip,src}]}]),
+    ['duplicate ambiguous recording',fixedLine,{schemaVersion:1,clips:[fixedClip,{...fixedClip,src:'audio/voices/other.mp3'}]}],
+    ...['https://example.test/voice.mp3','//example.test/voice.mp3','audio/voices/../other.mp3','audio/voices/%2e%2e/other.mp3','audio/voices/file.mp3?url=remote','audio/voices/file.wav','audio/voices/x\\evil.mp3'].map(src=>['unsafe source '+src,fixedLine,{schemaVersion:1,clips:[{...fixedClip,src}]}]),
   ];
   for(const [name,line,manifest] of mismatchCases){const test=launch({...fixedOptions,fixedVoices:manifest});await test.api.unlock();test.api.setMusicPlaying(false);test.api.speak(line);test.advance(250);assert.equal(test.media.length,0,name+' must not load a recording');assert.equal(test.api.state.voice.source,'browser',name+' uses strict device selection');await test.api.dispose();}
   const aliasRecording=launch(fixedOptions);await aliasRecording.api.unlock();aliasRecording.api.speak({...fixedLine,characterId:'subject:hall'});assert.equal(aliasRecording.media.length,1,'alias resolves to canonical principal before exact manifest matching');await aliasRecording.api.dispose();
-  const previewClips=[{characterId:'staff-mentor',gender:'female',locale:'cn',speechLocale:'zh-CN',text:'欢迎入读明澄书院，新同学！',src:'assets/voices/cn/welcome.mp3',approved:true,preview:true},{characterId:'staff-mentor',gender:'female',locale:'en',speechLocale:'en-US',text:'Welcome to Ming Ching College!',src:'assets/voices/en/welcome.mp3',approved:true,preview:true}];
+  const previewClips=[{characterId:'staff-mentor',gender:'female',locale:'cn',speechLocale:'zh-CN',text:'欢迎入读明澄书院，新同学！',src:'audio/voices/cn/welcome.mp3',approved:true,preview:true},{characterId:'staff-mentor',gender:'female',locale:'en',speechLocale:'en-US',text:'Welcome to Ming Ching College!',src:'audio/voices/en/welcome.mp3',approved:true,preview:true}];
   const previewRecording=launch({...fixedOptions,fixedVoices:{schemaVersion:1,clips:[fixedClip,...previewClips]}});await previewRecording.api.unlock();previewRecording.api.setMusicPlaying(false);previewRecording.api.speak(fixedLine);
   previewRecording.api.tryVoice('cn');assert.equal(previewRecording.media.at(-1).src,previewClips[0].src);assert.equal(previewRecording.api.state.voice.source,'recorded');assert.equal(previewRecording.api.state.voice.actualLocale,'zh-CN');assert.equal(previewRecording.api.state.voice.actualGender,'female');
   previewRecording.api.tryVoice('en');assert.equal(previewRecording.media.at(-1).src,previewClips[1].src);assert.equal(previewRecording.api.state.voice.actualLocale,'en-US');

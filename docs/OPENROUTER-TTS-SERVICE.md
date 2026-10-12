@@ -6,7 +6,7 @@ The user accepted the Mandarin and English audition samples as usable. The reque
 
 ## Bundled fixed dialogue — current source
 
-`public/campus/fixed-voices.js` contains **104 MP3 entries: 52 Mandarin and 52 English, covering all 20 canonical characters**. The corpus is exported from the actual runtime dialogue model: introduction, subject-teacher greetings, office/vice-principal/principal dialogue and case openings/completion lines. Academic questions, options and explanations are excluded. Variable grade/class/star details are shown in the interface rather than interpolated into fixed speech. Matching requires the exact canonical character, locale and complete sentence.
+`public/campus/game/fixed-voices.js` contains **104 MP3 entries: 52 Mandarin and 52 English, covering all 20 canonical characters**. The corpus is exported from the actual runtime dialogue model: introduction, subject-teacher greetings, office/vice-principal/principal dialogue and case openings/completion lines. Academic questions, options and explanations are excluded. Variable grade/class/star details are shown in the interface rather than interpolated into fixed speech. Matching requires the exact canonical character, locale and complete sentence.
 
 These are newly authored files from the free Edge speech endpoint, not the earlier OpenRouter trials. The authoring script verified the live voice catalog's locale, gender and GA status before generation:
 
@@ -17,7 +17,9 @@ These are newly authored files from the free Edge speech endpoint, not the earli
 | English / male | `en-US-GuyNeural` | 23 |
 | English / female | `en-US-JennyNeural` | 29 |
 
-Rate is **−8%** and pitch is **+0 Hz**. The complete bundle is **6,936,480 bytes / 1,156.08 seconds**. Every file passed full `ffmpeg` decoding, format inspection and SHA-256 verification. The manifest's `approved: true` means this documented **technical release check**; `reviewBasis` is `provider locale/gender metadata and decoded full clip`, and **`audiblyReviewed` remains `false`**. It is not a claim that every line was listened to or that pronunciation/naturalness is certified. Two mentor welcome lines also provide the Mandarin/English preview samples. The lead agent observed male Mandarin recorded playback start and complete without error on the Mac lacking a known male Mandarin device voice; that browser lifecycle check does not prove physical audibility.
+The two mentor instructions were revised on **12 October 2026** to refer to each question’s displayed reward and the current star target, so teacher-created activities are not described using fixed starter totals. Only the matching fixed clips were regenerated; teacher questions remain silent.
+
+Rate is **−8%** and pitch is **+0 Hz**. The complete bundle is **6,905,376 bytes / 1,150.90 seconds**. Every file passed full `ffmpeg` decoding, format inspection and SHA-256 verification. The manifest's `approved: true` means this documented **technical release check**; `reviewBasis` is `provider locale/gender metadata and decoded full clip`, and **`audiblyReviewed` remains `false`**. It is not a claim that every line was listened to or that pronunciation/naturalness is certified. Two mentor welcome lines also provide the Mandarin/English preview samples. The lead agent observed male Mandarin recorded playback start and complete without error on the Mac lacking a known male Mandarin device voice; that browser lifecycle check does not prove physical audibility.
 
 Gameplay loads the local MP3 assets: no API key, OpenRouter request or synthesis occurs during playback. If a fixed sentence changes or its file is unavailable, strict matching device speech may be used; an initially empty device voice inventory waits up to three seconds and is cancelled if the request is superseded. Cantonese retains its original device route and still depends on suitable installed language/gender voices. Never substitute a wrong locale or known gender. Source changes, listening checks and successful public deployment are distinct release steps.
 
@@ -30,7 +32,7 @@ The authoring-only script uses Python 3.11 or newer, `edge-tts==7.2.8`, `ffmpeg`
 3. Run `python3 scripts/generate-fixed-voices.py --validate-only` for offline corpus, manifest, checksum and full-decode checks. This mode does not import Edge or make network requests. `--publish-cache` rebuilds the manifest from verified existing files, also offline.
 4. Listen to full lines on target devices to check language, gender, numbers, wording and pacing; record that review separately. Maintain visible text and replay. Do not use the rejected Mandarin-as-Cantonese trial.
 
-Relevant files are `data/fixed-dialogue-corpus.json`, `data/fixed-voice-generation-cache.json`, `public/campus/fixed-voices.js` and `public/campus/assets/voices/{cn,en}/`. Current verification includes all 104 exact-dialogue entries, five authoring tests and complete offline validation. No learner data or teacher-authored question text is sent for this production corpus.
+Relevant files are `data/fixed-dialogue-corpus.json`, `data/fixed-voice-generation-cache.json`, `public/campus/game/fixed-voices.js` and `public/campus/audio/voices/{cn,en}/`. Current verification includes all 104 exact-dialogue entries, five authoring tests and complete offline validation. No learner data or teacher-authored question text is sent for this production corpus.
 
 ## Retained internal OpenRouter capability
 

@@ -1,0 +1,183 @@
+{
+  "checkedDate": "2026-10-12",
+  "sourceCommit": "6aa6badaa59ed1481743c3bcafafcba76abc79c5",
+  "siteVersion": 4,
+  "publicUrl": "https://lumen-lab-ai-ethics.tart-vale-4903.chatgpt.site/campus/",
+  "entryStatus": 200,
+  "credentialsUsed": false,
+  "resourceCount": 32,
+  "resources": [
+    {
+      "path": "/campus/game/campus-polish.css",
+      "status": 200,
+      "sha256": "e938e05ec45d9c7094677337a1895ad40fbc805dbe7e1bc6e62192a5558257ab"
+    },
+    {
+      "path": "/campus/game/ui-glass.css",
+      "status": 200,
+      "sha256": "40c3421f8a5ead6a39b2baf6f5d73d32ccbb7aad9f0e1d67be3ac346a58f0d92"
+    },
+    {
+      "path": "/campus/game/teacher-ui.css",
+      "status": 200,
+      "sha256": "4fc557f241ceb2c1de0699bac5b48cdd3021c7d7a7a70814299d041faf7556f8"
+    },
+    {
+      "path": "/campus/game/styles.css",
+      "status": 200,
+      "sha256": "051f1588209a3a377242d4df88d1174b47c6f5e82cdf5862e67f760375aa3bc2"
+    },
+    {
+      "path": "/campus/game/campus-panels.css",
+      "status": 200,
+      "sha256": "994471011ad6481de8d229b78fdebe3469729d67256c7f6397ac6594ffd77788"
+    },
+    {
+      "path": "/campus/game/campus-life.css",
+      "status": 200,
+      "sha256": "d35a30f6fd84b3ebd7bca8dc7556b0b375c032ecfe3333df900ef1041c68f971"
+    },
+    {
+      "path": "/campus/game/campus-pixel-ui.css",
+      "status": 200,
+      "sha256": "196f80aac761e8807d5d08ff01f904655f925a1fc84d19e88356e38033469119"
+    },
+    {
+      "path": "/campus/game/worksheet-ui.css",
+      "status": 200,
+      "sha256": "643236a440160307920f34b34db6a860b207f95e2dbb249b2d9efa917666dbdf"
+    },
+    {
+      "path": "/campus/game/subjects.js",
+      "status": 200,
+      "sha256": "1c2a932b841b6431d7ae63a2f29b17771cc21723f95fef67257465cf79db9f84"
+    },
+    {
+      "path": "/campus/game/campus-art.js",
+      "status": 200,
+      "sha256": "2210cc69b5e0e80c0c053c77a16fe5db66292545927cad7d7a83f8a87052847c"
+    },
+    {
+      "path": "/campus/game/content.js",
+      "status": 200,
+      "sha256": "a473dfccce2f2dff581a49679d645bc3a2b066d32214153e6d042ca7985d62e9"
+    },
+    {
+      "path": "/campus/game/grade-content.js",
+      "status": 200,
+      "sha256": "dcb57af786d82bd058395f5b0aaae8c13d59e14335990aca8efeac01cb4cb589"
+    },
+    {
+      "path": "/campus/game/campus-cloud.js",
+      "status": 200,
+      "sha256": "8c1aefe6aef3a990103b91a6e45c6e3656c33de51a0c5631036b7ed7f0b7a401"
+    },
+    {
+      "path": "/campus/game/campus-routines.js",
+      "status": 200,
+      "sha256": "e45c8e7b29f7b1404dc851f13b1d9a20a86799eb1f761c2b614a7a0d9a4664b8"
+    },
+    {
+      "path": "/campus/game/characters.js",
+      "status": 200,
+      "sha256": "2a461dd54b9ed52bf3f43378f9404a24dcc1e59255bf03cb69904d330deb2c21"
+    },
+    {
+      "path": "/campus/game/engine.js",
+      "status": 200,
+      "sha256": "76d154429ee189237c2b89315c34fc9e34b5846125fa9c3e5df2b90f163625b0"
+    },
+    {
+      "path": "/campus/game/teacher-ui.js",
+      "status": 200,
+      "sha256": "2f41b6a16c0a71036c10a534b6fad4885ddcbb5f7fcb1f101027f91e09e4d749"
+    },
+    {
+      "path": "/campus/game/worksheet-ui.js",
+      "status": 200,
+      "sha256": "1eec44a9d614a84056cc324e152f0223dbf304d249dff1aaee1cf3246828c51d"
+    },
+    {
+      "path": "/campus/game/xlsx-export.js",
+      "status": 200,
+      "sha256": "dabf22ea1bef0724ece0dd7441ff5f84ccf3aaf94ab21e05f4fe09b6f02e9872"
+    },
+    {
+      "path": "/campus/game/fixed-voices.js",
+      "status": 200,
+      "sha256": "8a4781c400c381874eb16e35b6846e525485317688925757a7c9c62e836665ef"
+    },
+    {
+      "path": "/campus/images/icons/pixelarticons/map-pin.svg",
+      "status": 200,
+      "sha256": "a19c6d5890fe98105cba1808813f77a0ff9d576e7f9e338da7c2511fd0d9f177"
+    },
+    {
+      "path": "/campus/images/icons/pixelarticons/music-sharp.svg",
+      "status": 200,
+      "sha256": "721b46da44dda3d1a256b3bf727143607bd766460e7d858d4e93be35dabde4ef"
+    },
+    {
+      "path": "/campus/game/campus-audio.js",
+      "status": 200,
+      "sha256": "830483a0fcd9604ae245065ef2c0a72a2ac0930e2cd4b1ded495ad072c1143e0"
+    },
+    {
+      "path": "/campus/game/app.js",
+      "status": 200,
+      "sha256": "3567b86a1312e43080ca02821719dd18cd28e09319fbfdd543db97c926686fab"
+    },
+    {
+      "path": "/campus/images/icons/pixelarticons/map-pin.svg",
+      "status": 200,
+      "sha256": "a19c6d5890fe98105cba1808813f77a0ff9d576e7f9e338da7c2511fd0d9f177"
+    },
+    {
+      "path": "/campus/images/icons/pixelarticons/book-open-sharp.svg",
+      "status": 200,
+      "sha256": "f6fb74f555e67e36f33b3f993894608172aad501858362a83369917e585d3bba"
+    },
+    {
+      "path": "/campus/images/icons/pixelarticons/file-text-sharp.svg",
+      "status": 200,
+      "sha256": "95b4c80acaf02b52a2e7f38c645a27b322c4f96a83e0ddfaa2e1deebcc2e0144"
+    },
+    {
+      "path": "/campus/images/icons/pixelarticons/notebook-sharp.svg",
+      "status": 200,
+      "sha256": "3fb9a9356c4e359b23aaa4e11ee0647f85864e23125d8cf17f2e4d9fb51b45d1"
+    },
+    {
+      "path": "/campus/images/icons/pixelarticons/settings-cog.svg",
+      "status": 200,
+      "sha256": "0cd460e87e94dcf2d8481166ca15f6d55a7454e5f5c8fb47a296fd2f94753802"
+    },
+    {
+      "path": "/campus/images/icons/pixelarticons/printer-minimal-sharp.svg",
+      "status": 200,
+      "sha256": "56bbbebeb41fc3f1ef5fcbb4cf000cfeea143fc0cd948eb6ed860236b090e675"
+    },
+    {
+      "path": "/campus/audio/voices/cn/staff-mentor-cn-d535077d3a71f1bcac6b-245e10c697b3.mp3",
+      "status": 200,
+      "sha256": "cbdcea8264390978fa468a3f280502e1fb3e96f83064c574f7180fc1813a70f8"
+    },
+    {
+      "path": "/campus/audio/voices/en/staff-mentor-en-d28519b071f238c10af2-fa70578e1563.mp3",
+      "status": 200,
+      "sha256": "e0e614569b603f4e88fded7dc329ff1f0a66efb42e1d41ee00e1b5d1f650c4d6"
+    }
+  ],
+  "anonymousBootstrap": {
+    "status": 200,
+    "session": null
+  },
+  "teacherSession": {
+    "status": 200,
+    "allowed": false,
+    "unlocked": false
+  },
+  "teacherQuestionsStatus": 403,
+  "qrDecodedTo": "https://lumen-lab-ai-ethics.tart-vale-4903.chatgpt.site",
+  "browserVisualReview": "Not performed for this release: local browser URL policy blocked the requested tab."
+}

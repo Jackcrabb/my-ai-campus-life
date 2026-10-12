@@ -59,11 +59,11 @@ function launch(saved) {
     setTimeout() { return 1; }, clearTimeout() {}, console,
   });
   for (const file of ['content.js', 'subjects.js', 'grade-content.js', 'characters.js', 'engine.js']) {
-    vm.runInContext(fs.readFileSync(path.join(root, 'public/campus', file), 'utf8'), context, { filename: file });
+    vm.runInContext(fs.readFileSync(path.join(root, 'public/campus/game', file), 'utf8'), context, { filename: file });
   }
-  let source = fs.readFileSync(path.join(root, 'public/campus/app.js'), 'utf8');
+  let source = fs.readFileSync(path.join(root, 'public/campus/game/app.js'), 'utf8');
   source = source.replace(/\}\)\(\);\s*$/, `window.testApp = {
-    state: () => state, progress, campusProgress, pstate, subjectState, action,
+    state: () => state, progress, campusProgress, pstate, subjectState, action, setGradeQuestions, updateChrome,
     missions, subjects, openDialogue, nextDialogue, endDialogue, dialogueModel,
     renderSubject, renderMap, renderJournal, renderSettings, renderEnding, save, showModal, closeModal,
     setSubject: (room, level) => { activeSubject = room; activeLevel = level; },
@@ -77,6 +77,46 @@ function launch(saved) {
 }
 
 (async () => {
+  const custom = launch({version:2,started:true,prologueSeen:true});
+  const customRoom = custom.app.subjects.find(room => room.id === 'maths');
+  const additional = [7,10].map((stars,index) => ({...customRoom.levels[0],id:'teacher-extra-'+index,stars}));
+  custom.app.setGradeQuestions([...custom.app.subjects.flatMap(room => room.levels),...additional]);
+  assert.equal(customRoom.levels.length,5,'a classroom can render more than three questions');
+  for(const level of additional){
+    custom.app.setSubject('maths',level.id);custom.app.renderSubject();
+    assert.equal((custom.elements.get('modal-content').innerHTML.match(/data-level=/g)||[]).length,5);
+    const answer=custom.app.subjectState('maths',level.id);answer.choice=level.options.findIndex(option=>option.correct);
+    const before=custom.app.progress().stars;await custom.app.action('subject-submit');
+    assert.equal(custom.app.progress().stars,before+level.stars,'custom question awards the configured amount');
+    await custom.app.action('subject-submit');assert.equal(custom.app.progress().stars,before+level.stars,'replay cannot duplicate a custom award');
+  }
+  assert.equal(custom.app.progress().stars,17);
+  for(const lang of ['zh','cn','en']){
+    custom.app.state().lang=lang;custom.app.renderJournal();
+    const html=custom.elements.get('modal-content').innerHTML;
+    assert.match(html,/17 \/ 120/,'journal maximum includes extra configured stars');
+    assert.match(html,/2[／/]41/,'journal uses the current question count');
+    assert.match(html,lang==='en'?/subjects offer 95/:lang==='cn'?/学科题共 95 星/:/學科題共 95 星/);
+  }
+  const shortActivity = launch({version:2,started:true,prologueSeen:true});
+  const shortQuestion = {...shortActivity.app.subjects.find(room=>room.id==='maths').levels[0],stars:10};
+  shortActivity.app.setGradeQuestions([shortQuestion]);
+  shortActivity.app.subjectState('maths',shortQuestion.id).completed=true;
+  shortActivity.app.updateChrome();
+  const partialBar=shortActivity.elements.get('star-summary').innerHTML;
+  assert.match(partialBar,/aria-valuemax="35" aria-valuenow="10"/);
+  assert.ok(Math.abs(Number(partialBar.match(/width:([\d.]+)%/)[1])-100*10/35)<0.001,'a shorter teacher activity normalises its progress bar to the actual target');
+  for(const mission of shortActivity.app.missions)Object.assign(shortActivity.app.pstate(mission.id),{completed:true,choice:0,repairChoice:mission.repair.options.findIndex(option=>option.correct)});
+  shortActivity.app.state().transferAwarded=true;shortActivity.app.updateChrome();
+  assert.equal(shortActivity.app.progress().exitUnlocked,true);
+  assert.match(shortActivity.elements.get('star-summary').innerHTML,/width:100%/,'the bar is full when a shorter activity unlocks its gate');
+  for(const lang of ['zh','cn','en']){
+    shortActivity.app.state().lang=lang;shortActivity.app.renderMap();
+    assert.match(shortActivity.elements.get('modal-content').innerHTML,lang==='en'?/With 35 stars/:/取得 35 星/,'the ground-floor instructions show the assigned target');
+    shortActivity.app.openDialogue('prologue');
+    assert.doesNotMatch(shortActivity.app.dialogueModel().lines.at(-1),/100/,'fixed introductory audio does not promise a hardcoded target');
+    shortActivity.app.endDialogue();
+  }
   const teacherEntry = launch({version:2,started:true,prologueSeen:true,location:'library',reflection:'Student work stays here.'});
   const beforeTeacher = JSON.stringify(teacherEntry.app.state());
   const beforeTeacherLocations = teacherEntry.engineLocations.length;
@@ -438,7 +478,7 @@ function launch(saved) {
 
   app.state().transferChoice = 1; // derive correct answer below from content context
   const content = vm.createContext({ window: {} });
-  vm.runInContext(fs.readFileSync(path.join(root, 'public/campus/content.js'), 'utf8'), content);
+  vm.runInContext(fs.readFileSync(path.join(root, 'public/campus/game/content.js'), 'utf8'), content);
   const correctTransfer = content.window.TRANSFER_CONTENT.options.findIndex(o => o.correct);
   const wrongTransfer = content.window.TRANSFER_CONTENT.options.findIndex(o => !o.correct);
   app.state().transferChoice = correctTransfer;
@@ -527,5 +567,5 @@ function launch(saved) {
   assert.equal(app.progress().checks, 0);
   assert.equal(app.state().prologueSeen, false);
   assert.equal(app.mode().dialogueId, null);
-  console.log('PASS progression: 39 awards, 4 cases, sticky transfer, 103 maximum, 100-star gate, restore, three locales, gender-specific wardrobe migration/selection, intro, ending and reset');
+  console.log('PASS progression: custom five-question room with7/10-star one-off awards and dynamic totals, 39 default awards, 4 cases, sticky transfer, 103 maximum, 100-star gate, restore, three locales, gender-specific wardrobe migration/selection, intro, ending and reset');
 })().catch(error => { console.error(error); process.exitCode = 1; });

@@ -13,28 +13,28 @@
       rel="icon"
       href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23182e32'/%3E%3Ccircle cx='28' cy='27' r='14' fill='none' stroke='%23f3d27c' stroke-width='6'/%3E%3Cpath d='m39 38 13 13' stroke='%23f3d27c' stroke-width='7'/%3E%3C/svg%3E"
     />
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="campus-polish.css" />
-    <link rel="stylesheet" href="ui-glass.css" />
-    <link rel="stylesheet" href="teacher-ui.css" />
-    <link rel="stylesheet" href="campus-life.css" />
-    <link rel="stylesheet" href="campus-panels.css" />
-    <link rel="stylesheet" href="worksheet-ui.css" />
-    <link rel="stylesheet" href="campus-pixel-ui.css" />
-    <script defer src="content.js"></script>
-    <script defer src="subjects.js"></script>
-    <script defer src="grade-content.js"></script>
-    <script defer src="campus-art.js"></script>
-    <script defer src="characters.js"></script>
-    <script defer src="campus-routines.js"></script>
-    <script defer src="engine.js"></script>
-    <script defer src="campus-cloud.js"></script>
-    <script defer src="xlsx-export.js"></script>
-    <script defer src="worksheet-ui.js"></script>
-    <script defer src="teacher-ui.js"></script>
-    <script defer src="fixed-voices.js"></script>
-    <script defer src="campus-audio.js"></script>
-    <script defer src="app.js"></script>
+    <link rel="stylesheet" href="game/styles.css" />
+    <link rel="stylesheet" href="game/campus-polish.css" />
+    <link rel="stylesheet" href="game/ui-glass.css" />
+    <link rel="stylesheet" href="game/teacher-ui.css" />
+    <link rel="stylesheet" href="game/campus-life.css" />
+    <link rel="stylesheet" href="game/campus-panels.css" />
+    <link rel="stylesheet" href="game/worksheet-ui.css" />
+    <link rel="stylesheet" href="game/campus-pixel-ui.css" />
+    <script defer src="game/content.js"></script>
+    <script defer src="game/subjects.js"></script>
+    <script defer src="game/grade-content.js"></script>
+    <script defer src="game/campus-art.js"></script>
+    <script defer src="game/characters.js"></script>
+    <script defer src="game/campus-routines.js"></script>
+    <script defer src="game/engine.js"></script>
+    <script defer src="game/campus-cloud.js"></script>
+    <script defer src="game/xlsx-export.js"></script>
+    <script defer src="game/worksheet-ui.js"></script>
+    <script defer src="game/teacher-ui.js"></script>
+    <script defer src="game/fixed-voices.js"></script>
+    <script defer src="game/campus-audio.js"></script>
+    <script defer src="game/app.js"></script>
   </head>
   <body>
     <a class="skip" href="#case-list" id="skip-link">跳至案件清單</a>
@@ -56,7 +56,7 @@
             <option value="cn">简体中文</option>
             <option value="en">English</option>
           </select></label
-        ><button id="audio-button" class="audio-button" aria-label="音量設定" aria-expanded="false" aria-controls="audio-panel"><img src="assets/icons/pixelarticons/music-sharp.svg" alt=""></button>
+        ><button id="audio-button" class="audio-button" aria-label="音量設定" aria-expanded="false" aria-controls="audio-panel"><img src="images/icons/pixelarticons/music-sharp.svg" alt=""></button>
       </div>
       <section id="audio-panel" class="audio-panel" hidden role="region" aria-labelledby="audio-title"></section>
     </header>
@@ -88,7 +88,7 @@
               tabindex="0"
               aria-label="2D 校園。WASD 或方向鍵移動，空格或 Enter 互動。點擊地面可移動，點擊人物或房門可走近互動。"
             ></canvas>
-            <div class="scene-tag" id="scene-tag"><img class="scene-location-icon" src="assets/icons/pixelarticons/map-pin.svg" alt=""><span class="scene-location-copy">明澄書院 · 地下走廊</span></div>
+            <div class="scene-tag" id="scene-tag"><img class="scene-location-icon" src="images/icons/pixelarticons/map-pin.svg" alt=""><span class="scene-location-copy">明澄書院 · 地下走廊</span></div>
             <button
               id="fullscreen-button"
               class="scene-tool"
@@ -101,12 +101,12 @@
             <div id="scene-toast" class="scene-toast" role="status"></div>
             <nav id="game-hud" class="game-hud" aria-label="遊戲工具">
               <span id="hud-stars" class="hud-stars">★ 0 / 100</span>
-              <button data-action="cases" id="hud-cases"><img class="hud-icon" src="assets/icons/pixelarticons/file-text-sharp.svg" alt=""><span class="hud-label">案件</span></button>
-              <button data-action="subjects" id="hud-subjects"><img class="hud-icon" src="assets/icons/pixelarticons/book-open-sharp.svg" alt=""><span class="hud-label">學科</span></button>
-              <button data-action="map" id="hud-map"><img class="hud-icon" src="assets/icons/pixelarticons/map-pin.svg" alt=""><span class="hud-label">地圖</span></button>
-              <button data-action="journal" id="hud-journal"><img class="hud-icon" src="assets/icons/pixelarticons/notebook-sharp.svg" alt=""><span class="hud-label">手帳</span></button>
-              <button data-action="printer" id="hud-printer"><img class="hud-icon" src="assets/icons/pixelarticons/printer-minimal-sharp.svg" alt=""><span class="hud-label">打印</span></button>
-              <button data-action="settings" id="hud-settings"><img class="hud-icon" src="assets/icons/pixelarticons/settings-cog.svg" alt=""><span class="hud-label">設定</span></button>
+              <button data-action="cases" id="hud-cases"><img class="hud-icon" src="images/icons/pixelarticons/file-text-sharp.svg" alt=""><span class="hud-label">案件</span></button>
+              <button data-action="subjects" id="hud-subjects"><img class="hud-icon" src="images/icons/pixelarticons/book-open-sharp.svg" alt=""><span class="hud-label">學科</span></button>
+              <button data-action="map" id="hud-map"><img class="hud-icon" src="images/icons/pixelarticons/map-pin.svg" alt=""><span class="hud-label">地圖</span></button>
+              <button data-action="journal" id="hud-journal"><img class="hud-icon" src="images/icons/pixelarticons/notebook-sharp.svg" alt=""><span class="hud-label">手帳</span></button>
+              <button data-action="printer" id="hud-printer"><img class="hud-icon" src="images/icons/pixelarticons/printer-minimal-sharp.svg" alt=""><span class="hud-label">打印</span></button>
+              <button data-action="settings" id="hud-settings"><img class="hud-icon" src="images/icons/pixelarticons/settings-cog.svg" alt=""><span class="hud-label">設定</span></button>
             </nav>
             <section
               id="modal"

@@ -342,7 +342,7 @@ export async function handleCampus(request: Request, ctx: CampusContext): Promis
                     for (const subject of result.results.filter(s => !subjectId || s.subjectId === subjectId))
                         rows.push({ studentId: student.id, className: `${classroom.grade}${classroom.section}`, studentNumber: student.student_number, studentName: student.name, ...subject });
                 }
-                return json({ classroom: classPublic(classroom), assignment, scoringPolicy: "first_response", headers: ["班別", "學號", "學生姓名", "學科得分"], rows, subjects: [...new Set(questions.map(q => JSON.parse(q.content).subjectId))] });
+                return json({ classroom: classPublic(classroom), assignment, scoringPolicy: "first_response", headers: ["班別", "學號", "學生姓名", "學科得分", "獲得星星", "可得星星"], rows, subjects: [...new Set(questions.map(q => JSON.parse(q.content).subjectId))] });
             }
             if (path.length === 4 && path[1] === "students" && path[2] && path[3] === "recovery" && method === "POST") {
                 const student = await ctx.db.prepare("SELECT s.id FROM campus_students s JOIN campus_classrooms c ON c.id=s.classroom_id WHERE s.id=? AND c.owner_id=?").bind(path[2], ownerId).first<{

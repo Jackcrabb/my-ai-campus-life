@@ -1,0 +1,273 @@
+{
+  "id": "staff-academic-a-v2",
+  "src": "images/life/staff-academic-a-v2.png",
+  "width": 1086,
+  "height": 1448,
+  "cols": 6,
+  "rows": 4,
+  "facing": "right",
+  "frames": [
+    {
+      "x": 65,
+      "y": 20,
+      "w": 85,
+      "h": 331,
+      "anchorX": 105,
+      "baseline": 346
+    },
+    {
+      "x": 214,
+      "y": 21,
+      "w": 158,
+      "h": 329,
+      "anchorX": 290,
+      "baseline": 345
+    },
+    {
+      "x": 403,
+      "y": 20,
+      "w": 124,
+      "h": 330,
+      "anchorX": 470,
+      "baseline": 345
+    },
+    {
+      "x": 570,
+      "y": 21,
+      "w": 166,
+      "h": 330,
+      "anchorX": 657,
+      "baseline": 346
+    },
+    {
+      "x": 767,
+      "y": 21,
+      "w": 133,
+      "h": 331,
+      "anchorX": 838,
+      "baseline": 347
+    },
+    {
+      "x": 955,
+      "y": 21,
+      "w": 129,
+      "h": 333,
+      "anchorX": 994,
+      "baseline": 349
+    },
+    {
+      "x": 52,
+      "y": 361,
+      "w": 100,
+      "h": 347,
+      "anchorX": 99,
+      "baseline": 703
+    },
+    {
+      "x": 211,
+      "y": 361,
+      "w": 167,
+      "h": 345,
+      "anchorX": 279,
+      "baseline": 701
+    },
+    {
+      "x": 402,
+      "y": 362,
+      "w": 129,
+      "h": 346,
+      "anchorX": 464,
+      "baseline": 703
+    },
+    {
+      "x": 567,
+      "y": 362,
+      "w": 170,
+      "h": 346,
+      "anchorX": 648,
+      "baseline": 703
+    },
+    {
+      "x": 766,
+      "y": 362,
+      "w": 132,
+      "h": 348,
+      "anchorX": 828,
+      "baseline": 705
+    },
+    {
+      "x": 941,
+      "y": 362,
+      "w": 145,
+      "h": 349,
+      "anchorX": 991,
+      "baseline": 706
+    },
+    {
+      "x": 57,
+      "y": 716,
+      "w": 106,
+      "h": 349,
+      "anchorX": 109,
+      "baseline": 1060
+    },
+    {
+      "x": 203,
+      "y": 716,
+      "w": 172,
+      "h": 349,
+      "anchorX": 291,
+      "baseline": 1060
+    },
+    {
+      "x": 396,
+      "y": 716,
+      "w": 132,
+      "h": 347,
+      "anchorX": 469,
+      "baseline": 1058
+    },
+    {
+      "x": 561,
+      "y": 717,
+      "w": 179,
+      "h": 349,
+      "anchorX": 653,
+      "baseline": 1061
+    },
+    {
+      "x": 765,
+      "y": 717,
+      "w": 137,
+      "h": 349,
+      "anchorX": 838,
+      "baseline": 1061
+    },
+    {
+      "x": 943,
+      "y": 717,
+      "w": 142,
+      "h": 351,
+      "anchorX": 996,
+      "baseline": 1063
+    },
+    {
+      "x": 55,
+      "y": 1075,
+      "w": 110,
+      "h": 353,
+      "anchorX": 104,
+      "baseline": 1423
+    },
+    {
+      "x": 213,
+      "y": 1074,
+      "w": 167,
+      "h": 351,
+      "anchorX": 282,
+      "baseline": 1420
+    },
+    {
+      "x": 401,
+      "y": 1075,
+      "w": 129,
+      "h": 351,
+      "anchorX": 460,
+      "baseline": 1421
+    },
+    {
+      "x": 563,
+      "y": 1075,
+      "w": 178,
+      "h": 353,
+      "anchorX": 640,
+      "baseline": 1423
+    },
+    {
+      "x": 766,
+      "y": 1076,
+      "w": 139,
+      "h": 352,
+      "anchorX": 824,
+      "baseline": 1423
+    },
+    {
+      "x": 936,
+      "y": 1076,
+      "w": 148,
+      "h": 354,
+      "anchorX": 986,
+      "baseline": 1425
+    }
+  ],
+  "identities": [
+    {
+      "id": "staff-chinese",
+      "idle": 0,
+      "walk": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "talk": 5,
+      "standingHeight": 327,
+      "estimatedHeadHeight": 54,
+      "estimatedHeadToBodyRatio": 0.1651,
+      "headMeasurement": "Visual estimate: hair top to chin on idle pose, excluding hanging bob/ponytail; approximate, not automated anatomy detection."
+    },
+    {
+      "id": "staff-english",
+      "idle": 6,
+      "walk": [
+        7,
+        8,
+        9,
+        10
+      ],
+      "talk": 11,
+      "standingHeight": 343,
+      "estimatedHeadHeight": 57,
+      "estimatedHeadToBodyRatio": 0.1662,
+      "headMeasurement": "Visual estimate: hair top to chin on idle pose, excluding hanging bob/ponytail; approximate, not automated anatomy detection."
+    },
+    {
+      "id": "staff-maths",
+      "idle": 12,
+      "walk": [
+        13,
+        14,
+        15,
+        16
+      ],
+      "talk": 17,
+      "standingHeight": 345,
+      "estimatedHeadHeight": 57,
+      "estimatedHeadToBodyRatio": 0.1652,
+      "headMeasurement": "Visual estimate: hair top to chin on idle pose, excluding hanging bob/ponytail; approximate, not automated anatomy detection."
+    },
+    {
+      "id": "staff-chemistry",
+      "idle": 18,
+      "walk": [
+        19,
+        20,
+        21,
+        22
+      ],
+      "talk": 23,
+      "standingHeight": 349,
+      "estimatedHeadHeight": 59,
+      "estimatedHeadToBodyRatio": 0.1691,
+      "headMeasurement": "Visual estimate: hair top to chin on idle pose, excluding hanging bob/ponytail; approximate, not automated anatomy detection."
+    }
+  ],
+  "cycle": [
+    "left-contact",
+    "passing-a",
+    "right-contact",
+    "passing-b"
+  ],
+  "alphaThresholdForBounds": 16,
+  "notes": "Original selected image copied unchanged; real RGBA alpha. Explicit measured bounds override nominal grid because generated gutters vary. Bounds include 2px padding; anchorX uses head center in upper 18 percent, baseline is feet minus 3px. Use one invariant scale from identity.standingHeight, never per-frame height. No image pixel editing performed."
+}

@@ -6,11 +6,11 @@ const vm = require('node:vm');
 
 // Load the static content contract without requiring a browser or executing the app.
 const context = vm.createContext({ window: {} });
-const filename = __dirname + '/../public/campus/content.js';
+const filename = __dirname + '/../public/campus/game/content.js';
 vm.runInContext(fs.readFileSync(filename, 'utf8'), context, { filename, timeout: 1000 });
 
 for (const file of ['characters.js', 'engine.js']) {
-  vm.runInContext(fs.readFileSync(__dirname + '/../public/campus/' + file, 'utf8'), context, { filename: file, timeout: 1000 });
+  vm.runInContext(fs.readFileSync(__dirname + '/../public/campus/game/' + file, 'utf8'), context, { filename: file, timeout: 1000 });
 }
 const { GAME_CONTENT, TRANSFER_CONTENT, CAMPUS_CHARACTERS, CAMPUS_LOCATIONS } = context.window;
 const locales = ['zh', 'cn', 'en'];

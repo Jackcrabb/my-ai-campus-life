@@ -234,9 +234,9 @@ I am connecting dialogue, the evidence notebook and the puzzle flow. Each case w
 <details>
 <summary>Generated image 001 · 2026-10-08 19:33:33 HKT · portraits</summary>
 
-![Generated image 001: portraits](../public/campus/portraits.png)
+![Generated image 001: portraits](../public/campus/images/portraits.png)
 
-[Open original PNG](../public/campus/portraits.png) · Generation ID: `exec-02d4fc6b-dd50-4eeb-9bcc-ab789f309af9`.
+[Open original PNG](../public/campus/images/portraits.png) · Generation ID: `exec-02d4fc6b-dd50-4eeb-9bcc-ab789f309af9`.
 
 Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
 
@@ -295,9 +295,9 @@ These styles will be redrawn as game pixel clothing so both short-haired and sin
 <details>
 <summary>Generated image 002 · 2026-10-08 19:55:13 HKT · title campus</summary>
 
-![Generated image 002: title campus](../public/campus/title-campus.png)
+![Generated image 002: title campus](../public/campus/images/title-campus.png)
 
-[Open original PNG](../public/campus/title-campus.png) · Generation ID: `exec-3594107d-d555-4d61-929c-fe53a4252251`.
+[Open original PNG](../public/campus/images/title-campus.png) · Generation ID: `exec-3594107d-d555-4d61-929c-fe53a4252251`.
 
 Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
 
@@ -398,9 +398,9 @@ The following are the three new versions for you to choose from. Each image will
 <details>
 <summary>Generated image 005 · 2026-10-08 20:18:26 HKT · version 1 crafted pixel</summary>
 
-![Generated image 005: version 1 crafted pixel](../design/art-options/version-1-crafted-pixel.png)
+![Generated image 005: version 1 crafted pixel](../resources/design/art-options/version-1-crafted-pixel.png)
 
-[Open original PNG](../design/art-options/version-1-crafted-pixel.png) · Generation ID: `exec-7b48e905-50a4-403f-bd24-de17cdcce65d`.
+[Open original PNG](../resources/design/art-options/version-1-crafted-pixel.png) · Generation ID: `exec-7b48e905-50a4-403f-bd24-de17cdcce65d`.
 
 Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
 
@@ -409,9 +409,9 @@ Original artwork lettering is preserved. This image event is archival metadata, 
 <details>
 <summary>Generated image 006 · 2026-10-08 20:18:37 HKT · version 2 hd pixel</summary>
 
-![Generated image 006: version 2 hd pixel](../design/art-options/version-2-hd-pixel.png)
+![Generated image 006: version 2 hd pixel](../resources/design/art-options/version-2-hd-pixel.png)
 
-[Open original PNG](../design/art-options/version-2-hd-pixel.png) · Generation ID: `exec-24b03049-7d70-45a8-80c4-6aa6da5e5775`.
+[Open original PNG](../resources/design/art-options/version-2-hd-pixel.png) · Generation ID: `exec-24b03049-7d70-45a8-80c4-6aa6da5e5775`.
 
 Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
 
@@ -420,9 +420,9 @@ Original artwork lettering is preserved. This image event is archival metadata, 
 <details>
 <summary>Generated image 007 · 2026-10-08 20:18:43 HKT · version 3 hand drawn</summary>
 
-![Generated image 007: version 3 hand drawn](../design/art-options/version-3-hand-drawn.png)
+![Generated image 007: version 3 hand drawn](../resources/design/art-options/version-3-hand-drawn.png)
 
-[Open original PNG](../design/art-options/version-3-hand-drawn.png) · Generation ID: `exec-b3c700da-29ec-4240-8045-a94489abff95`.
+[Open original PNG](../resources/design/art-options/version-3-hand-drawn.png) · Generation ID: `exec-b3c700da-29ec-4240-8045-a94489abff95`.
 
 Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
 
@@ -430,7 +430,7 @@ Original artwork lettering is preserved. This image event is archival metadata, 
 
 *2026-10-08 20:20:02 HKT · message 029*
 
-The three new samples are complete. Original images and full generation prompts have been saved in the [art-direction review](../design/art-options/ART-DIRECTION-REVIEW.md). They are currently static art previews and have not replaced the live game. Full character animation and backgrounds will follow your selected version.
+The three new samples are complete. Original images and full generation prompts have been saved in the [art-direction review](../resources/design/art-options/ART-DIRECTION-REVIEW.md). They are currently static art previews and have not replaced the live game. Full character animation and backgrounds will follow your selected version.
 
 ---
 
@@ -453,9 +453,9 @@ Using this sample as the reference, I will now produce game-ready characters, NP
 <details>
 <summary>Generated image 008 · 2026-10-08 20:27:17 HKT · students queens college</summary>
 
-![Generated image 008: students queens college](../public/campus/assets/characters/students-queens-college.png)
+![Generated image 008: students queens college](../public/campus/images/characters/students-queens-college.png)
 
-[Open original PNG](../public/campus/assets/characters/students-queens-college.png) · Generation ID: `exec-ca284faf-c728-41d9-97f2-5e60de4991a5`.
+[Open original PNG](../public/campus/images/characters/students-queens-college.png) · Generation ID: `exec-ca284faf-c728-41d9-97f2-5e60de4991a5`.
 
 Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
 
@@ -464,9 +464,9 @@ Original artwork lettering is preserved. This image event is archival metadata, 
 <details>
 <summary>Generated image 009 · 2026-10-08 20:27:17 HKT · students pooi to</summary>
 
-![Generated image 009: students pooi to](../public/campus/assets/characters/students-pooi-to.png)
+![Generated image 009: students pooi to](../public/campus/images/characters/students-pooi-to.png)
 
-[Open original PNG](../public/campus/assets/characters/students-pooi-to.png) · Generation ID: `exec-e5a183d3-9b1b-4314-933d-81180719e33d`.
+[Open original PNG](../public/campus/images/characters/students-pooi-to.png) · Generation ID: `exec-e5a183d3-9b1b-4314-933d-81180719e33d`.
 
 Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
 
@@ -475,9 +475,9 @@ Original artwork lettering is preserved. This image event is archival metadata, 
 <details>
 <summary>Generated image 010 · 2026-10-08 20:29:22 HKT · campus pair 01</summary>
 
-![Generated image 010: campus pair 01](../public/campus/assets/backgrounds/campus-pair-01.png)
+![Generated image 010: campus pair 01](../public/campus/images/backgrounds/campus-pair-01.png)
 
-[Open original PNG](../public/campus/assets/backgrounds/campus-pair-01.png) · Generation ID: `exec-134ddf53-1677-42a1-b0cf-709cff325784`.
+[Open original PNG](../public/campus/images/backgrounds/campus-pair-01.png) · Generation ID: `exec-134ddf53-1677-42a1-b0cf-709cff325784`.
 
 Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
 
@@ -497,9 +497,9 @@ Original artwork lettering is preserved. This image event is archival metadata, 
 <details>
 <summary>Generated image 012 · 2026-10-08 20:30:28 HKT · campus pair 02</summary>
 
-![Generated image 012: campus pair 02](../public/campus/assets/backgrounds/campus-pair-02.png)
+![Generated image 012: campus pair 02](../public/campus/images/backgrounds/campus-pair-02.png)
 
-[Open original PNG](../public/campus/assets/backgrounds/campus-pair-02.png) · Generation ID: `exec-d5366927-85ef-4a79-aabd-086f2004b6b7`.
+[Open original PNG](../public/campus/images/backgrounds/campus-pair-02.png) · Generation ID: `exec-d5366927-85ef-4a79-aabd-086f2004b6b7`.
 
 Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
 
@@ -508,9 +508,9 @@ Original artwork lettering is preserved. This image event is archival metadata, 
 <details>
 <summary>Generated image 013 · 2026-10-08 20:30:39 HKT · campus pair 03</summary>
 
-![Generated image 013: campus pair 03](../public/campus/assets/backgrounds/campus-pair-03.png)
+![Generated image 013: campus pair 03](../public/campus/images/backgrounds/campus-pair-03.png)
 
-[Open original PNG](../public/campus/assets/backgrounds/campus-pair-03.png) · Generation ID: `exec-6efc7a4f-01fa-442b-94c0-a665f53b9c3a`.
+[Open original PNG](../public/campus/images/backgrounds/campus-pair-03.png) · Generation ID: `exec-6efc7a4f-01fa-442b-94c0-a665f53b9c3a`.
 
 Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
 
@@ -519,9 +519,9 @@ Original artwork lettering is preserved. This image event is archival metadata, 
 <details>
 <summary>Generated image 014 · 2026-10-08 20:30:40 HKT · students hkcwcc</summary>
 
-![Generated image 014: students hkcwcc](../public/campus/assets/characters/students-hkcwcc.png)
+![Generated image 014: students hkcwcc](../public/campus/images/characters/students-hkcwcc.png)
 
-[Open original PNG](../public/campus/assets/characters/students-hkcwcc.png) · Generation ID: `exec-cb056dc3-8df6-441a-b847-537822087a36`.
+[Open original PNG](../public/campus/images/characters/students-hkcwcc.png) · Generation ID: `exec-cb056dc3-8df6-441a-b847-537822087a36`.
 
 Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
 
@@ -530,9 +530,9 @@ Original artwork lettering is preserved. This image event is archival metadata, 
 <details>
 <summary>Generated image 015 · 2026-10-08 20:30:40 HKT · students st joan</summary>
 
-![Generated image 015: students st joan](../public/campus/assets/characters/students-st-joan.png)
+![Generated image 015: students st joan](../public/campus/images/characters/students-st-joan.png)
 
-[Open original PNG](../public/campus/assets/characters/students-st-joan.png) · Generation ID: `exec-bacce2c6-ec85-47ad-8d66-df575519c166`.
+[Open original PNG](../public/campus/images/characters/students-st-joan.png) · Generation ID: `exec-bacce2c6-ec85-47ad-8d66-df575519c166`.
 
 Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
 
@@ -558,9 +558,9 @@ Scoring will reward only first completion to prevent repeated-question star farm
 <details>
 <summary>Generated image 017 · 2026-10-08 20:31:06 HKT · campus pair 04</summary>
 
-![Generated image 017: campus pair 04](../public/campus/assets/backgrounds/campus-pair-04.png)
+![Generated image 017: campus pair 04](../public/campus/images/backgrounds/campus-pair-04.png)
 
-[Open original PNG](../public/campus/assets/backgrounds/campus-pair-04.png) · Generation ID: `exec-4443763a-6b49-46a4-8b03-86b644cabc1c`.
+[Open original PNG](../public/campus/images/backgrounds/campus-pair-04.png) · Generation ID: `exec-4443763a-6b49-46a4-8b03-86b644cabc1c`.
 
 Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
 
@@ -569,9 +569,9 @@ Original artwork lettering is preserved. This image event is archival metadata, 
 <details>
 <summary>Generated image 018 · 2026-10-08 20:31:33 HKT · campus pair 05</summary>
 
-![Generated image 018: campus pair 05](../public/campus/assets/backgrounds/campus-pair-05.png)
+![Generated image 018: campus pair 05](../public/campus/images/backgrounds/campus-pair-05.png)
 
-[Open original PNG](../public/campus/assets/backgrounds/campus-pair-05.png) · Generation ID: `exec-3b686abf-8c0c-4824-b7f0-de7e2cbd2f07`.
+[Open original PNG](../public/campus/images/backgrounds/campus-pair-05.png) · Generation ID: `exec-3b686abf-8c0c-4824-b7f0-de7e2cbd2f07`.
 
 Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
 
@@ -580,9 +580,9 @@ Original artwork lettering is preserved. This image event is archival metadata, 
 <details>
 <summary>Generated image 019 · 2026-10-08 20:31:42 HKT · campus pair 06</summary>
 
-![Generated image 019: campus pair 06](../public/campus/assets/backgrounds/campus-pair-06.png)
+![Generated image 019: campus pair 06](../public/campus/images/backgrounds/campus-pair-06.png)
 
-[Open original PNG](../public/campus/assets/backgrounds/campus-pair-06.png) · Generation ID: `exec-d9f1e453-b20a-4cac-ad07-4f31be343ee9`.
+[Open original PNG](../public/campus/images/backgrounds/campus-pair-06.png) · Generation ID: `exec-d9f1e453-b20a-4cac-ad07-4f31be343ee9`.
 
 Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
 
@@ -591,9 +591,9 @@ Original artwork lettering is preserved. This image event is archival metadata, 
 <details>
 <summary>Generated image 020 · 2026-10-08 20:31:54 HKT · campus pair 07</summary>
 
-![Generated image 020: campus pair 07](../public/campus/assets/backgrounds/campus-pair-07.png)
+![Generated image 020: campus pair 07](../public/campus/images/backgrounds/campus-pair-07.png)
 
-[Open original PNG](../public/campus/assets/backgrounds/campus-pair-07.png) · Generation ID: `exec-fdd3c47f-3bfd-44f5-8aa7-83746e0a6a74`.
+[Open original PNG](../public/campus/images/backgrounds/campus-pair-07.png) · Generation ID: `exec-fdd3c47f-3bfd-44f5-8aa7-83746e0a6a74`.
 
 Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
 
@@ -602,9 +602,9 @@ Original artwork lettering is preserved. This image event is archival metadata, 
 <details>
 <summary>Generated image 021 · 2026-10-08 20:34:08 HKT · npcs school community</summary>
 
-![Generated image 021: npcs school community](../public/campus/assets/characters/npcs-school-community.png)
+![Generated image 021: npcs school community](../public/campus/images/characters/npcs-school-community.png)
 
-[Open original PNG](../public/campus/assets/characters/npcs-school-community.png) · Generation ID: `exec-3ebfe1f3-061a-4777-ac3c-b18f5b62fa15`.
+[Open original PNG](../public/campus/images/characters/npcs-school-community.png) · Generation ID: `exec-3ebfe1f3-061a-4777-ac3c-b18f5b62fa15`.
 
 Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
 
@@ -613,9 +613,9 @@ Original artwork lettering is preserved. This image event is archival metadata, 
 <details>
 <summary>Generated image 022 · 2026-10-08 20:35:48 HKT · campus pair 08</summary>
 
-![Generated image 022: campus pair 08](../public/campus/assets/backgrounds/campus-pair-08.png)
+![Generated image 022: campus pair 08](../public/campus/images/backgrounds/campus-pair-08.png)
 
-[Open original PNG](../public/campus/assets/backgrounds/campus-pair-08.png) · Generation ID: `exec-a0b65b8c-1d0c-4ec4-9778-5e88dbf620b6`.
+[Open original PNG](../public/campus/images/backgrounds/campus-pair-08.png) · Generation ID: `exec-a0b65b8c-1d0c-4ec4-9778-5e88dbf620b6`.
 
 Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
 
@@ -624,9 +624,9 @@ Original artwork lettering is preserved. This image event is archival metadata, 
 <details>
 <summary>Generated image 023 · 2026-10-08 20:36:16 HKT · campus pair 09</summary>
 
-![Generated image 023: campus pair 09](../public/campus/assets/backgrounds/campus-pair-09.png)
+![Generated image 023: campus pair 09](../public/campus/images/backgrounds/campus-pair-09.png)
 
-[Open original PNG](../public/campus/assets/backgrounds/campus-pair-09.png) · Generation ID: `exec-4c370e97-1497-46ff-b0e5-1f1802eca371`.
+[Open original PNG](../public/campus/images/backgrounds/campus-pair-09.png) · Generation ID: `exec-4c370e97-1497-46ff-b0e5-1f1802eca371`.
 
 Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
 
@@ -635,9 +635,9 @@ Original artwork lettering is preserved. This image event is archival metadata, 
 <details>
 <summary>Generated image 024 · 2026-10-08 20:37:15 HKT · students</summary>
 
-![Generated image 024: students](../public/campus/assets/portraits/students.png)
+![Generated image 024: students](../public/campus/images/portraits/students.png)
 
-[Open original PNG](../public/campus/assets/portraits/students.png) · Generation ID: `exec-d84a744d-5f57-4d1b-b557-674b8f1060ca`.
+[Open original PNG](../public/campus/images/portraits/students.png) · Generation ID: `exec-d84a744d-5f57-4d1b-b557-674b8f1060ca`.
 
 Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
 
@@ -646,9 +646,9 @@ Original artwork lettering is preserved. This image event is archival metadata, 
 <details>
 <summary>Generated image 025 · 2026-10-08 20:38:19 HKT · staff a</summary>
 
-![Generated image 025: staff a](../public/campus/assets/portraits/staff-a.png)
+![Generated image 025: staff a](../public/campus/images/portraits/staff-a.png)
 
-[Open original PNG](../public/campus/assets/portraits/staff-a.png) · Generation ID: `exec-3c845bb4-0266-4896-bae2-c95c14f11001`.
+[Open original PNG](../public/campus/images/portraits/staff-a.png) · Generation ID: `exec-3c845bb4-0266-4896-bae2-c95c14f11001`.
 
 Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
 
@@ -657,9 +657,9 @@ Original artwork lettering is preserved. This image event is archival metadata, 
 <details>
 <summary>Generated image 026 · 2026-10-08 20:38:33 HKT · staff b</summary>
 
-![Generated image 026: staff b](../public/campus/assets/portraits/staff-b.png)
+![Generated image 026: staff b](../public/campus/images/portraits/staff-b.png)
 
-[Open original PNG](../public/campus/assets/portraits/staff-b.png) · Generation ID: `exec-39085af1-8c2c-4c86-8d2a-1d8465496866`.
+[Open original PNG](../public/campus/images/portraits/staff-b.png) · Generation ID: `exec-39085af1-8c2c-4c86-8d2a-1d8465496866`.
 
 Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
 
@@ -704,9 +704,9 @@ The art will keep your chosen first version. The interface will use a dark-green
 <details>
 <summary>Generated image 027 · 2026-10-08 20:54:21 HKT · detective preparation</summary>
 
-![Generated image 027: detective preparation](../public/campus/assets/backgrounds/detective-preparation.png)
+![Generated image 027: detective preparation](../public/campus/images/backgrounds/detective-preparation.png)
 
-[Open original PNG](../public/campus/assets/backgrounds/detective-preparation.png) · Generation ID: `exec-ed40abed-8382-4eef-96d1-716442df5969`.
+[Open original PNG](../public/campus/images/backgrounds/detective-preparation.png) · Generation ID: `exec-ed40abed-8382-4eef-96d1-716442df5969`.
 
 Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
 
@@ -751,9 +751,9 @@ The game name will be standardised as “AI Campus · Detective Mission,” with
 <details>
 <summary>Generated image 028 · 2026-10-08 21:03:03 HKT · campus gate</summary>
 
-![Generated image 028: campus gate](../public/campus/assets/backgrounds/campus-gate.png)
+![Generated image 028: campus gate](../public/campus/images/backgrounds/campus-gate.png)
 
-[Open original PNG](../public/campus/assets/backgrounds/campus-gate.png) · Generation ID: `exec-7ad90440-e764-41cc-9e45-919b78bb0c2f`.
+[Open original PNG](../public/campus/images/backgrounds/campus-gate.png) · Generation ID: `exec-7ad90440-e764-41cc-9e45-919b78bb0c2f`.
 
 Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
 
@@ -842,9 +842,9 @@ The empty bottom area is caused by the game's fixed height and the row of contro
 <details>
 <summary>Generated image 029 · 2026-10-08 23:01:42 HKT · students boy queens college</summary>
 
-![Generated image 029: students boy queens college](../public/campus/assets/characters/students-boy-queens-college.png)
+![Generated image 029: students boy queens college](../public/campus/images/characters/students-boy-queens-college.png)
 
-[Open original PNG](../public/campus/assets/characters/students-boy-queens-college.png) · Generation ID: `exec-18766b8f-b02f-4e58-a2f3-39f6b5cb280c`.
+[Open original PNG](../public/campus/images/characters/students-boy-queens-college.png) · Generation ID: `exec-18766b8f-b02f-4e58-a2f3-39f6b5cb280c`.
 
 Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
 
@@ -853,9 +853,9 @@ Original artwork lettering is preserved. This image event is archival metadata, 
 <details>
 <summary>Generated image 030 · 2026-10-08 23:01:42 HKT · students boy hkcwcc</summary>
 
-![Generated image 030: students boy hkcwcc](../public/campus/assets/characters/students-boy-hkcwcc.png)
+![Generated image 030: students boy hkcwcc](../public/campus/images/characters/students-boy-hkcwcc.png)
 
-[Open original PNG](../public/campus/assets/characters/students-boy-hkcwcc.png) · Generation ID: `exec-795e1f29-3851-4509-a19d-3516b21e94a8`.
+[Open original PNG](../public/campus/images/characters/students-boy-hkcwcc.png) · Generation ID: `exec-795e1f29-3851-4509-a19d-3516b21e94a8`.
 
 Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
 
@@ -864,9 +864,9 @@ Original artwork lettering is preserved. This image event is archival metadata, 
 <details>
 <summary>Generated image 031 · 2026-10-08 23:05:47 HKT · students girl hkcwcc</summary>
 
-![Generated image 031: students girl hkcwcc](../public/campus/assets/characters/students-girl-hkcwcc.png)
+![Generated image 031: students girl hkcwcc](../public/campus/images/characters/students-girl-hkcwcc.png)
 
-[Open original PNG](../public/campus/assets/characters/students-girl-hkcwcc.png) · Generation ID: `exec-a160cb44-4f78-47ab-bccd-ea3b97775845`.
+[Open original PNG](../public/campus/images/characters/students-girl-hkcwcc.png) · Generation ID: `exec-a160cb44-4f78-47ab-bccd-ea3b97775845`.
 
 Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
 
@@ -875,9 +875,9 @@ Original artwork lettering is preserved. This image event is archival metadata, 
 <details>
 <summary>Generated image 032 · 2026-10-08 23:07:33 HKT · students girl st joan</summary>
 
-![Generated image 032: students girl st joan](../public/campus/assets/characters/students-girl-st-joan.png)
+![Generated image 032: students girl st joan](../public/campus/images/characters/students-girl-st-joan.png)
 
-[Open original PNG](../public/campus/assets/characters/students-girl-st-joan.png) · Generation ID: `exec-515e87a9-0c40-4083-aff5-b2418b0e7a55`.
+[Open original PNG](../public/campus/images/characters/students-girl-st-joan.png) · Generation ID: `exec-515e87a9-0c40-4083-aff5-b2418b0e7a55`.
 
 Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
 
@@ -930,9 +930,9 @@ This time I will first deliver the girls' and boys' comparison sheets and pause 
 <details>
 <summary>Generated image 033 · 2026-10-08 23:29:22 HKT · BOYS REVIEW v1</summary>
 
-![Generated image 033: BOYS REVIEW v1](../design/character-review/BOYS-REVIEW-v1.png)
+![Generated image 033: BOYS REVIEW v1](../resources/design/character-review/BOYS-REVIEW-v1.png)
 
-[Open original PNG](../design/character-review/BOYS-REVIEW-v1.png) · Generation ID: `exec-818bf487-32d4-4a3d-b93d-0dee37719fe5`.
+[Open original PNG](../resources/design/character-review/BOYS-REVIEW-v1.png) · Generation ID: `exec-818bf487-32d4-4a3d-b93d-0dee37719fe5`.
 
 Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
 
@@ -945,9 +945,9 @@ The character review sheets will use the same face, proportions and standing pos
 <details>
 <summary>Generated image 034 · 2026-10-08 23:29:51 HKT · GIRLS REVIEW v1</summary>
 
-![Generated image 034: GIRLS REVIEW v1](../design/character-review/GIRLS-REVIEW-v1.png)
+![Generated image 034: GIRLS REVIEW v1](../resources/design/character-review/GIRLS-REVIEW-v1.png)
 
-[Open original PNG](../design/character-review/GIRLS-REVIEW-v1.png) · Generation ID: `exec-e1383a77-d5a9-4ec3-b017-78e66e34231e`.
+[Open original PNG](../resources/design/character-review/GIRLS-REVIEW-v1.png) · Generation ID: `exec-e1383a77-d5a9-4ec3-b017-78e66e34231e`.
 
 Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
 
@@ -959,7 +959,7 @@ From now on, the process will be “design image → your confirmation → websi
 
 **Girls: long ponytail and mushroom bob × four school dresses**
 
-![Girls' character review: G1–G8](../design/character-review/GIRLS-REVIEW-v1.png)
+![Girls' character review: G1–G8](../resources/design/character-review/GIRLS-REVIEW-v1.png)
 
 The top row, G1–G4, has long ponytails; the bottom row, G5–G8, has mushroom bobs. Each column uses the same uniform.
 
@@ -972,7 +972,7 @@ The top row, G1–G4, has long ponytails; the bottom row, G5–G8, has mushroom 
 
 **Boys: buzz cut and current short hair × four uniforms**
 
-![Boys' character review: B1–B8](../design/character-review/BOYS-REVIEW-v1.png)
+![Boys' character review: B1–B8](../resources/design/character-review/BOYS-REVIEW-v1.png)
 
 The top row, B1–B4, has close-to-the-scalp buzz cuts; the bottom row, B5–B8, has the current tousled short hair. All use long trousers.
 
@@ -983,7 +983,7 @@ The top row, B1–B4, has close-to-the-scalp buzz cuts; the bottom row, B5–B8,
 | White short-sleeved shirt and light-blue striped trousers | B3 | B7 |
 | White shirt, tie and navy blazer with grey trousers | B4 | B8 |
 
-The uniforms are redrawn as original pixel art, using official references from [Queen's College](https://www.qc.edu.hk/en/site/view?name=School+Regulations), [Hong Kong Chinese Women's Club College](https://www.hkcwcc.edu.hk/en/school-uniform), [St Joan of Arc Secondary School](https://www.sja.edu.hk/download/Resource/fileDoc/%E5%AD%B8%E6%A0%A1%E8%A8%93%E8%BC%94%E5%B0%8E%E6%94%BF%E7%AD%96%E5%8F%8A%E7%A8%8B%E5%BA%8F2025Updated_24_9_2025.pdf) and [St Stephen's College](https://www.ssc.edu.hk/uploads/files/Download%20Area/Student_Diary_2025-26.pdf). Full built-in imagegen prompts are saved in the [girls' record](../design/character-review/GIRLS-REVIEW-v1.md) and [boys' record](../design/character-review/BOYS-REVIEW-v1.md).
+The uniforms are redrawn as original pixel art, using official references from [Queen's College](https://www.qc.edu.hk/en/site/view?name=School+Regulations), [Hong Kong Chinese Women's Club College](https://www.hkcwcc.edu.hk/en/school-uniform), [St Joan of Arc Secondary School](https://www.sja.edu.hk/download/Resource/fileDoc/%E5%AD%B8%E6%A0%A1%E8%A8%93%E8%BC%94%E5%B0%8E%E6%94%BF%E7%AD%96%E5%8F%8A%E7%A8%8B%E5%BA%8F2025Updated_24_9_2025.pdf) and [St Stephen's College](https://www.ssc.edu.hk/uploads/files/Download%20Area/Student_Diary_2025-26.pdf). Full built-in imagegen prompts are saved in the [girls' record](../resources/design/character-review/GIRLS-REVIEW-v1.md) and [boys' record](../resources/design/character-review/BOYS-REVIEW-v1.md).
 
 Please confirm whether both sets can be used. You can say “all approved,” or specify a number and change, such as “make G5–G8's hair rounder” or “make B1–B4's hair shorter.” I will wait for confirmation before changing the game's character and animation images.
 
@@ -1046,9 +1046,9 @@ This round will provide designs for character interaction, enrolment, the teache
 <details>
 <summary>Generated image 035 · 2026-10-08 23:51:39 HKT · 03 teacher workspace</summary>
 
-![Generated image 035: 03 teacher workspace](../design/campus-life-review-v1/03-teacher-workspace.png)
+![Generated image 035: 03 teacher workspace](../resources/design/campus-life-review-v1/03-teacher-workspace.png)
 
-[Open original PNG](../design/campus-life-review-v1/03-teacher-workspace.png) · Generation ID: `exec-3161c00d-0135-4439-a7ef-bdf7b6fe817d`.
+[Open original PNG](../resources/design/campus-life-review-v1/03-teacher-workspace.png) · Generation ID: `exec-3161c00d-0135-4439-a7ef-bdf7b6fe817d`.
 
 Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
 
@@ -1068,9 +1068,9 @@ Original artwork lettering is preserved. This image event is archival metadata, 
 <details>
 <summary>Generated image 037 · 2026-10-08 23:54:36 HKT · 04 npc roster</summary>
 
-![Generated image 037: 04 npc roster](../design/campus-life-review-v1/04-npc-roster.png)
+![Generated image 037: 04 npc roster](../resources/design/campus-life-review-v1/04-npc-roster.png)
 
-[Open original PNG](../design/campus-life-review-v1/04-npc-roster.png) · Generation ID: `exec-ae29a5a2-051e-4bfd-82ab-090e0857efdd`.
+[Open original PNG](../resources/design/campus-life-review-v1/04-npc-roster.png) · Generation ID: `exec-ae29a5a2-051e-4bfd-82ab-090e0857efdd`.
 
 Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
 
@@ -1085,9 +1085,9 @@ The character preview is being checked for body proportions and consistency betw
 <details>
 <summary>Generated image 038 · 2026-10-08 23:55:08 HKT · 02 student onboarding</summary>
 
-![Generated image 038: 02 student onboarding](../design/campus-life-review-v1/02-student-onboarding.png)
+![Generated image 038: 02 student onboarding](../resources/design/campus-life-review-v1/02-student-onboarding.png)
 
-[Open original PNG](../design/campus-life-review-v1/02-student-onboarding.png) · Generation ID: `exec-19504641-1374-40d0-92b7-d56ceda4344f`.
+[Open original PNG](../resources/design/campus-life-review-v1/02-student-onboarding.png) · Generation ID: `exec-19504641-1374-40d0-92b7-d56ceda4344f`.
 
 Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
 
@@ -1112,9 +1112,9 @@ Added as item 12: the wardrobe menu will use style names such as “White Shirt 
 <details>
 <summary>Generated image 039 · 2026-10-08 23:57:43 HKT · 01 character interaction</summary>
 
-![Generated image 039: 01 character interaction](../design/campus-life-review-v1/01-character-interaction.png)
+![Generated image 039: 01 character interaction](../resources/design/campus-life-review-v1/01-character-interaction.png)
 
-[Open original PNG](../design/campus-life-review-v1/01-character-interaction.png) · Generation ID: `exec-4ba28f4f-38b0-4220-a147-7e121681325a`.
+[Open original PNG](../resources/design/campus-life-review-v1/01-character-interaction.png) · Generation ID: `exec-4ba28f4f-38b0-4220-a147-7e121681325a`.
 
 Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
 
@@ -1143,9 +1143,9 @@ I will produce another standing/walking review image so you can check that propo
 <details>
 <summary>Generated image 040 · 2026-10-09 00:05:16 HKT · 05 walk proportion</summary>
 
-![Generated image 040: 05 walk proportion](../design/campus-life-review-v1/05-walk-proportion.png)
+![Generated image 040: 05 walk proportion](../resources/design/campus-life-review-v1/05-walk-proportion.png)
 
-[Open original PNG](../design/campus-life-review-v1/05-walk-proportion.png) · Generation ID: `exec-f61f1006-761b-4fc2-9c96-0829ec3dd99b`.
+[Open original PNG](../resources/design/campus-life-review-v1/05-walk-proportion.png) · Generation ID: `exec-f61f1006-761b-4fc2-9c96-0829ec3dd99b`.
 
 Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
 
@@ -1176,9 +1176,9 @@ I can see unnatural purple-red patches behind the boy's ear, on the side of the 
 <details>
 <summary>Generated image 041 · 2026-10-09 00:12:03 HKT · 05 walk proportion v2</summary>
 
-![Generated image 041: 05 walk proportion v2](../design/campus-life-review-v1/05-walk-proportion-v2.png)
+![Generated image 041: 05 walk proportion v2](../resources/design/campus-life-review-v1/05-walk-proportion-v2.png)
 
-[Open original PNG](../design/campus-life-review-v1/05-walk-proportion-v2.png) · Generation ID: `exec-d1f98781-2bf2-40e8-9849-1c722a01e000`.
+[Open original PNG](../resources/design/campus-life-review-v1/05-walk-proportion-v2.png) · Generation ID: `exec-d1f98781-2bf2-40e8-9849-1c722a01e000`.
 
 Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
 
@@ -1188,7 +1188,7 @@ Original artwork lettering is preserved. This image event is archival metadata, 
 
 The boy's purple-red patches in the review sheet have been corrected. Behind the ear, side of the face, jaw and neck in all four poses now use natural skin tones, and hair shadows are dark black-brown. The body still follows your specified image 2 proportions.
 
-![Body and walking review after the boy's skin-colour correction](../design/campus-life-review-v1/05-walk-proportion-v2.png)
+![Body and walking review after the boy's skin-colour correction](../resources/design/campus-life-review-v1/05-walk-proportion-v2.png)
 
 I visually checked each frame and no longer saw the earlier large purple-red areas; the girl's red belt is retained. This remains a pose and colour review sheet. Full walking animation still needs production and dynamic testing.
 
@@ -1196,11 +1196,11 @@ Other changes have also been organised into previews:
 
 | Preview | Content |
 |---|---|
-| [New-student enrolment](../design/campus-life-review-v1/02-student-onboarding.png) | New name, year, A–D class, student number, name and wardrobe without school labels |
-| [16 staff members](../design/campus-life-review-v1/04-npc-roster.png) | Distinct appearances for subject teachers, principal, vice-principal, office staff and newcomer mentor |
-| [Teacher workspace](../design/campus-life-review-v1/03-teacher-workspace.png) | Proposed login, question editing, cross-device results and Excel export from classroom printers |
+| [New-student enrolment](../resources/design/campus-life-review-v1/02-student-onboarding.png) | New name, year, A–D class, student number, name and wardrobe without school labels |
+| [16 staff members](../resources/design/campus-life-review-v1/04-npc-roster.png) | Distinct appearances for subject teachers, principal, vice-principal, office staff and newcomer mentor |
+| [Teacher workspace](../resources/design/campus-life-review-v1/03-teacher-workspace.png) | Proposed login, question editing, cross-device results and Excel export from classroom printers |
 
-The complete [12-item modification and acceptance plan](../design/campus-life-review-v1/REVIEW.md) is saved. Implementation will first handle proportions, NPC identity consistency and interaction, then graded questions and teacher cloud features.
+The complete [12-item modification and acceptance plan](../resources/design/campus-life-review-v1/REVIEW.md) is saved. Implementation will first handle proportions, NPC identity consistency and interaction, then graded questions and teacher cloud features.
 
 Following your “image first, confirm before changing the game” requirement, no webpage or public website was changed in this round. Please confirm whether the boy's revised facial colour above can be used.
 
@@ -1231,9 +1231,9 @@ After zooming in, the remaining problems are mainly dark reddish-brown spots ins
 <details>
 <summary>Generated image 042 · 2026-10-09 17:30:47 HKT · 05 walk proportion v3</summary>
 
-![Generated image 042: 05 walk proportion v3](../design/campus-life-review-v1/05-walk-proportion-v3.png)
+![Generated image 042: 05 walk proportion v3](../resources/design/campus-life-review-v1/05-walk-proportion-v3.png)
 
-[Open original PNG](../design/campus-life-review-v1/05-walk-proportion-v3.png) · Generation ID: `exec-76448602-6f03-4af4-acb2-4e5a5c4da7c1`.
+[Open original PNG](../resources/design/campus-life-review-v1/05-walk-proportion-v3.png) · Generation ID: `exec-76448602-6f03-4af4-acb2-4e5a5c4da7c1`.
 
 Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
 
@@ -1243,11 +1243,11 @@ Original artwork lettering is preserved. This image event is archival metadata, 
 
 I have corrected the boy's ears again in the “standing,” “passing step” and “right-foot contact” frames, using the “left-foot contact” frame as the palette reference and reducing dark reddish-brown spots and heavy inner-ear outlines.
 
-![Boy's ear-shading revision v 3](../design/campus-life-review-v1/05-walk-proportion-v3.png)
+![Boy's ear-shading revision v 3](../resources/design/campus-life-review-v1/05-walk-proportion-v3.png)
 
 Visual inspection shows the ears in the three frames are closer to an even skin tone, with only pale brown folds. The body still follows your selected image 2 proportions.
 
-This was corrected with the built-in image tool, and the [revision record and prompt](../design/campus-life-review-v1/05-walk-proportion-v3.md) are saved. This is still an image review, not yet applied to the website game.
+This was corrected with the built-in image tool, and the [revision record and prompt](../resources/design/campus-life-review-v1/05-walk-proportion-v3.md) are saved. This is still an image review, not yet applied to the website game.
 
 ---
 
@@ -1283,9 +1283,9 @@ Original artwork lettering is preserved. This image event is archival metadata, 
 <details>
 <summary>Generated image 044 · 2026-10-09 17:57:38 HKT · student boy white</summary>
 
-![Generated image 044: student boy white](../public/campus/assets/life/student-boy-white.png)
+![Generated image 044: student boy white](../public/campus/images/life/student-boy-white.png)
 
-[Open original PNG](../public/campus/assets/life/student-boy-white.png) · Generation ID: `exec-4ec6492c-91d8-4a5d-8966-71979c0a5562`.
+[Open original PNG](../public/campus/images/life/student-boy-white.png) · Generation ID: `exec-4ec6492c-91d8-4a5d-8966-71979c0a5562`.
 
 Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
 
@@ -1305,9 +1305,9 @@ Original artwork lettering is preserved. This image event is archival metadata, 
 <details>
 <summary>Generated image 046 · 2026-10-09 18:34:06 HKT · student girl white</summary>
 
-![Generated image 046: student girl white](../public/campus/assets/life/student-girl-white.png)
+![Generated image 046: student girl white](../public/campus/images/life/student-girl-white.png)
 
-[Open original PNG](../public/campus/assets/life/student-girl-white.png) · Generation ID: `exec-15b8ec04-0424-4e85-a11c-20b246c5ae9d`.
+[Open original PNG](../public/campus/images/life/student-girl-white.png) · Generation ID: `exec-15b8ec04-0424-4e85-a11c-20b246c5ae9d`.
 
 Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
 
@@ -1324,9 +1324,9 @@ I will continue integrating the approved character and campus-life designs. The 
 <details>
 <summary>Generated image 047 · 2026-10-09 18:49:39 HKT · student boy grey</summary>
 
-![Generated image 047: student boy grey](../public/campus/assets/life/student-boy-grey.png)
+![Generated image 047: student boy grey](../public/campus/images/life/student-boy-grey.png)
 
-[Open original PNG](../public/campus/assets/life/student-boy-grey.png) · Generation ID: `exec-824981f7-2122-434b-ae3a-b2fd66b9bb43`.
+[Open original PNG](../public/campus/images/life/student-boy-grey.png) · Generation ID: `exec-824981f7-2122-434b-ae3a-b2fd66b9bb43`.
 
 Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
 
@@ -1339,9 +1339,9 @@ The enrolment screen now uses the new-student identity and offers Forms 1–6 an
 <details>
 <summary>Generated image 048 · 2026-10-09 18:59:27 HKT · student boy striped</summary>
 
-![Generated image 048: student boy striped](../public/campus/assets/life/student-boy-striped.png)
+![Generated image 048: student boy striped](../public/campus/images/life/student-boy-striped.png)
 
-[Open original PNG](../public/campus/assets/life/student-boy-striped.png) · Generation ID: `exec-baa569a9-dcb0-4e89-8a15-02a2025567ac`.
+[Open original PNG](../public/campus/images/life/student-boy-striped.png) · Generation ID: `exec-baa569a9-dcb0-4e89-8a15-02a2025567ac`.
 
 Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
 
@@ -1350,9 +1350,9 @@ Original artwork lettering is preserved. This image event is archival metadata, 
 <details>
 <summary>Generated image 049 · 2026-10-09 19:06:22 HKT · staff academic a</summary>
 
-![Generated image 049: staff academic a](../public/campus/assets/life/staff-academic-a.png)
+![Generated image 049: staff academic a](../public/campus/images/life/staff-academic-a.png)
 
-[Open original PNG](../public/campus/assets/life/staff-academic-a.png) · Generation ID: `exec-6660378d-b58e-4791-95f5-a20306302770`.
+[Open original PNG](../public/campus/images/life/staff-academic-a.png) · Generation ID: `exec-6660378d-b58e-4791-95f5-a20306302770`.
 
 Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
 
@@ -1387,9 +1387,9 @@ Also ensure that all NPCs have artwork with these head/body proportions and wand
 <details>
 <summary>Generated image 050 · 2026-10-09 19:29:15 HKT · student boy blazer</summary>
 
-![Generated image 050: student boy blazer](../public/campus/assets/life/student-boy-blazer.png)
+![Generated image 050: student boy blazer](../public/campus/images/life/student-boy-blazer.png)
 
-[Open original PNG](../public/campus/assets/life/student-boy-blazer.png) · Generation ID: `exec-890cf701-9f48-47f4-a8b4-cfbf6e3e4f95`.
+[Open original PNG](../public/campus/images/life/student-boy-blazer.png) · Generation ID: `exec-890cf701-9f48-47f4-a8b4-cfbf6e3e4f95`.
 
 Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
 
@@ -1420,9 +1420,9 @@ Original artwork lettering is preserved. This image event is archival metadata, 
 <details>
 <summary>Generated image 053 · 2026-10-09 19:33:08 HKT · staff academic b</summary>
 
-![Generated image 053: staff academic b](../public/campus/assets/life/staff-academic-b.png)
+![Generated image 053: staff academic b](../public/campus/images/life/staff-academic-b.png)
 
-[Open original PNG](../public/campus/assets/life/staff-academic-b.png) · Generation ID: `exec-27d96577-f5a0-4f51-83a4-4602352d7675`.
+[Open original PNG](../public/campus/images/life/staff-academic-b.png) · Generation ID: `exec-27d96577-f5a0-4f51-83a4-4602352d7675`.
 
 Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
 
@@ -1431,9 +1431,9 @@ Original artwork lettering is preserved. This image event is archival metadata, 
 <details>
 <summary>Generated image 054 · 2026-10-09 19:36:43 HKT · staff community</summary>
 
-![Generated image 054: staff community](../public/campus/assets/life/staff-community.png)
+![Generated image 054: staff community](../public/campus/images/life/staff-community.png)
 
-[Open original PNG](../public/campus/assets/life/staff-community.png) · Generation ID: `exec-36006755-3444-4506-9a75-7873e0d72cb4`.
+[Open original PNG](../public/campus/images/life/staff-community.png) · Generation ID: `exec-36006755-3444-4506-9a75-7873e0d72cb4`.
 
 Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
 
@@ -1442,9 +1442,9 @@ Original artwork lettering is preserved. This image event is archival metadata, 
 <details>
 <summary>Generated image 055 · 2026-10-09 19:38:12 HKT · student girl striped</summary>
 
-![Generated image 055: student girl striped](../public/campus/assets/life/student-girl-striped.png)
+![Generated image 055: student girl striped](../public/campus/images/life/student-girl-striped.png)
 
-[Open original PNG](../public/campus/assets/life/student-girl-striped.png) · Generation ID: `exec-abaa20a3-c815-4483-bb71-1d6f7b570a28`.
+[Open original PNG](../public/campus/images/life/student-girl-striped.png) · Generation ID: `exec-abaa20a3-c815-4483-bb71-1d6f7b570a28`.
 
 Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
 
@@ -1453,9 +1453,9 @@ Original artwork lettering is preserved. This image event is archival metadata, 
 <details>
 <summary>Generated image 056 · 2026-10-09 19:38:59 HKT · staff leadership</summary>
 
-![Generated image 056: staff leadership](../public/campus/assets/life/staff-leadership.png)
+![Generated image 056: staff leadership](../public/campus/images/life/staff-leadership.png)
 
-[Open original PNG](../public/campus/assets/life/staff-leadership.png) · Generation ID: `exec-4a80ad45-f9e2-4f19-9765-9e25e19861a9`.
+[Open original PNG](../public/campus/images/life/staff-leadership.png) · Generation ID: `exec-4a80ad45-f9e2-4f19-9765-9e25e19861a9`.
 
 Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
 
@@ -1464,9 +1464,9 @@ Original artwork lettering is preserved. This image event is archival metadata, 
 <details>
 <summary>Generated image 057 · 2026-10-09 19:41:07 HKT · student girl grey</summary>
 
-![Generated image 057: student girl grey](../public/campus/assets/life/student-girl-grey.png)
+![Generated image 057: student girl grey](../public/campus/images/life/student-girl-grey.png)
 
-[Open original PNG](../public/campus/assets/life/student-girl-grey.png) · Generation ID: `exec-05e7c4d2-a060-4090-9e8d-c25825d5d201`.
+[Open original PNG](../public/campus/images/life/student-girl-grey.png) · Generation ID: `exec-05e7c4d2-a060-4090-9e8d-c25825d5d201`.
 
 Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
 
@@ -1475,9 +1475,9 @@ Original artwork lettering is preserved. This image event is archival metadata, 
 <details>
 <summary>Generated image 058 · 2026-10-09 19:43:40 HKT · student girl gingham</summary>
 
-![Generated image 058: student girl gingham](../public/campus/assets/life/student-girl-gingham.png)
+![Generated image 058: student girl gingham](../public/campus/images/life/student-girl-gingham.png)
 
-[Open original PNG](../public/campus/assets/life/student-girl-gingham.png) · Generation ID: `exec-78e3ca7d-e9f3-4c50-a9b0-c56fbd78e997`.
+[Open original PNG](../public/campus/images/life/student-girl-gingham.png) · Generation ID: `exec-78e3ca7d-e9f3-4c50-a9b0-c56fbd78e997`.
 
 Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
 
@@ -1505,9 +1505,9 @@ Original artwork lettering is preserved. This image event is archival metadata, 
 <details>
 <summary>Generated image 060 · 2026-10-09 19:50:54 HKT · staff academic a v2</summary>
 
-![Generated image 060: staff academic a v2](../public/campus/assets/life/staff-academic-a-v2.png)
+![Generated image 060: staff academic a v2](../public/campus/images/life/staff-academic-a-v2.png)
 
-[Open original PNG](../public/campus/assets/life/staff-academic-a-v2.png) · Generation ID: `exec-a198e684-c480-4b9d-8396-d1cff422585c`.
+[Open original PNG](../public/campus/images/life/staff-academic-a-v2.png) · Generation ID: `exec-a198e684-c480-4b9d-8396-d1cff422585c`.
 
 Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
 
@@ -1589,9 +1589,9 @@ Original artwork lettering is preserved. This image event is archival metadata, 
 <details>
 <summary>Generated image 066 · 2026-10-09 19:58:52 HKT · cases students</summary>
 
-![Generated image 066: cases students](../public/campus/assets/life/cases-students.png)
+![Generated image 066: cases students](../public/campus/images/life/cases-students.png)
 
-[Open original PNG](../public/campus/assets/life/cases-students.png) · Generation ID: `exec-08589dca-772b-40f2-870e-e761db146ebd`.
+[Open original PNG](../public/campus/images/life/cases-students.png) · Generation ID: `exec-08589dca-772b-40f2-870e-e761db146ebd`.
 
 Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
 
@@ -1600,9 +1600,9 @@ Original artwork lettering is preserved. This image event is archival metadata, 
 <details>
 <summary>Generated image 067 · 2026-10-09 19:58:53 HKT · staff academic b v2</summary>
 
-![Generated image 067: staff academic b v2](../public/campus/assets/life/staff-academic-b-v2.png)
+![Generated image 067: staff academic b v2](../public/campus/images/life/staff-academic-b-v2.png)
 
-[Open original PNG](../public/campus/assets/life/staff-academic-b-v2.png) · Generation ID: `exec-c630d848-f3c0-4d36-9200-b8f41c118bab`.
+[Open original PNG](../public/campus/images/life/staff-academic-b-v2.png) · Generation ID: `exec-c630d848-f3c0-4d36-9200-b8f41c118bab`.
 
 Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
 
@@ -1611,9 +1611,9 @@ Original artwork lettering is preserved. This image event is archival metadata, 
 <details>
 <summary>Generated image 068 · 2026-10-09 20:00:59 HKT · staff community v2</summary>
 
-![Generated image 068: staff community v2](../public/campus/assets/life/staff-community-v2.png)
+![Generated image 068: staff community v2](../public/campus/images/life/staff-community-v2.png)
 
-[Open original PNG](../public/campus/assets/life/staff-community-v2.png) · Generation ID: `exec-d8bf3dfd-1c0a-4afa-bcee-b361585dd3d6`.
+[Open original PNG](../public/campus/images/life/staff-community-v2.png) · Generation ID: `exec-d8bf3dfd-1c0a-4afa-bcee-b361585dd3d6`.
 
 Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
 
@@ -1640,9 +1640,9 @@ The new dialogue box and audio panel will first be shown as an image, following 
 <details>
 <summary>Generated image 069 · 2026-10-09 20:13:04 HKT · staff leadership v2</summary>
 
-![Generated image 069: staff leadership v2](../public/campus/assets/life/staff-leadership-v2.png)
+![Generated image 069: staff leadership v2](../public/campus/images/life/staff-leadership-v2.png)
 
-[Open original PNG](../public/campus/assets/life/staff-leadership-v2.png) · Generation ID: `exec-98f052b2-4d30-47e2-b06b-f35b47108fc4`.
+[Open original PNG](../public/campus/images/life/staff-leadership-v2.png) · Generation ID: `exec-98f052b2-4d30-47e2-b06b-f35b47108fc4`.
 
 Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
 
@@ -1651,9 +1651,9 @@ Original artwork lettering is preserved. This image event is archival metadata, 
 <details>
 <summary>Generated image 070 · 2026-10-09 20:18:11 HKT · 06 pixel dialogue audio proposal</summary>
 
-![Generated image 070: 06 pixel dialogue audio proposal](../design/campus-life-review-v1/06-pixel-dialogue-audio-proposal.png)
+![Generated image 070: 06 pixel dialogue audio proposal](../resources/design/campus-life-review-v1/06-pixel-dialogue-audio-proposal.png)
 
-[Open original PNG](../design/campus-life-review-v1/06-pixel-dialogue-audio-proposal.png) · Generation ID: `exec-7af32354-f65d-446e-874b-26f8d32e8cdb`.
+[Open original PNG](../resources/design/campus-life-review-v1/06-pixel-dialogue-audio-proposal.png) · Generation ID: `exec-7af32354-f65d-446e-874b-26f8d32e8cdb`.
 
 Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
 
@@ -1687,9 +1687,9 @@ Confirmed—implement this style.
 <details>
 <summary>Generated image 072 · 2026-10-09 20:28:27 HKT · cases students v2</summary>
 
-![Generated image 072: cases students v2](../public/campus/assets/life/cases-students-v2.png)
+![Generated image 072: cases students v2](../public/campus/images/life/cases-students-v2.png)
 
-[Open original PNG](../public/campus/assets/life/cases-students-v2.png) · Generation ID: `exec-3ca4af38-a546-4336-867f-a49332da74fa`.
+[Open original PNG](../public/campus/images/life/cases-students-v2.png) · Generation ID: `exec-3ca4af38-a546-4336-867f-a49332da74fa`.
 
 Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
 
@@ -1875,9 +1875,9 @@ Once complete, only provide the Project ID. I have prepared a step-by-step Tradi
 <details>
 <summary>Generated image 074 · 2026-10-10 00:24:37 HKT · 07 map quiz uniform proposal</summary>
 
-![Generated image 074: 07 map quiz uniform proposal](../design/campus-life-review-v1/07-map-quiz-uniform-proposal.png)
+![Generated image 074: 07 map quiz uniform proposal](../resources/design/campus-life-review-v1/07-map-quiz-uniform-proposal.png)
 
-[Open original PNG](../design/campus-life-review-v1/07-map-quiz-uniform-proposal.png) · Generation ID: `exec-85e74464-c020-4f24-9492-b9a7fceaca23`.
+[Open original PNG](../resources/design/campus-life-review-v1/07-map-quiz-uniform-proposal.png) · Generation ID: `exec-85e74464-c020-4f24-9492-b9a7fceaca23`.
 
 Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
 
@@ -1914,7 +1914,7 @@ Google's budget alerts are not a switch that stops charges. If you want to avoid
 
 Here is the interface preview for the added items 4–8: the left side shows a 2Dcampus map with floor switching; the right side shows a pixel-style quiz interface matching the dialogue box, with clear, opaque character art. At the bottom, the player and student NPC demonstrate matching uniforms. Actual full-body proportions will still be checked against your approved version one by one.
 
-![Campus map, quiz interface and matching uniforms preview](../design/campus-life-review-v1/07-map-quiz-uniform-proposal.png)
+![Campus map, quiz interface and matching uniforms preview](../resources/design/campus-life-review-v1/07-map-quiz-uniform-proposal.png)
 
 ---
 
@@ -1947,9 +1947,9 @@ I recommend: teacher saves a new revision → speech is generated in the backgro
 <details>
 <summary>Generated image 075 · 2026-10-10 00:40:29 HKT · floorplans v1</summary>
 
-![Generated image 075: floorplans v1](../public/campus/assets/ui/floorplans-v1.png)
+![Generated image 075: floorplans v1](../public/campus/images/ui/floorplans-v1.png)
 
-[Open original PNG](../public/campus/assets/ui/floorplans-v1.png) · Generation ID: `exec-13d3abb1-d5b4-445d-b0d6-e81a936f0e3a`.
+[Open original PNG](../public/campus/images/ui/floorplans-v1.png) · Generation ID: `exec-13d3abb1-d5b4-445d-b0d6-e81a936f0e3a`.
 
 Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
 
@@ -1991,9 +1991,9 @@ Original artwork lettering is preserved. This image event is archival metadata, 
 <details>
 <summary>Generated image 077 · 2026-10-10 01:00:50 HKT · cases uniform 0</summary>
 
-![Generated image 077: cases uniform 0](../public/campus/assets/life/cases-uniform-0.png)
+![Generated image 077: cases uniform 0](../public/campus/images/life/cases-uniform-0.png)
 
-[Open original PNG](../public/campus/assets/life/cases-uniform-0.png) · Generation ID: `exec-61ea8718-2e26-4871-bc42-d8631629c733`.
+[Open original PNG](../public/campus/images/life/cases-uniform-0.png) · Generation ID: `exec-61ea8718-2e26-4871-bc42-d8631629c733`.
 
 Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
 
@@ -2002,9 +2002,9 @@ Original artwork lettering is preserved. This image event is archival metadata, 
 <details>
 <summary>Generated image 078 · 2026-10-10 01:03:18 HKT · cases uniform 1</summary>
 
-![Generated image 078: cases uniform 1](../public/campus/assets/life/cases-uniform-1.png)
+![Generated image 078: cases uniform 1](../public/campus/images/life/cases-uniform-1.png)
 
-[Open original PNG](../public/campus/assets/life/cases-uniform-1.png) · Generation ID: `exec-65856090-c214-4cce-8cd2-8245ae413317`.
+[Open original PNG](../public/campus/images/life/cases-uniform-1.png) · Generation ID: `exec-65856090-c214-4cce-8cd2-8245ae413317`.
 
 Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
 
@@ -2013,9 +2013,9 @@ Original artwork lettering is preserved. This image event is archival metadata, 
 <details>
 <summary>Generated image 079 · 2026-10-10 01:03:18 HKT · cases uniform 2</summary>
 
-![Generated image 079: cases uniform 2](../public/campus/assets/life/cases-uniform-2.png)
+![Generated image 079: cases uniform 2](../public/campus/images/life/cases-uniform-2.png)
 
-[Open original PNG](../public/campus/assets/life/cases-uniform-2.png) · Generation ID: `exec-4fdde584-4cba-4093-8fbd-07fa9507c5cf`.
+[Open original PNG](../public/campus/images/life/cases-uniform-2.png) · Generation ID: `exec-4fdde584-4cba-4093-8fbd-07fa9507c5cf`.
 
 Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
 
@@ -2024,9 +2024,9 @@ Original artwork lettering is preserved. This image event is archival metadata, 
 <details>
 <summary>Generated image 080 · 2026-10-10 01:03:18 HKT · cases uniform 3</summary>
 
-![Generated image 080: cases uniform 3](../public/campus/assets/life/cases-uniform-3.png)
+![Generated image 080: cases uniform 3](../public/campus/images/life/cases-uniform-3.png)
 
-[Open original PNG](../public/campus/assets/life/cases-uniform-3.png) · Generation ID: `exec-b6852c0e-963a-40b6-8421-a4de48dac2bc`.
+[Open original PNG](../public/campus/images/life/cases-uniform-3.png) · Generation ID: `exec-b6852c0e-963a-40b6-8421-a4de48dac2bc`.
 
 Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
 
@@ -2070,9 +2070,9 @@ Original artwork lettering is preserved. This image event is archival metadata, 
 <details>
 <summary>Generated image 082 · 2026-10-10 01:16:22 HKT · staff portraits v3 a</summary>
 
-![Generated image 082: staff portraits v3 a](../public/campus/assets/life/staff-portraits-v3-a.png)
+![Generated image 082: staff portraits v3 a](../public/campus/images/life/staff-portraits-v3-a.png)
 
-[Open original PNG](../public/campus/assets/life/staff-portraits-v3-a.png) · Generation ID: `exec-f2e2ea5e-dcb6-451c-ac29-51041c416a52`.
+[Open original PNG](../public/campus/images/life/staff-portraits-v3-a.png) · Generation ID: `exec-f2e2ea5e-dcb6-451c-ac29-51041c416a52`.
 
 Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
 
@@ -2092,9 +2092,9 @@ Additional corrections:
 <details>
 <summary>Generated image 083 · 2026-10-10 01:19:19 HKT · staff portraits v3 b</summary>
 
-![Generated image 083: staff portraits v3 b](../public/campus/assets/life/staff-portraits-v3-b.png)
+![Generated image 083: staff portraits v3 b](../public/campus/images/life/staff-portraits-v3-b.png)
 
-[Open original PNG](../public/campus/assets/life/staff-portraits-v3-b.png) · Generation ID: `exec-b0c5fea0-96a8-49a1-89ca-e56ad923b1d2`.
+[Open original PNG](../public/campus/images/life/staff-portraits-v3-b.png) · Generation ID: `exec-b0c5fea0-96a8-49a1-89ca-e56ad923b1d2`.
 
 Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
 
@@ -2138,9 +2138,9 @@ I will review the question bank against Hong Kong junior- and senior-secondary c
 <details>
 <summary>Generated image 084 · 2026-10-10 01:35:02 HKT · cases portraits uniforms</summary>
 
-![Generated image 084: cases portraits uniforms](../public/campus/assets/life/cases-portraits-uniforms.png)
+![Generated image 084: cases portraits uniforms](../public/campus/images/life/cases-portraits-uniforms.png)
 
-[Open original PNG](../public/campus/assets/life/cases-portraits-uniforms.png) · Generation ID: `exec-f0c6ffa7-1090-4621-b883-cba86b312e01`.
+[Open original PNG](../public/campus/images/life/cases-portraits-uniforms.png) · Generation ID: `exec-f0c6ffa7-1090-4621-b883-cba86b312e01`.
 
 Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
 
@@ -2155,9 +2155,9 @@ The worksheet station will use the approved cream, deep teal and gold pixel inte
 <details>
 <summary>Generated image 085 · 2026-10-10 01:43:52 HKT · 08 npc identity variation proposal</summary>
 
-![Generated image 085: 08 npc identity variation proposal](../design/campus-life-review-v1/08-npc-identity-variation-proposal.png)
+![Generated image 085: 08 npc identity variation proposal](../resources/design/campus-life-review-v1/08-npc-identity-variation-proposal.png)
 
-[Open original PNG](../design/campus-life-review-v1/08-npc-identity-variation-proposal.png) · Generation ID: `exec-7ab5e13b-d0e2-4cf5-af23-c7701534037b`.
+[Open original PNG](../resources/design/campus-life-review-v1/08-npc-identity-variation-proposal.png) · Generation ID: `exec-7ab5e13b-d0e2-4cf5-af23-c7701534037b`.
 
 Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
 
@@ -2184,9 +2184,9 @@ The user still confirms the actual print job; the website will not bypass the pr
 <details>
 <summary>Generated image 086 · 2026-10-10 01:45:58 HKT · 09 worksheet station proposal</summary>
 
-![Generated image 086: 09 worksheet station proposal](../design/campus-life-review-v1/09-worksheet-station-proposal.png)
+![Generated image 086: 09 worksheet station proposal](../resources/design/campus-life-review-v1/09-worksheet-station-proposal.png)
 
-[Open original PNG](../design/campus-life-review-v1/09-worksheet-station-proposal.png) · Generation ID: `exec-249c2db6-66ce-4504-b3d4-dd390652558f`.
+[Open original PNG](../resources/design/campus-life-review-v1/09-worksheet-station-proposal.png) · Generation ID: `exec-249c2db6-66ce-4504-b3d4-dd390652558f`.
 
 Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
 
@@ -2217,9 +2217,9 @@ I have received approval for both designs and will implement them as previewed. 
 <details>
 <summary>Generated image 087 · 2026-10-10 01:50:36 HKT · cases uniform 0 v2</summary>
 
-![Generated image 087: cases uniform 0 v2](../public/campus/assets/life/cases-uniform-0-v2.png)
+![Generated image 087: cases uniform 0 v2](../public/campus/images/life/cases-uniform-0-v2.png)
 
-[Open original PNG](../public/campus/assets/life/cases-uniform-0-v2.png) · Generation ID: `exec-c41d2921-f9d5-492a-929a-61ddd32d1240`.
+[Open original PNG](../public/campus/images/life/cases-uniform-0-v2.png) · Generation ID: `exec-c41d2921-f9d5-492a-929a-61ddd32d1240`.
 
 Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
 
@@ -2228,9 +2228,9 @@ Original artwork lettering is preserved. This image event is archival metadata, 
 <details>
 <summary>Generated image 088 · 2026-10-10 01:53:01 HKT · cases uniform 3 v2</summary>
 
-![Generated image 088: cases uniform 3 v2](../public/campus/assets/life/cases-uniform-3-v2.png)
+![Generated image 088: cases uniform 3 v2](../public/campus/images/life/cases-uniform-3-v2.png)
 
-[Open original PNG](../public/campus/assets/life/cases-uniform-3-v2.png) · Generation ID: `exec-b518e59e-12bd-47a9-b8b6-bc68457b4585`.
+[Open original PNG](../public/campus/images/life/cases-uniform-3-v2.png) · Generation ID: `exec-b518e59e-12bd-47a9-b8b6-bc68457b4585`.
 
 Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
 
@@ -2245,9 +2245,9 @@ Cases and Subjects have become progress records, with direct question-opening sh
 <details>
 <summary>Generated image 089 · 2026-10-10 01:55:20 HKT · cases portraits uniforms v2</summary>
 
-![Generated image 089: cases portraits uniforms v2](../public/campus/assets/life/cases-portraits-uniforms-v2.png)
+![Generated image 089: cases portraits uniforms v2](../public/campus/images/life/cases-portraits-uniforms-v2.png)
 
-[Open original PNG](../public/campus/assets/life/cases-portraits-uniforms-v2.png) · Generation ID: `exec-c86c684a-61a7-4027-80a4-58c7848da15a`.
+[Open original PNG](../public/campus/images/life/cases-portraits-uniforms-v2.png) · Generation ID: `exec-c86c684a-61a7-4027-80a4-58c7848da15a`.
 
 Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
 
@@ -2256,9 +2256,9 @@ Original artwork lettering is preserved. This image event is archival metadata, 
 <details>
 <summary>Generated image 090 · 2026-10-10 01:55:36 HKT · cases uniform 2 v2</summary>
 
-![Generated image 090: cases uniform 2 v2](../public/campus/assets/life/cases-uniform-2-v2.png)
+![Generated image 090: cases uniform 2 v2](../public/campus/images/life/cases-uniform-2-v2.png)
 
-[Open original PNG](../public/campus/assets/life/cases-uniform-2-v2.png) · Generation ID: `exec-337d346b-8331-4cfc-a50a-fbd01ef0cd85`.
+[Open original PNG](../public/campus/images/life/cases-uniform-2-v2.png) · Generation ID: `exec-337d346b-8331-4cfc-a50a-fbd01ef0cd85`.
 
 Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
 
@@ -2267,9 +2267,9 @@ Original artwork lettering is preserved. This image event is archival metadata, 
 <details>
 <summary>Generated image 091 · 2026-10-10 01:55:36 HKT · cases uniform 1 v2</summary>
 
-![Generated image 091: cases uniform 1 v2](../public/campus/assets/life/cases-uniform-1-v2.png)
+![Generated image 091: cases uniform 1 v2](../public/campus/images/life/cases-uniform-1-v2.png)
 
-[Open original PNG](../public/campus/assets/life/cases-uniform-1-v2.png) · Generation ID: `exec-3c250108-3229-4ba0-a61e-5ad26f9a44fc`.
+[Open original PNG](../public/campus/images/life/cases-uniform-1-v2.png) · Generation ID: `exec-3c250108-3229-4ba0-a61e-5ad26f9a44fc`.
 
 Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
 
@@ -2384,9 +2384,9 @@ Users should be able to choose Student or Teacher directly from the start screen
 <details>
 <summary>Generated image 093 · 2026-10-10 02:22:35 HKT · 10a door hud cream enamel</summary>
 
-![Generated image 093: 10a door hud cream enamel](../design/campus-life-review-v1/10a-door-hud-cream-enamel.png)
+![Generated image 093: 10a door hud cream enamel](../resources/design/campus-life-review-v1/10a-door-hud-cream-enamel.png)
 
-[Open original PNG](../design/campus-life-review-v1/10a-door-hud-cream-enamel.png) · Generation ID: `exec-38f3ee27-9d82-4f12-83b1-bb4a11905bc2`.
+[Open original PNG](../resources/design/campus-life-review-v1/10a-door-hud-cream-enamel.png) · Generation ID: `exec-38f3ee27-9d82-4f12-83b1-bb4a11905bc2`.
 
 Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
 
@@ -2423,9 +2423,9 @@ This cream-white plaque with deep-teal and gold edging is selected. I will use i
 <details>
 <summary>Generated image 094 · 2026-10-10 02:28:58 HKT · 10b door hud walnut</summary>
 
-![Generated image 094: 10b door hud walnut](../design/campus-life-review-v1/10b-door-hud-walnut.png)
+![Generated image 094: 10b door hud walnut](../resources/design/campus-life-review-v1/10b-door-hud-walnut.png)
 
-[Open original PNG](../design/campus-life-review-v1/10b-door-hud-walnut.png) · Generation ID: `exec-70adfbda-4d67-49c6-910f-14459bc91531`.
+[Open original PNG](../resources/design/campus-life-review-v1/10b-door-hud-walnut.png) · Generation ID: `exec-70adfbda-4d67-49c6-910f-14459bc91531`.
 
 Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
 
@@ -2434,9 +2434,9 @@ Original artwork lettering is preserved. This image event is archival metadata, 
 <details>
 <summary>Generated image 095 · 2026-10-10 02:28:58 HKT · 10c door hud teal enamel</summary>
 
-![Generated image 095: 10c door hud teal enamel](../design/campus-life-review-v1/10c-door-hud-teal-enamel.png)
+![Generated image 095: 10c door hud teal enamel](../resources/design/campus-life-review-v1/10c-door-hud-teal-enamel.png)
 
-[Open original PNG](../design/campus-life-review-v1/10c-door-hud-teal-enamel.png) · Generation ID: `exec-61e0fed7-403e-443e-8040-5f8733cf89e4`.
+[Open original PNG](../resources/design/campus-life-review-v1/10c-door-hud-teal-enamel.png) · Generation ID: `exec-61e0fed7-403e-443e-8040-5f8733cf89e4`.
 
 Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
 
@@ -2456,9 +2456,9 @@ Original artwork lettering is preserved. This image event is archival metadata, 
 <details>
 <summary>Generated image 097 · 2026-10-10 02:30:26 HKT · 12 role entry teacher workspace</summary>
 
-![Generated image 097: 12 role entry teacher workspace](../design/campus-life-review-v1/12-role-entry-teacher-workspace.png)
+![Generated image 097: 12 role entry teacher workspace](../resources/design/campus-life-review-v1/12-role-entry-teacher-workspace.png)
 
-[Open original PNG](../design/campus-life-review-v1/12-role-entry-teacher-workspace.png) · Generation ID: `exec-1f44c71c-b181-4c24-84bd-6ad1cba4c29c`.
+[Open original PNG](../resources/design/campus-life-review-v1/12-role-entry-teacher-workspace.png) · Generation ID: `exec-1f44c71c-b181-4c24-84bd-6ad1cba4c29c`.
 
 Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
 
@@ -2473,9 +2473,9 @@ For speech, the three-language auditions have been regenerated at normal Default
 <details>
 <summary>Generated image 098 · 2026-10-10 02:31:37 HKT · 11 consistent pixel panels</summary>
 
-![Generated image 098: 11 consistent pixel panels](../design/campus-life-review-v1/11-consistent-pixel-panels.png)
+![Generated image 098: 11 consistent pixel panels](../resources/design/campus-life-review-v1/11-consistent-pixel-panels.png)
 
-[Open original PNG](../design/campus-life-review-v1/11-consistent-pixel-panels.png) · Generation ID: `exec-5fc79292-b8ff-46b5-aa08-16b4b9b925c1`.
+[Open original PNG](../resources/design/campus-life-review-v1/11-consistent-pixel-panels.png) · Generation ID: `exec-5fc79292-b8ff-46b5-aa08-16b4b9b925c1`.
 
 Original artwork lettering is preserved. This image event is archival metadata, not an invented spoken reply.
 
@@ -2485,9 +2485,9 @@ Original artwork lettering is preserved. This image event is archival metadata, 
 
 These designs extend the selected style to the other panels and the Student/Teacher entry flow. Each actual case still awards five stars; the preview icons demonstrate only colours and arrangement.
 
-![Consistent game panels](../design/campus-life-review-v1/11-consistent-pixel-panels.png)
+![Consistent game panels](../resources/design/campus-life-review-v1/11-consistent-pixel-panels.png)
 
-![Student and teacher entry](../design/campus-life-review-v1/12-role-entry-teacher-workspace.png)
+![Student and teacher entry](../resources/design/campus-life-review-v1/12-role-entry-teacher-workspace.png)
 
 ---
 

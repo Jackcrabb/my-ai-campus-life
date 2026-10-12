@@ -1,6 +1,6 @@
 # Recent visible messages — English supplement
 
-Prepared on 11 October 2026. This is a **partial supplement**, not an extension of the timestamp-verified transcript in [conversation-en.md](conversation-en.md). It translates **17 user messages and two actual assistant progress messages** available from the active project conversation, in their recorded relative order. The latest Mandarin and phone-map reports and both assistant messages were supplied verbatim for this update. Exact timestamps and other intervening assistant replies were unavailable, so they are not reconstructed. No reusable transcript exporter was found in the project, and no broad session-log search was performed.
+Prepared on 11 October 2026; appended on 12 October 2026. This is a **partial supplement**, not an extension of the timestamp-verified transcript in [conversation-en.md](conversation-en.md). It translates **19 user messages and two actual assistant progress messages** available from the active project conversation, in their recorded relative order. The latest Mandarin and phone-map reports and both assistant messages were supplied verbatim for this update. Exact timestamps and other intervening assistant replies were unavailable, so they are not reconstructed. No reusable transcript exporter was found in the project, and no broad session-log search was performed.
 
 User-provided reference screenshots are described but not republished. New generated-image events have not been inserted into the historical manifest without their original completion records. Environment/context blocks, tool question payloads, development instructions and internal agent coordination are excluded. The API-key confirmation records only that a file was saved; no key value was read or included.
 
@@ -132,3 +132,20 @@ User:
 The mobile map layout needs to be corrected.
 
 [The user supplied a reference screenshot named “螢幕截圖 2026-10-11 下午7.38.12”; the screenshot is not republished in this text supplement.]
+
+
+---
+
+## 12 October 2026 supplement
+
+The following two user requests were supplied directly in the active conversation. This date records the supplement; exact message times are not asserted. No missing assistant response has been reconstructed.
+
+User:
+
+Can the game let teachers add more questions, perhaps more than three, and decide how many stars each question awards? When printing results, the report should also show how many stars each student has earned.
+
+---
+
+User:
+
+After completing that improvement, upload it again and update the public webpage linked from GitHub, so anyone can play by opening the link or scanning the QR code without logging in. Also organize the files already uploaded to GitHub into folders such as game, resources, audio, images and data.

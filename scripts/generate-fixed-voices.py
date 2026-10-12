@@ -27,7 +27,7 @@ from datetime import datetime, timezone
 ROOT = Path(__file__).resolve().parents[1]
 CORPUS = ROOT / "data/fixed-dialogue-corpus.json"
 CACHE = ROOT / "data/fixed-voice-generation-cache.json"
-MANIFEST = ROOT / "public/campus/fixed-voices.js"
+MANIFEST = ROOT / "public/campus/game/fixed-voices.js"
 PUBLIC = ROOT / "public/campus"
 RATE, PITCH = "-8%", "+0Hz"
 VOICE_CAST = {
@@ -78,7 +78,7 @@ def entry_for(line):
     source_hash = digest({**line, "voice": voice, "rate": RATE, "pitch": PITCH, "tool": "edge-tts 7.2.8"})
     return {**line, "voice": voice, "voiceLocale": locale, "speechLocale": locale, "voiceGender": gender,
             "rate": RATE, "pitch": PITCH, "sourceHash": source_hash,
-            "src": f"assets/voices/{line['locale']}/{line['id']}-{source_hash[:12]}.mp3"}
+            "src": f"audio/voices/{line['locale']}/{line['id']}-{source_hash[:12]}.mp3"}
 
 
 def inspect_audio(path):

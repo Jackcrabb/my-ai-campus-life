@@ -68,7 +68,7 @@ for row, role in enumerate(roles):
                  activities={activity: dict(enter=[first], loop=[first+1, first+2],
                                             exit=[first+3], fps=0.65)})
     identities.append(entry)
-layout = dict(id=stem, src=f"assets/activities/{stem}.png", width=width,
+layout = dict(id=stem, src=f"images/activities/{stem}.png", width=width,
               height=height, cols=4, rows=len(roles), facing="right", frames=frames,
               identities=identities, alphaThresholdForBounds=32,
               alpha=dict(transparentPixels=histogram[0], opaquePixels=histogram[255],

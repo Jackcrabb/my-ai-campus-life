@@ -2,7 +2,7 @@
 
 Date: 10 October 2026. Scope: approved map and question panels only; character artwork, world animation, audio and teacher workspace implementation are separate work.
 
-**Source visual truth:** `design/campus-life-review-v1/07-map-quiz-uniform-proposal.png` (1672 × 941 pixels). This is a two-panel proposal board, not a single runtime viewport. The user's later instruction replaces its horizontal floor tabs with a vertical selector: fifth physical level / 4F at the top, first physical level / ground floor at the bottom. No 5F or basement scene was added.
+**Source visual truth:** `resources/design/campus-life-review-v1/07-map-quiz-uniform-proposal.png` (1672 × 941 pixels). This is a two-panel proposal board, not a single runtime viewport. The user's later instruction replaces its horizontal floor tabs with a vertical selector: fifth physical level / 4F at the top, first physical level / ground floor at the bottom. No 5F or basement scene was added.
 
 **Browser implementation:** `http://127.0.0.1:8771/campus/index.html`, separate local origin and browser tab from the user's active save. Desktop CSS viewport and screenshot: 1280 × 720. Mobile: 390 × 844. Screenshots use one image pixel per CSS pixel; no density resampling was needed. Compare the corresponding map and question regions, not the proposal board's surrounding title or its combined presentation layout.
 
@@ -12,7 +12,7 @@ Evidence:
 - `tests/qa-artifacts/panels-quiz-desktop.jpg`
 - `tests/qa-artifacts/panels-map-mobile.jpg`
 - `tests/qa-artifacts/panels-quiz-mobile.jpg`
-- `design/production-floorplans.md`: original generated asset, actual crop geometry and exact prompt.
+- `resources/design/production-floorplans.md`: original generated asset, actual crop geometry and exact prompt.
 
 ## Findings and comparison history
 
@@ -37,7 +37,7 @@ The source and latest implementation images were opened together for a full-view
 
 ## Verification
 
-- Passed `node --check public/campus/app.js`.
+- Passed `node --check public/campus/game/app.js`.
 - Passed `node tests/progression.test.cjs`, extended to cover all 18 map locations in all three locales, five physical levels in descending order, current-location state, travel, invalid floor rejection, keyboard wrap and 2–5 option presentation/selection.
 - Passed `node tests/campus-integration.test.cjs`, including existing class assignments with 4/5 answer options.
 - Passed `node tests/campus-teacher.test.cjs` and `node tests/campus-audio.test.cjs`.
@@ -56,11 +56,11 @@ final result: passed
 
 ## Final visual integration and release checks — 10 October 2026
 
-The map/quiz sections above are retained as historical, scoped QA. The current integrated direction is the user's selected **10a cream-enamel / deep-teal / gold** reference: [`10a-door-hud-selected-reference.png`](design/campus-life-review-v1/10a-door-hud-selected-reference.png), with its authored proposal at [`10a-door-hud-cream-enamel.png`](design/campus-life-review-v1/10a-door-hud-cream-enamel.png). This final pass supersedes the earlier serif-display typography note: headings/navigation now use licensed, locally bundled Fusion Pixel HK/SC fonts; long questions, explanations and teacher tools retain readable CJK sans-serif text.
+The map/quiz sections above are retained as historical, scoped QA. The current integrated direction is the user's selected **10a cream-enamel / deep-teal / gold** reference: [`10a-door-hud-selected-reference.png`](resources/design/campus-life-review-v1/10a-door-hud-selected-reference.png), with its authored proposal at [`10a-door-hud-cream-enamel.png`](resources/design/campus-life-review-v1/10a-door-hud-cream-enamel.png). This final pass supersedes the earlier serif-display typography note: headings/navigation now use licensed, locally bundled Fusion Pixel HK/SC fonts; long questions, explanations and teacher tools retain readable CJK sans-serif text.
 
 The selected reference and final implementation screenshots were inspected together. [`campus-final-desktop.png`](tests/qa-artifacts/campus-final-desktop.png), captured at **1280 × 720**, shows a full-viewport campus behind individual cream/teal/gold HUD controls and room plaques mounted inside the upper door transom. The HUD wrapper is transparent; there is no opaque header rail or canvas inset. Controls reflow at this width while the room labels remain visible. The reference board's footer caption is presentation material and is not reproduced in the game.
 
-Phone evidence is recorded in [`design/ui-qa-pixel/README.md`](design/ui-qa-pixel/README.md). At **390 × 844**, the top location/language/audio row occupies 8–52px and two labelled 44px HUD rows occupy 57–148px. At **320 × 740**, a single row of six icons occupies 57–101px; each target measures approximately 48 × 44px and retains its accessible action name. Concise location labels fit, the score floats above the lower interaction area, and the checked first-floor door/stair plaques are unobstructed. Canvas top is 0 with full viewport height, and page width equals scroll width at both checked phone sizes. Evidence: [`390px Traditional Chinese`](design/ui-qa-pixel/campus-mobile-390-zh.png) and [`320px English`](design/ui-qa-pixel/campus-mobile-320-en.png). Temporary viewport overrides were reset.
+Phone evidence is recorded in [`design/ui-qa-pixel/README.md`](resources/design/ui-qa-pixel/README.md). At **390 × 844**, the top location/language/audio row occupies 8–52px and two labelled 44px HUD rows occupy 57–148px. At **320 × 740**, a single row of six icons occupies 57–101px; each target measures approximately 48 × 44px and retains its accessible action name. Concise location labels fit, the score floats above the lower interaction area, and the checked first-floor door/stair plaques are unobstructed. Canvas top is 0 with full viewport height, and page width equals scroll width at both checked phone sizes. Evidence: [`390px Traditional Chinese`](resources/design/ui-qa-pixel/campus-mobile-390-zh.png) and [`320px English`](resources/design/ui-qa-pixel/campus-mobile-320-en.png). Temporary viewport overrides were reset.
 
 A single coherent final automated pass used the bundled Node executable at `/Users/jackho/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node`:
 

@@ -1,0 +1,233 @@
+{
+  "id": "staff-community",
+  "src": "images/activities/staff-community.png",
+  "width": 1086,
+  "height": 1448,
+  "cols": 4,
+  "rows": 4,
+  "facing": "right",
+  "frames": [
+    {
+      "x": 93,
+      "y": 14,
+      "w": 142,
+      "h": 364,
+      "anchorX": 156,
+      "baseline": 373
+    },
+    {
+      "x": 366,
+      "y": 14,
+      "w": 149,
+      "h": 363,
+      "anchorX": 430,
+      "baseline": 372
+    },
+    {
+      "x": 633,
+      "y": 14,
+      "w": 152,
+      "h": 363,
+      "anchorX": 699,
+      "baseline": 372
+    },
+    {
+      "x": 909,
+      "y": 14,
+      "w": 119,
+      "h": 363,
+      "anchorX": 970,
+      "baseline": 372
+    },
+    {
+      "x": 98,
+      "y": 385,
+      "w": 139,
+      "h": 365,
+      "anchorX": 153,
+      "baseline": 745
+    },
+    {
+      "x": 370,
+      "y": 387,
+      "w": 137,
+      "h": 363,
+      "anchorX": 428,
+      "baseline": 745
+    },
+    {
+      "x": 645,
+      "y": 387,
+      "w": 133,
+      "h": 362,
+      "anchorX": 700,
+      "baseline": 744
+    },
+    {
+      "x": 918,
+      "y": 385,
+      "w": 112,
+      "h": 365,
+      "anchorX": 970,
+      "baseline": 745
+    },
+    {
+      "x": 87,
+      "y": 752,
+      "w": 147,
+      "h": 362,
+      "anchorX": 156,
+      "baseline": 1109
+    },
+    {
+      "x": 364,
+      "y": 753,
+      "w": 143,
+      "h": 361,
+      "anchorX": 430,
+      "baseline": 1109
+    },
+    {
+      "x": 632,
+      "y": 752,
+      "w": 147,
+      "h": 361,
+      "anchorX": 700,
+      "baseline": 1108
+    },
+    {
+      "x": 903,
+      "y": 753,
+      "w": 139,
+      "h": 361,
+      "anchorX": 974,
+      "baseline": 1109
+    },
+    {
+      "x": 78,
+      "y": 1115,
+      "w": 152,
+      "h": 328,
+      "anchorX": 155,
+      "baseline": 1438
+    },
+    {
+      "x": 365,
+      "y": 1115,
+      "w": 163,
+      "h": 328,
+      "anchorX": 428,
+      "baseline": 1438
+    },
+    {
+      "x": 636,
+      "y": 1115,
+      "w": 175,
+      "h": 328,
+      "anchorX": 700,
+      "baseline": 1438
+    },
+    {
+      "x": 906,
+      "y": 1115,
+      "w": 138,
+      "h": 328,
+      "anchorX": 974,
+      "baseline": 1438
+    }
+  ],
+  "identities": [
+    {
+      "id": "staff-music",
+      "standingHeight": 359,
+      "activities": {
+        "play-music": {
+          "enter": [
+            0
+          ],
+          "loop": [
+            1,
+            2
+          ],
+          "exit": [
+            3
+          ],
+          "fps": 0.65
+        }
+      }
+    },
+    {
+      "id": "staff-library",
+      "standingHeight": 360,
+      "activities": {
+        "read": {
+          "enter": [
+            4
+          ],
+          "loop": [
+            5,
+            6
+          ],
+          "exit": [
+            7
+          ],
+          "fps": 0.65
+        }
+      }
+    },
+    {
+      "id": "staff-rooftop",
+      "standingHeight": 357,
+      "activities": {
+        "write": {
+          "enter": [
+            8
+          ],
+          "loop": [
+            9,
+            10
+          ],
+          "exit": [
+            11
+          ],
+          "fps": 0.65
+        }
+      }
+    },
+    {
+      "id": "staff-playground",
+      "standingHeight": 324,
+      "activities": {
+        "coach": {
+          "enter": [
+            12
+          ],
+          "loop": [
+            13,
+            14
+          ],
+          "exit": [
+            15
+          ],
+          "fps": 0.65
+        }
+      }
+    }
+  ],
+  "alphaThresholdForBounds": 32,
+  "alpha": {
+    "transparentPixels": 1060316,
+    "opaquePixels": 3313,
+    "nearOpaquePixels": 398022,
+    "minimum": 0,
+    "maximum": 255,
+    "cornerAlpha": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "notes": "Original PNG unchanged. Connected alpha components measured; two-pixel crop padding. Head center anchors and feet-minus-three baseline. One median standing height per identity; never resize per frame. Four drawn activity poses: enter, main A, main B, exit. Inspect images before registration.",
+  "releaseStatus": "released"
+}

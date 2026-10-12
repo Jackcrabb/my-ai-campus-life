@@ -6,7 +6,7 @@ import { planVoices, estimate, validateProviderVoices } from '../scripts/generat
 const cast = JSON.parse(await readFile(new URL('../data/voice-cast.json', import.meta.url)));
 const corpus = JSON.parse(await readFile(new URL('../data/voice-auditions.json', import.meta.url)));
 const context = vm.createContext({ window: {} });
-vm.runInContext(await readFile(new URL('../public/campus/characters.js', import.meta.url), 'utf8'), context);
+vm.runInContext(await readFile(new URL('../public/campus/game/characters.js', import.meta.url), 'utf8'), context);
 const plan = planVoices(cast, corpus);
 assert.equal(Object.keys(cast.characters).length, 20);
 for (const id of Object.keys(cast.characters)) assert.equal(context.window.CAMPUS_CHARACTERS.resolve(id)?.id, id, `Unknown character: ${id}`);

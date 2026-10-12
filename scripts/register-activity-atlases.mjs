@@ -3,8 +3,8 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const directory = path.join(root, 'design/production-activities');
-const target = path.join(root, 'public/campus/characters.js');
+const directory = path.join(root, 'resources/design/production-activities');
+const target = path.join(root, 'public/campus/game/characters.js');
 const start = '  // BEGIN measured activity registrations';
 const end = '  // END measured activity registrations';
 const candidates = fs.readdirSync(directory).filter(name => name.endsWith('.layout.json')).sort()

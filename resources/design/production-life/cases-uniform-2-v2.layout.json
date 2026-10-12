@@ -1,0 +1,256 @@
+{
+  "id": "cases-uniform-2-v2",
+  "src": "images/life/cases-uniform-2-v2.png",
+  "width": 1536,
+  "height": 1024,
+  "cols": 6,
+  "rows": 4,
+  "facing": "right",
+  "uniformIndex": 2,
+  "frames": [
+    {
+      "x": 105,
+      "y": 16,
+      "w": 88,
+      "h": 234,
+      "anchorX": 158,
+      "baseline": 248
+    },
+    {
+      "x": 333,
+      "y": 16,
+      "w": 130,
+      "h": 233,
+      "anchorX": 400,
+      "baseline": 246
+    },
+    {
+      "x": 592,
+      "y": 16,
+      "w": 118,
+      "h": 233,
+      "anchorX": 665,
+      "baseline": 246
+    },
+    {
+      "x": 841,
+      "y": 16,
+      "w": 146,
+      "h": 233,
+      "anchorX": 914,
+      "baseline": 246
+    },
+    {
+      "x": 1105,
+      "y": 16,
+      "w": 107,
+      "h": 233,
+      "anchorX": 1168,
+      "baseline": 246
+    },
+    {
+      "x": 1352,
+      "y": 16,
+      "w": 117,
+      "h": 234,
+      "anchorX": 1406,
+      "baseline": 248
+    },
+    {
+      "x": 93,
+      "y": 250,
+      "w": 105,
+      "h": 269,
+      "anchorX": 148,
+      "baseline": 517
+    },
+    {
+      "x": 329,
+      "y": 250,
+      "w": 139,
+      "h": 268,
+      "anchorX": 394,
+      "baseline": 515
+    },
+    {
+      "x": 589,
+      "y": 250,
+      "w": 112,
+      "h": 269,
+      "anchorX": 655,
+      "baseline": 516
+    },
+    {
+      "x": 827,
+      "y": 250,
+      "w": 158,
+      "h": 268,
+      "anchorX": 906,
+      "baseline": 515
+    },
+    {
+      "x": 1101,
+      "y": 250,
+      "w": 105,
+      "h": 269,
+      "anchorX": 1164,
+      "baseline": 516
+    },
+    {
+      "x": 1342,
+      "y": 250,
+      "w": 138,
+      "h": 269,
+      "anchorX": 1398,
+      "baseline": 517
+    },
+    {
+      "x": 75,
+      "y": 519,
+      "w": 119,
+      "h": 252,
+      "anchorX": 153,
+      "baseline": 768
+    },
+    {
+      "x": 321,
+      "y": 520,
+      "w": 148,
+      "h": 249,
+      "anchorX": 400,
+      "baseline": 766
+    },
+    {
+      "x": 588,
+      "y": 520,
+      "w": 114,
+      "h": 250,
+      "anchorX": 664,
+      "baseline": 767
+    },
+    {
+      "x": 833,
+      "y": 520,
+      "w": 159,
+      "h": 251,
+      "anchorX": 913,
+      "baseline": 768
+    },
+    {
+      "x": 1093,
+      "y": 520,
+      "w": 133,
+      "h": 250,
+      "anchorX": 1168,
+      "baseline": 767
+    },
+    {
+      "x": 1337,
+      "y": 520,
+      "w": 144,
+      "h": 251,
+      "anchorX": 1410,
+      "baseline": 769
+    },
+    {
+      "x": 81,
+      "y": 771,
+      "w": 117,
+      "h": 247,
+      "anchorX": 153,
+      "baseline": 1015
+    },
+    {
+      "x": 324,
+      "y": 771,
+      "w": 148,
+      "h": 241,
+      "anchorX": 400,
+      "baseline": 1009
+    },
+    {
+      "x": 590,
+      "y": 771,
+      "w": 120,
+      "h": 245,
+      "anchorX": 664,
+      "baseline": 1013
+    },
+    {
+      "x": 834,
+      "y": 771,
+      "w": 159,
+      "h": 242,
+      "anchorX": 916,
+      "baseline": 1010
+    },
+    {
+      "x": 1101,
+      "y": 771,
+      "w": 123,
+      "h": 245,
+      "anchorX": 1173,
+      "baseline": 1013
+    },
+    {
+      "x": 1336,
+      "y": 771,
+      "w": 143,
+      "h": 247,
+      "anchorX": 1407,
+      "baseline": 1015
+    }
+  ],
+  "identities": [
+    {
+      "id": "student-voice",
+      "idle": 0,
+      "walk": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "talk": 5,
+      "standingHeight": 230
+    },
+    {
+      "id": "student-privacy",
+      "idle": 6,
+      "walk": [
+        7,
+        8,
+        9,
+        10
+      ],
+      "talk": 11,
+      "standingHeight": 265
+    },
+    {
+      "id": "student-culture",
+      "idle": 12,
+      "walk": [
+        13,
+        14,
+        15,
+        16
+      ],
+      "talk": 17,
+      "standingHeight": 247
+    },
+    {
+      "id": "student-access",
+      "idle": 18,
+      "walk": [
+        19,
+        20,
+        21,
+        22
+      ],
+      "talk": 23,
+      "standingHeight": 242
+    }
+  ],
+  "alphaThresholdForBounds": 100,
+  "notes": "Original generated PNG copied unchanged. One invariant scale per identity. Face-based anchors; transparent gutters. Wardrobe index follows the player while gender, hair and NPC identity stay fixed. Largest connected character region measured to exclude faint generation halos; two-pixel padding retained. Actual unequal row boundaries measured; no source pixel edits. Largest connected character region measured to exclude faint generation halos; two-pixel padding retained. Actual unequal row boundaries measured; no source pixel edits."
+}

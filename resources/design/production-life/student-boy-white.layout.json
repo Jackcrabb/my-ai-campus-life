@@ -1,0 +1,123 @@
+{
+  "id": "player-boy-0",
+  "src": "images/life/student-boy-white.png",
+  "width": 1536,
+  "height": 1024,
+  "cols": 5,
+  "rows": 2,
+  "facing": "right",
+  "frames": [
+    {
+      "x": 80,
+      "y": 42,
+      "w": 151,
+      "h": 454,
+      "anchorX": 174,
+      "baseline": 493
+    },
+    {
+      "x": 375,
+      "y": 43,
+      "w": 208,
+      "h": 452,
+      "anchorX": 478,
+      "baseline": 492
+    },
+    {
+      "x": 675,
+      "y": 44,
+      "w": 151,
+      "h": 449,
+      "anchorX": 770,
+      "baseline": 490
+    },
+    {
+      "x": 939,
+      "y": 43,
+      "w": 231,
+      "h": 452,
+      "anchorX": 1058,
+      "baseline": 492
+    },
+    {
+      "x": 1270,
+      "y": 43,
+      "w": 177,
+      "h": 453,
+      "anchorX": 1364,
+      "baseline": 493
+    },
+    {
+      "x": 80,
+      "y": 540,
+      "w": 151,
+      "h": 449,
+      "anchorX": 176,
+      "baseline": 986
+    },
+    {
+      "x": 376,
+      "y": 540,
+      "w": 207,
+      "h": 448,
+      "anchorX": 476,
+      "baseline": 985
+    },
+    {
+      "x": 675,
+      "y": 540,
+      "w": 145,
+      "h": 445,
+      "anchorX": 767,
+      "baseline": 982
+    },
+    {
+      "x": 939,
+      "y": 540,
+      "w": 231,
+      "h": 447,
+      "anchorX": 1055,
+      "baseline": 984
+    },
+    {
+      "x": 1270,
+      "y": 540,
+      "w": 177,
+      "h": 449,
+      "anchorX": 1364,
+      "baseline": 986
+    }
+  ],
+  "identities": [
+    {
+      "hair": "tousled-short",
+      "idle": 0,
+      "walk": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "standingHeight": 450
+    },
+    {
+      "hair": "buzzcut",
+      "idle": 5,
+      "walk": [
+        6,
+        7,
+        8,
+        9
+      ],
+      "standingHeight": 445
+    }
+  ],
+  "cycle": [
+    "left-contact",
+    "passing-a",
+    "right-contact",
+    "passing-b"
+  ],
+  "alphaThresholdForBounds": 16,
+  "notes": "Original PNG copied unchanged. Bounds include 2px padding where possible; anchorX follows head center consistently. Use one invariant scale from identity.standingHeight, not per-frame height."
+}

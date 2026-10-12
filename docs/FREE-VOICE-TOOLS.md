@@ -4,7 +4,7 @@
 
 **已選定 TTSFree 為主要製作工具，TTSMaker 為人工操作備用。** 先製作粵語、普通話及英語各一段試音；下列 Luvvoice 資料只保留作其他工具研究，未列入目前製作流程。官方語言支援及下載授權已查閱，但「流利、自然、適合角色」仍須逐段試聽。**預錄 MP3 尚未接入遊戲。** 現行 Web Speech 已修正語言／角色性別篩選、英文數字朗讀稿及切換佇列；自然語速／音高為 `1/1`，不等同本工具的原始 Default `0/0`。這部 Mac 原生聲線檢查未找到已知男聲粵語或普通話；缺少匹配聲線便停止自動朗讀，不改配女聲。實際聽感仍待目標裝置確認。 本文不聲稱已完成全遊戲配音，也不聲稱有免費二十款獨立粵語聲線。
 
-已下載三段 Default 試音：[粵語 HiuMaan，約 10.0 秒](../design/voice-auditions-free/zh-hk-hiumaan-default.mp3) · [普通話 Xiaoyi，約 9.3 秒](../design/voice-auditions-free/zh-cn-xiaoyi-default.mp3) · [英語 Sonia，約 9.6 秒](../design/voice-auditions-free/en-gb-sonia-default.mp3)。[文本、設定及檔案核對紀錄](../design/voice-auditions-free/README.md)已保存，仍待試聽審核。台灣普通話 YunJhe 兩次返回零位元組空檔，沒有保存或使用。製作只使用虛構文本，沒有帳戶、API 金鑰或付款。
+已下載三段 Default 試音：[粵語 HiuMaan，約 10.0 秒](../resources/design/voice-auditions-free/zh-hk-hiumaan-default.mp3) · [普通話 Xiaoyi，約 9.3 秒](../resources/design/voice-auditions-free/zh-cn-xiaoyi-default.mp3) · [英語 Sonia，約 9.6 秒](../resources/design/voice-auditions-free/en-gb-sonia-default.mp3)。[文本、設定及檔案核對紀錄](../resources/design/voice-auditions-free/README.md)已保存，仍待試聽審核。台灣普通話 YunJhe 兩次返回零位元組空檔，沒有保存或使用。製作只使用虛構文本，沒有帳戶、API 金鑰或付款。
 
 ## 1. TTSFree：先做三語試音
 

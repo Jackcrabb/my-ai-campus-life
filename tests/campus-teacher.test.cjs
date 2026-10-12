@@ -3,15 +3,16 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
 const vm = require('node:vm');
-const root = path.join(__dirname,'..','public','campus');
+const root = path.join(__dirname,'..','public','campus','game');
 function launch(options = {}) {
-  const calls = [], worksheetMounts = [], state = { unlocked:options.unlocked===true,allowed:true,classes:[],rejectPin:false,questions:[] };
+  const calls = [], worksheetMounts = [], prints = [], printListeners = new Map(), printSheets = [], state = { unlocked:options.unlocked===true,allowed:true,classes:[],rejectPin:false,questions:[] };
   const modalScroll = {scrollTop:options.scrollTop||0}, headingFocus = [];
   const heading = {tabIndex:0,focus(options){headingFocus.push({...options,html:container.innerHTML});}};
   const container = { innerHTML:'', scrollTop:0, handlers:{}, addEventListener(name,fn){this.handlers[name]=fn;}, removeEventListener(name){delete this.handlers[name];},querySelectorAll(){return[];},
     closest(selector){return selector==='#modal-content'&&!options.standalone?modalScroll:null;},
     querySelector(selector){if(selector==='[data-worksheet-manager]'&&this.innerHTML.includes('data-worksheet-manager'))return{innerHTML:''};if(selector==='.ct-header h2'||selector==='.ct-body h3')return heading;return null;},contains(){return true;} };
-  const context = vm.createContext({window:{CampusWorksheets:{open(options){const handle={...options,destroyed:false,destroy(){this.destroyed=true;}};worksheetMounts.push(handle);return handle;}}},console,TextEncoder,Uint8Array,DataView,Blob,URL,URLSearchParams,AbortController,
+  const document = {createElement(){return{className:'',innerHTML:'',removed:false,remove(){this.removed=true;}};},querySelector(selector){return selector==='.ct-print-sheet'?printSheets.findLast(sheet=>!sheet.removed):null;},body:{append(sheet){printSheets.push(sheet);}}};
+  const context = vm.createContext({document,window:{print(){prints.push(printSheets.at(-1).innerHTML);},addEventListener(name,fn){printListeners.set(name,fn);},removeEventListener(name){printListeners.delete(name);},CampusWorksheets:{open(options){const handle={...options,destroyed:false,destroy(){this.destroyed=true;}};worksheetMounts.push(handle);return handle;}}},console,TextEncoder,Uint8Array,DataView,Blob,URL,URLSearchParams,AbortController,
     FormData:class {constructor(form){this.data=form.data;}get(key){return this.data[key];}},
     crypto:require('node:crypto').webcrypto,navigator:{clipboard:{writeText:async()=>{}}},
     fetch:async(url,options)=>{
@@ -25,6 +26,7 @@ function launch(options = {}) {
         data={classes:state.classes};
       }
       if(url.includes('/questions?'))data={questions:state.questions};
+      if(url.endsWith('/teacher/questions')&&options.method==='POST'){state.questions.push({...body,revision:1});data={question:state.questions.at(-1)};}
       if(url.includes('/assignments'))data={activeAssignmentId:'activity',assignments:[{id:'activity',title:'Test activity'}]};
       if(url.includes('/results?'))data={rows:[],subjects:['chinese'],headers:['班別','學號','學生姓名','學科得分']};
       return {ok:true,status:200,json:async()=>data};
@@ -37,7 +39,7 @@ function launch(options = {}) {
   const submit=(kind,data)=>workspace.submit({preventDefault(){},target:{closest(){return{dataset:{form:kind},data,elements:{pin:{value:'test-only'}}};}}});
   const click=(action,extra={})=>workspace.click({target:{closest:()=>({dataset:{ct:action,...extra}})}});
   const change=(name,value)=>workspace.change({target:{closest:()=>({name,value})}});
-  return {workspace,context,container,calls,settle,submit,state,click,change,worksheetMounts,modalScroll,headingFocus,heading};
+  return {workspace,context,container,calls,settle,submit,state,click,change,worksheetMounts,modalScroll,headingFocus,heading,prints,printListeners,printSheets};
 }
 (async()=>{
   const entry=fs.readFileSync(path.join(__dirname,'../public/campus/index.html'),'utf8');assert.doesNotMatch(entry,/speech-studio\.(?:js|css)/,'game entry does not load retired studio assets');
@@ -131,6 +133,27 @@ function launch(options = {}) {
   for(const locale of ['zh','cn','en']){game.workspace.setLanguage(locale);assert.match(game.container.innerHTML,locale==='en'?/Teacher workspace/:locale==='cn'?/教师工作台/:/教師工作台/);}
   const translated={zh:'測試',cn:'测试',en:'Test'};
   const question={id:'stable-question',revision:3,grade:2,subjectId:'maths',roomId:'maths',category:'subject',level:'application',stars:2,maxScore:1,status:'published',title:{...translated},question:{...translated},takeaway:{...translated},options:['a','b','c'].map((id,index)=>({id,text:{...translated},feedback:{...translated},correct:index===1}))};
+  game.workspace.setLanguage('zh');
+  game.workspace.state.subjectId='maths';game.workspace.state.tab='questions';
+  game.state.questions=[1,2,3].map((stars,index)=>({...JSON.parse(JSON.stringify(question)),id:'base-'+index,stars}));
+  await game.workspace.loadTab();
+  for(const stars of [7,10]){
+    await game.click('new-question');
+    const id=game.workspace.state.editing.id;
+    assert.match(game.container.innerHTML,/type="number" name="stars" min="1" max="10" step="1"/);
+    game.workspace.state.editing={...JSON.parse(JSON.stringify(question)),id,revision:undefined,stars};
+    await game.submit('question',{});
+    assert.equal(game.calls.findLast(call=>call.method==='POST'&&call.url.endsWith('/teacher/questions')).body.stars,stars);
+  }
+  assert.equal(game.workspace.state.questions.length,5,'teachers add fourth and fifth questions without a three-question cap');
+  assert.match(game.container.innerHTML,/目前 5 題 · 已發佈 5 題 · 共 23 星/);
+  assert.match(game.container.innerHTML,/題目不受三題限制/);
+  for(const stars of [0,11,1.5]){
+    game.workspace.state.editing={...JSON.parse(JSON.stringify(question)),stars};
+    const beforeInvalid=game.calls.length;await game.submit('question',{});
+    assert.equal(game.calls.length,beforeInvalid,'invalid star amounts are blocked before an API request');
+    assert.match(game.container.innerHTML,/每題星星須為 1–10 的整數/);
+  }
   game.workspace.state.tab='questions';game.workspace.state.editing=question;
   game.modalScroll.scrollTop=380;const focusBeforeSave=game.headingFocus.length;
   await game.submit('question',{});
@@ -151,9 +174,28 @@ function launch(options = {}) {
   await game.submit('assignment',{title:'Explicit next activity'});
   assert.deepEqual(game.calls.find(call=>call.url.endsWith('/assignment')&&call.method==='POST').body,{title:'Explicit next activity'});
   assert.ok(!game.container.innerHTML.includes('test-only'),'the PIN is never rendered back into the workspace');
-  const sheet=game.context.window.CampusTeacher.resultSheets([{subjectId:'maths',rows:[{className:'2B',studentNumber:'01',studentName:'Test-only <name>',percent:null},{className:'2B',studentNumber:'02',studentName:'=1+1',percent:75}]}]);
-  assert.deepEqual(JSON.parse(JSON.stringify(sheet[0].rows[0])),['班別','學號','學生姓名','學科得分']);
+  const rows=[{className:'2B',studentNumber:'01',studentName:'Test-only <name>',percent:null,stars:7,maxStars:23},{className:'2B',studentNumber:'02',studentName:'=1+1',percent:75,stars:23,maxStars:23}];
+  const sheet=game.context.window.CampusTeacher.resultSheets([{subjectId:'maths',rows}]);
+  assert.deepEqual(JSON.parse(JSON.stringify(sheet[0].rows[0])),['班別','學號','學生姓名','學科得分','獲得星星','可得星星']);
   assert.equal(sheet[0].rows[1][1],'01');assert.equal(sheet[0].rows[1][3],null);
+  assert.equal(sheet[0].rows[1][4],7,'partial progress exports earned stars before the subject score is available');
+  assert.equal(sheet[0].rows[1][5],23);assert.equal(sheet[0].rows[2][4],23);
+  game.workspace.state.tab='results';game.workspace.state.results={rows};game.workspace.render();
+  assert.match(game.container.innerHTML,/<th scope="col">獲得星星<\/th>/);
+  assert.match(game.container.innerHTML,/<td>—<\/td><td>7<\/td><td>23<\/td>/);
+  await game.click('print-results');
+  assert.equal(game.prints.length,1,'result action invokes the browser print dialog');
+  assert.match(game.prints[0],/學生成績/);assert.match(game.prints[0],/Test activity/);
+  assert.match(game.prints[0],/<td>7<\/td><td>23<\/td>/);assert.match(game.prints[0],/Test-only &lt;name&gt;/);
+  game.printListeners.get('afterprint')();assert.equal(game.printSheets.at(-1).removed,true,'temporary print markup is cleaned after printing or cancelling');
+  assert.equal(game.printListeners.size,0);
+  for(const locale of ['cn','en']){
+    game.workspace.setLanguage(locale);await game.click('print-results');
+    assert.match(game.prints.at(-1),locale==='en'?/Stars earned/:/获得星星/);
+    assert.match(game.context.window.CampusTeacher.resultSheets([{subjectId:'maths',rows}],locale)[0].rows[0][4],locale==='en'?/Stars earned/:/获得星星/);
+    game.printListeners.get('afterprint')();
+  }
+  game.workspace.setLanguage('zh');
   const bytes=game.context.window.CampusXlsx.buildWorkbook([...sheet,{name:'Maths/long:name?test',rows:[['班別','學號','學生姓名','學科得分'],['2A','03','Test',0]]}]);
   assert.equal(bytes[0],0x50);assert.equal(bytes[1],0x4b,'export is a real ZIP-based XLSX');
   fs.writeFileSync('/tmp/campus-xlsx-test.xlsx',bytes);
@@ -177,5 +219,5 @@ function launch(options = {}) {
   assert.equal(Object.keys(game.container.handlers).length,0,'destroy removes delegated listeners');
   const denied=launch();await denied.settle();denied.state.allowed=false;await denied.workspace.refresh();
   const before=denied.calls.length;await denied.submit('unlock',{pin:'test-only'});assert.equal(denied.calls.length,before,'identity authorization remains required before PIN submission');denied.workspace.destroy();
-  console.log('PASS teacher workspace: standalone login, denied/invalid PIN handling,14subject chooser, persistent scope, worksheet mount, read-only AI cases, explicit class creation, versioned editing, scoped/all XLSX, navigation scroll/focus, stable filter/error position, locales and exit lifecycle.');
+  console.log('PASS teacher workspace: standalone login, denied/invalid PIN handling,14subject chooser, persistent scope, worksheet mount, read-only AI cases, explicit class creation, versioned editing, more than three questions,1–10star validation, scoped/all XLSX and native printed star reports, navigation scroll/focus, stable filter/error position, locales and exit lifecycle.');
 })();

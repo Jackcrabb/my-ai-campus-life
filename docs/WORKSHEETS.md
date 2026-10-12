@@ -32,7 +32,7 @@
 node tests/worksheet-ui.test.cjs
 node tests/worksheet-backend.test.mjs
 node tests/campus-teacher.test.cjs
-node --check public/campus/worksheet-ui.js
+node --check public/campus/game/worksheet-ui.js
 ```
 
 2026-10-10 完成的元件測試包括三語文字、伺服器年級／樓層範圍、只選可用語言、舊預覽載入事件隔離、明確且載入後才可列印、開啟／下載備用、失敗保留表單和 File 物件、成功後重設、單語及雙語上傳、每份 5 MiB 邊界、PDF 標頭、刪除確認、請求中止及關閉後不再更新。

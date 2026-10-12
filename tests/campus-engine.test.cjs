@@ -3,7 +3,8 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
 const vm = require('node:vm');
-const root = path.join(__dirname, '..', 'public', 'campus');
+const campus = path.join(__dirname, '..', 'public', 'campus');
+const root = path.join(campus, 'game');
 
 function launch() {
   const draws = [], interactions = [], listeners = new Map();
@@ -53,7 +54,7 @@ assert.equal(world.testSkinPixel(252,199,164,254),true,'source skin colors can b
 for(const rgba of [[252,253,255,254],[198,62,52,254],[70,76,91,254],[252,199,164,0],[78,55,46,254]])assert.equal(world.testSkinPixel(...rgba),false,'white fabric,redbelt,navy,transparent pixels and dark hair are excluded');
 
 for (const atlas of Object.values(registry.atlases)) {
-  const bytes = fs.readFileSync(path.join(root,atlas.src));
+  const bytes = fs.readFileSync(path.join(campus,atlas.src));
   const width = bytes.readUInt32BE(16), height = bytes.readUInt32BE(20);
   for (const frame of atlas.frames) assert.ok(frame.x >= 0 && frame.y >= 0 && frame.x + frame.w <= width && frame.y + frame.h <= height,'registered production crops stay inside their PNG');
   for (const identity of atlas.identities) assert.ok(identity.standingHeight > 0 && identity.walk.length >= 4,'production players have a standing metric and four walking keys');

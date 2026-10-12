@@ -12,9 +12,9 @@
       "generationId": "exec-02d4fc6b-dd50-4eeb-9bcc-ab789f309af9",
       "method": "built-in-imagegen",
       "sourceChannel": "root",
-      "relativePath": "../public/campus/portraits.png",
+      "relativePath": "../public/campus/images/portraits.png",
       "projectMatches": [
-        "public/campus/portraits.png"
+        "public/campus/images/portraits.png"
       ],
       "title": "portraits",
       "sha256": "10852d4d16fea4e5ac9f2a6a38366efa65b82b6891fa8a16b92e2f88b9580d1a",
@@ -30,9 +30,9 @@
       "generationId": "exec-3594107d-d555-4d61-929c-fe53a4252251",
       "method": "built-in-imagegen",
       "sourceChannel": "root",
-      "relativePath": "../public/campus/title-campus.png",
+      "relativePath": "../public/campus/images/title-campus.png",
       "projectMatches": [
-        "public/campus/title-campus.png"
+        "public/campus/images/title-campus.png"
       ],
       "title": "title campus",
       "sha256": "b8a8237cc84af8b95098dbedf6f62f2f017ec01439e083c5c07976785fea324a",
@@ -80,9 +80,9 @@
       "generationId": "exec-7b48e905-50a4-403f-bd24-de17cdcce65d",
       "method": "built-in-imagegen",
       "sourceChannel": "root",
-      "relativePath": "../design/art-options/version-1-crafted-pixel.png",
+      "relativePath": "../resources/design/art-options/version-1-crafted-pixel.png",
       "projectMatches": [
-        "design/art-options/version-1-crafted-pixel.png"
+        "resources/design/art-options/version-1-crafted-pixel.png"
       ],
       "title": "version 1 crafted pixel",
       "sha256": "5627163b2b04caf59cd45847b66b28ee6338c88d721f35d646e8417589c1ca89",
@@ -98,9 +98,9 @@
       "generationId": "exec-24b03049-7d70-45a8-80c4-6aa6da5e5775",
       "method": "built-in-imagegen",
       "sourceChannel": "root",
-      "relativePath": "../design/art-options/version-2-hd-pixel.png",
+      "relativePath": "../resources/design/art-options/version-2-hd-pixel.png",
       "projectMatches": [
-        "design/art-options/version-2-hd-pixel.png"
+        "resources/design/art-options/version-2-hd-pixel.png"
       ],
       "title": "version 2 hd pixel",
       "sha256": "4e7d88fbf20f4079de934aa5dd48375b2a3ea4a932c1474d5c6b70153d5bd64b",
@@ -116,9 +116,9 @@
       "generationId": "exec-b3c700da-29ec-4240-8045-a94489abff95",
       "method": "built-in-imagegen",
       "sourceChannel": "root",
-      "relativePath": "../design/art-options/version-3-hand-drawn.png",
+      "relativePath": "../resources/design/art-options/version-3-hand-drawn.png",
       "projectMatches": [
-        "design/art-options/version-3-hand-drawn.png"
+        "resources/design/art-options/version-3-hand-drawn.png"
       ],
       "title": "version 3 hand drawn",
       "sha256": "1a17f0dede2ba4bac27da4b759a4422c0f6671b4141c316827352d5fd7dad4d0",
@@ -134,9 +134,9 @@
       "generationId": "exec-ca284faf-c728-41d9-97f2-5e60de4991a5",
       "method": "built-in-imagegen",
       "sourceChannel": "illustration",
-      "relativePath": "../public/campus/assets/characters/students-queens-college.png",
+      "relativePath": "../public/campus/images/characters/students-queens-college.png",
       "projectMatches": [
-        "public/campus/assets/characters/students-queens-college.png"
+        "public/campus/images/characters/students-queens-college.png"
       ],
       "title": "students queens college",
       "sha256": "371115d5d1186420a3d4c56f0d1c077f0549d8e714c9f474d65bf800a914f526",
@@ -152,9 +152,9 @@
       "generationId": "exec-e5a183d3-9b1b-4314-933d-81180719e33d",
       "method": "built-in-imagegen",
       "sourceChannel": "illustration",
-      "relativePath": "../public/campus/assets/characters/students-pooi-to.png",
+      "relativePath": "../public/campus/images/characters/students-pooi-to.png",
       "projectMatches": [
-        "public/campus/assets/characters/students-pooi-to.png"
+        "public/campus/images/characters/students-pooi-to.png"
       ],
       "title": "students pooi to",
       "sha256": "519c47744ef37c9a3efffc1b9c9bde037b09109a198da84ec798053e7040b9e3",
@@ -170,9 +170,9 @@
       "generationId": "exec-134ddf53-1677-42a1-b0cf-709cff325784",
       "method": "built-in-imagegen",
       "sourceChannel": "learning-content",
-      "relativePath": "../public/campus/assets/backgrounds/campus-pair-01.png",
+      "relativePath": "../public/campus/images/backgrounds/campus-pair-01.png",
       "projectMatches": [
-        "public/campus/assets/backgrounds/campus-pair-01.png"
+        "public/campus/images/backgrounds/campus-pair-01.png"
       ],
       "title": "campus pair 01",
       "sha256": "dd21cb28c77bea707a0d91a39da8942697a9928bf6e70dc71317c67bb37650fd",
@@ -204,9 +204,9 @@
       "generationId": "exec-d5366927-85ef-4a79-aabd-086f2004b6b7",
       "method": "built-in-imagegen",
       "sourceChannel": "learning-content",
-      "relativePath": "../public/campus/assets/backgrounds/campus-pair-02.png",
+      "relativePath": "../public/campus/images/backgrounds/campus-pair-02.png",
       "projectMatches": [
-        "public/campus/assets/backgrounds/campus-pair-02.png"
+        "public/campus/images/backgrounds/campus-pair-02.png"
       ],
       "title": "campus pair 02",
       "sha256": "07fbc925c6b374b16718e06fcde98ed2ee32fc3145223cbc3e388fcf6a5a209f",
@@ -222,9 +222,9 @@
       "generationId": "exec-6efc7a4f-01fa-442b-94c0-a665f53b9c3a",
       "method": "built-in-imagegen",
       "sourceChannel": "learning-content",
-      "relativePath": "../public/campus/assets/backgrounds/campus-pair-03.png",
+      "relativePath": "../public/campus/images/backgrounds/campus-pair-03.png",
       "projectMatches": [
-        "public/campus/assets/backgrounds/campus-pair-03.png"
+        "public/campus/images/backgrounds/campus-pair-03.png"
       ],
       "title": "campus pair 03",
       "sha256": "9224d55fa489b6300f4f2c55dd46e1c2ee1d7e07609c28cce36a3de2fd3eea58",
@@ -240,9 +240,9 @@
       "generationId": "exec-cb056dc3-8df6-441a-b847-537822087a36",
       "method": "built-in-imagegen",
       "sourceChannel": "illustration",
-      "relativePath": "../public/campus/assets/characters/students-hkcwcc.png",
+      "relativePath": "../public/campus/images/characters/students-hkcwcc.png",
       "projectMatches": [
-        "public/campus/assets/characters/students-hkcwcc.png"
+        "public/campus/images/characters/students-hkcwcc.png"
       ],
       "title": "students hkcwcc",
       "sha256": "4e58d08e0f5943df19e44635593719ef0dbe4678bc68b3a9ee03fd7520fa66c9",
@@ -258,9 +258,9 @@
       "generationId": "exec-bacce2c6-ec85-47ad-8d66-df575519c166",
       "method": "built-in-imagegen",
       "sourceChannel": "illustration",
-      "relativePath": "../public/campus/assets/characters/students-st-joan.png",
+      "relativePath": "../public/campus/images/characters/students-st-joan.png",
       "projectMatches": [
-        "public/campus/assets/characters/students-st-joan.png"
+        "public/campus/images/characters/students-st-joan.png"
       ],
       "title": "students st joan",
       "sha256": "7268680f064c9569796a2b884f7c182577f66f47d1b2904c40d687533bbf8127",
@@ -292,9 +292,9 @@
       "generationId": "exec-4443763a-6b49-46a4-8b03-86b644cabc1c",
       "method": "built-in-imagegen",
       "sourceChannel": "learning-content",
-      "relativePath": "../public/campus/assets/backgrounds/campus-pair-04.png",
+      "relativePath": "../public/campus/images/backgrounds/campus-pair-04.png",
       "projectMatches": [
-        "public/campus/assets/backgrounds/campus-pair-04.png"
+        "public/campus/images/backgrounds/campus-pair-04.png"
       ],
       "title": "campus pair 04",
       "sha256": "58a8bfeb429e7c8a29b6fb968f2dcd8e4b68c31c302749faeba454c37b0d015a",
@@ -310,9 +310,9 @@
       "generationId": "exec-3b686abf-8c0c-4824-b7f0-de7e2cbd2f07",
       "method": "built-in-imagegen",
       "sourceChannel": "learning-content",
-      "relativePath": "../public/campus/assets/backgrounds/campus-pair-05.png",
+      "relativePath": "../public/campus/images/backgrounds/campus-pair-05.png",
       "projectMatches": [
-        "public/campus/assets/backgrounds/campus-pair-05.png"
+        "public/campus/images/backgrounds/campus-pair-05.png"
       ],
       "title": "campus pair 05",
       "sha256": "837204d3774b197dfa3e8ad8acef0159d8ff5363757bcdad659c50b269e15c48",
@@ -328,9 +328,9 @@
       "generationId": "exec-d9f1e453-b20a-4cac-ad07-4f31be343ee9",
       "method": "built-in-imagegen",
       "sourceChannel": "learning-content",
-      "relativePath": "../public/campus/assets/backgrounds/campus-pair-06.png",
+      "relativePath": "../public/campus/images/backgrounds/campus-pair-06.png",
       "projectMatches": [
-        "public/campus/assets/backgrounds/campus-pair-06.png"
+        "public/campus/images/backgrounds/campus-pair-06.png"
       ],
       "title": "campus pair 06",
       "sha256": "3db0d1b0ddc8448f7e7390bba8740af1f0531cf886991aa1dc55cd1cd141da10",
@@ -346,9 +346,9 @@
       "generationId": "exec-fdd3c47f-3bfd-44f5-8aa7-83746e0a6a74",
       "method": "built-in-imagegen",
       "sourceChannel": "learning-content",
-      "relativePath": "../public/campus/assets/backgrounds/campus-pair-07.png",
+      "relativePath": "../public/campus/images/backgrounds/campus-pair-07.png",
       "projectMatches": [
-        "public/campus/assets/backgrounds/campus-pair-07.png"
+        "public/campus/images/backgrounds/campus-pair-07.png"
       ],
       "title": "campus pair 07",
       "sha256": "750aa0978881aeac99791ed1a5f8e97395d4f27ef1ccb243e085b363567b4bca",
@@ -364,9 +364,9 @@
       "generationId": "exec-3ebfe1f3-061a-4777-ac3c-b18f5b62fa15",
       "method": "built-in-imagegen",
       "sourceChannel": "illustration",
-      "relativePath": "../public/campus/assets/characters/npcs-school-community.png",
+      "relativePath": "../public/campus/images/characters/npcs-school-community.png",
       "projectMatches": [
-        "public/campus/assets/characters/npcs-school-community.png"
+        "public/campus/images/characters/npcs-school-community.png"
       ],
       "title": "npcs school community",
       "sha256": "9bdb785402b4a9a63e7a83f2ba71050e451f20c0397db2cb1b141aa053437c97",
@@ -382,9 +382,9 @@
       "generationId": "exec-a0b65b8c-1d0c-4ec4-9778-5e88dbf620b6",
       "method": "built-in-imagegen",
       "sourceChannel": "learning-content",
-      "relativePath": "../public/campus/assets/backgrounds/campus-pair-08.png",
+      "relativePath": "../public/campus/images/backgrounds/campus-pair-08.png",
       "projectMatches": [
-        "public/campus/assets/backgrounds/campus-pair-08.png"
+        "public/campus/images/backgrounds/campus-pair-08.png"
       ],
       "title": "campus pair 08",
       "sha256": "2c4d20cc259288d137a5caa560e58d8d34578aff2353de220c5be8203aa4c1fe",
@@ -400,9 +400,9 @@
       "generationId": "exec-4c370e97-1497-46ff-b0e5-1f1802eca371",
       "method": "built-in-imagegen",
       "sourceChannel": "learning-content",
-      "relativePath": "../public/campus/assets/backgrounds/campus-pair-09.png",
+      "relativePath": "../public/campus/images/backgrounds/campus-pair-09.png",
       "projectMatches": [
-        "public/campus/assets/backgrounds/campus-pair-09.png"
+        "public/campus/images/backgrounds/campus-pair-09.png"
       ],
       "title": "campus pair 09",
       "sha256": "61c8d10d7efd78103b8306cc96c807a39081249b9d8e399ad56412cd508dd64e",
@@ -418,9 +418,9 @@
       "generationId": "exec-d84a744d-5f57-4d1b-b557-674b8f1060ca",
       "method": "built-in-imagegen",
       "sourceChannel": "root",
-      "relativePath": "../public/campus/assets/portraits/students.png",
+      "relativePath": "../public/campus/images/portraits/students.png",
       "projectMatches": [
-        "public/campus/assets/portraits/students.png"
+        "public/campus/images/portraits/students.png"
       ],
       "title": "students",
       "sha256": "6b86da67d581648be840408306a2a2a131a67c6820200c548762c14b1275cda6",
@@ -436,9 +436,9 @@
       "generationId": "exec-3c845bb4-0266-4896-bae2-c95c14f11001",
       "method": "built-in-imagegen",
       "sourceChannel": "root",
-      "relativePath": "../public/campus/assets/portraits/staff-a.png",
+      "relativePath": "../public/campus/images/portraits/staff-a.png",
       "projectMatches": [
-        "public/campus/assets/portraits/staff-a.png"
+        "public/campus/images/portraits/staff-a.png"
       ],
       "title": "staff a",
       "sha256": "5e25346f60c2a948d75babf189cad2219648df9245adff2fb32f397d88d227bd",
@@ -454,9 +454,9 @@
       "generationId": "exec-39085af1-8c2c-4c86-8d2a-1d8465496866",
       "method": "built-in-imagegen",
       "sourceChannel": "root",
-      "relativePath": "../public/campus/assets/portraits/staff-b.png",
+      "relativePath": "../public/campus/images/portraits/staff-b.png",
       "projectMatches": [
-        "public/campus/assets/portraits/staff-b.png"
+        "public/campus/images/portraits/staff-b.png"
       ],
       "title": "staff b",
       "sha256": "1e6ff04469d5921ffb91ad730b652a1d1663b4705b85ab963f05657af6ccc2b4",
@@ -472,9 +472,9 @@
       "generationId": "exec-ed40abed-8382-4eef-96d1-716442df5969",
       "method": "built-in-imagegen",
       "sourceChannel": "illustration",
-      "relativePath": "../public/campus/assets/backgrounds/detective-preparation.png",
+      "relativePath": "../public/campus/images/backgrounds/detective-preparation.png",
       "projectMatches": [
-        "public/campus/assets/backgrounds/detective-preparation.png"
+        "public/campus/images/backgrounds/detective-preparation.png"
       ],
       "title": "detective preparation",
       "sha256": "6e4495e310bce8ef853f1005b3f78593b6ce461a3b95f02dd2564180da1fac7b",
@@ -490,9 +490,9 @@
       "generationId": "exec-7ad90440-e764-41cc-9e45-919b78bb0c2f",
       "method": "built-in-imagegen",
       "sourceChannel": "illustration",
-      "relativePath": "../public/campus/assets/backgrounds/campus-gate.png",
+      "relativePath": "../public/campus/images/backgrounds/campus-gate.png",
       "projectMatches": [
-        "public/campus/assets/backgrounds/campus-gate.png"
+        "public/campus/images/backgrounds/campus-gate.png"
       ],
       "title": "campus gate",
       "sha256": "88729ec025ab11683fd6816da63ab6529c2988f4b3000495d6a0acfff2d5d96c",
@@ -508,9 +508,9 @@
       "generationId": "exec-18766b8f-b02f-4e58-a2f3-39f6b5cb280c",
       "method": "built-in-imagegen",
       "sourceChannel": "illustration",
-      "relativePath": "../public/campus/assets/characters/students-boy-queens-college.png",
+      "relativePath": "../public/campus/images/characters/students-boy-queens-college.png",
       "projectMatches": [
-        "public/campus/assets/characters/students-boy-queens-college.png"
+        "public/campus/images/characters/students-boy-queens-college.png"
       ],
       "title": "students boy queens college",
       "sha256": "c2a3057e1dab58913cf8e4d0d6016b33408cc3d6814ccdac7bdf075bf18957f8",
@@ -526,9 +526,9 @@
       "generationId": "exec-795e1f29-3851-4509-a19d-3516b21e94a8",
       "method": "built-in-imagegen",
       "sourceChannel": "illustration",
-      "relativePath": "../public/campus/assets/characters/students-boy-hkcwcc.png",
+      "relativePath": "../public/campus/images/characters/students-boy-hkcwcc.png",
       "projectMatches": [
-        "public/campus/assets/characters/students-boy-hkcwcc.png"
+        "public/campus/images/characters/students-boy-hkcwcc.png"
       ],
       "title": "students boy hkcwcc",
       "sha256": "e490db3a8ca33edb5996ebf8ac6fb9e87a3bd9a9920c6467a33c6b0afaf36748",
@@ -544,9 +544,9 @@
       "generationId": "exec-a160cb44-4f78-47ab-bccd-ea3b97775845",
       "method": "built-in-imagegen",
       "sourceChannel": "learning-content",
-      "relativePath": "../public/campus/assets/characters/students-girl-hkcwcc.png",
+      "relativePath": "../public/campus/images/characters/students-girl-hkcwcc.png",
       "projectMatches": [
-        "public/campus/assets/characters/students-girl-hkcwcc.png"
+        "public/campus/images/characters/students-girl-hkcwcc.png"
       ],
       "title": "students girl hkcwcc",
       "sha256": "a619f3022e5a9c1ac96aeddd1e38523419558b939fb476f413615d33dd71d134",
@@ -562,9 +562,9 @@
       "generationId": "exec-515e87a9-0c40-4083-aff5-b2418b0e7a55",
       "method": "built-in-imagegen",
       "sourceChannel": "learning-content",
-      "relativePath": "../public/campus/assets/characters/students-girl-st-joan.png",
+      "relativePath": "../public/campus/images/characters/students-girl-st-joan.png",
       "projectMatches": [
-        "public/campus/assets/characters/students-girl-st-joan.png"
+        "public/campus/images/characters/students-girl-st-joan.png"
       ],
       "title": "students girl st joan",
       "sha256": "e7566a5f5f9658c150a50429991e22e6195c8c2a39d018d09c1bfac1cca3d265",
@@ -580,9 +580,9 @@
       "generationId": "exec-818bf487-32d4-4a3d-b93d-0dee37719fe5",
       "method": "built-in-imagegen",
       "sourceChannel": "learning-content",
-      "relativePath": "../design/character-review/BOYS-REVIEW-v1.png",
+      "relativePath": "../resources/design/character-review/BOYS-REVIEW-v1.png",
       "projectMatches": [
-        "design/character-review/BOYS-REVIEW-v1.png"
+        "resources/design/character-review/BOYS-REVIEW-v1.png"
       ],
       "title": "BOYS REVIEW v1",
       "sha256": "9f87ed5dc09ee7e218f639c77871a6957763528e88ddd9c3add1216aceae42f7",
@@ -598,9 +598,9 @@
       "generationId": "exec-e1383a77-d5a9-4ec3-b017-78e66e34231e",
       "method": "built-in-imagegen",
       "sourceChannel": "root",
-      "relativePath": "../design/character-review/GIRLS-REVIEW-v1.png",
+      "relativePath": "../resources/design/character-review/GIRLS-REVIEW-v1.png",
       "projectMatches": [
-        "design/character-review/GIRLS-REVIEW-v1.png"
+        "resources/design/character-review/GIRLS-REVIEW-v1.png"
       ],
       "title": "GIRLS REVIEW v1",
       "sha256": "09e68853f91dc79795e2885d2ab3c9cc8a1ec08d02aa4796ef24452a2600feef",
@@ -616,9 +616,9 @@
       "generationId": "exec-3161c00d-0135-4439-a7ef-bdf7b6fe817d",
       "method": "built-in-imagegen",
       "sourceChannel": "pedagogy",
-      "relativePath": "../design/campus-life-review-v1/03-teacher-workspace.png",
+      "relativePath": "../resources/design/campus-life-review-v1/03-teacher-workspace.png",
       "projectMatches": [
-        "design/campus-life-review-v1/03-teacher-workspace.png"
+        "resources/design/campus-life-review-v1/03-teacher-workspace.png"
       ],
       "title": "03 teacher workspace",
       "sha256": "fa28f3415db88202760908c087a69f1723fb6570a5f675df9cd9d0f603daba0e",
@@ -650,10 +650,10 @@
       "generationId": "exec-ae29a5a2-051e-4bfd-82ab-090e0857efdd",
       "method": "built-in-imagegen",
       "sourceChannel": "illustration",
-      "relativePath": "../design/campus-life-review-v1/04-npc-roster.png",
+      "relativePath": "../resources/design/campus-life-review-v1/04-npc-roster.png",
       "projectMatches": [
-        "design/campus-life-review-v1/04-npc-roster.png",
-        "public/campus/assets/life/staff-roster.png"
+        "resources/design/campus-life-review-v1/04-npc-roster.png",
+        "public/campus/images/life/staff-roster.png"
       ],
       "title": "04 npc roster",
       "sha256": "85316ce957f90ff6abe0cc5adb89e9e13aa34cf5fd911533f7b64b9aa508b109",
@@ -669,9 +669,9 @@
       "generationId": "exec-19504641-1374-40d0-92b7-d56ceda4344f",
       "method": "built-in-imagegen",
       "sourceChannel": "learning-content",
-      "relativePath": "../design/campus-life-review-v1/02-student-onboarding.png",
+      "relativePath": "../resources/design/campus-life-review-v1/02-student-onboarding.png",
       "projectMatches": [
-        "design/campus-life-review-v1/02-student-onboarding.png"
+        "resources/design/campus-life-review-v1/02-student-onboarding.png"
       ],
       "title": "02 student onboarding",
       "sha256": "6adb8537faeda47eaac7c73a2586d82520812671a2980a1d87b8de8183281676",
@@ -687,9 +687,9 @@
       "generationId": "exec-4ba28f4f-38b0-4220-a147-7e121681325a",
       "method": "built-in-imagegen",
       "sourceChannel": "root",
-      "relativePath": "../design/campus-life-review-v1/01-character-interaction.png",
+      "relativePath": "../resources/design/campus-life-review-v1/01-character-interaction.png",
       "projectMatches": [
-        "design/campus-life-review-v1/01-character-interaction.png"
+        "resources/design/campus-life-review-v1/01-character-interaction.png"
       ],
       "title": "01 character interaction",
       "sha256": "05b20989d235c8cde0625cb0efabbca3a9c7a258b01d660c588cb064bb31809f",
@@ -705,9 +705,9 @@
       "generationId": "exec-f61f1006-761b-4fc2-9c96-0829ec3dd99b",
       "method": "built-in-imagegen",
       "sourceChannel": "illustration",
-      "relativePath": "../design/campus-life-review-v1/05-walk-proportion.png",
+      "relativePath": "../resources/design/campus-life-review-v1/05-walk-proportion.png",
       "projectMatches": [
-        "design/campus-life-review-v1/05-walk-proportion.png"
+        "resources/design/campus-life-review-v1/05-walk-proportion.png"
       ],
       "title": "05 walk proportion",
       "sha256": "4e18d4f586fddceed1d4804254f35811cd83e00e6499eb543cc478eaf89a9d27",
@@ -723,9 +723,9 @@
       "generationId": "exec-d1f98781-2bf2-40e8-9849-1c722a01e000",
       "method": "built-in-imagegen",
       "sourceChannel": "root",
-      "relativePath": "../design/campus-life-review-v1/05-walk-proportion-v2.png",
+      "relativePath": "../resources/design/campus-life-review-v1/05-walk-proportion-v2.png",
       "projectMatches": [
-        "design/campus-life-review-v1/05-walk-proportion-v2.png"
+        "resources/design/campus-life-review-v1/05-walk-proportion-v2.png"
       ],
       "title": "05 walk proportion v2",
       "sha256": "ae52b709031534ff55fb9bdf202ee7653696f3956b8b6b9a74afc5eca9f32091",
@@ -741,9 +741,9 @@
       "generationId": "exec-76448602-6f03-4af4-acb2-4e5a5c4da7c1",
       "method": "built-in-imagegen",
       "sourceChannel": "root",
-      "relativePath": "../design/campus-life-review-v1/05-walk-proportion-v3.png",
+      "relativePath": "../resources/design/campus-life-review-v1/05-walk-proportion-v3.png",
       "projectMatches": [
-        "design/campus-life-review-v1/05-walk-proportion-v3.png"
+        "resources/design/campus-life-review-v1/05-walk-proportion-v3.png"
       ],
       "title": "05 walk proportion v3",
       "sha256": "f6606270e80ca40ca24291abc545781bea75fbaa616a2f375ba7194a4e9c148c",
@@ -775,9 +775,9 @@
       "generationId": "exec-4ec6492c-91d8-4a5d-8966-71979c0a5562",
       "method": "built-in-imagegen",
       "sourceChannel": "illustration",
-      "relativePath": "../public/campus/assets/life/student-boy-white.png",
+      "relativePath": "../public/campus/images/life/student-boy-white.png",
       "projectMatches": [
-        "public/campus/assets/life/student-boy-white.png"
+        "public/campus/images/life/student-boy-white.png"
       ],
       "title": "student boy white",
       "sha256": "1dbac291e290273fb605f7bedaece7743b7b6fb707b4b6af87e1f2f3327b5175",
@@ -809,9 +809,9 @@
       "generationId": "exec-15b8ec04-0424-4e85-a11c-20b246c5ae9d",
       "method": "built-in-imagegen",
       "sourceChannel": "illustration",
-      "relativePath": "../public/campus/assets/life/student-girl-white.png",
+      "relativePath": "../public/campus/images/life/student-girl-white.png",
       "projectMatches": [
-        "public/campus/assets/life/student-girl-white.png"
+        "public/campus/images/life/student-girl-white.png"
       ],
       "title": "student girl white",
       "sha256": "273127992b74752a1a24f5008b0a59843680e790c515c82ad092340121ff0cf2",
@@ -827,9 +827,9 @@
       "generationId": "exec-824981f7-2122-434b-ae3a-b2fd66b9bb43",
       "method": "built-in-imagegen",
       "sourceChannel": "illustration",
-      "relativePath": "../public/campus/assets/life/student-boy-grey.png",
+      "relativePath": "../public/campus/images/life/student-boy-grey.png",
       "projectMatches": [
-        "public/campus/assets/life/student-boy-grey.png"
+        "public/campus/images/life/student-boy-grey.png"
       ],
       "title": "student boy grey",
       "sha256": "fe4465918b35225b50fb5155af748b0c5fdc680c04d60d03a302e0dece0401c4",
@@ -845,9 +845,9 @@
       "generationId": "exec-baa569a9-dcb0-4e89-8a15-02a2025567ac",
       "method": "built-in-imagegen",
       "sourceChannel": "illustration",
-      "relativePath": "../public/campus/assets/life/student-boy-striped.png",
+      "relativePath": "../public/campus/images/life/student-boy-striped.png",
       "projectMatches": [
-        "public/campus/assets/life/student-boy-striped.png"
+        "public/campus/images/life/student-boy-striped.png"
       ],
       "title": "student boy striped",
       "sha256": "db557ed4acff2e99bcc0f93d3e0a31669272081a029f84557d3160fa0ae7ae03",
@@ -863,9 +863,9 @@
       "generationId": "exec-6660378d-b58e-4791-95f5-a20306302770",
       "method": "built-in-imagegen",
       "sourceChannel": "pedagogy",
-      "relativePath": "../public/campus/assets/life/staff-academic-a.png",
+      "relativePath": "../public/campus/images/life/staff-academic-a.png",
       "projectMatches": [
-        "public/campus/assets/life/staff-academic-a.png"
+        "public/campus/images/life/staff-academic-a.png"
       ],
       "title": "staff academic a",
       "sha256": "95a62f05356bcaf9b3840e4266fd9eaade0c8eb041b3c0425c6cdc92dd168075",
@@ -881,9 +881,9 @@
       "generationId": "exec-890cf701-9f48-47f4-a8b4-cfbf6e3e4f95",
       "method": "built-in-imagegen",
       "sourceChannel": "illustration",
-      "relativePath": "../public/campus/assets/life/student-boy-blazer.png",
+      "relativePath": "../public/campus/images/life/student-boy-blazer.png",
       "projectMatches": [
-        "public/campus/assets/life/student-boy-blazer.png"
+        "public/campus/images/life/student-boy-blazer.png"
       ],
       "title": "student boy blazer",
       "sha256": "4a5f98a1a0da9666d218ffae268095992f2986b69d59f8e4d1b58087fb69fc08",
@@ -931,9 +931,9 @@
       "generationId": "exec-27d96577-f5a0-4f51-83a4-4602352d7675",
       "method": "built-in-imagegen",
       "sourceChannel": "pedagogy",
-      "relativePath": "../public/campus/assets/life/staff-academic-b.png",
+      "relativePath": "../public/campus/images/life/staff-academic-b.png",
       "projectMatches": [
-        "public/campus/assets/life/staff-academic-b.png"
+        "public/campus/images/life/staff-academic-b.png"
       ],
       "title": "staff academic b",
       "sha256": "cb8ce0b671e6b22d02fa62c46d6f4b19101cbea7fb49cb52f9d0b5292841cfee",
@@ -949,9 +949,9 @@
       "generationId": "exec-36006755-3444-4506-9a75-7873e0d72cb4",
       "method": "built-in-imagegen",
       "sourceChannel": "pedagogy",
-      "relativePath": "../public/campus/assets/life/staff-community.png",
+      "relativePath": "../public/campus/images/life/staff-community.png",
       "projectMatches": [
-        "public/campus/assets/life/staff-community.png"
+        "public/campus/images/life/staff-community.png"
       ],
       "title": "staff community",
       "sha256": "d511d257e3a498f917738dab0605a2b72e44634c3bbe2365f03e7ae3e99354e2",
@@ -967,9 +967,9 @@
       "generationId": "exec-abaa20a3-c815-4483-bb71-1d6f7b570a28",
       "method": "built-in-imagegen",
       "sourceChannel": "illustration",
-      "relativePath": "../public/campus/assets/life/student-girl-striped.png",
+      "relativePath": "../public/campus/images/life/student-girl-striped.png",
       "projectMatches": [
-        "public/campus/assets/life/student-girl-striped.png"
+        "public/campus/images/life/student-girl-striped.png"
       ],
       "title": "student girl striped",
       "sha256": "2adb38d9823b0eb44157ef29f4b698785eb480e71c11d4276d0346012e81eb71",
@@ -985,9 +985,9 @@
       "generationId": "exec-4a80ad45-f9e2-4f19-9765-9e25e19861a9",
       "method": "built-in-imagegen",
       "sourceChannel": "pedagogy",
-      "relativePath": "../public/campus/assets/life/staff-leadership.png",
+      "relativePath": "../public/campus/images/life/staff-leadership.png",
       "projectMatches": [
-        "public/campus/assets/life/staff-leadership.png"
+        "public/campus/images/life/staff-leadership.png"
       ],
       "title": "staff leadership",
       "sha256": "19655a085ffafec6988bbb23a3a52d9e3355085da0184ad1ac965bc84e1b4a55",
@@ -1003,9 +1003,9 @@
       "generationId": "exec-05e7c4d2-a060-4090-9e8d-c25825d5d201",
       "method": "built-in-imagegen",
       "sourceChannel": "illustration",
-      "relativePath": "../public/campus/assets/life/student-girl-grey.png",
+      "relativePath": "../public/campus/images/life/student-girl-grey.png",
       "projectMatches": [
-        "public/campus/assets/life/student-girl-grey.png"
+        "public/campus/images/life/student-girl-grey.png"
       ],
       "title": "student girl grey",
       "sha256": "70c3cc23ef2a422419b01eb13f2e9405324cecf328dc2432dcdde00f2ec48e30",
@@ -1021,9 +1021,9 @@
       "generationId": "exec-78e3ca7d-e9f3-4c50-a9b0-c56fbd78e997",
       "method": "built-in-imagegen",
       "sourceChannel": "illustration",
-      "relativePath": "../public/campus/assets/life/student-girl-gingham.png",
+      "relativePath": "../public/campus/images/life/student-girl-gingham.png",
       "projectMatches": [
-        "public/campus/assets/life/student-girl-gingham.png"
+        "public/campus/images/life/student-girl-gingham.png"
       ],
       "title": "student girl gingham",
       "sha256": "28d907d6c7d5cf3ab5fac3a6b944874dd707b29e2aa2b0aaa30b5e7114a82bf8",
@@ -1055,9 +1055,9 @@
       "generationId": "exec-a198e684-c480-4b9d-8396-d1cff422585c",
       "method": "built-in-imagegen",
       "sourceChannel": "pedagogy",
-      "relativePath": "../public/campus/assets/life/staff-academic-a-v2.png",
+      "relativePath": "../public/campus/images/life/staff-academic-a-v2.png",
       "projectMatches": [
-        "public/campus/assets/life/staff-academic-a-v2.png"
+        "public/campus/images/life/staff-academic-a-v2.png"
       ],
       "title": "staff academic a v2",
       "sha256": "3c832d9c829ff6262f3fae613b4d097534a3ea4ddce232890ea1c992aa64e292",
@@ -1153,9 +1153,9 @@
       "generationId": "exec-08589dca-772b-40f2-870e-e761db146ebd",
       "method": "built-in-imagegen",
       "sourceChannel": "illustration",
-      "relativePath": "../public/campus/assets/life/cases-students.png",
+      "relativePath": "../public/campus/images/life/cases-students.png",
       "projectMatches": [
-        "public/campus/assets/life/cases-students.png"
+        "public/campus/images/life/cases-students.png"
       ],
       "title": "cases students",
       "sha256": "db4635e5ad32b39437ab89c4558875e8405f57321d09a48aef37882b2bf818f1",
@@ -1171,9 +1171,9 @@
       "generationId": "exec-c630d848-f3c0-4d36-9200-b8f41c118bab",
       "method": "built-in-imagegen",
       "sourceChannel": "pedagogy",
-      "relativePath": "../public/campus/assets/life/staff-academic-b-v2.png",
+      "relativePath": "../public/campus/images/life/staff-academic-b-v2.png",
       "projectMatches": [
-        "public/campus/assets/life/staff-academic-b-v2.png"
+        "public/campus/images/life/staff-academic-b-v2.png"
       ],
       "title": "staff academic b v2",
       "sha256": "6a8c4bc1a6f0e3a9e53d7788b6dc3aff908bddfbcbd84e1e76f13bbabb137d26",
@@ -1189,9 +1189,9 @@
       "generationId": "exec-d8bf3dfd-1c0a-4afa-bcee-b361585dd3d6",
       "method": "built-in-imagegen",
       "sourceChannel": "pedagogy",
-      "relativePath": "../public/campus/assets/life/staff-community-v2.png",
+      "relativePath": "../public/campus/images/life/staff-community-v2.png",
       "projectMatches": [
-        "public/campus/assets/life/staff-community-v2.png"
+        "public/campus/images/life/staff-community-v2.png"
       ],
       "title": "staff community v2",
       "sha256": "01cf978d2990d64f02ced5190886a1efcd065d982c72dc9a40b6e2844593cff9",
@@ -1207,9 +1207,9 @@
       "generationId": "exec-98f052b2-4d30-47e2-b06b-f35b47108fc4",
       "method": "built-in-imagegen",
       "sourceChannel": "pedagogy",
-      "relativePath": "../public/campus/assets/life/staff-leadership-v2.png",
+      "relativePath": "../public/campus/images/life/staff-leadership-v2.png",
       "projectMatches": [
-        "public/campus/assets/life/staff-leadership-v2.png"
+        "public/campus/images/life/staff-leadership-v2.png"
       ],
       "title": "staff leadership v2",
       "sha256": "ad78ff1b448fa55dcbcd98b430eed01613575ba09d84c16c8f04cb2b6af9f837",
@@ -1225,9 +1225,9 @@
       "generationId": "exec-7af32354-f65d-446e-874b-26f8d32e8cdb",
       "method": "built-in-imagegen",
       "sourceChannel": "illustration",
-      "relativePath": "../design/campus-life-review-v1/06-pixel-dialogue-audio-proposal.png",
+      "relativePath": "../resources/design/campus-life-review-v1/06-pixel-dialogue-audio-proposal.png",
       "projectMatches": [
-        "design/campus-life-review-v1/06-pixel-dialogue-audio-proposal.png"
+        "resources/design/campus-life-review-v1/06-pixel-dialogue-audio-proposal.png"
       ],
       "title": "06 pixel dialogue audio proposal",
       "sha256": "95782e4e45a5391fc799ded56c99a8f4138bd0f0fe17c25b4feec51142f70b73",
@@ -1259,9 +1259,9 @@
       "generationId": "exec-3ca4af38-a546-4336-867f-a49332da74fa",
       "method": "built-in-imagegen",
       "sourceChannel": "illustration",
-      "relativePath": "../public/campus/assets/life/cases-students-v2.png",
+      "relativePath": "../public/campus/images/life/cases-students-v2.png",
       "projectMatches": [
-        "public/campus/assets/life/cases-students-v2.png"
+        "public/campus/images/life/cases-students-v2.png"
       ],
       "title": "cases students v2",
       "sha256": "565db247336fb4b118a7c84d23c6754dda8be0bb969f841a8ef6119fee3cc988",
@@ -1295,9 +1295,9 @@
       "generationId": "exec-85e74464-c020-4f24-9492-b9a7fceaca23",
       "method": "built-in-imagegen",
       "sourceChannel": "illustration",
-      "relativePath": "../design/campus-life-review-v1/07-map-quiz-uniform-proposal.png",
+      "relativePath": "../resources/design/campus-life-review-v1/07-map-quiz-uniform-proposal.png",
       "projectMatches": [
-        "design/campus-life-review-v1/07-map-quiz-uniform-proposal.png"
+        "resources/design/campus-life-review-v1/07-map-quiz-uniform-proposal.png"
       ],
       "title": "07 map quiz uniform proposal",
       "sha256": "49068db0b28c84dec19b6434699816990f22fe2d626bb2cb642b37cd3d996534",
@@ -1313,9 +1313,9 @@
       "generationId": "exec-13d3abb1-d5b4-445d-b0d6-e81a936f0e3a",
       "method": "built-in-imagegen",
       "sourceChannel": "learning_content",
-      "relativePath": "../public/campus/assets/ui/floorplans-v1.png",
+      "relativePath": "../public/campus/images/ui/floorplans-v1.png",
       "projectMatches": [
-        "public/campus/assets/ui/floorplans-v1.png"
+        "public/campus/images/ui/floorplans-v1.png"
       ],
       "title": "floorplans v1",
       "sha256": "761c96af1dac93db6f36e8bac02ab5cd59ceccefe38c03f9f136441f3e2cb4b7",
@@ -1347,9 +1347,9 @@
       "generationId": "exec-61ea8718-2e26-4871-bc42-d8631629c733",
       "method": "built-in-imagegen",
       "sourceChannel": "illustration",
-      "relativePath": "../public/campus/assets/life/cases-uniform-0.png",
+      "relativePath": "../public/campus/images/life/cases-uniform-0.png",
       "projectMatches": [
-        "public/campus/assets/life/cases-uniform-0.png"
+        "public/campus/images/life/cases-uniform-0.png"
       ],
       "title": "cases uniform 0",
       "sha256": "ef6b74164a301032b0ef758a0bd2237ae2c0397e8ae9a69aea678749b0cd7adc",
@@ -1365,9 +1365,9 @@
       "generationId": "exec-65856090-c214-4cce-8cd2-8245ae413317",
       "method": "built-in-imagegen",
       "sourceChannel": "illustration",
-      "relativePath": "../public/campus/assets/life/cases-uniform-1.png",
+      "relativePath": "../public/campus/images/life/cases-uniform-1.png",
       "projectMatches": [
-        "public/campus/assets/life/cases-uniform-1.png"
+        "public/campus/images/life/cases-uniform-1.png"
       ],
       "title": "cases uniform 1",
       "sha256": "d05a184fe77f85bb4047c5a51bc831bd388b264c9b0947685796c3ba4d11a41f",
@@ -1383,9 +1383,9 @@
       "generationId": "exec-4fdde584-4cba-4093-8fbd-07fa9507c5cf",
       "method": "built-in-imagegen",
       "sourceChannel": "illustration",
-      "relativePath": "../public/campus/assets/life/cases-uniform-2.png",
+      "relativePath": "../public/campus/images/life/cases-uniform-2.png",
       "projectMatches": [
-        "public/campus/assets/life/cases-uniform-2.png"
+        "public/campus/images/life/cases-uniform-2.png"
       ],
       "title": "cases uniform 2",
       "sha256": "c5cbdc2f4aa23c94894c42485fa4b8965952d26f87d9be0883ce9490bb056a11",
@@ -1401,9 +1401,9 @@
       "generationId": "exec-b6852c0e-963a-40b6-8421-a4de48dac2bc",
       "method": "built-in-imagegen",
       "sourceChannel": "illustration",
-      "relativePath": "../public/campus/assets/life/cases-uniform-3.png",
+      "relativePath": "../public/campus/images/life/cases-uniform-3.png",
       "projectMatches": [
-        "public/campus/assets/life/cases-uniform-3.png"
+        "public/campus/images/life/cases-uniform-3.png"
       ],
       "title": "cases uniform 3",
       "sha256": "3eaed96eaa4c0e225618050b24f2667e837285f5cb2358220e7231dd7b3d3826",
@@ -1435,9 +1435,9 @@
       "generationId": "exec-f2e2ea5e-dcb6-451c-ac29-51041c416a52",
       "method": "built-in-imagegen",
       "sourceChannel": "pedagogy",
-      "relativePath": "../public/campus/assets/life/staff-portraits-v3-a.png",
+      "relativePath": "../public/campus/images/life/staff-portraits-v3-a.png",
       "projectMatches": [
-        "public/campus/assets/life/staff-portraits-v3-a.png"
+        "public/campus/images/life/staff-portraits-v3-a.png"
       ],
       "title": "staff portraits v3 a",
       "sha256": "883d289ed9390ef992ea8eeaa3b80aafb1e65bcd985ba3a3988bdca8fcc4ca6b",
@@ -1453,9 +1453,9 @@
       "generationId": "exec-b0c5fea0-96a8-49a1-89ca-e56ad923b1d2",
       "method": "built-in-imagegen",
       "sourceChannel": "pedagogy",
-      "relativePath": "../public/campus/assets/life/staff-portraits-v3-b.png",
+      "relativePath": "../public/campus/images/life/staff-portraits-v3-b.png",
       "projectMatches": [
-        "public/campus/assets/life/staff-portraits-v3-b.png"
+        "public/campus/images/life/staff-portraits-v3-b.png"
       ],
       "title": "staff portraits v3 b",
       "sha256": "d60a1cd6fe0f0081725cee70ea2ef2514134c3d6f3cf9c24063bc40cf9a728ca",
@@ -1471,9 +1471,9 @@
       "generationId": "exec-f0c6ffa7-1090-4621-b883-cba86b312e01",
       "method": "built-in-imagegen",
       "sourceChannel": "illustration",
-      "relativePath": "../public/campus/assets/life/cases-portraits-uniforms.png",
+      "relativePath": "../public/campus/images/life/cases-portraits-uniforms.png",
       "projectMatches": [
-        "public/campus/assets/life/cases-portraits-uniforms.png"
+        "public/campus/images/life/cases-portraits-uniforms.png"
       ],
       "title": "cases portraits uniforms",
       "sha256": "3ebbed88f8e740e673a5818bd98dfe2e5f99029ff1e248ad265a8dd2645085c7",
@@ -1489,9 +1489,9 @@
       "generationId": "exec-7ab5e13b-d0e2-4cf5-af23-c7701534037b",
       "method": "built-in-imagegen",
       "sourceChannel": "illustration",
-      "relativePath": "../design/campus-life-review-v1/08-npc-identity-variation-proposal.png",
+      "relativePath": "../resources/design/campus-life-review-v1/08-npc-identity-variation-proposal.png",
       "projectMatches": [
-        "design/campus-life-review-v1/08-npc-identity-variation-proposal.png"
+        "resources/design/campus-life-review-v1/08-npc-identity-variation-proposal.png"
       ],
       "title": "08 npc identity variation proposal",
       "sha256": "f568c6944cebcff4d68c9639361286e03ba805ba1157b5825641f9c3a65834a4",
@@ -1507,9 +1507,9 @@
       "generationId": "exec-249c2db6-66ce-4504-b3d4-dd390652558f",
       "method": "built-in-imagegen",
       "sourceChannel": "root",
-      "relativePath": "../design/campus-life-review-v1/09-worksheet-station-proposal.png",
+      "relativePath": "../resources/design/campus-life-review-v1/09-worksheet-station-proposal.png",
       "projectMatches": [
-        "design/campus-life-review-v1/09-worksheet-station-proposal.png"
+        "resources/design/campus-life-review-v1/09-worksheet-station-proposal.png"
       ],
       "title": "09 worksheet station proposal",
       "sha256": "3d0c07d77d363827c9e51a29de554e0c0e7d91e2320f564a3e8a3aafba510364",
@@ -1525,9 +1525,9 @@
       "generationId": "exec-c41d2921-f9d5-492a-929a-61ddd32d1240",
       "method": "built-in-imagegen",
       "sourceChannel": "illustration",
-      "relativePath": "../public/campus/assets/life/cases-uniform-0-v2.png",
+      "relativePath": "../public/campus/images/life/cases-uniform-0-v2.png",
       "projectMatches": [
-        "public/campus/assets/life/cases-uniform-0-v2.png"
+        "public/campus/images/life/cases-uniform-0-v2.png"
       ],
       "title": "cases uniform 0 v2",
       "sha256": "d9f780465903079f5900ce2c86082c81f422ab96206bf9e1e82b69bb937cbb58",
@@ -1543,9 +1543,9 @@
       "generationId": "exec-b518e59e-12bd-47a9-b8b6-bc68457b4585",
       "method": "built-in-imagegen",
       "sourceChannel": "illustration",
-      "relativePath": "../public/campus/assets/life/cases-uniform-3-v2.png",
+      "relativePath": "../public/campus/images/life/cases-uniform-3-v2.png",
       "projectMatches": [
-        "public/campus/assets/life/cases-uniform-3-v2.png"
+        "public/campus/images/life/cases-uniform-3-v2.png"
       ],
       "title": "cases uniform 3 v2",
       "sha256": "da0d9d08f23a0b662a738979d296705501a85584d7de61939b8f4ba7fa9e8eff",
@@ -1561,9 +1561,9 @@
       "generationId": "exec-c86c684a-61a7-4027-80a4-58c7848da15a",
       "method": "built-in-imagegen",
       "sourceChannel": "illustration",
-      "relativePath": "../public/campus/assets/life/cases-portraits-uniforms-v2.png",
+      "relativePath": "../public/campus/images/life/cases-portraits-uniforms-v2.png",
       "projectMatches": [
-        "public/campus/assets/life/cases-portraits-uniforms-v2.png"
+        "public/campus/images/life/cases-portraits-uniforms-v2.png"
       ],
       "title": "cases portraits uniforms v2",
       "sha256": "9dfbf2b8c783a654374ada3fd6e76086fc3d0eaf92b032a86cc23babe8e20a22",
@@ -1579,9 +1579,9 @@
       "generationId": "exec-337d346b-8331-4cfc-a50a-fbd01ef0cd85",
       "method": "built-in-imagegen",
       "sourceChannel": "illustration",
-      "relativePath": "../public/campus/assets/life/cases-uniform-2-v2.png",
+      "relativePath": "../public/campus/images/life/cases-uniform-2-v2.png",
       "projectMatches": [
-        "public/campus/assets/life/cases-uniform-2-v2.png"
+        "public/campus/images/life/cases-uniform-2-v2.png"
       ],
       "title": "cases uniform 2 v2",
       "sha256": "faa57c30c2744c5bd633f79229b287c547f1a7137f1bf8e0056d92b39301b0f6",
@@ -1597,9 +1597,9 @@
       "generationId": "exec-3c250108-3229-4ba0-a61e-5ad26f9a44fc",
       "method": "built-in-imagegen",
       "sourceChannel": "illustration",
-      "relativePath": "../public/campus/assets/life/cases-uniform-1-v2.png",
+      "relativePath": "../public/campus/images/life/cases-uniform-1-v2.png",
       "projectMatches": [
-        "public/campus/assets/life/cases-uniform-1-v2.png"
+        "public/campus/images/life/cases-uniform-1-v2.png"
       ],
       "title": "cases uniform 1 v2",
       "sha256": "1712dfb4287b19793328655fbbf8fdd7b5ff2a20be46e37fdcefce129a57216d",
@@ -1631,9 +1631,9 @@
       "generationId": "exec-38f3ee27-9d82-4f12-83b1-bb4a11905bc2",
       "method": "built-in-imagegen",
       "sourceChannel": "illustration",
-      "relativePath": "../design/campus-life-review-v1/10a-door-hud-cream-enamel.png",
+      "relativePath": "../resources/design/campus-life-review-v1/10a-door-hud-cream-enamel.png",
       "projectMatches": [
-        "design/campus-life-review-v1/10a-door-hud-cream-enamel.png"
+        "resources/design/campus-life-review-v1/10a-door-hud-cream-enamel.png"
       ],
       "title": "10a door hud cream enamel",
       "sha256": "e86774e78a17ce42141ae70187df6b0023a64161f328a17de5dc827a99247c98",
@@ -1649,9 +1649,9 @@
       "generationId": "exec-70adfbda-4d67-49c6-910f-14459bc91531",
       "method": "built-in-imagegen",
       "sourceChannel": "illustration",
-      "relativePath": "../design/campus-life-review-v1/10b-door-hud-walnut.png",
+      "relativePath": "../resources/design/campus-life-review-v1/10b-door-hud-walnut.png",
       "projectMatches": [
-        "design/campus-life-review-v1/10b-door-hud-walnut.png"
+        "resources/design/campus-life-review-v1/10b-door-hud-walnut.png"
       ],
       "title": "10b door hud walnut",
       "sha256": "bda10914f05c635a47dc787a02f85de4d5ee975a535eb17379830c43a395d59d",
@@ -1667,9 +1667,9 @@
       "generationId": "exec-61e0fed7-403e-443e-8040-5f8733cf89e4",
       "method": "built-in-imagegen",
       "sourceChannel": "illustration",
-      "relativePath": "../design/campus-life-review-v1/10c-door-hud-teal-enamel.png",
+      "relativePath": "../resources/design/campus-life-review-v1/10c-door-hud-teal-enamel.png",
       "projectMatches": [
-        "design/campus-life-review-v1/10c-door-hud-teal-enamel.png"
+        "resources/design/campus-life-review-v1/10c-door-hud-teal-enamel.png"
       ],
       "title": "10c door hud teal enamel",
       "sha256": "5e85a249808dc593bf589e6d10c2c1e47548dd687f38696ad73932123256ab58",
@@ -1701,9 +1701,9 @@
       "generationId": "exec-1f44c71c-b181-4c24-84bd-6ad1cba4c29c",
       "method": "built-in-imagegen",
       "sourceChannel": "illustration",
-      "relativePath": "../design/campus-life-review-v1/12-role-entry-teacher-workspace.png",
+      "relativePath": "../resources/design/campus-life-review-v1/12-role-entry-teacher-workspace.png",
       "projectMatches": [
-        "design/campus-life-review-v1/12-role-entry-teacher-workspace.png"
+        "resources/design/campus-life-review-v1/12-role-entry-teacher-workspace.png"
       ],
       "title": "12 role entry teacher workspace",
       "sha256": "72e926b32c6a02f65891c582b978613aee860a249ce2d6ef7138f6e509c3461e",
@@ -1719,9 +1719,9 @@
       "generationId": "exec-5fc79292-b8ff-46b5-aa08-16b4b9b925c1",
       "method": "built-in-imagegen",
       "sourceChannel": "illustration",
-      "relativePath": "../design/campus-life-review-v1/11-consistent-pixel-panels.png",
+      "relativePath": "../resources/design/campus-life-review-v1/11-consistent-pixel-panels.png",
       "projectMatches": [
-        "design/campus-life-review-v1/11-consistent-pixel-panels.png"
+        "resources/design/campus-life-review-v1/11-consistent-pixel-panels.png"
       ],
       "title": "11 consistent pixel panels",
       "sha256": "30f3c84d221ad12afc00272efc095cd547dc3dda3ec24d330ff1c6cfbebd1bbc",

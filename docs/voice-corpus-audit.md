@@ -18,13 +18,13 @@ Line numbers refer to the inspected source and can shift with later edits.
 
 | File / function | Current behavior | Migration implication |
 | --- | --- | --- |
-| `public/campus/app.js:760`, `specialDialogue()` | Builds introduction, subject teacher, office, vice principal, mentor and exit dialogue. | Extract static author-owned strings; remove personal and progress interpolation from spoken narrative. |
-| `public/campus/app.js:918`, `dialogueModel()` | For each case, uses two `mission.opening` lines before completion, and one `mission.takeaway` afterward. Other conversations use `specialDialogue()`, then registry identity overrides. | Case speech sources are in `public/campus/content.js`. Keep all opening and completed branches. |
-| `public/campus/app.js:970`, `renderDialogue()`; call at 995 | The only app call to `audio.speak()`: `{key, text, locale, characterId, gender}`. `key` is `${dialogueVisit}:${dialogueId}:${dialogueLine}:${state.lang}`. | Preserve the key for per-visit playback deduplication. It is not a persistent corpus ID. Resolve the character alias before clip lookup. |
-| `public/campus/app.js:1531`, action `voice-test` | Unlocks audio from a user gesture, then calls `audio.tryVoice(state.lang)`. | Use a known recorded test line, assigned to an explicit canonical character. |
-| `public/campus/app.js:1533`, action `voice-replay` | Unlocks audio, then calls `audio.replay()`. | Replay must retain the current dialogue line, including after a test sample. |
-| `public/campus/campus-audio.js:140`, `speak()` | Current Web Speech implementation selects an available device/provider voice and guards cancellation, retries, timeouts, mute, visibility and music ducking. | Replace the speech transport while preserving lifecycle safeguards. Device voice selection cannot guarantee the same 20 voices across computers. |
-| `public/campus/campus-audio.js:189–190`, `replay()` / `tryVoice()` | Test text is “歡迎來到我的人工智能校園生活。” / “欢迎来到我的人工智能校园生活。” / “Welcome to your AI campus life.”; the pseudo-character is `preview`. | `preview` is not a canonical NPC. Assign this test to `staff-mentor`, or select a canonical audition explicitly; do not introduce a twenty-first voice. |
+| `public/campus/game/app.js:760`, `specialDialogue()` | Builds introduction, subject teacher, office, vice principal, mentor and exit dialogue. | Extract static author-owned strings; remove personal and progress interpolation from spoken narrative. |
+| `public/campus/game/app.js:918`, `dialogueModel()` | For each case, uses two `mission.opening` lines before completion, and one `mission.takeaway` afterward. Other conversations use `specialDialogue()`, then registry identity overrides. | Case speech sources are in `public/campus/game/content.js`. Keep all opening and completed branches. |
+| `public/campus/game/app.js:970`, `renderDialogue()`; call at 995 | The only app call to `audio.speak()`: `{key, text, locale, characterId, gender}`. `key` is `${dialogueVisit}:${dialogueId}:${dialogueLine}:${state.lang}`. | Preserve the key for per-visit playback deduplication. It is not a persistent corpus ID. Resolve the character alias before clip lookup. |
+| `public/campus/game/app.js:1531`, action `voice-test` | Unlocks audio from a user gesture, then calls `audio.tryVoice(state.lang)`. | Use a known recorded test line, assigned to an explicit canonical character. |
+| `public/campus/game/app.js:1533`, action `voice-replay` | Unlocks audio, then calls `audio.replay()`. | Replay must retain the current dialogue line, including after a test sample. |
+| `public/campus/game/campus-audio.js:140`, `speak()` | Current Web Speech implementation selects an available device/provider voice and guards cancellation, retries, timeouts, mute, visibility and music ducking. | Replace the speech transport while preserving lifecycle safeguards. Device voice selection cannot guarantee the same 20 voices across computers. |
+| `public/campus/game/campus-audio.js:189–190`, `replay()` / `tryVoice()` | Test text is “歡迎來到我的人工智能校園生活。” / “欢迎来到我的人工智能校园生活。” / “Welcome to your AI campus life.”; the pseudo-character is `preview`. | `preview` is not a canonical NPC. Assign this test to `staff-mentor`, or select a canonical audition explicitly; do not introduce a twenty-first voice. |
 
 The audio object is created with `CampusAudio.create({onState})`. Its public surface is `unlock`, `speak`, `replay`, `tryVoice`, `stopVoice`, `setSettings`, `setMusicPlaying`, `resetSettings`, `dispose`, and a `state` getter. The settings and status UI currently describes device-generated speech and shows `actualLocale`, `requestedLocale`, voice name, fallback/remote/unavailable flags and errors. Those labels need a separate runtime update when recorded audio is ready.
 
@@ -32,7 +32,7 @@ Evidence cards, case options and feedback, repairs, subject questions, the trans
 
 ## Identity and alias rules
 
-`public/campus/characters.js` is the identity authority. Its canonical set is:
+`public/campus/game/characters.js` is the identity authority. Its canonical set is:
 
 | Canonical IDs | Role |
 | --- | --- |

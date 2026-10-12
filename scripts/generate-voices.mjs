@@ -47,7 +47,7 @@ export function estimate(plan) {
 }
 
 function parseArgs(args) {
-  const options = { generate: false, input: resolve(ROOT, 'data/voice-auditions.json'), output: resolve(ROOT, 'design/voice-auditions') };
+  const options = { generate: false, input: resolve(ROOT, 'data/voice-auditions.json'), output: resolve(ROOT, 'resources/design/voice-auditions') };
   for (let index = 0; index < args.length; index++) {
     const name = args[index];
     if (name === '--generate') options.generate = true;

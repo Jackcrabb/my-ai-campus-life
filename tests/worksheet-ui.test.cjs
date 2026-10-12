@@ -3,7 +3,7 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const vm = require('node:vm');
 const { File } = require('node:buffer');
-const source = fs.readFileSync('public/campus/worksheet-ui.js','utf8');
+const source = fs.readFileSync('public/campus/game/worksheet-ui.js','utf8');
 const worksheet = (id, subjectId='maths', grade=2, locales=['zh','en']) => ({id,subjectId,grade,title:'Test <worksheet>',files:locales.map(locale=>({locale,url:`/api/campus/worksheets/${id}/${locale}`}))});
 const pdf = (name='sample.pdf', size=20, type='application/pdf') => new File(['%PDF-',new Uint8Array(Math.max(0,size-5))],name,{type});
 class FormDataFixture {

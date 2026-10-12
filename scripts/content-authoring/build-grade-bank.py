@@ -79,7 +79,7 @@ def build():
     browser = ('/* Original curriculum-referenced starter questions. Teacher review and local sequencing required. */\n'
                'window.GRADE_CONTENT_VERSION = ' + json.dumps(VERSION) + ';\n'
                'window.GRADE_CONTENT = ' + json.dumps(items, ensure_ascii=False, separators=(',', ':')) + ';\n')
-    (ROOT / 'public/campus/grade-content.js').write_text(browser)
+    (ROOT / 'public/campus/game/grade-content.js').write_text(browser)
     print(f'Built {len(items)} independent questions; complete zh/cn/en; version {VERSION}')
     print(f'SHA-256: {digest}')
 

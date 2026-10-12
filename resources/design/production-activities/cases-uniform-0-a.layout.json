@@ -1,0 +1,132 @@
+{
+  "id": "cases-uniform-0-a",
+  "src": "images/activities/cases-uniform-0-a.png",
+  "width": 1254,
+  "height": 1254,
+  "cols": 4,
+  "rows": 2,
+  "facing": "right",
+  "frames": [
+    {
+      "x": 67,
+      "y": 20,
+      "w": 228,
+      "h": 569,
+      "anchorX": 173,
+      "baseline": 584
+    },
+    {
+      "x": 380,
+      "y": 21,
+      "w": 201,
+      "h": 568,
+      "anchorX": 484,
+      "baseline": 584
+    },
+    {
+      "x": 687,
+      "y": 21,
+      "w": 216,
+      "h": 568,
+      "anchorX": 790,
+      "baseline": 584
+    },
+    {
+      "x": 1000,
+      "y": 21,
+      "w": 196,
+      "h": 568,
+      "anchorX": 1106,
+      "baseline": 584
+    },
+    {
+      "x": 52,
+      "y": 604,
+      "w": 247,
+      "h": 615,
+      "anchorX": 172,
+      "baseline": 1214
+    },
+    {
+      "x": 363,
+      "y": 605,
+      "w": 246,
+      "h": 614,
+      "anchorX": 485,
+      "baseline": 1214
+    },
+    {
+      "x": 667,
+      "y": 605,
+      "w": 248,
+      "h": 615,
+      "anchorX": 793,
+      "baseline": 1215
+    },
+    {
+      "x": 990,
+      "y": 604,
+      "w": 227,
+      "h": 615,
+      "anchorX": 1113,
+      "baseline": 1214
+    }
+  ],
+  "identities": [
+    {
+      "id": "voice",
+      "standingHeight": 564,
+      "activities": {
+        "read": {
+          "enter": [
+            0
+          ],
+          "loop": [
+            1,
+            2
+          ],
+          "exit": [
+            3
+          ],
+          "fps": 0.65
+        }
+      }
+    },
+    {
+      "id": "privacy",
+      "standingHeight": 611,
+      "activities": {
+        "check": {
+          "enter": [
+            4
+          ],
+          "loop": [
+            5,
+            6
+          ],
+          "exit": [
+            7
+          ],
+          "fps": 0.65
+        }
+      }
+    }
+  ],
+  "alphaThresholdForBounds": 32,
+  "alpha": {
+    "transparentPixels": 906705,
+    "opaquePixels": 2435,
+    "nearOpaquePixels": 516454,
+    "minimum": 0,
+    "maximum": 255,
+    "cornerAlpha": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "notes": "Original PNG unchanged. Connected alpha components measured; two-pixel crop padding. Head center anchors and feet-minus-three baseline. One median standing height per identity; never resize per frame. Four drawn activity poses: enter, main A, main B, exit. Inspect images before registration.",
+  "uniform": 0,
+  "releaseStatus": "released"
+}

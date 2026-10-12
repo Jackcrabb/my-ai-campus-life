@@ -4,7 +4,7 @@ const fs = require('node:fs');
 const vm = require('node:vm');
 const crypto = require('node:crypto').webcrypto;
 
-const source = fs.readFileSync(__dirname + '/../public/campus/campus-cloud.js', 'utf8');
+const source = fs.readFileSync(__dirname + '/../public/campus/game/campus-cloud.js', 'utf8');
 const calls = [], events = [], responses = [];
 const browser = {
   crypto,

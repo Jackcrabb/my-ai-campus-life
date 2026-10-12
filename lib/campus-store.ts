@@ -5,6 +5,7 @@ import { CampusError, type CampusContext, type CampusQuestion, type Tri } from "
 import { STUDENT_COOKIE, cookie, hash, iso, now, textField, token } from "./campus-security";
 export const BANK = [...gradeBank as CampusQuestion[], ...CAMPUS_CASES];
 export const SUBJECT_IDS = ["playground", "hall", "chinese", "english", "maths", "chemistry", "geography", "computer", "history", "art", "music", "library", "rooftop"];
+const MAX_SUBJECT_QUESTION_STARS = 10;
 export type ClassRow = {
     id: string;
     owner_id: string;
@@ -163,6 +164,7 @@ export function calculateResults(questions: QuestionRow[], attempts: Awaited<Ret
         completedCount: number;
         totalQuestions: number;
         stars: number;
+        maxStars: number;
     }>();
     const questionProgress: Record<string, {
         sourceId: string | null;
@@ -174,18 +176,19 @@ export function calculateResults(questions: QuestionRow[], attempts: Awaited<Ret
     }> = {};
     for (const row of questions) {
         const q = JSON.parse(row.content), answers = attempts.filter(a => a.questionId === row.id && a.revision === row.revision).sort((a, b) => a.attemptNumber - b.attemptNumber), first = answers.find(a => a.attemptNumber === 1), completed = answers.some(a => a.correct === 1);
-        const group = groups.get(q.subjectId) ?? { subjectId: q.subjectId, score: 0, maxScore: 0, attemptedCount: 0, completedCount: 0, totalQuestions: 0, stars: 0 };
+        const group = groups.get(q.subjectId) ?? { subjectId: q.subjectId, score: 0, maxScore: 0, attemptedCount: 0, completedCount: 0, totalQuestions: 0, stars: 0, maxStars: 0 };
         group.score += first?.score ?? 0;
         group.maxScore += q.maxScore;
         group.totalQuestions++;
         group.attemptedCount += first ? 1 : 0;
         group.completedCount += completed ? 1 : 0;
         group.stars += completed ? q.stars : 0;
+        group.maxStars += q.stars;
         groups.set(q.subjectId, group);
         questionProgress[row.id] = { sourceId: row.source_id, completed, attempts: answers.length, score: first?.score ?? 0, stars: completed ? q.stars : 0, lastOptionId: answers.at(-1)?.optionId ?? null };
     }
     const results = [...groups.values()].map(g => ({ ...g, percent: g.attemptedCount === g.totalQuestions ? Math.round(100 * g.score / g.maxScore) : null, status: g.attemptedCount === 0 ? "not_started" : g.attemptedCount === g.totalQuestions ? "completed" : "in_progress" }));
-    return { results, questionProgress, stars: results.reduce((n, r) => n + r.stars, 0), maxStars: questions.reduce((n, r) => n + JSON.parse(r.content).stars, 0), score: results.reduce((n, r) => n + r.score, 0), maxScore: results.reduce((n, r) => n + r.maxScore, 0) };
+    return { results, questionProgress, stars: results.reduce((n, r) => n + r.stars, 0), maxStars: results.reduce((n, r) => n + r.maxStars, 0), score: results.reduce((n, r) => n + r.score, 0), maxScore: results.reduce((n, r) => n + r.maxScore, 0) };
 }
 export async function progressFor(ctx: CampusContext, student: StudentRow) {
     const saved = await ctx.db.prepare("SELECT data,version,updated_at AS updatedAt FROM campus_student_progress WHERE student_id=?").bind(student.id).first<{
@@ -204,8 +207,8 @@ function tri(value: unknown, label: string): Tri {
 }
 export function validateQuestion(raw: Record<string, unknown>, id: string): CampusQuestion {
     const grade = Number(raw.grade), stars = Number(raw.stars), maxScore = Number(raw.maxScore);
-    if (!Number.isInteger(grade) || grade < 1 || grade > 6 || !Number.isInteger(stars) || stars < 1 || stars > 3 || !Number.isInteger(maxScore) || maxScore < 1 || maxScore > 10)
-        throw new CampusError(400, "QUESTION_RANGE", "Invalid grade, stars or marks.");
+    if (!Number.isInteger(grade) || grade < 1 || grade > 6 || !Number.isInteger(stars) || stars < 1 || stars > MAX_SUBJECT_QUESTION_STARS || !Number.isInteger(maxScore) || maxScore < 1 || maxScore > 10)
+        throw new CampusError(400, "QUESTION_RANGE", "Use grade 1–6, stars 1–10 and marks 1–10, all whole numbers.");
     const subjectId = textField(raw.subjectId, "subjectId", 40), roomId = textField(raw.roomId, "roomId", 40);
     if (!SUBJECT_IDS.includes(subjectId) || !SUBJECT_IDS.includes(roomId))
         throw new CampusError(400, "QUESTION_SUBJECT", "Unknown subject or room.");

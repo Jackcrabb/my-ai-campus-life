@@ -22,7 +22,7 @@ Used the existing small DOM/engine adapters for deterministic reproductions. The
 
 **Trigger:** stand at a doorway while an NPC is also in range and press E. Previously E, Space and Enter all called the same nearest-target routine. A deterministic reproduction moved from the corridor into the playground rather than talking to the nearby person, contradicting the displayed controls.
 
-**Change:** `public/campus/engine.js` passes an explicit target type: E selects nearby NPCs; Space/Enter select nearby doors. Pointer clicks continue to retain the exact clicked NPC or door. The legacy generic `interact()` entry point retains its existing nearest-target behaviour.
+**Change:** `public/campus/game/engine.js` passes an explicit target type: E selects nearby NPCs; Space/Enter select nearby doors. Pointer clicks continue to retain the exact clicked NPC or door. The legacy generic `interact()` entry point retains its existing nearest-target behaviour.
 
 **Evidence:** `tests/campus-engine.test.cjs` checks all three keys with a person exactly at a door, and the generic-button path. Its existing body-hit, floor-tap, pending-intent cancellation, movement, pause and lifecycle checks also pass.
 
@@ -32,7 +32,7 @@ Used the existing small DOM/engine adapters for deterministic reproductions. The
 
 **Evidence:** an isolated reproduction using the actual `campus-cloud.js` held an old save response, accepted a correct attempt with 2 stars, then released the save response. For the same student, assignment and metadata version, `lastProgress.stars` changed **2 → 0**. The app subsequently assigns that result to `cloudSnapshot`. The durable server attempt remains intact, but the client can display stale stars until a subsequent refresh.
 
-**Change:** `public/campus/campus-cloud.js` now serializes metadata and answer/case/transfer mutations through one queue. Existing conflict handling and answer idempotency keys remain intact. Each queued mutation captures its authentication generation before waiting; logout invalidates both in-flight and queued work, including when the same student subsequently signs in again.
+**Change:** `public/campus/game/campus-cloud.js` now serializes metadata and answer/case/transfer mutations through one queue. Existing conflict handling and answer idempotency keys remain intact. Each queued mutation captures its authentication generation before waiting; logout invalidates both in-flight and queued work, including when the same student subsequently signs in again.
 
 **Verification:** `tests/backend-client.test.cjs` defers a metadata response and verifies that the answer waits, then remains the final authoritative score snapshot. It also verifies that a failed save does not poison the queue and that old queued mutations make no network writes after logout/resume. `tests/campus-integration.test.cjs` passes with the actual adapter and application, including unknown-outcome retries, activity changes, conflict reload and custom four/five-option questions.
 

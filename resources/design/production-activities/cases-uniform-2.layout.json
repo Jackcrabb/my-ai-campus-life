@@ -1,0 +1,234 @@
+{
+  "id": "cases-uniform-2",
+  "src": "images/activities/cases-uniform-2.png",
+  "width": 1086,
+  "height": 1448,
+  "cols": 4,
+  "rows": 4,
+  "facing": "right",
+  "frames": [
+    {
+      "x": 99,
+      "y": 22,
+      "w": 131,
+      "h": 322,
+      "anchorX": 164,
+      "baseline": 339
+    },
+    {
+      "x": 365,
+      "y": 28,
+      "w": 121,
+      "h": 316,
+      "anchorX": 425,
+      "baseline": 339
+    },
+    {
+      "x": 629,
+      "y": 27,
+      "w": 133,
+      "h": 318,
+      "anchorX": 687,
+      "baseline": 340
+    },
+    {
+      "x": 905,
+      "y": 29,
+      "w": 117,
+      "h": 316,
+      "anchorX": 964,
+      "baseline": 340
+    },
+    {
+      "x": 92,
+      "y": 358,
+      "w": 157,
+      "h": 369,
+      "anchorX": 166,
+      "baseline": 722
+    },
+    {
+      "x": 354,
+      "y": 360,
+      "w": 152,
+      "h": 367,
+      "anchorX": 432,
+      "baseline": 722
+    },
+    {
+      "x": 615,
+      "y": 360,
+      "w": 159,
+      "h": 368,
+      "anchorX": 695,
+      "baseline": 723
+    },
+    {
+      "x": 895,
+      "y": 360,
+      "w": 144,
+      "h": 367,
+      "anchorX": 970,
+      "baseline": 722
+    },
+    {
+      "x": 94,
+      "y": 737,
+      "w": 162,
+      "h": 344,
+      "anchorX": 156,
+      "baseline": 1076
+    },
+    {
+      "x": 367,
+      "y": 740,
+      "w": 164,
+      "h": 341,
+      "anchorX": 432,
+      "baseline": 1076
+    },
+    {
+      "x": 628,
+      "y": 741,
+      "w": 167,
+      "h": 340,
+      "anchorX": 692,
+      "baseline": 1076
+    },
+    {
+      "x": 904,
+      "y": 741,
+      "w": 130,
+      "h": 340,
+      "anchorX": 967,
+      "baseline": 1076
+    },
+    {
+      "x": 94,
+      "y": 1088,
+      "w": 150,
+      "h": 341,
+      "anchorX": 160,
+      "baseline": 1424
+    },
+    {
+      "x": 368,
+      "y": 1088,
+      "w": 153,
+      "h": 342,
+      "anchorX": 436,
+      "baseline": 1425
+    },
+    {
+      "x": 630,
+      "y": 1088,
+      "w": 149,
+      "h": 342,
+      "anchorX": 697,
+      "baseline": 1425
+    },
+    {
+      "x": 901,
+      "y": 1089,
+      "w": 140,
+      "h": 341,
+      "anchorX": 968,
+      "baseline": 1425
+    }
+  ],
+  "identities": [
+    {
+      "id": "voice",
+      "standingHeight": 313,
+      "activities": {
+        "read": {
+          "enter": [
+            0
+          ],
+          "loop": [
+            1,
+            2
+          ],
+          "exit": [
+            3
+          ],
+          "fps": 0.65
+        }
+      }
+    },
+    {
+      "id": "privacy",
+      "standingHeight": 364,
+      "activities": {
+        "check": {
+          "enter": [
+            4
+          ],
+          "loop": [
+            5,
+            6
+          ],
+          "exit": [
+            7
+          ],
+          "fps": 0.65
+        }
+      }
+    },
+    {
+      "id": "culture",
+      "standingHeight": 336,
+      "activities": {
+        "read": {
+          "enter": [
+            8
+          ],
+          "loop": [
+            9,
+            10
+          ],
+          "exit": [
+            11
+          ],
+          "fps": 0.65
+        }
+      }
+    },
+    {
+      "id": "access",
+      "standingHeight": 338,
+      "activities": {
+        "check": {
+          "enter": [
+            12
+          ],
+          "loop": [
+            13,
+            14
+          ],
+          "exit": [
+            15
+          ],
+          "fps": 0.65
+        }
+      }
+    }
+  ],
+  "alphaThresholdForBounds": 32,
+  "alpha": {
+    "transparentPixels": 1010279,
+    "opaquePixels": 1255,
+    "nearOpaquePixels": 383728,
+    "minimum": 0,
+    "maximum": 255,
+    "cornerAlpha": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "notes": "Original PNG unchanged. Connected alpha components measured; two-pixel crop padding. Head center anchors and feet-minus-three baseline. One median standing height per identity; never resize per frame. Four drawn activity poses: enter, main A, main B, exit. Inspect images before registration.",
+  "uniform": 2,
+  "releaseStatus": "pending-visual-review"
+}

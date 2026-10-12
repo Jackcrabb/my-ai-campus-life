@@ -116,7 +116,7 @@ node scripts/generate-voices.mjs --dry-run
 - 不自動重試合成請求。網絡失敗可能仍已在供應商端完成並計費，所以不要盲目重新執行。
 - 成功音檔及其文字、聲線雜湊會儲存；再次執行時，完整且相符的音檔會跳過。
 - 憑證只在本機程序記憶體內使用，不放進網頁、GitHub 或音檔 manifest。
-- 輸出放在 `design/voice-auditions/`，不會直接替換公開遊戲配音。
+- 輸出放在 `resources/design/voice-auditions/`，不會直接替換公開遊戲配音。
 
 若日後重新採用此方案，需通過試聽並完成另行接入後，遊戲才可播放託管的固定音檔。**學生每次播放不會呼叫 Google TTS**；玩家亦沒有付費生成入口。所有配音完成後，可在 Google Console 的 **APIs & Services → Enabled APIs & services → Cloud Text-to-Speech API → Disable** 停用 API，已下載及託管的音檔仍可播放。停用不會取消已產生的費用，也不影響帳戶內其他服務的費用。[Google 官方停用步驟](https://docs.cloud.google.com/text-to-speech/docs/get-started#disable_the_cloud_text-to-speech_api)
 

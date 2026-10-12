@@ -4,12 +4,12 @@ This index records the original artwork, production metadata and audio sources u
 
 ## Approved references and production records
 
-The user first selected **Version 1: Crafted Pixel RPG**, recorded in the [art-direction decision record](design/art-options/ART-DIRECTION-REVIEW.md). The subsequent campus-life review approved ordinary new-student onboarding, the teacher workflow, natural character proportions and the later pixel dialogue/audio interface. These are design references, not runnable interfaces or functional test results:
+The user first selected **Version 1: Crafted Pixel RPG**, recorded in the [art-direction decision record](resources/design/art-options/ART-DIRECTION-REVIEW.md). The subsequent campus-life review approved ordinary new-student onboarding, the teacher workflow, natural character proportions and the later pixel dialogue/audio interface. These are design references, not runnable interfaces or functional test results:
 
-- [Campus-life review](design/campus-life-review-v1/REVIEW.md), [student onboarding](design/campus-life-review-v1/02-student-onboarding.md) and [teacher-workspace proposal](design/campus-life-review-v1/03-teacher-workspace.md).
-- [Sixteen-character staff roster](design/campus-life-review-v1/04-npc-roster.md).
-- [Approved natural walking proportions, revision 3](design/campus-life-review-v1/05-walk-proportion-v3.md).
-- [Pixel dialogue and audio controls](design/campus-life-review-v1/06-pixel-dialogue-audio-proposal.md).
+- [Campus-life review](resources/design/campus-life-review-v1/REVIEW.md), [student onboarding](resources/design/campus-life-review-v1/02-student-onboarding.md) and [teacher-workspace proposal](resources/design/campus-life-review-v1/03-teacher-workspace.md).
+- [Sixteen-character staff roster](resources/design/campus-life-review-v1/04-npc-roster.md).
+- [Approved natural walking proportions, revision 3](resources/design/campus-life-review-v1/05-walk-proportion-v3.md).
+- [Pixel dialogue and audio controls](resources/design/campus-life-review-v1/06-pixel-dialogue-audio-proposal.md).
 
 Production art was generated with the built-in imagegen tool. Original generated PNGs and exact prompts/source paths are retained in the linked records. User-provided game screenshots informed composition and interaction; they are not embedded as runtime assets. No third-party game sprites or official school photographs were downloaded for the game. Pixel art and CSS controls are separate: interface text and controls are rendered by the game rather than baked into the scene.
 
@@ -17,31 +17,31 @@ Production art was generated with the built-in imagegen tool. Original generated
 
 Eight source atlases each contain two hairstyles and five poses per hairstyle: idle plus four alternating walking phases. Skin-region masks support three selectable skin tones. Two character categories × four outfits × two hairstyles × three skin tones produce **48 appearance combinations**, not 48 independently generated atlases. Clothes, hair and skin do not affect learning access or scoring.
 
-| Runtime file under `public/campus/assets/life/` | Exact generation and measured-frame record |
+| Runtime file under `public/campus/images/life/` | Exact generation and measured-frame record |
 |---|---|
-| `student-boy-white.png` | [White-shirt boy](design/production-life/student-boy-white.md) |
-| `student-boy-grey.png` | [Grey-trouser boy](design/production-life/student-boy-grey.md) |
-| `student-boy-striped.png` | [Striped-shirt boy](design/production-life/student-boy-striped.md) |
-| `student-boy-blazer.png` | [Blazer boy](design/production-life/student-boy-blazer.md) |
-| `student-girl-white.png` | [White-dress girl](design/production-life/student-girl-white.md) |
-| `student-girl-striped.png` | [Striped-dress girl](design/production-life/student-girl-striped.md) |
-| `student-girl-grey.png` | [Grey-dress girl](design/production-life/student-girl-grey.md) |
-| `student-girl-gingham.png` | [Gingham-dress girl](design/production-life/student-girl-gingham.md) |
+| `student-boy-white.png` | [White-shirt boy](resources/design/production-life/student-boy-white.md) |
+| `student-boy-grey.png` | [Grey-trouser boy](resources/design/production-life/student-boy-grey.md) |
+| `student-boy-striped.png` | [Striped-shirt boy](resources/design/production-life/student-boy-striped.md) |
+| `student-boy-blazer.png` | [Blazer boy](resources/design/production-life/student-boy-blazer.md) |
+| `student-girl-white.png` | [White-dress girl](resources/design/production-life/student-girl-white.md) |
+| `student-girl-striped.png` | [Striped-dress girl](resources/design/production-life/student-girl-striped.md) |
+| `student-girl-grey.png` | [Grey-dress girl](resources/design/production-life/student-girl-grey.md) |
+| `student-girl-gingham.png` | [Gingham-dress girl](resources/design/production-life/student-girl-gingham.md) |
 
-The current wardrobe uses fictional style names. Earlier school-specific sheets are historical iterations, documented in the [boy wardrobe record](design/production-boy-wardrobe.md), [girl wardrobe record](design/production-girl-wardrobe.md), and [teaching guide, section 13](DESIGN-AND-TEACHING-GUIDE.md#13-人物與服裝來源--character-and-wardrobe-provenance). Those records do not imply that the current eight outfits are official uniforms. The former Pooi To cheongsam is not a current selectable outfit. No crests or school badges are used.
+The current wardrobe uses fictional style names. Earlier school-specific sheets are historical iterations, documented in the [boy wardrobe record](resources/design/production-boy-wardrobe.md), [girl wardrobe record](resources/design/production-girl-wardrobe.md), and [teaching guide, section 13](DESIGN-AND-TEACHING-GUIDE.md#13-人物與服裝來源--character-and-wardrobe-provenance). Those records do not imply that the current eight outfits are official uniforms. The former Pooi To cheongsam is not a current selectable outfit. No crests or school badges are used.
 
 ## Staff, classmates and animation
 
-The shared [character registry](public/campus/characters.js) identifies each character, dialogue portrait and runtime atlas. The engine uses measured bounds, consistent standing height and foot anchors, not independent frame-height scaling. Walk cycles distinguish alternating contacts and passing poses; explicit movement and conversation states decide when they appear.
+The shared [character registry](public/campus/game/characters.js) identifies each character, dialogue portrait and runtime atlas. The engine uses measured bounds, consistent standing height and foot anchors, not independent frame-height scaling. Walk cycles distinguish alternating contacts and passing poses; explicit movement and conversation states decide when they appear.
 
 | Production family | Identities | Original and anatomy-revision records |
 |---|---|---|
-| `staff-academic-a` | Chinese, English, mathematics, science/chemistry | [Original](design/production-life/staff-academic-a.md), [anatomy revision](design/production-life/staff-academic-a-v2.md) |
-| `staff-academic-b` | Geography, computing, history, visual art | [Original](design/production-life/staff-academic-b.md), [anatomy revision](design/production-life/staff-academic-b-v2.md) |
-| `staff-community` | Music, library, rooftop ecology, PE | [Original](design/production-life/staff-community.md), [anatomy revision](design/production-life/staff-community-v2.md) |
-| `staff-leadership` | Principal, vice-principal, office clerk, mentor | [Original](design/production-life/staff-leadership.md), [anatomy revision](design/production-life/staff-leadership-v2.md) |
-| `cases-students` | Four students in the voice, privacy, culture and access scenarios | [Original](design/production-life/cases-students.md), [anatomy revision](design/production-life/cases-students-v2.md) |
-| `staff-roster.png` | Dialogue portrait reference for the 16 staff identities | [Approved original roster](design/campus-life-review-v1/04-npc-roster.md) |
+| `staff-academic-a` | Chinese, English, mathematics, science/chemistry | [Original](resources/design/production-life/staff-academic-a.md), [anatomy revision](resources/design/production-life/staff-academic-a-v2.md) |
+| `staff-academic-b` | Geography, computing, history, visual art | [Original](resources/design/production-life/staff-academic-b.md), [anatomy revision](resources/design/production-life/staff-academic-b-v2.md) |
+| `staff-community` | Music, library, rooftop ecology, PE | [Original](resources/design/production-life/staff-community.md), [anatomy revision](resources/design/production-life/staff-community-v2.md) |
+| `staff-leadership` | Principal, vice-principal, office clerk, mentor | [Original](resources/design/production-life/staff-leadership.md), [anatomy revision](resources/design/production-life/staff-leadership-v2.md) |
+| `cases-students` | Four students in the voice, privacy, culture and access scenarios | [Original](resources/design/production-life/cases-students.md), [anatomy revision](resources/design/production-life/cases-students-v2.md) |
+| `staff-roster.png` | Dialogue portrait reference for the 16 staff identities | [Approved original roster](resources/design/campus-life-review-v1/04-npc-roster.md) |
 
 Staff sheets contain four identities × six poses: neutral, four walk phases, and one conversation gesture. Each production record links a sibling `.layout.json` with source dimensions, frame bounds, anchors and standing heights. `-v2` files are separately generated anatomy revisions; originals remain for traceability. **The registry determines which revision is loaded; the presence of a PNG alone does not establish integration or visual approval.** Approximate head-to-body checks in the revision records are inspection estimates, not automatic guarantees of natural animation.
 
@@ -51,20 +51,22 @@ The four students and 16 staff are fictional. A varied cast supports representat
 
 | Resource | Provenance |
 |---|---|
-| Nine `public/campus/assets/backgrounds/campus-pair-*.png` sheets covering 18 locations | [Campus background production](design/production-backgrounds.md), with exact prompts and scene mappings; runtime locations use [campus-art.js](public/campus/campus-art.js) |
-| `public/campus/assets/backgrounds/campus-gate.png` | [Campus gate record](public/campus/assets/backgrounds/README-campus-gate.md) |
-| `public/campus/assets/backgrounds/detective-preparation.png` | [Original preparation-room record](public/campus/assets/backgrounds/README-detective-preparation.md); filename preserves its prototype origin, not the player's current role |
-| `public/campus/title-campus.png` | Original prologue illustration; exact archived prompt below |
-| Earlier student and staff portrait sheets under `public/campus/assets/portraits/` | [Dialogue portrait production](design/production-portraits.md); these remain historical/fallback resources where referenced |
-| Earlier community sprite sheet and metadata | [Original community artwork record](public/campus/assets/characters/README.md) |
+| Nine `public/campus/images/backgrounds/campus-pair-*.png` sheets covering 18 locations | [Campus background production](resources/design/production-backgrounds.md), with exact prompts and scene mappings; runtime locations use [campus-art.js](public/campus/game/campus-art.js) |
+| `public/campus/images/backgrounds/campus-gate.png` | [Campus gate record](public/campus/images/backgrounds/README-campus-gate.md) |
+| `public/campus/images/backgrounds/detective-preparation.png` | [Original preparation-room record](public/campus/images/backgrounds/README-detective-preparation.md); filename preserves its prototype origin, not the player's current role |
+| `public/campus/images/title-campus.png` | Original prologue illustration; exact archived prompt below |
+| Earlier student and staff portrait sheets under `public/campus/images/portraits/` | [Dialogue portrait production](resources/design/production-portraits.md); these remain historical/fallback resources where referenced |
+| Earlier community sprite sheet and metadata | [Original community artwork record](public/campus/images/characters/README.md) |
 
 Only source files actually selected by the runtime should be described as active art. Older review and production files are kept for traceability and should not be confused with the current title or feature set.
 
 ## Audio sources and runtime limits
 
-**Fixed Mandarin/English dialogue — 11 October 2026:** [campus-audio.js](public/campus/campus-audio.js) loads 104 generated MP3s under `public/campus/assets/voices/`, matched to the exact character, locale and text in [fixed-voices.js](public/campus/fixed-voices.js). The runtime-derived [corpus](data/fixed-dialogue-corpus.json) contains 52 Mandarin and 52 English lines for 20 fictional characters. It excludes academic questions, options, explanations, teacher-authored question content and personal student details. No cloned voice, actor reference or third-party performance recording was supplied.
+**Fixed Mandarin/English dialogue — 11 October 2026:** [campus-audio.js](public/campus/game/campus-audio.js) loads 104 generated MP3s under `public/campus/audio/voices/`, matched to the exact character, locale and text in [fixed-voices.js](public/campus/game/fixed-voices.js). The runtime-derived [corpus](data/fixed-dialogue-corpus.json) contains 52 Mandarin and 52 English lines for 20 fictional characters. It excludes academic questions, options, explanations, teacher-authored question content and personal student details. No cloned voice, actor reference or third-party performance recording was supplied.
 
-The files were authored with `edge-tts==7.2.8` through the free Microsoft Edge online speech service: `zh-CN-YunxiNeural` (male, 23 clips), `zh-CN-XiaoxiaoNeural` (female, 29), `en-US-GuyNeural` (male, 23) and `en-US-JennyNeural` (female, 29), at rate −8% and pitch +0 Hz. The [generation cache](data/fixed-voice-generation-cache.json) preserves per-file source fingerprints, voice metadata, generation timestamps, duration and SHA-256. Total output is 6,936,480 bytes and 1,156.08 seconds. Provider locale/gender metadata, full decoding and integrity were verified; `audiblyReviewed: false` explicitly records that complete human listening review is not claimed. Free endpoint availability is not a permanent-service or output-licensing guarantee. See the [authoring and review record](docs/OPENROUTER-TTS-SERVICE.md) for exact boundaries. Gameplay loads bundled files without API keys or provider generation.
+The two mentor instructions were revised on **12 October 2026** to refer to each question’s displayed reward and the current star target, so teacher-created activities are not described using fixed starter totals. Only the matching fixed clips were regenerated; teacher questions remain silent.
+
+The files were authored with `edge-tts==7.2.8` through the free Microsoft Edge online speech service: `zh-CN-YunxiNeural` (male, 23 clips), `zh-CN-XiaoxiaoNeural` (female, 29), `en-US-GuyNeural` (male, 23) and `en-US-JennyNeural` (female, 29), at rate −8% and pitch +0 Hz. The [generation cache](data/fixed-voice-generation-cache.json) preserves per-file source fingerprints, voice metadata, generation timestamps, duration and SHA-256. Total output is 6,905,376 bytes and 1,150.90 seconds. Provider locale/gender metadata, full decoding and integrity were verified; `audiblyReviewed: false` explicitly records that complete human listening review is not claimed. Free endpoint availability is not a permanent-service or output-licensing guarantee. See the [authoring and review record](docs/OPENROUTER-TTS-SERVICE.md) for exact boundaries. Gameplay loads bundled files without API keys or provider generation.
 
 **Cantonese and device fallback:** Traditional Chinese retains the existing strict browser/OS Cantonese (`zh-HK` or `yue`) route. A changed or missing fixed recording may use a matching device voice. Cantonese and Mandarin never substitute for one another, and known character gender must match. An empty voice inventory waits up to three seconds; if no suitable voice is available, text remains visible. The browser API has no standard gender field, so the runtime uses known voice metadata/hints and does not promise twenty distinct voices. The user's rejected OpenRouter Cantonese trial is not included as Cantonese game speech. All academic questions/options/explanations remain text-only.
 

@@ -6,7 +6,7 @@
 
 ## Play in your browser
 
-> **Publication status — 11 October 2026:** The latest mobile-map layout and bundled Mandarin/English dialogue fixes are available in this repository and the local build. The public site still serves the earlier version: the hosting source service returned HTTP 403 during upload. The QR code will open that earlier public version until deployment succeeds.
+> **Published — 12 October 2026:** Public version 4 includes the mobile-map and fixed-dialogue repairs, teacher-created questions with 1–10 stars, star columns in Excel/printed results, and the organized resource folders. The game opens without login. Anonymous checks verified the entry, 32 deployed resources and protected teacher routes; see the [release audit](docs/DISTRIBUTION-AUDIT.md#12-october-2026-release-verification).
 
 **[Open the public game](https://lumen-lab-ai-ethics.tart-vale-4903.chatgpt.site)** — no download or GitHub account is needed for free exploration. Works through a web browser on Windows, Mac, tablets and phones; an internet connection is required for classroom services.
 
@@ -20,25 +20,25 @@
 
 For everyday use, share this game link. The [private GitHub repository](https://github.com/Jackcrabb/my-ai-campus-life) and its source ZIP are for authorized collaborators; see the separate download and development sections below.
 
-![Implemented pixel dialogue in My AI Campus Life](design/qa-life/dialogue-desktop.jpg)
+![Implemented pixel dialogue in My AI Campus Life](resources/design/qa-life/dialogue-desktop.jpg)
 
-*Actual browser capture of the implemented interface. [More verification screenshots](design/design-qa.md).*
+*Actual browser capture of the implemented interface. [More verification screenshots](resources/design/design-qa.md).*
 
 Join the fictional **Ming Ching College** as an ordinary new student. Choose your year, class and appearance, explore five floors, meet classmates and staff, and practise making thoughtful decisions about AI. The learning loop is simple: **listen → examine evidence → decide → repair → reflect**.
 
-This README describes the current repository version. The public entry and selected deployed files were checked on 10 October 2026 (Hong Kong time); the exact scope is recorded in the [distribution audit](docs/DISTRIBUTION-AUDIT.md).
+This README describes the current repository version. The public entry and 32 deployed resources were checked on 12 October 2026 (Hong Kong time); the exact scope is recorded in the [distribution audit](docs/DISTRIBUTION-AUDIT.md).
 
-**Source checkpoint — 11 October 2026:** desktop character setup has verified background/full-figure repairs. Purposeful NPC routines are implemented; seven released activity sheets cover 24 identity/outfit variants with 96 drawings. The remaining eight peer variants in uniforms 1–2 and faceless ambient art are not complete. The source now bundles 104 fixed-dialogue MP3s: 52 Mandarin and 52 English lines for 20 canonical characters. Traditional Chinese retains existing Cantonese read-aloud; academic questions are text-only and the teacher Speech Studio has been removed. MP3 integrity and provider voice metadata are verified; full listening review and public deployment are separate checks. See the [UX audit](docs/UX-AUDIT.md), [routine status](docs/NPC-BEHAVIOR-PLAN.md) and [speech service](docs/OPENROUTER-TTS-SERVICE.md).
+**Artwork and speech checkpoint — 12 October 2026:** desktop character setup has verified background/full-figure repairs. Purposeful NPC routines are implemented; seven released activity sheets cover 24 identity/outfit variants with 96 drawings. The remaining eight peer variants in uniforms 1–2 and faceless ambient art are not complete. The source now bundles 104 fixed-dialogue MP3s: 52 Mandarin and 52 English lines for 20 canonical characters. Traditional Chinese retains existing Cantonese read-aloud; academic questions are text-only and the teacher Speech Studio has been removed. MP3 integrity and provider voice metadata are verified, and public version 4 includes this bundle. Full listening review remains a separate check. See the [UX audit](docs/UX-AUDIT.md), [routine status](docs/NPC-BEHAVIOR-PLAN.md) and [speech service](docs/OPENROUTER-TTS-SERVICE.md).
 
 ## What is included
 
 - **Five floors, 18 locations and 13 learning spaces**, covering languages, mathematics, science, humanities, arts, computing, PE and interdisciplinary activities.
-- **234 starter questions**: six grades × 13 spaces × three questions. The default activity contains 39 questions for the selected grade. All 234 authored questions have been revised against Education Bureau/HKEAA references, with trilingual generation, structure/mathematics checks and cross-agent review. This is not a complete curriculum or official examination bank; see the [curriculum alignment](docs/CURRICULUM-ALIGNMENT.md).
+- **234 starter questions**: six grades × 13 spaces × three questions. The default activity contains 39 questions for the selected grade. Teachers can add more than three questions per subject; there is no fixed question-count cap. All 234 authored questions have been revised against Education Bureau/HKEAA references, with trilingual generation, structure/mathematics checks and cross-agent review. This is not a complete curriculum or official examination bank; see the [curriculum alignment](docs/CURRICULUM-ALIGNMENT.md).
 - **Four AI scenarios** about accent assessment, writing privacy, cultural voice in translation, and inclusive participation, followed by transfer and reflection.
 - **Three interface languages**: Traditional Chinese, Simplified Chinese and English. Language-learning examples may retain their target language.
 - **48 appearance combinations** from two character categories, four outfits each, two hairstyles and three skin tones. These are combinations of eight source atlases, not 48 separately generated characters.
 - **20 named NPCs** with independent identities, different natural heights/builds, detailed dialogue portraits and walking tied to actual distance. Student NPC clothing follows the selected uniform index while keeping their own gender, hairstyle and face. Names appear in dialogue only.
-- **Classroom tools** for class codes, cross-device recovery, versioned questions, assignment history, teacher-uploaded PDF worksheets and teacher Excel results. Students open worksheets with **Print in the top-right HUD**, scoped to the current floor; there are no physical printer objects in the campus scenes.
+- **Classroom tools** for class codes, cross-device recovery, versioned questions, assignment history, teacher-uploaded PDF worksheets, per-question star settings, and printed/Excel results with earned and available stars. Students open worksheets with **Print in the top-right HUD**, scoped to the current floor; there are no physical printer objects in the campus scenes.
 - **A shared cream, deep-teal and gold pixel interface**, including door-mounted room signs, map, dialogue, questions and teacher panels.
 - **Optional speech and music**, with independent volumes, replay and mute.
 
@@ -77,7 +77,7 @@ Class records are stored in Cloudflare D1. Student APIs return only the current 
 
 Stars reward the **first correct completion** of an activity; retrying cannot farm extra stars. Class subject scores retain **first responses**, so a later correct retry can earn progress stars without rewriting the original assessment. Incomplete subjects remain unscored rather than being reported as zero.
 
-The default maximum is **103 stars**: 78 subject stars, 20 scenario stars and 5 transfer stars. The default exit threshold is 100. A custom assignment uses the lower of 100 and its available star total.
+Each teacher-authored subject question can award a whole number of **1–10 stars**, independently of its task level. The default maximum is **103 stars**: 78 subject stars, 20 scenario stars and 5 transfer stars. The default exit threshold is 100. A custom assignment uses the lower of 100 and its available star total.
 
 These are formative records, not moral ratings or a secure examination system. The public practice bank includes learning answers. Review students' evidence, explanations and repairs alongside numerical results.
 
@@ -85,12 +85,14 @@ These are formative records, not moral ratings or a secure examination system. T
 
 From the title screen, choose **New Game → Teacher**. After signing in and unlocking, choose one of **13 learning subjects or AI Ethics and Inclusion**. The subject hub opens question management, worksheets or results; **Change subject** returns to the chooser. Grade, class and activity filters are retained while switching tools. The in-game **Settings → Teacher workspace** entry also remains available. Production access requires a trusted **ChatGPT identity**, membership in the server's teacher allowlist, and the configured **teacher PIN**. The requested shared PIN is **1234**, supplied through `TEACHER_PIN`; it is not sufficient without the authorized identity. Incorrect PIN attempts are rate-limited, and an unlock lasts 30 minutes.
 
-Teachers can create individual classes or explicitly create all 24 classes (S1–S6, sections A–D), copy class codes, author and archive subject questions, and start new class activities. Each activity freezes its question revisions, so subsequent edits do not change previous questions, scores or denominators. The **AI Ethics and Inclusion** hub provides read-only access to the four core AI scenarios and transfer task, plus their results. These core entries cannot be edited, and PDF uploads are provided for the 13 learning subjects.
+Teachers can create individual classes or explicitly create all 24 classes (S1–S6, sections A–D), copy class codes, author and archive subject questions, and start new class activities. In **Questions → New question**, add as many questions as the lesson needs; three is only the starter-bank default. Set each question to **1–10 whole-number stars**, save it as **Published**, then use **Classes → New activity** to make the updated bank available to students. Each activity freezes its question revisions and star values, so subsequent edits do not change previous questions, scores or available-star totals. The **AI Ethics and Inclusion** hub provides read-only access to the four core AI scenarios and transfer task, plus their results. These core entries cannot be edited, and PDF uploads are provided for the 13 learning subjects.
 
-The Results tab filters by class, subject and activity. **Download subject Excel** exports the selected subject. **Download all subjects** explicitly exports all 14 result categories in separate sheets. Both use these fixed headers:
+The Results tab filters by class, subject and activity and shows both **earned stars** and **available stars** for that activity. **Print subject results** opens the browser’s native print flow for the selected class, subject and activity; choose a printer or Save as PDF there. **Download subject Excel** exports the selected subject. **Download all subjects** explicitly exports all 14 result categories in separate sheets. Excel uses these six fixed headers, and the printed report shows the same fields in the selected interface language:
 
-| 班別 | 學號 | 學生姓名 | 學科得分 |
-|---|---|---|---|
+| 班別 | 學號 | 學生姓名 | 學科得分 | 獲得星星 | 可得星星 |
+|---|---|---|---|---|---|
+
+A result can show earned stars while its percentage score is still incomplete. Stars record one-time correct completion, including a correct retry; the percentage keeps the first response to each question. The report never recalculates an old activity with newly edited star values.
 
 Class lists and results exports are available only through authorized teacher access. In the **Worksheets** tab, the selected subject is carried through from the hub; teachers choose a grade and upload a Traditional Chinese PDF, an English PDF, or both, up to **5 MiB per file**. Students see only authorized worksheets for their class grade and the current floor’s subjects. A chosen version opens a preview; **Print PDF** then requests the viewer/browser print flow. **Open PDF** and **Download PDF** are retained as fallbacks. Opening Print or loading a preview does not print automatically. See the [worksheet guide](docs/WORKSHEETS.md) and [user guide](USER-GUIDE.md).
 
@@ -110,7 +112,7 @@ The current source includes **104 exact fixed-dialogue MP3s — 52 Mandarin and 
 
 Recordings play only when the canonical character, locale and complete text match the manifest. Fixed lines refer to the displayed class/progress information instead of including changing student details or star counts. A changed or missing line can use a suitable strict device voice; an empty voice inventory waits up to three seconds before reporting unavailable. No fallback may use the wrong language or known gender. This removes the missing male Mandarin device-voice dependency for the bundled lines, while Cantonese still depends on installed voices. Text remains visible throughout.
 
-The separate internal OpenRouter audition service remains restricted to `fish-audio/s2.1-pro-free:free`, with site-wide daily caps of **6 requests, 3,000 characters and USD 0**, live zero-price checks, no paid fallback and server-only credentials. It is not the source of the bundled MP3s or a gameplay dependency. The free Edge authoring endpoint can change or become unavailable; existing local files need no further generation. See the [internal speech-service guide](docs/OPENROUTER-TTS-SERVICE.md) for reproducible authoring and review limits. The earlier [manual TTSFree audition record](design/voice-auditions-free/README.md) is historical production evidence.
+The separate internal OpenRouter audition service remains restricted to `fish-audio/s2.1-pro-free:free`, with site-wide daily caps of **6 requests, 3,000 characters and USD 0**, live zero-price checks, no paid fallback and server-only credentials. It is not the source of the bundled MP3s or a gameplay dependency. The free Edge authoring endpoint can change or become unavailable; existing local files need no further generation. See the [internal speech-service guide](docs/OPENROUTER-TTS-SERVICE.md) for reproducible authoring and review limits. The earlier [manual TTSFree audition record](resources/design/voice-auditions-free/README.md) is historical production evidence.
 
 Background *Greensleeves* is newly synthesized with an original Web Audio arrangement based on the [Mutopia public-domain score](https://www.mutopiaproject.org/ftp/Traditional/greensleeves/greensleeves-let.pdf). No DSE or commercial performance recording is used. Music and voice have separate volumes; playback requires a user gesture, music lowers during dialogue and pauses when the page is hidden. See [asset provenance](ASSET-PROVENANCE.md).
 
@@ -165,25 +167,28 @@ For an existing database, apply only migrations that have not already been appli
 
 ### Project map
 
+Browse the actual grouped folders: [game code](public/campus/game/) · [images](public/campus/images/) · [audio](public/campus/audio/) · [runtime resources](public/campus/resources/) · [design resources](resources/) · [data](data/) · [documentation](docs/) · [Chat Recording](Chat%20Recording/). The source has one maintained copy; `public/campus/index.html` and the classroom API routes stay stable.
+
 | Path | Responsibility |
 |---|---|
 | `app/page.tsx`, `app/api/campus/[...path]/route.ts` | Application entry, same-origin API and platform identity |
 | `lib/campus-*.ts`, `db/schema.ts`, `drizzle/` | Authorization, records, versioned assignments, scoring and persistence |
 | `data/grade-bank.json`, `scripts/content-authoring/` | Curated question data and authoring sources |
-| `public/campus/app.js`, `campus-cloud.js` | Game state and cloud integration |
-| `public/campus/engine.js`, `characters.js`, `campus-art.js` | Exploration, character identity, animation and scenes |
-| `public/campus/campus-routines.js`, `assets/activities/` | School duties, stations, timing and released activity drawings |
-| `public/campus/teacher-ui.js`, `xlsx-export.js` | Teacher subject hub, workspace and Excel export |
-| `public/campus/worksheet-ui.js`, `lib/campus-worksheets.ts` | PDF upload, authorized access, preview and explicit printing |
-| `public/campus/campus-audio.js` | Speech synthesis and music |
-| `public/campus/fixed-voices.js`, `assets/voices/`, `data/fixed-dialogue-corpus.json` | Exact fixed Mandarin/English dialogue and verified MP3 manifest |
+| `public/campus/game/app.js`, `campus-cloud.js` | Game state and cloud integration |
+| `public/campus/game/engine.js`, `characters.js`, `campus-art.js` | Exploration, character identity, animation and scenes |
+| `public/campus/game/campus-routines.js`, `images/activities/` | School duties, stations, timing and released activity drawings |
+| `public/campus/game/teacher-ui.js`, `xlsx-export.js` | Teacher subject hub, workspace and Excel export |
+| `public/campus/game/worksheet-ui.js`, `lib/campus-worksheets.ts` | PDF upload, authorized access, preview and explicit printing |
+| `public/campus/game/campus-audio.js` | Speech synthesis and music |
+| `public/campus/game/fixed-voices.js`, `audio/voices/`, `data/fixed-dialogue-corpus.json` | Exact fixed Mandarin/English dialogue and verified MP3 manifest |
 | `scripts/export-fixed-dialogue.mjs`, `scripts/generate-fixed-voices.py` | Internal fixed-dialogue export, authoring and offline integrity validation |
 | `lib/campus-tts.ts` | Internal speech preparation, free-price checks, reservations and review |
-| `public/campus/assets/`, `design/production-life/` | Runtime art and production provenance |
+| `public/campus/images/`, `resources/design/production-life/` | Runtime art and production provenance |
 
 ### Verification
 
 ```sh
+node scripts/validate-resource-layout.mjs
 node tests/backend.test.mjs
 node tests/starter-update.test.mjs
 node tests/worksheet-backend.test.mjs

@@ -2,8 +2,8 @@
 <html lang="zh-Hant"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <base href="/public/campus/"><title>Teacher workspace isolated test</title>
-<link rel="stylesheet" href="teacher-ui.css">
-<style>html,body{margin:0;min-height:100%;background:#b5c4b6;font-family:system-ui}body{background-image:url(assets/backgrounds/campus-pair-04.png);background-size:auto 200vh;background-position:center top;background-attachment:fixed;padding:28px;box-sizing:border-box}.fixture-toolbar{display:flex;justify-content:space-between;gap:10px;max-width:1120px;margin:0 auto 16px;color:#fff;text-shadow:0 1px 3px #173f48}.fixture-toolbar select{padding:5px;border-radius:6px}main{box-sizing:border-box;width:100%;max-width:1120px;margin:auto;padding:30px;background:#ffffffe8;border:1px solid white;border-radius:23px;box-shadow:0 14px 46px #173f4826;backdrop-filter:blur(9px)}@media(max-width:600px){body{padding:12px}main{padding:17px;border-radius:18px}.fixture-toolbar{font-size:11px}}</style>
+<link rel="stylesheet" href="game/teacher-ui.css">
+<style>html,body{margin:0;min-height:100%;background:#b5c4b6;font-family:system-ui}body{background-image:url(images/backgrounds/campus-pair-04.png);background-size:auto 200vh;background-position:center top;background-attachment:fixed;padding:28px;box-sizing:border-box}.fixture-toolbar{display:flex;justify-content:space-between;gap:10px;max-width:1120px;margin:0 auto 16px;color:#fff;text-shadow:0 1px 3px #173f48}.fixture-toolbar select{padding:5px;border-radius:6px}main{box-sizing:border-box;width:100%;max-width:1120px;margin:auto;padding:30px;background:#ffffffe8;border:1px solid white;border-radius:23px;box-shadow:0 14px 46px #173f4826;backdrop-filter:blur(9px)}@media(max-width:600px){body{padding:12px}main{padding:17px;border-radius:18px}.fixture-toolbar{font-size:11px}}</style>
 <script>
   // Isolated fake transport for UI testing; this file is not part of the public app.
   const fixtureState={unlocked:true,classes:[{id:'test-class',grade:2,section:'A',label:'2A',schoolYear:'2026-27',classCode:'TEST-CLASS',assignmentId:'test-activity'}],questions:[]};
@@ -21,7 +21,7 @@
     return {ok:true,status:200,json:async()=>data};
   };
 </script>
-<script defer src="xlsx-export.js"></script><script defer src="teacher-ui.js"></script>
+<script defer src="game/xlsx-export.js"></script><script defer src="game/teacher-ui.js"></script>
 </head><body>
 <div class="fixture-toolbar"><span>Development fixture · empty fictional class · no server writes</span><label>Language <select id="test-locale"><option value="zh">繁體</option><option value="cn">简体</option><option value="en">English</option></select></label></div>
 <main id="teacher-test"></main>

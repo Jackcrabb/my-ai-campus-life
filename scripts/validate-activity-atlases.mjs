@@ -7,7 +7,7 @@ import { fileURLToPath } from 'node:url';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const context = { window: {} };
 vm.createContext(context);
-vm.runInContext(fs.readFileSync(path.join(root, 'public/campus/characters.js'), 'utf8'), context);
+vm.runInContext(fs.readFileSync(path.join(root, 'public/campus/game/characters.js'), 'utf8'), context);
 const registry = context.window.CAMPUS_CHARACTERS;
 const expectations = {
   'staff-chinese':'read', 'staff-english':'organise', 'staff-maths':'write', 'staff-chemistry':'check',

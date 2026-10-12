@@ -5,7 +5,7 @@ This folder preserves the accessible development conversation for **My AI Campus
 ## Contents
 
 - [conversation-en.md](conversation-en.md): chronological English translation with `User:` and `ChatGPT:` labels and generated images at their recorded positions.
-- [recent-user-messages-en.md](recent-user-messages-en.md): a clearly separated, partial English supplement of 17 user messages and two actual assistant progress messages; no invented replies or timestamps.
+- [recent-user-messages-en.md](recent-user-messages-en.md): a clearly separated, partial English supplement of 19 user messages and two actual assistant progress messages; no invented replies or timestamps.
 - [generated-images.md](generated-images.md): browsable chronological image catalogue.
 - [generated-images.json](generated-images.json): image provenance, dimensions, byte counts, SHA-256 hashes and repository-relative paths.
 - [generated-images/](generated-images/): copies of generated drafts that did not have an identical existing file in the project.
@@ -35,6 +35,8 @@ Credentials and private values are replaced with **[redacted private value]**. A
 No unavailable stretch of human conversation was identified within the stated coverage. Messages after the cutoff are outside this snapshot and must be appended separately if needed. This is not an archive of unrelated chats or earlier conversations that were not part of the recovered project thread.
 
 The 11 October 2026 supplement records later layout/NPC requests, OpenRouter setup, the rejected Cantonese result, existing Cantonese playback, and the decision to remove the teacher Speech Studio and keep academic questions text-only. It also records the renewed missing-Mandarin report, two actual assistant updates identifying the unavailable male device voice, delayed inventory loading and fixed-recording work in progress, and the later phone-map layout request. It does **not** change the verified cutoff, 158-message count or 98-image count above. Missing intervening replies and exact timestamps were not invented. The new generated-artwork event archive still needs a separate verified export.
+
+The 12 October 2026 append records the request for additional teacher-authored questions, teacher-selected star values and stars in result reports, followed by the request to update the public no-login game link/QR and organize repository files. It records requests only and does not claim that publication succeeded.
 
 Historical progress reports and claims are translated faithfully as things said at that time. They do not override later corrections and are not independent verification of the current software. Current installation, configuration, known limitations and release status belong in the repository's main README and project documentation.
 

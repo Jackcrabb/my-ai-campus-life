@@ -56,9 +56,9 @@ function launch(saved, server, transformSource = source => source) {
     setTimeout(fn,delay) {const id=++timerId; timers.set(id,{fn,delay});return id;}, clearTimeout(id) {timers.delete(id);}, console,
   });
   for (const file of ['content.js', 'subjects.js', 'grade-content.js', 'characters.js', 'engine.js', 'campus-cloud.js']) {
-    vm.runInContext(fs.readFileSync(path.join(root, 'public/campus', file), 'utf8'), context, { filename: file });
+    vm.runInContext(fs.readFileSync(path.join(root, 'public/campus/game', file), 'utf8'), context, { filename: file });
   }
-  let source = transformSource(fs.readFileSync(path.join(root, 'public/campus/app.js'), 'utf8'));
+  let source = transformSource(fs.readFileSync(path.join(root, 'public/campus/game/app.js'), 'utf8'));
   source = source.replace(/\}\)\(\);\s*$/, `window.testApp = {
     state: () => state, progress, campusProgress, pstate, subjectState, action, applyCloud, refreshClass, updateSaveLabel,
     cloud: () => cloud, subjects: () => subjects,
@@ -164,7 +164,7 @@ function mockServer({joined=true,optionCount=3,roomId='maths',grade=2}={}) {
 
   // Fixed recordings must match the fully initialized application, not just
   // isolated dialogue functions: question hydration can mutate room metadata.
-  const manifestContext={window:{}};vm.runInNewContext(fs.readFileSync(path.join(root,'public/campus/fixed-voices.js'),'utf8'),manifestContext);
+  const manifestContext={window:{}};vm.runInNewContext(fs.readFileSync(path.join(root,'public/campus/game/fixed-voices.js'),'utf8'),manifestContext);
   const fixedClips=manifestContext.window.CAMPUS_FIXED_VOICES.clips;
   const tuple=line=>JSON.stringify([line.characterId,line.gender,line.locale,line.text]);
   const approvedTuples=new Set(fixedClips.filter(clip=>clip.approved===true).map(tuple)),observedTuples=new Set();

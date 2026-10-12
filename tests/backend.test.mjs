@@ -202,7 +202,7 @@ try {
     assert.equal(transferAnswer.progress.results.find(r => r.subjectId === "ai-ethics").stars, 25);
     checks++;
     const classResults = (await call(`teacher/results?classId=${room.id}`, { context: teacher, cookie: teacherCookie })).data;
-    assert.deepEqual(classResults.headers, ["班別", "學號", "學生姓名", "學科得分"]);
+    assert.deepEqual(classResults.headers, ["班別", "學號", "學生姓名", "學科得分", "獲得星星", "可得星星"]);
     assert.ok(classResults.rows.some(r => r.studentName === "陳晴"));
     assert.ok(classResults.rows.some(r => r.studentName === "林朗"));
     checks += 3;
@@ -214,6 +214,18 @@ try {
     assert.equal(createdQuestion.status, "draft");
     assert.notEqual(createdQuestion.id, teacherQ.id);
     checks += 3;
+    for (const stars of [0, 11, 1.5, "invalid"])
+        await call("teacher/questions", { method: "POST", context: teacher, cookie: teacherCookie, body: { ...teacherQ, stars }, expected: 400 });
+    const extraQuestions = [];
+    for (const stars of [7, 10, 2, 4]) {
+        const extra = (await call("teacher/questions", { method: "POST", context: teacher, cookie: teacherCookie, body: { ...teacherQ, stars, maxScore: 2, status: "published", title: { ...teacherQ.title, en: `Extra question worth ${stars} stars` } }, expected: 201 })).data.question;
+        extraQuestions.push(extra);
+        assert.equal(extra.stars, stars, "teachers set the award independently from marks");
+        checks++;
+    }
+    const oldMaths = (await call("questions?subjectId=maths", { cookie: aCookie })).data.questions;
+    assert.ok(extraQuestions.every(extra => !oldMaths.some(assigned => assigned.id === extra.id)), "published additions do not silently change an active activity");
+    checks++;
     await call("teacher/questions", { method: "POST", context: teacher, cookie: teacherCookie, body: { ...teacherQ, question: { zh: "Incomplete" } }, expected: 400 });
     await call(`teacher/questions/${q.id}`, { method: "DELETE", context: other, cookie: otherUnlock.cookie, expected: 404 });
     const newQ = { ...teacherQ, title: { ...teacherQ.title, en: "Reviewed question" }, status: "published", expectedRevision: teacherQ.revision };
@@ -233,6 +245,42 @@ try {
     assert.equal(newAssigned.assignmentId, next.id);
     assert.ok(!newAssigned.questions.some(item => item.id === q.id));
     checks += 2;
+    const nextMaths = newAssigned.questions.filter(item => item.subjectId === "maths");
+    assert.ok(nextMaths.length > 3, "a class receives more than three subject questions");
+    assert.ok(extraQuestions.every(extra => nextMaths.some(assigned => assigned.id === extra.id && assigned.stars === extra.stars)), "all published additions retain their chosen award in the new activity");
+    assert.ok(!newAssigned.questions.some(item => item.id === createdQuestion.id), "draft questions remain excluded");
+    checks += 3;
+    const custom = extraQuestions[0], customCorrect = custom.options.find(option => option.correct).id;
+    const customPayload = { assignmentId: next.id, questionId: custom.id, revision: 1, optionId: customCorrect, idempotencyKey: requestId() };
+    await call("attempts", { method: "POST", cookie: aCookie, body: { ...customPayload, optionId: custom.options.find(option => !option.correct).id, idempotencyKey: requestId() } });
+    const customAnswer = (await call("attempts", { method: "POST", cookie: aCookie, body: customPayload })).data;
+    assert.equal(customAnswer.awardedStars, 7, "a corrected answer receives the configured star award");
+    assert.equal(customAnswer.score, 0, "earning stars does not replace the original first-response grade");
+    const customRepeat = (await call("attempts", { method: "POST", cookie: aCookie, body: { ...customPayload, idempotencyKey: requestId() } })).data;
+    assert.equal(customRepeat.awardedStars, 0, "custom stars are awarded only once");
+    const tenStar = extraQuestions[1];
+    const tenStarAnswer = (await call("attempts", { method: "POST", cookie: aCookie, body: { assignmentId: next.id, questionId: tenStar.id, revision: 1, optionId: tenStar.options.find(option => option.correct).id, idempotencyKey: requestId() } })).data;
+    assert.equal(tenStarAnswer.awardedStars, 10);
+    assert.equal(tenStarAnswer.score, 2);
+    checks += 5;
+    await call(`teacher/questions/${custom.id}`, { method: "PATCH", context: teacher, cookie: teacherCookie, body: { ...custom, stars: 9, expectedRevision: 1, status: "published" } });
+    const assignedCustom = (await call("questions?subjectId=maths", { cookie: aCookie })).data.questions.find(item => item.id === custom.id);
+    assert.equal(assignedCustom.stars, 7, "a changed reward only affects a later activity snapshot");
+    assert.equal(assignedCustom.revision, 1);
+    const customResults = (await call(`teacher/results?classId=${room.id}&subjectId=maths`, { context: teacher, cookie: teacherCookie })).data;
+    const earned = customResults.rows.find(row => row.studentId === a.studentId);
+    assert.equal(earned.stars, 17, "results use server-awarded stars, including corrected answers exactly once");
+    assert.equal(earned.maxStars, nextMaths.reduce((sum, item) => sum + item.stars, 0), "the report denominator uses the assigned revisions");
+    assert.equal(earned.totalQuestions, nextMaths.length);
+    assert.equal(earned.score, 2, "marks remain distinct from earned stars");
+    assert.equal(customResults.rows.find(row => row.studentId === studentB.data.session.studentId).stars, 0, "an unattempted student has zero earned stars");
+    const allCustomResults = (await call(`teacher/results?classId=${room.id}`, { context: teacher, cookie: teacherCookie })).data;
+    const studentRows = allCustomResults.rows.filter(row => row.studentId === a.studentId);
+    assert.equal(studentRows.reduce((sum, row) => sum + row.stars, 0), 17, "summing subject rows does not double count stars");
+    assert.equal(studentRows.find(row => row.subjectId === "ai-ethics").maxStars, 25, "AI activities and reflection retain their separate five-star awards");
+    const previousResults = (await call(`teacher/results?classId=${room.id}&assignmentId=${a.assignmentId}&subjectId=maths`, { context: teacher, cookie: teacherCookie })).data;
+    assert.equal(previousResults.rows.find(row => row.studentId === a.studentId).stars, q.stars, "previous activity awards survive new questions and reward edits");
+    checks += 10;
     await call("attempts", { method: "POST", cookie: aCookie, body: { ...payload, idempotencyKey: requestId() }, expected: 409 });
     await call("student/progress", { method: "PUT", cookie: aCookie, body: { version: 1, progress: {} }, origin: "https://evil.test", expected: 403 });
     for (let i = 0; i < 4; i++)

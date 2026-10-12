@@ -6,7 +6,7 @@
 
 ## 直接在瀏覽器遊玩
 
-> **發布狀態 — 2026 年 10 月 11 日：** 最新手機地圖及普通話／英文固定配音修正已存於此倉庫及本機版本。託管端上傳回傳 HTTP 403，公開網站暫時仍為舊版本；QR code 也會開啟該舊版本，直至發布成功。
+> **已發布 — 2026 年 10 月 12 日：** 公開第 4 版已包含手機地圖、固定配音修正、教師自訂題目及每題 1–10 星、Excel／列印成績星數欄位，以及分類後的資源。遊戲免登入開啟；已用匿名請求核對入口、32 個線上資源及教師權限，詳見[發布驗證](docs/DISTRIBUTION-AUDIT.md#12-october-2026-release-verification)。
 
 **[開啟公開遊戲](https://lumen-lab-ai-ethics.tart-vale-4903.chatgpt.site)** — 自由探索毋須下載程式或登入 GitHub。Windows、Mac、平板及手機均透過瀏覽器開啟；班級功能需要網絡連線。
 
@@ -20,14 +20,14 @@
 
 日常分享請用上述遊戲網址。[私人 GitHub 原始碼倉庫](https://github.com/Jackcrabb/my-ai-campus-life)及 ZIP 只供已獲授權的協作者，下載與開發步驟另列於下方。
 
-現行程式採 **Sites / Vinext + Cloudflare D1（紀錄）及 R2（工作紙檔案）** 架構，前端在 `public/campus/`。本文說明目前來源版本；公開入口及部分已部署檔案於 2026 年 10 月 10 日（香港時間）核查，詳見[驗證範圍](docs/DISTRIBUTION-AUDIT.md)。
+現行程式採 **Sites / Vinext + Cloudflare D1（紀錄）及 R2（工作紙檔案）** 架構，前端在 `public/campus/`。本文說明目前來源版本；公開入口及 32 個已部署資源於 2026 年 10 月 12 日（香港時間）核查，詳見[驗證範圍](docs/DISTRIBUTION-AUDIT.md)。
 
-**來源版本進度：2026 年 10 月 11 日。** 電腦版角色設定背景及完整身形已有修正截圖。NPC 日常行為已實裝；已釋出 7 張動作圖集，涵蓋 24 個身份／服飾組合，共 96 幅動作。第 1–2 款校服的 8 個同學組合及無五官背景學生尚未完成。來源版本現已包含 104 段固定對白 MP3：普通話及英文各 52 段，涵蓋 20 位角色；繁中保留原有粵語朗讀。教師語音工作室已移除，學科題目一律文字呈現。音檔完整解碼、雜湊及聲線性別／語言資料已驗證，逐段聆聽與公開部署仍須分開確認。詳見[介面稽核](docs/UX-AUDIT.md)、[NPC 進度](docs/NPC-BEHAVIOR-PLAN.md)及[語音服務](docs/OPENROUTER-TTS-SERVICE.md)。
+**美術及語音進度：2026 年 10 月 12 日。** 電腦版角色設定背景及完整身形已有修正截圖。NPC 日常行為已實裝；已釋出 7 張動作圖集，涵蓋 24 個身份／服飾組合，共 96 幅動作。第 1–2 款校服的 8 個同學組合及無五官背景學生尚未完成。來源版本現已包含 104 段固定對白 MP3：普通話及英文各 52 段，涵蓋 20 位角色；繁中保留原有粵語朗讀。教師語音工作室已移除，學科題目一律文字呈現。音檔完整解碼、雜湊及聲線性別／語言資料已驗證；公開第 4 版已包含這批音檔，逐段聆聽仍須另外完成。詳見[介面稽核](docs/UX-AUDIT.md)、[NPC 進度](docs/NPC-BEHAVIOR-PLAN.md)及[語音服務](docs/OPENROUTER-TTS-SERVICE.md)。
 
 ## 學習內容與操作
 
 - 五層、18 個地點與 13 個學習空間，包含中文、英文、數學、科學／化學、地理、資訊科技、歷史、視覺藝術、音樂、體育、公民情境，以及圖書館和天台跨科活動。
-- **234 道三語起始題**：六個年級 × 13 個空間 × 三道題。每位玩家預設看到所選年級的 39 題。234 題已按教育局及香港考評局參考資料逐科重寫，完成三語生成、結構／數學檢查及交叉覆核；這不是完整香港課程或官方公開試題庫，詳見[課程對照](docs/CURRICULUM-ALIGNMENT.md)。
+- **234 道三語起始題**：六個年級 × 13 個空間 × 三道題。每位玩家預設看到所選年級的 39 題；教師可繼續新增題目，不受每科三題限制，系統不設固定題數上限。234 題已按教育局及香港考評局參考資料逐科重寫，完成三語生成、結構／數學檢查及交叉覆核；這不是完整香港課程或官方公開試題庫，詳見[課程對照](docs/CURRICULUM-ALIGNMENT.md)。
 - 四項 AI 校園情境：口音評分、寫作私隱、翻譯與文化聲音、共融參與。流程是對話、閱讀證據、選擇、後果、修正，再完成遷移題及反思。
 - 介面可切換繁體中文（`zh`）、簡體中文（`cn`）及英文（`en`）；英文學習文本可保留目標語言。
 - 男生及女生各四款原創校服風格、兩款髮型、三種膚色，共 48 個可選外觀組合；不是 48 套獨立繪製圖集。外觀不改變題目或得分規則。
@@ -51,7 +51,7 @@
 
 班級模式把姓名、班級、學號、作答及必要進度存到 D1。造型、語言、位置、情境閱讀進度和反思亦可跨裝置同步。學生 API 只提供自己的紀錄；教師只可管理自己擁有的班級。版本衝突會提示重新載入，不會靜默覆蓋另一裝置。答案由伺服器評分，重試使用 idempotency key，伺服器不接受客戶端提供的分數。
 
-**星數與學科得分不同。** 首次答對可得一次星數；答錯後再答對仍可取得星數。班級學科分數採每題首次作答，重試不改寫首次分數。尚未作答完成的學科會標示未完成，而非當成零分。預設活動共 78 顆學科星 + 20 顆情境星 + 5 顆遷移星 = **103 星**，100 星可離校；教師調整題目後上限會改變，離校門檻取 100 與該活動總星數的較小值。
+**教師可為每道學科題目設定 1–10 顆整數星星，與題目程度分開設定。星數與學科得分不同。** 首次答對可得一次星數；答錯後再答對仍可取得星數。班級學科分數採每題首次作答，重試不改寫首次分數。尚未作答完成的學科會標示未完成，而非當成零分。預設活動共 78 顆學科星 + 20 顆情境星 + 5 顆遷移星 = **103 星**，100 星可離校；教師調整題目後上限會改變，離校門檻取 100 與該活動總星數的較小值。
 
 這些紀錄用於形成性回饋，並非道德評級或安全的防作弊考試。公開練習題庫包含學習用答案；伺服器計分不等於能證明學生獨立作答。評量應連同學生的證據解釋、修正及反思。
 
@@ -59,10 +59,14 @@
 
 教師從主選單「新開始 → 教師」登入，解鎖後先選擇 13 個學習學科之一或「AI 倫理與共融」，再開啟題目、工作紙或成績功能。「更換學科」返回選科，切換工具時保留年級、班別與活動篩選。遊戲內「設定 → 教師工作台」入口亦保留。正式環境須先經 Sites 的 ChatGPT 身份登入、符合 `TEACHER_EMAILS` 擁有者名單，再輸入伺服器驗證的教師 PIN。按目前使用者設定，PIN 為 **1234**，由 `TEACHER_PIN` 環境設定提供；**PIN 不是獨立帳戶認證，也不能代替擁有者身份檢查**。PIN 錯誤有速率限制，解鎖有效 30 分鐘。
 
-工作台可明確建立一班或 24 班（S1–S6 × A–D），查看／複製班級代碼，新增、修改、發佈或封存學科題目，並為班級開始新活動。每次活動凍結所用題目版本；後續改題不會重算舊活動或改變它的分母。「AI 倫理與共融」可檢視核心情境、遷移題及成績，但不可編輯核心題目；PDF 上傳供其餘 13 個學科使用。可查看目前或歷史活動；「下載本科 Excel」只匯出所選學科，「下載全部學科」則匯出 14 個成績類別的獨立工作表。四個欄位固定為：
+工作台可明確建立一班或 24 班（S1–S6 × A–D），查看／複製班級代碼，新增、修改、發佈或封存學科題目，並為班級開始新活動。在「題目 → 新增題目」可按教學需要繼續加題，每科三題只是起始題庫設定；每題可選擇 **1–10 顆整數星星**。儲存為「已發佈」後，到「班級 → 新活動」發佈更新題庫，學生才會使用新版本。每次活動凍結題目及星數設定；後續改題不會重算舊活動、舊成績或可得星數。「AI 倫理與共融」可檢視核心情境、遷移題及成績，但不可編輯核心題目；PDF 上傳供其餘 13 個學科使用。
 
-| 班別 | 學號 | 學生姓名 | 學科得分 |
-|---|---|---|---|
+「成績」可查看目前或歷史活動，並顯示學生已獲得星星及該活動可得星星。「列印本科成績」會開啟瀏覽器的原生列印流程，讓教師選擇打印機或另存 PDF；「下載本科 Excel」只匯出所選學科，「下載全部學科」則匯出 14 個成績類別的獨立工作表。Excel 固定使用以下六欄，列印版則依介面語言顯示相同資料：
+
+| 班別 | 學號 | 學生姓名 | 學科得分 | 獲得星星 | 可得星星 |
+|---|---|---|---|---|---|
+
+學生尚未完成本科時，百分制得分仍未完成，但可顯示已獲得星星。答錯後重試答對可得一次星星；首次作答得分保持原樣。舊活動的星數不會因教師後來修改題目而改算。
 
 匯出由已授權教師主動下載，不會公開列出學生名單。
 
@@ -84,7 +88,7 @@
 
 錄音必須同時符合角色身份、語言及完整文本才可播放。固定對白改為提示玩家查看畫面的班別／進度，避免把會改變的學生資料或星數寫進錄音。文本改動或檔案缺失時可使用嚴格匹配的裝置聲線；聲線清單尚未載入時最多等待三秒，再回報不可用，不使用錯誤語言或已知性別。內置普通話對白因此不再依賴裝置有沒有男聲，粵語仍依賴系統聲線；畫面文字始終保留。
 
-獨立保留的內部 OpenRouter 試音服務只使用 `fish-audio/s2.1-pro-free:free`，全站每日上限為 **6 次、3,000 字元、0 美元**，生成前核對零收費資料，沒有付費備援，API Key 只存在伺服器。它並非上述內置 MP3 的來源，遊玩時亦不依賴它。免費 Edge 製作端點可能改動或停止服務，但已儲存的音檔不需重新生成。製作步驟與驗證限制見[內部語音服務指南](docs/OPENROUTER-TTS-SERVICE.md)。較早的 [TTSFree 手動試音紀錄](design/voice-auditions-free/README.md)保留作歷史製作資料。
+獨立保留的內部 OpenRouter 試音服務只使用 `fish-audio/s2.1-pro-free:free`，全站每日上限為 **6 次、3,000 字元、0 美元**，生成前核對零收費資料，沒有付費備援，API Key 只存在伺服器。它並非上述內置 MP3 的來源，遊玩時亦不依賴它。免費 Edge 製作端點可能改動或停止服務，但已儲存的音檔不需重新生成。製作步驟與驗證限制見[內部語音服務指南](docs/OPENROUTER-TTS-SERVICE.md)。較早的 [TTSFree 手動試音紀錄](resources/design/voice-auditions-free/README.md)保留作歷史製作資料。
 
 背景《Greensleeves》使用 [Mutopia 公版旋律](https://www.mutopiaproject.org/ftp/Traditional/greensleeves/greensleeves-let.pdf)，由本專案以 Web Audio 原創樂器及伴奏合成，沒有使用 DSE 或商業演奏錄音。音樂及語音音量獨立；需要使用者手勢解鎖播放，對話時音樂降低，頁面隱藏時暫停。詳見[資源來源](ASSET-PROVENANCE.md)。
 
@@ -133,22 +137,26 @@ node --import ./scripts/sites-env.mjs ./node_modules/wrangler/bin/wrangler.js d1
 
 ## 程式結構與驗證
 
+檔案已按用途分組：[game 遊戲程式](public/campus/game/) · [images 圖像](public/campus/images/) · [audio 語音](public/campus/audio/) · [resources 字體與授權](public/campus/resources/) · [美術製作資源](resources/) · [data 資料](data/) · [文件](docs/) · [Chat Recording 對話紀錄](Chat%20Recording/)。各資源只保留一份可維護來源，遊戲入口 `public/campus/index.html` 及課堂 API 路徑維持不變。
+
+
 | 路徑 | 用途 |
 |---|---|
 | `app/page.tsx`、`app/api/campus/[...path]/route.ts` | 網站入口、同源 API、平台身份 |
 | `lib/campus-*.ts`、`db/schema.ts`、`drizzle/` | 學生／教師權限、版本化題目、活動、計分、D1 schema |
 | `data/grade-bank.json`、`scripts/content-authoring/` | 234 題資料及題庫編製來源 |
-| `public/campus/app.js`、`campus-cloud.js` | 遊戲狀態、雲端連接與衝突處理 |
-| `public/campus/content.js`、`grade-content.js`、`subjects.js` | 四項情境、三語年級題庫、學習空間定義 |
-| `public/campus/engine.js`、`characters.js`、`campus-art.js` | 校園場景、共用角色身份、動作、圖集與比例 |
-| `public/campus/campus-routines.js`、`assets/activities/` | 校園工作、活動位置、時長與已釋出動作美術 |
-| `public/campus/teacher-ui.js`、`xlsx-export.js` | 教師學科首頁、工作台、Excel 下載 |
-| `public/campus/worksheet-ui.js`、`lib/campus-worksheets.ts` | PDF 上傳、授權存取、預覽與手動列印 |
-| `public/campus/campus-audio.js` | 即時語音及原創合成音樂 |
+| `public/campus/game/app.js`、`campus-cloud.js` | 遊戲狀態、雲端連接與衝突處理 |
+| `public/campus/game/content.js`、`grade-content.js`、`subjects.js` | 四項情境、三語年級題庫、學習空間定義 |
+| `public/campus/game/engine.js`、`characters.js`、`campus-art.js` | 校園場景、共用角色身份、動作、圖集與比例 |
+| `public/campus/game/campus-routines.js`、`images/activities/` | 校園工作、活動位置、時長與已釋出動作美術 |
+| `public/campus/game/teacher-ui.js`、`xlsx-export.js` | 教師學科首頁、工作台、Excel 下載 |
+| `public/campus/game/worksheet-ui.js`、`lib/campus-worksheets.ts` | PDF 上傳、授權存取、預覽與手動列印 |
+| `public/campus/game/campus-audio.js` | 即時語音及原創合成音樂 |
 | `lib/campus-tts.ts` | 內部語音製作、免費價格核對、生成紀錄與覆核 |
-| `public/campus/assets/`、`design/production-life/` | 執行資源與製作／裁切紀錄 |
+| `public/campus/images/`、`resources/design/production-life/` | 執行資源與製作／裁切紀錄 |
 
 ```sh
+node scripts/validate-resource-layout.mjs
 node tests/backend.test.mjs
 node tests/starter-update.test.mjs
 node tests/worksheet-backend.test.mjs

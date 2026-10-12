@@ -38,7 +38,7 @@ ElevenLabs states that paid-plan content can be used commercially and indefinite
 
 ## Stable 20-role casting / 角色配音表
 
-The IDs and names below match `public/campus/characters.js`. **Age, manner and pacing are creative direction, not claims about a provider voice's real performer or acoustic characteristics.** Google suffixes are verified catalog candidates; the assignments remain provisional until listening tests. Each suffix is used once. Do not clone a real pupil or teacher. Student characters should receive a youthful, natural performance without exaggerated baby voices.
+The IDs and names below match `public/campus/game/characters.js`. **Age, manner and pacing are creative direction, not claims about a provider voice's real performer or acoustic characteristics.** Google suffixes are verified catalog candidates; the assignments remain provisional until listening tests. Each suffix is used once. Do not clone a real pupil or teacher. Student characters should receive a youthful, natural performance without exaggerated baby voices.
 
 | Canonical ID | Character / role | Direction: perceived age, gender, personality | Initial pace | Candidate suffix |
 |---|---|---|---|---|

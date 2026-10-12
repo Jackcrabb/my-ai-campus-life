@@ -1,18 +1,18 @@
 # Known limitations
 
-This document distinguishes implemented behavior from verification results for **My AI Campus Life**. It records checks and user reports through **11 October 2026**. It does not claim that every browser, device or voice completes playback successfully, or that current-source changes have already reached the public site.
+This document distinguishes implemented behavior from verification results for **My AI Campus Life**. It records checks and user reports through **12 October 2026**. It does not claim that every browser, device or voice completes playback successfully, or replace the deployment evidence in the [release audit](docs/DISTRIBUTION-AUDIT.md#12-october-2026-release-verification). Public version 4 was successfully deployed on 12 October 2026.
 
 ## Speech scope and device limits
 
 **Only fixed NPC dialogue and the introduction use speech. All academic questions, options and explanations are text-only.** Teacher edits therefore need no voice refresh. The backend also rejects academic speech quotes, generation, lookup, approval and playback with HTTP 410 `TTS_SUBJECT_AUDIO_DISABLED`, including older stored rows; those rows remain preserved. There is no teacher-facing Speech Studio; audio preparation and review are internal maintenance work.
 
-The source bundles **104 fixed NPC/introduction MP3s: 52 Mandarin and 52 English lines for 20 canonical characters**. Each manifest entry matches the exact character, locale and text. The free Edge authoring run verified four voices' catalog locale/gender and every complete MP3 decode and SHA-256 hash; total output is 6,936,480 bytes and 1,156.08 seconds. All entries explicitly retain `audiblyReviewed: false`: metadata and decoding do not establish pronunciation, naturalness or physical audibility. The accepted OpenRouter samples are historical auditions, not replacements for unrelated game lines. Gameplay loads bundled audio without provider synthesis or an API key. The separate internal OpenRouter service retains zero-price checks and **6 requests / 3,000 characters / USD 0 per UTC day**. See the [internal service record](docs/OPENROUTER-TTS-SERVICE.md).
+The source bundles **104 fixed NPC/introduction MP3s: 52 Mandarin and 52 English lines for 20 canonical characters**. Each manifest entry matches the exact character, locale and text. The free Edge authoring run verified four voices' catalog locale/gender and every complete MP3 decode and SHA-256 hash; total output is 6,905,376 bytes and 1,150.90 seconds. All entries explicitly retain `audiblyReviewed: false`: metadata and decoding do not establish pronunciation, naturalness or physical audibility. The accepted OpenRouter samples are historical auditions, not replacements for unrelated game lines. Gameplay loads bundled audio without provider synthesis or an API key. The separate internal OpenRouter service retains zero-price checks and **6 requests / 3,000 characters / USD 0 per UTC day**. See the [internal service record](docs/OPENROUTER-TTS-SERVICE.md).
 
 The requested OpenRouter Cantonese sample was heard by the user as Mandarin and rejected. **OpenRouter `zh` generation is blocked.** At the user's request, Traditional Chinese retains the existing browser/OS Cantonese path; that playback makes no OpenRouter request and creates no MP3. Paid Cantonese generation is not authorized.
 
 The missing Mandarin report was reproduced on this Mac: female Tingting could speak, but no known male Mandarin device voice passed the gender check. Bundled recordings now cover the fixed male/female Mandarin lines without relying on that inventory. Traditional Chinese, or a changed/missing fixed line using device fallback, still requires a matching installed voice. Browser speech enforces language and known gender, including `boy/girl` aliases; English numerals are expanded in spoken text only. An initially empty voice inventory waits up to three seconds, with cancellation on superseded requests. The earlier inventory found female Cantonese Sinji but no known male Cantonese voice. An unavailable matching voice leaves text visible rather than using a wrong voice. Web Speech has no standard gender property, so selection uses known names/URIs and explicit hints. See [voice properties](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisVoice).
 
-Earlier [manual TTSFree audition files](design/voice-auditions-free/README.md) remain historical production evidence. They are not proof of current full-game audio coverage.
+Earlier [manual TTSFree audition files](resources/design/voice-auditions-free/README.md) remain historical production evidence. They are not proof of current full-game audio coverage.
 
 ### Current browser speech behavior
 
@@ -52,6 +52,14 @@ Names no longer float above NPCs. Cases and Subjects are read-only progress view
 Purposeful routines now assign duties, stations, partners and 20–60-second dwell to all 20 named people. Seven released sheets provide 96 activity drawings for 24 identity/outfit variants: all 16 staff and the four peers in uniforms 0 and 3. The eight peer variants in uniforms 1–2 are unfinished; missing activities use a neutral fallback. There are five ambient pupils per corridor and three per room, but their faceless activity art awaits confirmation and is not implemented. State-machine tests and source-sheet checks do not replace a scene-by-scene motion review. The [routine status](docs/NPC-BEHAVIOR-PLAN.md) records the remaining work.
 
 Desktop character setup has browser evidence of the restored school background, complete figure and reachable lower form actions at 1440 × 800 and a scrolled 1280 × 600 state. The clean 1280 × 600 unscrolled retake also shows the complete figure and restored background. The clean 390 × 844 phone retake shows the full figure and courtyard above the stacked form; lower-phone control scrolling and complete focus traversal remain separate checks. See the [UX audit](docs/UX-AUDIT.md) for screenshots and scope.
+
+## Teacher questions, stars and reports
+
+The teacher workspace supports more than three subject questions with no fixed question-count cap. Each question accepts **1–10 whole-number stars**. This does not imply unbounded storage or performance: very large banks still depend on browser and hosting capacity. The 39-question, 103-star campus is the starter configuration only. The core AI cases and transfer task remain read-only.
+
+Published changes enter a class through a **new activity**. Existing activities retain the questions and star settings captured when created. First-response percentage scores and one-time earned stars are different measures; a correct retry may earn stars without changing the first-response score. An incomplete percentage stays blank while current earned stars can still be reported.
+
+The Results table, subject Excel, all-subject Excel and subject print report include earned and available stars. The print control requests the browser’s native print flow; users must still select a destination and confirm. Automated print preparation or a call to `window.print()` does not establish that a system dialog or physical printer completed successfully. Deployment verification remains separate from local source checks.
 
 ## Uploaded worksheets and printing
 

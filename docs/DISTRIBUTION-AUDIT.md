@@ -2,6 +2,24 @@
 
 Checked on **10 October 2026 (Hong Kong time)**. This is a dated audit of the public entry, selected deployed files, repository access and distribution architecture. It is not a claim that every device, voice, classroom action or later release has been tested.
 
+**Directory note — 12 October 2026:** The maintained source now groups browser code under `public/campus/game/`, with separate image, audio and font folders. The deployed URLs and hashes below remain the original 10 October observations; they are not evidence of a later deployment.
+
+## 12 October 2026 release verification
+
+Public **version 4** was successfully deployed from source `6aa6badaa59ed1481743c3bcafafcba76abc79c5` to the same game URL. The earlier source-upload failure is resolved. The source transport succeeded with HTTP/1.1 and a buffered upload after an HTTP/2 protocol error. No GitHub Pages site was introduced; Sites serves the full game and classroom API while the GitHub source repository remains private.
+
+Fresh anonymous HTTP requests, without account credentials or stored cookies, verified:
+
+- `/campus/` returns HTTP 200 with the new `game/` paths.
+- All **32 entry-linked scripts/styles/icons and two representative revised Mandarin/English clips** match the current source byte for byte.
+- Anonymous bootstrap returns HTTP 200 with `session: null`.
+- Teacher session remains `allowed: false`, `unlocked: false`; teacher questions return HTTP 403.
+- The README PNG QR code was decoded again and points exactly to `https://lumen-lab-ai-ethics.tart-vale-4903.chatgpt.site`.
+
+The [machine-readable verification](releases/2026-10-12-verification.json) records resource hashes and the checked authorization boundaries. The release also passed the production build, TypeScript, focused source lint, question/reward/history tests, Excel/print component checks, audio matching and local resource-path checks. This update adds more-than-three teacher questions, integer rewards of 1–10 stars, six-column Excel/native-print reports and grouped source/assets.
+
+The local browser tool rejected the requested localhost tab under its URL policy, so this release does **not** claim a new visual browser review or a physical printer test. No real student records were submitted or downloaded during release verification. The earlier dated observations below are retained as history.
+
 ## Recommended way to share
 
 **Share the [public game](https://lumen-lab-ai-ethics.tart-vale-4903.chatgpt.site) or its [QR PNG](assets/public-game-qr.png) / [QR SVG](assets/public-game-qr.svg).** Students can use free exploration without a GitHub or ChatGPT account. Optional browser installation gives regular players an app-like window. Keep the GitHub repository private, as requested; it is a source archive for authorized collaborators.

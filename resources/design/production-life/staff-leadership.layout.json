@@ -1,0 +1,261 @@
+{
+  "id": "staff-leadership",
+  "src": "images/life/staff-leadership.png",
+  "width": 1145,
+  "height": 1374,
+  "cols": 6,
+  "rows": 4,
+  "facing": "right",
+  "frames": [
+    {
+      "x": 49,
+      "y": 23,
+      "w": 114,
+      "h": 341,
+      "anchorX": 111,
+      "baseline": 359
+    },
+    {
+      "x": 230,
+      "y": 24,
+      "w": 166,
+      "h": 340,
+      "anchorX": 308,
+      "baseline": 359
+    },
+    {
+      "x": 424,
+      "y": 24,
+      "w": 112,
+      "h": 339,
+      "anchorX": 494,
+      "baseline": 358
+    },
+    {
+      "x": 622,
+      "y": 24,
+      "w": 164,
+      "h": 341,
+      "anchorX": 698,
+      "baseline": 360
+    },
+    {
+      "x": 821,
+      "y": 24,
+      "w": 109,
+      "h": 340,
+      "anchorX": 896,
+      "baseline": 359
+    },
+    {
+      "x": 992,
+      "y": 24,
+      "w": 150,
+      "h": 341,
+      "anchorX": 1050,
+      "baseline": 360
+    },
+    {
+      "x": 56,
+      "y": 375,
+      "w": 108,
+      "h": 339,
+      "anchorX": 108,
+      "baseline": 709
+    },
+    {
+      "x": 230,
+      "y": 375,
+      "w": 166,
+      "h": 337,
+      "anchorX": 304,
+      "baseline": 707
+    },
+    {
+      "x": 428,
+      "y": 373,
+      "w": 112,
+      "h": 339,
+      "anchorX": 496,
+      "baseline": 707
+    },
+    {
+      "x": 621,
+      "y": 374,
+      "w": 169,
+      "h": 340,
+      "anchorX": 697,
+      "baseline": 709
+    },
+    {
+      "x": 823,
+      "y": 374,
+      "w": 108,
+      "h": 339,
+      "anchorX": 884,
+      "baseline": 708
+    },
+    {
+      "x": 995,
+      "y": 375,
+      "w": 142,
+      "h": 341,
+      "anchorX": 1048,
+      "baseline": 711
+    },
+    {
+      "x": 50,
+      "y": 720,
+      "w": 112,
+      "h": 332,
+      "anchorX": 110,
+      "baseline": 1047
+    },
+    {
+      "x": 228,
+      "y": 720,
+      "w": 173,
+      "h": 331,
+      "anchorX": 308,
+      "baseline": 1046
+    },
+    {
+      "x": 425,
+      "y": 719,
+      "w": 110,
+      "h": 331,
+      "anchorX": 498,
+      "baseline": 1045
+    },
+    {
+      "x": 612,
+      "y": 719,
+      "w": 178,
+      "h": 332,
+      "anchorX": 698,
+      "baseline": 1046
+    },
+    {
+      "x": 823,
+      "y": 720,
+      "w": 102,
+      "h": 330,
+      "anchorX": 886,
+      "baseline": 1045
+    },
+    {
+      "x": 990,
+      "y": 720,
+      "w": 148,
+      "h": 333,
+      "anchorX": 1049,
+      "baseline": 1048
+    },
+    {
+      "x": 63,
+      "y": 1057,
+      "w": 102,
+      "h": 302,
+      "anchorX": 112,
+      "baseline": 1354
+    },
+    {
+      "x": 235,
+      "y": 1057,
+      "w": 162,
+      "h": 302,
+      "anchorX": 307,
+      "baseline": 1354
+    },
+    {
+      "x": 439,
+      "y": 1055,
+      "w": 102,
+      "h": 302,
+      "anchorX": 496,
+      "baseline": 1352
+    },
+    {
+      "x": 621,
+      "y": 1056,
+      "w": 164,
+      "h": 304,
+      "anchorX": 695,
+      "baseline": 1355
+    },
+    {
+      "x": 826,
+      "y": 1057,
+      "w": 100,
+      "h": 301,
+      "anchorX": 882,
+      "baseline": 1353
+    },
+    {
+      "x": 1001,
+      "y": 1057,
+      "w": 136,
+      "h": 303,
+      "anchorX": 1050,
+      "baseline": 1355
+    }
+  ],
+  "identities": [
+    {
+      "id": "staff-principal",
+      "idle": 0,
+      "walk": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "talk": 5,
+      "standingHeight": 337
+    },
+    {
+      "id": "staff-vice",
+      "idle": 6,
+      "walk": [
+        7,
+        8,
+        9,
+        10
+      ],
+      "talk": 11,
+      "standingHeight": 335
+    },
+    {
+      "id": "staff-office",
+      "idle": 12,
+      "walk": [
+        13,
+        14,
+        15,
+        16
+      ],
+      "talk": 17,
+      "standingHeight": 328
+    },
+    {
+      "id": "staff-mentor",
+      "idle": 18,
+      "walk": [
+        19,
+        20,
+        21,
+        22
+      ],
+      "talk": 23,
+      "standingHeight": 298
+    }
+  ],
+  "cycle": [
+    "left-contact",
+    "passing-a",
+    "right-contact",
+    "passing-b"
+  ],
+  "alphaThresholdForBounds": 16,
+  "notes": "Original selected image copied unchanged; real RGBA alpha. Explicit measured bounds override nominal grid because generated gutters vary. Bounds include 2px padding; anchorX uses head center in upper 18 percent, baseline is feet minus 3px. Use one invariant scale from identity.standingHeight, never per-frame height. No image pixel editing performed."
+}

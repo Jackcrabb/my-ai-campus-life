@@ -46,29 +46,34 @@ Only your own classes are visible. Unlocks expire after 30 minutes and incorrect
 
 ## Edit questions and publish a new activity
 
-1. From your selected subject, open **Questions**, choose a grade, then select **New question** or **Edit**. Use **Change subject** to move to another subject.
-2. Set the task level and stars. Complete the title, question, options, feedback and takeaway in **all three language tabs**. Mark the correct answer and review it against the intended learning objective.
+1. From your selected subject, open **Questions**, choose a grade, then select **New question** or **Edit**. Repeat **New question** to add a fourth, fifth or further question; there is no fixed question-count cap. Use **Change subject** to move to another subject.
+2. Set the task level and choose **1–10 whole-number stars** for that question. Star values are independent of the level. Complete the title, question, options, feedback and takeaway in **all three language tabs**. Mark the correct answer and review it against the intended learning objective.
 3. Save as **Draft** while reviewing, or **Published** when ready. Saving an edit creates a revision; it does not rewrite existing student work.
 4. Go to **Classes → New activity**, enter an activity name and confirm. The activity uses the latest published questions for that grade. Students should load the new activity before answering it.
 
-Publishing a question and starting a class activity are separate steps. Existing activities retain their original question versions and score denominators. **Archive** removes a subject question from future activities while preserving earlier records. The four AI scenarios and final transfer task are read-only core content.
+Publishing a question and starting a class activity are separate steps. Existing activities retain their original question versions, star values and score denominators. Changing a published question does not retroactively change those activities or their students’ earned stars. **Archive** removes a subject question from future activities while preserving earlier records. The four AI scenarios and final transfer task are read-only core content.
 
 **Questions, options and explanations are text-only by design.** Edit and publish them normally; there are no corresponding voice files to regenerate or keep synchronized. Fixed NPC dialogue and the introduction are maintained separately behind the scenes. Teachers do not manage voice generation or API keys.
 
 For example, an S2 mathematics teacher can revise a ratios or probability question, explain why the distractors are incorrect in each language, publish the revision, then start a named follow-up activity. Compare that activity with the earlier one without changing the older results. All 234 starter questions have been replaced with authored, curriculum-referenced questions and checked for structure, mathematics, language mirrors and version consistency, with cross-agent content review. See [curriculum alignment](docs/CURRICULUM-ALIGNMENT.md). Teachers should still review suitability for their own classes; this is not complete curriculum coverage.
 
-## Review results, download Excel and print worksheets
+## Review results, print reports and download Excel
 
 1. Open **Results** and select the **class**, **subject** and **activity**. Historical activities remain selectable.
 2. Read scores alongside student explanations and reflections. Subject scores use **first responses** on a 0–100 scale; an unfinished subject displays a dash and remains blank in the export.
-3. Choose **Download subject Excel** for the selected subject, or **Download all subjects** for all 14 result categories in separate worksheets. Both use the four fixed headers **班別 / 學號 / 學生姓名 / 學科得分**.
-4. Teacher-authored question worksheets can still use the workspace’s print action. For uploaded PDFs, open **Worksheets** under one of the 13 learning subjects. The subject is fixed to your selection; set the title and grade, then upload a Traditional Chinese version, an English version, or both. Each file may be at most **5 MiB**; only authorized PDF content should be uploaded.
+3. Check **Earned stars** and **Available stars** alongside the percentage. These are the selected activity’s values, including progress before the subject is complete.
+4. Choose **Print subject results** to open the browser’s native print flow for the selected class, subject and activity. Select a printer or Save as PDF and confirm there; opening Results never prints automatically.
+5. Choose **Download subject Excel** for the selected subject, or **Download all subjects** for all 14 result categories in separate worksheets. Both use six fixed headers: **班別 / 學號 / 學生姓名 / 學科得分 / 獲得星星 / 可得星星**. The printed report contains equivalent fields translated to the interface language.
+
+## Upload and print worksheets
+
+Teacher-authored question worksheets can still use the Questions workspace’s print action. For uploaded PDFs, open **Worksheets** under one of the 13 learning subjects. The subject is fixed to your selection; set the title and grade, then upload a Traditional Chinese version, an English version, or both. Each file may be at most **5 MiB**; only authorized PDF content should be uploaded.
 
 Students first connect to their class, then use **Print in the top-right HUD** from the relevant floor. There are no physical printer objects in corridors or rooms. Choose a subject on that floor and a language version the teacher has actually supplied. The server restricts access by teacher ownership, student class grade and floor; students cannot select a different grade. Moving to another floor changes the subjects available through Print.
 
 Selecting a PDF loads a preview and does not print. After it loads, **Print PDF** requests the PDF reader/browser’s print flow; the user still confirms printer settings. **Open PDF** and **Download PDF** remain available if the embedded viewer cannot print. No physical print job or native print dialogue has been verified by the automated checks. See the [worksheet guide](docs/WORKSHEETS.md) for upload validation and device limitations. Keep teacher exports within your school’s normal handling of student records.
 
-Progress stars differ from assessment scores. A later correct retry earns its one-time stars but does not change the first-response subject score. The default campus offers 103 stars and an exit at 100; a shorter lesson can finish the core AI discussion and reflection without completing the formal game ending.
+Progress stars differ from assessment scores. A later correct retry earns its one-time stars but does not change the first-response subject score. The starter campus has 39 subject questions for the selected grade and offers 103 total stars, with an exit at 100. These are defaults: a teacher’s added questions and star values change the activity’s total, and its exit threshold is the lower of 100 and the available total. A shorter lesson can finish the core AI discussion and reflection without completing the formal game ending.
 
 ## Plan a lesson
 

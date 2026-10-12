@@ -4,7 +4,7 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const vm = require('node:vm');
 
-const filename = __dirname + '/../public/campus/subjects.js';
+const filename = __dirname + '/../public/campus/game/subjects.js';
 const context = vm.createContext({ window: {} });
 vm.runInContext(fs.readFileSync(filename, 'utf8'), context, { filename, timeout: 1000 });
 
